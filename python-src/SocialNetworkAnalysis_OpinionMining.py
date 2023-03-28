@@ -21,8 +21,11 @@ from newspaper import Article
 import pandas
 from textblob import TextBlob
 import SentimentAnalyzer
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from empath import Empath
 
 def sentiment_analyzer(text,algorithm=None):
+    vote=0.0
     if algorithm=="RGO_Belief_Propagation":
          outputfile = 'Opinion-RGO-BeliefPropagation-SentimentAnalysis.txt'
          output = open(outputfile, 'w')
@@ -35,6 +38,7 @@ def sentiment_analyzer(text,algorithm=None):
          print("K-Core DFS belief_propagated_negscore:",float(dfs_belief_propagated_negscore))
          print("Core Number belief_propagated_posscore:",float(core_belief_propagated_posscore))
          print("Core Number belief_propagated_negscore:",float(core_belief_propagated_negscore))
+         vote=float(dfs_belief_propagated_posscore) + float(dfs_belief_propagated_negscore) + float(core_belief_propagated_posscore) + float(core_belief_propagated_negscore)
     if algorithm=="RGO_Belief_Propagation_MRF":
          outputfile = 'Opinion-RGO-MRF-BeliefPropagation-SentimentAnalysis.txt'
          output = open(outputfile, 'w')
@@ -46,12 +50,14 @@ def sentiment_analyzer(text,algorithm=None):
          print("Positivity:",posscore)
          print("Negativity:",negscore)
          print("Objectivity:",objscore)
+         vote=posscore+negscore+objscore
     if algorithm=="TextBlob":
          textblobsummary=TextBlob(text)
          print("==================================================================================")
          print("Sentiment Analysis (trivial - TextBlob) of the opinion")
          print("==================================================================================")
          print(textblobsummary.sentiment)
+         vote=textblobsummary.sentiment.polarity+textblobsummary.sentiment.subjectivity
     if algorithm=="SentiWordNet":
          print("==================================================================================")
          print("Sentiment Analysis (trivial - SentiWordNet summation) of the opinion")
@@ -60,13 +66,29 @@ def sentiment_analyzer(text,algorithm=None):
          print("Positivity:",posscore)
          print("Negativity:",negscore)
          print("Objectivity:",objscore)
+         vote=posscore+negscore+objscore
+    if algorithm=="VADER":
+         senti=SentimentIntensityAnalyzer()
+         sentiscores=senti.polarity_scores(text)
+         print("VADER sentiment:",sentiscores)
+         for ss in sentiscores:
+            vote+=sentiscores[ss]
+    if algorithm=="empath":
+         empathsenti=Empath()
+         empathdict=empathsenti.analyze(text,normalize=True)
+         maxvaluecategory=max(empathdict,key=empathdict.get)
+         print("Empath sentiment:",maxvaluecategory)
+         vote=empathdict[maxvaluecategory]
+    return vote
 
-def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=1):
+def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefraction=0.2):
     gn=GoogleNews(start=fromdate,end=todate)
     gn.search(query)
     opinion=[]
     summarizedopinion=""
     noofarticles=0
+    populationsample=0
+    totalvotes=0
     for page in range(maxpages):
         gn.getpage(page)
         results=gn.result()
@@ -87,21 +109,29 @@ def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=1):
                 newsjson['Article']=article.text
                 #print(article.text)
                 newsjson['Summary']=article.summary
-                sentiment_analyzer(article.summary,algorithm="SentiWordNet")
-                sentiment_analyzer(article.summary,algorithm="TextBlob")
-                sentiment_analyzer(article.summary,algorithm="RGO_Belief_Propagation")
-                sentiment_analyzer(article.summary,algorithm="RGO_Belief_Propagation_MRF")
-                sentiment_analyzer(article.summary)
+                articleslice=int(articlefraction*len(article.summary))
+                print("articleslice:",article.summary[:articleslice])
+                votesw=sentiment_analyzer(article.summary[:articleslice],algorithm="SentiWordNet")
+                votetb=sentiment_analyzer(article.summary[:articleslice],algorithm="TextBlob")
+                votergobp=sentiment_analyzer(article.summary[:articleslice],algorithm="RGO_Belief_Propagation")
+                votergobpmrf=sentiment_analyzer(article.summary[:articleslice],algorithm="RGO_Belief_Propagation_MRF")
+                votevader=sentiment_analyzer(article.summary[:articleslice],algorithm="VADER")
+                voteempath=sentiment_analyzer(article.summary[:articleslice],algorithm="empath")
+                populationsample+=1
+                voteensemble=float(votesw+votetb+votergobp+votergobpmrf+votevader+voteempath)/6.0
+                totalvotes+=voteensemble
                 opinion.append(newsjson)
-                summarizedopinion+= " " + article.summary
+                summarizedopinion+= " " + article.summary[:articleslice]
             except Exception as ex:
                 print(ex)
     opiniondf=pandas.DataFrame(opinion)
     print(opiniondf)
     print("summarizedopinion:",summarizedopinion)
+    print("Opinion mining - polled votes on the query [",query,"] for population of size ",populationsample,":",totalvotes)
     return opiniondf
 
 if __name__=="__main__":
-    opinion_mining("Chennai Metropolitan Area Expansion","27/02/2023","01/03/2023")
+    #opinion_mining("Chennai Metropolitan Area Expansion","27/02/2023","01/03/2023")
+    opinion_mining("Stock market volatility","01/01/2023","01/03/2023")
 
 
