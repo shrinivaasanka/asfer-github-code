@@ -448,8 +448,8 @@ def SentimentAnalysis_RGO(text, output):
                     except KeyError:
                         weight_str_map[l+" - "+k] = ""
 
-    # nx.dra	w_graphviz(nxg,prog="neato")
-    nx.draw_networkx(nxg)
+    # nx.draw_graphviz(nxg,prog="neato")
+    #nx.draw_networkx(nxg)
     # plt.show()
     nxg.remove_edges_from(nx.selfloop_edges(nxg))
     #print "Core number =",nx.core_number(nxg)

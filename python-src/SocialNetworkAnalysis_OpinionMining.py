@@ -23,6 +23,7 @@ from textblob import TextBlob
 import SentimentAnalyzer
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from empath import Empath
+from pytrends.request import TrendReq
 
 def sentiment_analyzer(text,algorithm=None):
     vote=0.0
@@ -89,6 +90,7 @@ def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefracti
     noofarticles=0
     populationsample=0
     totalvotes=0
+    multipolarvotes=[]
     for page in range(maxpages):
         gn.getpage(page)
         results=gn.result()
@@ -117,6 +119,7 @@ def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefracti
                 votergobpmrf=sentiment_analyzer(article.summary[:articleslice],algorithm="RGO_Belief_Propagation_MRF")
                 votevader=sentiment_analyzer(article.summary[:articleslice],algorithm="VADER")
                 voteempath=sentiment_analyzer(article.summary[:articleslice],algorithm="empath")
+                multipolarvotes.append((votesw,votetb,votergobp,votergobpmrf,votevader,voteempath))
                 populationsample+=1
                 voteensemble=float(votesw+votetb+votergobp+votergobpmrf+votevader+voteempath)/6.0
                 totalvotes+=voteensemble
@@ -127,11 +130,28 @@ def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefracti
     opiniondf=pandas.DataFrame(opinion)
     print(opiniondf)
     print("summarizedopinion:",summarizedopinion)
+    print("Opinion mining - multipolar electronic voting machine ballots - votes array for the query [",query,"] for population of size ",populationsample,":",multipolarvotes)
     print("Opinion mining - polled votes on the query [",query,"] for population of size ",populationsample,":",totalvotes)
     return opiniondf
 
+def opinion_mining_from_google_trends(query=None,fromdate='01/01/2023',todate='01/03/2023',maxtrends=2,region='IN'):
+    pytrends = TrendReq(hl='en-US',tz=360)
+    if query is not None:
+        pytrends.build_payload(kw_list=[query])
+    #df1=pytrends.trending_searches(pn='india')
+    #print("trending google searches:",df1.head())
+    df2=pytrends.realtime_trending_searches(pn=region)
+    print("trending realtime google searches:",df2.head())
+    #for q in df1.values.tolist()[:maxtrends]:
+    #    print("query:",q[0])
+    #    opinion_mining(q[0],"01/03/2023","29/03/2023",maxarticles=5)
+    for q in df2.values.tolist()[:maxtrends]:
+        print("query:",q[0])
+        opinion_mining(q[0],fromdate,todate,maxarticles=2)
+
 if __name__=="__main__":
     #opinion_mining("Chennai Metropolitan Area Expansion","27/02/2023","01/03/2023")
-    opinion_mining("Stock market volatility","01/01/2023","01/03/2023")
+    #opinion_mining("Stock market volatility","01/01/2023","01/03/2023")
+    opinion_mining_from_google_trends(fromdate="01/03/2023",todate="29/03/2023")
 
 
