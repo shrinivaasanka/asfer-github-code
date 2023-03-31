@@ -39,7 +39,7 @@ def sentiment_analyzer(text,algorithm=None):
          print("K-Core DFS belief_propagated_negscore:",float(dfs_belief_propagated_negscore))
          print("Core Number belief_propagated_posscore:",float(core_belief_propagated_posscore))
          print("Core Number belief_propagated_negscore:",float(core_belief_propagated_negscore))
-         vote=float(dfs_belief_propagated_posscore) + float(dfs_belief_propagated_negscore) + float(core_belief_propagated_posscore) + float(core_belief_propagated_negscore)
+         vote=(float(dfs_belief_propagated_posscore) + float(dfs_belief_propagated_negscore) + float(core_belief_propagated_posscore) + float(core_belief_propagated_negscore),{"dfs_bp_pos":float(dfs_belief_propagated_posscore) , "dfs_bp_pos":float(dfs_belief_propagated_negscore) , "core_bp_pos":float(core_belief_propagated_posscore) , "core_bp_neg":float(core_belief_propagated_negscore)})
     if algorithm=="RGO_Belief_Propagation_MRF":
          outputfile = 'Opinion-RGO-MRF-BeliefPropagation-SentimentAnalysis.txt'
          output = open(outputfile, 'w')
@@ -51,14 +51,14 @@ def sentiment_analyzer(text,algorithm=None):
          print("Positivity:",posscore)
          print("Negativity:",negscore)
          print("Objectivity:",objscore)
-         vote=posscore+negscore+objscore
+         vote=(posscore+negscore+objscore,{"pos":posscore,"neg":negscore,"obj":objscore})
     if algorithm=="TextBlob":
          textblobsummary=TextBlob(text)
          print("==================================================================================")
          print("Sentiment Analysis (trivial - TextBlob) of the opinion")
          print("==================================================================================")
          print(textblobsummary.sentiment)
-         vote=textblobsummary.sentiment.polarity+textblobsummary.sentiment.subjectivity
+         vote=(textblobsummary.sentiment.polarity+textblobsummary.sentiment.subjectivity,{"polarity":textblobsummary.sentiment.polarity,"subjectivity":textblobsummary.sentiment.subjectivity})
     if algorithm=="SentiWordNet":
          print("==================================================================================")
          print("Sentiment Analysis (trivial - SentiWordNet summation) of the opinion")
@@ -67,19 +67,21 @@ def sentiment_analyzer(text,algorithm=None):
          print("Positivity:",posscore)
          print("Negativity:",negscore)
          print("Objectivity:",objscore)
-         vote=posscore+negscore+objscore
+         vote=(posscore+negscore+objscore,{"pos":posscore,"neg":negscore,"obj":objscore})
     if algorithm=="VADER":
          senti=SentimentIntensityAnalyzer()
          sentiscores=senti.polarity_scores(text)
+         votescores=0
          print("VADER sentiment:",sentiscores)
          for ss in sentiscores:
-            vote+=sentiscores[ss]
+            votescores+=sentiscores[ss]
+         vote=(votescores,sentiscores)
     if algorithm=="empath":
          empathsenti=Empath()
          empathdict=empathsenti.analyze(text,normalize=True)
          maxvaluecategory=max(empathdict,key=empathdict.get)
          print("Empath sentiment:",maxvaluecategory)
-         vote=empathdict[maxvaluecategory]
+         vote=(empathdict[maxvaluecategory],empathdict)
     return vote
 
 def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefraction=0.2):
@@ -121,7 +123,7 @@ def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefracti
                 voteempath=sentiment_analyzer(article.summary[:articleslice],algorithm="empath")
                 multipolarvotes.append((votesw,votetb,votergobp,votergobpmrf,votevader,voteempath))
                 populationsample+=1
-                voteensemble=float(votesw+votetb+votergobp+votergobpmrf+votevader+voteempath)/6.0
+                voteensemble=float(votesw[0]+votetb[0]+votergobp[0]+votergobpmrf[0]+votevader[0]+voteempath[0])/6.0
                 totalvotes+=voteensemble
                 opinion.append(newsjson)
                 summarizedopinion+= " " + article.summary[:articleslice]
@@ -131,7 +133,7 @@ def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefracti
     print(opiniondf)
     print("summarizedopinion:",summarizedopinion)
     print("Opinion mining - multipolar electronic voting machine ballots - votes array for the query [",query,"] for population of size ",populationsample,":",multipolarvotes)
-    print("Opinion mining - polled votes on the query [",query,"] for population of size ",populationsample,":",totalvotes)
+    print("Opinion mining - polled votes (average of objective-subjective(positive and negative) scores) on the query [",query,"] for population of size ",populationsample,":",totalvotes)
     return opiniondf
 
 def opinion_mining_from_google_trends(query=None,fromdate='01/01/2023',todate='01/03/2023',maxtrends=2,region='IN'):
