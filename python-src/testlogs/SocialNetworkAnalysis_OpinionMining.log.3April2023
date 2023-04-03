@@ -1,0 +1,1245 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+trending realtime google searches:                                                title                                        entityNames
+0                                  Uorfi Javed, DMRC                                [Uorfi Javed, DMRC]
+1  State Bank of India, Online banking, Unified P...  [State Bank of India, Online banking, Unified ...
+2                   France, Playboy, Emmanuel Macron                 [France, Playboy, Emmanuel Macron]
+3  Charles Barkley, Kevin Durant, NBA, Michael Jo...  [Charles Barkley, Kevin Durant, NBA, Michael J...
+4                                  Viral video, DMRC                                [Viral video, DMRC]
+query: Uorfi Javed, DMRC
+articleslice: Credit: Urfi Javed/InstagramTelevision actress Urfi Javed has been making headlines ever since she appeared in Bi
+==================================================================================
+Sentiment Analysis (trivial - SentiWordNet summation) of the opinion
+==================================================================================
+Positivity: 0.25
+Negativity: 0.125
+Objectivity: 8.625
+==================================================================================
+Sentiment Analysis (trivial - TextBlob) of the opinion
+==================================================================================
+Sentiment(polarity=0.0, subjectivity=0.0)
+defaultdict(<class 'list'>, {'work': ['be', 'follow'], 'subject': ['be', 'follow'], 'sense': ['have', 'have_got', 'hold'], 'time': ['ever', 'of_all_time'], 'resembles': ['bismuth', 'Bi', 'atomic_number_83'], 'by-product': ['bismuth', 'Bi', 'atomic_number_83'], 'either': ['have', 'have_got', 'hold'], 'act': ['devising', 'fashioning', 'making'], 'sphalerite': ['indium', 'In', 'atomic_number_49'], 'play': ['appear'], 'small': ['indium', 'In', 'atomic_number_49'], 'brittle': ['bismuth', 'Bi', 'atomic_number_83'], 'stage': ['appear'], 'trivalent': ['bismuth', 'Bi', 'atomic_number_83'], 'something': ['devising', 'fashioning', 'making'], 'ores': ['bismuth', 'Bi', 'atomic_number_83'], 'silvery': ['indium', 'In', 'atomic_number_49'], 'concrete': ['have', 'have_got', 'hold'], 'quantities': ['indium', 'In', 'atomic_number_49'], 'chemically': ['bismuth', 'Bi', 'atomic_number_83'], 'recovered': ['bismuth', 'Bi', 'atomic_number_83'], 'heavy': ['bismuth', 'Bi', 'atomic_number_83'], 'specific': ['be', 'follow'], 'caption': ['headline', 'newspaper_headline'], 'rare': ['indium', 'In', 'atomic_number_49'], 'element': ['indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83'], 'article': ['headline', 'newspaper_headline'], 'coming': ['devising', 'fashioning', 'making'], 'metals': ['bismuth', 'Bi', 'atomic_number_83'], 'character': ['appear'], 'newspaper': ['headline', 'newspaper_headline'], 'actor': ['actress'], 'occurs': ['indium', 'In', 'atomic_number_49'], 'etc': ['appear'], 'heading': ['headline', 'newspaper_headline'], 'usually': ['bismuth', 'Bi', 'atomic_number_83'], 'diamagnetic': ['bismuth', 'Bi', 'atomic_number_83'], 'antimony': ['bismuth', 'Bi', 'atomic_number_83'], 'female': ['actress'], 'possess': ['have', 'have_got', 'hold'], 'soft': ['indium', 'In', 'atomic_number_49'], 'place': ['be', 'follow'], 'metallic': ['indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83'], 'appear': ['appear'], 'results': ['devising', 'fashioning', 'making'], 'arsenic': ['bismuth', 'Bi', 'atomic_number_83'], 'abstract': ['have', 'have_got', 'hold'], 'function': ['be', 'follow']})
+Core number (sorted) : [('sense', 6), ('have', 6), ('have_got', 6), ('hold', 6), ('resembles', 6), ('bismuth', 6), ('Bi', 6), ('atomic_number_83', 6), ('by-product', 6), ('either', 6), ('act', 6), ('devising', 6), ('fashioning', 6), ('making', 6), ('sphalerite', 6), ('indium', 6), ('In', 6), ('atomic_number_49', 6), ('small', 6), ('brittle', 6), ('trivalent', 6), ('something', 6), ('ores', 6), ('silvery', 6), ('concrete', 6), ('quantities', 6), ('chemically', 6), ('recovered', 6), ('heavy', 6), ('rare', 6), ('element', 6), ('coming', 6), ('metals', 6), ('occurs', 6), ('usually', 6), ('diamagnetic', 6), ('antimony', 6), ('possess', 6), ('soft', 6), ('metallic', 6), ('results', 6), ('arsenic', 6), ('abstract', 6), ('work', 4), ('be', 4), ('follow', 4), ('subject', 4), ('specific', 4), ('caption', 4), ('headline', 4), ('newspaper_headline', 4), ('article', 4), ('newspaper', 4), ('heading', 4), ('place', 4), ('function', 4), ('time', 2), ('ever', 2), ('of_all_time', 2), ('play', 2), ('appear', 2), ('stage', 2), ('character', 2), ('actor', 2), ('actress', 2), ('etc', 2), ('female', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: sense ,core number= 6
+This document belongs to class: have ,core number= 6
+This document belongs to class: have_got ,core number= 6
+This document belongs to class: hold ,core number= 6
+This document belongs to class: resembles ,core number= 6
+This document belongs to class: bismuth ,core number= 6
+This document belongs to class: Bi ,core number= 6
+This document belongs to class: atomic_number_83 ,core number= 6
+	max_core_number 6
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[('bismuth', 0.04052884828157374), ('Bi', 0.04052884828157374), ('atomic_number_83', 0.04052884828157374), ('appear', 0.035499594074029694), ('indium', 0.02589829076877422), ('In', 0.02589829076877422), ('atomic_number_49', 0.02589829076877422), ('be', 0.025212483604179024), ('follow', 0.025212483604179024), ('time', 0.021783446780895464), ('headline', 0.021783446780895464), ('newspaper_headline', 0.021783446780895464), ('actress', 0.021783446780895464), ('have', 0.01949742223203976), ('have_got', 0.01949742223203976), ('hold', 0.01949742223203976), ('devising', 0.017211397683184054), ('fashioning', 0.017211397683184054), ('making', 0.017211397683184054), ('element', 0.016465400585511082), ('metallic', 0.016465400585511082), ('act', 0.013210854722686578), ('something', 0.013210854722686578), ('coming', 0.013210854722686578), ('results', 0.013210854722686578), ('sense', 0.012182143675701512), ('either', 0.012182143675701512), ('concrete', 0.012182143675701512), ('possess', 0.012182143675701512), ('abstract', 0.012182143675701512), ('ever', 0.011496336311044802), ('of_all_time', 0.011496336311044802), ('caption', 0.011496336311044802), ('article', 0.011496336311044802), ('newspaper', 0.011496336311044802), ('actor', 0.011496336311044802), ('heading', 0.011496336311044802), ('female', 0.011496336311044802), ('work', 0.010810528946388091), ('subject', 0.010810528946388091), ('specific', 0.010810528946388091), ('place', 0.010810528946388091), ('function', 0.010810528946388091), ('play', 0.009781817899403026), ('stage', 0.009781817899403026), ('character', 0.009781817899403026), ('etc', 0.009781817899403026), ('sphalerite', 0.009576075964076086), ('small', 0.009576075964076086), ('silvery', 0.009576075964076086), ('quantities', 0.009576075964076086), ('rare', 0.009576075964076086), ('occurs', 0.009576075964076086), ('soft', 0.009576075964076086), ('resembles', 0.00912813059158425), ('by-product', 0.00912813059158425), ('brittle', 0.00912813059158425), ('trivalent', 0.00912813059158425), ('ores', 0.00912813059158425), ('chemically', 0.00912813059158425), ('recovered', 0.00912813059158425), ('heavy', 0.00912813059158425), ('metals', 0.00912813059158425), ('usually', 0.00912813059158425), ('diamagnetic', 0.00912813059158425), ('antimony', 0.00912813059158425), ('arsenic', 0.00912813059158425)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.25
+Negativity =  0.125
+Objectivity =  8.625
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  sense :  0.0
+posscore of  sense :  0.375
+negscore of  have :  0.0
+posscore of  have :  0.0
+negscore of  hold :  0.0
+posscore of  hold :  0.0
+negscore of  act :  0.0
+posscore of  act :  0.0
+negscore of  devising :  0.0
+posscore of  devising :  0.0
+negscore of  making :  0.0
+posscore of  making :  0.0
+negscore of  In :  0.0
+posscore of  In :  0.0
+negscore of  small :  0.0
+posscore of  small :  0.0
+negscore of  brittle :  0.0
+posscore of  brittle :  0.0
+negscore of  silvery :  0.25
+posscore of  silvery :  0.0
+negscore of  concrete :  0.0
+posscore of  concrete :  0.0
+negscore of  quantities :  0.375
+posscore of  quantities :  0.0
+negscore of  recovered :  0.0
+posscore of  recovered :  0.0
+negscore of  heavy :  0.0
+posscore of  heavy :  0.0
+negscore of  rare :  0.0
+posscore of  rare :  0.25
+negscore of  element :  0.0
+posscore of  element :  0.0
+negscore of  coming :  0.0
+posscore of  coming :  0.0
+negscore of  metals :  0.0
+posscore of  metals :  0.0
+negscore of  occurs :  0.0
+posscore of  occurs :  0.0
+negscore of  possess :  0.0
+posscore of  possess :  0.125
+negscore of  soft :  0.25
+posscore of  soft :  0.0
+negscore of  metallic :  0.0
+posscore of  metallic :  0.0
+negscore of  results :  0.0
+posscore of  results :  0.0
+negscore of  abstract :  0.0
+posscore of  abstract :  0.0
+negscore of  work :  0.0
+posscore of  work :  0.0
+negscore of  be :  0.0
+posscore of  be :  0.0
+negscore of  follow :  0.0
+posscore of  follow :  0.0
+negscore of  subject :  0.0
+posscore of  subject :  0.0
+negscore of  specific :  0.0
+posscore of  specific :  0.0
+negscore of  caption :  0.0
+posscore of  caption :  0.25
+negscore of  headline :  0.0
+posscore of  headline :  0.0
+negscore of  article :  0.0
+posscore of  article :  0.0
+negscore of  newspaper :  0.0
+posscore of  newspaper :  0.0
+negscore of  heading :  0.0
+posscore of  heading :  0.0
+negscore of  place :  0.0
+posscore of  place :  0.0
+negscore of  function :  0.0
+posscore of  function :  0.0
+negscore of  time :  0.0
+posscore of  time :  0.0
+negscore of  ever :  0.0
+posscore of  ever :  0.0
+negscore of  play :  0.0
+posscore of  play :  0.0
+negscore of  appear :  0.0
+posscore of  appear :  0.0
+negscore of  stage :  0.0
+posscore of  stage :  0.0
+negscore of  character :  0.0
+posscore of  character :  0.0
+negscore of  female :  0.0
+posscore of  female :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the opinion
+==================================================================================
+Core Number: RGO_sentiment_analysis_belief_propagation: 2.000063, 2.250063
+K-Core DFS: RGO_sentiment_analysis_belief_propagation: 41.000000, 41.000000
+K-Core DFS belief_propagated_posscore: 41.0
+K-Core DFS belief_propagated_negscore: 41.0
+Core Number belief_propagated_posscore: 2.000062999999999
+Core Number belief_propagated_negscore: 2.2500630000000035
+defaultdict(<class 'list'>, {'work': ['be', 'follow', 'be', 'follow'], 'subject': ['be', 'follow', 'be', 'follow'], 'sense': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'time': ['ever', 'of_all_time', 'ever', 'of_all_time'], 'resembles': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'by-product': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'either': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'act': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'sphalerite': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'play': ['appear', 'appear'], 'small': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'brittle': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'stage': ['appear', 'appear'], 'trivalent': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'something': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'ores': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'silvery': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'concrete': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'quantities': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'chemically': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'recovered': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'heavy': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'specific': ['be', 'follow', 'be', 'follow'], 'caption': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'rare': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'element': ['indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83', 'indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83'], 'article': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'coming': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'metals': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'character': ['appear', 'appear'], 'newspaper': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'actor': ['actress', 'actress'], 'occurs': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'etc': ['appear', 'appear'], 'heading': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'usually': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'diamagnetic': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'antimony': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'female': ['actress', 'actress'], 'possess': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'soft': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'place': ['be', 'follow', 'be', 'follow'], 'metallic': ['indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83', 'indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83'], 'appear': ['appear', 'appear'], 'results': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'arsenic': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'abstract': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'function': ['be', 'follow', 'be', 'follow']})
+Core number (sorted) : [('sense', 6), ('have', 6), ('have_got', 6), ('hold', 6), ('resembles', 6), ('bismuth', 6), ('Bi', 6), ('atomic_number_83', 6), ('by-product', 6), ('either', 6), ('act', 6), ('devising', 6), ('fashioning', 6), ('making', 6), ('sphalerite', 6), ('indium', 6), ('In', 6), ('atomic_number_49', 6), ('small', 6), ('brittle', 6), ('trivalent', 6), ('something', 6), ('ores', 6), ('silvery', 6), ('concrete', 6), ('quantities', 6), ('chemically', 6), ('recovered', 6), ('heavy', 6), ('rare', 6), ('element', 6), ('coming', 6), ('metals', 6), ('occurs', 6), ('usually', 6), ('diamagnetic', 6), ('antimony', 6), ('possess', 6), ('soft', 6), ('metallic', 6), ('results', 6), ('arsenic', 6), ('abstract', 6), ('work', 4), ('be', 4), ('follow', 4), ('subject', 4), ('specific', 4), ('caption', 4), ('headline', 4), ('newspaper_headline', 4), ('article', 4), ('newspaper', 4), ('heading', 4), ('place', 4), ('function', 4), ('time', 2), ('ever', 2), ('of_all_time', 2), ('play', 2), ('appear', 2), ('stage', 2), ('character', 2), ('actor', 2), ('actress', 2), ('etc', 2), ('female', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: sense ,core number= 6
+This document belongs to class: have ,core number= 6
+This document belongs to class: have_got ,core number= 6
+This document belongs to class: hold ,core number= 6
+This document belongs to class: resembles ,core number= 6
+This document belongs to class: bismuth ,core number= 6
+This document belongs to class: Bi ,core number= 6
+This document belongs to class: atomic_number_83 ,core number= 6
+	max_core_number 6
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[('bismuth', 0.04052884828157374), ('Bi', 0.04052884828157374), ('atomic_number_83', 0.04052884828157374), ('appear', 0.035499594074029694), ('indium', 0.02589829076877422), ('In', 0.02589829076877422), ('atomic_number_49', 0.02589829076877422), ('be', 0.025212483604179024), ('follow', 0.025212483604179024), ('time', 0.021783446780895464), ('headline', 0.021783446780895464), ('newspaper_headline', 0.021783446780895464), ('actress', 0.021783446780895464), ('have', 0.01949742223203976), ('have_got', 0.01949742223203976), ('hold', 0.01949742223203976), ('devising', 0.017211397683184054), ('fashioning', 0.017211397683184054), ('making', 0.017211397683184054), ('element', 0.016465400585511082), ('metallic', 0.016465400585511082), ('act', 0.013210854722686578), ('something', 0.013210854722686578), ('coming', 0.013210854722686578), ('results', 0.013210854722686578), ('sense', 0.012182143675701512), ('either', 0.012182143675701512), ('concrete', 0.012182143675701512), ('possess', 0.012182143675701512), ('abstract', 0.012182143675701512), ('ever', 0.011496336311044802), ('of_all_time', 0.011496336311044802), ('caption', 0.011496336311044802), ('article', 0.011496336311044802), ('newspaper', 0.011496336311044802), ('actor', 0.011496336311044802), ('heading', 0.011496336311044802), ('female', 0.011496336311044802), ('work', 0.010810528946388091), ('subject', 0.010810528946388091), ('specific', 0.010810528946388091), ('place', 0.010810528946388091), ('function', 0.010810528946388091), ('play', 0.009781817899403026), ('stage', 0.009781817899403026), ('character', 0.009781817899403026), ('etc', 0.009781817899403026), ('sphalerite', 0.009576075964076086), ('small', 0.009576075964076086), ('silvery', 0.009576075964076086), ('quantities', 0.009576075964076086), ('rare', 0.009576075964076086), ('occurs', 0.009576075964076086), ('soft', 0.009576075964076086), ('resembles', 0.00912813059158425), ('by-product', 0.00912813059158425), ('brittle', 0.00912813059158425), ('trivalent', 0.00912813059158425), ('ores', 0.00912813059158425), ('chemically', 0.00912813059158425), ('recovered', 0.00912813059158425), ('heavy', 0.00912813059158425), ('metals', 0.00912813059158425), ('usually', 0.00912813059158425), ('diamagnetic', 0.00912813059158425), ('antimony', 0.00912813059158425), ('arsenic', 0.00912813059158425)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.25
+Negativity =  0.125
+Objectivity =  8.625
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  sense :  0.0
+posscore of  sense :  0.375
+negscore of  have :  0.0
+posscore of  have :  0.0
+negscore of  hold :  0.0
+posscore of  hold :  0.0
+negscore of  act :  0.0
+posscore of  act :  0.0
+negscore of  devising :  0.0
+posscore of  devising :  0.0
+negscore of  making :  0.0
+posscore of  making :  0.0
+negscore of  In :  0.0
+posscore of  In :  0.0
+negscore of  small :  0.0
+posscore of  small :  0.0
+negscore of  brittle :  0.0
+posscore of  brittle :  0.0
+negscore of  silvery :  0.25
+posscore of  silvery :  0.0
+negscore of  concrete :  0.0
+posscore of  concrete :  0.0
+negscore of  quantities :  0.375
+posscore of  quantities :  0.0
+negscore of  recovered :  0.0
+posscore of  recovered :  0.0
+negscore of  heavy :  0.0
+posscore of  heavy :  0.0
+negscore of  rare :  0.0
+posscore of  rare :  0.25
+negscore of  element :  0.0
+posscore of  element :  0.0
+negscore of  coming :  0.0
+posscore of  coming :  0.0
+negscore of  metals :  0.0
+posscore of  metals :  0.0
+negscore of  occurs :  0.0
+posscore of  occurs :  0.0
+negscore of  possess :  0.0
+posscore of  possess :  0.125
+negscore of  soft :  0.25
+posscore of  soft :  0.0
+negscore of  metallic :  0.0
+posscore of  metallic :  0.0
+negscore of  results :  0.0
+posscore of  results :  0.0
+negscore of  abstract :  0.0
+posscore of  abstract :  0.0
+negscore of  work :  0.0
+posscore of  work :  0.0
+negscore of  be :  0.0
+posscore of  be :  0.0
+negscore of  follow :  0.0
+posscore of  follow :  0.0
+negscore of  subject :  0.0
+posscore of  subject :  0.0
+negscore of  specific :  0.0
+posscore of  specific :  0.0
+negscore of  caption :  0.0
+posscore of  caption :  0.25
+negscore of  headline :  0.0
+posscore of  headline :  0.0
+negscore of  article :  0.0
+posscore of  article :  0.0
+negscore of  newspaper :  0.0
+posscore of  newspaper :  0.0
+negscore of  heading :  0.0
+posscore of  heading :  0.0
+negscore of  place :  0.0
+posscore of  place :  0.0
+negscore of  function :  0.0
+posscore of  function :  0.0
+negscore of  time :  0.0
+posscore of  time :  0.0
+negscore of  ever :  0.0
+posscore of  ever :  0.0
+negscore of  play :  0.0
+posscore of  play :  0.0
+negscore of  appear :  0.0
+posscore of  appear :  0.0
+negscore of  stage :  0.0
+posscore of  stage :  0.0
+negscore of  character :  0.0
+posscore of  character :  0.0
+negscore of  female :  0.0
+posscore of  female :  0.0
+clique: ['work', 'be']
+clique: ['work', 'follow']
+clique: ['time', 'of_all_time']
+clique: ['time', 'ever']
+clique: ['newspaper_headline', 'article']
+clique: ['newspaper_headline', 'caption']
+clique: ['newspaper_headline', 'heading']
+clique: ['newspaper_headline', 'newspaper']
+clique: ['fashioning', 'coming']
+clique: ['fashioning', 'results']
+clique: ['fashioning', 'act']
+clique: ['fashioning', 'something']
+clique: ['either', 'have']
+clique: ['either', 'hold']
+clique: ['either', 'have_got']
+clique: ['sphalerite', 'atomic_number_49']
+clique: ['sphalerite', 'In']
+clique: ['sphalerite', 'indium']
+clique: ['play', 'appear']
+clique: ['small', 'atomic_number_49']
+clique: ['small', 'In']
+clique: ['small', 'indium']
+clique: ['stage', 'appear']
+clique: ['concrete', 'have']
+clique: ['concrete', 'hold']
+clique: ['concrete', 'have_got']
+clique: ['actress', 'female']
+clique: ['actress', 'actor']
+clique: ['headline', 'article']
+clique: ['headline', 'caption']
+clique: ['headline', 'heading']
+clique: ['headline', 'newspaper']
+clique: ['have', 'sense']
+clique: ['have', 'abstract']
+clique: ['have', 'possess']
+clique: ['specific', 'be']
+clique: ['specific', 'follow']
+clique: ['In', 'occurs']
+clique: ['In', 'rare']
+clique: ['In', 'element']
+clique: ['In', 'soft']
+clique: ['In', 'silvery']
+clique: ['In', 'quantities']
+clique: ['In', 'metallic']
+clique: ['occurs', 'atomic_number_49']
+clique: ['occurs', 'indium']
+clique: ['possess', 'hold']
+clique: ['possess', 'have_got']
+clique: ['soft', 'atomic_number_49']
+clique: ['soft', 'indium']
+clique: ['place', 'be']
+clique: ['place', 'follow']
+clique: ['results', 'making']
+clique: ['results', 'devising']
+clique: ['hold', 'sense']
+clique: ['hold', 'abstract']
+clique: ['function', 'be']
+clique: ['function', 'follow']
+clique: ['devising', 'coming']
+clique: ['devising', 'act']
+clique: ['devising', 'something']
+clique: ['subject', 'be']
+clique: ['subject', 'follow']
+clique: ['sense', 'have_got']
+clique: ['bismuth', 'usually']
+clique: ['bismuth', 'brittle']
+clique: ['bismuth', 'element']
+clique: ['bismuth', 'trivalent']
+clique: ['bismuth', 'metals']
+clique: ['bismuth', 'ores']
+clique: ['bismuth', 'antimony']
+clique: ['bismuth', 'resembles']
+clique: ['bismuth', 'chemically']
+clique: ['bismuth', 'by-product']
+clique: ['bismuth', 'recovered']
+clique: ['bismuth', 'metallic']
+clique: ['bismuth', 'heavy']
+clique: ['bismuth', 'arsenic']
+clique: ['bismuth', 'diamagnetic']
+clique: ['making', 'coming']
+clique: ['making', 'act']
+clique: ['making', 'something']
+clique: ['silvery', 'atomic_number_49']
+clique: ['silvery', 'indium']
+clique: ['quantities', 'atomic_number_49']
+clique: ['quantities', 'indium']
+clique: ['have_got', 'abstract']
+clique: ['atomic_number_83', 'usually']
+clique: ['atomic_number_83', 'brittle']
+clique: ['atomic_number_83', 'element']
+clique: ['atomic_number_83', 'trivalent']
+clique: ['atomic_number_83', 'metals']
+clique: ['atomic_number_83', 'ores']
+clique: ['atomic_number_83', 'antimony']
+clique: ['atomic_number_83', 'resembles']
+clique: ['atomic_number_83', 'chemically']
+clique: ['atomic_number_83', 'by-product']
+clique: ['atomic_number_83', 'recovered']
+clique: ['atomic_number_83', 'metallic']
+clique: ['atomic_number_83', 'heavy']
+clique: ['atomic_number_83', 'arsenic']
+clique: ['atomic_number_83', 'diamagnetic']
+clique: ['rare', 'atomic_number_49']
+clique: ['rare', 'indium']
+clique: ['character', 'appear']
+clique: ['atomic_number_49', 'element']
+clique: ['atomic_number_49', 'metallic']
+clique: ['etc', 'appear']
+clique: ['indium', 'element']
+clique: ['indium', 'metallic']
+clique: ['Bi', 'usually']
+clique: ['Bi', 'brittle']
+clique: ['Bi', 'element']
+clique: ['Bi', 'trivalent']
+clique: ['Bi', 'metals']
+clique: ['Bi', 'ores']
+clique: ['Bi', 'antimony']
+clique: ['Bi', 'resembles']
+clique: ['Bi', 'chemically']
+clique: ['Bi', 'by-product']
+clique: ['Bi', 'recovered']
+clique: ['Bi', 'metallic']
+clique: ['Bi', 'heavy']
+clique: ['Bi', 'arsenic']
+clique: ['Bi', 'diamagnetic']
+==================================================================================
+Sentiment Analysis (Markov Random Fields Cliques Belief Propagation) of the opinion
+==================================================================================
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 1.479766012970286e-15
+VADER sentiment: {'neg': 0.0, 'neu': 0.852, 'pos': 0.148, 'compound': 0.3818}
+Empath sentiment: help
+articleslice: Shark Tank India‘s Vineeta Singh poked fun at how fame has ‘changed’ her fellow ‘shark’ Aman Gupta.
+Vine
+==================================================================================
+Sentiment Analysis (trivial - SentiWordNet summation) of the opinion
+==================================================================================
+Positivity: 0.625
+Negativity: 0.375
+Objectivity: 8.0
+==================================================================================
+Sentiment Analysis (trivial - TextBlob) of the opinion
+==================================================================================
+Sentiment(polarity=0.3, subjectivity=0.2)
+defaultdict(<class 'list'>, {'work': ['be', 'follow', 'be', 'follow'], 'subject': ['be', 'follow', 'be', 'follow'], 'sense': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'time': ['ever', 'of_all_time', 'ever', 'of_all_time', 'hour_angle', 'HA'], 'resembles': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'by-product': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'either': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'act': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'sphalerite': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'play': ['appear', 'appear'], 'small': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49', 'shark'], 'brittle': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'stage': ['appear', 'appear'], 'trivalent': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'something': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'ores': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'silvery': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'concrete': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'quantities': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'chemically': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'recovered': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'heavy': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'specific': ['be', 'follow', 'be', 'follow'], 'caption': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'rare': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'element': ['indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83', 'indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83'], 'article': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'coming': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'metals': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'character': ['appear', 'appear'], 'newspaper': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'actor': ['actress', 'actress'], 'occurs': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'etc': ['appear', 'appear'], 'heading': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'usually': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'diamagnetic': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'antimony': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'female': ['actress', 'actress'], 'possess': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'soft': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'place': ['be', 'follow', 'be', 'follow'], 'metallic': ['indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83', 'indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83'], 'appear': ['appear', 'appear'], 'results': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'arsenic': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'abstract': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'function': ['be', 'follow', 'be', 'follow'], 'mockery': ['fun', 'play', 'sport'], 'heterocercal': ['shark'], 'enclosed': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'numerous': ['shark'], 'fishes': ['shark'], 'along': ['hour_angle', 'HA', 'vine'], 'Laos': ['at'], 'cannon': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'observer': ['hour_angle', 'HA'], 'weak': ['vine'], 'support': ['vine'], 'angular': ['hour_angle', 'HA'], 'climbing': ['vine'], 'moves': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'thrust': ['jab', 'prod', 'stab', 'poke', 'dig'], 'another': ['fun', 'play', 'sport'], '100': ['at'], 'honored': ['fame', 'celebrity', 'renown'], 'taken': ['fun', 'play', 'sport'], 'zenith': ['hour_angle', 'HA'], 'marine': ['shark'], 'seriously': ['fun', 'play', 'sport'], 'armored': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'caterpillar': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'distance': ['hour_angle', 'HA'], 'acclaimed': ['fame', 'celebrity', 'renown'], 'measured': ['hour_angle', 'HA'], 'particular': ['hour_angle', 'HA'], 'day': ['hour_angle', 'HA'], 'astronomy': ['hour_angle', 'HA'], 'caudal': ['shark'], 'wit': ['fun', 'play', 'sport'], 'toothlike': ['shark'], 'right': ['hour_angle', 'HA'], 'equator': ['hour_angle', 'HA'], 'location': ['hour_angle', 'HA'], 'abruptly': ['jab', 'prod', 'stab', 'poke', 'dig'], 'plant': ['vine'], 'quality': ['fame', 'celebrity', 'renown'], 'man': ['chap', 'fellow', 'feller', 'fella', 'lad', 'gent', 'blighter', 'cuss', 'bloke'], 'covered': ['shark'], 'celestial': ['hour_angle', 'HA'], 'creeping': ['vine'], 'tough': ['shark'], 'equal': ['at'], 'military': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'scales': ['shark'], 'carnivorous': ['shark'], 'mostly': ['shark'], 'point': ['hour_angle', 'HA'], 'often': ['fun', 'play', 'sport'], 'kip': ['at'], 'vehicle': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'treads': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'state': ['fame', 'celebrity', 'renown'], 'widely': ['fame', 'celebrity', 'renown'], 'expense': ['fun', 'play', 'sport'], '1': ['at'], 'boy': ['chap', 'fellow', 'feller', 'fella', 'lad', 'gent', 'blighter', 'cuss', 'bloke'], 'verbal': ['fun', 'play', 'sport'], 'stem': ['vine'], 'derives': ['vine'], 'westward': ['hour_angle', 'HA'], 'elongate': ['shark'], 'twining': ['vine'], 'surface': ['vine'], 'crossing': ['hour_angle', 'HA'], 'ascension': ['hour_angle', 'HA'], 'skin': ['shark'], 'poke': ['jab', 'prod', 'stab', 'poke', 'dig'], 'fins': ['shark']})
+Core number (sorted) : [('enclosed', 8), ('tank', 8), ('army_tank', 8), ('armored_combat_vehicle', 8), ('armoured_combat_vehicle', 8), ('cannon', 8), ('moves', 8), ('armored', 8), ('caterpillar', 8), ('military', 8), ('vehicle', 8), ('treads', 8), ('sense', 6), ('have', 6), ('have_got', 6), ('hold', 6), ('resembles', 6), ('bismuth', 6), ('Bi', 6), ('atomic_number_83', 6), ('by-product', 6), ('either', 6), ('act', 6), ('devising', 6), ('fashioning', 6), ('making', 6), ('sphalerite', 6), ('indium', 6), ('In', 6), ('atomic_number_49', 6), ('play', 6), ('small', 6), ('brittle', 6), ('trivalent', 6), ('something', 6), ('ores', 6), ('silvery', 6), ('concrete', 6), ('quantities', 6), ('chemically', 6), ('recovered', 6), ('heavy', 6), ('rare', 6), ('element', 6), ('coming', 6), ('metals', 6), ('occurs', 6), ('usually', 6), ('diamagnetic', 6), ('antimony', 6), ('possess', 6), ('soft', 6), ('metallic', 6), ('results', 6), ('arsenic', 6), ('abstract', 6), ('mockery', 6), ('fun', 6), ('sport', 6), ('thrust', 6), ('jab', 6), ('prod', 6), ('stab', 6), ('poke', 6), ('dig', 6), ('another', 6), ('honored', 6), ('fame', 6), ('celebrity', 6), ('renown', 6), ('taken', 6), ('seriously', 6), ('acclaimed', 6), ('wit', 6), ('abruptly', 6), ('quality', 6), ('often', 6), ('state', 6), ('widely', 6), ('expense', 6), ('verbal', 6), ('work', 4), ('be', 4), ('follow', 4), ('subject', 4), ('time', 4), ('hour_angle', 4), ('HA', 4), ('specific', 4), ('caption', 4), ('headline', 4), ('newspaper_headline', 4), ('article', 4), ('newspaper', 4), ('heading', 4), ('place', 4), ('function', 4), ('along', 4), ('observer', 4), ('angular', 4), ('zenith', 4), ('distance', 4), ('measured', 4), ('particular', 4), ('day', 4), ('astronomy', 4), ('right', 4), ('equator', 4), ('location', 4), ('man', 4), ('chap', 4), ('fellow', 4), ('feller', 4), ('fella', 4), ('lad', 4), ('gent', 4), ('blighter', 4), ('cuss', 4), ('bloke', 4), ('celestial', 4), ('point', 4), ('boy', 4), ('westward', 4), ('crossing', 4), ('ascension', 4), ('ever', 2), ('of_all_time', 2), ('appear', 2), ('shark', 2), ('stage', 2), ('character', 2), ('actor', 2), ('actress', 2), ('etc', 2), ('female', 2), ('heterocercal', 2), ('numerous', 2), ('fishes', 2), ('vine', 2), ('Laos', 2), ('at', 2), ('weak', 2), ('support', 2), ('climbing', 2), ('100', 2), ('marine', 2), ('caudal', 2), ('toothlike', 2), ('plant', 2), ('covered', 2), ('creeping', 2), ('tough', 2), ('equal', 2), ('scales', 2), ('carnivorous', 2), ('mostly', 2), ('kip', 2), ('1', 2), ('stem', 2), ('derives', 2), ('elongate', 2), ('twining', 2), ('surface', 2), ('skin', 2), ('fins', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: enclosed ,core number= 8
+This document belongs to class: tank ,core number= 8
+This document belongs to class: army_tank ,core number= 8
+This document belongs to class: armored_combat_vehicle ,core number= 8
+This document belongs to class: armoured_combat_vehicle ,core number= 8
+This document belongs to class: cannon ,core number= 8
+This document belongs to class: moves ,core number= 8
+This document belongs to class: armored ,core number= 8
+This document belongs to class: caterpillar ,core number= 8
+This document belongs to class: military ,core number= 8
+This document belongs to class: vehicle ,core number= 8
+This document belongs to class: treads ,core number= 8
+This document belongs to class: sense ,core number= 6
+This document belongs to class: have ,core number= 6
+This document belongs to class: have_got ,core number= 6
+This document belongs to class: hold ,core number= 6
+This document belongs to class: resembles ,core number= 6
+This document belongs to class: bismuth ,core number= 6
+	max_core_number 8
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[('shark', 0.04013364416332825), ('hour_angle', 0.029448979249955307), ('HA', 0.029448979249955307), ('vine', 0.02735513222167089), ('at', 0.017197297528549853), ('bismuth', 0.016594589183954157), ('Bi', 0.016594589183954157), ('atomic_number_83', 0.016594589183954157), ('man', 0.01580521109505688), ('boy', 0.01580521109505688), ('play', 0.013303057003309757), ('fun', 0.011223345775917536), ('sport', 0.011223345775917536), ('indium', 0.01108261461721473), ('In', 0.01108261461721473), ('atomic_number_49', 0.01108261461721473), ('be', 0.010236865361084986), ('follow', 0.010236865361084986), ('appear', 0.009787276437067706), ('headline', 0.008844778927592011), ('newspaper_headline', 0.008844778927592011), ('actress', 0.008844778927592011), ('tank', 0.008844778927592011), ('army_tank', 0.008844778927592011), ('armored_combat_vehicle', 0.008844778927592011), ('armoured_combat_vehicle', 0.008844778927592011), ('poke', 0.008757007341627463), ('time', 0.008198287117473018), ('have', 0.00791672130526336), ('have_got', 0.00791672130526336), ('hold', 0.00791672130526336), ('fame', 0.00791672130526336), ('celebrity', 0.00791672130526336), ('renown', 0.00791672130526336), ('thrust', 0.007460883120566344), ('abruptly', 0.007460883120566344), ('devising', 0.006988663682934707), ('fashioning', 0.006988663682934707), ('making', 0.006988663682934707), ('element', 0.006871730326264338), ('metallic', 0.006871730326264338), ('small', 0.00632454481551948), ('along', 0.00601667814202461), ('act', 0.005364562843859571), ('something', 0.005364562843859571), ('coming', 0.005364562843859571), ('results', 0.005364562843859571), ('sense', 0.004946936913811681), ('either', 0.004946936913811681), ('concrete', 0.004946936913811681), ('possess', 0.004946936913811681), ('abstract', 0.004946936913811681), ('honored', 0.004946936913811681), ('acclaimed', 0.004946936913811681), ('quality', 0.004946936913811681), ('state', 0.004946936913811681), ('widely', 0.004946936913811681), ('jab', 0.004686367210370567), ('prod', 0.004686367210370567), ('stab', 0.004686367210370567), ('dig', 0.004686367210370567), ('enclosed', 0.004668519627113087), ('cannon', 0.004668519627113087), ('moves', 0.004668519627113087), ('armored', 0.004668519627113087), ('caterpillar', 0.004668519627113087), ('military', 0.004668519627113087), ('vehicle', 0.004668519627113087), ('treads', 0.004668519627113087), ('caption', 0.004668519627113086), ('article', 0.004668519627113086), ('newspaper', 0.004668519627113086), ('actor', 0.004668519627113086), ('heading', 0.004668519627113086), ('female', 0.004668519627113086), ('mockery', 0.0045507074384286235), ('another', 0.0045507074384286235), ('taken', 0.0045507074384286235), ('seriously', 0.0045507074384286235), ('wit', 0.0045507074384286235), ('often', 0.0045507074384286235), ('expense', 0.0045507074384286235), ('verbal', 0.0045507074384286235), ('work', 0.004390102340414492), ('subject', 0.004390102340414492), ('specific', 0.004390102340414492), ('place', 0.004390102340414492), ('function', 0.004390102340414492), ('sphalerite', 0.004049941744427914), ('silvery', 0.004049941744427914), ('quantities', 0.004049941744427914), ('rare', 0.004049941744427914), ('occurs', 0.004049941744427914), ('soft', 0.004049941744427914), ('chap', 0.0038951382751725447), ('fellow', 0.0038951382751725447), ('feller', 0.0038951382751725447), ('fella', 0.0038951382751725447), ('lad', 0.0038951382751725447), ('gent', 0.0038951382751725447), ('blighter', 0.0038951382751725447), ('cuss', 0.0038951382751725447), ('bloke', 0.0038951382751725447), ('Laos', 0.0038332677670173017), ('100', 0.0038332677670173017), ('equal', 0.0038332677670173017), ('kip', 0.0038332677670173017), ('1', 0.0038332677670173017), ('resembles', 0.0037308794909273347), ('by-product', 0.0037308794909273347), ('brittle', 0.0037308794909273347), ('trivalent', 0.0037308794909273347), ('ores', 0.0037308794909273347), ('chemically', 0.0037308794909273347), ('recovered', 0.0037308794909273347), ('heavy', 0.0037308794909273347), ('metals', 0.0037308794909273347), ('usually', 0.0037308794909273347), ('diamagnetic', 0.0037308794909273347), ('antimony', 0.0037308794909273347), ('arsenic', 0.0037308794909273347), ('observer', 0.0036910962633050653), ('angular', 0.0036910962633050653), ('zenith', 0.0036910962633050653), ('distance', 0.0036910962633050653), ('measured', 0.0036910962633050653), ('particular', 0.0036910962633050653), ('day', 0.0036910962633050653), ('astronomy', 0.0036910962633050653), ('right', 0.0036910962633050653), ('equator', 0.0036910962633050653), ('location', 0.0036910962633050653), ('celestial', 0.0036910962633050653), ('point', 0.0036910962633050653), ('westward', 0.0036910962633050653), ('crossing', 0.0036910962633050653), ('ascension', 0.0036910962633050653), ('weak', 0.0032346727878104545), ('support', 0.0032346727878104545), ('climbing', 0.0032346727878104545), ('plant', 0.0032346727878104545), ('creeping', 0.0032346727878104545), ('stem', 0.0032346727878104545), ('derives', 0.0032346727878104545), ('twining', 0.0032346727878104545), ('surface', 0.0032346727878104545), ('heterocercal', 0.003183693980182475), ('numerous', 0.003183693980182475), ('fishes', 0.003183693980182475), ('marine', 0.003183693980182475), ('caudal', 0.003183693980182475), ('toothlike', 0.003183693980182475), ('covered', 0.003183693980182475), ('tough', 0.003183693980182475), ('scales', 0.003183693980182475), ('carnivorous', 0.003183693980182475), ('mostly', 0.003183693980182475), ('elongate', 0.003183693980182475), ('skin', 0.003183693980182475), ('fins', 0.003183693980182475), ('stage', 0.0029888021364831313), ('character', 0.0029888021364831313), ('etc', 0.0029888021364831313), ('ever', 0.002650871327569828), ('of_all_time', 0.002650871327569828)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.625
+Negativity =  0.375
+Objectivity =  8.0
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  enclosed :  0.0
+posscore of  enclosed :  0.0
+negscore of  tank :  0.0
+posscore of  tank :  0.0
+negscore of  cannon :  0.0
+posscore of  cannon :  0.0
+negscore of  moves :  0.0
+posscore of  moves :  0.0
+negscore of  armored :  0.0
+posscore of  armored :  0.0
+negscore of  military :  0.0
+posscore of  military :  0.0
+negscore of  vehicle :  0.0
+posscore of  vehicle :  0.0
+negscore of  treads :  0.0
+posscore of  treads :  0.0
+negscore of  sense :  0.0
+posscore of  sense :  0.375
+negscore of  have :  0.0
+posscore of  have :  0.0
+negscore of  hold :  0.0
+posscore of  hold :  0.0
+negscore of  act :  0.0
+posscore of  act :  0.0
+negscore of  devising :  0.0
+posscore of  devising :  0.0
+negscore of  making :  0.0
+posscore of  making :  0.0
+negscore of  In :  0.0
+posscore of  In :  0.0
+negscore of  play :  0.0
+posscore of  play :  0.0
+negscore of  small :  0.0
+posscore of  small :  0.0
+negscore of  brittle :  0.0
+posscore of  brittle :  0.0
+negscore of  silvery :  0.25
+posscore of  silvery :  0.0
+negscore of  concrete :  0.0
+posscore of  concrete :  0.0
+negscore of  quantities :  0.375
+posscore of  quantities :  0.0
+negscore of  recovered :  0.0
+posscore of  recovered :  0.0
+negscore of  heavy :  0.0
+posscore of  heavy :  0.0
+negscore of  rare :  0.0
+posscore of  rare :  0.25
+negscore of  element :  0.0
+posscore of  element :  0.0
+negscore of  coming :  0.0
+posscore of  coming :  0.0
+negscore of  metals :  0.0
+posscore of  metals :  0.0
+negscore of  occurs :  0.0
+posscore of  occurs :  0.0
+negscore of  possess :  0.0
+posscore of  possess :  0.125
+negscore of  soft :  0.25
+posscore of  soft :  0.0
+negscore of  metallic :  0.0
+posscore of  metallic :  0.0
+negscore of  results :  0.0
+posscore of  results :  0.0
+negscore of  abstract :  0.0
+posscore of  abstract :  0.0
+negscore of  mockery :  0.375
+posscore of  mockery :  0.375
+negscore of  fun :  0.0
+posscore of  fun :  0.375
+negscore of  sport :  0.25
+posscore of  sport :  0.25
+negscore of  thrust :  0.125
+posscore of  thrust :  0.0
+negscore of  jab :  0.0
+posscore of  jab :  0.25
+negscore of  prod :  0.0
+posscore of  prod :  0.0
+negscore of  stab :  0.375
+posscore of  stab :  0.0
+negscore of  poke :  0.0
+posscore of  poke :  0.0
+negscore of  dig :  0.0
+posscore of  dig :  0.0
+negscore of  honored :  0.0
+posscore of  honored :  0.375
+negscore of  taken :  0.0
+posscore of  taken :  0.0
+negscore of  wit :  0.0
+posscore of  wit :  0.0
+negscore of  quality :  0.0
+posscore of  quality :  0.375
+negscore of  often :  0.0
+posscore of  often :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  widely :  0.0
+posscore of  widely :  0.0
+negscore of  expense :  0.0
+posscore of  expense :  0.0
+negscore of  verbal :  0.0
+posscore of  verbal :  0.0
+negscore of  work :  0.0
+posscore of  work :  0.0
+negscore of  be :  0.0
+posscore of  be :  0.0
+negscore of  follow :  0.0
+posscore of  follow :  0.0
+negscore of  subject :  0.0
+posscore of  subject :  0.0
+negscore of  time :  0.0
+posscore of  time :  0.0
+negscore of  specific :  0.0
+posscore of  specific :  0.0
+negscore of  caption :  0.0
+posscore of  caption :  0.25
+negscore of  headline :  0.0
+posscore of  headline :  0.0
+negscore of  article :  0.0
+posscore of  article :  0.0
+negscore of  newspaper :  0.0
+posscore of  newspaper :  0.0
+negscore of  heading :  0.0
+posscore of  heading :  0.0
+negscore of  place :  0.0
+posscore of  place :  0.0
+negscore of  function :  0.0
+posscore of  function :  0.0
+negscore of  along :  0.0
+posscore of  along :  0.0
+negscore of  distance :  0.0
+posscore of  distance :  0.0
+negscore of  measured :  0.0
+posscore of  measured :  0.0
+negscore of  particular :  0.0
+posscore of  particular :  0.0
+negscore of  day :  0.0
+posscore of  day :  0.0
+negscore of  right :  0.0
+posscore of  right :  0.0
+negscore of  location :  0.0
+posscore of  location :  0.0
+negscore of  man :  0.0
+posscore of  man :  0.0
+negscore of  chap :  0.0
+posscore of  chap :  0.0
+negscore of  fellow :  0.0
+posscore of  fellow :  0.0
+negscore of  gent :  0.375
+posscore of  gent :  0.0
+negscore of  cuss :  0.0
+posscore of  cuss :  0.0
+negscore of  celestial :  0.0
+posscore of  celestial :  0.0
+negscore of  point :  0.0
+posscore of  point :  0.0
+negscore of  boy :  0.0
+posscore of  boy :  0.25
+negscore of  westward :  0.0
+posscore of  westward :  0.0
+negscore of  crossing :  0.0
+posscore of  crossing :  0.0
+negscore of  ascension :  0.0
+posscore of  ascension :  0.0
+negscore of  ever :  0.0
+posscore of  ever :  0.0
+negscore of  appear :  0.0
+posscore of  appear :  0.0
+negscore of  shark :  0.0
+posscore of  shark :  0.0
+negscore of  stage :  0.0
+posscore of  stage :  0.0
+negscore of  character :  0.0
+posscore of  character :  0.0
+negscore of  female :  0.0
+posscore of  female :  0.0
+negscore of  fishes :  0.0
+posscore of  fishes :  0.0
+negscore of  Laos :  0.0
+posscore of  Laos :  0.0
+negscore of  weak :  0.5
+posscore of  weak :  0.125
+negscore of  support :  0.0
+posscore of  support :  0.0
+negscore of  climbing :  0.0
+posscore of  climbing :  0.0
+negscore of  marine :  0.0
+posscore of  marine :  0.0
+negscore of  caudal :  0.0
+posscore of  caudal :  0.0
+negscore of  plant :  0.0
+posscore of  plant :  0.0
+negscore of  covered :  0.0
+posscore of  covered :  0.0
+negscore of  creeping :  0.0
+posscore of  creeping :  0.0
+negscore of  tough :  0.0
+posscore of  tough :  0.0
+negscore of  equal :  0.0
+posscore of  equal :  0.0
+negscore of  scales :  0.25
+posscore of  scales :  0.0
+negscore of  kip :  0.0
+posscore of  kip :  0.0
+negscore of  stem :  0.0
+posscore of  stem :  0.0
+negscore of  derives :  0.0
+posscore of  derives :  0.0
+negscore of  elongate :  0.0
+posscore of  elongate :  0.0
+negscore of  twining :  0.0
+posscore of  twining :  0.0
+negscore of  surface :  0.0
+posscore of  surface :  0.0
+negscore of  skin :  0.0
+posscore of  skin :  0.0
+negscore of  fins :  0.0
+posscore of  fins :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the opinion
+==================================================================================
+Core Number: RGO_sentiment_analysis_belief_propagation: 5.500150, 5.375151
+K-Core DFS: RGO_sentiment_analysis_belief_propagation: 69.765625, 74.046875
+K-Core DFS belief_propagated_posscore: 69.765625
+K-Core DFS belief_propagated_negscore: 74.046875
+Core Number belief_propagated_posscore: 5.500150000000009
+Core Number belief_propagated_negscore: 5.375151000000013
+defaultdict(<class 'list'>, {'work': ['be', 'follow', 'be', 'follow'], 'subject': ['be', 'follow', 'be', 'follow'], 'sense': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'time': ['ever', 'of_all_time', 'ever', 'of_all_time', 'hour_angle', 'HA', 'hour_angle', 'HA'], 'resembles': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'by-product': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'either': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'act': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'sphalerite': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'play': ['appear', 'appear'], 'small': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49', 'shark', 'shark'], 'brittle': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'stage': ['appear', 'appear'], 'trivalent': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'something': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'ores': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'silvery': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'concrete': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'quantities': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'chemically': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'recovered': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'heavy': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'specific': ['be', 'follow', 'be', 'follow'], 'caption': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'rare': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'element': ['indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83', 'indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83'], 'article': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'coming': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'metals': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'character': ['appear', 'appear'], 'newspaper': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'actor': ['actress', 'actress'], 'occurs': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'etc': ['appear', 'appear'], 'heading': ['headline', 'newspaper_headline', 'headline', 'newspaper_headline'], 'usually': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'diamagnetic': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'antimony': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'female': ['actress', 'actress'], 'possess': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'soft': ['indium', 'In', 'atomic_number_49', 'indium', 'In', 'atomic_number_49'], 'place': ['be', 'follow', 'be', 'follow'], 'metallic': ['indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83', 'indium', 'In', 'atomic_number_49', 'bismuth', 'Bi', 'atomic_number_83'], 'appear': ['appear', 'appear'], 'results': ['devising', 'fashioning', 'making', 'devising', 'fashioning', 'making'], 'arsenic': ['bismuth', 'Bi', 'atomic_number_83', 'bismuth', 'Bi', 'atomic_number_83'], 'abstract': ['have', 'have_got', 'hold', 'have', 'have_got', 'hold'], 'function': ['be', 'follow', 'be', 'follow'], 'mockery': ['fun', 'play', 'sport', 'fun', 'play', 'sport'], 'heterocercal': ['shark', 'shark'], 'enclosed': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle', 'tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'numerous': ['shark', 'shark'], 'fishes': ['shark', 'shark'], 'along': ['hour_angle', 'HA', 'vine', 'hour_angle', 'HA', 'vine'], 'Laos': ['at', 'at'], 'cannon': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle', 'tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'observer': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'weak': ['vine', 'vine'], 'support': ['vine', 'vine'], 'angular': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'climbing': ['vine', 'vine'], 'moves': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle', 'tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'thrust': ['jab', 'prod', 'stab', 'poke', 'dig', 'jab', 'prod', 'stab', 'poke', 'dig'], 'another': ['fun', 'play', 'sport', 'fun', 'play', 'sport'], '100': ['at', 'at'], 'honored': ['fame', 'celebrity', 'renown', 'fame', 'celebrity', 'renown'], 'taken': ['fun', 'play', 'sport', 'fun', 'play', 'sport'], 'zenith': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'marine': ['shark', 'shark'], 'seriously': ['fun', 'play', 'sport', 'fun', 'play', 'sport'], 'armored': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle', 'tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'caterpillar': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle', 'tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'distance': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'acclaimed': ['fame', 'celebrity', 'renown', 'fame', 'celebrity', 'renown'], 'measured': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'particular': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'day': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'astronomy': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'caudal': ['shark', 'shark'], 'wit': ['fun', 'play', 'sport', 'fun', 'play', 'sport'], 'toothlike': ['shark', 'shark'], 'right': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'equator': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'location': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'abruptly': ['jab', 'prod', 'stab', 'poke', 'dig', 'jab', 'prod', 'stab', 'poke', 'dig'], 'plant': ['vine', 'vine'], 'quality': ['fame', 'celebrity', 'renown', 'fame', 'celebrity', 'renown'], 'man': ['chap', 'fellow', 'feller', 'fella', 'lad', 'gent', 'blighter', 'cuss', 'bloke', 'chap', 'fellow', 'feller', 'fella', 'lad', 'gent', 'blighter', 'cuss', 'bloke'], 'covered': ['shark', 'shark'], 'celestial': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'creeping': ['vine', 'vine'], 'tough': ['shark', 'shark'], 'equal': ['at', 'at'], 'military': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle', 'tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'scales': ['shark', 'shark'], 'carnivorous': ['shark', 'shark'], 'mostly': ['shark', 'shark'], 'point': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'often': ['fun', 'play', 'sport', 'fun', 'play', 'sport'], 'kip': ['at', 'at'], 'vehicle': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle', 'tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'treads': ['tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle', 'tank', 'army_tank', 'armored_combat_vehicle', 'armoured_combat_vehicle'], 'state': ['fame', 'celebrity', 'renown', 'fame', 'celebrity', 'renown'], 'widely': ['fame', 'celebrity', 'renown', 'fame', 'celebrity', 'renown'], 'expense': ['fun', 'play', 'sport', 'fun', 'play', 'sport'], '1': ['at', 'at'], 'boy': ['chap', 'fellow', 'feller', 'fella', 'lad', 'gent', 'blighter', 'cuss', 'bloke', 'chap', 'fellow', 'feller', 'fella', 'lad', 'gent', 'blighter', 'cuss', 'bloke'], 'verbal': ['fun', 'play', 'sport', 'fun', 'play', 'sport'], 'stem': ['vine', 'vine'], 'derives': ['vine', 'vine'], 'westward': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'elongate': ['shark', 'shark'], 'twining': ['vine', 'vine'], 'surface': ['vine', 'vine'], 'crossing': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'ascension': ['hour_angle', 'HA', 'hour_angle', 'HA'], 'skin': ['shark', 'shark'], 'poke': ['jab', 'prod', 'stab', 'poke', 'dig', 'jab', 'prod', 'stab', 'poke', 'dig'], 'fins': ['shark', 'shark']})
+Core number (sorted) : [('enclosed', 8), ('tank', 8), ('army_tank', 8), ('armored_combat_vehicle', 8), ('armoured_combat_vehicle', 8), ('cannon', 8), ('moves', 8), ('armored', 8), ('caterpillar', 8), ('military', 8), ('vehicle', 8), ('treads', 8), ('sense', 6), ('have', 6), ('have_got', 6), ('hold', 6), ('resembles', 6), ('bismuth', 6), ('Bi', 6), ('atomic_number_83', 6), ('by-product', 6), ('either', 6), ('act', 6), ('devising', 6), ('fashioning', 6), ('making', 6), ('sphalerite', 6), ('indium', 6), ('In', 6), ('atomic_number_49', 6), ('play', 6), ('small', 6), ('brittle', 6), ('trivalent', 6), ('something', 6), ('ores', 6), ('silvery', 6), ('concrete', 6), ('quantities', 6), ('chemically', 6), ('recovered', 6), ('heavy', 6), ('rare', 6), ('element', 6), ('coming', 6), ('metals', 6), ('occurs', 6), ('usually', 6), ('diamagnetic', 6), ('antimony', 6), ('possess', 6), ('soft', 6), ('metallic', 6), ('results', 6), ('arsenic', 6), ('abstract', 6), ('mockery', 6), ('fun', 6), ('sport', 6), ('thrust', 6), ('jab', 6), ('prod', 6), ('stab', 6), ('poke', 6), ('dig', 6), ('another', 6), ('honored', 6), ('fame', 6), ('celebrity', 6), ('renown', 6), ('taken', 6), ('seriously', 6), ('acclaimed', 6), ('wit', 6), ('abruptly', 6), ('quality', 6), ('often', 6), ('state', 6), ('widely', 6), ('expense', 6), ('verbal', 6), ('work', 4), ('be', 4), ('follow', 4), ('subject', 4), ('time', 4), ('hour_angle', 4), ('HA', 4), ('specific', 4), ('caption', 4), ('headline', 4), ('newspaper_headline', 4), ('article', 4), ('newspaper', 4), ('heading', 4), ('place', 4), ('function', 4), ('along', 4), ('observer', 4), ('angular', 4), ('zenith', 4), ('distance', 4), ('measured', 4), ('particular', 4), ('day', 4), ('astronomy', 4), ('right', 4), ('equator', 4), ('location', 4), ('man', 4), ('chap', 4), ('fellow', 4), ('feller', 4), ('fella', 4), ('lad', 4), ('gent', 4), ('blighter', 4), ('cuss', 4), ('bloke', 4), ('celestial', 4), ('point', 4), ('boy', 4), ('westward', 4), ('crossing', 4), ('ascension', 4), ('ever', 2), ('of_all_time', 2), ('appear', 2), ('shark', 2), ('stage', 2), ('character', 2), ('actor', 2), ('actress', 2), ('etc', 2), ('female', 2), ('heterocercal', 2), ('numerous', 2), ('fishes', 2), ('vine', 2), ('Laos', 2), ('at', 2), ('weak', 2), ('support', 2), ('climbing', 2), ('100', 2), ('marine', 2), ('caudal', 2), ('toothlike', 2), ('plant', 2), ('covered', 2), ('creeping', 2), ('tough', 2), ('equal', 2), ('scales', 2), ('carnivorous', 2), ('mostly', 2), ('kip', 2), ('1', 2), ('stem', 2), ('derives', 2), ('elongate', 2), ('twining', 2), ('surface', 2), ('skin', 2), ('fins', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: enclosed ,core number= 8
+This document belongs to class: tank ,core number= 8
+This document belongs to class: army_tank ,core number= 8
+This document belongs to class: armored_combat_vehicle ,core number= 8
+This document belongs to class: armoured_combat_vehicle ,core number= 8
+This document belongs to class: cannon ,core number= 8
+This document belongs to class: moves ,core number= 8
+This document belongs to class: armored ,core number= 8
+This document belongs to class: caterpillar ,core number= 8
+This document belongs to class: military ,core number= 8
+This document belongs to class: vehicle ,core number= 8
+This document belongs to class: treads ,core number= 8
+This document belongs to class: sense ,core number= 6
+This document belongs to class: have ,core number= 6
+This document belongs to class: have_got ,core number= 6
+This document belongs to class: hold ,core number= 6
+This document belongs to class: resembles ,core number= 6
+This document belongs to class: bismuth ,core number= 6
+	max_core_number 8
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[('shark', 0.04013364416332825), ('hour_angle', 0.029448979249955307), ('HA', 0.029448979249955307), ('vine', 0.02735513222167089), ('at', 0.017197297528549853), ('bismuth', 0.016594589183954157), ('Bi', 0.016594589183954157), ('atomic_number_83', 0.016594589183954157), ('man', 0.01580521109505688), ('boy', 0.01580521109505688), ('play', 0.013303057003309757), ('fun', 0.011223345775917536), ('sport', 0.011223345775917536), ('indium', 0.01108261461721473), ('In', 0.01108261461721473), ('atomic_number_49', 0.01108261461721473), ('be', 0.010236865361084986), ('follow', 0.010236865361084986), ('appear', 0.009787276437067706), ('headline', 0.008844778927592011), ('newspaper_headline', 0.008844778927592011), ('actress', 0.008844778927592011), ('tank', 0.008844778927592011), ('army_tank', 0.008844778927592011), ('armored_combat_vehicle', 0.008844778927592011), ('armoured_combat_vehicle', 0.008844778927592011), ('poke', 0.008757007341627463), ('time', 0.008198287117473018), ('have', 0.00791672130526336), ('have_got', 0.00791672130526336), ('hold', 0.00791672130526336), ('fame', 0.00791672130526336), ('celebrity', 0.00791672130526336), ('renown', 0.00791672130526336), ('thrust', 0.007460883120566344), ('abruptly', 0.007460883120566344), ('devising', 0.006988663682934707), ('fashioning', 0.006988663682934707), ('making', 0.006988663682934707), ('element', 0.006871730326264338), ('metallic', 0.006871730326264338), ('small', 0.00632454481551948), ('along', 0.00601667814202461), ('act', 0.005364562843859571), ('something', 0.005364562843859571), ('coming', 0.005364562843859571), ('results', 0.005364562843859571), ('sense', 0.004946936913811681), ('either', 0.004946936913811681), ('concrete', 0.004946936913811681), ('possess', 0.004946936913811681), ('abstract', 0.004946936913811681), ('honored', 0.004946936913811681), ('acclaimed', 0.004946936913811681), ('quality', 0.004946936913811681), ('state', 0.004946936913811681), ('widely', 0.004946936913811681), ('jab', 0.004686367210370567), ('prod', 0.004686367210370567), ('stab', 0.004686367210370567), ('dig', 0.004686367210370567), ('enclosed', 0.004668519627113087), ('cannon', 0.004668519627113087), ('moves', 0.004668519627113087), ('armored', 0.004668519627113087), ('caterpillar', 0.004668519627113087), ('military', 0.004668519627113087), ('vehicle', 0.004668519627113087), ('treads', 0.004668519627113087), ('caption', 0.004668519627113086), ('article', 0.004668519627113086), ('newspaper', 0.004668519627113086), ('actor', 0.004668519627113086), ('heading', 0.004668519627113086), ('female', 0.004668519627113086), ('mockery', 0.0045507074384286235), ('another', 0.0045507074384286235), ('taken', 0.0045507074384286235), ('seriously', 0.0045507074384286235), ('wit', 0.0045507074384286235), ('often', 0.0045507074384286235), ('expense', 0.0045507074384286235), ('verbal', 0.0045507074384286235), ('work', 0.004390102340414492), ('subject', 0.004390102340414492), ('specific', 0.004390102340414492), ('place', 0.004390102340414492), ('function', 0.004390102340414492), ('sphalerite', 0.004049941744427914), ('silvery', 0.004049941744427914), ('quantities', 0.004049941744427914), ('rare', 0.004049941744427914), ('occurs', 0.004049941744427914), ('soft', 0.004049941744427914), ('chap', 0.0038951382751725447), ('fellow', 0.0038951382751725447), ('feller', 0.0038951382751725447), ('fella', 0.0038951382751725447), ('lad', 0.0038951382751725447), ('gent', 0.0038951382751725447), ('blighter', 0.0038951382751725447), ('cuss', 0.0038951382751725447), ('bloke', 0.0038951382751725447), ('Laos', 0.0038332677670173017), ('100', 0.0038332677670173017), ('equal', 0.0038332677670173017), ('kip', 0.0038332677670173017), ('1', 0.0038332677670173017), ('resembles', 0.0037308794909273347), ('by-product', 0.0037308794909273347), ('brittle', 0.0037308794909273347), ('trivalent', 0.0037308794909273347), ('ores', 0.0037308794909273347), ('chemically', 0.0037308794909273347), ('recovered', 0.0037308794909273347), ('heavy', 0.0037308794909273347), ('metals', 0.0037308794909273347), ('usually', 0.0037308794909273347), ('diamagnetic', 0.0037308794909273347), ('antimony', 0.0037308794909273347), ('arsenic', 0.0037308794909273347), ('observer', 0.0036910962633050653), ('angular', 0.0036910962633050653), ('zenith', 0.0036910962633050653), ('distance', 0.0036910962633050653), ('measured', 0.0036910962633050653), ('particular', 0.0036910962633050653), ('day', 0.0036910962633050653), ('astronomy', 0.0036910962633050653), ('right', 0.0036910962633050653), ('equator', 0.0036910962633050653), ('location', 0.0036910962633050653), ('celestial', 0.0036910962633050653), ('point', 0.0036910962633050653), ('westward', 0.0036910962633050653), ('crossing', 0.0036910962633050653), ('ascension', 0.0036910962633050653), ('weak', 0.0032346727878104545), ('support', 0.0032346727878104545), ('climbing', 0.0032346727878104545), ('plant', 0.0032346727878104545), ('creeping', 0.0032346727878104545), ('stem', 0.0032346727878104545), ('derives', 0.0032346727878104545), ('twining', 0.0032346727878104545), ('surface', 0.0032346727878104545), ('heterocercal', 0.003183693980182475), ('numerous', 0.003183693980182475), ('fishes', 0.003183693980182475), ('marine', 0.003183693980182475), ('caudal', 0.003183693980182475), ('toothlike', 0.003183693980182475), ('covered', 0.003183693980182475), ('tough', 0.003183693980182475), ('scales', 0.003183693980182475), ('carnivorous', 0.003183693980182475), ('mostly', 0.003183693980182475), ('elongate', 0.003183693980182475), ('skin', 0.003183693980182475), ('fins', 0.003183693980182475), ('stage', 0.0029888021364831313), ('character', 0.0029888021364831313), ('etc', 0.0029888021364831313), ('ever', 0.002650871327569828), ('of_all_time', 0.002650871327569828)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.625
+Negativity =  0.375
+Objectivity =  8.0
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  enclosed :  0.0
+posscore of  enclosed :  0.0
+negscore of  tank :  0.0
+posscore of  tank :  0.0
+negscore of  cannon :  0.0
+posscore of  cannon :  0.0
+negscore of  moves :  0.0
+posscore of  moves :  0.0
+negscore of  armored :  0.0
+posscore of  armored :  0.0
+negscore of  military :  0.0
+posscore of  military :  0.0
+negscore of  vehicle :  0.0
+posscore of  vehicle :  0.0
+negscore of  treads :  0.0
+posscore of  treads :  0.0
+negscore of  sense :  0.0
+posscore of  sense :  0.375
+negscore of  have :  0.0
+posscore of  have :  0.0
+negscore of  hold :  0.0
+posscore of  hold :  0.0
+negscore of  act :  0.0
+posscore of  act :  0.0
+negscore of  devising :  0.0
+posscore of  devising :  0.0
+negscore of  making :  0.0
+posscore of  making :  0.0
+negscore of  In :  0.0
+posscore of  In :  0.0
+negscore of  play :  0.0
+posscore of  play :  0.0
+negscore of  small :  0.0
+posscore of  small :  0.0
+negscore of  brittle :  0.0
+posscore of  brittle :  0.0
+negscore of  silvery :  0.25
+posscore of  silvery :  0.0
+negscore of  concrete :  0.0
+posscore of  concrete :  0.0
+negscore of  quantities :  0.375
+posscore of  quantities :  0.0
+negscore of  recovered :  0.0
+posscore of  recovered :  0.0
+negscore of  heavy :  0.0
+posscore of  heavy :  0.0
+negscore of  rare :  0.0
+posscore of  rare :  0.25
+negscore of  element :  0.0
+posscore of  element :  0.0
+negscore of  coming :  0.0
+posscore of  coming :  0.0
+negscore of  metals :  0.0
+posscore of  metals :  0.0
+negscore of  occurs :  0.0
+posscore of  occurs :  0.0
+negscore of  possess :  0.0
+posscore of  possess :  0.125
+negscore of  soft :  0.25
+posscore of  soft :  0.0
+negscore of  metallic :  0.0
+posscore of  metallic :  0.0
+negscore of  results :  0.0
+posscore of  results :  0.0
+negscore of  abstract :  0.0
+posscore of  abstract :  0.0
+negscore of  mockery :  0.375
+posscore of  mockery :  0.375
+negscore of  fun :  0.0
+posscore of  fun :  0.375
+negscore of  sport :  0.25
+posscore of  sport :  0.25
+negscore of  thrust :  0.125
+posscore of  thrust :  0.0
+negscore of  jab :  0.0
+posscore of  jab :  0.25
+negscore of  prod :  0.0
+posscore of  prod :  0.0
+negscore of  stab :  0.375
+posscore of  stab :  0.0
+negscore of  poke :  0.0
+posscore of  poke :  0.0
+negscore of  dig :  0.0
+posscore of  dig :  0.0
+negscore of  honored :  0.0
+posscore of  honored :  0.375
+negscore of  taken :  0.0
+posscore of  taken :  0.0
+negscore of  wit :  0.0
+posscore of  wit :  0.0
+negscore of  quality :  0.0
+posscore of  quality :  0.375
+negscore of  often :  0.0
+posscore of  often :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  widely :  0.0
+posscore of  widely :  0.0
+negscore of  expense :  0.0
+posscore of  expense :  0.0
+negscore of  verbal :  0.0
+posscore of  verbal :  0.0
+negscore of  work :  0.0
+posscore of  work :  0.0
+negscore of  be :  0.0
+posscore of  be :  0.0
+negscore of  follow :  0.0
+posscore of  follow :  0.0
+negscore of  subject :  0.0
+posscore of  subject :  0.0
+negscore of  time :  0.0
+posscore of  time :  0.0
+negscore of  specific :  0.0
+posscore of  specific :  0.0
+negscore of  caption :  0.0
+posscore of  caption :  0.25
+negscore of  headline :  0.0
+posscore of  headline :  0.0
+negscore of  article :  0.0
+posscore of  article :  0.0
+negscore of  newspaper :  0.0
+posscore of  newspaper :  0.0
+negscore of  heading :  0.0
+posscore of  heading :  0.0
+negscore of  place :  0.0
+posscore of  place :  0.0
+negscore of  function :  0.0
+posscore of  function :  0.0
+negscore of  along :  0.0
+posscore of  along :  0.0
+negscore of  distance :  0.0
+posscore of  distance :  0.0
+negscore of  measured :  0.0
+posscore of  measured :  0.0
+negscore of  particular :  0.0
+posscore of  particular :  0.0
+negscore of  day :  0.0
+posscore of  day :  0.0
+negscore of  right :  0.0
+posscore of  right :  0.0
+negscore of  location :  0.0
+posscore of  location :  0.0
+negscore of  man :  0.0
+posscore of  man :  0.0
+negscore of  chap :  0.0
+posscore of  chap :  0.0
+negscore of  fellow :  0.0
+posscore of  fellow :  0.0
+negscore of  gent :  0.375
+posscore of  gent :  0.0
+negscore of  cuss :  0.0
+posscore of  cuss :  0.0
+negscore of  celestial :  0.0
+posscore of  celestial :  0.0
+negscore of  point :  0.0
+posscore of  point :  0.0
+negscore of  boy :  0.0
+posscore of  boy :  0.25
+negscore of  westward :  0.0
+posscore of  westward :  0.0
+negscore of  crossing :  0.0
+posscore of  crossing :  0.0
+negscore of  ascension :  0.0
+posscore of  ascension :  0.0
+negscore of  ever :  0.0
+posscore of  ever :  0.0
+negscore of  appear :  0.0
+posscore of  appear :  0.0
+negscore of  shark :  0.0
+posscore of  shark :  0.0
+negscore of  stage :  0.0
+posscore of  stage :  0.0
+negscore of  character :  0.0
+posscore of  character :  0.0
+negscore of  female :  0.0
+posscore of  female :  0.0
+negscore of  fishes :  0.0
+posscore of  fishes :  0.0
+negscore of  Laos :  0.0
+posscore of  Laos :  0.0
+negscore of  weak :  0.5
+posscore of  weak :  0.125
+negscore of  support :  0.0
+posscore of  support :  0.0
+negscore of  climbing :  0.0
+posscore of  climbing :  0.0
+negscore of  marine :  0.0
+posscore of  marine :  0.0
+negscore of  caudal :  0.0
+posscore of  caudal :  0.0
+negscore of  plant :  0.0
+posscore of  plant :  0.0
+negscore of  covered :  0.0
+posscore of  covered :  0.0
+negscore of  creeping :  0.0
+posscore of  creeping :  0.0
+negscore of  tough :  0.0
+posscore of  tough :  0.0
+negscore of  equal :  0.0
+posscore of  equal :  0.0
+negscore of  scales :  0.25
+posscore of  scales :  0.0
+negscore of  kip :  0.0
+posscore of  kip :  0.0
+negscore of  stem :  0.0
+posscore of  stem :  0.0
+negscore of  derives :  0.0
+posscore of  derives :  0.0
+negscore of  elongate :  0.0
+posscore of  elongate :  0.0
+negscore of  twining :  0.0
+posscore of  twining :  0.0
+negscore of  surface :  0.0
+posscore of  surface :  0.0
+negscore of  skin :  0.0
+posscore of  skin :  0.0
+negscore of  fins :  0.0
+posscore of  fins :  0.0
+clique: ['work', 'be']
+clique: ['work', 'follow']
+clique: ['fishes', 'shark']
+clique: ['resembles', 'Bi']
+clique: ['resembles', 'bismuth']
+clique: ['resembles', 'atomic_number_83']
+clique: ['stab', 'poke', 'thrust']
+clique: ['stab', 'poke', 'abruptly']
+clique: ['fun', 'mockery']
+clique: ['fun', 'often']
+clique: ['fun', 'taken']
+clique: ['fun', 'verbal']
+clique: ['fun', 'wit']
+clique: ['fun', 'seriously']
+clique: ['fun', 'another']
+clique: ['fun', 'expense']
+clique: ['moves', 'armoured_combat_vehicle']
+clique: ['moves', 'tank']
+clique: ['moves', 'army_tank']
+clique: ['moves', 'armored_combat_vehicle']
+clique: ['thrust', 'poke', 'prod']
+clique: ['thrust', 'poke', 'dig']
+clique: ['thrust', 'poke', 'jab']
+clique: ['armored_combat_vehicle', 'enclosed']
+clique: ['armored_combat_vehicle', 'cannon']
+clique: ['armored_combat_vehicle', 'armored']
+clique: ['armored_combat_vehicle', 'caterpillar']
+clique: ['armored_combat_vehicle', 'vehicle']
+clique: ['armored_combat_vehicle', 'treads']
+clique: ['armored_combat_vehicle', 'military']
+clique: ['100', 'at']
+clique: ['sphalerite', 'atomic_number_49']
+clique: ['sphalerite', 'In']
+clique: ['sphalerite', 'indium']
+clique: ['honored', 'fame']
+clique: ['honored', 'celebrity']
+clique: ['honored', 'renown']
+clique: ['taken', 'play']
+clique: ['taken', 'sport']
+clique: ['small', 'atomic_number_49']
+clique: ['small', 'In']
+clique: ['small', 'shark']
+clique: ['small', 'indium']
+clique: ['vine', 'twining']
+clique: ['vine', 'creeping']
+clique: ['vine', 'stem']
+clique: ['vine', 'along']
+clique: ['vine', 'surface']
+clique: ['vine', 'support']
+clique: ['vine', 'weak']
+clique: ['vine', 'derives']
+clique: ['vine', 'plant']
+clique: ['vine', 'climbing']
+clique: ['stage', 'appear']
+clique: ['trivalent', 'Bi']
+clique: ['trivalent', 'bismuth']
+clique: ['trivalent', 'atomic_number_83']
+clique: ['seriously', 'play']
+clique: ['seriously', 'sport']
+clique: ['concrete', 'have']
+clique: ['concrete', 'hold']
+clique: ['concrete', 'have_got']
+clique: ['headline', 'article']
+clique: ['headline', 'caption']
+clique: ['headline', 'heading']
+clique: ['headline', 'newspaper']
+clique: ['fame', 'quality']
+clique: ['fame', 'widely']
+clique: ['fame', 'acclaimed']
+clique: ['fame', 'state']
+clique: ['specific', 'be']
+clique: ['specific', 'follow']
+clique: ['caption', 'newspaper_headline']
+clique: ['acclaimed', 'celebrity']
+clique: ['acclaimed', 'renown']
+clique: ['actor', 'actress']
+clique: ['heading', 'newspaper_headline']
+clique: ['wit', 'play']
+clique: ['wit', 'sport']
+clique: ['antimony', 'Bi']
+clique: ['antimony', 'bismuth']
+clique: ['antimony', 'atomic_number_83']
+clique: ['female', 'actress']
+clique: ['possess', 'have']
+clique: ['possess', 'hold']
+clique: ['possess', 'have_got']
+clique: ['soft', 'atomic_number_49']
+clique: ['soft', 'In']
+clique: ['soft', 'indium']
+clique: ['renown', 'quality']
+clique: ['renown', 'widely']
+clique: ['renown', 'state']
+clique: ['place', 'be']
+clique: ['place', 'follow']
+clique: ['quality', 'celebrity']
+clique: ['results', 'making']
+clique: ['results', 'devising']
+clique: ['results', 'fashioning']
+clique: ['hold', 'sense']
+clique: ['hold', 'abstract']
+clique: ['hold', 'either']
+clique: ['arsenic', 'Bi']
+clique: ['arsenic', 'bismuth']
+clique: ['arsenic', 'atomic_number_83']
+clique: ['function', 'be']
+clique: ['function', 'follow']
+clique: ['cuss', 'boy']
+clique: ['cuss', 'man']
+clique: ['lad', 'boy']
+clique: ['lad', 'man']
+clique: ['tough', 'shark']
+clique: ['of_all_time', 'time']
+clique: ['making', 'coming']
+clique: ['making', 'act']
+clique: ['making', 'something']
+clique: ['military', 'armoured_combat_vehicle']
+clique: ['military', 'tank']
+clique: ['military', 'army_tank']
+clique: ['at', 'kip']
+clique: ['at', '1']
+clique: ['at', 'equal']
+clique: ['at', 'Laos']
+clique: ['mostly', 'shark']
+clique: ['be', 'subject']
+clique: ['often', 'play']
+clique: ['often', 'sport']
+clique: ['brittle', 'Bi']
+clique: ['brittle', 'bismuth']
+clique: ['brittle', 'atomic_number_83']
+clique: ['celebrity', 'widely']
+clique: ['celebrity', 'state']
+clique: ['something', 'devising']
+clique: ['something', 'fashioning']
+clique: ['chemically', 'Bi']
+clique: ['chemically', 'bismuth']
+clique: ['chemically', 'atomic_number_83']
+clique: ['heavy', 'Bi']
+clique: ['heavy', 'bismuth']
+clique: ['heavy', 'atomic_number_83']
+clique: ['fella', 'boy']
+clique: ['fella', 'man']
+clique: ['ever', 'time']
+clique: ['armoured_combat_vehicle', 'enclosed']
+clique: ['armoured_combat_vehicle', 'cannon']
+clique: ['armoured_combat_vehicle', 'armored']
+clique: ['armoured_combat_vehicle', 'caterpillar']
+clique: ['armoured_combat_vehicle', 'vehicle']
+clique: ['armoured_combat_vehicle', 'treads']
+clique: ['have_got', 'sense']
+clique: ['have_got', 'abstract']
+clique: ['have_got', 'either']
+clique: ['atomic_number_83', 'usually']
+clique: ['atomic_number_83', 'element']
+clique: ['atomic_number_83', 'metals']
+clique: ['atomic_number_83', 'ores']
+clique: ['atomic_number_83', 'by-product']
+clique: ['atomic_number_83', 'recovered']
+clique: ['atomic_number_83', 'metallic']
+clique: ['atomic_number_83', 'diamagnetic']
+clique: ['rare', 'atomic_number_49']
+clique: ['rare', 'In']
+clique: ['rare', 'indium']
+clique: ['element', 'bismuth']
+clique: ['element', 'indium']
+clique: ['element', 'Bi']
+clique: ['element', 'atomic_number_49']
+clique: ['element', 'In']
+clique: ['coming', 'devising']
+clique: ['coming', 'fashioning']
+clique: ['usually', 'Bi']
+clique: ['usually', 'bismuth']
+clique: ['etc', 'appear']
+clique: ['shark', 'caudal']
+clique: ['shark', 'heterocercal']
+clique: ['shark', 'covered']
+clique: ['shark', 'numerous']
+clique: ['shark', 'toothlike']
+clique: ['shark', 'marine']
+clique: ['shark', 'skin']
+clique: ['shark', 'elongate']
+clique: ['shark', 'scales']
+clique: ['shark', 'carnivorous']
+clique: ['shark', 'fins']
+clique: ['chap', 'boy']
+clique: ['chap', 'man']
+clique: ['metallic', 'bismuth']
+clique: ['metallic', 'indium']
+clique: ['metallic', 'Bi']
+clique: ['metallic', 'atomic_number_49']
+clique: ['metallic', 'In']
+clique: ['poke', 'abruptly', 'prod']
+clique: ['poke', 'abruptly', 'dig']
+clique: ['poke', 'abruptly', 'jab']
+clique: ['abstract', 'have']
+clique: ['feller', 'boy']
+clique: ['feller', 'man']
+clique: ['mockery', 'play']
+clique: ['mockery', 'sport']
+clique: ['enclosed', 'tank']
+clique: ['enclosed', 'army_tank']
+clique: ['cannon', 'tank']
+clique: ['cannon', 'army_tank']
+clique: ['newspaper_headline', 'article']
+clique: ['newspaper_headline', 'newspaper']
+clique: ['by-product', 'Bi']
+clique: ['by-product', 'bismuth']
+clique: ['fashioning', 'act']
+clique: ['either', 'have']
+clique: ['another', 'play']
+clique: ['another', 'sport']
+clique: ['HA', 'celestial']
+clique: ['HA', 'along']
+clique: ['HA', 'time']
+clique: ['HA', 'observer']
+clique: ['HA', 'angular']
+clique: ['HA', 'measured']
+clique: ['HA', 'particular']
+clique: ['HA', 'westward']
+clique: ['HA', 'day']
+clique: ['HA', 'astronomy']
+clique: ['HA', 'point']
+clique: ['HA', 'zenith']
+clique: ['HA', 'right']
+clique: ['HA', 'equator']
+clique: ['HA', 'location']
+clique: ['HA', 'crossing']
+clique: ['HA', 'ascension']
+clique: ['HA', 'distance']
+clique: ['play', 'appear']
+clique: ['play', 'verbal']
+clique: ['play', 'expense']
+clique: ['sport', 'verbal']
+clique: ['sport', 'expense']
+clique: ['army_tank', 'caterpillar']
+clique: ['army_tank', 'armored']
+clique: ['army_tank', 'vehicle']
+clique: ['army_tank', 'treads']
+clique: ['ores', 'Bi']
+clique: ['ores', 'bismuth']
+clique: ['armored', 'tank']
+clique: ['caterpillar', 'tank']
+clique: ['recovered', 'Bi']
+clique: ['recovered', 'bismuth']
+clique: ['have', 'sense']
+clique: ['In', 'silvery']
+clique: ['In', 'quantities']
+clique: ['In', 'occurs']
+clique: ['tank', 'vehicle']
+clique: ['tank', 'treads']
+clique: ['occurs', 'atomic_number_49']
+clique: ['occurs', 'indium']
+clique: ['diamagnetic', 'Bi']
+clique: ['diamagnetic', 'bismuth']
+clique: ['man', 'gent']
+clique: ['man', 'fellow']
+clique: ['man', 'blighter']
+clique: ['man', 'bloke']
+clique: ['devising', 'act']
+clique: ['subject', 'follow']
+clique: ['bismuth', 'metals']
+clique: ['fellow', 'boy']
+clique: ['hour_angle', 'celestial']
+clique: ['hour_angle', 'along']
+clique: ['hour_angle', 'time']
+clique: ['hour_angle', 'observer']
+clique: ['hour_angle', 'angular']
+clique: ['hour_angle', 'measured']
+clique: ['hour_angle', 'particular']
+clique: ['hour_angle', 'westward']
+clique: ['hour_angle', 'day']
+clique: ['hour_angle', 'astronomy']
+clique: ['hour_angle', 'point']
+clique: ['hour_angle', 'zenith']
+clique: ['hour_angle', 'right']
+clique: ['hour_angle', 'equator']
+clique: ['hour_angle', 'location']
+clique: ['hour_angle', 'crossing']
+clique: ['hour_angle', 'ascension']
+clique: ['hour_angle', 'distance']
+clique: ['bloke', 'boy']
+clique: ['silvery', 'atomic_number_49']
+clique: ['silvery', 'indium']
+clique: ['quantities', 'atomic_number_49']
+clique: ['quantities', 'indium']
+clique: ['boy', 'gent']
+clique: ['boy', 'blighter']
+clique: ['metals', 'Bi']
+clique: ['character', 'appear']
+==================================================================================
+Sentiment Analysis (Markov Random Fields Cliques Belief Propagation) of the opinion
+==================================================================================
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 31278176398335.59
+VADER sentiment: {'neg': 0.0, 'neu': 0.721, 'pos': 0.279, 'compound': 0.7351}
+Empath sentiment: vacation
+         Date  ...                                            Summary
+0  3-Jan-2023  ...  Credit: Urfi Javed/InstagramTelevision actress...
+1  4-Jan-2023  ...  Shark Tank India‘s Vineeta Singh poked fun at ...
+
+[2 rows x 5 columns]
+summarizedopinion:  Credit: Urfi Javed/InstagramTelevision actress Urfi Javed has been making headlines ever since she appeared in Bi Shark Tank India‘s Vineeta Singh poked fun at how fame has ‘changed’ her fellow ‘shark’ Aman Gupta.
+Vine
+Opinion mining - multipolar electronic voting machine ballots - votes array for the query [ Uorfi Javed, DMRC ] for population of size  2 : [((8.75, {'pos': 0.25, 'neg': 0.125, 'obj': 8.625}), (0.0, {'polarity': 0.0, 'subjectivity': 0.0}), (-0.25000000000000444, {'dfs_bp_pos': 41.0, 'core_bp_pos': 2.000062999999999, 'core_bp_neg': 2.2500630000000035}), (1.479766012970286e-15, {'pos': 0.0, 'neg': 0.0, 'obj': 1.479766012970286e-15}), (1.3818, {'neg': 0.0, 'neu': 0.852, 'pos': 0.148, 'compound': 0.3818}), (0.0, {'help': 0.0, 'office': 0.0, 'dance': 0.0, 'money': 0.0, 'wedding': 0.0, 'domestic_work': 0.0, 'sleep': 0.0, 'medical_emergency': 0.0, 'cold': 0.0, 'hate': 0.0, 'cheerfulness': 0.0, 'aggression': 0.0, 'occupation': 0.0, 'envy': 0.0, 'anticipation': 0.0, 'family': 0.0, 'vacation': 0.0, 'crime': 0.0, 'attractive': 0.0, 'masculine': 0.0, 'prison': 0.0, 'health': 0.0, 'pride': 0.0, 'dispute': 0.0, 'nervousness': 0.0, 'government': 0.0, 'weakness': 0.0, 'horror': 0.0, 'swearing_terms': 0.0, 'leisure': 0.0, 'suffering': 0.0, 'royalty': 0.0, 'wealthy': 0.0, 'tourism': 0.0, 'furniture': 0.0, 'school': 0.0, 'magic': 0.0, 'beach': 0.0, 'journalism': 0.0, 'morning': 0.0, 'banking': 0.0, 'social_media': 0.0, 'exercise': 0.0, 'night': 0.0, 'kill': 0.0, 'blue_collar_job': 0.0, 'art': 0.0, 'ridicule': 0.0, 'play': 0.0, 'computer': 0.0, 'college': 0.0, 'optimism': 0.0, 'stealing': 0.0, 'real_estate': 0.0, 'home': 0.0, 'divine': 0.0, 'sexual': 0.0, 'fear': 0.0, 'irritability': 0.0, 'superhero': 0.0, 'business': 0.0, 'driving': 0.0, 'pet': 0.0, 'childish': 0.0, 'cooking': 0.0, 'exasperation': 0.0, 'religion': 0.0, 'hipster': 0.0, 'internet': 0.0, 'surprise': 0.0, 'reading': 0.0, 'worship': 0.0, 'leader': 0.0, 'independence': 0.0, 'movement': 0.0, 'body': 0.0, 'noise': 0.0, 'eating': 0.0, 'medieval': 0.0, 'zest': 0.0, 'confusion': 0.0, 'water': 0.0, 'sports': 0.0, 'death': 0.0, 'healing': 0.0, 'legend': 0.0, 'heroic': 0.0, 'celebration': 0.0, 'restaurant': 0.0, 'violence': 0.0, 'programming': 0.0, 'dominant_heirarchical': 0.0, 'military': 0.0, 'neglect': 0.0, 'swimming': 0.0, 'exotic': 0.0, 'love': 0.0, 'hiking': 0.0, 'communication': 0.0, 'hearing': 0.0, 'order': 0.0, 'sympathy': 0.0, 'hygiene': 0.0, 'weather': 0.0, 'anonymity': 0.0, 'trust': 0.0, 'ancient': 0.0, 'deception': 0.0, 'fabric': 0.0, 'air_travel': 0.0, 'fight': 0.0, 'dominant_personality': 0.0, 'music': 0.0, 'vehicle': 0.0, 'politeness': 0.0, 'toy': 0.0, 'farming': 0.0, 'meeting': 0.0, 'war': 0.0, 'speaking': 0.0, 'listen': 0.0, 'urban': 0.0, 'shopping': 0.0, 'disgust': 0.0, 'fire': 0.0, 'tool': 0.0, 'phone': 0.0, 'gain': 0.0, 'sound': 0.0, 'injury': 0.0, 'sailing': 0.0, 'rage': 0.0, 'science': 0.0, 'work': 0.0, 'appearance': 0.0, 'valuable': 0.0, 'warmth': 0.0, 'youth': 0.0, 'sadness': 0.0, 'fun': 0.0, 'emotional': 0.0, 'joy': 0.0, 'affection': 0.0, 'traveling': 0.0, 'fashion': 0.0, 'ugliness': 0.0, 'lust': 0.0, 'shame': 0.0, 'torment': 0.0, 'economics': 0.0, 'anger': 0.0, 'politics': 0.0, 'ship': 0.0, 'clothing': 0.0, 'car': 0.0, 'strength': 0.0, 'technology': 0.0, 'breaking': 0.0, 'shape_and_size': 0.0, 'power': 0.0, 'white_collar_job': 0.0, 'animal': 0.0, 'party': 0.0, 'terrorism': 0.0, 'smell': 0.0, 'disappointment': 0.0, 'poor': 0.0, 'plant': 0.0, 'pain': 0.0, 'beauty': 0.0, 'timidity': 0.0, 'philosophy': 0.0, 'negotiate': 0.0, 'negative_emotion': 0.0, 'cleaning': 0.0, 'messaging': 0.0, 'competing': 0.0, 'law': 0.0, 'friends': 0.0, 'payment': 0.0, 'achievement': 0.0, 'alcohol': 0.0, 'liquid': 0.0, 'feminine': 0.0, 'weapon': 0.0, 'children': 0.0, 'monster': 0.0, 'ocean': 0.0, 'giving': 0.0, 'contentment': 0.0, 'writing': 0.0, 'rural': 0.0, 'positive_emotion': 0.0, 'musical': 0.0})), ((8.25, {'pos': 0.625, 'neg': 0.375, 'obj': 8.0}), (0.5, {'polarity': 0.3, 'subjectivity': 0.2}), (-4.156251000000004, {'dfs_bp_pos': 74.046875, 'core_bp_pos': 5.500150000000009, 'core_bp_neg': 5.375151000000013}), (31278176398335.59, {'pos': 0.0, 'neg': 0.0, 'obj': 31278176398335.59}), (1.7351, {'neg': 0.0, 'neu': 0.721, 'pos': 0.279, 'compound': 0.7351}), (0.05555555555555555, {'help': 0.0, 'office': 0.0, 'dance': 0.0, 'money': 0.0, 'wedding': 0.0, 'domestic_work': 0.0, 'sleep': 0.0, 'medical_emergency': 0.0, 'cold': 0.0, 'hate': 0.0, 'cheerfulness': 0.0, 'aggression': 0.0, 'occupation': 0.0, 'envy': 0.0, 'anticipation': 0.0, 'family': 0.0, 'vacation': 0.05555555555555555, 'crime': 0.0, 'attractive': 0.0, 'masculine': 0.0, 'prison': 0.0, 'health': 0.0, 'pride': 0.0, 'dispute': 0.0, 'nervousness': 0.0, 'government': 0.0, 'weakness': 0.0, 'horror': 0.0, 'swearing_terms': 0.0, 'leisure': 0.05555555555555555, 'suffering': 0.0, 'royalty': 0.0, 'wealthy': 0.05555555555555555, 'tourism': 0.0, 'furniture': 0.0, 'school': 0.0, 'magic': 0.0, 'beach': 0.0, 'journalism': 0.0, 'morning': 0.0, 'banking': 0.0, 'social_media': 0.0, 'exercise': 0.0, 'night': 0.0, 'kill': 0.0, 'blue_collar_job': 0.0, 'art': 0.0, 'ridicule': 0.0, 'play': 0.05555555555555555, 'computer': 0.0, 'college': 0.0, 'optimism': 0.05555555555555555, 'stealing': 0.0, 'real_estate': 0.0, 'home': 0.0, 'divine': 0.0, 'sexual': 0.0, 'fear': 0.0, 'irritability': 0.0, 'superhero': 0.0, 'business': 0.0, 'driving': 0.0, 'pet': 0.0, 'childish': 0.05555555555555555, 'cooking': 0.0, 'exasperation': 0.0, 'religion': 0.0, 'hipster': 0.0, 'internet': 0.0, 'surprise': 0.0, 'reading': 0.0, 'worship': 0.0, 'leader': 0.0, 'independence': 0.0, 'movement': 0.0, 'body': 0.0, 'noise': 0.0, 'eating': 0.0, 'medieval': 0.0, 'zest': 0.0, 'confusion': 0.0, 'water': 0.0, 'sports': 0.0, 'death': 0.0, 'healing': 0.0, 'legend': 0.0, 'heroic': 0.0, 'celebration': 0.05555555555555555, 'restaurant': 0.0, 'violence': 0.0, 'programming': 0.0, 'dominant_heirarchical': 0.0, 'military': 0.0, 'neglect': 0.0, 'swimming': 0.0, 'exotic': 0.0, 'love': 0.0, 'hiking': 0.0, 'communication': 0.0, 'hearing': 0.0, 'order': 0.0, 'sympathy': 0.0, 'hygiene': 0.0, 'weather': 0.0, 'anonymity': 0.0, 'trust': 0.0, 'ancient': 0.0, 'deception': 0.0, 'fabric': 0.0, 'air_travel': 0.0, 'fight': 0.0, 'dominant_personality': 0.0, 'music': 0.0, 'vehicle': 0.0, 'politeness': 0.0, 'toy': 0.05555555555555555, 'farming': 0.0, 'meeting': 0.0, 'war': 0.0, 'speaking': 0.0, 'listen': 0.0, 'urban': 0.0, 'shopping': 0.0, 'disgust': 0.0, 'fire': 0.0, 'tool': 0.0, 'phone': 0.0, 'gain': 0.0, 'sound': 0.0, 'injury': 0.0, 'sailing': 0.0, 'rage': 0.0, 'science': 0.0, 'work': 0.0, 'appearance': 0.0, 'valuable': 0.0, 'warmth': 0.0, 'youth': 0.05555555555555555, 'sadness': 0.0, 'fun': 0.05555555555555555, 'emotional': 0.0, 'joy': 0.0, 'affection': 0.0, 'traveling': 0.0, 'fashion': 0.0, 'ugliness': 0.0, 'lust': 0.0, 'shame': 0.0, 'torment': 0.0, 'economics': 0.0, 'anger': 0.0, 'politics': 0.0, 'ship': 0.0, 'clothing': 0.0, 'car': 0.0, 'strength': 0.0, 'technology': 0.0, 'breaking': 0.0, 'shape_and_size': 0.0, 'power': 0.0, 'white_collar_job': 0.0, 'animal': 0.0, 'party': 0.05555555555555555, 'terrorism': 0.0, 'smell': 0.0, 'disappointment': 0.0, 'poor': 0.0, 'plant': 0.0, 'pain': 0.0, 'beauty': 0.0, 'timidity': 0.0, 'philosophy': 0.0, 'negotiate': 0.0, 'negative_emotion': 0.0, 'cleaning': 0.0, 'messaging': 0.0, 'competing': 0.0, 'law': 0.0, 'friends': 0.05555555555555555, 'payment': 0.0, 'achievement': 0.0, 'alcohol': 0.0, 'liquid': 0.0, 'feminine': 0.0, 'weapon': 0.0, 'children': 0.05555555555555555, 'monster': 0.0, 'ocean': 0.0, 'giving': 0.0, 'contentment': 0.0, 'writing': 0.0, 'rural': 0.0, 'positive_emotion': 0.0, 'musical': 0.0}))]
+Opinion mining - polled votes (average of objective-subjective(positive and negative) scores) on the query [ Uorfi Javed, DMRC ] for population of size  2 : 1.2241518518518517
+query: State Bank of India, Online banking, Unified Payments Interface, YONO, Downtime
+'NoneType' object is not iterable
+'NoneType' object is not iterable
+'NoneType' object is not iterable
+Empty DataFrame
+Columns: []
+Index: []
+summarizedopinion: 
+Opinion mining - multipolar electronic voting machine ballots - votes array for the query [ State Bank of India, Online banking, Unified Payments Interface, YONO, Downtime ] for population of size  0 : []
+Opinion mining - polled votes (average of objective-subjective(positive and negative) scores) on the query [ State Bank of India, Online banking, Unified Payments Interface, YONO, Downtime ] for population of size  0 : 0

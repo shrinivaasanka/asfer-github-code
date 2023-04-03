@@ -39,7 +39,7 @@ def sentiment_analyzer(text,algorithm=None):
          print("K-Core DFS belief_propagated_negscore:",float(dfs_belief_propagated_negscore))
          print("Core Number belief_propagated_posscore:",float(core_belief_propagated_posscore))
          print("Core Number belief_propagated_negscore:",float(core_belief_propagated_negscore))
-         vote=(float(dfs_belief_propagated_posscore) + float(dfs_belief_propagated_negscore) + float(core_belief_propagated_posscore) + float(core_belief_propagated_negscore),{"dfs_bp_pos":float(dfs_belief_propagated_posscore) , "dfs_bp_pos":float(dfs_belief_propagated_negscore) , "core_bp_pos":float(core_belief_propagated_posscore) , "core_bp_neg":float(core_belief_propagated_negscore)})
+         vote=(float(dfs_belief_propagated_posscore) - float(dfs_belief_propagated_negscore) + float(core_belief_propagated_posscore) - float(core_belief_propagated_negscore),{"dfs_bp_pos":float(dfs_belief_propagated_posscore) , "dfs_bp_pos":float(dfs_belief_propagated_negscore) , "core_bp_pos":float(core_belief_propagated_posscore) , "core_bp_neg":float(core_belief_propagated_negscore)})
     if algorithm=="RGO_Belief_Propagation_MRF":
          outputfile = 'Opinion-RGO-MRF-BeliefPropagation-SentimentAnalysis.txt'
          output = open(outputfile, 'w')
@@ -51,7 +51,7 @@ def sentiment_analyzer(text,algorithm=None):
          print("Positivity:",posscore)
          print("Negativity:",negscore)
          print("Objectivity:",objscore)
-         vote=(posscore+negscore+objscore,{"pos":posscore,"neg":negscore,"obj":objscore})
+         vote=(posscore-negscore+objscore,{"pos":posscore,"neg":negscore,"obj":objscore})
     if algorithm=="TextBlob":
          textblobsummary=TextBlob(text)
          print("==================================================================================")
@@ -67,15 +67,13 @@ def sentiment_analyzer(text,algorithm=None):
          print("Positivity:",posscore)
          print("Negativity:",negscore)
          print("Objectivity:",objscore)
-         vote=(posscore+negscore+objscore,{"pos":posscore,"neg":negscore,"obj":objscore})
+         vote=(posscore-negscore+objscore,{"pos":posscore,"neg":negscore,"obj":objscore})
     if algorithm=="VADER":
          senti=SentimentIntensityAnalyzer()
          sentiscores=senti.polarity_scores(text)
          votescores=0
          print("VADER sentiment:",sentiscores)
-         for ss in sentiscores:
-            votescores+=sentiscores[ss]
-         vote=(votescores,sentiscores)
+         vote=(sentiscores['pos']-sentiscores['neg']+sentiscores['neu']+sentiscores['compound'],sentiscores)
     if algorithm=="empath":
          empathsenti=Empath()
          empathdict=empathsenti.analyze(text,normalize=True)
@@ -84,7 +82,7 @@ def sentiment_analyzer(text,algorithm=None):
          vote=(empathdict[maxvaluecategory],empathdict)
     return vote
 
-def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefraction=0.2):
+def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefraction=0.2,UseNeuronRainSentimentAnalyzer=False):
     gn=GoogleNews(start=fromdate,end=todate)
     gn.search(query)
     opinion=[]
@@ -123,7 +121,10 @@ def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefracti
                 voteempath=sentiment_analyzer(article.summary[:articleslice],algorithm="empath")
                 multipolarvotes.append((votesw,votetb,votergobp,votergobpmrf,votevader,voteempath))
                 populationsample+=1
-                voteensemble=float(votesw[0]+votetb[0]+votergobp[0]+votergobpmrf[0]+votevader[0]+voteempath[0])/6.0
+                if UseNeuronRainSentimentAnalyzer:
+                    voteensemble=float(votesw[0]+votetb[0]+votergobp[0]+votergobpmrf[0]+votevader[0]+voteempath[0])/6.0
+                else:
+                    voteensemble=float(votetb[0]+votevader[0]+voteempath[0])/3.0
                 totalvotes+=voteensemble
                 opinion.append(newsjson)
                 summarizedopinion+= " " + article.summary[:articleslice]
@@ -154,6 +155,8 @@ def opinion_mining_from_google_trends(query=None,fromdate='01/01/2023',todate='0
 if __name__=="__main__":
     #opinion_mining("Chennai Metropolitan Area Expansion","27/02/2023","01/03/2023")
     #opinion_mining("Stock market volatility","01/01/2023","01/03/2023")
-    opinion_mining_from_google_trends(fromdate="01/03/2023",todate="29/03/2023")
+    opinion_mining_from_google_trends(fromdate="01/03/2023",todate="01/04/2023")
+    #opinion_mining("Karnataka assembly elections Congress","01/01/2023","01/04/2023")
+    #opinion_mining("Karnataka assembly elections BJP","01/01/2023","01/04/2023")
 
 
