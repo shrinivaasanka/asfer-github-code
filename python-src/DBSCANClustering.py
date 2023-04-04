@@ -116,15 +116,19 @@ class DBSCAN(object):
         if not neuralnetwork:
             number_of_clusters=len(set(self.dbscandict.values()))
             print("number of DBSCAN density clusters:",number_of_clusters)
-            print("size of image:",self.img.shape[0] * self.img.shape[1])
+            print("shape of image:",self.img.shape)
             print("size of dbscandict:",len(self.dbscandict.items()))
             dbscanimg = cv2.imread(self.imagefile)
+            print("shape of dbscanimg:",dbscanimg.shape)
             for k,v in self.dbscandict.items():
               cluster=self.dbscandict[k]
               if cluster == -1: 
-                    dbscanimg[k[0],k[1]]=(255,255,255)
+                    print("k:",k)
+                    if k[0] < dbscanimg.shape[0] and k[1] < dbscanimg.shape[1]: 
+                        dbscanimg[k[0],k[1]]=(255,255,255)
               else:
                     dbscanimg[k[0],k[1]]=(cluster*2,cluster*3,cluster)
+                    #dbscanimg[k[0],k[1]]=(100,150,200)
               #dbscanimg[k[0],k[1]]=(cluster,cluster,cluster)
             imagefiletoks = self.imagefile.split(".")
             #cv2.imshow(imagefiletoks[0]+"_dbscanclustered.jpg",dbscanimg)

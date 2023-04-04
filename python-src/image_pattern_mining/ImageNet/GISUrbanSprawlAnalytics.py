@@ -764,4 +764,10 @@ if __name__ == "__main__":
     #ncoloredsegments_2022=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments_2022,seg14,replicationweights=repweights)
     #print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2022.keys())," colored urban sprawl segmentation (Projection based on R2022A) - based on replacement matrix learnt from R2019A to R2022A:",ncoloredsegments_2022)
     #urban_sprawl_from_GEE("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG","FAO/GAUL/2015/level1","avg_rad",['Berlin','Seoul','Sao Paulo'])
-    urban_sprawl_from_GEE("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG","FAO/GAUL/2015/level1","avg_rad",boundingbox=[79.271851,12.439259,80.351257,13.568572],daterange=['2021-11-01','2023-02-01'])
+    #urban_sprawl_from_GEE("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG","FAO/GAUL/2015/level1","avg_rad",boundingbox=[79.271851,12.439259,80.351257,13.568572],daterange=['2021-11-01','2023-02-01'])
+
+    #Chennai Metropolitan Area - CMAVision Official overlay map - DBSCAN analysis
+    dbscan2=DBSCANClustering.DBSCAN("testlogs/ExpandedCMA_map_cmavision.jpg")
+    dbscan2.clustering()
+    dbscan2.write_clustered_image(neuralnetwork=True)
+    dbscan2.write_clustered_image(neuralnetwork=False)
