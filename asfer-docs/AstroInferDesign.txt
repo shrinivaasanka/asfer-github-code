@@ -21717,3 +21717,21 @@ References:
 References:
 -----------
 1412.4 World Population Review Population Timeseries - Chennai - https://worldpopulationreview.com/world-cities/chennai-population - based UN World Urbanization Prospects 2018 data
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1413. (JIRA,THEORY and FEATURE) Recursive Lambda Function Growth - Updates to Transformers Degree Attention Model - related to 249,707,829,1133,1134,1204,1263,1269,1284,1285,1405 and all sections on Intrinsic Merit of Texts, Question-Answering, Embedding in vectorspace, Machine Translation, Transformers Attention Model,Named Entity Recognition and Meaning Representation, Complexity models of Question-Answering (multiple choice,open-ended,adaptive and static) - LTF,PTF,Switching Circuits,TQBF,Markov Chains, Mildly Context Sensitive Grammars-Tree Adjoining Grammars for Natural Languages - 6 April 2023 
+-------------------------------------------------------------------------------------------------------------------------------------------
+1413.1 python-src/RecursiveLambdaFunctionGrowth.py has been updated to import NumPy and defaultdict for Transformers degree attention model updates.
+1413.2 Query,Key,Value matrices of the transformers attention model have been initialized as ndarray pre-filled to 0.5 and their shape has been set to 10% of textgraph vertices as perceptron gradient descent computation for full graph is intensive. Query-Key-Value triples were hardcoded earlier within machine_translation() and now the transformers degree attention computation has been made essential part of Recursive Lambda Function Growth algorithm. JIRA issue https://krishnairesearch.atlassian.net/browse/NEUR-24 has been raised for this. 
+1413.3 Query-Key-Value for every word pair edge in textgraph have been populated in 3 respective dictionaries which are sorted.
+1413.4 course_material/NeuronRain/LinuxKernelAndCloud/code/Transformers_PerceptronAndGradient.py in Grafit repositories has been updated to
+change compute_perceptron(weights, variables, outputs, threshold=0.5) to include threshold value as an argument and make thresholding based on absolute value 
+1413.5 Query-Key-Value matrices of word vertex degree attention are as equally important as dense subgraph document classifiers since degree attention is another spectacle to view subgraph core numbers (attention by a word vertex to another = incoming degree). Existing generative pretrained transformer models consider a text as one dimensional sequence of words while transformer degree attention makes it deeper by concentrating on degrees of textgraph obtained from flat text - in other words Generative AI meets formal languages and algorithmic graph theory. Tree adjoining grammar parse trees could be integrated into transformer degree attention model by recursively assigning an attention query-key-value to each auxiliary tree adjoined to an initial tree nonterminal. An example is described in 1413.7. 
+1413.6 Following are updated text,DOT and logs for this update - textgraph obtained for updated RecursiveLambdaFunctionGrowth.txt shows Gross Domestic Product as prominent word vertex of high core number and degree attention (Query,Key,Value matrices):
+	new file:   testlogs/RecursiveLambdaFunctionGrowth.log.6April2023
+	modified:   RecursiveLambdaFunctionGrowth.dot
+	modified:   RecursiveLambdaFunctionGrowth.txt
+
+References:
+----------
+1413.7 Example Tree Adjoining Grammar Intial and Auxiliary Trees for phrase "The adjusting screw, which is under the cover" - https://drops.dagstuhl.de/opus/volltexte/2021/14890/pdf/DagSemRep-2.pdf - attention is divided recursively from initial tree to adjoined b1,b2,b3,b4,b5 auxiliary trees (or) total attention = attention(initial) + attention(b1) + attention(b2) + attention(b3) + attention(b4) + attention(b5) 
