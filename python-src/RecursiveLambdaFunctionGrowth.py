@@ -36,6 +36,8 @@ from googletrans import Translator
 import goslate
 from Transformers_PerceptronAndGradient import LinearPerceptronGradient
 import nltk
+import numpy as np
+from collections import defaultdict
 
 # Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 # Recursive Gloss Overlap graph of a text
@@ -460,6 +462,17 @@ class RecursiveLambdaFunctionGrowth(object):
 
         self.graph_tensor_neuron_network_intrinsic_merit = 1.0
         print("intrinsic_merit_dict:", intrinsic_merit_dict)
+        attentionshape=int(len(definitiongraph.nodes())/10)
+        queries=np.zeros((attentionshape,attentionshape))
+        keys=np.zeros((attentionshape,attentionshape))
+        values=np.zeros((attentionshape,attentionshape))
+        variables=np.zeros((attentionshape,attentionshape))
+        queries.fill(0.5)
+        keys.fill(0.5)
+        values.fill(0.5)
+        variables.fill(0.5)
+        QKV=self.rlfg_transformers_attention_model(definitiongraph,queries,keys,values,variables)
+        print("Query-Key-Value learnt by Perceptron :",QKV)
         return intrinsic_merit_dict
 
     def tree_adjoining_grammar_annotated(self,grammar,text):
@@ -498,6 +511,9 @@ class RecursiveLambdaFunctionGrowth(object):
             value_weights[row]=LinearPerceptronGradient(attentionslice[row],value_weights[row],rho,bias,variables)
         print("Learnt Values Weights:",value_weights)
         row=0
+        definitiongraphQ=defaultdict(int)
+        definitiongraphK=defaultdict(int)
+        definitiongraphV=defaultdict(int)
         for v1 in definitiongraph.nodes():
             column=0
             for v2 in definitiongraph.nodes():
@@ -505,17 +521,26 @@ class RecursiveLambdaFunctionGrowth(object):
                     print("Query weight for textgraph edge (",v1,",",v2,"):",query_weights[row][column])
                     print("Key weight for textgraph edge (",v1,",",v2,"):",key_weights[row][column])
                     print("Value weight for textgraph edge (",v1,",",v2,"):",value_weights[row][column])
+                    definitiongraphQ[v1 + " --- " + v2] = query_weights[row][column] 
+                    definitiongraphK[v1 + " --- " + v2] = key_weights[row][column] 
+                    definitiongraphV[v1 + " --- " + v2] = value_weights[row][column] 
                 except:
                     continue
                 column+=1
             row+=1
+        sorted_definitiongraphQ = sorted(definitiongraphQ.items(), key=lambda item: item[1], reverse=True)
+        sorted_definitiongraphK = sorted(definitiongraphK.items(), key=lambda item: item[1], reverse=True)
+        sorted_definitiongraphV = sorted(definitiongraphV.items(), key=lambda item: item[1], reverse=True)
+        print("sorted_definitiongraphQ:",definitiongraphQ)
+        print("sorted_definitiongraphK:",definitiongraphK)
+        print("sorted_definitiongraphV:",definitiongraphV)
         return (query_weights,key_weights,value_weights,attention)
 
     def machine_translation(self, corenumber=3, definitiongraph=None, languagecode="en", pathsimilarity=0.8):
         nodes = definitiongraph.nodes()
         edges = definitiongraph.edges()
         translationgraph = nx.DiGraph()
-        self.rlfg_transformers_attention_model(definitiongraph,[[1,2,3],[0.1,0.3,0.5],[3,4,5]],[[4,5,6],[0.1,0.3,0.5],[3,4,5]],[[7,8,9],[0.1,0.3,0.5],[3,4,5]],[[0.1,0.3,0.5],[0.1,0.1,0.1],[0.2,0.3,0.5]])
+        #self.rlfg_transformers_attention_model(definitiongraph,[[1,2,3],[0.1,0.3,0.5],[3,4,5]],[[4,5,6],[0.1,0.3,0.5],[3,4,5]],[[7,8,9],[0.1,0.3,0.5],[3,4,5]],[[0.1,0.3,0.5],[0.1,0.1,0.1],[0.2,0.3,0.5]])
         for k, v in edges:
             print("k=", k, ",v=", v)
             if self.machinetranslator == "pydictionary":
