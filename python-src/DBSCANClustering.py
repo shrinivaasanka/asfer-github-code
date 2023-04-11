@@ -49,6 +49,7 @@ class DBSCAN(object):
         self.epsilon = epsilon
         self.minpoints = minpoints
         self.dbscandict = defaultdict(int)
+        self.clusterdict = defaultdict(int)
         self.noise=-1
         self.undefined=0
         self.clusterlabel=1
@@ -111,6 +112,9 @@ class DBSCAN(object):
                         seedpoints = seedpoints + s_neighbours
                     #seedpoints.remove(s)
         print("DBSCAN cluster labelling of pixels:",self.dbscandict)
+        for k,v in self.dbscandict.items():
+            self.clusterdict[v] += 1
+        print("DBSCAN cluster densities:",self.clusterdict)
 
     def write_clustered_image(self,neuralnetwork=False,fraction=1):
         if not neuralnetwork:
@@ -127,7 +131,7 @@ class DBSCAN(object):
                     if k[0] < dbscanimg.shape[0] and k[1] < dbscanimg.shape[1]: 
                         dbscanimg[k[0],k[1]]=(255,255,255)
               else:
-                    dbscanimg[k[0],k[1]]=(cluster*2,cluster*3,cluster)
+                    dbscanimg[k[0],k[1]]=((10+self.clusterdict[cluster]*3),(10+self.clusterdict[cluster]*3),(10+self.clusterdict[cluster]*3))
                     #dbscanimg[k[0],k[1]]=(100,150,200)
               #dbscanimg[k[0],k[1]]=(cluster,cluster,cluster)
             imagefiletoks = self.imagefile.split(".")
