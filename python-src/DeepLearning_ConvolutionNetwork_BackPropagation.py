@@ -62,7 +62,7 @@ from ImageGraph_Keras_Theano import tosig3d
 from scipy.stats import wasserstein_distance
 
 TopologicalRecognition = "Fingerprint"
-DBSCANClusteringSimilarity = True
+DBSCANClusteringSimilarity = False
 
 
 def draw_delaunay_triangulation(img, triangles):
@@ -412,11 +412,11 @@ def handwriting_recognition(imagefile1, imagefile2):
 
 def fingerprint_recognition(fingerprint1,fingerprint2):
     seg1=image_segmentation(fingerprint1,voronoi_delaunay=False)
-    seg2=image_segmentation(fingerprint2,voronoi_delaunay=True)
+    seg2=image_segmentation(fingerprint2,voronoi_delaunay=False)
     topological_distance=directed_hausdorff(seg1[8][0][0][0],seg2[8][0][0][0])
     print("fingerprint_recognition(): similarity between ",fingerprint1," and ",fingerprint2,":",topological_distance)
-    contours_kmeans_clustering(fingerprint1,seg1)
-    contours_kmeans_clustering(fingerprint2,seg2)
+    contours_kmeans_clustering(fingerprint1,seg1,number_of_clusters=5,maxiterations=5)
+    contours_kmeans_clustering(fingerprint2,seg2,number_of_clusters=5,maxiterations=5)
 
 class DeepLearningConvolution(object):
     def __init__(self, input_bitmap):
@@ -760,6 +760,7 @@ if __name__ == "__main__":
                 cluster2=dbscan2.clustering()
                 distance_emd=wasserstein_distance(list(cluster1[0].values()),list(cluster2[0].values()))
                 print(("EMD Histogram distance similarity between images - " + img1 + " and " + img2 +" :",distance_emd))
+        exit()
     print("#############################################")
     print("Topological Handwriting,Fingerprint and Face Recognition")
     print("#############################################")

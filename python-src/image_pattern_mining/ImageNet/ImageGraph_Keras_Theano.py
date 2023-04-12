@@ -52,6 +52,7 @@ from GraphMining_GSpan import GSpan
 import gc
 
 os.environ['KERAS_BACKEND'] = 'theano'
+opencv2drawconvexhull=True
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
 
 
@@ -413,29 +414,54 @@ def contours_kmeans_clustering(imagefile,segment,number_of_clusters=3,maxiterati
                         centroids[cluster_id]=contour
                 sumdist=0
         iteration += 1
+    print("converged:",converged)
+    contour2cluster=defaultdict(int)
+    for cluster_id in range(number_of_clusters):
+        for contour in clusters[cluster_id]:
+            contour2cluster[np.array_repr(contour)]=cluster_id
     if converged:
-        fig1 = plt.figure(dpi=100)
-        for cluster_id in range(number_of_clusters):
-            for contour in clusters[cluster_id]:
-                #cv2.drawContours(segment[1],[contour],0,(10*cluster_id,10*cluster_id,10*cluster_id),2)
-                xaxis = []
-                yaxis = []
-                curve = contour
-                for point in curve:
-                    xaxis.append(point[0][0])
-                    yaxis.append(point[0][1])
-                ax = fig1.add_subplot(111)
-                ax.plot(xaxis, yaxis, color=(0,1.0/float(cluster_id+1),0),rasterized=True)
+            if not opencv2drawconvexhull:
+                #print("cluster:",clusters[cluster_id])
+                contour_index=0
+                for cluster_id in range(number_of_clusters):
+                    for contour in clusters[cluster_id]:
+                         #cv2.drawContours(segment[1],segment[8][0],contour_index,(0,contour2cluster[np.array_repr(contour)]*10,0),2)
+                         cv2.drawContours(segment[1],segment[8][0],contour_index,(0,contour2cluster[np.array_repr(contour)]*10,0),2)
+                         contour_index+=1
+            else:
+                #fig1 = plt.figure(dpi=100)
+                for cluster_id in range(number_of_clusters):
+                    convexhull=[]
+                    for contour in clusters[cluster_id]:
+                        convexhull.append(cv2.convexHull(contour,False)) 
+                    for i in range(len(clusters[cluster_id])):
+                        cv2.drawContours(segment[1],convexhull,i,(0,contour2cluster[np.array_repr(contour)]*10,0),2,8)
+                    #xaxis = []
+                    #yaxis = []
+                    #curve = contour
+                    #print("curve:",curve)
+                    #for point in curve:
+                    #    print("point:",point)
+                    #    xaxis.append(point[0][0])
+                    #    yaxis.append(point[0][1])
+                    #ax = fig1.add_subplot(111)
+                    #ax.plot(xaxis, yaxis, color=(0,1.0/(cluster_id+1),0),rasterized=True)
+                for cluster_id in range(number_of_clusters):
+                    polygon = []
+                    for contour in clusters[cluster_id]:
+                        curve = contour
+                        for point in curve:
+                            polygon.append([point[0][0],point[0][1]])
+                        polygonnd=np.array(polygon)
+                        polygonnd.reshape(-1,1,2)
+                        cv2.polylines(segment[1],[polygonnd],True,(0,cluster_id*10,0))
+                        polygon = []
     #plt.show()
     imagetok1=imagefile.split(".")
     imagetok2=imagetok1[0].split("/")
+    cv2.imwrite("./testlogs/"+imagetok2[1]+"-contourkmeansclustered.jpg",segment[1])
+    cv2.waitKey()
     gc.collect()
-    if plot=="savefig":
-        plt.savefig("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contourkmeansclustered.jpg")
-    if plot == "show":
-        plt.show()
-    #cv2.imwrite("./testlogs/"+imagetok2[1]+"-contourkmeansclustered.jpg",segment[1])
-    #cv2.waitKey()
     print("contour polynomial clusters:",clusters)
 
 def image_segmentation_contours(imagefile1,plot="savefig"):
