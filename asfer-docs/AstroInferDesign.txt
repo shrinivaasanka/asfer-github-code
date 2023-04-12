@@ -21753,3 +21753,14 @@ References:
 	1414.6.1 DBSCAN cluster two face images and compute cluster statistics - clusterimage1, clusterimage2
 	1414.6.2 Earth mover distance between the two clusters - clusterimage1 and clusterimage2 - is a face similarity measure which could complement Graph Isomorphism/Approximate Graph Matching similarity of face image Trimesh-Quadmesh. 
 1414.7 This update resolves JIRA issue : https://krishnairesearch.atlassian.net/browse/NEUR-25
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1415. (THEORY and FEATURE) People Analytics - Merit of Large Scale Visuals - Face Recognition by DBSCAN clustering similarity - related to 159,660,714,715,720,1185,1186,1187,1188,1189,1190,1201,1202,1203 and all sections on Topological Face and Handwriting recognition, Product Homotopy, Unique identification, Homeomorphism and Topological Deformations, Merit of Large Scale Visuals, People Analytics, Computational Geometry, Graph Edit Distance and Earth mover distance, Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem, DBSCAN spatial clustering, Histogram analytics - 12 April 2023 
+--------------------------------------------------------------------------------------------------------------------------------------------
+1415.1 python-src/DBSCANClustering.py has been updated to return clustering data from function clustering().
+1415.2 python-src/DeepLearning_ConvolutionNetwork_BackPropagation.py has been changed to import DBSCAN clustering and based on a flag DBSCANClusteringSimilarity, images are DBSCAN clustered and Wasserstein Earth Mover Distance (EMD) is computed on pair of DBSCAN cluster histograms. 
+1415.3 Example pair of face imagery "testlogs/KSrinivasan_2003.jpg" (plain) and "testlogs/KSrinivasan_2003-tessellated.jpg" (overlaid by tessellation) are compared by DBSCAN clustering Wasserstein EMD - captured in python-src/testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.12April2023. 
+
+References:
+----------
+1415.4 Measure Theoretic definition of Wasserstein Distance - Section 3.1 - https://arxiv.org/pdf/1509.02237.pdf 
