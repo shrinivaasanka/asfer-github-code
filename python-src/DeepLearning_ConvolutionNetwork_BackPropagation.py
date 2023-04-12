@@ -57,8 +57,12 @@ from networkx.algorithms import isomorphism
 from pyvis.network import Network
 from ImageGraph_Keras_Theano import image_segmentation
 from ImageGraph_Keras_Theano import contours_kmeans_clustering
+from DBSCANClustering import DBSCAN
+from ImageGraph_Keras_Theano import tosig3d
+from scipy.stats import wasserstein_distance
 
 TopologicalRecognition = "Fingerprint"
+DBSCANClusteringSimilarity = True
 
 
 def draw_delaunay_triangulation(img, triangles):
@@ -741,7 +745,23 @@ if __name__ == "__main__":
                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
     print("#############################################")
-    print("Topological Handwriting and Face Recognition")
+    print("DBSCAN clustering similarity")
+    print("#############################################")
+    if DBSCANClusteringSimilarity==True:
+        #images=["testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg","testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg","testlogs/IMG_20220119_165911.jpg"]
+        images=["testlogs/KSrinivasan_2003.jpg","testlogs/KSrinivasan_2003-tessellated.jpg"]
+        #images=["image_pattern_mining/ImageNet/testlogs/ExamplePortrait2_mesh.jpg","testlogs/ExamplePortrait1_mesh.jpg"]
+        for img1 in images:
+            for img2 in images:
+                print("========",img1,"====",img2,"=============")
+                dbscan1=DBSCAN(img1)
+                cluster1=dbscan1.clustering()
+                dbscan2=DBSCAN(img2)
+                cluster2=dbscan2.clustering()
+                distance_emd=wasserstein_distance(list(cluster1[0].values()),list(cluster2[0].values()))
+                print(("EMD Histogram distance similarity between images - " + img1 + " and " + img2 +" :",distance_emd))
+    print("#############################################")
+    print("Topological Handwriting,Fingerprint and Face Recognition")
     print("#############################################")
     if TopologicalRecognition == "Handwriting":
         handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
@@ -749,7 +769,7 @@ if __name__ == "__main__":
         exit()
     if TopologicalRecognition == "Face":
         images=["testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg","testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg","testlogs/IMG_20220119_165911.jpg"]
-        images=["image_pattern_mining/ImageNet/testlogs/ExamplePortrait2_mesh.jpg","testlogs/ExamplePortrait1_mesh.jpg"]
+        #images=["image_pattern_mining/ImageNet/testlogs/ExamplePortrait2_mesh.jpg","testlogs/ExamplePortrait1_mesh.jpg"]
         for img1 in images:
             for img2 in images:
                 print("========",img1,"====",img2,"=============")

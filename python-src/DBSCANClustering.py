@@ -115,6 +115,7 @@ class DBSCAN(object):
         for k,v in self.dbscandict.items():
             self.clusterdict[v] += 1
         print("DBSCAN cluster densities:",self.clusterdict)
+        return (self.clusterdict,self.dbscandict)
 
     def write_clustered_image(self,neuralnetwork=False,fraction=1):
         if not neuralnetwork:
