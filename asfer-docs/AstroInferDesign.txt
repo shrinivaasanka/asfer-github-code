@@ -21776,3 +21776,27 @@ References:
 References:
 -----------
 1416.5 Gift wrapping algorithms - Convex hulls - Jarvis March,Graham Scan,Chan's algorithm - https://en.wikipedia.org/wiki/Gift_wrapping_algorithm
+
+-------------------------------------------------------------------------------------------------------------------------------
+1417. (JIRA,THEORY and FEATURE) Merit of Large Scale Visuals - Archaeology - Few more updates for drawContours() versus Pyplot and Edges/Contour polynomials of scripts - Tamil and Ashoka Brahmi script example - 17 April 2023 - related to 2,1203,1232,1233,1236,1237,1240,1287,1288 and all sections on Merit of Large Scale Visuals, Physique Recognition From Quadrilateral mesh isomorphism,Topological Face and Handwriting recognition, Archaeology-Topological Script Recognition, Product Homotopy, Homeomorphism and Topological Deformations, People Analytics, Computational Geometry, Graph Edit Distance and Earth mover distance, Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching,Text restoration
+--------------------------------------------------------------------------------------------------------------------------------
+1417.1 Updated python-src/image_pattern_mining/ImageNet/ImageGraph_Keras_Theano.py to introduce another boolean flag usepyplot to choose between pyplot and drawContours() in plotting the contour segmented imagery - There seems to be a problem recently in pyplot and contours are now plotted by drawContours() within image_segmentation_contours(imagefile1,plot="savefig") by default.
+1417.2 Either pyplot savefig/show or cv2.imwrite() are invoked based on usepyplot flag to write xxxxx_contoursegmented.jpg (all contour polynomials are drawn).
+1417.3 Return tuple of image_segmentation() has been expanded to include cannyedge detected edges.
+    return (ret, img, markers, labels, stats, contourcentroids, facets, triangles, contours, facegraph, edges)
+1417.4 An image containing Asokan Brahmi-Tamil Brahmi(Early and Later) inscription and Modern Tamil from https://en.wikipedia.org/wiki/Tamil-Brahmi has been segmented to compute contour polynomials and canny edges which is an algebraic alternative to ingest undeciphered and ancient scripts vis-a-vis contemporary representation of natural language by ASCII-Unicode. Every letter in an undeciphered inscription (e.g Indus-Sarasvati script) is a polynomial curve and storing undeciphered text as huge set of polynomials (equal to number of symbols in the inscription text) opens up possibilities of algebraic and topological analysis (including Voronoi-Delaunay diagrams) of writing systems (For example same symbol in two inscriptions are homeomorphic deformations):
+    seg5=image_segmentation("testlogs/Tamil_brahmi.jpg",voronoi_delaunay=True)
+1417.5 Tamil Brahmi and Ashoka Brahmi are derivatives of Brahmi (Tamil Brahmi predates Ashoka Brahmi) which in turn is suspected to be a descendant of Aramaic-Phoenician scripts. Image earlier from https://en.wikipedia.org/wiki/Tamil-Brahmi shows a topological similarity between Tamil Brahmi and Ashoka Brahmi scripts (Letters m and ma in Asokan and Tamil Brahmi having close resemblance are homeomorphic deformations). Polynomial representation of scripts is useful in text restoration - if an ancient text in damaged manuscript has only few fragments of a symbol,missing pieces can be interpolated by contour polynomials learnt from intact symbols in manuscript and accuracy depends on frequency of intact symbols (Section 2.16 - DeepMind Ithaca is 71% accurate in restoring 485 BC Greek text). But the limitation is the storage requirement for polynomials (could be millions, equal to number of symbols). 
+1417.6 Following are the logs,contour,segment,cannyedge,Voronoi-Delunay images for this update:
+	testlogs/ImageGraph_Keras_Theano.log.17April2023
+	testlogs/RemoteSensingGIS/Tamil_brahmi_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/Tamil_brahmi_segmented.jpg
+	testlogs/Tamil_brahmi-cannyedgedetection.jpg
+	testlogs/Tamil_brahmi-contourlabelled.jpg
+	testlogs/Tamil_brahmi-contoursegmented.jpg
+	testlogs/Tamil_brahmi.jpg
+1417.7 This commit resolves JIRA issue https://krishnairesearch.atlassian.net/browse/NEUR-27
+
+References:
+----------
+1417.8 An epigraphic perspective on the antiquity of Tamil - [Iravatam Mahadevan] - https://webcache.googleusercontent.com/search?q=cache:zXHYxLcfYO4J:https://www.thehindu.com/opinion/op-ed/An-epigraphic-perspective-on-the-antiquity-of-Tamil/article16265606.ece...
