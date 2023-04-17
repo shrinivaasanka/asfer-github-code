@@ -53,6 +53,7 @@ import gc
 
 os.environ['KERAS_BACKEND'] = 'theano'
 opencv2drawconvexhull=True
+usepyplot=False
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
 
 
@@ -470,37 +471,45 @@ def image_segmentation_contours(imagefile1,plot="savefig"):
         img1, 0, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
     contours1, hierarchy1 = cv2.findContours(
         thresh1, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    #print("contours:",contours1)
+    print("contours:",contours1)
     #contours1=cv2.findContours(thresh1,1,2)
     epsilon1 = 0.1*cv2.arcLength(contours1[0], True)
     # epsilon1=0.2
     approx1 = cv2.approxPolyDP(contours1[0], epsilon1, True)
     contour1polys = []
-    fig1 = plt.figure(dpi=100)
-    for cont in contours1:
-        xaxis = []
-        yaxis = []
-        curve = cont
-        for point in curve:
-            xaxis.append(point[0][0])
-            yaxis.append(point[0][1])
-        ax = fig1.add_subplot(111)
-        ax.plot(xaxis, yaxis, rasterized=True)
-        points = numpy.stack((xaxis, yaxis), axis=-1)
-        print("points:",points.shape[0])
-        try:
-            if points.shape[0] > 3:
-                contour1polys.append(splprep(points.T, k=points.shape[0]-1))
-        except Exception as e:
-            continue
-    #plt.show()
+    #pyplot appears to be broken everywhere and prints blank images - reverting to drawContours(), pyplot code block is made optional 
+    if not usepyplot:
+        cv2.drawContours(img1,contours1,-1,(0,0,255),3)
+    else:
+        fig1 = plt.figure(dpi=100)
+        for cont in contours1:
+            xaxis = []
+            yaxis = []
+            curve = cont
+            for point in curve:
+                xaxis.append(point[0][0])
+                yaxis.append(point[0][1])
+            ax = fig1.add_subplot(111)
+            ax.plot(xaxis, yaxis, rasterized=True)
+            points = numpy.stack((xaxis, yaxis), axis=-1)
+            print("points:",points.shape[0])
+            try:
+                if points.shape[0] > 3:
+                    contour1polys.append(splprep(points.T, k=points.shape[0]-1))
+            except Exception as e:
+                continue
+        #plt.show()
     imagetok1=imagefile1.split(".")
     imagetok2=imagetok1[0].split("/")
     gc.collect()
-    if plot == "savefig":
-        plt.savefig("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contoursegmented.jpg")
-    elif plot == "show":
-        plt.show()
+    if usepyplot:
+        if plot == "savefig":
+             plt.savefig("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contoursegmented.jpg")
+        elif plot == "show":
+             plt.show()
+    else:
+        cv2.imwrite("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contoursegmented.jpg",img1)
+        cv2.waitKey()
     #print(("contour1polys:", contour1polys))
     return (contours1,contour1polys)
 
@@ -583,7 +592,7 @@ def image_segmentation(imagefile,voronoi_delaunay=False):
     cv2.imwrite("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contourlabelled.jpg",img)
     cv2.waitKey()
     write_dot(facegraph, "./testlogs/RemoteSensingGIS/" + imagefiletoks2[len(imagefiletoks2)-1] + "_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
-    return (ret, img, markers, labels, stats, contourcentroids, facets, triangles, contours, facegraph)
+    return (ret, img, markers, labels, stats, contourcentroids, facets, triangles, contours, facegraph, edges)
 
 
 def random_forest_image_classification(
@@ -712,10 +721,12 @@ if __name__ == "__main__":
     #imagegraph1=imagenet_imagegraph("testlogs/unicorn-seal_0.jpg")
     #imagegraph2=imagenet_imagegraph("testlogs/bagasra-unicorn-seal.jpg")
     #imagegraph3=imagenet_imagegraph("testlogs/unicorn-seal_1_5.jpg")
-    imagegraph4=imagenet_imagegraph("testlogs/yogic-seal_0.jpg")
-    imagegraph5=imagenet_imagegraph("testlogs/yogic-seal_1.jpg")
-    imagegraphsResNet50=[imagegraph4[0][0][0],imagegraph5[0][0][0]]
-    frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50)
+
+    #imagegraph4=imagenet_imagegraph("testlogs/yogic-seal_0.jpg")
+    #imagegraph5=imagenet_imagegraph("testlogs/yogic-seal_1.jpg")
+    #imagegraphsResNet50=[imagegraph4[0][0][0],imagegraph5[0][0][0]]
+    #frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50)
+
     #imagegraphsResNet50V2=[imagegraph1[0][1][0],imagegraph2[0][1][0],imagegraph3[0][1][0]]
     #frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50V2)
     #histogram_partition_distance_similarity("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg","testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
@@ -729,3 +740,4 @@ if __name__ == "__main__":
     #seg2=image_segmentation("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
     #seg3=image_segmentation("testlogs/Mayan_Canaa_Pyramid_Caracol_LIDAR.jpg",voronoi_delaunay=True)
     #seg4=image_segmentation("testlogs/yogic-seal_0.jpg",voronoi_delaunay=True)
+    seg5=image_segmentation("testlogs/Tamil_brahmi.jpg",voronoi_delaunay=True)
