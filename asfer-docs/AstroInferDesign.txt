@@ -21801,3 +21801,35 @@ References:
 References:
 ----------
 1417.8 An epigraphic perspective on the antiquity of Tamil - [Iravatam Mahadevan] - https://webcache.googleusercontent.com/search?q=cache:zXHYxLcfYO4J:https://www.thehindu.com/opinion/op-ed/An-epigraphic-perspective-on-the-antiquity-of-Tamil/article16265606.ece...
+
+-------------------------------------------------------------------------------------------------------------------------------
+1418. (THEORY) Merit of Large Scale Visuals - Archaeology - Text Restoration by Product Homotopies of Script Contour Polynomials - 20 April 2023 - related to 2,345,714,1203,1232,1233,1236,1237,1240,1287,1288,1417 and all sections on Merit of Large Scale Visuals, Physique Recognition From Quadrilateral mesh isomorphism,Topological Face and Handwriting recognition, Archaeology-Topological Script Recognition, Product Homotopy, Homeomorphism and Topological Deformations, People Analytics, Computational Geometry, Graph Edit Distance and Earth mover distance, Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching,Text restoration,Polynomial Reconstruction Problem (PRP)
+-------------------------------------------------------------------------------------------------------------------------------
+1418.1 Section 714 describes pattern grammars by product homotopies and pasting lemma for topological handwriting recognition: "..... Product of Path Homotopy classes: Two paths f and f' are homotopic if they have same initial and final points x0 and x1 and there is a continuous map F:I * I ---> X for some topology space X such that F(s,0) = f(s) and F(s,1) = f'(s); F(0,t) = x0 and F(1,t) = x1. If f is a path in X from x0 to x1 of homotopy F and g is a path from x1 to x2 of homotopy G, product homotopy F*G by pasting lemma is the set of all continuous paths from x0 to x2 via x1. .....". In other words path homotopies formalize the notion of continuously deforming the path between two endpoints by keeping endpoints fixed.
+1418.2 Text restoration problem for an undeciphered writing system represented as set of contour polynomials (one polynomial per each symbol) and following algorithm approximately restores a damaged text:
+	1418.2.1 Fragments of a damaged manuscript (papyrus or rock inscription) are segregated into damaged symbols and intact symbols
+	1418.2.2 Intact symbols are contour segmented to get contour polynomials
+	1418.2.3 Damaged symbols are piecewise discontinous polynomials (have gaps in them due to damage) which need to be smoothed to a continuous polynomial by looking up a tabular map of intact_symbol-to-polynomial
+	1418.2.3 Best matching intact symbol to the damaged symbol is found by ranking the percentage match of path homotopic deformation.
+1418.3 Example damaged inscription of numbers "882213" of which only "8-2-13" is legible:
+	 ------  ---	-------	 ----	|  -------
+	 |    |  |	      |		|	 |
+	 ------    --	-------	 ---	|  -------
+	 |    |	    |	|        |	|	 |	
+	 ------  ---	-------	 ------	|  -------
+1418.4 Letters "8" in position 2 and "2" in position 4 are restored by above algorithm as:
+	1418.4.1 Contour polynomials of each of the 6 symbols (intact and damaged) are found by OpenCV2 Chain approximation
+	1418.4.2 Contour polynomial of a damaged symbol is matched against each contour polynomial of intact symbols by topological similarity percentage criterion (which could be any of: (1) Homeomorphism (special case of Homotopic equivalence) (2) Homotopic Equivalence ) and maximum matching intact symbol is deciphered for damaged symbol.
+	1418.4.3 In above example damaged symbol in position 2 is approximately homotopically equivalent to intact symbol "8" in position 1 and damaged symbol in position 4 is approximately homotopically equivalent to intact symbol "2" in position 3. Percentage of approximate homotopic equivalence could be quantified by a topological distance (for example Directed Hausdorff distance).
+	1418.4.4 Python frameworks - phcpy and PyBertini - find solutions to homotopies between two fixed endpoints.
+1418.5 Earlier example could also be interpreted as Polynomial Reconstruction Problem in which all possible polynomials passing through maximum number of points of damaged symbols are recovered and only those which have closest topological similarity to intact symbols are chosen as deciphered symbols (Definition of Polynomial Reconstruction Problem: Given a set of n points (x1,y1),(x2,y2),...,(xn,yn) recover all polynomials p of degree less than k such that pi(xi) != yi for maximum of i points in {1,2,3,...,n}.)
+
+References:
+----------
+1418.5 Homotopy - https://en.wikipedia.org/wiki/Homotopy
+1418.6 Pasting Lemma - Gluing together two continuous functions - https://en.wikipedia.org/wiki/Pasting_lemma
+1418.7 Homotopy equivalence - Example 2.1 - 3 graphs shaped as symbol "8" which are homotopy equivalent but not homeomorphic -  https://ncatlab.org/nlab/show/homotopy+equivalence
+1418.8 Computational complexity of Directed Hausdorff Topological Distance Similarity - https://i11www.iti.kit.edu/extra/publications/jkm-tchd-22.pdf
+1418.9 Solving Polynomial Systems with phcpy - https://conference.scipy.org/proceedings/scipy2019/pdfs/jan_verschelde.pdf
+1418.10 PyBertini - Homotopy continuation - https://ofloveandhate-pybertini.readthedocs.io/en/feature-readthedocs_integration/intro.html
+1418.11 phcpy homotopy continuation example - http://homepages.math.uic.edu/~jan/phcpy_doc_html/pathtrack.html#a-simple-example
