@@ -33,8 +33,8 @@ from pyspark import SparkContext, SparkConf
 import sys
 from decimal import Decimal
 import numpy as np
-import numba
-from numba import jit
+#import numba
+#from numba import jit
 from joblib import Parallel,delayed
 
 number_to_factorize = 0
@@ -150,7 +150,7 @@ def iterative_binary_search_interval_nonpersistent(xl,yl,xr,yr,numfactors=maxfac
     xr_clone=Decimal(xr)
     yr_clone=Decimal(yr)
     while xl_clone <= xr_clone:
-        midpoint = Decimal((xl_clone+xr_clone)/2)
+        midpoint = Decimal(int((xl_clone+xr_clone)/2))
         #print("Midpoint = ",midpoint)
         factorcandidate = Decimal(midpoint*yl_clone)
         if xl_clone==xr_clone:
@@ -158,21 +158,21 @@ def iterative_binary_search_interval_nonpersistent(xl,yl,xr,yr,numfactors=maxfac
         #print("Factor candidate point : ",factorcandidate)
         if factorcandidate==number_to_factorize:
              print("at ", strftime("%a, %d %b %Y %H:%M:%S GMT", gmtime()), ") - Factor point located : [",midpoint,",",yl_clone,"]")
-             factors_accum.add(factorcandidate)
+             factors_accum.add(factorcandidate.to_eng_string())
              factorization_present = time_ns()
              print("nanoseconds elapsed so far in finding all factors: ", factorization_present - factorization_start)
         if xl_clone*yl_clone==number_to_factorize:
              print("at ", strftime("%a, %d %b %Y %H:%M:%S GMT", gmtime()), ") - Factor point located : [",xl_clone,",",yl_clone,"]")
              factorization_present = time_ns()
              print("nanoseconds elapsed so far in finding all factors: ", factorization_present - factorization_start)
-             factors_accum.add(xl_clone)
-             factors_accum.add(yl_clone)
+             factors_accum.add(xl_clone.to_eng_string())
+             factors_accum.add(yl_clone.to_eng_string())
         if xr_clone*yr_clone==number_to_factorize:
              print("at ", strftime("%a, %d %b %Y %H:%M:%S GMT", gmtime()), ") - Factor point located : [",xr_clone,",",yr_clone,"]")
              factorization_present = time_ns()
              print("nanoseconds elapsed so far in finding all factors: ", factorization_present - factorization_start)
-             factors_accum.add(xr_clone)
-             factors_accum.add(yr_clone)
+             factors_accum.add(xr_clone.to_eng_string())
+             factors_accum.add(yr_clone.to_eng_string())
         if factorcandidate > number_to_factorize:
              #print("factorcandiate > num_fact")
              xr_clone = xl_clone + midpoint
@@ -269,7 +269,7 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=maxfactors):
                     xl+intervalmidpoint, yl, xr, yr)
 
 
-@jit(parallel=True)
+#@jit(parallel=True)
 def tilesearch(tileintervalstr):
     global number_to_factorize
     if (len(tileintervalstr) > 1):
@@ -282,7 +282,7 @@ def tilesearch(tileintervalstr):
         binary_search_interval(xleft, yleft, xright, yright)
 
 
-@jit(parallel=True)
+#@jit(parallel=True)
 def binary_search_interval(xl, yl, xr, yr):
     intervalmidpoint = int((xr-xl)/2)
     if intervalmidpoint >= 0:

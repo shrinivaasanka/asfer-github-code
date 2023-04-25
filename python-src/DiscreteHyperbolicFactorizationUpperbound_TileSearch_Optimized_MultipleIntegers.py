@@ -44,7 +44,7 @@ if __name__=="__main__":
         number_to_factorize = n 
         HyperbolicRasterizationGraphicsEnabled = "False" 
         #factors = DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.SearchTiles_and_Factorize(number_to_factorize, depth)
-        os.system(spark_dir+"/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py " + str(n) + " " + str(depth) + " " + HyperbolicRasterizationGraphicsEnabled  + " False " + str(number_of_factors) +" False")
+        os.system(spark_dir+"/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py " + str(n) + " " + str(depth) + " " + HyperbolicRasterizationGraphicsEnabled  + " False " + number_of_factors +" False")
         #factorsjsonf=open("DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
         #factors=json.loads(factorsjsonf.read())
         #print(("factors of ", number_to_factorize, "(", math.log(number_to_factorize, 2), " bits integer) =", set(factors)))
