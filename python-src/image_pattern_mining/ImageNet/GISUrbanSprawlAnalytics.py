@@ -737,6 +737,11 @@ if __name__ == "__main__":
     #r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0_R8_C26.tif",dt="Degree of Urbanization R2022A")
     #compare_raster_data(r1data,r2data)
 
+    #Chennai Metropolitan Area Sprawl Bounding Box 3 - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257 - R2022A and R2023A comparison
+    r1data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2022A")
+    r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_E2030_GLOBE_R2023A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2023A")
+    compare_raster_data(r1data[0],r2data[0])
+
     #r2ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_S R2022A")
     #r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_V R2022A")
     #three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
@@ -767,7 +772,7 @@ if __name__ == "__main__":
     #urban_sprawl_from_GEE("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG","FAO/GAUL/2015/level1","avg_rad",boundingbox=[79.271851,12.439259,80.351257,13.568572],daterange=['2021-11-01','2023-02-01'])
 
     #Chennai Metropolitan Area - CMAVision Official overlay map - DBSCAN analysis
-    dbscan2=DBSCANClustering.DBSCAN("testlogs/ExpandedCMA_map_cmavision.jpg")
-    dbscan2.clustering()
-    dbscan2.write_clustered_image(neuralnetwork=True)
-    dbscan2.write_clustered_image(neuralnetwork=False)
+    #dbscan2=DBSCANClustering.DBSCAN("testlogs/ExpandedCMA_map_cmavision.jpg")
+    #dbscan2.clustering()
+    #dbscan2.write_clustered_image(neuralnetwork=True)
+    #dbscan2.write_clustered_image(neuralnetwork=False)
