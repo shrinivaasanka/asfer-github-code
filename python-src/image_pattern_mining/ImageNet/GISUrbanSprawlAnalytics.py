@@ -377,7 +377,8 @@ def three_dimensional_urban_growth_model(rasterdata_2d,rasterdata_3d,longx,latx,
     print("X.shape:",X.shape)
     print("Y.shape:",Y.shape)
     print("heights.shape:",heights.shape)
-    surf = ax.plot_surface(X, Y, heights, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+    #surf = ax.plot_surface(X, Y, heights, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+    surf = ax.plot_surface(X, Y, heights)
     ax.set_zlim(-1.01, 1.01)
     ax.zaxis.set_major_locator(LinearLocator(10))
     ax.zaxis.set_major_formatter(FormatStrFormatter('%.02f'))
@@ -738,13 +739,17 @@ if __name__ == "__main__":
     #compare_raster_data(r1data,r2data)
 
     #Chennai Metropolitan Area Sprawl Bounding Box 3 - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257 - R2022A and R2023A comparison
-    r1data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2022A")
-    r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_E2030_GLOBE_R2023A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2023A")
-    compare_raster_data(r1data[0],r2data[0])
+    #r1data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2022A")
+    #r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_E2030_GLOBE_R2023A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2023A")
+    #compare_raster_data(r1data[0],r2data[0])
 
     #r2ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_S R2022A")
     #r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_V R2022A")
     #three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
+
+    r2ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_S_E2030_GLOBE_R2023A_54009_1000_V1_0_R8_C26.tif",dt="BUILT_S R2023A")
+    r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_E2030_GLOBE_R2023A_54009_1000_V1_0_R8_C26.tif",dt="BUILT_V R2023A")
+    three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
     
     #verhulste_ricker_population_growth_model(14730872,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2020,toyear=2050)
     #verhulste_ricker_population_growth_model(15195379,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2019,toyear=2050)
