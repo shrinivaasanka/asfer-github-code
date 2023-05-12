@@ -301,18 +301,59 @@ def urban_sprawl_from_GEE(imagecollection,featurecollection,nightlightsparameter
 
 def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt):
     urbansprawlstatistics=[]
+    longlatstat={}
     rows=0
     for lon in np.arange(longx,longy,0.01):
         cols=0
         for lat in np.arange(latx,laty,0.01):
             values=data_from_raster_georeferencing(raster,longitude=lon,latitude=lat,sample=True,datatype=dt)
             urbansprawlstatistics.append(values[0])
+            longlatstat[(lon,lat)]=values[0]
             cols+=1
         rows+=1
     print("urban_sprawl_from_raster(): bounding box shape = ",(rows,cols))
     print("urban_sprawl_from_raster(): urbansprawlstatisitcs = ",urbansprawlstatistics)
+    print("urban_sprawl_from_raster(): longlatstat = ",longlatstat)
     urbansprawl_gini_coefficient(urbansprawlstatistics)
-    return (urbansprawlstatistics,(rows,cols))
+    return (urbansprawlstatistics,(rows,cols),longlatstat)
+
+def four_colored_morphological_settelement_zones(heightrasterdata,longx,latx,longy,laty):
+    heightrasterhist=defaultdict(int)
+    for rh in heightrasterdata[0]:
+        height=rh[0]
+        heightrasterhist[height] += 1
+    print("Morphological settlement zones :",heightrasterhist)
+    for k,v in heightrasterhist.items():
+        if k==1:
+            print("01 : MSZ, open spaces, low vegetation surfaces NDVI <= 0.3:",v)
+        if k==2:
+            print("02 : MSZ, open spaces, medium vegetation surfaces 0.3 < NDVI <=0.5:",v)
+        if k==3:
+            print("03 : MSZ, open spaces, high vegetation surfaces NDVI > 0.5:",v)
+        if k==4:
+            print("04 : MSZ, open spaces, water surfaces LAND < 0.5:",v)
+        if k==5:
+            print("05 : MSZ, open spaces, road surfaces:",v)
+        if k==11:
+            print("11 : MSZ, built spaces, residential, building height <= 3m:",v)
+        if k==12:
+            print("12 : MSZ, built spaces, residential, 3m < building height <= 6m:",v)
+        if k==13:
+            print("13 : MSZ, built spaces, residential, 6m < building height <= 15m:",v)
+        if k==14:
+            print("14 : MSZ, built spaces, residential, 15m < building height <= 30m:",v)
+        if k==15:
+            print("15 : MSZ, built spaces, residential, building height > 30m:",v)
+        if k==21:
+            print("21 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), building height <= 3m:",v)
+        if k==22:
+            print("22 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), 3m < building height <= 6m:",v)
+        if k==23:
+            print("23 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), 6m < building height <= 15m:",v)
+        if k==24:
+            print("24 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), 15m < building height <= 30m:",v)
+        if k==25:
+            print("25 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), building height > 30m:",v)
 
 def compare_raster_data(raster1data,raster2data):
     raster1hist=defaultdict(int)
@@ -747,9 +788,12 @@ if __name__ == "__main__":
     #r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_V R2022A")
     #three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
 
-    r2ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_S_E2030_GLOBE_R2023A_54009_1000_V1_0_R8_C26.tif",dt="BUILT_S R2023A")
-    r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_E2030_GLOBE_R2023A_54009_1000_V1_0_R8_C26.tif",dt="BUILT_V R2023A")
-    three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
+    #r2ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_S_E2030_GLOBE_R2023A_54009_1000_V1_0_R8_C26.tif",dt="BUILT_S R2023A")
+    #r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_E2030_GLOBE_R2023A_54009_1000_V1_0_R8_C26.tif",dt="BUILT_V R2023A")
+    #three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
+
+    rheightdata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_C_MSZ_E2018_GLOBE_R2023A_54009_10_V1_0_R8_C26.tif",dt="BUILT_C R2023A")
+    four_colored_morphological_settelement_zones(rheightdata,79.271851,12.439259,80.351257,13.568572)
     
     #verhulste_ricker_population_growth_model(14730872,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2020,toyear=2050)
     #verhulste_ricker_population_growth_model(15195379,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2019,toyear=2050)
