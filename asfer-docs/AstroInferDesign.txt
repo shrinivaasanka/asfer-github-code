@@ -21977,3 +21977,29 @@ References:
 References:
 ----------
 1424.6 GHSL R2023A improvements from R2022A - fix to unrealistic built-up surface change rate in rural pixels - https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2023.pdf?t=1683540422 - "..... the unrealistic built-up surface change rate in RURAL domain noticed in the R2022 has been fixed in the new release R2023 (Figure 10). ....."
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+1425. (THEORY and FEATURE) GIS Urban Sprawl Analytics -  Four colored morphological settlement classification from R2023A GHS-BUILT-C dataset - Expanded Chennai Metropolitan Area Bounding Box - 12 May 2023 - related to 823,1163,1164,1174,1175,1177,1179,1194,1211,1226,1234,1290,1291,1292,1295,1296,1297,1301,1302,1304,1312,1313,1320,1323,1326,1328,1342,1343,1349,1350,1351,1362,1363,1377,1386,1395,1397,1398,1412,1414,1423,1424 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, Verlhulste-R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, Preferential Attachment, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models,Expander Graphs,Timeseries analysis,Graph Edit Distance and Earth mover distance, Face recognition,Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching 
+-------------------------------------------------------------------------------------------------------------------------------------------
+1425.1 python-src/image_pattern_mining/ImageNet/GISUrbanSprawlAnalytics.py has been updated to include a dictionary of longitude-latitude to data of the raster at that long-lat and return the dictionary (longlatstat) within the return tuple value. This crucial functionality was lacking thus far and enables lookup of raster at longitude-latitude granularity. 
+1425.2 New function four_colored_morphological_settelement_zones(heightrasterdata,longx,latx,longy,laty) has been defined which iterates through building height raster data (GHSL BUILT-C MSZ dataset is implied unless otherwise stated) and categorizes the pixels by their morphological settlement zone (MSZ) which are broadly classified into vegetation-water,residential and non-residential segments (and their subsegments by height and NDVI). By this four colored urban sprawl facegraph theory is minimally implemented in NeuronRain if non-residential segment is split into industrial and commercial zones by building heights (a filter based on height standards might have to be added - Industrial buildings (manufacturing) have a standard clearing height of 32-36 feet - https://methodarchitecture.com/industrial-clear-height-36/). Function four_colored_morphological_settlement_zones() is invoked on testlogs/RemoteSensingGIS/GHS_BUILT_C_MSZ_E2018_GLOBE_R2023A_54009_10_V1_0_R8_C26.tif GHSL BUILT-C R2023A morphological settlement zones dataset (downloadable from https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_C_GLOBE_R2023A/GHS_BUILT_C_MSZ_E2018_GLOBE_R2023A_54009_10/V1-0/tiles/ - 183 MB - not part of the commit):
+    rheightdata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_C_MSZ_E2018_GLOBE_R2023A_54009_10_V1_0_R8_C26.tif",dt="BUILT_C R2023A")
+    four_colored_morphological_settelement_zones(rheightdata,79.271851,12.439259,80.351257,13.568572)
+1425.3 Following are the four colored morphological settlement zone statistics computed by four_colored_morphological_settelement_zones() for earlier Chennai metropolitan area bounding box (http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257) captured in testlogs/GISUrbanSprawlAnalytics.log.12May2023:
+	urbansprawl_gini_coefficient(): Gini Index of the dataset =  0.9399500643202778
+	Morphological settlement zones : defaultdict(<class 'int'>, {0: 11017, 11: 265, 2: 229, 12: 58, 3: 223, 5: 43, 13: 213, 1: 105, 23: 8, 22: 1, 14: 36, 24: 2, 4: 2, 25: 1, 15: 1})
+	11 : MSZ, built spaces, residential, building height <= 3m: 265
+	02 : MSZ, open spaces, medium vegetation surfaces 0.3 < NDVI <=0.5: 229
+	12 : MSZ, built spaces, residential, 3m < building height <= 6m: 58
+	03 : MSZ, open spaces, high vegetation surfaces NDVI > 0.5: 223
+	05 : MSZ, open spaces, road surfaces: 43
+	13 : MSZ, built spaces, residential, 6m < building height <= 15m: 213
+	01 : MSZ, open spaces, low vegetation surfaces NDVI <= 0.3: 105
+	23 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), 6m < building height <= 15m: 8
+	22 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), 3m < building height <= 6m: 1
+	14 : MSZ, built spaces, residential, 15m < building height <= 30m: 36
+	24 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), 15m < building height <= 30m: 2
+	04 : MSZ, open spaces, water surfaces LAND < 0.5: 2
+	25 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), building height > 30m: 1
+	15 : MSZ, built spaces, residential, building height > 30m: 1
+
