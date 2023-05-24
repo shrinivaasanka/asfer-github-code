@@ -22020,3 +22020,17 @@ References:
 1426.8 MAJORITY VOTING AND THE CONDORCET’S JURY THEOREM - https://arxiv.org/pdf/2002.03153.pdf
 1426.9 Condorcet Jury Theorem - https://en.wikipedia.org/wiki/Condorcet%27s_jury_theorem
 1426.10 Small Bias Sample Spaces - https://en.wikipedia.org/wiki/Small-bias_sample_space - Voter vector is defined as string of binary decisions by voters (E.g Good-Good-Bad-Bad-Good is a vote vector for decision correctness of 5 voters). Bias is the difference between parity Bad or 0 (Overall bad group decision of a vote vector) and parity Good or 1 (Overall good group decision of a vote vector) - Small bias spaces fool parity - Earlier asymptotic approximation is for p closer to 0.5 (e.g 0.49999999) giving rise to voter sample space that is too close to call. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+1427. (THEORY and FEATURE) People Analytics - Social Network Analysis (Search Engine Results) - Spearman Rank Correlation and Partial Ordered Rankings - related to 14,365,626,711,753,876,1127,1128,1129,1130,1204,1263 and all sections on People Analytics, Intrinsic Merit Versus Fame Equilibrium, BKS Conjecture, Stability and Noise Sensitivity of Interview LTF/PTF,Peres Theorem,Unique Identification,HR Analytics and Automated Recruitment,Question-Answering,Majority Voting,Condorcet Jury Theorem Variants,Margulis-Ruzzo Thresholds,Novelty Detection,Recommender Systems,AI Question-Answering, Partial Ordered Ranking, Fame-Merit equilibrium
+-------------------------------------------------------------------------------------------------------------------------------------------
+1427.1 python-src/SocialNetworkAnalysis_PeopleAnalytics.py has been updated to define a small function to compute Spearman Rank Correlation
+Coefficient between rankings of search results from two search engines for a query (Search engines are the obvious sources to locate a person by name or domain).
+1427.2 Following two example search engine rankings of URLs are correlated by SciPy Stats Spearman coefficient:
+    searchresults1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    searchresults2=[20,1,2,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,18,19]
+    hranal.search_engine_rank_correlation(searchresults1,searchresults2)
+1427.3 Earlier two searchresults are first 20 numeric ranking values for query "big data linux kernel cloud machine learning" in Google and Microsoft Bing respectively (added to testlogs at python-src/testlogs/GoogleSearch_bigdatalinuxkernelcloudmachinelearning_23May2023.pdf and python-src/testlogs/MicrosoftBingSearch_bigdatalinuxkernelcloudmachinelearning_23May2023.pdf)
+1427.4 Earlier results simulate the conflict between intrinsic merit (Bing SPTAG search intent) versus majority voting (PageRank voting). Theoretically both rankings must have concurred attaining Fame-Merit equilibrium. New Partial Ordered Ranking could be evolved (section 626) by merging the two search results arrays which are totally ordered into a single POSET array of feature tuples (e.g ((pagerank1,sptag1),(pagerank2,sptag2),......) - some or all ordinates of feature tuples within the partial order may not be comparable by < relation. 
+1427.5 Logs testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.24May2023 show following Spearman correlation and pvalue for the 2 rankings:
+search_engine_rank_correlation(): res =  SpearmanrResult(correlation=-0.12781954887218044, pvalue=0.5912462398946646)
