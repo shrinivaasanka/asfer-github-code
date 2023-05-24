@@ -113,6 +113,11 @@ class HRAnalytics(object):
         print("Kendall Tau Rank Correlations - Durations and Remunerations: tau=",
               tau3, ", pvalue=", pvalue3)
 
+    def search_engine_rank_correlation(self,searchresults1,searchresults2):
+        res = stats.spearmanr(searchresults1,searchresults2)
+        print("search_engine_rank_correlation(): res = ",res)
+        return res
+
     def nameparser(self, full_name, pattern, context):
         name = nameparser.HumanName(full_name)
         print("HumanName Parser - parsed name (wrong):", repr(name))
@@ -379,7 +384,7 @@ if __name__ == "__main__":
     avedistance9 = csensing.alphabet_vectorspace_embedding_distance(
         [['a'], ['b'], ['c'], ['d'], ['e'], ['p']], [['f'], ['g'], ['d'], ['h'], ['k'], ['l']], True)
     print("Edit Distance between two Strings:", edit_distance("abcdep", "fgdhkl"))
-    hranal.rlfg_intrinsic_merit(profile_text2)
+    # hranal.rlfg_intrinsic_merit(profile_text2)
     # number_of_connections=hranal.parse_connections(profile_text)
     # hranal.least_energy_intrinsic_merit()
     # hranal.experiential_intrinsic_merit(number_of_connections)
@@ -387,7 +392,7 @@ if __name__ == "__main__":
     # remunerations=[100000,700000,1000000,1300000,200000,1400000,2500000]
     # durations=[0.7,5,0.1,2,3,2,0.5]
     # hranal.tenure_partition_rank_correlation(designations, remunerations, durations)
-    hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
+    # hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
     # profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
     # profile_text=hranal.parse_profile("none","pdf","testlogs/ConnectionsLinkedIn_KSrinivasan.pdf")
     # hranal.rlfg_intrinsic_merit(profile_text)
@@ -438,3 +443,6 @@ if __name__ == "__main__":
     mr3=match_rating_codex(str("Srinivasan"))
     print("Match ratings for same name of differing spellings - [Shrinivaasan,Shrinivas,Srinivasan]:", [
         mr1, mr2, mr3])
+    searchresults1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    searchresults2=[20,1,2,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,18,19]
+    hranal.search_engine_rank_correlation(searchresults1,searchresults2)
