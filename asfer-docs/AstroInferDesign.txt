@@ -22042,3 +22042,39 @@ search_engine_rank_correlation(): res =  SpearmanrResult(correlation=-0.12781954
 References:
 ----------
 1427.6 Shockwave: Fair and Efficient Cluster Scheduling for Dynamic Adaptation in Machine Learning - https://arxiv.org/pdf/2210.00093.pdf - Market Equilibria for Machine Learning: Fisher Equilibrium is found for fair scheduling of distributed machine learning datasets - Section 727 conjectures that Fame-Merit Convex Program Rankings (obtained from Fisher or Eisenberg-Gale market clearing equilibria of perceivers-perceived - Perceivers(Buyers) apportion Merit(Value) to Perceived(Commodities) so as to clear the market) and PageRank Converging Markov Random Walk Rankings should concur. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+1428. (JIRA,THEORY and FEATURE) GIS Urban Sprawl Analytics -  Four colored morphological settlement classification from R2023A GHS-BUILT-C dataset - Expanded Chennai Metropolitan Area Bounding Box - 3-Colored GHSL MSZ split into 4-colored MSZ by clearing height - 26 May 2023 - related to 823,1163,1164,1174,1175,1177,1179,1194,1211,1226,1234,1290,1291,1292,1295,1296,1297,1301,1302,1304,1312,1313,1320,1323,1326,1328,1342,1343,1349,1350,1351,1362,1363,1377,1386,1395,1397,1398,1412,1414,1423,1424,1425 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, Verlhulste-R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, Preferential Attachment, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models,Expander Graphs,Timeseries analysis,Graph Edit Distance and Earth mover distance, Face recognition,Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching 
+-------------------------------------------------------------------------------------------------------------------------------------------
+1428.1 python-src/image_pattern_mining/ImageNet/GISUrbanSprawlAnalytics.py has been updated to add clearing height as a parameter to four_colored_morphological_settelement_zones(heightrasterdata,longx,latx,longy,laty,clearingheight=10.9727999833) which is set to default 36 feet or 10.97 meters (and varies upto 32 feet).
+1428.2 Based on clearingheight 3-colored GHSL R2023A SMOD MSZ is split into 4-colored MSZ by including Manufacturing-Industrial as additional segment if height is in range 6 to 15 meters:
+        if k==23 and clearingheight > 6 and clearingheight < 15:
+            print("23 : Manufacturing-Industrial MSZ, built spaces, non-residential(Manufacturing-Industrial), 6m < building height <= 15m:",v)
+1428.3 Earth Mover Distance similarity between R2022A and R2023A Degree of Urbanization Visuals is found by ImageGraph_Keras_Theano.histogram_partition_distance_similarity():
+    ImageGraph_Keras_Theano.histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg","testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2023A_GHS_SMOD_DegreeOfUrbanisation.jpg")
+1428.4 Problems in JPG file testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2023A_GHS_SMOD_DegreeOfUrbanisation.jpg from GHSL R2023A SMOD Visualization https://ghsl.jrc.ec.europa.eu/visualisation.php has been corrected (JIRA issue:https://krishnairesearch.atlassian.net/browse/NEUR-30)
+1248.5 Following statistics are captured in testlogs/GISUrbanSprawlAnalytics.log.26May2023 for 4-color MSZ and EMD similarity between the two imagery from GHSL SMOD R2022A and R2023A - EMD similarity for CMA bounding box is 63.95% or a visual change of 36% in one year which more or less coincides with ~25% growth between 2022 and 2023 found from GHSL SMOD rasters in 1423:
+--------
+urbansprawl_gini_coefficient(): Gini Index of the dataset =  0.9399500643202778
+Morphological settlement zones : defaultdict(<class 'int'>, {0: 11017, 11: 265, 2: 229, 12: 58, 3: 223, 5: 43, 13: 213, 1: 105, 23: 8, 22: 1, 14: 36, 24: 2, 4: 2, 25: 1, 15: 1})
+11 : Residential MSZ, built spaces, residential, building height <= 3m: 265
+02 : Greenery-Waterbody MSZ, open spaces, medium vegetation surfaces 0.3 < NDVI <=0.5: 229
+12 : Residential MSZ, built spaces, residential, 3m < building height <= 6m: 58
+03 : Greenery-Waterbody MSZ, open spaces, high vegetation surfaces NDVI > 0.5: 223
+05 : Non-Residential MSZ, open spaces, road surfaces: 43
+13 : Residential MSZ, built spaces, residential, 6m < building height <= 15m: 213
+01 : Greenery-Waterbody MSZ, open spaces, low vegetation surfaces NDVI <= 0.3: 105
+23 : Manufacturing-Industrial MSZ, built spaces, non-residential(Manufacturing-Industrial), 6m < building height <= 15m: 8
+22 : Non-Residential MSZ, built spaces, non-residential(commercial,IT-ITES), 3m < building height <= 6m: 1
+14 : Residential MSZ, built spaces, residential, 15m < building height <= 30m: 36
+24 : Commercial MSZ, built spaces, non-residential(commercial,IT-ITES), 15m < building height <= 30m: 2
+04 : Greenery-Waterbody MSZ, open spaces, water surfaces LAND < 0.5: 2
+25 : Commercial MSZ, built spaces, non-residential(commercial,IT-ITES), building height > 30m: 1
+15 : Residential MSZ, built spaces, residential, building height > 30m: 1
+('EMD Histogram distance similarity between images - testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg and testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2023A_GHS_SMOD_DegreeOfUrbanisation.jpg :', (0.6395461559295654, None, array([[111.,   0.,   0., ...,   0.,   0.,   0.],
+       [  0., 111.,   0., ...,   0.,   0.,   0.],
+       [  0.,   0., 111., ...,   0.,   0.,   0.],
+       ...,
+       [  0.,   0.,   0., ...,   0.,   0.,   0.],
+       [  0.,   0.,   0., ...,   0.,   0.,   0.],
+       [  0.,   0.,   0., ...,   0.,   0.,   0.]], dtype=float32)))
