@@ -317,7 +317,7 @@ def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt):
     urbansprawl_gini_coefficient(urbansprawlstatistics)
     return (urbansprawlstatistics,(rows,cols),longlatstat)
 
-def four_colored_morphological_settelement_zones(heightrasterdata,longx,latx,longy,laty):
+def four_colored_morphological_settelement_zones(heightrasterdata,longx,latx,longy,laty,clearingheight=10.9727999833):
     heightrasterhist=defaultdict(int)
     for rh in heightrasterdata[0]:
         height=rh[0]
@@ -325,35 +325,35 @@ def four_colored_morphological_settelement_zones(heightrasterdata,longx,latx,lon
     print("Morphological settlement zones :",heightrasterhist)
     for k,v in heightrasterhist.items():
         if k==1:
-            print("01 : MSZ, open spaces, low vegetation surfaces NDVI <= 0.3:",v)
+            print("01 : Greenery-Waterbody MSZ, open spaces, low vegetation surfaces NDVI <= 0.3:",v)
         if k==2:
-            print("02 : MSZ, open spaces, medium vegetation surfaces 0.3 < NDVI <=0.5:",v)
+            print("02 : Greenery-Waterbody MSZ, open spaces, medium vegetation surfaces 0.3 < NDVI <=0.5:",v)
         if k==3:
-            print("03 : MSZ, open spaces, high vegetation surfaces NDVI > 0.5:",v)
+            print("03 : Greenery-Waterbody MSZ, open spaces, high vegetation surfaces NDVI > 0.5:",v)
         if k==4:
-            print("04 : MSZ, open spaces, water surfaces LAND < 0.5:",v)
+            print("04 : Greenery-Waterbody MSZ, open spaces, water surfaces LAND < 0.5:",v)
         if k==5:
-            print("05 : MSZ, open spaces, road surfaces:",v)
+            print("05 : Non-Residential MSZ, open spaces, road surfaces:",v)
         if k==11:
-            print("11 : MSZ, built spaces, residential, building height <= 3m:",v)
+            print("11 : Residential MSZ, built spaces, residential, building height <= 3m:",v)
         if k==12:
-            print("12 : MSZ, built spaces, residential, 3m < building height <= 6m:",v)
+            print("12 : Residential MSZ, built spaces, residential, 3m < building height <= 6m:",v)
         if k==13:
-            print("13 : MSZ, built spaces, residential, 6m < building height <= 15m:",v)
+            print("13 : Residential MSZ, built spaces, residential, 6m < building height <= 15m:",v)
         if k==14:
-            print("14 : MSZ, built spaces, residential, 15m < building height <= 30m:",v)
+            print("14 : Residential MSZ, built spaces, residential, 15m < building height <= 30m:",v)
         if k==15:
-            print("15 : MSZ, built spaces, residential, building height > 30m:",v)
+            print("15 : Residential MSZ, built spaces, residential, building height > 30m:",v)
         if k==21:
-            print("21 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), building height <= 3m:",v)
+            print("21 : Non-Residential MSZ, built spaces, non-residential(commercial,IT-ITES), building height <= 3m:",v)
         if k==22:
-            print("22 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), 3m < building height <= 6m:",v)
-        if k==23:
-            print("23 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), 6m < building height <= 15m:",v)
+            print("22 : Non-Residential MSZ, built spaces, non-residential(commercial,IT-ITES), 3m < building height <= 6m:",v)
+        if k==23 and clearingheight > 6 and clearingheight < 15:
+            print("23 : Manufacturing-Industrial MSZ, built spaces, non-residential(Manufacturing-Industrial), 6m < building height <= 15m:",v)
         if k==24:
-            print("24 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), 15m < building height <= 30m:",v)
+            print("24 : Commercial MSZ, built spaces, non-residential(commercial,IT-ITES), 15m < building height <= 30m:",v)
         if k==25:
-            print("25 : MSZ, built spaces, non-residential(commercial,IT-ITES-Industrial), building height > 30m:",v)
+            print("25 : Commercial MSZ, built spaces, non-residential(commercial,IT-ITES), building height > 30m:",v)
 
 def compare_raster_data(raster1data,raster2data):
     raster1hist=defaultdict(int)
@@ -794,6 +794,7 @@ if __name__ == "__main__":
 
     rheightdata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_C_MSZ_E2018_GLOBE_R2023A_54009_10_V1_0_R8_C26.tif",dt="BUILT_C R2023A")
     four_colored_morphological_settelement_zones(rheightdata,79.271851,12.439259,80.351257,13.568572)
+    ImageGraph_Keras_Theano.histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg","testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2023A_GHS_SMOD_DegreeOfUrbanisation.jpg")
     
     #verhulste_ricker_population_growth_model(14730872,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2020,toyear=2050)
     #verhulste_ricker_population_growth_model(15195379,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2019,toyear=2050)
