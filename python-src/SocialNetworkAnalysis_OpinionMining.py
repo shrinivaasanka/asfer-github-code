@@ -24,6 +24,9 @@ import SentimentAnalyzer
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from empath import Empath
 from pytrends.request import TrendReq
+from bs4 import BeautifulSoup 
+import requests
+from collections import defaultdict
 
 def sentiment_analyzer(text,algorithm=None):
     vote=0.0
@@ -152,10 +155,35 @@ def opinion_mining_from_google_trends(query=None,fromdate='01/01/2023',todate='0
         print("query:",q[0])
         opinion_mining(q[0],fromdate,todate,maxarticles=2)
 
+def opinion_mining_from_url(url):
+    print("---------------------------------------------------------------------------------------------------")
+    print("Opinion mined from URL (specialized to capture Tweets in https://twitter.com/i/trends format):",url)
+    print("---------------------------------------------------------------------------------------------------")
+    r = requests.get(url)    
+    bs=BeautifulSoup(r.text,"html.parser")
+    text=bs.get_text()
+    tweetdict=defaultdict()
+    numberoftweets=-1
+    for line in text.split("\n"):
+        linetoks=line.split()
+        if "Tweets" in linetoks:
+            print("Number of tweets:",linetoks[0])
+            numberoftweets=linetoks[0]
+        if "Tweet" in linetoks:
+            print("Trending tweet:",linetoks[1])
+            tweetdict[linetoks[1]]=numberoftweets
+            numberoftweets=-1
+            sentiment_analyzer(linetoks[1],algorithm="VADER")
+        if "Trending" in linetoks and "since" in linetoks:
+            print("-----------------",line)
+    print("Votes for tweets - tweetdict:",tweetdict)
+
 if __name__=="__main__":
     #opinion_mining("Chennai Metropolitan Area Expansion","27/02/2023","01/03/2023")
     #opinion_mining("Stock market volatility","01/01/2023","01/03/2023")
-    opinion_mining_from_google_trends(fromdate="01/03/2023",todate="01/04/2023")
+    opinion_mining_from_google_trends(fromdate="01/06/2023",todate="09/06/2023")
+    opinion_mining_from_url("https://trendlistz.com/india")
+    #opinion_mining_from_url("https://twitter.com/i/trends")
     #opinion_mining("Karnataka assembly elections Congress","01/01/2023","01/04/2023")
     #opinion_mining("Karnataka assembly elections BJP","01/01/2023","01/04/2023")
 
