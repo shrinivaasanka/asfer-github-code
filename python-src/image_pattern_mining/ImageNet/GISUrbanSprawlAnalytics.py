@@ -792,9 +792,9 @@ if __name__ == "__main__":
     #r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_E2030_GLOBE_R2023A_54009_1000_V1_0_R8_C26.tif",dt="BUILT_V R2023A")
     #three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
 
-    rheightdata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_C_MSZ_E2018_GLOBE_R2023A_54009_10_V1_0_R8_C26.tif",dt="BUILT_C R2023A")
-    four_colored_morphological_settelement_zones(rheightdata,79.271851,12.439259,80.351257,13.568572)
-    ImageGraph_Keras_Theano.histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg","testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2023A_GHS_SMOD_DegreeOfUrbanisation.jpg")
+    #rheightdata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_C_MSZ_E2018_GLOBE_R2023A_54009_10_V1_0_R8_C26.tif",dt="BUILT_C R2023A")
+    #four_colored_morphological_settelement_zones(rheightdata,79.271851,12.439259,80.351257,13.568572)
+    #ImageGraph_Keras_Theano.histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg","testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2023A_GHS_SMOD_DegreeOfUrbanisation.jpg")
     
     #verhulste_ricker_population_growth_model(14730872,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2020,toyear=2050)
     #verhulste_ricker_population_growth_model(15195379,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2019,toyear=2050)
@@ -826,3 +826,10 @@ if __name__ == "__main__":
     #dbscan2.clustering()
     #dbscan2.write_clustered_image(neuralnetwork=True)
     #dbscan2.write_clustered_image(neuralnetwork=False)
+
+    seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_NightLights1_12June2023.jpeg")
+    seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_NightLights2_12June2023.jpeg")
+    seg15=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg")
+    urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights1_12June2023.jpeg",seg13)
+    urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights2_12June2023.jpeg",seg14)
+    urban_sprawl_from_segments("testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg",seg15)
