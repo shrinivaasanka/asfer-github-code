@@ -22107,4 +22107,45 @@ Morphological settlement zones : defaultdict(<class 'int'>, {0: 11017, 11: 265, 
 1430.5 An example twitter trends is cast as ballot in testlogs/SocialNetworkAnalysis_OpinionMining.log.9June2023 for following trending twitter hashtags (BTS TakeTwo KPop dominates the trends):
 Votes for tweets - tweetdict: defaultdict(None, {'#PollstersSurveyForMP': -1, '#मुख्यमंत्री_लाड़ली_बहना_योजना': -1, '#BirsaMunda': '15K', 'भगवान': '#9YearsOfTechForGrowth': '39K', '#OMG2': '14K', 'KARANTLY': '25K', 'WELCOME': '43K', 'महान': -1, 'कानपुर': -1, 'सिंह': -1, 'Manusmriti': -1, 'U': -1, 'चिंतन': -1, 'शरद': -1, 'जनजातीय': -1, 'BIRTH': '42K', 'Supporters': '14K', 'प्यारी': -1, 'संजय': -1, 'CSAT': -1, 'वनवासी': -1, 'रक्षा': -1 '2216K', 'Einstein': '12K', 'अजीत': -1, 'Bharpai': '63K', 'सुधीर': '34K', 'No': '66K', 'Jai': -1, 'Bangtan': '122K', 'Jaishankar': '21K', '#TaTwo': '1253K', '#instagramdown': -1, '#Animal': -1, '#GodKabir_Comes_In_All_4Yugas': '29K', '#AkshayKumar': -1, '#Gadar2': -1, '#MissWorld2023': -1, '#SharadPawar': -1, '#Pathaan': -1, '#BloodyDaddy': -1, '#BSF_BGB': -1, '#SonamKapoor': -1, '#1000DaysOfInjustice': -1, '#TereIshqMeinGhayal': '24K', '#FridayFeeling': -1})
 
- 
+-------------------------------------------------------------------------------------------------------------------------------------------
+1431. (THEORY and FEATURE) GIS Weather Analytics and Urban Sprawl Analytics -  Zoom.Earth EUMETSAT-MeteoSAT-IODC Night Lights - 13 June 2023 - related to 823,1163,1164,1174,1175,1177,1179,1194,1211,1226,1234,1290,1291,1292,1295,1296,1297,1301,1302,1304,1312,1313,1320,1323,1326,1328,1342,1343,1349,1350,1351,1362,1363,1377,1386,1395,1397,1398,1412,1414,1423,1424,1425,1430 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, Verlhulste-R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, Preferential Attachment, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models,Expander Graphs,Timeseries analysis,Graph Edit Distance and Earth mover distance, Face recognition,Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching, Weather Forecast, Climate Analytics, Flood Mitigation 
+-------------------------------------------------------------------------------------------------------------------------------------------
+1431.1 Night Time Lights data have been so far sourced from NASA VIIRS datasets. GISUrbanSprawlAnalytics.py has been updated to contour segment following 3 imagery from https://zoom.earth/maps/satellite/#view=20.6,78.4,5z/date=2023-06-12,01:00,+5.5 by EUMETSAT-MeteoSAT-IODC which capture both NightTime Lights of urban areas and Weather satellite  data thus combining Urban Sprawl Analytics and Climate analytics into a single task:
+    seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_NightLights1_12June2023.jpeg")
+    seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_NightLights2_12June2023.jpeg")
+    seg15=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg")
+    urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights1_12June2023.jpeg",seg13)
+    urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights2_12June2023.jpeg",seg14)
+    urban_sprawl_from_segments("testlogs/ZoomEarth_WeatherAndNightLights1_12June2023.jpeg",seg15)
+1431.2 Contour or Convex Hull area to Square Kilometre conversion is already part of Zoom.Earth. Following 3 imagery respectively illustrate: 
+    testlogs/ZoomEarth_NightLights1_12June2023.jpeg - Convex Hulls of most luminous regions of Chennai (~4200 sqkm) and Bengaluru (~3320 sqkm) urban sprawls on 12 June 2023 1 AM delineated by Zoom.Earth Convex Hull polygon area tool - correspond to urban centers in GHSL (almost no ribbons)
+    testlogs/ZoomEarth_NightLights2_12June2023.jpeg - Convex Hulls of most luminous regions of Chennai urban sprawl (~4200 sqkm) on 12 June 2023 1 AM - magnified - correspond to urban centers in GHSL (heavy ribbon or transit oriented development)
+    testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg - Combined Weather satellite and Night Time Light imagery from EUMETSAT-MeteoSAT-IODC on 12 June 2023 1 AM  
+1431.3 Combined Urban sprawl night lights and Weather satellite imagery within same image is especially necessary in flood mitigation and disaster response - For example, testlogs/ZoomEarth_WeatherAndNightLights1_12June2023.jpeg imagery earlier captures both a trajectory of extremely severe cyclonic storm Biparjoy and India Night time lights on 12 June 2023 1 AM. Change in night time lights before and after the expected landfall is proportional to extent of cyclone's impact on infrastructure. 
+1431.4 Following are logs and images for chain approximation contours-cannyedge-kmeansclustering-watershed segmentation from above 3 imagery:
+	testlogs/GISUrbanSprawlAnalytics.log.13June2023.xz
+	testlogs/RemoteSensingGIS/ZoomEarth_NightLights1_12June2023_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/ZoomEarth_NightLights1_12June2023_segmented.jpg
+	testlogs/RemoteSensingGIS/ZoomEarth_NightLights2_12June2023_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/ZoomEarth_NightLights2_12June2023_segmented.jpg
+	testlogs/RemoteSensingGIS/ZoomEarth_WeatherAndNightLights3_12June2023_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/ZoomEarth_WeatherAndNightLights3_12June2023_segmented.jpg
+	testlogs/ZoomEarth_NightLights1_12June2023-cannyedgedetection.jpg
+	testlogs/ZoomEarth_NightLights1_12June2023-contourkmeansclustered.jpg
+	testlogs/ZoomEarth_NightLights1_12June2023-contourlabelled.jpg
+	testlogs/ZoomEarth_NightLights1_12June2023-contoursegmented.jpg
+	testlogs/ZoomEarth_NightLights2_12June2023-cannyedgedetection.jpg
+	testlogs/ZoomEarth_NightLights2_12June2023-contourkmeansclustered.jpg
+	testlogs/ZoomEarth_NightLights2_12June2023-contourlabelled.jpg
+	testlogs/ZoomEarth_NightLights2_12June2023-contoursegmented.jpg
+	testlogs/ZoomEarth_WeatherAndNightLights3_12June2023-cannyedgedetection.jpg
+	testlogs/ZoomEarth_WeatherAndNightLights3_12June2023-contourkmeansclustered.jpg
+	testlogs/ZoomEarth_WeatherAndNightLights3_12June2023-contourlabelled.jpg
+	testlogs/ZoomEarth_WeatherAndNightLights3_12June2023-contoursegmented.jpg
+
+References:
+----------
+1431.5 ADB Development Asia - Correlation between Night Time Lights Luminosity and Per capita expenditure by population - https://development.asia/insight/night-light-data-innovative-way-track-development - National and Provincial data of Philippines - "..... We find consistently strong positive correlation between regional average household expenditure and regional average luminosity. However, the correlation values are lower when we used provincial-level data, and the numbers also fluctuate over time. A similar pattern holds for poverty incidence, as we find consistently strong negative correlation between regional average household expenditure and regional average luminosity. The correlations also taper off when examining provincial-level data. On the other hand, the correlation between population density and average luminosity is consistently strong and positive at both regional and provincial levels ....."
+1431.6 Decadal growth in India Night time lights - ISRO-NRSC - 43% to 400% - https://timesofindia.indiatimes.com/india/growth-indicator-night-lights-up-43-in-10-yrs-400-in-some-states/articleshow/97424420.cms?from=mdr
+1431.7 EUMETSAT - https://view.eumetsat.int/productviewer?v=default 
+1431.8 Illuminating Economic Growth - Night Time Lights - IMF - https://www.imf.org/en/Publications/fandd/issues/2019/09/satellite-images-at-night-and-economic-growth-yao
