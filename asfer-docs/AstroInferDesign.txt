@@ -22177,7 +22177,7 @@ References:
 1433.2 New function music_weighted_automaton_from_waveform(music_clip,duration=10) has been defined to integrate Music Weighted Automaton function music_weighted_automaton() into music analytics and synthesis (a standalone functionality so far) which enables learning automata from any music clip (user defined or AI synthesized).
 1433.3 Scikit-Splearn Weighted Automaton learnt from NeuronRain synthesized WesternClassical piano notes sequence virtual_piano_music.WesternClassical.wav is written to MusicWeightedAutomaton.gv.pdf (logs: testlogs/AudioToBitMatrix.log.28June2023) 
 1433.4 AI synthesis or Formal language synthesis of music from learnt music weighted automata, for example, could be through (*) Creating new automata by closure (union,intersection,complementation,Kleene-star,...) of already learnt music Weighted Automata corpus (*) Use of Pumping Lemma on learnt Weighted Automata which churn out arbitrary length music notes sequences based on learnt music.
-1433.5 Music similarity or Music clustering in terms of Music Weighted Automata thus reduces to their equivalence and similarity of graph underneath the automata - music could clustered by their weighted automata which is a computable regular language version of Kolmogorov complexity and compresses the dataset a la Normalized Compression Distance. 
+1433.5 Music similarity or Music clustering in terms of Music Weighted Automata thus reduces to their equivalence and similarity of graph underneath the automata - music could be clustered by their weighted automata which is a computable regular language version of Kolmogorov complexity and compresses the dataset a la Normalized Compression Distance. 
 
 References:
 ----------
