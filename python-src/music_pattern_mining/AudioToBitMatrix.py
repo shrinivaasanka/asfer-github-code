@@ -42,6 +42,10 @@ import rstr
 import re
 from MusicWeightedAutomaton import music_weighted_automaton,audio_to_notes_samples
 from splearn.datasets.data_sample import SplearnArray
+from GraphMining_GSpan import GSpan
+import networkx as nx
+from networkx.drawing.nx_pydot import read_dot
+
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
 piano_notes={"WesternClassical":{'A':440,'B':493.89,'C':261.63,'D':293.67,'E':329.63,'F':349.23,'G':392,'A♯':466.17,'C♯':227.18,'D♯':311.13,'F♯':370,'G♯':415.31},"Carnatic":{'S':240, 'R₁':254.27, 'R₂':269.39, 'R₃':275,'G₁':285.41, 'G₂':302.38, 'G₃':311, 'M₁':320.36, 'M₂':339.41, 'P':359.60, 'D₁':380.98, 'D₂':403.63, 'D₃':415, 'N₁':425,'N₂':453.06, 'N₃':480}}
@@ -442,7 +446,15 @@ def music_weighted_automaton_from_waveform(music_clip,duration=10):
     suff={}
     fact={}
     splarray=SplearnArray(notesencoded,len(notesencoded[0]),len(notesencoded[0]),sample,pref,suff,fact)
-    music_weighted_automaton(sample,splarray,len(notesencoded[0]),len(notesencoded[0]))
+    dotfile=music_weighted_automaton(music_clip,sample,splarray,len(notesencoded[0]),len(notesencoded[0]))
+    return dotfile
+
+def music_weighted_automata_analytics(weightedautomata):
+    musicautomatadataset=[]
+    for n in range(len(weightedautomata)-1):
+        musicautomatadataset.append(nx.Graph(read_dot(weightedautomata[n])))
+    gspan = GSpan(musicautomatadataset)
+    gspan.GraphSet_Projection()
 
 def generate_virtual_piano_notes(function="",randomnotesstringfrom=None,length=10, genre="WesternClassical"):
     synth_notes=[]
@@ -523,5 +535,9 @@ if __name__ == "__main__":
     #music_mfdfa_model("testlogs/054-SBC-Aanandhamridhakarshini.mp4",order=2)
     #music_synthesis(virtual_piano_notes=generate_virtual_piano_notes(randomnotesstringfrom=piano_notes["WesternClassical"].keys(),length=300),tempo=0.35,musicgenre="WesternClassical")
     #music_synthesis(virtual_piano_notes=generate_virtual_piano_notes(randomnotesstringfrom=piano_notes["Carnatic"].keys(),length=300,genre="Carnatic"),tempo=0.35,musicgenre="Carnatic")
-    music_weighted_automaton_from_waveform("./virtual_piano_music.WesternClassical.wav")
+    #music_weighted_automaton_from_waveform("./virtual_piano_music.WesternClassical.wav")
     #music_weighted_automaton_from_waveform("./virtual_piano_music.Carnatic.wav")
+    dotfile1=music_weighted_automaton_from_waveform("testlogs/JSBach_Musicological_Offering.mp4")
+    dotfile2=music_weighted_automaton_from_waveform("testlogs/Bach_Flute_Sonata_EFlat.mp4")
+    dotfile3=music_weighted_automaton_from_waveform("testlogs/054-SBC-Aanandhamridhakarshini.mp4")
+    music_weighted_automata_analytics([dotfile1,dotfile2,dotfile3])
