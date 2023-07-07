@@ -45,6 +45,7 @@ from splearn.datasets.data_sample import SplearnArray
 from GraphMining_GSpan import GSpan
 import networkx as nx
 from networkx.drawing.nx_pydot import read_dot
+from networkx.algorithms.shortest_paths.generic import shortest_path
 
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
@@ -307,7 +308,7 @@ def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interp
             write("virtual_piano_music.Carnatic.wav", samplerate, npsynth.astype(np.int16))
             playsound("virtual_piano_music.Carnatic.wav")
 
-def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=100):
+def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=500, weightedautomatadotfile=None,state2notedict=None,genre="WesternClassical"):
     amplitude = np.iinfo(np.int16).max
     if function != None:
         print("###################################################")
@@ -366,44 +367,60 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
               scalednpnotes.astype(np.int16))
         return
     if automaton == True:
-        print("###################################################")
-        print("Automaton to Audio")
-        print("###################################################")
-        states2notes_machine_file = open("NotesStateMachine.txt", "r")
-        states2notes_machine = ast.literal_eval(
-            states2notes_machine_file.read())
-        dfanotes = [int(librosa.note_to_hz(
-            states2notes_machine['start-s1'])*1000)]
-        prevstates = ['start']
-        iter = 0
-        while iter < samplerate*10:
-            possibletransitions = []
-            prevprevstates = prevstates
-            prevstates = []
-            # print "prevstate:",prevstate
-            # if 'fs' in prevstate:
-            #	break
-            for k, v in list(states2notes_machine.items()):
-                statetransition = k.split("-")
-                if statetransition[0] in prevprevstates:
-                    possibletransitions.append(states2notes_machine[k])
-                    prevstates.append(statetransition[1])
-                    if deterministic:
-                        break
-            for note in possibletransitions:
-                hertz = librosa.note_to_hz(note)
-                # print "Hertz:",hertz
-                dfanotes.append(amplitude*int(hertz*1000))
-                # break
-            iter += 1
-        npnotes = np.array(dfanotes)
-        # scalednpnotes=np.int16(npnotes/np.max(npnotes)*32767)
-        scalednpnotes = npnotes
-        print(("Notes :", scalednpnotes))
-        print(("Size of scaled dfanotes:", len(scalednpnotes)))
-        write("automaton_synthesized_music.wav",
-              samplerate, scalednpnotes.astype(np.int16))
-        return
+        if weightedautomatadotfile is not None:
+            musicwfagraph=nx.DiGraph(nx.nx_pydot.read_dot(weightedautomatadotfile))
+            stpaths=shortest_path(musicwfagraph)
+            print("Shortest paths:",stpaths)
+            start_node=list(musicwfagraph.nodes)[0]
+            iterations=0 
+            if state2notedict is None:
+                state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B'}
+            synthesized_notes=[state2notedict[start_node]]
+            node=start_node
+            while iterations < periodicity:
+                 successors=list(musicwfagraph.successors(node))
+                 next_random_node=random.choice(successors)
+                 synthesized_notes.append(state2notedict[next_random_node])
+                 node=next_random_node
+                 iterations+=1
+            print("Notes synthesized by random walk on music WFA graph:",synthesized_notes)
+            music_synthesis(virtual_piano_notes=synthesized_notes,tempo=0.35,musicgenre=genre)
+        else:
+            print("###################################################")
+            print("Automaton to Audio")
+            print("###################################################")
+            states2notes_machine_file = open("NotesStateMachine.txt", "r")
+            states2notes_machine = ast.literal_eval(states2notes_machine_file.read())
+            dfanotes = [int(librosa.note_to_hz(states2notes_machine['start-s1'])*1000)]
+            prevstates = ['start']
+            iter = 0
+            while iter < samplerate*10:
+                possibletransitions = []
+                prevprevstates = prevstates
+                prevstates = []
+                # print "prevstate:",prevstate
+                # if 'fs' in prevstate:
+                #	break
+                for k, v in list(states2notes_machine.items()):
+                    statetransition = k.split("-")
+                    if statetransition[0] in prevprevstates:
+                       possibletransitions.append(states2notes_machine[k])
+                       prevstates.append(statetransition[1])
+                       if deterministic:
+                          break
+                for note in possibletransitions:
+                    hertz = librosa.note_to_hz(note)
+                    # print "Hertz:",hertz
+                    dfanotes.append(amplitude*int(hertz*1000))
+                    # break
+                iter += 1
+            npnotes = np.array(dfanotes)
+            # scalednpnotes=np.int16(npnotes/np.max(npnotes)*32767)
+            scalednpnotes = npnotes
+            print(("Notes :", scalednpnotes))
+            print(("Size of scaled dfanotes:", len(scalednpnotes)))
+            write("automaton_synthesized_music.wav", samplerate, scalednpnotes.astype(np.int16))
+            return
 
 
 def mel_frequency_cepstral_coefficients(audiofile, dur=10):
@@ -537,7 +554,11 @@ if __name__ == "__main__":
     #music_synthesis(virtual_piano_notes=generate_virtual_piano_notes(randomnotesstringfrom=piano_notes["Carnatic"].keys(),length=300,genre="Carnatic"),tempo=0.35,musicgenre="Carnatic")
     #music_weighted_automaton_from_waveform("./virtual_piano_music.WesternClassical.wav")
     #music_weighted_automaton_from_waveform("./virtual_piano_music.Carnatic.wav")
-    dotfile1=music_weighted_automaton_from_waveform("testlogs/JSBach_Musicological_Offering.mp4")
-    dotfile2=music_weighted_automaton_from_waveform("testlogs/Bach_Flute_Sonata_EFlat.mp4")
-    dotfile3=music_weighted_automaton_from_waveform("testlogs/054-SBC-Aanandhamridhakarshini.mp4")
-    music_weighted_automata_analytics([dotfile1,dotfile2,dotfile3])
+    #dotfile1=music_weighted_automaton_from_waveform("testlogs/JSBach_Musicological_Offering.mp4")
+    #dotfile2=music_weighted_automaton_from_waveform("testlogs/Bach_Flute_Sonata_EFlat.mp4")
+    #dotfile3=music_weighted_automaton_from_waveform("testlogs/054-SBC-Aanandhamridhakarshini.mp4")
+    #music_weighted_automata_analytics([dotfile1,dotfile2,dotfile3])
+
+    #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
+    notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃'},genre="Carnatic")
+    notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/Bach_Flute_Sonata_EFlat.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
