@@ -26,6 +26,12 @@ import random
 import rpy2.robjects as robj
 import atexit
 import math
+import pandas as pd
+from prophet import Prophet
+import yfinance as yf
+import numpy as np
+from pathlib import Path
+from StringSearch_BinaryEncodedTimeSeries import binary_encoded_fluctuations
 
 cnt = 0
 
@@ -110,3 +116,19 @@ def ARIMA(timeseries, p, d, q):
         time_series_data, p, d) - moving_averages(time_series_data[q:], 5)
     print(("ARIMA projection: ", abs(arima)))
     return time_series_data
+
+def stockquote_Prophet_timeseries_forecast_model(ticker,period='2y',interval='1wk',algorithm="linear"):
+    print("--------------Prophet Stockquote timeseries model for ",ticker," ----------------------------")
+    pricehistory = yf.Ticker(ticker).history(period=period,interval=interval,actions=False)
+    csvfile = Path("Streaming_TimeSeriesData.csv")
+    timeseriescsv = pricehistory.to_csv(csvfile)
+    timeseriesdf = pd.read_csv(csvfile,usecols=["Date","Open"])
+    fbprophtimeseriesdf=pd.DataFrame({"ds":pd.to_datetime(timeseriesdf["Date"],format="%Y-%m-%d",utc=True),"y":timeseriesdf["Open"]})
+    fbprophtimeseriesdf["ds"]=fbprophtimeseriesdf["ds"].dt.strftime("%Y-%m-%d")
+    print(fbprophtimeseriesdf)
+    fbproph = Prophet(growth=algorithm) 
+    fbproph.fit(fbprophtimeseriesdf)
+    future = fbproph.make_future_dataframe(periods=365)
+    forecast = fbproph.predict(future)
+    print(forecast)
+    binary_encoded_fluctuations(ticker)
