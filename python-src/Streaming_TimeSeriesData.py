@@ -13,7 +13,7 @@
 # --------------------------------------------------------------------------------------------------------
 # K.Srinivasan
 # NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
-# Personal website(research): https://sites.google.com/site/kuja27/
+# Personal website(research): https://acadpdrafts.readthedocs.io/en/latest/
 # --------------------------------------------------------------------------------------------------------
 
 # Get historical stock quotes by looking up ticker symbol for date range - uses ystockquote pypi package
@@ -32,6 +32,7 @@ import yfinance as yf
 import numpy as np
 from pathlib import Path
 from StringSearch_BinaryEncodedTimeSeries import binary_encoded_fluctuations
+from StringSearch_LongestRepeatedSubstring import SuffixArray
 
 cnt = 0
 
@@ -131,4 +132,8 @@ def stockquote_Prophet_timeseries_forecast_model(ticker,period='2y',interval='1w
     future = fbproph.make_future_dataframe(periods=365)
     forecast = fbproph.predict(future)
     print(forecast)
+    #Following code block computes binary encoded fluctuations and longest repeated fluctuation substring in them
     binary_encoded_fluctuations(ticker)
+    suff_array=SuffixArray()
+    suff_array.construct_suffix_array()
+    lrs=suff_array.longest_repeated_substring(suff_array.pattern)

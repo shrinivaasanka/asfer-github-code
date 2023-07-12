@@ -13,7 +13,7 @@
 # --------------------------------------------------------------------------------------------------------
 # K.Srinivasan
 # NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
-# Personal website(research): https://sites.google.com/site/kuja27/
+# Personal website(research): https://acadpdrafts.readthedocs.io/en/latest/
 # --------------------------------------------------------------------------------------------------------
 
 # Get historical stock quotes by looking up ticker symbol for date range - uses ystockquote pypi package
@@ -35,6 +35,9 @@ cnt = 0
 
 if __name__ == "__main__":
     stockquote_Prophet_timeseries_forecast_model("AMZN")
+    stockquote_Prophet_timeseries_forecast_model("MSFT")
+    stockquote_Prophet_timeseries_forecast_model("GOOG")
+    stockquote_Prophet_timeseries_forecast_model("TSLA")
     #cnt = 0
     #time_series_data = []
     #historic_data = [{'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}]
