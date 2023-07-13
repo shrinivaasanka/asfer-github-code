@@ -22262,3 +22262,19 @@ References:
 1436.11 Multifractal Behaviors of Stock Indices and Their Ability to Improve Forecasting in a Volatility Clustering Period - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8392555/ - Gated Recurrent Unit RNN model
 1436.12 Fractal Market Hypothesis - https://www.edgarepeters.com/blog-2-2/blog-post-title-one-sf2m5i
 1436.13 COVID19 Timeseries analysis by Prophet - https://towardsdatascience.com/time-series-analysis-with-facebook-prophet-how-it-works-and-how-to-use-it-f15ecf2c0e3a
+
+-------------------------------------------------------------------------------------------------------------------------------
+1437. (THEORY and FEATURE) Facebook Prophet model of timeseries data - Stock quotes usecase (extensible to any timeseries in Music, Medical Imageing-ECG, Meteorology-Precipitation, Seismology-Tremors, NBody Gravitational Accelerations, Economics-Financial Markets) - Longest Repeated Substring in binary fluctuations as changepoints - 13 July 2023 - related to 690,691,692,1257,1315,1316,1327,1348,1375,1376,1436 and all sections on Music Information Retrieval(MIR), Climate analytics and Weather Forecast, Computational Economics-Quantitative Finance and TimeSeries Analysis, Graphical Event Models (GEM), Causal Event Models (CEM), Chain Event Graphs(CEG), Chaos and Fractals, EventNet causality, Multifractal Detrended Fluctuation Analysis (MFDFA)
+-------------------------------------------------------------------------------------------------------------------------------
+1437.1 python-src/Streaming_StockMarketData.py has been updated to compare and contrast stock quote timeseries data for 4 tickers - AMZN,MSFT,GOOG,TSLA.
+1437.2 python-src/Streaming_TimeSeriesData.py has been updated to import SuffixArray from StringSearch_LongestRepeatedSubstring.py and instantiate SuffixArray object for binary encoded fluctuations of a timeseries and find the longest repeated substring of 1s (up) and 0s (down) within it. SuffixArray of StringSearch_LongestRepeatedSubstring.py reads the binary fluctuations from python-src/StringSearch_Pattern.txt written by StringSearch_BinaryEncodedTimeSeries.py 
+1437.3 python-src/StringSearch_LongestRepeatedSubstring.py has been upgraded to Python 3.x by 2to3 and autopep8 and updated to import python regular expressions (re). All occurrences of longest repeated fluctuation substring and their average periodicity are computed by re.finditer() (within longest_repeated_substring() method of SuffixArray class) which are the chronological locations of changepoints in binary fluctuations (or timepoints where stock quotes for a ticker had undergone exactly similar ebb and tide). 
+1437.4 Python 2.7 version of python-src/StringSearch_LongestRepeatedSubstring.py has been backedup in python-src/StringSearch_LongestRepeatedSubstring.py.2.7
+1437.5 Detailed prophet computation and binary changepoints from SuffixArray (Longest Repeated Substring) are at python-src/testlogs/Streaming_StockMarketData.Prophet.log.13July2023 which could be inputs to Prophet changepoints.
+
+References:
+----------
+1437.6 Efficient Market Hypothesis - https://en.wikipedia.org/wiki/Efficient-market_hypothesis - Markets are difficult to predict or Markets follow random walks - works of [Bachelier],[Mandelbrot] and [Samuelson]
+1437.7 Efficient Market Hypothesis of Eugene Fama and Samuelson - https://web.mit.edu/Alo/www/Papers/EMH_Final.pdf
+1437.8 Hurst Exponent and State of Market - https://towardsdatascience.com/how-the-mathematics-of-fractals-can-help-predict-stock-markets-shifts-19fee5dd6574 - Market states could be one of (*) momentum (*) mean-reverting (*) brownian motion random walks determined by Hurst exponent
+
