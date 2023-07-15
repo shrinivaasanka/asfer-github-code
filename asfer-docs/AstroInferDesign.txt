@@ -22280,3 +22280,29 @@ References:
 1437.7 Efficient Market Hypothesis of Eugene Fama and Samuelson - https://web.mit.edu/Alo/www/Papers/EMH_Final.pdf
 1437.8 Hurst Exponent and State of Market - https://towardsdatascience.com/how-the-mathematics-of-fractals-can-help-predict-stock-markets-shifts-19fee5dd6574 - Market states could be one of (*) momentum (*) mean-reverting (*) brownian motion random walks determined by Hurst exponent
 
+-------------------------------------------------------------------------------------------------------------------------------
+1438. (THEORY and FEATURE) Facebook Prophet model of timeseries data - Stock quotes usecase (extensible to any timeseries in Music, Medical Imageing-ECG, Meteorology-Precipitation, Seismology-Tremors, NBody Gravitational Accelerations, Economics-Financial Markets) - Hurst exponent of stockquote timeseries - 16 July 2023 - related to 690,691,692,1257,1315,1316,1327,1348,1367,1375,1376,1436,1437 and all sections on Music Information Retrieval(MIR), Climate analytics and Weather Forecast, Computational Economics-Quantitative Finance and TimeSeries Analysis, Graphical Event Models (GEM), Causal Event Models (CEM), Chain Event Graphs(CEG), Chaos and Fractals, EventNet causality, Multifractal Detrended Fluctuation Analysis (MFDFA), Gaussian Ensemble-Gaussian Mixture Models in Weather precipitation timeseries
+-------------------------------------------------------------------------------------------------------------------------------
+1438.1 python-src/Streaming_TimeSeriesData.py has been updated to import Hurst exponent python package hurst and compute_Hc() from hurst is invoked on a stockquote ticker timeseries.
+1438.2 Following are the Hurst exponents from testlogs/Streaming_StockMarketData.Prophet.log.16July2023 for an example execution of python3.7 Streaming_StockMarketData.py 2>&1 > testlogs/Streaming_StockMarketData.Prophet.log.16July2023 to analyze 4 stock quotes:
+------------- Hurst exponent of the stockquote timeseries ------------
+Hurst exponent H: 0.6631256237890952
+Hurst constant c: 0.9515361975362864
+------------- Hurst exponent of the stockquote timeseries ------------
+Hurst exponent H: 0.5068001010178471
+Hurst constant c: 1.3492060250154627
+------------- Hurst exponent of the stockquote timeseries ------------
+Hurst exponent H: 0.5996911071760886
+Hurst constant c: 0.8961089419792517
+------------- Hurst exponent of the stockquote timeseries ------------
+Hurst exponent H: 0.6609766057038647
+Hurst constant c: 1.0363449457436713
+1438.3 Hurst exponent (*) in the range 0-0.5 implies the timeseries is mean reverting in longterm (or high value is most likely followed by low value reverting to mean in longterm) (*) in the range 0.5-1 implies the time series is in momentum and trending (or high value is most likely followed by high value) and (*) equal to 0.5 implies the timeseries is a brownian motion random walk or typical unpredictable stock defined by Efficient Market Hypothesis. Values of H > 0.5 indicate a less volatile market.
+1438.4 Hurst exponent H is related to Fractal dimension D as D = 2 - H and is a measure how turbulent or difficult to predict a timeseries is.Hurst exponent encodes the long term memory of a timeseries while Fractal dimension encodes its short term memory.
+1438.5 Mean reverting stockquote timeseries especially have a parallel in precipitation timeseries of weather forecast modelled as Gaussian Ensemble in Section 1367 which fit the most probable precipitation timeseries from a Gaussian Mixture Model ensemble (set of timeseries daily rainfall partitions of same mean seasonal rainfall) having NBody gravity L2 norm peaks as modes. 
+
+References:
+----------
+1438.6 Hurst exponent and R/S ratio - https://en.wikipedia.org/wiki/Hurst_exponent
+1438.7 Louis Bachelier’s “Theory of Speculation” - https://f-origin.hypotheses.org/wp-content/blogs.dir/1596/files/2014/12/Mark-Davis-Talk.pdf - Brownian motion in financial markets - Bahelier's PhD Thesis which created new field of quantitative finance
+1438.8 Black-Scholes formula - put-call derivatives pricing - https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model 
