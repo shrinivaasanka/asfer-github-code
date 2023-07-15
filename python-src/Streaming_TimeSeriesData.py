@@ -33,6 +33,7 @@ import numpy as np
 from pathlib import Path
 from StringSearch_BinaryEncodedTimeSeries import binary_encoded_fluctuations
 from StringSearch_LongestRepeatedSubstring import SuffixArray
+from hurst import compute_Hc
 
 cnt = 0
 
@@ -137,3 +138,7 @@ def stockquote_Prophet_timeseries_forecast_model(ticker,period='2y',interval='1w
     suff_array=SuffixArray()
     suff_array.construct_suffix_array()
     lrs=suff_array.longest_repeated_substring(suff_array.pattern)
+    print("------------- Hurst exponent of the stockquote timeseries ------------")
+    H, c, data = compute_Hc(fbprophtimeseriesdf["y"], kind='price', simplified=True) 
+    print("Hurst exponent H:",H)
+    print("Hurst constant c:",c)
