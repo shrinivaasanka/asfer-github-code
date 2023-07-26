@@ -46,6 +46,15 @@ from GraphMining_GSpan import GSpan
 import networkx as nx
 from networkx.drawing.nx_pydot import read_dot
 from networkx.algorithms.shortest_paths.generic import shortest_path
+from music21 import stream,instrument,environment
+from music21.note import Note
+from music21.tempo import MetronomeMark
+from hurst import compute_Hc,random_walk
+import os
+from threading import Thread 
+import time
+from pydub import AudioSegment
+from pydub.playback import play
 
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
@@ -198,7 +207,29 @@ def get_piano_frequencies(virtual_piano_notes,genre="WesternClassical"):
             piano_freq.append(piano_notes[genre][n])
         if genre == "Carnatic":
             piano_freq.append(piano_notes[genre][n])
+    H, c, data = compute_Hc(piano_freq)
+    print("Hurst exponent of notes timeseries:",H)
+    print("Hurst constant of notes timeseries:",c)
     return piano_freq
+
+def percussion_synthesis(virtual_piano_notes=None,percussion="TenorDrum",tempo=2000):
+    environment.set("midiPath","/usr/bin/musescore")
+    percussionpart = stream.Part()
+    if percussion == "SteelDrum":
+        percussionpart.insert(0, instrument.SteelDrum())
+    if percussion == "BassDrum":
+        percussionpart.insert(0, instrument.BassDrum())
+    if percussion == "TenorDrum":
+        percussionpart.insert(0, instrument.TenorDrum())
+    percussionmeasure = stream.Measure()
+    percussionmeasure.append(MetronomeMark(number=tempo)) 
+    for note in virtual_piano_notes:
+        n=Note(note,type='whole')
+        percussionmeasure.append(n)
+    percussionpart.append(percussionmeasure)
+    percussionpart.write('midi',"./music21_percussion_for_piano.midi")
+    os.system("fluidsynth -ni /usr/share/fluidr3mono-gm-soundfont/FluidR3Mono_GM.sf3 ./music21_percussion_for_piano.midi -F ./music21_percussion_for_piano.wav -r 44100")
+    playsound("./music21_percussion_for_piano.wav")
 
 def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False,virtual_piano_notes=None,tempo=1,amplitude=4096,musicgenre="WesternClassical"):
     music_interpol_poly=[]
@@ -230,7 +261,7 @@ def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interp
         audio=np.asarray(audio)
         #audio=np.concatenate(audio)
         #print("Synthesized audio:",audio)
-        plt.figure(figsize=(14, 5))
+        #plt.figure(figsize=(14, 5))
         if musicgenre=="WesternClassical":
             write("virtual_piano_music.WesternClassical.wav", samplerate, audio.astype(np.int16))
             playsound("virtual_piano_music.WesternClassical.wav")
@@ -384,7 +415,19 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
                  node=next_random_node
                  iterations+=1
             print("Notes synthesized by random walk on music WFA graph:",synthesized_notes)
-            music_synthesis(virtual_piano_notes=synthesized_notes,tempo=0.35,musicgenre=genre)
+            pianotrack=Thread(target=music_synthesis,kwargs={'virtual_piano_notes':synthesized_notes,'tempo':0.35,'musicgenre':genre})
+            pianotrack.start()
+            percussiontrack=Thread(target=percussion_synthesis,kwargs={'virtual_piano_notes':synthesized_notes})
+            percussiontrack.start()
+            pianotrack.join()
+            percussiontrack.join()
+            if genre == "WesternClassical":
+                piano=AudioSegment.from_file("virtual_piano_music.WesternClassical.wav")
+            else:
+                piano=AudioSegment.from_file("virtual_piano_music.Carnatic.wav")
+            percussion=AudioSegment.from_file("music21_percussion_for_piano.wav")
+            mixing=piano.overlay(percussion)
+            play(mixing)
         else:
             print("###################################################")
             print("Automaton to Audio")
@@ -560,5 +603,5 @@ if __name__ == "__main__":
     #music_weighted_automata_analytics([dotfile1,dotfile2,dotfile3])
 
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
-    notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃'},genre="Carnatic")
+    #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃'},genre="Carnatic")
     notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/Bach_Flute_Sonata_EFlat.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
