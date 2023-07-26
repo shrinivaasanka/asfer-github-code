@@ -22306,3 +22306,26 @@ References:
 1438.6 Hurst exponent and R/S ratio - https://en.wikipedia.org/wiki/Hurst_exponent
 1438.7 Louis Bachelier’s “Theory of Speculation” - https://f-origin.hypotheses.org/wp-content/blogs.dir/1596/files/2014/12/Mark-Davis-Talk.pdf - Brownian motion in financial markets - Bahelier's PhD Thesis which created new field of quantitative finance
 1438.8 Black-Scholes formula - put-call derivatives pricing - https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model 
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+1439. (JIRA,THEORY and FEATURE) Music Information Retrieval - AI Music Synthesis by Random walks on Music Weighted Automata Directed Graph - Concert synthesis by Percussion instrument overlay on Piano music - through Music21 MIDI,MuseScore,FluidSynth,Pydub support - 26 July 2023 - related to 3,110,134,298,1223,1224,1257,1258,1261,1305,1306,1307,1308,1309,1310,1311,1315,1353,1432,1433,1434,1438 and all sections on Music search-Music discovery, Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis from summation of damped sinusoids, Additive Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Dynamic Time Warping-Music Timeseries analysis, Music Evoked Autobiographical Memories, Waveshaping, ThoughtNet, Majority Voting (Enjoyable music) Vs Intrinsic (Quality music) - Condorcet Jury Theorem variants,Computational Learning Theory, Boolean Function Composition, Longest Common Subsequence, Suffix Trees - Longest Repeated Substring, MultiFractal Detrended Fluctuation Analysis of Non-stationary timeseries, Ramsey Theory-Van Der Waerden Theorem for coloring of sequences, Pumping Lemma, Normalized Compression Distance-Kolmogorov complexity, Merit of Large Scale Visuals, Recurrent Neural Networks,Neo-Riemannian Theory of Music
+----------------------------------------------------------------------------------------------------------------------------------------------
+1439.1 python-src/music_pattern_mining/AudioToBitMatrix.py has been updated to import MIT music21, hurst, pydub for composing a percussion accompaniment and mixing piano and percussion tracks to get a minimal concert audio synthesized by weighted automata which is equivalent of a 2-recurrent neural network. 
+1439.2 Hurst exponent of synthesized note frequencies is computed by Python Hurst which is a measure of how random a music is - as music notes oscillate between fixed set of octave notes, Hurst exponent of music is very low implying mean reversion.  
+1439.3 New function percussion_synthesis(virtual_piano_notes=None,percussion="TenorDrum",tempo=2000) has been defined to compose a percussion notes sequence from piano notes by MIT music21 library which offers rich set of music analysis features including neo-riemannian theory that embeds music on topological space (percussion instruments limited to 3 types of drums - SteelDrum,TenorDrum,BassDrum), set the tempo by music21 Metronome and obtain a percussion sequence of whole notes which are written to a MIDI file ./music21_percussion_for_piano.midi. This midi file can be viewed in musescore path for which is set in music21 environment. 
+1439.4 MIDI file synthesized for percussion earlier is translated to a WAV file music21_percussion_for_piano.wav by FluidSynth commandline invoked in os.system() and played by playsound. Percussion synthesis requires installation of musescore, music21, pydub and FluidSynth. 
+1439.5 Two threads are instantiated which respectively spawn executions of functions (1) music_synthesis() for piano track and (2) percussion_synthesis() for percussion track. These two tracks are overlay-ed by PyDub AudioSegment overlay to get a mixed track which is played as a concert.
+1439.6 Percussion synthesis at present supports only western classical octave due to music21 limitation. This update addresses JIRA issue https://krishnairesearch.atlassian.net/browse/NEUR-32
+1439.7 Following are newly added DB,synthesized midi and wav (concert - piano with percussion) music21 files along with logs:
+	Databases.db
+	music21_percussion_for_piano.midi
+	music21_percussion_for_piano.wav
+	testlogs/AudioToBitMatrix.log.MusicSynthesizer.Music21Fluidsynth.26July2023
+
+References:
+----------
+1439.8 Music21 - https://web.mit.edu/music21/doc/index.html
+1439.9 MuseScore - https://musescore.org/
+1439.10 FluidSynth Synthesizer - https://www.fluidsynth.org/
+1439.11 PyDub - https://pydub.com/ 
+
