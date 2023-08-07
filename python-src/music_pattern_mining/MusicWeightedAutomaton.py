@@ -24,7 +24,7 @@ import librosa
 import numpy as np
 from collections import defaultdict
 
-def music_weighted_automaton(name=None,sample=None,splarray=None,rows=10,columns=10,thresh=0.0):
+def music_weighted_automaton(name=None,sample=None,splarray=None,rows=10,columns=10,thresh=0.01):
     sp = Spectral()
     sp.set_params(partial=True, lcolumns=columns, lrows=rows, smooth_method='trigram')
     print(sp)
@@ -49,8 +49,8 @@ def music_weighted_automaton(name=None,sample=None,splarray=None,rows=10,columns
     dotfilename=name+"_MusicWeightedAutomaton.dot"
     dotfile=open(dotfilename,"w")
     dotfile.write(dot)
-    src=Source(dot)
-    src.render(name+"_MusicWeightedAutomaton.gv",view=True)
+    #src=Source(dot)
+    #src.render(name+"_MusicWeightedAutomaton.gv",view=True)
     return dotfilename 
 
 def audio_to_notes_samples(audio,dur=None):

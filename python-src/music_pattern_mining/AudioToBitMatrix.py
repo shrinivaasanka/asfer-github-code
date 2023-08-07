@@ -213,13 +213,17 @@ def get_piano_frequencies(virtual_piano_notes,genre="WesternClassical"):
         print("Hurst constant of notes timeseries:",c)
     return piano_freq
 
-def percussion_synthesis(virtual_piano_notes=None,percussions=["Guitar","Trumpet","Violin","SteelDrum"],tempo=2000):
+def percussion_synthesis(virtual_piano_notes=None,percussions=["Saxophone","Guitar","Trumpet","Violin","SteelDrum","Flute"],tempo=2000):
     environment.set("midiPath","/usr/bin/musescore")
     score=stream.Score()
     for percussion in percussions:
         percussionpart = stream.Part()
+        if percussion == "Saxophone":
+             percussionpart.insert(0, instrument.Saxophone())
         if percussion == "SteelDrum":
              percussionpart.insert(0, instrument.SteelDrum())
+        if percussion == "Flute":
+             percussionpart.insert(0, instrument.Flute())
         if percussion == "BassDrum":
              percussionpart.insert(0, instrument.BassDrum())
         if percussion == "TenorDrum":
@@ -355,7 +359,7 @@ def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interp
             write("virtual_piano_music.Carnatic.wav", samplerate, npsynth.astype(np.int16))
             playsound("virtual_piano_music.Carnatic.wav")
 
-def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=500, weightedautomatadotfile=None,state2notedict=None,genre="WesternClassical",wfaweight_threshold=0.0):
+def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=500, weightedautomatadotfile=None,state2notedict=None,genre="WesternClassical",wfaweight_threshold=0.0,instruments=["Violin","Flute"]):
     amplitude = np.iinfo(np.int16).max
     if function != None:
         print("###################################################")
@@ -419,48 +423,60 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
             stpaths=shortest_path(musicwfagraph)
             print("Music WFA graph:",musicwfagraph.edges(data=True))
             print("Music WFA Shortest paths:",stpaths)
-            start_node=list(musicwfagraph.nodes)[0]
+            edgeslist=list(musicwfagraph.edges(data=True))
+            start_node=edgeslist[0][0]
             iterations=0 
             if state2notedict is None:
                 state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B'}
             synthesized_notes=[state2notedict[start_node]]
             wfatransitionweights=[]
             node=start_node
-            while iterations < periodicity:
+            while iterations < periodicity :
                  successors=list(musicwfagraph.successors(node))
+                 if len(successors) == 0:
+                    node=edgeslist[np.random.randint(len(edgeslist),size=1)[0]][0]
+                    successors=list(musicwfagraph.successors(node))
+                 print("successors:",successors)
                  distribution=[]
                  for s in successors:
                     wfatransitionweight=abs(float(musicwfagraph[node][s]["label"].split(":")[1][:-1]))
+                    print("Music WFA successor transition weight:",wfatransitionweight)
                     if wfatransitionweight >= wfaweight_threshold:
-                        print("Music WFA successor transition weight:",wfatransitionweight)
                         wfatransitionweights.append(wfatransitionweight)
-                 print("successors:",successors)
-                 print("wfatransitionweights:",wfatransitionweights)
-                 wfatransitionweights_np=np.array(wfatransitionweights)
-                 if sum(wfatransitionweights) < 1.0:
-                     zeroelements=0
-                     for w in wfatransitionweights:
-                         if w == 0.0:
-                            zeroelements+=1
-                     print("zeroelements:",zeroelements)
-                     for n in range(len(wfatransitionweights)):
-                         if wfatransitionweights[n] == 0.0:
-                            wfatransitionweights_np[n]=((1.0-sum(wfatransitionweights))/zeroelements)
-                 print("wfatransitionweights_np:",wfatransitionweights_np)
-                 next_random_node_np=np.random.choice(successors,1,p=wfatransitionweights_np.tolist())
-                 print("next_random_node:",next_random_node_np[0])
-                 next_random_node=str(next_random_node_np[0])
-                 synthesized_notes.append(state2notedict[next_random_node])
-                 node=next_random_node
-                 iterations+=1
-                 wfatransitionweights=[]
+                 if len(wfatransitionweights) > 1:
+                    print(sum(wfatransitionweights))
+                    if sum(wfatransitionweights) != 1.0:
+                        sumwfatransitionweights=float(sum(wfatransitionweights))
+                        print("sumfatransitionweights:",sumwfatransitionweights)
+                        for n in range(len(wfatransitionweights)):
+                            wfatransitionweights[n] = float(wfatransitionweights[n]) / sumwfatransitionweights
+                            print(wfatransitionweights[n])
+                    print("wfatransitionweights:",wfatransitionweights)
+                    wfatransitionweights_np=np.array(wfatransitionweights)
+                    if sum(wfatransitionweights) < 1.0:
+                       zeroelements=0
+                       for w in wfatransitionweights:
+                           if w == 0.0:
+                              zeroelements+=1
+                       print("zeroelements:",zeroelements)
+                       for n in range(len(wfatransitionweights)):
+                           if wfatransitionweights[n] == 0.0:
+                              wfatransitionweights_np[n]=((1.0-sum(wfatransitionweights))/zeroelements)
+                    print("wfatransitionweights_np:",wfatransitionweights_np)
+                    next_random_node_np=np.random.choice(successors,1,p=wfatransitionweights_np.tolist())
+                    print("next_random_node:",next_random_node_np[0])
+                    next_random_node=str(next_random_node_np[0])
+                    synthesized_notes.append(state2notedict[next_random_node])
+                    node=next_random_node
+                    iterations+=1
+                    wfatransitionweights=[]
             print("Notes synthesized by random walk on music WFA graph:",synthesized_notes)
             if len(wfatransitionweights_np) > 0:
                 pianotrack=Thread(target=music_synthesis,kwargs={'virtual_piano_notes':synthesized_notes,'tempo':0.35,'musicgenre':genre,'musicwfa_notes_weights':wfatransitionweights_np.tolist()})
             else:
                 pianotrack=Thread(target=music_synthesis,kwargs={'virtual_piano_notes':synthesized_notes,'tempo':0.35,'musicgenre':genre,'musicwfa_notes_weights':None})
             pianotrack.start()
-            percussiontrack=Thread(target=percussion_synthesis,kwargs={'virtual_piano_notes':synthesized_notes})
+            percussiontrack=Thread(target=percussion_synthesis,kwargs={'virtual_piano_notes':synthesized_notes,'percussions':instruments})
             percussiontrack.start()
             pianotrack.join()
             percussiontrack.join()
@@ -648,5 +664,5 @@ if __name__ == "__main__":
 
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃'},genre="Carnatic")
-    notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/Bach_Flute_Sonata_EFlat.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
+    notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/Bach_Flute_Sonata_EFlat.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical",instruments=["Guitar"])
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
