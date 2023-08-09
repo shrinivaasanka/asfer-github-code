@@ -30,6 +30,8 @@ import re
 from CompressedSensing import CompressedSensing
 from jellyfish import match_rating_codex
 from nltk.metrics.distance import edit_distance
+import pandas as pd
+import os
 
 
 class HRAnalytics(object):
@@ -117,6 +119,14 @@ class HRAnalytics(object):
         res = stats.spearmanr(searchresults1,searchresults2)
         print("search_engine_rank_correlation(): res = ",res)
         return res
+
+    def codesearch_statistics(self,opensourceid,personalaccesstoken):
+        codesearchjson=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/users?q=" + opensourceid + "\" ").read()
+        codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/code?q=" + opensourceid + "\" ").read()
+        codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken +"\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/repositories?q=" + opensourceid + "\" ").read()
+        codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"  -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/commits?q=" + opensourceid + "\" ").read()
+        print(codesearchjson)
+        return codesearchjson
 
     def nameparser(self, full_name, pattern, context):
         name = nameparser.HumanName(full_name)
@@ -353,18 +363,31 @@ class HRAnalytics(object):
         print("connections:", connections_tok)
         return int(number_of_connections)
 
+    def parse_sloc(self, cloc_text):
+        cloc=open(cloc_text)
+        cloctxt=[]
+        sloc=-1
+        for line in cloc:
+            linetoks=line.split(" ")
+            cloctxt.append(linetoks)
+            if "SUM:" in linetoks:
+                sloc=linetoks[len(linetoks)-1]
+        print("SLOC for COCOMO Effort Estimation(Effort = ai(KiloLinesOfCode)^bi(EffortAdjustmentFactor)):",(sloc,cloctxt))
+        return (sloc,cloctxt)
 
 if __name__ == "__main__":
     hranal = HRAnalytics()
     csensing = CompressedSensing()
+    sloc=hranal.parse_sloc("./SocialNetworkAnalysis_PeopleAnalytics.OpenSource_SLOC")
+    codesearchstats=hranal.codesearch_statistics("shrinivaasanka","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")
     # profile_text = hranal.parse_profile("linkedin", "pdf", "testlogs/CV.pdf")
     # print profile_text
     profile_text1 = hranal.parse_profile("linkedin", "text", "testlogs/ProfileLinkedIn_KSrinivasan.txt", {
-                                         "domain": "InformationTechnology", "opensource_sloc": 100000})
+        "domain": "InformationTechnology", "opensource_sloc": sloc, "opensource_codesearch_stats": codesearchstats})
     # hranal.least_energy_intrinsic_merit()
     # hranal.experiential_intrinsic_merit()
     profile_text2 = hranal.parse_profile(
-        "none", "tex", "testlogs/CV.tex", {"domain": "InformationTechnology", "opensource_sloc": 100000})
+            "none", "tex", "testlogs/CV.tex", {"domain": "InformationTechnology", "opensource_sloc": sloc, "opensource_codesearch_stats": codesearchstats})
     avedistance1 = csensing.alphabet_vectorspace_embedding_distance(
         ['p', 'q', 'r', 's', 't'], ['p', 'q', 'r', 's', 'z'])
     avedistance2 = csensing.alphabet_vectorspace_embedding_distance(
