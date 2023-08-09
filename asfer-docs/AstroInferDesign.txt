@@ -22372,3 +22372,47 @@ References:
 ----------
 1441.10 Distillation of weighted automata from recurrent neural networks using a spectral approach - https://link.springer.com/article/10.1007/s10994-021-05948-1 - "...... This paper is an attempt to bridge the gap between deep learning and grammatical inference. Indeed, it provides an algorithm to extract a (stochastic) formal language from any recurrent neural network trained for language modelling. In detail, the algorithm uses the already trained network as an oracle—and thus does not require the access to the inner representation of the black-box—and applies a spectral approach to infer a weighted automaton. ......"
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+1442. (THEORY and FEATURE) People Analytics - Social Network Analysis - GitHub Code Search REST API statistics and Source lines of code for COCOMO Effort Estimation - related to 14,365,626,711,727,753,876,1127,1128,1129,1130,1204,1263,1269,1427 and all sections on People Analytics, Intrinsic Merit Versus Fame Equilibrium, BKS Conjecture, Stability and Noise Sensitivity of Interview LTF/PTF,Peres Theorem,Unique Identification,Talent Analytics,HR Analytics and Automated Recruitment,Question-Answering,Majority Voting,Condorcet Jury Theorem Variants,Margulis-Ruzzo Thresholds,Novelty Detection,Recommender Systems,AI Question-Answering, Partial Ordered Ranking, Fame-Merit equilibrium, Intrinsic Merit as Query Complexity,Software Analytics-Mythical Manmonth-CathedralAndBazaar - 9 August 2023
+-------------------------------------------------------------------------------------------------------------------------------------------
+1442.1 Retrieving domain specific data for a unique person, especially opensource effort in the context of Information Technology domain, is quite necessary for quantifying absolute merit metrics for software effort estimation,talent analytics and automated recruitment which has been suggested as an alternative to conventional manual Q&A and interviews (Section 1204) often marred by theoretical limitations of sensitivity errors (Hardness of openended and multiple choice Question-Answering has been analyzed earlier and in Section 1394 in multiple theoretical formats - LTF,PTF,Switching Circuits,TQBFSAT,Halfplane intersections,Polynomial interpolation over reals,multiple choice CNFSAT,Query complexity model). 
+1442.2 As it is infeasible to quantify the effort of an engineer exactly in IT domain because of proprietary closedsource products, estimation is limited to technical data in public domain only - opensource profiles, code contributions being some of them. Usual search engine results do not display indepth data about internals of a FOSS repository and code commits by a user. Code Search REST API in GitHub recently unveiled fill in this void through programmatic search queries to GitHub repositories and user code commits data.  
+1442.3 python-src/SocialNetworkAnalysis_PeopleAnalytics.py has been updated to implement two new functions codesearch_statistics() and parse_sloc() for searching the GitHub repositories for statistics (code,repositories,commits,users) and source lines of code(SLOC) by CLOC utility matching a unique person identifier. These two metrics have been included in domain specific dictionary implemented in 1127. 
+1442.4 Function codesearch_statistics(self,opensourceid,personalaccesstoken) makes four REST API calls by cURL to GitHub codesearch to get the search commits,repositories,users and code data matching a username (opensourceid). Stdout of the cURL are captured by os.popen().read() into a JSON string. Temporary credential PersonalAccessToken is passed on as additional argument: 
+        codesearchjson=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/users?q=" + opensourceid + "\" ").read()
+        codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/code?q=" + opensourceid + "\" ").read()
+        codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken +"\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/repositories?q=" + opensourceid + "\" ").read()
+        codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"  -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/commits?q=" + opensourceid + "\" ").read()
+1442.5 There is no direct GitHub CodeSearch REST API call available to compute SLOC of a repository though size of repository data can be retrieved. For SLOC metric, CLOC utility has to be pre-installed and invoked on a local repository clone. CLOC produces a detailed per language SLOC report of a repository. Function parse_sloc() reads a text file SocialNetworkAnalysis_PeopleAnalytics.OpenSource_SLOC containing the stdout of CLOC command (https://github.com/AlDanial/cloc) and returns the total Source Lines of Code in a repository. Kilo lines of Code is the most important variable in COCOMO (https://en.wikipedia.org//wiki/COCOMO) effort estimation (in person-hours) which comes in 3 flavours - Basic, Intermediate and Detailed. Intermediate COCOMO is relevant for estimating effort involved in most medium size software products, given by formula - E = ai(KLoC)^bi(EAF). Example COCOMO estimation of NeuronRain AstroInfer repository - https://openhub.net/p/asfer-github-code/estimated_cost - COCOMO Coefficients used by OpenHub COCOMO are a=2.4 and b=1.05.
+1442.6 EAF or Effort Adjustment Factor is a product of following attributes of a software product, each weighted between 0.9 to 1.4: 
+-------------------------------
+Product attributes: 
+	Required software reliability extent
+	Size of application database
+	Complexity of the product
+
+Hardware attributes:
+	Run-time performance constraints
+	Memory constraints
+	Volatility of the virtual machine environment
+	Required turnabout time
+
+Personnel attributes:
+	Analyst capability
+	Software engineering capability
+	Applications experience
+	Virtual machine experience
+	Programming language experience
+
+Project attributes:
+	Use of software tools
+	Application of software engineering methods
+	Required development schedule
+--------------------------------
+1442.7 SLOC from CLOC utility and CodeSearch statistics from GitHub for a userid computed by parse_sloc() and codesearch_statistics() are populated in "opensource_sloc" and "opensource_codesearch_stats" fields of domain specific dictionary. 
+
+References:
+----------
+1442.8 The Mythical Man Month - https://en.wikipedia.org/wiki/The_Mythical_Man-Month - Brook's Law - "..... adding manpower to a software project that is behind schedule delays it even longer ......"
+1442.9 Cathedral and Bazaar - Cathedral model (Coterie controls code) and Bazaar model (No control over code) - http://www.catb.org/~esr/writings/cathedral-bazaar/ and https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar - Lessons for Good Opensource Software from Linux Kernel Development
+1442.10 Query complexity model of computation - https://web.stanford.edu/class/cs354/scribe/lecture01.pdf - Merit function Merit(x1,x2,x2,...,xn) on n variables (n questions) could be computed by queries to an oracle (n answers) - Section 1269.
