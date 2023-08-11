@@ -22416,3 +22416,36 @@ References:
 1442.8 The Mythical Man Month - https://en.wikipedia.org/wiki/The_Mythical_Man-Month - Brook's Law - "..... adding manpower to a software project that is behind schedule delays it even longer ......"
 1442.9 Cathedral and Bazaar - Cathedral model (Coterie controls code) and Bazaar model (No control over code) - http://www.catb.org/~esr/writings/cathedral-bazaar/ and https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar - Lessons for Good Opensource Software from Linux Kernel Development
 1442.10 Query complexity model of computation - https://web.stanford.edu/class/cs354/scribe/lecture01.pdf - Merit function Merit(x1,x2,x2,...,xn) on n variables (n questions) could be computed by queries to an oracle (n answers) - Section 1269.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1443. (THEORY and FEATURE) Software Analytics and Kernel Analytics - an STrace-LTrace shell script to machine-learn Filesystem prefetch patterns for readahead() system call - related to 1191,619,770,906,911,771,1192 and all sections on Program Analysis, AsFer-USBmd-VIRGO-KingCobra FTrace kernel callgraph analysis - Valgrind-Callgrind-KCacheGrind-Flamegraph userspace callgraph analysis, SATURN control flow analysis of VIRGO linux kernel, Software Analytics, Pandemic model of Botnet-Defense adversarial Game theoretic security, Cybercrime analytics, Anti-Malware,Anti-Ransomware,Anti-Theft and Anti-Plagiarism tools, KML, LAKE - 11 August 2023
+--------------------------------------------------------------------------------------------------------------------------------------------
+1443.1 Shell script "python-src/software_analytics/asfer_syscall_trace.sh <pid>" has been added to repository which invokes strace and ltrace system call trace utilities attaching to a process id specified in <pid> filtered by system call "read()".
+1443.2 Output of strace and ltrace written to python-src/software_analytics/asfer_syscall_trace.log contains a chronological list of read() system calls on multiple file descriptors which could be parsed to get frequencies of reads for each file descriptor.
+1443.3 Filesystem prefetch system call readahead() (https://man7.org/linux/man-pages/man2/readahead.2.html) prefetches a frequently read file descriptor and stores in pagecache. Filesystem prefetch is one of the most solved usecases in machine learning assisted linux kernel implementations - KML and LAKE.
+1443.4 Filesystem Prefetch hints could be passed on to VIRGO linux kernel through NeuronRain Kernel Analytics which interfaces userspace machine learning and kernelspace cloud RPC through /etc/virgo_kernel_analytics.conf key-value pairs (exported as kernel wide variables by kernel_analytics VIRGO linux kernel module).
+1443.5 For example, following is the file system read() pattern repeated by pulseaudio processid 2206 in asfer_syscall_trace.log for commandline "./asfer_syscall_trace.sh 2206" - file descriptors 22,3,48,20 are repetitively accessed which could be a kernel analytics key-value pair "frequently_read_filedescriptors=[22,3,48,20]" within /etc/virgo_kernel_analytics.conf read and published as a global variable within VIRGO linux kernel by driver virgo_kernel_analytics.ko. Based on this variable, VIRGO linux kernel could dynamically adjust to userspace filesystem read() activity:
+	[pid  2206] read(22, "\1\0\0\0\0\0\0\0", 8) = 8
+	[pid  2206] read(3, "W", 10)            = 1
+	[pid  2206] read(3, 0x7fff4f2919ce, 10) = -1 EAGAIN (Resource temporarily unavailable)
+	[pid  2206] read(22, "\1\0\0\0\0\0\0\0", 8) = 8
+	[pid  2206] read(3, "W", 10)            = 1
+	[pid  2206] read(3, 0x7fff4f2919ce, 10) = -1 EAGAIN (Resource temporarily unavailable)
+	[pid  2206] read(48, "\1\0\0\0\0\0\0\0", 8) = 8
+	[pid  2207] read(20, "\1\0\0\0\0\0\0\0", 8) = 8
+	[pid  2206] read(3, 0x7fff4f2919ce, 10) = -1 EAGAIN (Resource temporarily unavailable)
+
+References:
+----------
+1443.6 KML - https://www.fsl.cs.stonybrook.edu/docs/kml/kml-tr-fsl-21-02.pdf - "...... We now detail our two use cases: (1) readahead neural network and decision tree model and (2) NFS neural network model. We describe the following for each: (i) problem definition, (ii) data collection for training, (iii) data preprocessing and feature extraction, and (iv) building the ML model. ......."
+1443.7 LAKE - https://utns.cs.utexas.edu/papers/lake_camera_ready.pdf - ML usecases - "....... 
+	----------------------------------------------------------------------
+	Application Description ML Algorithm Crossover API Inference Frequency
+	----------------------------------------------------------------------
+	I/O Latency Prediction : Predict I/O latencies in storage systems: Neural Network: 8: CUDA: Fine grained
+	Page Warmth: Predict pages hotness to keep in fast memory: LSTM: 1: High level: Coarse grained
+	Load Balancing: Predict benefit of task-stealing between CPUs: Neural Network: 256: CUDA: Fine grained
+	Filesystem Prefetching: Predict next I/O accesses for better read-ahead: Neural Network: 64: CUDA: Coarse grained
+	Malware Detection: Detect malware/attacks: k-NN: 128: CUDA: Coarse grained
+	Filesystem Encryption: Encrypt/Decrypt data to/from storage: - :16/128KB: CUDA: Fine grained 
+......"
