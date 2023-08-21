@@ -167,7 +167,7 @@ def urbansprawl_gini_coefficient(urbansprawldata):
     print("urbansprawl_gini_coefficient(): Gini Index of the dataset = ",giniindex)
     return giniindex
 
-def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,address=None,radius=1000,defaultcapacity=1,travel_speed=30,trip_times=[10,15,20,25,30]):
+def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,address=None,radius=1000,defaultcapacity=1,travel_speed=30,trip_times=[10,15,20,25,30],maxelevationpoints=10):
     if cityname is not None:
         roadgraph = osmnx.graph.graph_from_place(cityname)
     elif latx > 0 and laty > 0 and longx >0 and longy > 0:
@@ -182,6 +182,16 @@ def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,ad
     for c in scc:
         print("Strongly connected component of road network graph:",c)
     gdf_nodes,gdf_edges=osmnx.graph_to_gdfs(roadgraph,nodes=True,edges=True,node_geometry=True,fill_edge_geometry=True)
+    gdf_nodes_json=json.loads(gdf_nodes.to_json())
+    elevations=[]
+    for point in gdf_nodes_json["features"][:maxelevationpoints]:  
+        if point["geometry"]["type"] == "Point":
+            longitude=point["geometry"]["coordinates"][0]
+            latitude=point["geometry"]["coordinates"][1]
+            elevation=os.popen("curl 'https://api.open-elevation.com/api/v1/lookup?locations="+str(latitude)+","+str(longitude)+"'").read()
+            #print("elevation:",elevation)
+            elevations.append(elevation)
+    print("Elevations of terrain:",elevations)
     x, y = gdf_nodes['geometry'].unary_union.centroid.xy
     center_node = osmnx.get_nearest_node(roadgraph, (y[0], x[0]))
     roadgraph = osmnx.project_graph(roadgraph)
@@ -211,7 +221,7 @@ def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,ad
     print("--------- Locations (NetworkX) -----------")
     print(roadgraph.nodes()) 
     print("---------- Locations (GeoDataFrames) -------")
-    print(gdf_nodes.to_json())
+    print(gdf_nodes_json)
     print("--------- Roads (NetworkX) ---------------")
     print(roadgraph.edges())
     print("--------- Roads (GeoDataFrames) ---------")
@@ -801,13 +811,13 @@ if __name__ == "__main__":
 
     #urban_sprawl_road_network_OSM(cityname="Kumbakonam")
     #urban_sprawl_road_network_OSM(latx=11.007927,laty=10.922989,longx=79.456730,longy=79.313908)
-    #urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Sricity, AP, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Sricity, AP, India",radius=6000)
 
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
@@ -827,9 +837,9 @@ if __name__ == "__main__":
     #dbscan2.write_clustered_image(neuralnetwork=True)
     #dbscan2.write_clustered_image(neuralnetwork=False)
 
-    seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_NightLights1_12June2023.jpeg")
-    seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_NightLights2_12June2023.jpeg")
-    seg15=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg")
-    urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights1_12June2023.jpeg",seg13)
-    urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights2_12June2023.jpeg",seg14)
-    urban_sprawl_from_segments("testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg",seg15)
+    #seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_NightLights1_12June2023.jpeg")
+    #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_NightLights2_12June2023.jpeg")
+    #seg15=ImageGraph_Keras_Theano.image_segmentation("testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg")
+    #urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights1_12June2023.jpeg",seg13)
+    #urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights2_12June2023.jpeg",seg14)
+    #urban_sprawl_from_segments("testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg",seg15)
