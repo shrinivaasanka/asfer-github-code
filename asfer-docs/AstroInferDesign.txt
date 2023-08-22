@@ -22481,7 +22481,23 @@ Elevations of terrain: ['{"results":[{"latitude":13.164986,"longitude":79.43726,
 Elevations of terrain: ['{"results":[{"latitude":12.904864,"longitude":79.324126,"elevation":171.0}]}'...
 Elevations of terrain: ['{"results":[{"latitude":12.645849,"longitude":79.535548,"elevation":93.0}]}'...
 Elevations of terrain: ['{"results":[{"latitude":13.512628,"longitude":79.955501,"elevation":47.0}]}'...
+1447.6 Following is an algorithmic outline on how above elevation data for vertices of a city road network could be used as a floodwater prediction tool:
+	1447.6.1 Label every vertex (road intersection) of an OSMnx road network graph by its elevation 
+	1447.6.2 Find all paths in the road network graph which have their vertex elevations as a monotonically increasing or decreasing sequence.
+	1447.6.3 For example, following road graph of 9 nodes with elevation labels (in meters) for each road intersection vertex:
+		ele(v1) = 10
+		ele(v2) = 15
+		ele(v3) = 10
+		ele(v4) = 20 
+		ele(v5) = 10
+		ele(v6) = 10
+		ele(v7) = 8 
+		ele(v8) = 5 
+		ele(v9) = 12
+has a highway v5-v6-v7-v8 of monotonically decreasing elevations [10,10,8,5] implying v8 is vulnerable to flooding from elevated v5,v6,v7 intersections. 
+	1447.6.4 Highways of undulating elevations are another problem scenarios inhibiting flood water drain. Example: Highway v1-v2-v3-v4-v5 in above graph fluctuates in its grades as [10,15,10,20,10] 
+ 
 
 References:
 -----------
-1447.6 Urban Spatial Order: Street Network Orientation, Configuration, and Entropy - https://arxiv.org/pdf/1808.00600.pdf - OSMnx road network graph bearing and orientation entropy of cities - "........ It measures the entropy of street bearings in weighted and unweighted network models, along with each city's typical street segment length, average circuity, average node degree, and the network's proportions of four-way intersections and dead-ends. It also develops a new indicator of orientation-order that quantifies how a city's street network follows the geometric ordering logic of a single grid. A cluster analysis is performed to explore similarities and differences among these study sites in multiple dimensions. Significant statistical relationships exist between city orientation-order and other indicators of spatial order, including street circuity and measures of connectedness. On average, US/Canadian study sites are far more grid-like than those elsewhere, exhibiting less entropy and circuity. ......" - Less entropy and circuity of a street and road network implies less congestion and might facilitate easy flood water draining. 
+1447.7 Urban Spatial Order: Street Network Orientation, Configuration, and Entropy - https://arxiv.org/pdf/1808.00600.pdf - OSMnx road network graph bearing and orientation entropy of cities - "........ It measures the entropy of street bearings in weighted and unweighted network models, along with each city's typical street segment length, average circuity, average node degree, and the network's proportions of four-way intersections and dead-ends. It also develops a new indicator of orientation-order that quantifies how a city's street network follows the geometric ordering logic of a single grid. A cluster analysis is performed to explore similarities and differences among these study sites in multiple dimensions. Significant statistical relationships exist between city orientation-order and other indicators of spatial order, including street circuity and measures of connectedness. On average, US/Canadian study sites are far more grid-like than those elsewhere, exhibiting less entropy and circuity. ......" - Less entropy and circuity of a street and road network implies less congestion and might facilitate easy flood water draining. 
