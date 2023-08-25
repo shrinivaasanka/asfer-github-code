@@ -22496,6 +22496,7 @@ Elevations of terrain: ['{"results":[{"latitude":13.512628,"longitude":79.955501
 		ele(v9) = 12
 has a highway v5-v6-v7-v8 of monotonically decreasing elevations [10,10,8,5] implying v8 is vulnerable to flooding from elevated v5,v6,v7 intersections. 
 	1447.6.4 Highways of undulating elevations are another problem scenarios inhibiting flood water drain. Example: Highway v1-v2-v3-v4-v5 in above graph fluctuates in its grades as [10,15,10,20,10] 
+	1447.6.5 Water and Drainage networks are aligned along edges of road graph. Theoretically all roads (paths) in OSMnx road network graph must be of monotonically increasing or decreasing gradient for easy flood drain (Per Edge Elevation attributes from osmnx.elevation.add_edge_grades(G, add_absolute=True, precision=None) and osmnx.elevation.add_node_elevations_google(G, api_key=None, max_locations_per_batch=350, pause=0, precision=None, url_template='https://maps.googleapis.com/maps/api/elevation/json?locations={}&key={}') which requires Google Elevations Premium API key - https://osmnx.readthedocs.io/en/stable/internals-reference.html - are alternatives to OpenElevation REST API).
  
 
 References:
