@@ -1,0 +1,26 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+b0 (bias): 0.01
+b1 (distance weight1): 0.01
+b2 (distance weight2): 0.01
+distij (distance of the GHSL cell i from urban center j) in kilometers: 100
+g1 (size weight): 0.01
+sizeij (size of the cell j) in square kilometers: 1
+p1 (population weight1): 0.01
+p2 (population weight2): 0.01
+populationj (population of the urban area): 16079611
+w (GDP weight): 0.01
+gdp (GDP of the urban area or country) in billion dollars: 130
+error term(epsilonij): 0.01
+FUAij (can be converted to a boolean value for whether periurban cell i belongs to urban area j): 2585539060011.65

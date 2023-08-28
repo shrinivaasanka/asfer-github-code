@@ -86,6 +86,23 @@ os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
 citygeometry=[]
 
+def functional_urban_area_delineation_GHSL_regression(b0,b1,b2,distij,g1,sizeij,p1,p2,populationj,w,gdp,epsilonij): 
+    FUAij = b0 + b1*distij + b2*distij*distij + g1*sizeij + p1*populationj + p2*populationj*populationj + w*gdp + epsilonij
+    print("b0 (bias):",b0)
+    print("b1 (distance weight1):",b1)
+    print("b2 (distance weight2):",b2)
+    print("distij (distance of the GHSL cell i from urban center j) in kilometers:",distij)
+    print("g1 (size weight):",g1)
+    print("sizeij (size of the cell j) in square kilometers:",sizeij)
+    print("p1 (population weight1):",p1)
+    print("p2 (population weight2):",p2)
+    print("populationj (population of the urban area):",populationj)
+    print("w (GDP weight):",w)
+    print("gdp (GDP of the urban area or country) in billion dollars:",gdp)
+    print("error term(epsilonij):",epsilonij)
+    print("FUAij (can be converted to a boolean value for whether periurban cell i belongs to urban area j):",FUAij)
+    return FUAij
+
 def learn_polya_urn_growth_weights(ncolorsegments_date1,ncolorsegments_date2):
     replicationweights=defaultdict(int)
     for date1color,date1bin in ncolorsegments_date1.items():
@@ -811,13 +828,13 @@ if __name__ == "__main__":
 
     #urban_sprawl_road_network_OSM(cityname="Kumbakonam")
     #urban_sprawl_road_network_OSM(latx=11.007927,laty=10.922989,longx=79.456730,longy=79.313908)
-    urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Sricity, AP, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Sricity, AP, India",radius=6000)
 
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
@@ -843,3 +860,4 @@ if __name__ == "__main__":
     #urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights1_12June2023.jpeg",seg13)
     #urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights2_12June2023.jpeg",seg14)
     #urban_sprawl_from_segments("testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg",seg15)
+    functional_urban_area_delineation_GHSL_regression(0.01,0.01,0.01,100,0.01,1,0.01,0.01,16079611,0.01,130,0.01)
