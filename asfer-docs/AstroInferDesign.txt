@@ -19317,7 +19317,7 @@ which is about set of all functions f:R->Z from real open interval (with gaps) t
 1285.29 OpenAI GPT-f - Metamath formalization language - Generative Language Modeling for Automated Theorem Proving - https://arxiv.org/pdf/2009.03393.pdf
 1285.30 Proof Nets as Formal Feynman Diagrams - [Blute-Prakash] - https://www.cs.mcgill.ca/~prakash/Pubs/phi_calc.pdf - Girard GoI ProofNets (or a mathematical proof in graph format in which information flows from premise to QED) are interpreted as Phi-Calculus and Feynman Diagrams invented by Feynman for Quantum Field Theory
 1285.31 nCatLab ProofNet - https://ncatlab.org/nlab/show/proof+net - Definition 3.1 and Theorem 3.2 - Proof Structure, Validity of a Proof Structure to be a ProofNet, Par Switch - Proof structure is a Kelly-MacLane category graph 
-1285.32 Geometry of Interaction and linear combinatory algebras - [Abramsky-Haghverdy-Scott] - https://www.cambridge.org/core/journals/mathematical-structures-in-computer-science/article/abs/geometry-of-interaction-and-linear-combinatory-algebras/983F3238099D7BCBC9FAA3BC9ABBAD51 - Categoy theoretic axiomatization of Girard GoI
+1285.32 Geometry of Interaction and linear combinatory algebras - [Abramsky-Haghverdy-Scott] - https://www.cambridge.org/core/journals/mathematical-structures-in-computer-science/article/abs/geometry-of-interaction-and-linear-combinatory-algebras/983F3238099D7BCBC9FAA3BC9ABBAD51 - Category theoretic axiomatization of Girard GoI
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 1286. (THEORY) Economic Merit and People Analytics - Mechanism Design of Multiround Majority Voting derived from Simultaneous Ascending 
@@ -22547,3 +22547,7 @@ References:
    FUAij (can be converted to a boolean value for whether periurban cell i belongs to urban area j): 2585539060011.65
 1448.6 Population is chosen as a predictor of urban area size as described in the model (2) of the paper - "...... we compare three different proxies for urban centre size: area, population and nightlight....." while model (1) (section 1423.8) relied on number of cars which are proportional to nightlights. Distance in above model is actually proportional to the travel time from cell i to urban center j by public or private transport (or ease of mobility) - though it is still debatable on which travel time (fastest or slowest mode) has to be chosen. 
 1448.7 Travel time to a periurban cell and Isochrone ego graphs in general could be estimated from Google Maps Live Traffic ViteJS implementation in NeuronRain Grafit (Drive Time Radius Isochrones are periodic snapshots of live traffic) - Section 1387 - https://github.com/shrinivaasanka/Grafit/tree/master/course_material/Programming/GUI/code/livetraffic . Emphasis on size of urban center as one of the FUA criteria is a rephrasal of preferential attachment (Big cities tend to get Bigger) - quoted excerpts from the paper - "...... Travel time from each cell to the urban centre is the most powerful predictor of the probability of belonging to a FUA, followed by the size of the urban centre ....."
+
+References:
+----------
+1448.8 GeoNetworkX Isochrones - https://geonetworkx.readthedocs.io/en/latest/5_Isochrones.html - Isochrones implemented by Shortest Path Tree,Edges Voronoi Cells, alpha-shape
