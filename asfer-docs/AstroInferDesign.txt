@@ -19315,6 +19315,9 @@ which is about set of all functions f:R->Z from real open interval (with gaps) t
         1285.28.5 Variables (one per answer choice) within the CNFSAT clause for the question are negated or not depending on boolean value of the corresponding query option proof network GoI matching subgraph in result tuple.
         1285.28.6 For question example above, matching k GoI subgraph quiver tuples (all related to partial functions) are retrieved from corpus GoI as (g11,g12,g13,g14),(g21,g22,g23,g24),...,(gk1,gk2,gk3,gk4) and evaluated for truth to learn the 4 variable clause per question (k could be restricted to 1 for one-shot learning).
 1285.29 OpenAI GPT-f - Metamath formalization language - Generative Language Modeling for Automated Theorem Proving - https://arxiv.org/pdf/2009.03393.pdf
+1285.30 Proof Nets as Formal Feynman Diagrams - [Blute-Prakash] - https://www.cs.mcgill.ca/~prakash/Pubs/phi_calc.pdf - Girard GoI ProofNets (or a mathematical proof in graph format in which information flows from premise to QED) are interpreted as Phi-Calculus and Feynman Diagrams invented by Feynman for Quantum Field Theory
+1285.31 nCatLab ProofNet - https://ncatlab.org/nlab/show/proof+net - Definition 3.1 and Theorem 3.2 - Proof Structure, Validity of a Proof Structure to be a ProofNet, Par Switch - Proof structure is a Kelly-MacLane category graph 
+1285.32 Geometry of Interaction and linear combinatory algebras - [Abramsky-Haghverdy-Scott] - https://www.cambridge.org/core/journals/mathematical-structures-in-computer-science/article/abs/geometry-of-interaction-and-linear-combinatory-algebras/983F3238099D7BCBC9FAA3BC9ABBAD51 - Categoy theoretic axiomatization of Girard GoI
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 1286. (THEORY) Economic Merit and People Analytics - Mechanism Design of Multiround Majority Voting derived from Simultaneous Ascending 
