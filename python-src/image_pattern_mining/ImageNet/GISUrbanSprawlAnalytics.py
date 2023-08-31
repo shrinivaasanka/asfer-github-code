@@ -79,21 +79,24 @@ import ee
 import seaborn
 import pandas
 import json 
+from geopy.distance import geodesic,great_circle
 
 mplstyle.use('fast')
 shapely.speedups.disable()
 os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
 citygeometry=[]
+class2population={30:1500,23:1500,22:300,21:300,13:300,12:50,11:50,10:0}
 
-def functional_urban_area_delineation_GHSL_regression(b0,b1,b2,distij,g1,sizeij,p1,p2,populationj,w,gdp,epsilonij): 
-    FUAij = b0 + b1*distij + b2*distij*distij + g1*sizeij + p1*populationj + p2*populationj*populationj + w*gdp + epsilonij
+def functional_urban_area_delineation_GHSL_regression(b0,b1,b2,distij,g1,sizeij,p1,p2,populationj,w,gdp,epsilonij,binarythreshold=1000000,lon=-1,lat=-1): 
+    FUAij = b0 + b1*distij + b2*distij*distij + g1*class2population[sizeij] + p1*populationj + p2*populationj*populationj + w*gdp + epsilonij
+    print("longitude-latitude of the GHSL Raster cell:",(lon,lat))
     print("b0 (bias):",b0)
     print("b1 (distance weight1):",b1)
     print("b2 (distance weight2):",b2)
     print("distij (distance of the GHSL cell i from urban center j) in kilometers:",distij)
     print("g1 (size weight):",g1)
-    print("sizeij (size of the cell j) in square kilometers:",sizeij)
+    print("sizeij (size of the cell j) in population:",class2population[sizeij])
     print("p1 (population weight1):",p1)
     print("p2 (population weight2):",p2)
     print("populationj (population of the urban area):",populationj)
@@ -101,7 +104,12 @@ def functional_urban_area_delineation_GHSL_regression(b0,b1,b2,distij,g1,sizeij,
     print("gdp (GDP of the urban area or country) in billion dollars:",gdp)
     print("error term(epsilonij):",epsilonij)
     print("FUAij (can be converted to a boolean value for whether periurban cell i belongs to urban area j):",FUAij)
-    return FUAij
+    if FUAij > binarythreshold:
+        print("GHSL lon-lat ",(lon,lat)," could belong to functional urban area for given criteria")
+        return 1
+    else:
+        print("GHSL lon-lat ",(lon,lat)," may not belong to functional urban area for given criteria")
+        return 0
 
 def learn_polya_urn_growth_weights(ncolorsegments_date1,ncolorsegments_date2):
     replicationweights=defaultdict(int)
@@ -326,16 +334,28 @@ def urban_sprawl_from_GEE(imagecollection,featurecollection,nightlightsparameter
         plt.show()
         return radiance
 
-def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt):
+def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt,granularity=0.01,delineationparams=None,bboxcentroid=True):
     urbansprawlstatistics=[]
     longlatstat={}
     rows=0
-    for lon in np.arange(longx,longy,0.01):
+    if bboxcentroid:
+        urbancenterlon=(longx+longy)/2
+        urbancenterlat=(latx+laty)/2
+    print("urban_sprawl_from_raster(): delineationparams = ",delineationparams)
+    for lon in np.arange(longx,longy,granularity):
         cols=0
-        for lat in np.arange(latx,laty,0.01):
+        for lat in np.arange(latx,laty,granularity):
             values=data_from_raster_georeferencing(raster,longitude=lon,latitude=lat,sample=True,datatype=dt)
             urbansprawlstatistics.append(values[0])
             longlatstat[(lon,lat)]=values[0]
+            if delineationparams is not None:
+                if bboxcentroid:
+                    distancefromurbancenter=geodesic((urbancenterlon,urbancenterlat),(lon,lat)).km
+                    print("urban_sprawl_from_raster(): distance between (",urbancenterlon,",",urbancenterlat,"),(",lon,",",lat,") = ",distancefromurbancenter)
+                else:
+                    distancefromurbancenter=geodesic((delineationparams[10][0],delineationparams[10][1]),(lon,lat)).km
+                    print("urban_sprawl_from_raster(): distance between (",delineationparams[10][0],",",delineationparams[10][1],"),(",lon,",",lat,") = ",distancefromurbancenter)
+                functional_urban_area_delineation_GHSL_regression(delineationparams[0],delineationparams[1],delineationparams[2],distancefromurbancenter,delineationparams[3],longlatstat[(lon,lat)][0],delineationparams[4],delineationparams[5],delineationparams[6],delineationparams[7],delineationparams[8],delineationparams[9],binarythreshold=1292769530000,lon=lon,lat=lat)
             cols+=1
         rows+=1
     print("urban_sprawl_from_raster(): bounding box shape = ",(rows,cols))
@@ -860,4 +880,5 @@ if __name__ == "__main__":
     #urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights1_12June2023.jpeg",seg13)
     #urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights2_12June2023.jpeg",seg14)
     #urban_sprawl_from_segments("testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg",seg15)
-    functional_urban_area_delineation_GHSL_regression(0.01,0.01,0.01,100,0.01,1,0.01,0.01,16079611,0.01,130,0.01)
+    #functional_urban_area_delineation_GHSL_regression(0.01,0.01,0.01,100,0.01,1,0.01,0.01,16079611,0.01,130,0.01)
+    r3data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_E2030_GLOBE_R2023A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2023A",delineationparams=[0.01,0.01,0.01,0.01,0.01,0.01,16079611,0.01,200,0.01,(77.4479607,12.985801)])
