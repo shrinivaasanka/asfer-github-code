@@ -54,11 +54,37 @@ from astropy.coordinates import Angle
 from astropy.coordinates import SkyCoord
 from scipy.linalg import norm
 import matplotlib.pyplot as plt
+from astroquery.gaia import Gaia
+from astropy.coordinates import angular_separation
 
 
 planetradecdict={}
 planets=[]
 ts=[]
+
+def query_space(name,ra,dec,radius=0.0833333):
+    query_cone = """SELECT
+    TOP 10
+    source_id,ra,dec,pmra,pmdec 
+    FROM gaiadr2.gaia_source
+    WHERE 1=CONTAINS(
+      POINT(ra, dec),
+      CIRCLE("""+str(ra)+""","""+str(dec)+""",+"""+str(radius)+"""))"""
+    query=Gaia.launch_job(query_cone)
+    results=query.get_results()
+    print("---------------------",name,"------------------")
+    print(results)
+    return results
+
+def locate_proper_motion_conjunction(queryresults1,queryresults2,duration=10000000,separation=0.01):
+    year=0
+    for q1 in queryresults1:
+        for q2 in queryresults2:
+            for y in range(1,duration):
+                if q1["source_id"] != q2["source_id"]:
+                    angdistance=angular_separation(q1["pmra"]*y,q1["pmdec"]*y,q2["pmra"]*y,q2["pmdec"]*y)
+                    if angdistance < separation:
+                        print("Angular separation between two bodies ",q1["source_id"]," and ",q2["source_id"]," in ",y," years:",angdistance)
 
 def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds):
     ephem=EphemerisSearch("de421.bsp")
@@ -573,8 +599,8 @@ if __name__=="__main__":
     #ephem.extreme_weather_events_n_body_analytics(datesofEWEs="Hurricanes",angularsep=True)
     #ephem.extreme_weather_events_n_body_analytics(datesofEWEs=datesofhurricanes,angularsep=True)
 
-    predict_EWE(datefrom=(2022,10,21,1,00,00),dateto=(2022,12,1,1,00,00),loc='@0',bodypair="Sun-Moon",angularsepbounds=('120d','180d'))
-    predict_EWE(datefrom=(2022,10,21,1,00,00),dateto=(2022,12,1,1,00,00),loc='@0',bodypair="Venus-Mercury",angularsepbounds=('0d','30d'))
+    #predict_EWE(datefrom=(2022,10,21,1,00,00),dateto=(2022,12,1,1,00,00),loc='@0',bodypair="Sun-Moon",angularsepbounds=('120d','180d'))
+    #predict_EWE(datefrom=(2022,10,21,1,00,00),dateto=(2022,12,1,1,00,00),loc='@0',bodypair="Venus-Mercury",angularsepbounds=('0d','30d'))
 
     #ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
     #ephem.hubble_deep_field_RGB_analytics(imagename="skimage_HXDF")
@@ -590,3 +616,6 @@ if __name__=="__main__":
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["899",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["999",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
     #ephem.hubble_deep_field_RGB_analytics("J6FL25S4Q",postcard=True)
+    q1=query_space("Hasta",12.15,17.32)
+    q2=query_space("Uttaraphalguni",11.49,14.34)
+    locate_proper_motion_conjunction(q1,q2,duration=8000)
