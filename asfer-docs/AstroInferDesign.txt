@@ -22621,3 +22621,104 @@ References:
 1450.7 Gamma Corvi (Hasta) - Proper Motion - https://theskylive.com/sky/stars/gienah-gamma-corvi-star
 1450.8 Beta Leonis (Uttaraphalguni) - Proper Motion - https://theskylive.com/sky/stars/denebola-beta-leonis-star
 1450.9 Vincenty Formula - Geodesic distances on Ellipsoid - https://en.wikipedia.org/wiki/Vincenty%27s_formulae
+
+----------------------------------------------------------------------------------------------------------------------------------------
+1451. (THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 11 September 2023 - Updates to matlplotlib plot nomenclature and N-Body gravitational acceleration analysis of 2 date ranges 5-13 September 2023 and 1-31 October 2023  - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368,1388,1404 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+----------------------------------------------------------------------------------------------------------------------------------------
+1451.1 python-src/EphemerisSearch.py has been updated to change the file names of pairwise N-Body gravity plots reflecting the date range. Graph plot JPEG files are named with suffix datefrom#dateto. Function plt.clf() has been invoked to prevent overwrites.
+1451.2 python-src/image_pattern_mining/ImageNet/GISWeatherAnalytics.py has been updated to analyze two date ranges 5-13 September 2023 and 1-31 October 2023 for N-Body gravitational effects of two sets of bodies Sun-Mars-Mercury-Venus-Saturn and Venus-Mercury-Sun-Jupiter by climate_analytics() and gaussian_ensemble_forecast_rainfall_timeseries():
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,9,5,17,30,00),'dateto':(2023,9,13,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mars-Mercury-Venus-Saturn",'angularsepbounds':('0d','180d')})
+    gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,10,1,17,30,00),'dateto':(2023,10,31,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Mercury-Sun-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
+1451.3 The pairwise gravity plots for dateranges and compressed logs image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.log.11September2023.xz below point to a marked fluctuation in Mercury's gravity peaking during 5-13 September 2023 and nosediving in 1-31 October 2023:
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Mars-Mercury.2023-9-5#2023-9-13.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Mars-Saturn.2023-9-5#2023-9-13.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Mars-Venus.2023-9-5#2023-9-13.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Mercury-Jupiter.2023-10-1#2023-10-31.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Mercury-Saturn.2023-9-5#2023-9-13.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Mercury-Sun.2023-10-1#2023-10-31.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Mercury-Venus.2023-9-5#2023-9-13.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Sun-Jupiter.2023-10-1#2023-10-31.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Sun-Mars.2023-9-5#2023-9-13.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Sun-Mercury.2023-9-5#2023-9-13.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Sun-Saturn.2023-9-5#2023-9-13.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Sun-Venus.2023-9-5#2023-9-13.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Venus-Jupiter.2023-10-1#2023-10-31.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Venus-Mercury.2023-10-1#2023-10-31.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Venus-Saturn.2023-9-5#2023-9-13.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Venus-Sun.2023-10-1#2023-10-31.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.log.11September2023.xz
+1451.4 Steep increase in Mercury's gravity coincided with Marrakesh-Safi earthquake of 6.8 richter (Mercalli intensity 8) on 8 September 2023 - https://en.wikipedia.org/wiki/2023_Marrakesh-Safi_earthquake - and another steep decline in Mercury's gravity during October 2023 coincides with monsoon season in southern India.
+1451.5 Following are the matching date ranges for pairwise maximum angular separation of 180 degrees for Sun-Mars-Mercury-Venus-Saturn and 30 degrees for Venus-Mercury-Sun-Jupiter. Date range of 5-12 September 2023 coincides with proximities of Sun+Mars, Sun+Mercury, Sun+Venus, Mars+Mercury,Mercury+Venus and 1-19 October 2023 coincides with Jupiter+Venus which were prominent class association rules from sequence mining of  100 year USGS earthquake dataset in Section 148. Similarly date range of 9-26 October 2023 coincides with Sun+Mercury,5-12 September 2023 coincides with Mercury+Venus, 5-12 September 2023 coincides with Mars+Mercury which were prominent class association rules from sequence mining of HURDAT2 NOAA 100 year hurricane dataset. As mentioned elsewhere, following data establish only a machine-learnt correlation between gravity of celestial bodies and seismic-climate events while a detailed proof might involve experimental verification of ECMWF equations augmented with variable gravity g (Section 1358.7 - substituting g from N-body acceleration data computed):
+Angular separation of Sun-Mars matches bounds for date: 2023-09-05 17:30:00.000
+...
+Angular separation of Sun-Mars matches bounds for date: 2023-09-12 17:30:00.000
+Angular separation of Sun-Mercury matches bounds for date: 2023-09-05 17:30:00.000
+...
+Angular separation of Sun-Mercury matches bounds for date: 2023-09-12 17:30:00.000
+Angular separation of Sun-Venus matches bounds for date: 2023-09-05 17:30:00.000
+...
+Angular separation of Sun-Venus matches bounds for date: 2023-09-12 17:30:00.000
+Angular separation of Sun-Saturn matches bounds for date: 2023-09-05 17:30:00.000
+...
+Angular separation of Sun-Saturn matches bounds for date: 2023-09-12 17:30:00.000
+Angular separation of Mars-Mercury matches bounds for date: 2023-09-05 17:30:00.000
+...
+Angular separation of Mars-Mercury matches bounds for date: 2023-09-12 17:30:00.000
+Angular separation of Mars-Venus matches bounds for date: 2023-09-05 17:30:00.000
+...
+Angular separation of Mars-Venus matches bounds for date: 2023-09-12 17:30:00.000
+Angular separation of Mars-Saturn matches bounds for date: 2023-09-05 17:30:00.000
+...
+Angular separation of Mars-Saturn matches bounds for date: 2023-09-12 17:30:00.000
+Angular separation of Mercury-Venus matches bounds for date: 2023-09-05 17:30:00.000
+...
+Angular separation of Mercury-Venus matches bounds for date: 2023-09-12 17:30:00.000
+Angular separation of Mercury-Saturn matches bounds for date: 2023-09-05 17:30:00.000
+...
+Angular separation of Mercury-Saturn matches bounds for date: 2023-09-12 17:30:00.000
+Angular separation of Venus-Saturn matches bounds for date: 2023-09-05 17:30:00.000
+...
+Angular separation of Venus-Saturn matches bounds for date: 2023-09-12 17:30:00.000
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-01 17:30:00.000
+....
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-19 17:30:00.000
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-25 17:30:00.000
+...
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-26 17:30:00.000
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-01 17:30:00.000
+...
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-19 17:30:00.000
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-09 17:30:00.000
+...
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-26 17:30:00.000
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-18 17:30:00.000
+...
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-19 17:30:00.000
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-09 17:30:00.000
+...
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-26 17:30:00.000
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-01 17:30:00.000
+...
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-19 17:30:00.000
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-09 17:30:00.000
+...
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-26 17:30:00.000
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-01 17:30:00.000
+...
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-19 17:30:00.000
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-09 17:30:00.000
+...
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-26 17:30:00.000
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-01 17:30:00.000
+...
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-19 17:30:00.000
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-09 17:30:00.000
+...
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-26 17:30:00.000
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-01 17:30:00.000
+...
+Angular separation of Venus-Jupiter matches bounds for date: 2023-10-19 17:30:00.000
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-09 17:30:00.000
+...
+Angular separation of Mercury-Sun matches bounds for date: 2023-10-26 17:30:00.000
+
