@@ -123,8 +123,9 @@ def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds):
     plt.plot(body1_gravity_l2norms,label=bodypair + "(" + bodypairtoks[0] + ")")
     plt.plot(body2_gravity_l2norms,label=bodypair + "(" + bodypairtoks[1] + ")")
     plt.legend()
-    #plt.savefig("./testlogs/GISWeatherAnalytics.Gravity.jpg")
-    plt.show()
+    plt.savefig("./testlogs/GISWeatherAnalytics.Gravity."+bodypair+"."+str(datefrom[0])+"-"+str(datefrom[1])+"-"+str(datefrom[2])+"#"+str(dateto[0])+"-"+str(dateto[1])+"-"+str(dateto[2])+".jpg")
+    plt.clf()
+    #plt.show()
     return (body1_gravity_l2norms,body2_gravity_l2norms)
 
 def latlon_match(datetime):
