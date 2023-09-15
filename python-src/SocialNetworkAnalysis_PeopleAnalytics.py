@@ -32,6 +32,8 @@ from jellyfish import match_rating_codex
 from nltk.metrics.distance import edit_distance
 import pandas as pd
 import os
+import re
+import sys
 
 
 class HRAnalytics(object):
@@ -120,13 +122,36 @@ class HRAnalytics(object):
         print("search_engine_rank_correlation(): res = ",res)
         return res
 
-    def codesearch_statistics(self,opensourceid,personalaccesstoken):
-        codesearchjson=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/users?q=" + opensourceid + "\" ").read()
-        codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/code?q=" + opensourceid + "\" ").read()
-        codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken +"\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/repositories?q=" + opensourceid + "\" ").read()
-        codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"  -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/commits?q=" + opensourceid + "\" ").read()
-        print(codesearchjson)
-        return codesearchjson
+    def codesearch_statistics(self,opensourceid=None,personalaccesstoken=None,query=None,filepath=None):
+        codesearchjson=""
+        codesearchtext=""
+        if opensourceid is not None:
+            codesearchjson=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/users?q=" + opensourceid + "\" ").read()
+            codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/code?q=" + opensourceid + "\" ").read()
+            codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken +"\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/repositories?q=" + opensourceid + "\" ").read()
+            codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"  -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/commits?q=" + opensourceid + "\" ").read()
+            print("==================================")
+            print("GitHub Code Search for query ",opensourceid," - JSON:")
+            print("==================================")
+            print(codesearchjson)
+            return codesearchjson
+        if filepath is None and query is not None:
+            codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github.text-match+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"  -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/commits?q=" + query + "\" ").read()
+            print("==================================")
+            print("GitHub Code Search for query ",query," - JSON:")
+            print("==================================")
+            print(codesearchjson)
+            return codesearchjson
+        if filepath is not None:
+            file2search=open(filepath,"r")
+            for line in file2search.readlines():
+                if re.search(query,line):
+                   codesearchtext+=line
+            print("==================================")
+            print("Regular expression search of ",filepath," for query ",query,":")
+            print("==================================")
+            print(codesearchtext)
+            return codesearchtext
 
     def nameparser(self, full_name, pattern, context):
         name = nameparser.HumanName(full_name)
@@ -379,15 +404,35 @@ if __name__ == "__main__":
     hranal = HRAnalytics()
     csensing = CompressedSensing()
     sloc=hranal.parse_sloc("./SocialNetworkAnalysis_PeopleAnalytics.OpenSource_SLOC")
-    codesearchstats=hranal.codesearch_statistics("shrinivaasanka","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")
+    codesearchstats=hranal.codesearch_statistics(opensourceid="shrinivaasanka",personalaccesstoken="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")
+    codesearchstats1=hranal.codesearch_statistics(query="shrinivaasanka+THEORY+and+FEATURE",personalaccesstoken="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")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../asfer-docs/AstroInferDesign.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../usb-md64-github-code/USBmd_notes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../virgo64-linux-github-code/virgo-docs/VirgoDesign.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../kingcobra64-github-code/KingCobraDesignNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/ComputerScienceMiscellaneous/ComputerScienceMiscellaneous_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/Python/Python_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/Go/Go_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/C/C_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/C++/CPlusPlus_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/C++/code/namefilter.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/GUI/AngularJS_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/GUI/TypeScript_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/R/R_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/Rust/Rust_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/Java/Java_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/LinuxKernelAndCloud/code/AdvertisementAnalytics_RecommenderSystemsCF.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/LinuxKernelAndCloud/LinuxKernelAndCloud.txt")
     # profile_text = hranal.parse_profile("linkedin", "pdf", "testlogs/CV.pdf")
     # print profile_text
     profile_text1 = hranal.parse_profile("linkedin", "text", "testlogs/ProfileLinkedIn_KSrinivasan.txt", {
-        "domain": "InformationTechnology", "opensource_sloc": sloc, "opensource_codesearch_stats": codesearchstats})
+        "domain": "InformationTechnology", "opensource_sloc": sloc, "opensource_codesearch_stats": codesearchstats1})
     # hranal.least_energy_intrinsic_merit()
     # hranal.experiential_intrinsic_merit()
     profile_text2 = hranal.parse_profile(
-            "none", "tex", "testlogs/CV.tex", {"domain": "InformationTechnology", "opensource_sloc": sloc, "opensource_codesearch_stats": codesearchstats})
+            "none", "tex", "testlogs/CV.tex", {"domain": "InformationTechnology", "opensource_sloc": sloc, "opensource_codesearch_stats": codesearchstats1})
     avedistance1 = csensing.alphabet_vectorspace_embedding_distance(
         ['p', 'q', 'r', 's', 't'], ['p', 'q', 'r', 's', 'z'])
     avedistance2 = csensing.alphabet_vectorspace_embedding_distance(
