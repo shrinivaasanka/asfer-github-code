@@ -22726,3 +22726,34 @@ Angular separation of Mercury-Sun matches bounds for date: 2023-10-09 17:30:00.0
 ...
 Angular separation of Mercury-Sun matches bounds for date: 2023-10-26 17:30:00.000
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+1452. (THEORY and FEATURE) People Analytics - Social Network Analysis - enhancements to GitHub Code Search REST API statistics and support for regular expression search of repository clones - related to 14,365,626,711,727,753,876,1127,1128,1129,1130,1204,1263,1269,1427,1442 and all sections on People Analytics, Intrinsic Merit Versus Fame Equilibrium, BKS Conjecture, Stability and Noise Sensitivity of Interview LTF/PTF,Peres Theorem,Unique Identification,Talent Analytics,HR Analytics and Automated Recruitment,Question-Answering,Majority Voting,Condorcet Jury Theorem Variants,Margulis-Ruzzo Thresholds,Novelty Detection,Recommender Systems,AI Question-Answering, Partial Ordered Ranking, Fame-Merit equilibrium, Intrinsic Merit as Query Complexity,Software Analytics-Mythical Manmonth-CathedralAndBazaar - 15 September 2023
+-------------------------------------------------------------------------------------------------------------------------------------------
+1452.1 python-src/SocialNetworkAnalysis_PeopleAnalytics.py has been updated to import regular expressions re and sys modules. Function codesearch_statistics(self,opensourceid=None,personalaccesstoken=None,query=None,filepath=None) has been refactored to introduce more arguments (query and filepath) and 3 clauses separately for (*) JSON search results based on "opensourceid" parameter by REST calls with header: Accept: application/vnd.github+json (*) JSON search results based on a complex text-match from "query" parameter by REST calls with header: Accept: application/vnd.github.text-match+json (*) plain regular expression search of locally cloned repository file at "filepath" by "query" parameter which does not depend on GitHub code search.
+1452.2 Following are the queries (to search for keyword "FEATURE") to GitHub codesearch REST API and local clones of NeuronRain repository design text files for 3 clauses implemented above for retrieving all FEATUREs: 
+    codesearchstats=hranal.codesearch_statistics(opensourceid="shrinivaasanka",personalaccesstoken="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")
+    codesearchstats1=hranal.codesearch_statistics(query="shrinivaasanka+THEORY+and+FEATURE",personalaccesstoken="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")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../asfer-docs/AstroInferDesign.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../usb-md64-github-code/USBmd_notes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../virgo64-linux-github-code/virgo-docs/VirgoDesign.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../kingcobra64-github-code/KingCobraDesignNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/ComputerScienceMiscellaneous/ComputerScienceMiscellaneous_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/Python/Python_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/Go/Go_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/C/C_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/C++/CPlusPlus_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/C++/code/namefilter.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/GUI/AngularJS_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/GUI/TypeScript_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/R/R_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/Rust/Rust_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/Programming/Java/Java_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/LinuxKernelAndCloud/code/AdvertisementAnalytics_RecommenderSystemsCF.txt")
+    codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/LinuxKernelAndCloud/LinuxKernelAndCloud.txt")
+1452.3 Search results (GitHub codesearch and Regular expression local repository clone search) are in testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.15September2023
+
+References:
+----------
+1452.4 GitHub code search API syntax - https://docs.github.com/en/rest/search?apiVersion=2022-11-28 
