@@ -22782,3 +22782,12 @@ References:
 References:
 ----------
 1452.4 GitHub code search API syntax - https://docs.github.com/en/rest/search?apiVersion=2022-11-28 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1454. (THEORY and FEATURE) Computational Geometric Integer Factorization - Python 3.11.5 + PySpark 3.5.0 Upgrade - Single node clustering benchmark - related to 498,601,1226,1259,1303,1319,1321,1323,1324,1325,1355,1365,1366,1369,1379,1381,1384,1385,1401,1419 and all sections on Integer Factorization (DMRC MapReduce PySpark and NC HPC Rust implementations),Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization,Quantum computation and Derandomization of BQP Factorization by Condorcet Jury Theorem Majority-BQPVoterSAT boolean composition - 7 October 2023
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+1454.1 Spark Python version has been upgraded to 3.5.0 by "pip3.11 install pyspark" which installs pyspark 3.5.0 directly without necessity for commandline spark-submit and env variables (PYSPARK_DRIVER_PYTHON and PYSPARK_PYTHON). For local clustering benchmarks pyspark can be directly invoked without Spark submit commandline.
+1454.2 Semiprime 2137458620009 in 1324.9 has been factorized by "python3.11 DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 2137458620009 5 False False all False 2>&1 > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.11.5Upgrade.7October2023" in 50 seconds compared to 108 seconds for 3.10.4 (1324.7.3 - testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log3.12October2022) - Logs at testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.11.5Upgrade.7October2023:
+	Factor point located : [ 1462001 , 1462009 ]
+	nanoseconds elapsed so far in finding all factors:  50076500370
+1454.3 Python 3.11 is a major rewrite for improved dictionary performance.
