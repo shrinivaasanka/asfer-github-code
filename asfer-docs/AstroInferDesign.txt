@@ -22793,3 +22793,38 @@ References:
 	Factor point located : [ 1462001 , 1462009 ]
 	nanoseconds elapsed so far in finding all factors:  50076500370
 1454.3 Python 3.11 is a major rewrite for improved dictionary performance.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1455. (THEORY and FEATURE) Recursive Lambda Function Growth - Fill-In-The-Blanks word prediction by Transformers Degree Attention Model - related to 2,249,707,829,1133,1134,1204,1263,1269,1284,1285,1405,1413 and all sections on Intrinsic Merit of Texts, Question-Answering, Embedding in vectorspace, Machine Translation, Transformers Attention Model,Named Entity Recognition and Meaning Representation, Complexity models of Question-Answering (multiple choice,open-ended,adaptive and static) - LTF,PTF,Switching Circuits,TQBF,Markov Chains, Mildly Context Sensitive Grammars-Tree Adjoining Grammars for Natural Languages,Text restoration-Vowelless text (de)compression  - 9 October 2023 
+-------------------------------------------------------------------------------------------------------------------------------------------
+1455.1 python-src/RecursiveLambdaFunctionGrowth.py has been updated to include a flag for enabling-disabling intrinsic merit statistics.
+1455.2 Function def grow_lambda_function3(self, text="None", level=3, textgraph=None, predict_word=False, fillintheblankstxt=None) has been enhanced to add two arguments - predict_word boolean flag and fillingtheblanktxt text file for Fill-In-The-Blanks algorithm described in 1413.7.
+1455.3 If predict_word is set to True, transformer degree attention is computed and algorithm 1413.7 implemented by function fill_in_the_blanks() is executed.  
+1455.4 Function def fill_in_the_blanks(self,prevtok,nexttok,definitiongraph,QKV) populates the argmax dictionaries for left and right context bigrams by iterating through path degree attention QKV data of the textgraph - these argmax dictionaries create a probability distribution on maximum likely word that might fill in the blanks. All simple paths between every s-t pair of word vertices in textgraph are looped through and a path degree attention for s-t path is populated (as sum of degree attentions of constituent vertices in each path) in 3 dictionaries for path QKV.
+1455.5 grow_lamda_function3() is invoked by enabling predict_word and passing a text file RecursiveLambdaFunctionGrowth_FillInTheBlanks.txt whch has some blank words to be filled:
+    lambdafn.grow_lambda_function3(textread,predict_word=True, fillintheblankstxt="RecursiveLambdaFunctionGrowth_FillInTheBlanks.txt")
+1455.6 Following are the probable words that might fill in the blanks for the text in RecursiveLambdaFunctionGrowth_FillInTheBlanks.txt - exact match for the blanks is the word "area" while degree attention maximum likelihood has guessed the word to be "conterminous" and "location" respectively in two executions which is indirectly related to "area" or a contiguous geographic boundary (excerpts from 2 XZ compressed log files): 
+-----------------------------------------------------------
+testlogs/RecursiveLambdaFunctionGrowth.log.8October2023.xz:
+-----------------------------------------------------------
+fitbtoks: ['Recent', 'estimates', 'of', 'the', 'economy', 'of', 'the', 'Chennai', 'metropolitan', [{'United_States': 36.18630580357142, 'conte
+rminous': 74.82794642857142}, {'United_States': 36.18630580357142, 'conterminous': 74.82794642857142}], '(which', 'includes', 'the', 'industri
+al', 'zones)', 'is', 'over', 'US$200', 'billion', '(PPP', 'GDP),', 'making', 'it', 'the', 'third', 'most', 'productive', 'metro', 'area', 'of'
+, 'India,', 'and', 'the', 'third', 'highest', 'by', 'GDP', 'per', 'capita.', 'Previously,', 'the', 'metropolitan', 'area', "didn't", 'include'
+, 'the', 'nearby', 'industrial', 'zones', 'of', 'Siruseri,', 'Oragadam,', 'and', 'Sriperumbudur,', 'due', 'to', 'which', 'the', 'economy', 'of
+', 'these', 'regions', "didn't", 'get', 'included', 'in', 'the', 'economy', 'of', 'Chennai.', 'Now,', 'post', 'expansion', 'of', 'the', 'Chenn
+ai', 'metropolitan', [{'United_States': 36.18630580357142, 'conterminous': 74.82794642857142}, {'United_States': 36.18630580357142, 'contermin
+ous': 74.82794642857142}], 'in', '2022,', 'these', 'regions', 'are', 'included']
+-----------------------------------------------------------
+testlogs/RecursiveLambdaFunctionGrowth.log2.8October2023.xz:
+-----------------------------------------------------------
+fitbtoks: ['Recent', 'estimates', 'of', 'the', 'economy', 'of', 'the', 'Chennai', 'metropolitan', [{'geographical': 8.930849609375, 'location'
+: 15.29462884756235}, {'geographical': 8.930849609375, 'location': 15.29462884756235}], '(which', 'includes', 'the', 'industrial', 'zones)', '
+is', 'over', 'US$200', 'billion', '(PPP', 'GDP),', 'making', 'it', 'the', 'third', 'most', 'productive', 'metro', 'area', 'of', 'India,', 'and
+', 'the', 'third', 'highest', 'by', 'GDP', 'per', 'capita.', 'Previously,', 'the', 'metropolitan', 'area', "didn't", 'include', 'the', 'nearby
+', 'industrial', 'zones', 'of', 'Siruseri,', 'Oragadam,', 'and', 'Sriperumbudur,', 'due', 'to', 'which', 'the', 'economy', 'of', 'these', 'reg
+ions', "didn't", 'get', 'included', 'in', 'the', 'economy', 'of', 'Chennai.', 'Now,', 'post', 'expansion', 'of', 'the', 'Chennai', 'metropolit
+an', [{'geographical': 8.930849609375, 'location': 15.29462884756235}, {'geographical': 8.930849609375, 'location': 15.29462884756235}], 'in',
+ '2022,', 'these', 'regions', 'are', 'included']
+
+
