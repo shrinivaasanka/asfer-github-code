@@ -59,6 +59,7 @@ class RecursiveLambdaFunctionGrowth(object):
         # self.Similarity="ConceptNet"
         self.Similarity = "WordNet"
         self.ClosedPaths = True
+        self.statistics = False
         self.dictionary = PyDictionary()
         self.goslatetranslator = goslate.Goslate()
         self.googletranslator = Translator()
@@ -373,7 +374,7 @@ class RecursiveLambdaFunctionGrowth(object):
         else:
             return rw_words_list
 
-    def grow_lambda_function3(self, text="None", level=3, textgraph=None):
+    def grow_lambda_function3(self, text="None", level=3, textgraph=None, predict_word=False, fillintheblankstxt=None):
         stpairs = []
         maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit = (
             "", 0.0)
@@ -429,51 +430,86 @@ class RecursiveLambdaFunctionGrowth(object):
                 except KeyError:
                     pass
                 rw_ct = ""
-        intrinsic_merit_dict = {}
-        print("grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text:", self.graph_tensor_neuron_network_intrinsic_merit)
+        if self.statistics:
+            intrinsic_merit_dict = {}
+            print("grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text:", self.graph_tensor_neuron_network_intrinsic_merit)
 
-        print("grow_lambda_function3(): Machine Translation Example :")
-        self.machine_translation(3, definitiongraph, "te", 0.8)
+            print("grow_lambda_function3(): Machine Translation Example :")
+            self.machine_translation(3, definitiongraph, "te", 0.8)
 
-        self.korner_entropy(definitiongraph)
-        print("grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:", self.entropy)
+            self.korner_entropy(definitiongraph)
+            print("grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:", self.entropy)
 
-        density = self.density(definitiongraph)
-        print("grow_lambda_function3(): Graph Density (Regularity Lemma):", density)
+            density = self.density(definitiongraph)
+            print("grow_lambda_function3(): Graph Density (Regularity Lemma):", density)
 
-        bose_einstein_intrinsic_fitness = self.bose_einstein_intrinsic_fitness(
-            definitiongraph)
-        print("grow_lambda_function3(): Bose-Einstein Intrinsic Fitness:", bose_einstein_intrinsic_fitness)
+            bose_einstein_intrinsic_fitness = self.bose_einstein_intrinsic_fitness(
+                 definitiongraph)
+            print("grow_lambda_function3(): Bose-Einstein Intrinsic Fitness:", bose_einstein_intrinsic_fitness)
 
-        print("grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit :", maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit)
+            print("grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit :", maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit)
 
-        print("grow_lambda_function3(): Recursive Gloss Overlap Classifier classes for text:", RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(text))
+            print("grow_lambda_function3(): Recursive Gloss Overlap Classifier classes for text:", RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(text))
 
-        intrinsic_merit_dict["graph_tensor_neuron_network_intrinsic_merit"] = self.graph_tensor_neuron_network_intrinsic_merit
-        intrinsic_merit_dict["maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit"] = maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
-        intrinsic_merit_dict["korner_entropy"] = self.entropy
-        intrinsic_merit_dict["density"] = density
-        intrinsic_merit_dict["bose_einstein_intrinsic_fitness"] = bose_einstein_intrinsic_fitness
-        if textgraph == None:
-            intrinsic_merit_dict["recursive_gloss_overlap_intrinsic_merit"] = definitiongraph_merit[1]
-        intrinsic_merit_dict["empath_sentiment"] = sentiment
+            intrinsic_merit_dict["graph_tensor_neuron_network_intrinsic_merit"] = self.graph_tensor_neuron_network_intrinsic_merit
+            intrinsic_merit_dict["maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit"] = maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
+            intrinsic_merit_dict["korner_entropy"] = self.entropy
+            intrinsic_merit_dict["density"] = density
+            intrinsic_merit_dict["bose_einstein_intrinsic_fitness"] = bose_einstein_intrinsic_fitness
+            if textgraph == None:
+               intrinsic_merit_dict["recursive_gloss_overlap_intrinsic_merit"] = definitiongraph_merit[1]
+            intrinsic_merit_dict["empath_sentiment"] = sentiment
 
-        write_dot(definitiongraph, "RecursiveLambdaFunctionGrowth.dot")
+            write_dot(definitiongraph, "RecursiveLambdaFunctionGrowth.dot")
 
-        self.graph_tensor_neuron_network_intrinsic_merit = 1.0
-        print("intrinsic_merit_dict:", intrinsic_merit_dict)
-        attentionshape=int(len(definitiongraph.nodes())/10)
-        queries=np.zeros((attentionshape,attentionshape))
-        keys=np.zeros((attentionshape,attentionshape))
-        values=np.zeros((attentionshape,attentionshape))
-        variables=np.zeros((attentionshape,attentionshape))
-        queries.fill(0.5)
-        keys.fill(0.5)
-        values.fill(0.5)
-        variables.fill(0.5)
-        QKV=self.rlfg_transformers_attention_model(definitiongraph,queries,keys,values,variables)
-        print("Query-Key-Value learnt by Perceptron :",QKV)
-        return intrinsic_merit_dict
+            self.graph_tensor_neuron_network_intrinsic_merit = 1.0
+            print("intrinsic_merit_dict:", intrinsic_merit_dict)
+            return intrinsic_merit_dict
+        if predict_word:
+            attentionshape=int(len(definitiongraph.nodes())/10)
+            queries=np.zeros((attentionshape,attentionshape))
+            keys=np.zeros((attentionshape,attentionshape))
+            values=np.zeros((attentionshape,attentionshape))
+            variables=np.zeros((attentionshape,attentionshape))
+            queries.fill(0.5)
+            keys.fill(0.5)
+            values.fill(0.5)
+            variables.fill(0.5)
+            QKV=self.rlfg_transformers_attention_model(definitiongraph,queries,keys,values,variables)
+            print("Query-Key-Value learnt by Perceptron :",QKV)
+            fitbtxtfile=open(fillintheblankstxt,"r")
+            fitbtoks=fitbtxtfile.read().split()
+            tokcnt=0
+            for tok in fitbtoks:
+                prevtok=nexttok=None
+                if tok=="------":
+                   if tokcnt > 0:
+                      prevtok = fitbtoks[tokcnt-1]
+                   if tokcnt < len(fitbtoks)-1:
+                      nexttok = fitbtoks[tokcnt+1]
+                   fitbtoks[tokcnt]=self.fill_in_the_blanks(prevtok,nexttok,definitiongraph,QKV)
+                tokcnt+=1
+            print("fitbtoks:",fitbtoks)
+
+    def fill_in_the_blanks(self,prevtok,nexttok,definitiongraph,QKV):
+        argmaxleft=argmaxright={}
+        for i in range(3):
+            maxleftattention=maxrightattention=0
+            for path,attention in QKV[4][i].items():
+                pathtoks = path.split(" --- ")
+                print("(prevtok,nexttok):",(prevtok,nexttok))
+                if pathtoks[0] == prevtok:
+                   print("pathtoks:",pathtoks," - prevtok:",prevtok)
+                   if attention > maxleftattention:
+                      maxleftattention = attention
+                      argmaxleft[pathtoks[1]]=attention
+                if pathtoks[1] == nexttok:
+                   print("pathtoks:",pathtoks," - nexttok:",nexttok)
+                   if attention > maxrightattention:
+                      maxrightattention = attention
+                      argmaxright[pathtoks[0]]=attention
+        print("argmax:",[argmaxleft,argmaxright])
+        return [argmaxleft,argmaxright]
 
     def tree_adjoining_grammar_annotated(self,grammar,text):
         print("grammar :",grammar)
@@ -514,6 +550,9 @@ class RecursiveLambdaFunctionGrowth(object):
         definitiongraphQ=defaultdict(int)
         definitiongraphK=defaultdict(int)
         definitiongraphV=defaultdict(int)
+        definitiongraphQpath=defaultdict(int)
+        definitiongraphKpath=defaultdict(int)
+        definitiongraphVpath=defaultdict(int)
         for v1 in definitiongraph.nodes():
             column=0
             for v2 in definitiongraph.nodes():
@@ -528,13 +567,31 @@ class RecursiveLambdaFunctionGrowth(object):
                     continue
                 column+=1
             row+=1
+        for v1 in definitiongraph.nodes():
+            for v2 in definitiongraph.nodes():
+                    try:
+                        paths=list(nx.all_simple_paths(definitiongraph,source=v1,target=v2))
+                    except:
+                        pass
+                    print(v1,"====",v2," paths:",paths)
+                    if len(paths) > 0:
+                       for path in paths:
+                            prevnode=path[0]
+                            for n in range(1,len(path)-1):  
+                                nextnode=path[n]
+                                definitiongraphQpath[v1 + " --- " + v2] += abs(definitiongraphQ[prevnode + " --- " + nextnode])
+                                definitiongraphKpath[v1 + " --- " + v2] += abs(definitiongraphK[prevnode + " --- " + nextnode]) 
+                                definitiongraphVpath[v1 + " --- " + v2] += abs(definitiongraphV[prevnode + " --- " + nextnode]) 
+                                prevnode=nextnode
         sorted_definitiongraphQ = sorted(definitiongraphQ.items(), key=lambda item: item[1], reverse=True)
         sorted_definitiongraphK = sorted(definitiongraphK.items(), key=lambda item: item[1], reverse=True)
         sorted_definitiongraphV = sorted(definitiongraphV.items(), key=lambda item: item[1], reverse=True)
         print("sorted_definitiongraphQ:",definitiongraphQ)
         print("sorted_definitiongraphK:",definitiongraphK)
         print("sorted_definitiongraphV:",definitiongraphV)
-        return (query_weights,key_weights,value_weights,attention)
+        QKVpath=(definitiongraphQpath,definitiongraphKpath,definitiongraphVpath)
+        print("QKVpath:",QKVpath)
+        return (query_weights,key_weights,value_weights,attention,QKVpath)
 
     def machine_translation(self, corenumber=3, definitiongraph=None, languagecode="en", pathsimilarity=0.8):
         nodes = definitiongraph.nodes()
@@ -711,7 +768,7 @@ if __name__ == "__main__":
     lambdafn.tree_adjoining_grammar_annotated(groucho_grammar,"I shot an elephant in my pajamas")
     lambdafn.tree_adjoining_grammar_annotated(grammar1,"Mary saw Bob")
     lambdafn.tree_adjoining_grammar_annotated(grammar2,"the angry bear chased the frightened little squirrel")
-    lambdafn.grow_lambda_function3(textread)
+    lambdafn.grow_lambda_function3(textread,predict_word=True, fillintheblankstxt="RecursiveLambdaFunctionGrowth_FillInTheBlanks.txt")
     summary = lambdafn.create_summary(
         textread, graphtraversedsummary=True, shortestpath=True)
     print()
