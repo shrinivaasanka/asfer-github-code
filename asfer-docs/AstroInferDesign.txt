@@ -22854,4 +22854,28 @@ ions', "didn't", 'get', 'included', 'in', 'the', 'economy', 'of', 'Chennai.', 'N
 an', [{'geographical': 8.930849609375, 'location': 15.29462884756235}, {'geographical': 8.930849609375, 'location': 15.29462884756235}], 'in',
  '2022,', 'these', 'regions', 'are', 'included']
 
+----------------------------------------------------------------------------------------------------------------------------------------
+1456. (THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 31 October 2023 - N-Body gravitational acceleration analysis of date range 7-20 November 2023  - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368,1388,1404,1455 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change-Adaptive Fourier Neural Operator-FourCastNet, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+----------------------------------------------------------------------------------------------------------------------------------------
+1456.1 python-src/image_pattern_mining/ImageNet/GISWeatherAnalytics.py has been updated to invoke climate_analytics() and gaussian_ensemble_forecast_rainfall_timeseries() for date range 7-20 November 2023 over selected celestial body conjunctions - Gaussian Mixture Ensemble model has been trained on fictitious training and forecast rainfall timeseries of NorthEast Monsoon due to lack of data: 
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,7,17,30,00),'dateto':(2023,11,20,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,7,17,30,00),'dateto':(2023,11,20,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Venus",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,7,17,30,00),'dateto':(2023,11,20,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,11,7,17,30,00),'dateto':(2023,11,20,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Mercury-Sun-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
+1456.2 N-Body variable gravity climate model relies on varying gravitational constant due to celestial bodies (1451.9) and complements deep learning models (which are Vision Tokenization and Convolution Neural Network based) that predict future weather variables from past ERA5 historic visual terrestrial climate data.
+1456.3 Following are the Gravity Plots and Logs for the celestial body pairs that show a peak Mercury gravity from 7 November 2023 onwards upto 20 November 2023 which could cause a gravity induced atmospheric cooling:
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Jupiter.2023-11-7#2023-11-20.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Sun.2023-11-7#2023-11-20.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Venus.2023-11-7#2023-11-20.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Sun-Jupiter.2023-11-7#2023-11-20.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Sun-Moon.2023-11-7#2023-11-20.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Venus-Jupiter.2023-11-7#2023-11-20.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Venus-Mercury.2023-11-7#2023-11-20.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Venus-Sun.2023-11-7#2023-11-20.jpg
+	testlogs/GISWeatherAnalytics.log.31October2023
 
+References:
+----------
+1456.4 ClimaX - https://www.microsoft.com/en-us/research/group/autonomous-systems-group-robotics/articles/introducing-climax-the-first-foundation-model-for-weather-and-climate/ - Introducing ClimaX: The first foundation model for weather and climate
+1456.5 Huawei Pangu Weather - https://arxiv.org/pdf/2211.02556.pdf - Pangu-Weather: A 3D High-Resolution System for Fast and Accurate Global Weather Forecast 
+1456.6 ECMWF Reanalysis 5 (ERA5) - Historic data from 1940 - https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5
