@@ -22880,3 +22880,30 @@ References:
 1456.4 ClimaX - https://www.microsoft.com/en-us/research/group/autonomous-systems-group-robotics/articles/introducing-climax-the-first-foundation-model-for-weather-and-climate/ - Introducing ClimaX: The first foundation model for weather and climate
 1456.5 Huawei Pangu Weather - https://arxiv.org/pdf/2211.02556.pdf - Pangu-Weather: A 3D High-Resolution System for Fast and Accurate Global Weather Forecast 
 1456.6 ECMWF Reanalysis 5 (ERA5) - Historic data from 1940 - https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+1458. (THEORY and FEATURE) Music Information Retrieval(MIR) - AI Music Synthesis by Random walks on Music Weighted Automata Directed Graph - Audio Quality - Timbre and Envelope implementations - 6 November 2023 - related to 3,110,134,298,1223,1224,1257,1258,1261,1305,1306,1307,1308,1309,1310,1311,1315,1353,1432,1433,1434,1438,1439,1440,1441 and all sections on Music search-Music discovery, Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis from summation of damped sinusoids, Additive Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Dynamic Time Warping-Music Timeseries analysis, Music Evoked Autobiographical Memories, Waveshaping, ThoughtNet, Majority Voting (Enjoyable music) Vs Intrinsic (Quality music) - Condorcet Jury Theorem variants,Computational Learning Theory, Boolean Function Composition, Longest Common Subsequence, Suffix Trees - Longest Repeated Substring, MultiFractal Detrended Fluctuation Analysis of Non-stationary timeseries, Ramsey Theory-Van Der Waerden Theorem for coloring of sequences, Pumping Lemma, Normalized Compression Distance-Kolmogorov complexity, Merit of Large Scale Visuals, Recurrent Neural Networks,Neo-Riemannian Theory of Music,Attack-Decay-Sustain-Release model
+----------------------------------------------------------------------------------------------------------------------------------------------
+1458.1 Updated python-src/music_pattern_mining/AudioToBitMatrix.py to import PyTimbre2 for Timbre statistics computation of an audio waveform:
+	from pytimbre2.audio_files.wavefile import WaveFile
+	from pytimbre2.spectral.spectra import SpectrumByFFT
+1458.2 Function def audio_features(audiofilename=None,signal_bitmap=None,frame_size=1024,hop_length=256) has been updated to add more arguments (audiofilename,frame size and hop length) for audio timbre and envelope computation. Envelope of the audio signal is already computed as onset strength while an overall amplitude envelope code has been added in this update to chunk the waveform into frames of predefined size and sampled at intervals of hop length from which maximum amplitude per frame is found constituting an envelope array. 
+1458.3 Envelope array is printed for Attack-Decay-Sustain-Release (ADSR) model. Timbre statistics are obtained from PyTimbre2 timbre toolbox FFT spectrum roll off and average metrics (ADSR). Full timbre average features are computationally intensive and are printed based on a boolean flag timbreaveragefeatures.
+1458.4 Example Envelope and Timbre quality measures are computed for AI synthesized waveform virtual_piano_music.WesternClassical.wav. Merit of an audio-visual has 2 connotations - (1) Quality of the content within the audio-music or the visual (2) Quality of audio-music or visual itself (clarity of the audio or resolution of the visual which depends more on the device capacity) - latter is more objective than the former in which judging the content of an audio-visual is subjective (requires human jury) and NeuronRain implements ImageNet deeplearning predictions based EventNet Tensor Product algorithm for objectively quantifying quality of the content. 
+1458.5 Following are the logs and audio waveforms for this update:
+	modified:   music21_percussion_for_piano.midi
+	modified:   music21_percussion_for_piano.wav
+	modified:   music21_piano_with_percussions.mp3
+	modified:   virtual_piano_music.WesternClassical.wav
+	testlogs/AudioToBitMatrix.log.6November2023
+	testlogs/AudioToBitMatrix.log2.6November2023
+	testlogs/AudioToBitMatrix.log3.6November2023
+
+References:
+----------
+1458.6 Timbre toolbox - MATLAB - https://github.com/VincentPerreault0/timbretoolbox - implementation of the paper: "The Timbre Toolbox: Extracting audio descriptors from musical signals" - Author: Geoffroy Peeters, Bruno L Giordano, Patrick Susini, Nicolas Misdariis, and Stephen McAdams appeared in Journal of Acoustical Society of America, 130 (5), November 2011
+1458.7 PyTimbre - https://gitlab.com/python-audio-feature-extraction/pytimbre
+1458.8 MIR Basic Feature Extraction - https://musicinformationretrieval.com/basic_feature_extraction.html
+1458.9 Timbre toolbox paper - https://www.mcgill.ca/mpcl/files/mpcl/peeters_2011_jasa.pdf
+1458.10 Survey of Melody Extraction - MIREX algorithms - Melody Extraction from Polyphonic Music Signals - https://www.ee.columbia.edu/~dpwe/pubs/SalGER14-melody.pdf - Query By Humming or Audio Search (search music waveforms from a query humming) - So far search engines are primarily limited to text queries while searching the corpus of audio-visuals by query humming or query visual is less explored. Melody Extraction is a form of AI music synthesis which extracts melodies from random noise.
+1458.11 Time bounded Kolmogorov complexity and Solovay functions - https://hoelzl.fr/Hoelzl,%20Kraeling,%20Merkle%20-%20Time-bounded%20Kolmogorov%20complexity%20and%20Solovay%20functions%20(Journal%20version).pdf - Computable time bound version of undecidable Kolmogorov complexity (related: Normalized Compression Distance) - audio waveforms (notes strings) can be minimally described in terms of timebound Kolomogorov complexity (K^t) 
