@@ -55,6 +55,8 @@ from threading import Thread
 import time
 from pydub import AudioSegment
 from pydub.playback import play
+from pytimbre2.audio_files.wavefile import WaveFile
+from pytimbre2.spectral.spectra import SpectrumByFFT
 
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
@@ -150,7 +152,7 @@ def speechrecognition_audiograph(audiofile):
     rlfg.grow_lambda_function3(recogspeech)
 
 
-def audio_features(signal_bitmap):
+def audio_features(audiofilename=None,signal_bitmap=None,frame_size=1024,hop_length=256,timbreaveragefeatures=False):
     print("################################################")
     print("Histogram/Probability Distribution of the audio signal")
     print("################################################")
@@ -163,13 +165,30 @@ def audio_features(signal_bitmap):
     print("Note Onset Detection")
     print("#################################################")
     onstrength = librosa.onset.onset_strength(
-        signal_bitmap[1], sr=signal_bitmap[2])
+        y=signal_bitmap[1], sr=signal_bitmap[2])
     times = librosa.frames_to_time(
         np.arange(len(onstrength)), sr=signal_bitmap[2])
     onset_frames = librosa.onset.onset_detect(
         onset_envelope=onstrength, sr=signal_bitmap[2])
     print(("Notes onsets occur at:", onset_frames))
-    return (hist, bin, times, onstrength, onset_frames)
+    print("################################################")
+    print("Timbre and Envelope")
+    print("################################################")
+    envelope=[]
+    for x in range(0,len(signal_bitmap),hop_length):
+        frame=signal_bitmap[0][x:x+frame_size]
+        maxframe=max(frame)
+        envelope.append(maxframe)
+    print("Envelope :",envelope)
+    #plt.plot(len(envelope),envelope)
+    wfm = WaveFile(audiofilename)
+    print("PyTimbre2 - Amplitude Modulation:",wfm.amplitude_modulation)
+    spectrum = SpectrumByFFT(wfm)
+    print("PyTimbre2 - Spectral roll off:",spectrum.spectral_roll_off)
+    if timbreaveragefeatures:
+        print("PyTimbre2 - Average Features:",spectrum.get_average_features())
+    #plt.show()
+    return (hist, bin, times, onstrength, onset_frames, envelope, wfm.amplitude_modulation, spectrum)
 
 def audio_to_notes(audio, dur=1, music="Carnatic",raaga="chitrambari"):
     print("###################################################")
@@ -664,5 +683,8 @@ if __name__ == "__main__":
 
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃'},genre="Carnatic")
-    notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/Bach_Flute_Sonata_EFlat.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical",instruments=["Guitar"])
+    #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/Bach_Flute_Sonata_EFlat.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical",instruments=["Guitar"])
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
+    bm=audio_to_bitmatrix("virtual_piano_music.WesternClassical.wav",dur=10)
+    features1=audio_features(audiofilename="virtual_piano_music.WesternClassical.wav",signal_bitmap=bm)
+    features2=audio_features(audiofilename="virtual_piano_music.WesternClassical.wav",signal_bitmap=bm,timbreaveragefeatures=True)

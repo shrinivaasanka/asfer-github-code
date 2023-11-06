@@ -1,0 +1,20 @@
+################################################
+Histogram/Probability Distribution of the audio signal
+################################################
+('hist:', array([6.87184514, 3.90233898, 2.98457445, 2.71299465, 2.56581592,
+       2.56861932, 2.69932805, 2.95023275, 3.64828046, 7.73038775]))
+('bin:', array([-0.13171044, -0.10582678, -0.07994313, -0.05405947, -0.02817581,
+       -0.00229216,  0.0235915 ,  0.04947516,  0.07535881,  0.10124247,
+        0.12712613]))
+#################################################
+Note Onset Detection
+#################################################
+('Notes onsets occur at:', array([  8,  16,  23,  31,  38,  46,  53,  61,  69,  76,  84,  91,  99,
+       106, 114, 121, 129, 136, 144, 151, 159, 167, 174, 182, 189, 197,
+       204, 212]))
+################################################
+Timbre and Envelope
+################################################
+PyTimbre2 - Amplitude Modulation: 1.4680113939735673e-05
+PyTimbre2 - Spectral roll off: 8370.96962928772
+PyTimbre2 - Average Features: {'attack': 0.030249433106575963, 'decrease': 0.13795918367346938, 'release': 87.68065759637189, 'log_attack': -1.0509310001360732, 'attack slope': 10.284135395157296, 'decrease slope': -3.1832408443380722e-06, 'temporal centroid': 43.87290615379726, 'effective duration': 87.61795918367346, 'amplitude modulation': 1.4680113939735673e-05, 'frequency modulation': 1.2315634193363716, 'loudness': 8.536922098569157, 'roughness': 2.074847683556445, 'sharpness': 1.056062473583311, 'zero_crossing_rate': 1401.4082188923653, 'auto_correlation_00': 0.9948881733530511, 'auto_correlation_01': 0.979843885533352, 'auto_correlation_02': 0.95502818111012, 'auto_correlation_03': 0.9207043596641409, 'auto_correlation_04': 0.8772350942620672, 'auto_correlation_05': 0.8250784035195936, 'auto_correlation_06': 0.7647826668356839, 'auto_correlation_07': 0.6969805592682149, 'auto_correlation_08': 0.6223821837694556, 'auto_correlation_09': 0.5417673107772825, 'auto_correlation_10': 0.4559769538880852, 'auto_correlation_11': 0.36590403358439955, 'spectral_centroid': 1631.9905922241464, 'spectral_spread': 3267.6579658118944, 'spectral_skewness': 4.07118436781027, 'spectral_kurtosis': 19.906113433018113, 'spectral_slope': -2.2108965212118668e-10, 'spectral_decrease': 3.36107265130819e-05, 'spectral_roll_off': 8370.96962928772, 'spectral_energy': 0.9999999999999989, 'spectral_flatness': 0.11406322064828309, 'spectral_crest': 4549.458327585491}
