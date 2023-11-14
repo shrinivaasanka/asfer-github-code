@@ -11977,6 +11977,11 @@ Advantages of mining graphic images of performances captured periodically are:
 
 NOTE on linux kernel versions: All the NeuronRain commits being done (in SourceForge and GitHub) for the past 2 months since April 2018 are based on executions/tests on linux kernel 3.x.x + Single Core. Berkeley Packet Filtering(BPF)/bcc-tools performance analyzer which includes runqlat is recent addition to mainstream linux kernel from version 4.x.x onwards. Commits prior to April 2018 were done on a linux kernel 4.13.3 + Dual Core development environment which was sabotaged by a probable severe Cybercrime in first week of April 2018 causing catastrophic damage to partitions and hardware failure too making recovery impossible. This incident caused total destruction of all dev and build setups necessitating full checkouts from GitHub and SourceForge repositories and continued development on another base linux kernel of lesser version which does not support BPF/bcc-tools. Previous provision for graphic performance data pattern recognition is mainly targeted towards supporting BPF/bcc-tools in future.
 
+References:
+----------
+561.1 eBPF observability tools - Dynamically programmable kernel - https://ebpf.io/
+561.2 How to add eBPF observability - BPFTrace - https://www.brendangregg.com/blog/2021-07-03/how-to-add-bpf-observability.html
+
 --------------------------------------------------------------------------------------------------------------
 562. (THEORY) Computational Geometric PRAM-NC Factorization, Ray Shooting Query Oracles, Quantum NC, Quantum 
 Factorization, Classical-Quantum Transition and Knot Theory - related to 34,351,555 - 15 June 2018 and
