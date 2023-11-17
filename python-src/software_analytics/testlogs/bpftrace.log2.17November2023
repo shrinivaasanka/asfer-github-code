@@ -1,0 +1,6586 @@
+Attaching 1 probe...
+
+
+@[
+    0x7f6910c77044
+    0xffff00220018
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b6beed9
+    0x300055600000000
+]: 1
+@[
+    0x7f6910dbb288
+    0x3f0000
+]: 1
+@[
+    ioctl+63
+    0x1d
+]: 1
+@[
+    __GI___errno_location+11
+]: 1
+@[
+    pixman_region_translate+83
+    0x300055600000000
+]: 1
+@[
+    __libc_calloc+147
+    0x420b81
+    0x55b96cd52a60
+    0x2e0051000200046
+]: 1
+@[
+    0x7f6910dbb3c6
+    0x200
+]: 1
+@[
+    0x7f6925667022
+    0x55b96c75fd80
+]: 1
+@[
+    0x55b96b6295d0
+]: 1
+@[
+    _int_free_merge_chunk+241
+]: 1
+@[
+    0x7f69106cf193
+]: 1
+@[
+    0x7f6910ecce2c
+]: 1
+@[
+    0x55b96b657512
+    0x2e0051000000000
+]: 1
+@[
+    0x7f6910eb7ad8
+]: 1
+@[
+    0x7f6910f14b43
+]: 1
+@[
+    0x7f6910eda9a4
+]: 1
+@[
+    0x7f6910db8f13
+    0x55b96bfc6898
+]: 1
+@[
+    __libc_calloc+719
+    0x3eeb81
+    0x55b96cd52a60
+    0x2e0051000200046
+]: 1
+@[
+    0x7f6910c16ea4
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x7f6925664144
+]: 1
+@[
+    0x55b96b76f5c2
+]: 1
+@[
+    0x7f691072a2c0
+    0x2
+]: 1
+@[
+    0x7f6910c70040
+    0xffff001a0023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910ed2d59
+]: 1
+@[
+    0x7f6925663544
+]: 1
+@[
+    __pthread_mutex_unlock+0
+]: 1
+@[
+    0x7f69113cc295
+]: 1
+@[
+    0x7f691076d665
+    0xde1
+]: 1
+@[
+    0x7f69250e0283
+    ffi_call+291
+    0x7f6925664b23
+    0x7ffc4a70dd20
+]: 1
+@[
+    __pthread_mutex_lock+7
+    0x55b96bfda940
+]: 1
+@[
+    0x7f6910f0361c
+]: 1
+@[
+    0x7f6910ecc6e3
+]: 1
+@[
+    0x7f691069ccd4
+]: 1
+@[
+    0x7f69106cf1de
+]: 1
+@[
+    0x7f69109d8c97
+    0x300000000
+]: 1
+@[
+    0x7f6910dbaa90
+]: 1
+@[
+    0x55b96b6b94ea
+    0x105000000f8
+]: 1
+@[
+    0x7f69112a7197
+    0x1
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+]: 1
+@[
+    0x7f6910f15cb2
+    0xffff00040023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f69252519e0
+    0x2e0051000200046
+]: 1
+@[
+    0x7f6910ec0244
+    0xffff00130023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910ec0f90
+]: 1
+@[
+    0x55b96b770f93
+]: 1
+@[
+    0x55b96b64f0de
+]: 1
+@[
+    0x55b96b63df01
+]: 1
+@[
+    0x7f6910c179ea
+]: 1
+@[
+    0x55b96b770aa4
+]: 1
+@[
+    0x7f6924918ca0
+]: 1
+@[
+    wl_proxy_marshal_array_flags+2012
+]: 1
+@[
+    0x55b96b643ba4
+    0x55b96b776d83
+]: 1
+@[
+    0x7f6910dba499
+]: 1
+@[
+    __memcmp_sse2+171
+    0x7f6910c79c90
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910ebe2c4
+    0xffff0002001c
+    0x55b96bfba5e0
+]: 1
+@[
+    __readlink+11
+]: 1
+@[
+    0x7f6910ecd202
+]: 1
+@[
+    0x7f69109d8ab1
+    0x300000000
+]: 1
+@[
+    __memset_sse2_unaligned_erms+128
+]: 1
+@[
+    __pthread_mutex_unlock_usercnt+4
+]: 1
+@[
+    0x55b96b76c619
+    0x55b96cd31040
+    0x100000018
+]: 1
+@[
+    0x7f6910c70db4
+]: 1
+@[
+    0x55b96b657567
+    0x2e0051000200046
+]: 1
+@[
+    0x7f6910dbabd4
+    0x55b96bfc6898
+]: 1
+@[
+    0x7f6910ec6ea4
+]: 1
+@[
+    __libc_calloc+4
+    0x7f6925669313
+    0x657a697365720067
+]: 1
+@[
+    0x55b96b762404
+    0x55b96bf370a0
+]: 1
+@[
+    0x55b96b701b94
+]: 1
+@[
+    xshmfence_trigger+4
+    0x2e0051000200046
+]: 1
+@[
+    0x7f6924da27e4
+    0x2e0051000200046
+]: 1
+@[
+    0x7f6910c71761
+]: 1
+@[
+    0x55b96b62a4d4
+]: 1
+@[
+    0x55b96b6507d3
+]: 1
+@[
+    0x55b96b6aa7c5
+]: 1
+@[
+    wl_display_flush+29
+]: 1
+@[
+    0x55b96b647604
+    0x2e0051000200046
+]: 1
+@[
+    0x55b96b659d72
+    0x2000000000320
+    0x300055600000000
+]: 1
+@[
+    0x55b96b64d5b1
+]: 1
+@[
+    0x7f6924d904cb
+]: 1
+@[
+    0x55b96b6f0ec3
+]: 1
+@[
+    0x55b96b6a36a4
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    pixman_region_intersect+504
+]: 1
+@[
+    0x7f6910c77030
+    0xffff0010001a
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f69109c4f94
+]: 1
+@[
+    0x7f6910db8b84
+    0x55b96bfc6898
+]: 1
+@[
+    _int_free+92
+]: 1
+@[
+    0x55b96b643b9b
+]: 1
+@[
+    __close+58
+    0xfffffe0800000000
+]: 1
+@[
+    0x7f69106c8ca6
+]: 1
+@[
+    0x7f69113d70c1
+]: 1
+@[
+    0x55b96b6f0b24
+    0x300055600000000
+]: 1
+@[
+    0x7f69106bcf14
+]: 1
+@[
+    0x7f69112a7402
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cccde98
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+]: 1
+@[
+    0x7f691072503e
+    0x300000000
+]: 1
+@[
+    __pthread_mutex_unlock+0
+]: 1
+@[
+    __memset_sse2_unaligned_erms+76
+    0x7f69106c8db0
+]: 1
+@[
+    0x55b96b629924
+]: 1
+@[
+    ffi_call+306
+    0x7f6925664b23
+    0x7ffc4a70dd20
+]: 1
+@[
+    0x7f69109c4bc3
+]: 1
+@[
+    sendmsg+77
+    0x20000000000
+]: 1
+@[
+    0x55b96b76331c
+]: 1
+@[
+    0x7f691071d450
+]: 1
+@[
+    0x55b96b694fad
+    0x300055600000000
+]: 1
+@[
+    0x55b96b63c904
+]: 1
+@[
+    0x7f6910764802
+]: 1
+@[
+    0x7f6910764256
+]: 1
+@[
+    0x7f6910ec6b41
+]: 1
+@[
+    0x7f6910db7ed3
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+]: 1
+@[
+    __memmove_ssse3+110
+]: 1
+@[
+    0x7f6910905ca2
+]: 1
+@[
+    pthread_cond_signal@@GLIBC_2.3.2+4
+]: 1
+@[
+    0x7f6924e26724
+]: 1
+@[
+    0x7f6910c715a7
+]: 1
+@[
+    0x7f69109d9de2
+    0xe64fada3cd9be178
+]: 1
+@[
+    0x55b96b766048
+    0x55b96c951d80
+]: 1
+@[
+    0x7f6910dbb2dd
+    0x10000
+]: 1
+@[
+    0x7f6910dbb114
+    0x420000
+]: 1
+@[
+    0x7f69109d51c9
+    0x300000000
+]: 1
+@[
+    wl_proxy_marshal_array_flags+551
+    0x800000000
+]: 1
+@[
+    pixman_region_intersect+350
+]: 1
+@[
+    0x7f69109d8b70
+    0x300000000
+]: 1
+@[
+    epoll_wait+4
+    0x55b96bf370a0
+]: 1
+@[
+    0x7f6910c17914
+]: 1
+@[
+    0x55b96b628d44
+]: 1
+@[
+    0x7f6910f18a75
+    0xffff0002001c
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f69109bfe33
+]: 1
+@[
+    0x7f69109dab8a
+]: 1
+@[
+    drmCommandWriteRead+0
+]: 1
+@[
+    0x7f6910c6ff00
+    0xffff0012001c
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b6aa455
+]: 1
+@[
+    0x7f6910ec0244
+    0xffff0007001c
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b6b150f
+]: 1
+@[
+    _int_malloc+2642
+    0x1
+]: 1
+@[
+    0x7f6924da19e0
+    0xfffffffe00000002
+]: 1
+@[
+    0x55b96b6efdf3
+]: 1
+@[
+    0x7f6910c716c2
+]: 1
+@[
+    0x7f6910dba459
+]: 1
+@[
+    __memmove_ssse3+30
+    0x55b96ca4aba0
+    0x55b96c9486b8
+]: 1
+@[
+    __memmove_ssse3+1142
+]: 1
+@[
+    __close_nocancel+11
+]: 1
+@[
+    0x7f6910c6ffe4
+    0xffff00090023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f69109a63f9
+    0x55b96cd60c10
+]: 1
+@[
+    0x7f6924da19ef
+    0xfffffffe00000002
+]: 1
+@[
+    0x7f6910dbb485
+    0x200
+]: 1
+@[
+    0x7f6910dbad5e
+    0x55b96bfda940
+]: 1
+@[
+    0x55b96b63e2b5
+    0x55b96b6a32a0
+    0x8348535554415541
+]: 1
+@[
+    0x7f6910f140c3
+]: 1
+@[
+    0x7f69109a62e4
+    0x55b96ca4aba0
+    0x55b96c9486b8
+]: 1
+@[
+    0x55b96b69fb10
+    0x600000147
+]: 1
+@[
+    0x7f6910eb7b01
+]: 1
+@[
+    0x7f6910c7775c
+]: 1
+@[
+    0x7f6910dbacc5
+    0x55b96bfc6898
+]: 1
+@[
+    __pthread_mutex_cond_lock+4
+]: 1
+@[
+    syscall+4
+]: 1
+@[
+    0x55b96b65036b
+]: 1
+@[
+    0x55b96b703401
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    wl_proxy_marshal_array_flags+344
+]: 1
+@[
+    0x7f691069ba94
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ccf2ee8
+    0x55b96ca3f2b8
+    0x55b96cccc5d8
+    0x55b96ca338a8
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ccf2ee8
+    0x55b96ca3f2b8
+    0x55b96cccc5d8
+    0x55b96ca338a8
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ccf2ee8
+    0x55b96ca3f2b8
+    0x55b96cccc5d8
+    0x55b96ca338a8
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ccf2ee8
+    0x55b96ca3f2b8
+    0x55b96cccc5d8
+    0x55b96ca338a8
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ccf2ee8
+    0x55b96ca3f2b8
+    0x55b96cccc5d8
+    0x55b96ca338a8
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ccf2ee8
+    0x55b96ca3f2b8
+    0x55b96cccc5d8
+    0x55b96ca338a8
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ccf2ee8
+    0x55b96ca3f2b8
+    0x55b96cccc5d8
+    0x55b96ca338a8
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ccf2ee8
+    0x55b96ca3f2b8
+    0x55b96cccc5d8
+    0x55b96ca338a8
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ccf2ee8
+    0x55b96ca3f2b8
+    0x55b96cccc5d8
+    0x55b96ca338a8
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ccf2ee8
+    0x55b96ca3f2b8
+    0x55b96cccc5d8
+    0x55b96ca338a8
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96cce58c8
+    0x55b96ca43ed8
+]: 1
+@[
+    gbm_bo_get_plane_count+0
+]: 1
+@[
+    sendmsg+77
+    0x1900000000
+]: 1
+@[
+    0x7f6910db8e45
+]: 1
+@[
+    0x7f6910765cbe
+]: 1
+@[
+    0x7f6910f1bfe6
+    0x55b96bfab600
+]: 1
+@[
+    0x7f6910db7ec8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96c9365d8
+    0x55b96ca43ed8
+    0x55b96be80fd0
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+]: 1
+@[
+    0x55b96b6f0700
+]: 1
+@[
+    0x7f691076dd10
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x55b96b6cca42
+    0xdcdd291dabf7bf00
+]: 1
+@[
+    0x7f6910db8b80
+    0x55b96bfda940
+]: 1
+@[
+    0x7f69106d48ad
+]: 1
+@[
+    __pthread_mutex_lock+0
+    0x55b96bf370a0
+]: 1
+@[
+    0x7f69109d9801
+    0x51
+]: 1
+@[
+    ioctl+63
+    0x1000
+]: 1
+@[
+    0x55b96b657454
+    0x2e0051000200046
+]: 1
+@[
+    0x7f69109d7f72
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x7f6910f18110
+    0xffff001b001a
+    0x55b96bfba5e0
+]: 1
+@[
+    _int_malloc+567
+    0x1
+]: 1
+@[
+    __libc_calloc+126
+]: 1
+@[
+    0x7f69109bfd35
+]: 1
+@[
+    0x55b96b6bb324
+]: 1
+@[
+    0x7f6910ec70d7
+]: 1
+@[
+    0x7f69109db256
+    0x300000000
+]: 1
+@[
+    0x55b96b765d71
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f6910dbafd9
+    0x55b96bfc6898
+]: 1
+@[
+    __GI___pthread_disable_asynccancel+25
+]: 1
+@[
+    0x55b96b703467
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x55b96b64ed37
+]: 1
+@[
+    0x7f6910f1cef2
+]: 1
+@[
+    0x7f691076ed03
+]: 1
+@[
+    __memmove_ssse3+580
+    0x690011000e008c
+]: 1
+@[
+    0x55b96b770e8d
+]: 1
+@[
+    __pthread_mutex_lock+0
+]: 1
+@[
+    wl_proxy_destroy+0
+]: 1
+@[
+    __close+4
+    0x51609123000055b9
+]: 1
+@[
+    0x55b96b670f8f
+    0x300055600000000
+]: 1
+@[
+    _int_free_merge_chunk+2
+]: 1
+@[
+    0x7f6910db9c2a
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+    0x55b96cce4328
+    0x55b96be80fd0
+    0x55b96caa7198
+]: 1
+@[
+    0x55b96b6cd8f7
+]: 1
+@[
+    wl_display_read_events+242
+    0x55b96bf370a0
+]: 1
+@[
+    0x7f6910db9030
+    0x55b96bfc6898
+]: 1
+@[
+    0x7f6910f141a2
+]: 1
+@[
+    __close+4
+]: 1
+@[
+    0x7f691077835e
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    wl_display_read_events+1328
+    0xf000000030e
+]: 1
+@[
+    0x7f6910c610f4
+    0x55b96cd2fe30
+]: 1
+@[
+    pixman_region_copy+203
+]: 1
+@[
+    0x7f6910f1ccef
+]: 1
+@[
+    0x55b96b629214
+    0x300055600000000
+]: 1
+@[
+    0x7f6910776c47
+    0x300000000
+]: 1
+@[
+    0x7f6910f13d82
+]: 1
+@[
+    0x55b96b65050e
+]: 1
+@[
+    0x7f69109d8a74
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x7f6910ecc5d0
+]: 1
+@[
+    0x7f69107638cb
+]: 1
+@[
+    0x55b96b7623e4
+    0x55b96bf370a0
+]: 1
+@[
+    _int_malloc+1046
+    0x1
+]: 1
+@[
+    0x7f69109d96c2
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x7f6910dbb3dc
+    0x420000
+]: 1
+@[
+    0x55b96b701cba
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    ioctl+63
+    0x32
+]: 1
+@[
+    0x7f69107633f2
+]: 1
+@[
+    0x7f6910c78660
+]: 1
+@[
+    0x7f6910db8b84
+    0x55b96bfda940
+]: 1
+@[
+    sendmsg+77
+    0x100759a8d
+]: 1
+@[
+    0x7f69113d6e24
+    0xffff00260008
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f69109c61d8
+    0x300000000
+]: 1
+@[
+    pixman_region_translate+4
+    0x300055600000000
+]: 1
+@[
+    0x7f6910ec2143
+    0x55b96ccf3e00
+]: 1
+@[
+    pthread_cond_broadcast+321
+]: 1
+@[
+    0x7f6910f1ccb3
+]: 1
+@[
+    0x7f69109d9253
+    0x300000000
+]: 1
+@[
+    0x7f6910996283
+    0x300000000
+]: 1
+@[
+    __pthread_mutex_lock+45
+]: 1
+@[
+    pthread_cond_signal@@GLIBC_2.3.2+354
+]: 1
+@[
+    0x7f69113d6f3e
+]: 1
+@[
+    _int_malloc+246
+]: 1
+@[
+    0x7f6910dbad7a
+    0x55b96bfda940
+]: 1
+@[
+    0x7f6910eb82c2
+]: 1
+@[
+    0x7f69106bccf0
+]: 1
+@[
+    0x7f6910ec5513
+    0x690011000e008c
+]: 1
+@[
+    0x55b96b64d0f2
+]: 1
+@[
+    0x55b96b6af594
+    0x55b96c95f6d0
+    0x202100000000
+]: 1
+@[
+    0x7f6910eb7c07
+]: 1
+@[
+    0x7f6910dba384
+]: 1
+@[
+    0x7f6910f17a43
+    0x90a00f2e40bfc555
+]: 1
+@[
+    0x7f691074e6b4
+    0x7f69255b81a0
+    0x41188b4c640002a7
+]: 1
+@[
+    0x55b96b6f23db
+    0x2e0051000000000
+]: 1
+@[
+    0x55b96b67af03
+    0x2e0051000200046
+]: 1
+@[
+    _int_malloc+640
+    0x1
+]: 1
+@[
+    0x7f69109d7035
+    0x55b96ca4aba0
+    0x55b96c9486b8
+]: 1
+@[
+    0x7f6910eda406
+]: 1
+@[
+    0x7f6910dba184
+]: 1
+@[
+    0x55b96b643bec
+    0x7f6924a0d2c8
+]: 1
+@[
+    0x7f6910dbb130
+    0x200
+]: 1
+@[
+    0x55b96b6f0704
+]: 1
+@[
+    0x55b96b766515
+]: 1
+@[
+    0x7f6910ed3401
+    0xffff00170023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b6efca4
+    0x2e0051000200046
+]: 1
+@[
+    0x7f69113cc301
+]: 1
+@[
+    0x55b96b76c38d
+    0x55b96bf370a0
+]: 1
+@[
+    0x55b96b6c7442
+    0x788830000001b0
+]: 1
+@[
+    0x7f69109d9041
+    0x300000000
+]: 1
+@[
+    0x7f691075a239
+    0x300000000
+]: 1
+@[
+    0x7f69113d6e24
+    0xffff00230023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b6c2003
+    0x4094080000000000
+]: 1
+@[
+    0x7f6925666fbb
+    0x1000
+]: 1
+@[
+    0x7f6910ed1c54
+]: 1
+@[
+    0x7f6910c76374
+]: 1
+@[
+    __GI_munmap+11
+    0x7f69233a7000
+    0x55b96b818948
+]: 1
+@[
+    0x7f69113d783f
+]: 1
+@[
+    __clock_gettime_2+0
+    0x55b96ccdbfb0
+    0x100000018
+]: 1
+@[
+    0x55b96b6b7153
+]: 1
+@[
+    0x7f6910f15cf7
+    0x2000079a40
+]: 1
+@[
+    0x55b96b6ab17f
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    pixman_region_contains_point+19
+]: 1
+@[
+    0x55b96b71df10
+    0x55b96cd1c9a0
+    0x55b96c945490
+    0xd33700a004ae
+]: 1
+@[
+    0x55b96b7224c3
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f6910eb8003
+]: 1
+@[
+    0x7f6910ecd249
+]: 1
+@[
+    0x7f69112a7402
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca46898
+    0x55b96caa7198
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+]: 1
+@[
+    __memset_sse2_unaligned+0
+    0x7f69106c8db0
+]: 1
+@[
+    writev+83
+]: 1
+@[
+    0x7f6910777094
+]: 1
+@[
+    0x7f6910776b36
+]: 1
+@[
+    0x7f69109d7ab4
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x55b96b7a2193
+    0x2e0051000000000
+]: 1
+@[
+    ioctl+4
+    0xabf7bf00ffffffff
+]: 1
+@[
+    0x55b96b686b64
+]: 1
+@[
+    0x7f69109d4e97
+    0x300000000
+]: 1
+@[
+    0x55b96b766115
+    0x55b96c951d80
+]: 1
+@[
+    __pthread_mutex_lock+7
+    0x55b96bf370a0
+]: 1
+@[
+    0x7f6910f1bc15
+]: 1
+@[
+    0x7f6910ed3c07
+    0x690011000e008c
+]: 1
+@[
+    __GI___pthread_enable_asynccancel+41
+]: 1
+@[
+    0x7f69106c8d75
+    0x848
+]: 1
+@[
+    __memmove_ssse3+72
+]: 1
+@[
+    0x7f69106d4884
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96c9365d8
+]: 1
+@[
+    0x55b96b7b20af
+]: 1
+@[
+    0x7f69254fff25
+]: 1
+@[
+    0x7f69109d7bc2
+]: 1
+@[
+    0x55b96b76661c
+]: 1
+@[
+    0x7f6910ec2243
+    0x55b96cd1ac00
+]: 1
+@[
+    0x7f691099d4c7
+    0xa300000122
+]: 1
+@[
+    0x7f6910763401
+]: 1
+@[
+    0x7f6910dbb073
+    0x55b96bfc6898
+]: 1
+@[
+    0x7f6910c7a2fa
+]: 1
+@[
+    0x7f6910764828
+]: 1
+@[
+    0x7f69109d7e84
+]: 1
+@[
+    0x7f6910eb7ed4
+]: 1
+@[
+    0x7f6910794c48
+]: 1
+@[
+    _int_malloc+932
+    0x1
+]: 1
+@[
+    0x55b96b6b928d
+    0x55b96c945490
+    0x314cb00a004fe
+]: 1
+@[
+    0x7f69109020a0
+]: 1
+@[
+    0x7f691069b714
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+]: 1
+@[
+    0x55b96b708e3e
+    0x55b96cccb8a0
+    0x55b96c945490
+    0xee0500a00532
+]: 1
+@[
+    0x55b96b6f22ab
+    0x2e0051000000000
+]: 1
+@[
+    0x55b96b64ec4d
+]: 1
+@[
+    0x7f6910c732d3
+]: 1
+@[
+    0x7f691075a198
+    0x300000000
+]: 1
+@[
+    0x55b96b6a2da6
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    __memmove_ssse3+0
+]: 1
+@[
+    0x55b96b6b9ca7
+]: 1
+@[
+    0x55b96b670f80
+]: 1
+@[
+    ioctl+63
+    0x17
+]: 1
+@[
+    0x7f6910dbb280
+    0x1000
+]: 1
+@[
+    0x55b96b647af6
+    0x2e0051000000000
+]: 1
+@[
+    wl_proxy_add_listener+4
+]: 1
+@[
+    0x7f6910dbb3d5
+    0x3f0000
+]: 1
+@[
+    0x7f6910ecc8b0
+]: 1
+@[
+    __pthread_mutex_unlock+56
+]: 1
+@[
+    0x7f6910f13d92
+]: 1
+@[
+    0x7f6910901d52
+]: 1
+@[
+    0x7f6910ec19e2
+    0x55b96ce17ac0
+]: 1
+@[
+    wl_display_read_events+1328
+    0x42000c0001
+]: 1
+@[
+    0x7f6910f1cc89
+]: 1
+@[
+    0x55b96b708e3e
+    0x55b96cd79370
+    0x55b96c945490
+    0x30ff600a004ee
+]: 1
+@[
+    sendmsg+77
+    0x768b48000c0000
+]: 1
+@[
+    0x7f6910c77044
+    0xffff001b0023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b66bb51
+]: 1
+@[
+    0x7f6910794bc4
+]: 1
+@[
+    0x55b96b669b21
+]: 1
+@[
+    __memmove_ssse3+844
+]: 1
+@[
+    0x55b96b64d2ae
+]: 1
+@[
+    _int_free+99
+]: 1
+@[
+    0x55b96b6b91d9
+    0x55b96c945490
+    0x335c100a00512
+]: 1
+@[
+    0x7f69109d8c45
+    0x300000000
+]: 1
+@[
+    0x7f691073427c
+]: 1
+@[
+    0x55b96b7224d7
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    _int_free+455
+]: 1
+@[
+    _int_malloc+1421
+    0x420b81
+    0x55b96cd52a60
+    0x2e0051000200046
+]: 1
+@[
+    0x7f69108a5f24
+    0x2e0051000200046
+]: 1
+@[
+    0x7f69113d6e24
+    0xffff00000023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b6f1254
+]: 1
+@[
+    0x55b96b64fbc6
+]: 1
+@[
+    0x7f69106c3038
+]: 1
+@[
+    0x7f6910902024
+]: 1
+@[
+    0x55b96b670f80
+    0x55b96cd31040
+    0x100000018
+]: 1
+@[
+    pixman_region_union+27
+    0x55b96cce97e0
+    0x55b96cd31040
+    0x100000018
+]: 1
+@[
+    0x55b96b6aa8e5
+]: 1
+@[
+    0x7f6910f18110
+    0xffff00100018
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910dbb130
+    0x100000
+]: 1
+@[
+    0x7f6910c178f6
+]: 1
+@[
+    0x55b96b66a724
+]: 1
+@[
+    0x7f6910ed8530
+]: 1
+@[
+    0x55b96b649efc
+    0x55b96cd31040
+    0x100000018
+]: 1
+@[
+    0x55b96b6aa3f3
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    mmap64+38
+]: 1
+@[
+    _int_malloc+3391
+    0x1
+]: 1
+@[
+    0x7f692525032b
+]: 1
+@[
+    0x7f69252519e4
+    0x2e0051000200046
+]: 1
+@[
+    0x7f6910f1f134
+]: 1
+@[
+    0x7f6910f179ca
+    0x90a00f2e40b7c50f
+]: 1
+@[
+    0x7f69106c8cd6
+]: 1
+@[
+    pthread_cond_signal@@GLIBC_2.3.2+364
+]: 1
+@[
+    wl_proxy_destroy+4
+]: 1
+@[
+    0x55b96b770f43
+]: 1
+@[
+    0x7f6910eb8c82
+]: 1
+@[
+    0x7f6910785b34
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    wl_display_read_events+1620
+    0x2000000000001a
+]: 1
+@[
+    0x55b96b7b629d
+]: 1
+@[
+    0x7f6910ebab1c
+]: 1
+@[
+    0x7f69109021b3
+]: 1
+@[
+    0x55b96b6bef0d
+    0x2e0051000200046
+]: 1
+@[
+    0x7f69109a62f2
+    0x55b96cd60c10
+]: 1
+@[
+    _int_malloc+498
+    0x1
+]: 1
+@[
+    0x7f6910dbb3c4
+    0x200
+]: 1
+@[
+    0x7f69109c4ec4
+    0x4438000044a20000
+]: 1
+@[
+    0x7f69113d7382
+]: 1
+@[
+    0x7f69109d70b8
+    0x55b96ca4aba0
+    0x55b96c9486b8
+]: 1
+@[
+    0x7f6910f15dee
+    0x2000006080
+]: 1
+@[
+    0x7f692491c464
+]: 1
+@[
+    wl_list_empty+4
+]: 1
+@[
+    0x7f6910f15cb2
+    0xffff001b001c
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b770e44
+    0x55b96c951d80
+]: 1
+@[
+    __memset_sse2_unaligned+11
+    0x7f69106c8db0
+]: 1
+@[
+    sendmsg+77
+    0xc0000000001a1
+]: 1
+@[
+    0x7f6910dbaf05
+    0x55b96bfda940
+]: 1
+@[
+    malloc+82
+]: 1
+@[
+    0x55b96b63e646
+    0x300055600000000
+]: 1
+@[
+    0x7f6910dbb144
+    0x200
+]: 1
+@[
+    0x55b96b766124
+    0x55b96c951d80
+]: 1
+@[
+    wl_proxy_get_version+7
+    0x55b96cd31040
+    0x100000018
+]: 1
+@[
+    0x7f6910734050
+    0x2
+]: 1
+@[
+    0x55b96b6c315c
+]: 1
+@[
+    0x7f6924918c80
+]: 1
+@[
+    0x7f6910f14c02
+]: 1
+@[
+    0x7ffc4a7a5b03
+    __clock_gettime_2+29
+    0x55b96ccdbfb0
+    0x100000018
+]: 1
+@[
+    0x7f6910f17dc4
+]: 1
+@[
+    0x7f69250deb32
+]: 1
+@[
+    0x7f691075abc2
+]: 1
+@[
+    __pthread_mutex_unlock+0
+    0x4200000000
+]: 1
+@[
+    0x55b96b670ff8
+    0x300055600000000
+]: 1
+@[
+    0x55b96b647af4
+    0x300055600000000
+]: 1
+@[
+    wl_display_read_events+4
+    0x55b96bf370a0
+]: 1
+@[
+    0x7f69256636a3
+    0x7f69256695c9
+    0x6d61726600666669
+]: 1
+@[
+    0x7f6910c163a4
+    0x55b96ccd2090
+]: 1
+@[
+    0x55b96b6c45c1
+]: 1
+@[
+    0x55b96b7b6003
+    0x2e0051000200046
+]: 1
+@[
+    0x55b96b76082c
+    0x55b96bf370a0
+]: 1
+@[
+    0x7f6910c78689
+]: 1
+@[
+    drmPrimeHandleToFD+4
+]: 1
+@[
+    0x7f6910eb7b18
+]: 1
+@[
+    0x7f69113d6ed9
+]: 1
+@[
+    0x7f6910f1effb
+]: 1
+@[
+    0x7f69109dab54
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x7f6910f20793
+]: 1
+@[
+    0x7f69112a7197
+    0x1
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+    0x55b96be80fd0
+]: 1
+@[
+    0x7f6910ebe607
+]: 1
+@[
+    0x7f691069d854
+]: 1
+@[
+    0x7f6925663640
+    0x7f6925669647
+    0x69696f3f7500726f
+]: 1
+@[
+    0x7f691072a284
+    0x300000000
+]: 1
+@[
+    0x55b96b6aafde
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f6910724fab
+    0x300000000
+]: 1
+@[
+    0x7f69109d73a0
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x7f6910f1615a
+    0x90000f2e40b7c50f
+]: 1
+@[
+    gbm_bo_get_offset+0
+    0x6
+]: 1
+@[
+    sendmsg+77
+    0xc000000000042
+]: 1
+@[
+    xshmfence_trigger+0
+    0x2e0051000200046
+]: 1
+@[
+    0x7f6910f14db8
+]: 1
+@[
+    __memset_sse2_unaligned_erms+76
+]: 1
+@[
+    0x55b96b628f94
+]: 1
+@[
+    0x7f6910c77264
+]: 1
+@[
+    0x7f6910dbb3e7
+    0x200
+]: 1
+@[
+    0x7f6910ec0244
+    0xffff000b001a
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b669a05
+    0x5aa98
+    0x300055600000000
+]: 1
+@[
+    pixman_region_fini+4
+]: 1
+@[
+    0x7f69254fe794
+]: 1
+@[
+    0x55b96b643bcb
+    0x55b96bdc7e80
+]: 1
+@[
+    __close+58
+    0x7f69
+]: 1
+@[
+    0x7f6910ecd200
+]: 1
+@[
+    0x7f69106cedd2
+]: 1
+@[
+    0x7f69107977be
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x7f692491a084
+]: 1
+@[
+    0x7f6910ed8e04
+]: 1
+@[
+    0x7f6910dbb121
+    0x10000
+]: 1
+@[
+    0x7f691076ed28
+]: 1
+@[
+    0x7f6910f03629
+]: 1
+@[
+    0x7f69113d6e24
+    0xffff00020008
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910f18114
+    0xffff001d0023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910c6ff05
+    0xffff001e001c
+    0x55b96bfba5e0
+]: 1
+@[
+    __GI___pthread_disable_asynccancel+25
+]: 1
+@[
+    0x7f6910f16415
+    0x90000f2e40bfc555
+]: 1
+@[
+    0x55b96b6280c4
+]: 1
+@[
+    0x55b96b6b8fc5
+    0x55b96ca3f260
+    0x1cd
+]: 1
+@[
+    wl_display_prepare_read_queue+4
+]: 1
+@[
+    0x55b96b6af5c6
+]: 1
+@[
+    0x7f6910724f94
+]: 1
+@[
+    0x55b96b6efb21
+    0x2e0051000000000
+]: 1
+@[
+    __memmove_ssse3+0
+    ffi_call+291
+    0x7f6925664b23
+    0x7ffc4a70dd20
+]: 1
+@[
+    0x55b96b67ab54
+    0x2000000000320
+    0x300055600000000
+]: 1
+@[
+    0x7f6910dbb4b3
+    0x200
+]: 1
+@[
+    0x7f69256636b3
+    0x7f6925669648
+    0x6573006567616d61
+]: 1
+@[
+    __memmove_ssse3+347
+    0x55b96d0b9500
+]: 1
+@[
+    0x55b96b650357
+]: 1
+@[
+    0x7f69109d4df4
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x7f69106cfd04
+    0x55b96bfc6898
+]: 1
+@[
+    0x7f6910ec6d86
+]: 1
+@[
+    0x55b96b64ec62
+]: 1
+@[
+    0x7f6924d904c0
+]: 1
+@[
+    0x7f6910dbabd4
+    0x55b96bfda940
+]: 1
+@[
+    0x55b96b76642f
+]: 1
+@[
+    0x7f6910c743c9
+]: 1
+@[
+    0x55b96b71df24
+]: 1
+@[
+    wl_display_read_events+3220
+    0x1dc00000000
+    0x7f6925669313
+    0x657a697365720067
+]: 1
+@[
+    0x55b96b700b93
+    0x2e0051000200046
+]: 1
+@[
+    cfree@GLIBC_2.2.5+34
+]: 1
+@[
+    0x7f6910759b21
+]: 1
+@[
+    0x7f69109bf76f
+]: 1
+@[
+    0x55b96b686b9a
+]: 1
+@[
+    0x7f69106bcd3b
+]: 1
+@[
+    0x55b96b6ab184
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f6910ed858d
+]: 1
+@[
+    0x7f692491ab60
+]: 1
+@[
+    __pthread_mutex_lock+341
+]: 1
+@[
+    pixman_region_union+53
+]: 1
+@[
+    0x7f6910c74364
+    0xffff001e0023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b6f0bcc
+    0x300055600000000
+]: 1
+@[
+    0x7f691072a2a8
+    0x3
+]: 1
+@[
+    0x7f692566427b
+]: 1
+@[
+    0x7f69112c8710
+]: 1
+@[
+    0x7f6910ec0580
+]: 1
+@[
+    0x55b96b65621c
+    0xfffffffe00000002
+]: 1
+@[
+    0x7f6910c7a8e4
+]: 1
+@[
+    0x7f6925663647
+    0x7f6925669648
+    0x6573006567616d61
+]: 1
+@[
+    0x7f6910dbb474
+    0x200
+]: 1
+@[
+    0x55b96b6aa4da
+]: 1
+@[
+    0x7f6910eb90c2
+]: 1
+@[
+    0x55b96b628514
+]: 1
+@[
+    0x55b96b766404
+    0x55b96c945490
+    0xf1dc00a00540
+]: 1
+@[
+    0x7f6910c77583
+]: 1
+@[
+    0x7f6910ecdba7
+    0x38
+]: 1
+@[
+    0x7f69107200f2
+    0x300000000
+]: 1
+@[
+    0x7f6910db8d08
+]: 1
+@[
+    0x7f69109bf101
+]: 1
+@[
+    0x55b96b6b9153
+    0x55b96c945490
+    0xd8b000a0050a
+]: 1
+@[
+    __pthread_mutex_lock+81
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+    0x55b96be7a7b0
+]: 1
+@[
+    0x7f69112a7197
+    0x1
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96be80fd0
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+]: 1
+@[
+    0x7f6910f49167
+]: 1
+@[
+    0x55b96b6e1007
+    0x556
+    0x6bdb9be000007ffc
+]: 1
+@[
+    0x7f6910ec0162
+]: 1
+@[
+    0x7f69250de701
+]: 1
+@[
+    0x7f6910f176c9
+]: 1
+@[
+    0x7f6925663c50
+    0xc0000000001a1
+]: 1
+@[
+    malloc+4
+    0xa0004900120191
+]: 1
+@[
+    0x7f6910dba084
+]: 1
+@[
+    0x7f6910ebde8b
+]: 1
+@[
+    0x7f6910f17f42
+]: 1
+@[
+    0x7f69109bfa14
+]: 1
+@[
+    0x7f6910ec1d05
+    0x55b96ccf3e00
+]: 1
+@[
+    wl_display_dispatch_queue_pending+4
+    0x55b96bf370a0
+]: 1
+@[
+    0x7f69109c4c19
+]: 1
+@[
+    0x7f69109bf12a
+]: 1
+@[
+    0x7f69250e0243
+    ffi_call+291
+    0x7f6925664b23
+    0x7ffc4a70dd20
+]: 1
+@[
+    0x55b96b7253b4
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x55b96b6f0e16
+]: 1
+@[
+    0x7f6910776c44
+    0x300000000
+]: 1
+@[
+    0x7f692491b380
+]: 1
+@[
+    0x55b96b770c28
+]: 1
+@[
+    0x55b96b6cd882
+]: 1
+@[
+    0x7f69109d7b03
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x7f6910c16f29
+    0x7f6910c79c90
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910dba18f
+]: 1
+@[
+    0x55b96b68a80d
+    0x77a12000000270
+]: 1
+@[
+    0x7f692491b460
+    0x300055600000000
+]: 1
+@[
+    0x55b96b766002
+    0x55b96c951d80
+]: 1
+@[
+    sendmsg+77
+    0x140004000000a6
+]: 1
+@[
+    recvmsg+0
+    0x55b96bf370a0
+]: 1
+@[
+    0x7f69112a735b
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+    0x55b96c9365d8
+    0x55b96be80fd0
+    0x55b96cce4328
+]: 1
+@[
+    0x55b96b66bd54
+]: 1
+@[
+    0x7f6910e9dd6e
+    0x69000900060202
+]: 1
+@[
+    0x7f6924918ce0
+    0x2e0051000200046
+]: 1
+@[
+    0x7f6910dbab38
+    0x55b96bfda940
+]: 1
+@[
+    0x55b96b67ae82
+    0x2e0051000000000
+]: 1
+@[
+    0x55b96b66bac2
+]: 1
+@[
+    0x7ffc4a7a5ab0
+]: 1
+@[
+    0x7f6910dbb2d2
+    0x10000
+]: 1
+@[
+    0x7f6910f1fa03
+]: 1
+@[
+    0x55b96b701122
+    0x2e0051000200046
+]: 1
+@[
+    0x7f6910c770c8
+    0xffff00000018
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910c75140
+]: 1
+@[
+    _int_free+162
+]: 1
+@[
+    0x7f6910ece583
+]: 1
+@[
+    0x7f69109d9474
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x55b96b7033b4
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f69106bcef5
+]: 1
+@[
+    0x7f69113d6e24
+    0xffff0001001c
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910ed2f3f
+]: 1
+@[
+    0x7f6910f13e2f
+]: 1
+@[
+    0x7f691099d497
+    0x2c00000053
+]: 1
+@[
+    0x7f6910c716a7
+]: 1
+@[
+    0x7f6910f1f7e8
+]: 1
+@[
+    0x55b96b6c09bc
+]: 1
+@[
+    0x7f6910ed2c08
+]: 1
+@[
+    0x7f69107859c2
+    0x3
+]: 1
+@[
+    0x7f69106cee41
+]: 1
+@[
+    __memcmp_sse2+165
+    0x7600080000004b
+]: 1
+@[
+    0x55b96b63def4
+    0x55b96bf370a0
+]: 1
+@[
+    0x7f6910f162e7
+    0x90000f2e40bfc555
+]: 1
+@[
+    0x7f69109d9684
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x55b96b67ab9b
+    0x2e0051000200046
+]: 1
+@[
+    0x55b96b64f43b
+    0x55b96ccdbfb0
+    0x100000018
+]: 1
+@[
+    0x7f6910897b72
+]: 1
+@[
+    0x7f6910759004
+]: 1
+@[
+    0x55b96b6af594
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f6910dbb3b0
+]: 1
+@[
+    wl_display_read_events+1328
+    0xc000100000001
+]: 1
+@[
+    0x7f6910c7a507
+]: 1
+@[
+    0x55b96b63e1c4
+    0x55b96b6a32a0
+    0x8348535554415541
+]: 1
+@[
+    wl_display_read_events+1436
+    0x8000500000019
+]: 1
+@[
+    0x55b96b63db9a
+    0x55b96cd31040
+    0x100000018
+]: 1
+@[
+    0x55b96b6b8fce
+    0x55b96c945490
+    0xdd7300a0051e
+]: 1
+@[
+    0x55b96b766354
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    sendmsg+77
+    0x1a00016c22
+]: 1
+@[
+    0x7f69254ffec2
+]: 1
+@[
+    0x7f69112a7333
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96ca3f2b8
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+]: 1
+@[
+    0x7f6910f15e02
+    0x2000031c40
+]: 1
+@[
+    0x7f69109da5e4
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x55b96b6cd8c4
+]: 1
+@[
+    0x7f6910dbb130
+    0x10000
+]: 1
+@[
+    0x7f6910dbb437
+    0x200
+]: 1
+@[
+    0x7f691069bd84
+]: 1
+@[
+    pixman_region_translate+17
+    0x2e0051000200046
+]: 1
+@[
+    0x55b96b67c900
+    0x55b96b81fa00
+    0x55b96b666130
+    0x5541c6894d5641ff
+]: 1
+@[
+    0x55b96b69f6e4
+    0x55b96c945490
+    0xe05600a0051e
+]: 1
+@[
+    0x55b96b6aa407
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    wl_proxy_marshal_array_flags+1764
+    0x42000c0001
+]: 1
+@[
+    0x7f6910c70f44
+    0xffff0023001e
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b647681
+    0x300055600000000
+]: 1
+@[
+    __libc_calloc+4
+]: 1
+@[
+    0x55b96b6c7354
+]: 1
+@[
+    0x55b96b69f706
+    0x55b96c945490
+    0xee7200a00540
+]: 1
+@[
+    0x7f6910ed3173
+]: 1
+@[
+    0x55b96b68a3e4
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+    0x55b96b75bc00
+    0x55b96c939f30
+]: 1
+@[
+    0x7f6910dba197
+]: 1
+@[
+    0x7f69106ca056
+]: 1
+@[
+    0x7f69109d8cc2
+    0x300000000
+]: 1
+@[
+    writev+98
+]: 1
+@[
+    0x7f6910c7868d
+]: 1
+@[
+    __memmove_ssse3+21
+]: 1
+@[
+    0x7f6910902082
+]: 1
+@[
+    0x7f6910f1f6f1
+]: 1
+@[
+    0x55b96b6c06c2
+    0x2e0051000200046
+]: 1
+@[
+    0x7f69107642dc
+]: 1
+@[
+    0x7f69109d8ed0
+    0x300000000
+]: 1
+@[
+    0x55b96b762418
+    0x55b96bf370a0
+]: 1
+@[
+    0x7f69109bfa89
+]: 1
+@[
+    0x7f6910f148c4
+]: 1
+@[
+    __GI___errno_location+0
+]: 1
+@[
+    0x7f69113d6e24
+    0xffff00170008
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b720e14
+    0x2e0051000200046
+]: 1
+@[
+    wl_list_insert+4
+]: 1
+@[
+    0x7f6910f1fcc8
+]: 1
+@[
+    pthread_cond_signal@@GLIBC_2.3.2+70
+]: 1
+@[
+    0x7f6910794dd5
+]: 1
+@[
+    __memcmp_sse2+4
+]: 1
+@[
+    __pthread_mutex_lock+7
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+    0x55b96caeb8f0
+    0x55b96ccee350
+    0x55b96cd3cbe0
+    0x55b96cb06a50
+    0x55b96b83b9e0
+    0x55b96cd0b910
+]: 1
+@[
+    0x55b96b765eb4
+    0x55b96c945490
+    0xd8c200a0050a
+]: 1
+@[
+    0x55b96b6ab3a5
+]: 1
+@[
+    0x55b96b6b5720
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    recvmsg+52
+]: 1
+@[
+    0x55b96b7b6118
+]: 1
+@[
+    cfree@GLIBC_2.2.5+110
+]: 1
+@[
+    0x7f6910db77c9
+    0xf00000000
+]: 1
+@[
+    0x55b96b670f84
+]: 1
+@[
+    0x55b96b69f6e4
+    0x55b96c945490
+    0xe25300a0051e
+]: 1
+@[
+    0x7f6910c77044
+    0xffff001e0018
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910c70497
+    0xffff000c0008
+    0x55b96bfba5e0
+]: 1
+@[
+    0x55b96b71df14
+    0x55b96ca3f450
+    0x55b96c945490
+    0xd93f00a00510
+]: 1
+@[
+    0x7f6910908dae
+]: 1
+@[
+    _int_malloc+1941
+    0x1
+]: 1
+@[
+    __libc_calloc+719
+    0x420b81
+    0x55b96cd52a60
+    0x2e0051000200046
+]: 1
+@[
+    __pthread_mutex_lock+287
+]: 1
+@[
+    0x7f6925664a01
+]: 1
+@[
+    __clock_gettime_2+11
+    0x55b96cd31040
+    0x100000018
+]: 1
+@[
+    0x7f6910897b8f
+    0x300000000
+]: 1
+@[
+    0x7f69109d77e3
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x7f69113caf48
+]: 1
+@[
+    0x55b96b7a216e
+    0x300055600000000
+]: 1
+@[
+    0x55b96b627cb4
+]: 1
+@[
+    0x7f6910c7661a
+]: 1
+@[
+    0x55b96b67adc2
+    0x2e0051000200046
+]: 1
+@[
+    0x7f69112ac904
+]: 1
+@[
+    0x55b96b6aaab4
+]: 1
+@[
+    0x7f6910f13e0c
+]: 1
+@[
+    0x7f69109d8f18
+    0x300000000
+]: 1
+@[
+    unlink_chunk.isra.0+19
+    0x1
+]: 1
+@[
+    0x7f6925663544
+    0x55b96bf370a0
+]: 1
+@[
+    0x55b96b6c2c91
+]: 1
+@[
+    0x55b96b648744
+]: 1
+@[
+    pixman_region_union+371
+]: 1
+@[
+    0x7f6910c73302
+]: 1
+@[
+    0x7f69113d75ed
+]: 1
+@[
+    0x7f69106cf6c4
+]: 1
+@[
+    0x55b96b650464
+]: 1
+@[
+    0x7f6910c17064
+    0x55b96bdc7e80
+    0x300000000
+]: 1
+@[
+    0x55b96b659d53
+    0x2000000000320
+    0x300055600000000
+]: 1
+@[
+    0x55b96b6561a4
+    0x300055600000000
+]: 1
+@[
+    0x7f69109d6e7b
+    0x55b96ca4aba0
+    0x55b96c9486b8
+]: 1
+@[
+    0x55b96b64ec2f
+]: 1
+@[
+    __GI___pthread_enable_asynccancel+19
+]: 1
+@[
+    0x55b96b649f54
+    0x55b96cd31040
+    0x100000018
+]: 1
+@[
+    0x7f691089a8ae
+    0x55b96c0481c0
+    0x7f6923d66010
+]: 1
+@[
+    0x7f6924da4e80
+]: 1
+@[
+    0x55b96b6aa6bd
+]: 1
+@[
+    0x7f6910ecdbc3
+    0x38
+]: 1
+@[
+    0x7f6910f14cc3
+]: 1
+@[
+    0x55b96b708e3c
+    0x55b96ca4b270
+    0x55b96c945490
+    0x30b4500a00488
+]: 1
+@[
+    0x7f6910f13c5f
+]: 1
+@[
+    0x7f691071f0b3
+    0x300000000
+]: 1
+@[
+    0x7f6910eb7b0d
+]: 1
+@[
+    0x7f6910ec0506
+]: 1
+@[
+    0x7f69109a6fa1
+    0x55b96cd2fff0
+]: 1
+@[
+    0x7f6910c74364
+    0xffff00130023
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910eb824f
+]: 1
+@[
+    0x55b96b6cd736
+    0xdf0200a00049
+]: 1
+@[
+    0x55b96b645226
+    0x55b96cd31040
+    0x100000018
+]: 1
+@[
+    0x7f6910eda8e9
+]: 1
+@[
+    writev+4
+]: 1
+@[
+    0x7f6910735894
+]: 1
+@[
+    0x7f69109c4eaa
+    0x4438000044a20000
+]: 1
+@[
+    0x7f6910ec56a4
+]: 1
+@[
+    0x7f69109c10c0
+    0xfffffffe00000002
+]: 1
+@[
+    0x7f69112a7333
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96ccf1458
+    0x55b96be80fd0
+    0x55b96ca43ed8
+    0x55b96cce58c8
+    0x55b96ca338a8
+]: 1
+@[
+    0x7f6910c78b30
+]: 1
+@[
+    0x7f6910c7a402
+]: 1
+@[
+    0x55b96b76c444
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+    0x55b96bdb5ea8
+]: 1
+@[
+    0x7f69106bce37
+]: 1
+@[
+    0x55b96b7224a4
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x55b96b7253b0
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f6910dbb4fc
+    0x200
+]: 1
+@[
+    ioctl+63
+]: 1
+@[
+    0x55b96b765d24
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x55b96b64a202
+    0x55b96cd31040
+    0x100000018
+]: 1
+@[
+    0x55b96b7a3120
+]: 1
+@[
+    0x7f6910f17d79
+]: 1
+@[
+    0x55b96b766490
+]: 1
+@[
+    0x7f6925663544
+]: 1
+@[
+    0x7f6910c61263
+    0x55b96ccf1730
+]: 1
+@[
+    __memset_sse2_unaligned_erms+150
+]: 1
+@[
+    0x7f69250deb32
+    0x1
+]: 1
+@[
+    0x55b96b650701
+]: 1
+@[
+    0x55b96b65076a
+]: 1
+@[
+    0x7f6910f15d00
+    0x2000020e80
+]: 1
+@[
+    0x7f69108a5f24
+    0x55b96b6a32a0
+    0x8348535554415541
+]: 1
+@[
+    0x55b96b643ba0
+    0x6
+]: 1
+@[
+    0x55b96b6b5724
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f6910f1f502
+]: 1
+@[
+    0x55b96b6ab11d
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x55b96b6b9023
+    0x55b96c945490
+    0xf9a700a00540
+]: 1
+@[
+    0x7f6910f208c2
+]: 1
+@[
+    0x7f6910dba316
+    0x8c00000009
+    0x200
+]: 1
+@[
+    0x55b96b650374
+]: 1
+@[
+    0x7f6910c77034
+    0xffff00190008
+    0x55b96bfba5e0
+]: 1
+@[
+    0x7f6910dbaac1
+    0x55b96bfda940
+]: 1
+@[
+    0x7f6910763059
+    0x6f50626972747441
+]: 1
+@[
+    0x7f6910c61263
+    0x55b96cccc4c0
+]: 1
+@[
+    0x55b96b6ff8ad
+]: 1
+@[
+    0x7f69109d6a55
+    0x300000000
+]: 1
+@[
+    _int_free+192
+]: 1
+@[
+    0x7f692525e6a4
+]: 1
+@[
+    __pthread_mutex_lock+7
+]: 1
+@[
+    0x7f6910ebe48e
+]: 1
+@[
+    0x7f6910dbb3b4
+    0x55b96ccf3e00
+]: 1
+@[
+    sendmsg+77
+    0x19000001b1
+]: 1
+@[
+    _int_malloc+79
+    0x1
+]: 1
+@[
+    0x7f69106bdf67
+]: 1
+@[
+    0x55b96b67aec1
+    0x2e0051000200046
+]: 1
+@[
+    0x7f69106d4884
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+    0x55b96ca338a8
+    0x55b96cccc5d8
+    0x55b96ccf2ee8
+    0x55b96ca3ec28
+    0x55b96cd40708
+    0x55b96cac0ce8
+    0x55b96caa7198
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96cd5bd78
+    0x55b96ca43ed8
+]: 1
+@[
+    0x7f6910f20790
+]: 1
+@[
+    pixman_f_transform_bounds+508
+    0xdcdd291dabf7bf00
+]: 1
+@[
+    0x7f6925664159
+]: 1
+@[
+    pthread_cond_wait@@GLIBC_2.3.2+247
+]: 1
+@[
+    __memmove_ssse3+0
+    0x4400080000
+]: 1
+@[
+    0x7f69109bc5a6
+]: 1
+@[
+    0x7f6910dbb19d
+    0x200
+]: 1
+@[
+    0x7f69252519e4
+    0x300055600000000
+]: 1
+@[
+    0x7f6910e9dd54
+    0x7600080000004b
+]: 1
+@[
+    0x7f69109d6f89
+    0x55b96ca4aba0
+    0x55b96c9486b8
+]: 1
+@[
+    0x55b96b6efca4
+]: 1
+@[
+    0x7f69109a71f8
+    0x300000000
+]: 1
+@[
+    0x55b96b657454
+    0x2e0051000000000
+]: 1
+@[
+    0x7f6925663424
+    0x7f6925669313
+    0x657a697365720067
+]: 1
+@[
+    0x7f691071eb74
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+    0x55b96cd5b938
+    0x55b96be80fd0
+    0x55b96cac0ce8
+]: 1
+@[
+    0x7f6910737374
+    0x300055600000000
+]: 1
+@[
+    0x7f6910eccc8e
+]: 1
+@[
+    0x55b96b701ca4
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f6910dbb130
+    0x420000
+]: 1
+@[
+    0x55b96b6aa63c
+]: 1
+@[
+    0x7f69107634b7
+    0x6f50626972747441
+]: 1
+@[
+    0x55b96b765d31
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x55b96b6ab023
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x55b96b770a84
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f6910f1a554
+]: 1
+@[
+    0x7f69109d9eb7
+    0x300000000
+]: 1
+@[
+    0x7f6910ec716e
+]: 1
+@[
+    0x55b96b6288e4
+]: 1
+@[
+    0x7f69112a7193
+    0x1
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+    0x55b96be80fd0
+    0x55b96ca3f2b8
+]: 1
+@[
+    0x7f6910db7474
+]: 1
+@[
+    0x55b96b6d8fc1
+]: 1
+@[
+    0x55b96b629a14
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+    0x55b96cd0b910
+    0x55b96b83b9e0
+    0x55b96ccda110
+    0x55b96cd40ad0
+]: 1
+@[
+    0x7f6910dbaa94
+]: 1
+@[
+    0x7f6910eb8b34
+]: 1
+@[
+    0x55b96b64a7ad
+    0x7f6924a0d2c8
+]: 1
+@[
+    0x55b96b645226
+]: 1
+@[
+    0x7f6910f1404e
+]: 1
+@[
+    0x7f6910f156f1
+]: 1
+@[
+    0x7f6910797954
+    0x55b96ca4aba0
+    0x55b96c9486b8
+]: 1
+@[
+    0x55b96b650782
+]: 1
+@[
+    0x55b96b63de76
+    0x55b96bf370a0
+]: 1
+@[
+    setitimer+4
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x55b96b6aa6c5
+]: 1
+@[
+    pthread_cond_broadcast+4
+    0x100000001
+    0x7f6925669313
+    0x65725f7465670064
+]: 1
+@[
+    0x7f6910c763c0
+]: 1
+@[
+    0x55b96b6287e4
+    0x55b96bf370a0
+]: 1
+@[
+    __libc_calloc+0
+    0x7f6925669648
+    0x6573006567616d61
+]: 1
+@[
+    __close+4
+    0xfffffe0800000000
+]: 1
+@[
+    0x7f6910dbabce
+    0x55b96bfda940
+]: 1
+@[
+    0x7f6910776bc5
+]: 1
+@[
+    0x7f6910f01527
+]: 1
+@[
+    __libc_calloc+4
+    0x7f69256693b0
+    0x70616d79656b0033
+]: 1
+@[
+    0x7f6910ec571b
+    0x690011000e008c
+]: 1
+@[
+    __clock_gettime_2+4
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 1
+@[
+    0x7f69109d9083
+    0x300000000
+]: 1
+@[
+    0x7f691075909c
+    0x300000000
+]: 1
+@[
+    0x7f6910edaa7b
+]: 1
+@[
+    0x55b96b6c3a94
+]: 1
+@[
+    0x55b96b6f2383
+    0x2e0051000000000
+]: 1
+@[
+    0x7f691075a2c7
+    0x300000000
+]: 1
+@[
+    0x7f6910c73372
+]: 1
+@[
+    0x55b96b6b8ec4
+]: 1
+@[
+    writev+36
+]: 1
+@[
+    __GI___pthread_enable_asynccancel+4
+]: 2
+@[
+    0x55b96b7b63fd
+]: 2
+@[
+    0x55b96b6c06b4
+    0x2e0051000200046
+]: 2
+@[
+    0x7f6910eb9004
+]: 2
+@[
+    0x7f69107839d2
+    0x55b96bdc7e80
+    0x300000000
+]: 2
+@[
+    0x7f6910f1ef10
+]: 2
+@[
+    0x7f6910907766
+]: 2
+@[
+    0x7f69113d7227
+]: 2
+@[
+    0x55b96b6d8fb4
+]: 2
+@[
+    0x7f69109a640a
+    0x55b96ca4aba0
+    0x55b96c9486b8
+]: 2
+@[
+    0x55b96b6aa474
+]: 2
+@[
+    0x7f69109032a4
+]: 2
+@[
+    0x7f6910c7bea4
+    0x55b96ca4aba0
+    0x55b96c9486b8
+]: 2
+@[
+    0x55b96b66bd92
+]: 2
+@[
+    0x7f69107252c4
+]: 2
+@[
+    0x55b96b6cc377
+    0xa0004900120191
+]: 2
+@[
+    0x7f691075a1ec
+    0x300000000
+]: 2
+@[
+    0x7f6910776402
+]: 2
+@[
+    0x55b96b67c904
+    0x55b96b81fa00
+    0x55b96b666130
+    0x5541c6894d5641ff
+]: 2
+@[
+    0x7f69106bcd2c
+]: 2
+@[
+    0x7f6910db747a
+]: 2
+@[
+    wl_display_flush+4
+]: 2
+@[
+    0x7f6910ec6a74
+]: 2
+@[
+    0x7f6910ebac57
+]: 2
+@[
+    0x7f691069afe4
+]: 2
+@[
+    0x55b96b6aa524
+]: 2
+@[
+    0x55b96b6f0b24
+    0x2e0051000000000
+]: 2
+@[
+    0x7f69107372f4
+]: 2
+@[
+    sendmsg+77
+    0xc0000000001dc
+]: 2
+@[
+    0x7f691071ed2f
+]: 2
+@[
+    posix_fallocate64+22
+]: 2
+@[
+    0x55b96b6ab6f4
+]: 2
+@[
+    0x7f6910778694
+]: 2
+@[
+    xshmfence_trigger+15
+    0x2e0051000200046
+]: 2
+@[
+    0x7f69107252c0
+]: 2
+@[
+    gbm_bo_get_plane_count+4
+]: 2
+@[
+    0x7f6910f01684
+]: 2
+@[
+    0x55b96b760824
+    0x55b96bf370a0
+]: 2
+@[
+    0x55b96b6cca34
+    0xdcdd291dabf7bf00
+]: 2
+@[
+    0x55b96b76660f
+]: 2
+@[
+    0x7f6910f17b63
+]: 2
+@[
+    0x7f692491aec4
+]: 2
+@[
+    0x7f6924d904c4
+]: 2
+@[
+    0x7f691069cae4
+]: 2
+@[
+    __libc_calloc+0
+]: 2
+@[
+    0x7f6910eb8c04
+]: 2
+@[
+    0x7f69109c10c4
+    0xfffffffe00000002
+]: 2
+@[
+    0x7f69109bf614
+    0xfffffffe00000002
+]: 2
+@[
+    0x55b96b7b60f6
+]: 2
+@[
+    0x55b96b6556b4
+]: 2
+@[
+    0x55b96b629a34
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 2
+@[
+    0x7f6910764254
+]: 2
+@[
+    0x7ffc4a7a5ab0
+    0x55b96cd31040
+    0x100000018
+]: 2
+@[
+    0x55b96b643bec
+]: 2
+@[
+    0x7f6910905e0a
+]: 2
+@[
+    0x55b96b6aa902
+]: 2
+@[
+    0x7f6910dba461
+]: 2
+@[
+    0x55b96b6b9e46
+]: 2
+@[
+    __futex_abstimed_wait_cancelable64+4
+]: 2
+@[
+    0x7f6910765c02
+]: 2
+@[
+    0x55b96b6f2224
+    0x2e0051000200046
+]: 2
+@[
+    0x7f69109db001
+    0x55b96bdc7e80
+    0x300000000
+]: 2
+@[
+    0x7f6910f0fb94
+]: 2
+@[
+    0x7f691089a4c6
+]: 2
+@[
+    0x55b96b6f0930
+]: 2
+@[
+    _int_malloc+936
+    0x1
+]: 2
+@[
+    0x55b96b6b70e4
+]: 2
+@[
+    0x7f69113d82e5
+]: 2
+@[
+    0x55b96b7037d8
+]: 2
+@[
+    __memset_sse2_unaligned_erms+147
+]: 2
+@[
+    0x55b96b66b964
+]: 2
+@[
+    0x7f6910909ce4
+]: 2
+@[
+    0x7f6910dbb2d2
+    0x100000
+]: 2
+@[
+    0x7f6910dbb130
+    0x3f0000
+]: 2
+@[
+    0x55b96b63de8b
+    0x55b96bf370a0
+]: 2
+@[
+    0x7f691075a4c1
+]: 2
+@[
+    0x7f69106c8d65
+    0x846
+]: 2
+@[
+    recvmsg+16
+]: 2
+@[
+    0x7f6910ece543
+    0x38
+]: 2
+@[
+    0x7f69256659ce
+    0x100000aa2
+]: 2
+@[
+    0x7f6910eb8162
+]: 2
+@[
+    0x55b96b7b63ed
+]: 2
+@[
+    wl_display_read_events+1158
+]: 2
+@[
+    0x7f6910ecdc43
+    0x38
+]: 2
+@[
+    __pthread_mutex_lock+4
+]: 2
+@[
+    0x7f69106c8d65
+    0x83f
+]: 2
+@[
+    unlink_chunk.isra.0+4
+    0x1
+]: 2
+@[
+    0x55b96b6af594
+]: 2
+@[
+    __pthread_mutex_lock+0
+]: 2
+@[
+    0x7f6910759304
+]: 2
+@[
+    0x7f69250e0151
+    0x7f6925664b23
+    0x7ffc4a70dd20
+]: 2
+@[
+    0x7f69109a2b54
+    0x300000000
+]: 2
+@[
+    0x55b96b64879d
+]: 2
+@[
+    ioctl+63
+    0x1e
+]: 2
+@[
+    0x7f6910e9dd73
+    0x69000900060202
+]: 2
+@[
+    0x7f69106ca037
+]: 2
+@[
+    0x7f691099d424
+]: 2
+@[
+    0x7f691076dd14
+    0x55b96bdc7e80
+    0x300000000
+]: 2
+@[
+    0x55b96b70375b
+]: 2
+@[
+    0x55b96b6aa7bc
+]: 2
+@[
+    __memcmp_sse2+0
+]: 2
+@[
+    0x7f69109d8e3a
+    0x300000000
+]: 2
+@[
+    0x7f69107665e6
+]: 2
+@[
+    __memmove_ssse3+113
+]: 2
+@[
+    0x55b96b6aa8df
+]: 2
+@[
+    0x7f69113d7af4
+]: 2
+@[
+    0x7f69109c07a4
+]: 2
+@[
+    0x7f6910c170b0
+    0x7f6910c79c90
+    0x55b96bfba5e0
+]: 2
+@[
+    0x55b96b6bef0d
+    0x300055600000000
+]: 2
+@[
+    0x7f6925250324
+]: 2
+@[
+    0x55b96b76f534
+]: 2
+@[
+    0x7f6910ec010d
+]: 2
+@[
+    _int_malloc+605
+    0x1
+]: 2
+@[
+    0x7f6910dba43e
+]: 2
+@[
+    0x55b96b659c34
+    0x55b96b81fa00
+    0x55b96b666130
+    0x5541c6894d5641ff
+]: 2
+@[
+    0x7f6910dbb514
+    0x200
+]: 2
+@[
+    0x7f6910736df4
+]: 2
+@[
+    0x7f69113d7be8
+]: 2
+@[
+    0x7f69256641a2
+]: 2
+@[
+    0x7f69109d6374
+    0x55b96bdc7e80
+    0x300000000
+]: 2
+@[
+    pixman_region_intersect+433
+]: 2
+@[
+    0x7f69109dbc34
+    0x55b96bdc7e80
+    0x300000000
+]: 2
+@[
+    0x7f69106c8d09
+]: 2
+@[
+    0x7f6910dbb3dc
+    0x200
+]: 2
+@[
+    0x7f69252655c4
+]: 2
+@[
+    0x7f69113d7dba
+]: 2
+@[
+    0x7f69113d722a
+]: 2
+@[
+    0x55b96b643ba0
+]: 2
+@[
+    pixman_region_copy+4
+]: 2
+@[
+    ioctl+63
+    0x1600000000
+]: 2
+@[
+    __GI___pthread_disable_asynccancel+4
+    0x55b96bf370a0
+]: 2
+@[
+    0x7ffc4a7a5b03
+    __clock_gettime_2+29
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 2
+@[
+    0x7f6925664b08
+    0x7ffc4a70dd20
+]: 2
+@[
+    0x55b96b643bcb
+    0x6
+]: 2
+@[
+    0x7f6910c7759f
+]: 2
+@[
+    0x7f6910908dc4
+]: 2
+@[
+    0x7f6910764282
+]: 2
+@[
+    malloc+324
+]: 3
+@[
+    ioctl+63
+    0xabf7bf000000000f
+]: 3
+@[
+    0x7f6910c79c94
+]: 3
+@[
+    sendmsg+77
+    0x42000c0001
+]: 3
+@[
+    0x55b96b627bb4
+]: 3
+@[
+    0x55b96b6365b4
+]: 3
+@[
+    0x7f6910dbb278
+    0x10000
+]: 3
+@[
+    0x55b96b7633d3
+]: 3
+@[
+    0x7f6910c61004
+    0x7f6910c79c90
+    0x55b96bfba5e0
+]: 3
+@[
+    0x7f6910ed8534
+]: 3
+@[
+    setitimer+11
+    0x55b96c95fc10
+]: 3
+@[
+    sendmsg+77
+    0xc000100000001
+]: 3
+@[
+    0x7f6924918c8b
+]: 3
+@[
+    0x7f6910f13dfb
+]: 3
+@[
+    __memset_sse2_unaligned_erms+143
+]: 3
+@[
+    __GI___errno_location+4
+]: 3
+@[
+    __memset_sse2_unaligned_erms+135
+]: 3
+@[
+    0x7f6910f1bd24
+]: 3
+@[
+    0x7f6910eba874
+]: 3
+@[
+    0x7f6910eb7c77
+]: 3
+@[
+    0x7f6910db9016
+]: 3
+@[
+    __pthread_mutex_lock+4
+    0x55b96bf370a0
+]: 3
+@[
+    poll+4
+]: 3
+@[
+    poll+0
+]: 3
+@[
+    0x7f69106bd052
+]: 3
+@[
+    0x55b96b6aa619
+]: 3
+@[
+    __close+58
+]: 3
+@[
+    0x55b96b64ebe4
+]: 3
+@[
+    0x7f69109bf66c
+]: 3
+@[
+    0x7f692491af04
+]: 3
+@[
+    0x55b96b6af5fc
+]: 3
+@[
+    0x7f69109d52f0
+]: 3
+@[
+    0x55b96b650378
+]: 3
+@[
+    malloc+362
+]: 3
+@[
+    0x55b96b6aab7f
+]: 3
+@[
+    0x55b96b6cd736
+    0xdcdd291dabf7bf00
+]: 3
+@[
+    0x7f69112c8644
+]: 4
+@[
+    ioctl+63
+    0x4000
+]: 4
+@[
+    __lll_lock_wait+48
+]: 4
+@[
+    recvmsg+4
+]: 4
+@[
+    0x7f6924918c84
+]: 4
+@[
+    0x7f6910dbb3ee
+    0x100000
+]: 4
+@[
+    __memmove_ssse3+4
+]: 4
+@[
+    0x7f691071edf4
+]: 5
+@[
+    0x55b96b6cd8e2
+]: 6
+@[
+    __GI___lll_lock_wake+23
+]: 6
+@[]: 6
+@[
+    0x55b96b76c3ae
+    0x55b96bf370a0
+]: 6
+@[
+    __GI___lll_lock_wake+23
+    0x55b96bfda940
+]: 6
+@[
+    0x55b96b76c3e5
+    0x55b96bf370a0
+]: 7
+@[
+    0x7f6910dbb3ee
+    0x200
+]: 7
+@[
+    0x55b96b6b70ed
+]: 9
+@[
+    __GI___lll_lock_wake+23
+    0x55b96bfc6898
+]: 12
+@[
+    setitimer+11
+    0x55b96cd144f0
+    0x55b96c9673f0
+]: 15
+@[
+    setitimer+11
+]: 21
+@[
+    ioctl+63
+    0xdcdd291dabf7bf00
+]: 22
+@[
+    ioctl+63
+    0xabf7bf00ffffffff
+]: 24
+@[
+    poll+79
+]: 25
+@[
+    syscall+29
+]: 25
+@[
+    syscall+29
+]: 29
+@[
+    __futex_abstimed_wait_cancelable64+230
+]: 35
+@[
+    recvmsg+87
+    0x55b96bf370a0
+]: 39
+@[
+    pthread_cond_signal@@GLIBC_2.3.2+176
+]: 47
+@[
+    recvmsg+87
+]: 85
+@[
+    ioctl+63
+    0x55b96bfea998
+]: 133
+@[
+    ioctl+63
+    0x55b96bfd68f0
+]: 136
+@[
+    epoll_wait+86
+    0x55b96bf370a0
+]: 142
+@[
+    writev+77
+]: 151
+##############End#Profile#################
+Attaching 1 probe...
+
+
+#############End#Files opened in cgroup##################
+###############################
+###############################
+###############################
+###############################
+Attaching 2 probes...
+@: 8560
+@: 8240
+@: 8466
+@: 8431
+@: 8507
+@: 8095
+@: 8247
+@: 10070
+@: 9491
+@: 9391
+@: 8359
+@: 8018
+@: 11209
+@: 17477
+@: 28421
+@: 53310
+@: 7889
+@: 8965
+@: 7067
+@: 15839
+@: 16366
+@: 9054
+@: 24249
+@: 19881
+@: 28435
+@: 20059
+@: 15985
+@: 14850
+@: 15139
+@: 7565
+@: 12298
+@: 14211
+@: 10835
+@: 12418
+@: 17088
+@: 18082
+@: 9989
+@: 12641
+@: 15844
+@: 14981
+@: 22876
+@: 28649
+@: 22571
+@: 13996
+@: 16038
+@: 15911
+@: 19637
+@: 13557
+@: 13908
+@: 12496
+@: 11356
+@: 9012
+@: 7621
+@: 8168
+@: 20495
+@: 13932
+@: 15834
+@: 17477
+@: 22962
+@: 14816
+@: 15347
+@: 14398
+@: 17162
+@: 14078
+@: 16789
+@: 8129
+@: 13140
+@: 14428
+@: 10724
+@: 8533
+@: 7016
+@: 7023
+@: 10437
+@: 15950
+@: 10300
+@: 14473
+@: 10045
+@: 26102
+@: 30971
+@: 14653
+@: 14753
+@: 16467
+@: 14556
+@: 13139
+@: 12869
+@: 12643
+@: 14818
+@: 15456
+@: 13857
+@: 15325
+@: 9902
+@: 7145
+@: 7144
+@: 7252
+@: 7235
+@: 7669
+@: 7703
+@: 6983
+@: 8308
+@: 7199
+@: 6852
+@: 6754
+@: 8834
+@: 7935
+
+
+@: 181
+###########End#per-second syscall rates####################
+###############################
+###############################
+###############################
