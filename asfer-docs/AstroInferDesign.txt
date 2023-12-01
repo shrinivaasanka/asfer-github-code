@@ -22933,6 +22933,15 @@ References:
 ----------
 1459.6 BPFTrace docs - https://github.com/iovisor/bpftrace/blob/master/docs/reference_guide.md
 1459.7 eBPF documentary - Eliminating Spectre Attacks and Speculative Execution by eBPF - https://www.youtube.com/watch?v=6N30Yp5f9c4&t=4s - https://ebpf.io/what-is-ebpf/ - ".... eBPF changes this formula fundamentally. It allows sandboxed programs to run within the operating system, which means that application developers can run eBPF programs to add additional capabilities to the operating system at runtime ...." - NeuronRain VIRGO Linux Kernel is dynamic by machine learning analytics variables that are exported kernelwide by VIRGO kernel_analytics driver and VIRGO kernel codeflow depends on analytics variables from userland while eBPF works by hooks-placeholders executed dynamically at runtime changing the kernel behaviour.  
+1459.8 BPF Helper Functions - https://man7.org/linux/man-pages/man7/bpf-helpers.7.html 
+1459.9 Linux kernel workqueue dump - https://docs.kernel.org/core-api/workqueue.html - "..... Worker threads show up in the process list as:
+root      5671  0.0  0.0      0     0 ?        S    12:07   0:00 [kworker/0:1]
+root      5672  0.0  0.0      0     0 ?        S    12:07   0:00 [kworker/1:2]
+root      5673  0.0  0.0      0     0 ?        S    12:12   0:00 [kworker/0:0]
+root      5674  0.0  0.0      0     0 ?        S    12:13   0:00 [kworker/1:0]
+If kworkers are going crazy (using too much cpu), there are two types of possible problems: Something being scheduled in rapid succession A single work item that consumes lots of cpu cycles The first one can be tracked using tracing: 
+	$ echo workqueue:workqueue_queue_work > /sys/kernel/tracing/set_event
+	$ cat /sys/kernel/tracing/trace_pipe > out.txt  ......" - workqueue information is very much essential for Survival Index OS scheduler concept implementation in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/Programming/Python/code/SurvivalIndexScheduler.py to group the processes or threads by their deadlines (timeouts defined by SCHED_DEADLINE policy)
 
 -------------------------------------------------------------------------------------------------------------------------------
 1460. (THEORY and FEATURE) NeuronRainApps - Sports Analytics - Sabermetrics - Concept Implementation of Parallel Cricket (PRICKET) simulator - related to 754 and all sections on Intrinsic Performance Ratings and Sports Analytics, Streaming Histogram analytics, Partition distance measures, Random graph streams, Logic and Game theory, Generalized Geography and PSPACE-completeness, Parity games - 21 November 2023
