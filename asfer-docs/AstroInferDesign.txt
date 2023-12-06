@@ -22968,3 +22968,28 @@ References:
 1460.7 Parity game - https://en.wikipedia.org/wiki/Parity_game - Soccer can be reduced to Parity game on a dynamic graph in which two sets of nodes (Square and Circular) simulate 2 teams and the token passed between the nodes on a dynamic graph is the ball with 2 winning regions as goalposts. Finding an algorithm for solving Parity games in polynomial time is an open problem. 
 1460.8 cricWAR - Sabermetrics for cricket - RAA and WAR - https://www.stat.cmu.edu/cmsac/conference/2022/assets/pdf/HassanRafique.pdf
 1460.9 MIT Sloan Sports Analytics Conference - https://www.sloansportsconference.com/
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1462. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Clustering analysis of NASA WorldView NightLights (11 November 2023) for Chennai Metropolitan Area - 6 December 2023 - related to 823,1163,1164,1174,1175,1177,1179,1194,1211,1226,1234,1290,1291,1292,1295,1296,1297,1301,1302,1304,1312,1313,1320,1323,1326,1328,1342,1343,1349,1350,1351,1362,1363,1377,1386,1387,1395,1397,1398,1412,1414,1423,1448,1449 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, Verlhulste-R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, Preferential Attachment, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models,Expander Graphs,Timeseries analysis,Graph Edit Distance and Earth mover distance, Face recognition,Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching 
+--------------------------------------------------------------------------------------------------------------------------------------------
+1462.1 Recent NASA NightLights imagery dt.11 November 2023 has been clustered by contour_kmeans implementation in NeuronRain - Contour k-means clustering of the NightLights is lot clearer with well-marked urban clustering delineations of bright pixels compared to DBSCAN clustering of same image (not part of the update):
+    #Chennai Metropolitan Area - NASA WorldView NightLights - 11 November 2023 - kmeans contour segment clustering analysis
+    seg16=ImageGraph_Keras_Theano.image_segmentation("testlogs/NASANightLights_11November2023.jpeg")
+    ImageGraph_Keras_Theano.contours_kmeans_clustering(image,seg16)
+1462.2 Above contour kmeans clustering offers a visual clustering and computational geometric comparison of cities as opposed to histogram based comparison in World Bank Open NightLights Dataset till year 2020 - https://worldbank.github.io/OpenNightLights/tutorials/mod5_4_comparing_cities.html 
+1462.3 NightLights of an urban sprawls are useful not just for urban delineation but to identify high growth suburbs as Voronoi-Delaunay tessellation centroids equidistant with each other in a larger urban area causing a conurbation phenomenon wherein multiple suburbs grow in parallel and coalesce over time - An example polycentric conurbation model of 6 satellite cities (Minjur,Thiruvallur,Thirumazhisai,Kanchipuram,Chengalpattu,Mamallapuram) for Chennai Metropolitan Area of 5904 sqkm (from X handle - https://twitter.com/CMDA_Official) is illustrated in testlogs/CMA_SatelliteCities_IMG_20231205_203829.jpg .  
+1462.4 Following are the image files (contour segmented, contour kmeans clustering, canny edge detector, watershed segmented),facegraph DOT file and logs for clustering analysis of testlogs/NASANightLights_11November2023.jpeg:
+	testlogs/CMA_SatelliteCities_IMG_20231205_203829.jpg
+	testlogs/GISUrbanSprawlAnalytics.log.6December2023
+	testlogs/NASANightLights_11November2023-cannyedgedetection.jpg
+	testlogs/NASANightLights_11November2023-contourkmeansclustered.jpg
+	testlogs/NASANightLights_11November2023-contourlabelled.jpg
+	testlogs/NASANightLights_11November2023-contoursegmented.jpg
+	testlogs/NASANightLights_11November2023.jpeg
+	testlogs/RemoteSensingGIS/NASANightLights_11November2023_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/NASANightLights_11November2023_segmented.jpg
+
+
+References:
+----------
+1462.5 World Bank Open NightLights Data - https://blogs.worldbank.org/opendata/light-every-night-new-nighttime-light-data-set-and-tools-development and high resolution India nightlights - https://blogs.worldbank.org/sites/default/files/users/user1111/satellite%20view%20of%20earth.jpg
