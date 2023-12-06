@@ -881,4 +881,8 @@ if __name__ == "__main__":
     #urban_sprawl_from_segments("testlogs/ZoomEarth_NightLights2_12June2023.jpeg",seg14)
     #urban_sprawl_from_segments("testlogs/ZoomEarth_WeatherAndNightLights3_12June2023.jpeg",seg15)
     #functional_urban_area_delineation_GHSL_regression(0.01,0.01,0.01,100,0.01,1,0.01,0.01,16079611,0.01,130,0.01)
-    r3data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_E2030_GLOBE_R2023A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2023A",delineationparams=[0.01,0.01,0.01,0.01,0.01,0.01,16079611,0.01,200,0.01,(77.4479607,12.985801)])
+    #r3data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_E2030_GLOBE_R2023A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2023A",delineationparams=[0.01,0.01,0.01,0.01,0.01,0.01,16079611,0.01,200,0.01,(77.4479607,12.985801)])
+    
+    #Chennai Metropolitan Area - NASA WorldView NightLights - 11 November 2023 - kmeans contour segment clustering analysis
+    seg16=ImageGraph_Keras_Theano.image_segmentation("testlogs/NASANightLights_11November2023.jpeg")
+    ImageGraph_Keras_Theano.contours_kmeans_clustering("testlogs/NASANightLights_11November2023.jpeg",seg16)
