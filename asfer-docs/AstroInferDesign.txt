@@ -22993,3 +22993,96 @@ References:
 References:
 ----------
 1462.5 World Bank Open NightLights Data - https://blogs.worldbank.org/opendata/light-every-night-new-nighttime-light-data-set-and-tools-development and high resolution India nightlights - https://blogs.worldbank.org/sites/default/files/users/user1111/satellite%20view%20of%20earth.jpg
+
+----------------------------------------------------------------------------------------------------------------------------------------
+1463. (THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 8 December 2023 - N-Body gravitational acceleration analysis of date range 21 November 2023-8 January 2024  - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368,1388,1404,1455,1456 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change-Adaptive Fourier Neural Operator-FourCastNet, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+----------------------------------------------------------------------------------------------------------------------------------------
+1463.1 python-src/image_pattern_mining/ImageNet/GISWeatherAnalytics.py has been updated to introduce ratelimit retry logic (which can be used universally as design pattern) within gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams=None,days=5,forecast_seasonal_rainfall=20,historic_training_timeseries=None,maxiterations=100). Boolean variable ratelimiterror is set to True and is iteratively set to False when retry is not necessary and continues looping till retry succeeds. This code is in addition to already in-built TIMEOUT=30 seconds attribute in JPL Horizon ephemeris.
+1463.2 Following new date ranges from 21/11/2023 to 8/1/2024 are searched in ephemeris by climate_analytics() and gaussian_ensemble_forecast_rainfall_timeseries() for 4 two-body systems (Mercury-Jupiter,Mercury-Mars,Mercury-Venus,Sun-Moon) with angular separation bounds set to maximum 60 degrees and their gravities are plotted:
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','60d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Mars",'angularsepbounds':('0d','60d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Venus",'angularsepbounds':('0d','60d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','60d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Mars-Venus-Mercury-Sun-Jupiter",'angularsepbounds':('0d','60d')},days=5,forecast_seasonal_rainfall=35,historic_training_timeseries=nem_rainfall_timeseries)
+1463.3 Following are the gravity plot images for 2 date ranges (49 days - 21/11/2023-8/1/2024 and 38 days - 2/12/2023-8/1/2024) - especially a steep peak in mercury gravity around 21 December 2023 that could have a cooling effect due to change in specific humidity conducive for low pressure troughs. This anomalous fluctuation in mercury gravity (Gravity anomalies on mercury - MESSENGER probe - https://www.nasa.gov/image-article/gravity-anomalies/ ) especially is still unexplained and beyond scope of NeuronRain:
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Jupiter.2023-11-21#2024-1-8.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Jupiter.2023-12-2#2024-1-8.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Mars.2023-11-21#2024-1-8.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Mars.2023-12-2#2024-1-8.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Venus.2023-11-21#2024-1-8.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Venus.2023-12-2#2024-1-8.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Sun-Moon.2023-11-21#2024-1-8.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Sun-Moon.2023-12-2#2024-1-8.jpg
+	testlogs/GISWeatherAnalytics.log.8December2023
+1463.4 Matching pairwise 2-body system angular separation bound dates are as follows (less than 60 degrees apart) in 2 date ranges 3/12/2023-24/12/2023 with peak mercury gravity around 21/12/2023 and 27/12/2023-7/1/2023:
+Angular separation of Mercury-Jupiter on 2023-12-03 17:30:00.000: [59d14m40.62811775s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-03 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-04 17:30:00.000: [54d55m29.15970191s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-04 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-05 17:30:00.000: [50d27m25.07448926s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-05 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-06 17:30:00.000: [45d50m05.04938389s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-06 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-07 17:30:00.000: [41d03m08.83736106s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-07 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-08 17:30:00.000: [36d06m20.35435758s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-08 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-09 17:30:00.000: [30d59m29.19375542s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-09 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-10 17:30:00.000: [25d42m32.13772073s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-10 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-11 17:30:00.000: [20d15m35.07873474s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-11 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-12 17:30:00.000: [14d38m55.55329517s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-12 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-13 17:30:00.000: [8d53m08.37392694s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-13 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-14 17:30:00.000: [3d00m03.26608996s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-14 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-15 17:30:00.000: [3d07m28.60857718s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-15 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-16 17:30:00.000: [9d15m02.76070618s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-16 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-17 17:30:00.000: [15d29m14.39694215s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-17 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-18 17:30:00.000: [21d47m27.55265838s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-18 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-19 17:30:00.000: [28d07m56.96999903s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-19 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-20 17:30:00.000: [34d28m58.35362405s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-20 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-21 17:30:00.000: [40d48m47.82883938s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-21 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-22 17:30:00.000: [47d05m45.02724418s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-22 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-23 17:30:00.000: [53d18m16.20920661s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-23 17:30:00.000
+Angular separation of Mercury-Jupiter on 2023-12-24 17:30:00.000: [59d24m57.2685321s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-12-24 17:30:00.000
+Angular separation of Mercury-Venus on 2023-12-27 17:30:00.000: [57d22m05.29802302s]
+Angular separation of Mercury-Venus matches bounds for date: 2023-12-27 17:30:00.000
+Angular separation of Mercury-Venus on 2023-12-28 17:30:00.000: [53d19m06.79328525s]
+Angular separation of Mercury-Venus matches bounds for date: 2023-12-28 17:30:00.000
+Angular separation of Mercury-Venus on 2023-12-29 17:30:00.000: [49d25m47.72273879s]
+Angular separation of Mercury-Venus matches bounds for date: 2023-12-29 17:30:00.000
+Angular separation of Mercury-Venus on 2023-12-30 17:30:00.000: [45d42m19.06669459s]
+Angular separation of Mercury-Venus matches bounds for date: 2023-12-30 17:30:00.000
+Angular separation of Mercury-Venus on 2023-12-31 17:30:00.000: [42d08m42.59224257s]
+Angular separation of Mercury-Venus matches bounds for date: 2023-12-31 17:30:00.000
+Angular separation of Mercury-Venus on 2024-01-01 17:30:00.000: [38d44m52.40541636s]
+Angular separation of Mercury-Venus matches bounds for date: 2024-01-01 17:30:00.000
+Angular separation of Mercury-Venus on 2024-01-02 17:30:00.000: [35d30m36.45753408s]
+Angular separation of Mercury-Venus matches bounds for date: 2024-01-02 17:30:00.000
+Angular separation of Mercury-Venus on 2024-01-03 17:30:00.000: [32d25m37.93337247s]
+Angular separation of Mercury-Venus matches bounds for date: 2024-01-03 17:30:00.000
+Angular separation of Mercury-Venus on 2024-01-04 17:30:00.000: [29d29m36.47999377s]
+Angular separation of Mercury-Venus matches bounds for date: 2024-01-04 17:30:00.000
+Angular separation of Mercury-Venus on 2024-01-05 17:30:00.000: [26d42m09.25948913s]
+Angular separation of Mercury-Venus matches bounds for date: 2024-01-05 17:30:00.000
+Angular separation of Mercury-Venus on 2024-01-06 17:30:00.000: [24d02m51.82646704s]
+Angular separation of Mercury-Venus matches bounds for date: 2024-01-06 17:30:00.000
+Angular separation of Mercury-Venus on 2024-01-07 17:30:00.000: [21d31m18.84274187s]
+Angular separation of Mercury-Venus matches bounds for date: 2024-01-07 17:30:00.000
+1463.5 It is notable that Cyclone Michaung (https://en.wikipedia.org/wiki/Cyclone_Michaung - 988 millibar - sustained windspeed of 100 kmph) rapidly intensified during 3-4 December 2023 when Mercury-Jupiter angular separation started to decrease and they are within 3 degrees during 14-15 December 2023.
+1463.6 From 1451.9 - https://arxiv.org/pdf/1901.11426.pdf - "..... In addition to the total water vapour content, the specific humidity, q, will also fall as gravity increases and this can have an important dynamical effect. The specific humidity is defined as the ratio of the mass of water vapour to the total mass of air and in terms of pressures it may be written q = e p − e(1 −  ) ≈ e p , (12) where  is the ratio of the molar mass of water vapour to that of dry air and the approximation giving e/p holds for a dilute atmosphere. Since pressure scales with α but e does not (it does not depend on α at lowest order) we expect that the specific humidity will fall as gravity increases, scaling roughly as 1/α ....." - alpha is the scaling factor for variable gravity. Specific humidity is inversely proportional to variable gravity, affecting rainfall patterns. 
+1463.7 While conventional fluid mechanics equations of weather models (IFS,GFS etc.,) have been successful in predicting trajectories of storms (which assume constant gravitational constant), precise prediction of how and when storms get formed is still elusive and change in humidity due to variable gravity - caused potentially by extraterrestial factors - fills in the missing link. 
