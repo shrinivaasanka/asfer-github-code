@@ -83,6 +83,7 @@ def invert_image(image):
 
 def gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams=None,days=5,forecast_seasonal_rainfall=20,historic_training_timeseries=None,maxiterations=100):
     maxgravitynorm=0
+    ratelimiterror=True
     maxgravitypartition=[]
     iterations=0
     p = IntegerPartition([forecast_seasonal_rainfall])
@@ -95,7 +96,13 @@ def gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams=None,days=5,for
         candidate_partition_dict=candidate_partition.as_dict()
         print("gaussian_ensemble_forecast_rainfall_timeseries(): length of candidate rainfall timeseries forecast partition = ",sum(candidate_partition_dict.values()))
         if sum(candidate_partition_dict.values()) == days:
-             gmm_gravities=climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params=predEWEparams,precipitation_timeseries={"timeseries":historic_training_timeseries,"averageseasonalrainfall":forecast_seasonal_rainfall,'forecast_timeseries':candidate_partition_dict.values()})
+             while ratelimiterror is True:
+                try:
+                     gmm_gravities=climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params=predEWEparams,precipitation_timeseries={"timeseries":historic_training_timeseries,"averageseasonalrainfall":forecast_seasonal_rainfall,'forecast_timeseries':candidate_partition_dict.values()})
+                     ratelimiterror=False
+                except Exception as e:
+                     ratelimiterror=True
+                     print("JPL Horizons Rate limit error....retrying:",e)
              print("gaussian_ensemble_forecast_rainfall_timeseries(): rainfall forecast timeseries ferrers:")
              print(candidate_partition.as_ferrers())
              for gmm_gravity in gmm_gravities:
@@ -302,11 +309,13 @@ if __name__ == "__main__":
 
     nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
     #climate_analytics(datasource="precipitation_MFDFA",precipitation_timeseries=nem_rainfall_timeseries)
-    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,7,17,30,00),'dateto':(2023,11,20,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
-    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,7,17,30,00),'dateto':(2023,11,20,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Venus",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
-    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,7,17,30,00),'dateto':(2023,11,20,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','60d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Mars",'angularsepbounds':('0d','60d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Venus",'angularsepbounds':('0d','60d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','60d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,9,1,17,30,00),'dateto':(2023,12,1,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
-    gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,11,7,17,30,00),'dateto':(2023,11,20,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Mercury-Sun-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
+    #gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,12,2,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Mercury-Sun-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=35,historic_training_timeseries=nem_rainfall_timeseries)
+    gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Mars-Venus-Mercury-Sun-Jupiter",'angularsepbounds':('0d','60d')},days=5,forecast_seasonal_rainfall=35,historic_training_timeseries=nem_rainfall_timeseries)
     #seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
     #weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
     #gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")
