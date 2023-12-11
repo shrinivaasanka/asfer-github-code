@@ -30,8 +30,7 @@
 # - https://github.com/shrinivaasanka/asfer-github-code/blob/master/asfer-docs/AstroInferDesign.txt
 # - https://sourceforge.net/p/asfer/code/HEAD/tree/asfer-docs/AstroInferDesign.txt
 # --------------------------
-# Most recent draft updates to complement diophantines (PCP and MRDP theorem undecidability,Rayleigh-Beatty Theorem,Complementary Sets,
-# Diophantine Analysis,Complementary Equations,Ramsey coloring,Tarski-Sturm decidability,Riemann Zeta Function,Patterns in Primes and so on) 
+# Most recent draft updates to complement diophantines (Post Correspondence Problem and MRDP theorem undecidability,Rayleigh-Beatty Theorem,Complementary Sets, Diophantine Analysis,Complementary Equations,Ramsey coloring,Tarski-Sturm decidability,Riemann Zeta Function,Patterns in Primes,Function version of Circuit Range Avoidance (AVOID) and so on) 
 # are mentioned in:
 # - http://sourceforge.net/p/asfer/code/HEAD/tree/asfer-docs/AstroInferDesign.txt
 # - https://github.com/shrinivaasanka/asfer-github-code/blob/master/asfer-docs/AstroInferDesign.txt
@@ -55,6 +54,7 @@ from scipy.interpolate import barycentric_interpolate
 from scipy.interpolate import lagrange 
 from numpy.polynomial.polynomial import Polynomial
 import matplotlib.pyplot as plt
+import inspect
 
 # Lf=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53]
 Lf = []
@@ -76,11 +76,23 @@ def getgofx(x):
             else:
                 u = u+1
 
+def complement_range_avoid_infinitely_often(function,funcdomain,universalrange):
+    print("------------------------------------------------------------")
+    funcrange=[]
+    print("function to be complemented:",inspect.getsource(function))
+    for d in funcdomain:
+        funcval=function(d)
+        funcrange.append(funcval)
+    rangeavoidance=set(universalrange).difference(set(funcrange)) 
+    print("universal range:",universalrange)
+    print("function domain:",set(funcdomain))
+    print("function range:",set(funcrange))
+    print("range avoidance:",rangeavoidance)
+    return rangeavoidance
 
 def toint(primestr):
     if primestr != '' and not None:
         return int(decimal.Decimal(primestr))
-
 
 def all_possible_unknowns_four_squares():
     all_possible_unknowns = []
@@ -230,9 +242,11 @@ if __name__ == "__main__":
     #for i in range(10):
     #    print("g(", i, ")=", getgofx(i))
     # IharaIdentity()
-    nonsquares = [2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19]
+    #nonsquares = [2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19]
     #complement_diophantine(nonsquares,interpol_algorithm="polyfit")
     #complement_diophantine(nonsquares,interpol_algorithm="barycentric")
-    complement_diophantine(nonsquares,interpol_algorithm="lagrange")
+    #complement_diophantine(nonsquares,interpol_algorithm="lagrange")
     #diophantine_factorization_pell_equation(1, 989295)
     #diophantine_factorization_pell_equation(1, -1)
+    complement_range_avoid_infinitely_often(lambda x: x*x - x + 1,list(range(10)),list(range(100)))
+    complement_range_avoid_infinitely_often(lambda x: x*x,list(range(10)),list(range(100)))
