@@ -1,0 +1,15 @@
+strict digraph  {
+"Punta Cana";
+"La Altagracia Province";
+"Dominican Republic";
+"Higüey";
+province;
+"Punta Cana" -> "La Altagracia Province"  [label="located in the administrative territorial entity"];
+"Punta Cana" -> "Dominican Republic"  [label=country];
+"La Altagracia Province" -> province  [label="instance of"];
+"La Altagracia Province" -> "Dominican Republic"  [label=country];
+"Dominican Republic" -> "La Altagracia Province"  [label="contains administrative territorial entity"];
+"Higüey" -> "La Altagracia Province"  [label="located in the administrative territorial entity"];
+"Higüey" -> "Dominican Republic"  [label=country];
+province -> "Dominican Republic"  [label=country];
+}
