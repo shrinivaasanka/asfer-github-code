@@ -27,7 +27,7 @@ from nltk.corpus import wordnet as wn
 import math
 import operator
 import difflib
-import ConceptNet5Client
+#import ConceptNet5Client
 from WordNetPath import path_between
 import SentimentAnalyzer
 from networkx.drawing.nx_pydot import write_dot
@@ -38,6 +38,7 @@ from Transformers_PerceptronAndGradient import LinearPerceptronGradient
 import nltk
 import numpy as np
 from collections import defaultdict
+import KnowledgeGraph
 
 # Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 # Recursive Gloss Overlap graph of a text
@@ -55,7 +56,7 @@ class RecursiveLambdaFunctionGrowth(object):
         self.lambda_composition = ""
         self.graph_tensor_neuron_network_intrinsic_merit = 1.0
         self.entropy = 10000000000.0
-        self.conceptnet = ConceptNet5Client.ConceptNet5Client()
+        #self.conceptnet = ConceptNet5Client.ConceptNet5Client()
         # self.Similarity="ConceptNet"
         self.Similarity = "WordNet"
         self.ClosedPaths = True
@@ -376,6 +377,7 @@ class RecursiveLambdaFunctionGrowth(object):
 
     def grow_lambda_function3(self, text="None", level=3, textgraph=None, predict_word=False, fillintheblankstxt=None):
         stpairs = []
+        KnowledgeGraph.create_REBEL_knowledge_graph(text)
         maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit = (
             "", 0.0)
         if textgraph == None:
@@ -768,7 +770,8 @@ if __name__ == "__main__":
     lambdafn.tree_adjoining_grammar_annotated(groucho_grammar,"I shot an elephant in my pajamas")
     lambdafn.tree_adjoining_grammar_annotated(grammar1,"Mary saw Bob")
     lambdafn.tree_adjoining_grammar_annotated(grammar2,"the angry bear chased the frightened little squirrel")
-    lambdafn.grow_lambda_function3(textread,predict_word=True, fillintheblankstxt="RecursiveLambdaFunctionGrowth_FillInTheBlanks.txt")
+    #lambdafn.grow_lambda_function3(textread,predict_word=True, fillintheblankstxt="RecursiveLambdaFunctionGrowth_FillInTheBlanks.txt")
+    lambdafn.grow_lambda_function3(textread)
     summary = lambdafn.create_summary(
         textread, graphtraversedsummary=True, shortestpath=True)
     print()

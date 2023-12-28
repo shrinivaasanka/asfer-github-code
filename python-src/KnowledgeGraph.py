@@ -54,7 +54,7 @@ def extract_triplets(text):
         triplets.append({'head': subject.strip(), 'type': relation.strip(),'tail': object_.strip()})
     return triplets
 
-if __name__=="__main__":
+def create_REBEL_knowledge_graph(text):
     # Load model and tokenizer
     tokenizer = AutoTokenizer.from_pretrained("Babelscape/rebel-large")
     model = AutoModelForSeq2SeqLM.from_pretrained("Babelscape/rebel-large")
@@ -64,9 +64,6 @@ if __name__=="__main__":
      "num_beams": 3,
      "num_return_sequences": 3,
     }
-
-    # Text to extract triplets from
-    text = 'Punta Cana is a resort town in the municipality of Higüey, in La Altagracia Province, the easternmost province of the Dominican Republic.'
 
     # Tokenizer text
     model_inputs = tokenizer(text, max_length=256, padding=True, truncation=True, return_tensors = 'pt')
@@ -92,6 +89,21 @@ if __name__=="__main__":
          knowledgegraph.add_edge(t["head"],t["tail"],label=t["type"]) 
          edgelabels[(t["head"],t["tail"])]=t["type"]
     write_dot(knowledgegraph, "KnowledgeGraph.dot")
+    lambda_functions_from_knowledge_graph(edgelabels)
     #nx.draw_networkx_edge_labels(knowledgegraph,pos=nx.spring_layout(knowledgegraph),edge_labels=edgelabels)
     #plt.show()
+    return (knowledgegraph,edgelabels)
 
+def lambda_functions_from_knowledge_graph(edgelabels):
+    lambdafunctions = []
+    for edge,relation in edgelabels.items():
+        operand1 = edge[0]
+        operand2 = edge[1]
+        operator = relation 
+        lambdafunction = operator + "(" + operand1 + "," + operand2 + ")" 
+        lambdafunctions.append(lambdafunction)
+    print("lambda functions:",lambdafunctions)
+    return lambdafunctions
+
+if __name__=="__main__":
+    create_REBEL_knowledge_graph("This is an example sentence for knowledge graph extraction")
