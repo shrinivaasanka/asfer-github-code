@@ -23172,3 +23172,4 @@ References:
 1470.7 Matplotlib 3D - https://matplotlib.org/3.5.0/api/toolkits/mplot3d.html
 1470.8 SciPy Spatial Voronoi - https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.Voronoi.html 
 1470.9 Dynamic Voronoi Diagrams for Unmanned Vehicles and Collision avoidance - https://pubmed.ncbi.nlm.nih.gov/31841411/ - "..... We present a topology-oriented event-increment (TOI-E) algorithm for constructing a Voronoi diagram of moving circular disks in the plane over the time horizon [0, t∞) .... Given an event history, the Voronoi diagram of an arbitrary moment can be constructed in O(k∗ + n) time where k∗ represents the number of events in [0, t∗). An example of the collision avoidance problem among moving disks is given by predicting future conjunctions among the disks using the proposed algorithm. ....."
+1470.10 Fortune's algorithm for Voronoi Diagrams - Sweep line and Beachline parabolas - https://en.wikipedia.org/wiki/Fortune%27s_algorithm
