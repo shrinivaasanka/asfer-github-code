@@ -80,6 +80,7 @@ import seaborn
 import pandas
 import json 
 from geopy.distance import geodesic,great_circle
+from GISLiveTraffic import tomtom_live_traffic
 
 mplstyle.use('fast')
 shapely.speedups.disable()
@@ -191,6 +192,14 @@ def urbansprawl_gini_coefficient(urbansprawldata):
     giniindex = sumxdiffy / (2*(len(urbansprawldata)-nans)*sumx)
     print("urbansprawl_gini_coefficient(): Gini Index of the dataset = ",giniindex)
     return giniindex
+
+def urban_sprawl_live_traffic(tomtomkey=None,herekey=None,bbox=None,longlat=None):
+    if tomtomkey is not None:
+        if bbox is not None: 
+             jsonret=tomtom_live_traffic(tomtomkey,boundingbox=bbox)
+        if longlat is not None:
+             jsonret=tomtom_live_traffic(tomtomkey,longlat=longlat)
+    print("urban_sprawl_live_traffic(): live traffic JSON = ",jsonret)
 
 def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,address=None,radius=1000,defaultcapacity=1,travel_speed=30,trip_times=[10,15,20,25,30],maxelevationpoints=10):
     if cityname is not None:
@@ -884,5 +893,8 @@ if __name__ == "__main__":
     #r3data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_E2030_GLOBE_R2023A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2023A",delineationparams=[0.01,0.01,0.01,0.01,0.01,0.01,16079611,0.01,200,0.01,(77.4479607,12.985801)])
     
     #Chennai Metropolitan Area - NASA WorldView NightLights - 11 November 2023 - kmeans contour segment clustering analysis
-    seg16=ImageGraph_Keras_Theano.image_segmentation("testlogs/NASANightLights_11November2023.jpeg")
-    ImageGraph_Keras_Theano.contours_kmeans_clustering("testlogs/NASANightLights_11November2023.jpeg",seg16)
+    #seg16=ImageGraph_Keras_Theano.image_segmentation("testlogs/NASANightLights_11November2023.jpeg")
+    #ImageGraph_Keras_Theano.contours_kmeans_clustering("testlogs/NASANightLights_11November2023.jpeg",seg16)
+    tomtomkey='00cKrkjfS62WPuchRmUc6Q5RAJw80hO2'
+    urban_sprawl_live_traffic(tomtomkey=tomtomkey,bbox=[12.439259,79.271851,13.568572,80.351257])
+    urban_sprawl_live_traffic(tomtomkey=tomtomkey,longlat=[12.439259,79.271851])
