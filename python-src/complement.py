@@ -88,6 +88,7 @@ def complement_range_avoid_infinitely_often(function,funcdomain,universalrange):
     print("function domain:",set(funcdomain))
     print("function range:",set(funcrange))
     print("range avoidance:",rangeavoidance)
+    complement_diophantine(rangeavoidance,interpol_algorithm="polyfit")
     return rangeavoidance
 
 def toint(primestr):
@@ -248,5 +249,6 @@ if __name__ == "__main__":
     #complement_diophantine(nonsquares,interpol_algorithm="lagrange")
     #diophantine_factorization_pell_equation(1, 989295)
     #diophantine_factorization_pell_equation(1, -1)
-    complement_range_avoid_infinitely_often(lambda x: x*x - x + 1,list(range(10)),list(range(100)))
-    complement_range_avoid_infinitely_often(lambda x: x*x,list(range(10)),list(range(100)))
+    #complement_range_avoid_infinitely_often(lambda x: x*x - x + 1,list(range(10)),list(range(50)))
+    #complement_range_avoid_infinitely_often(lambda x: x*x,list(range(10)),list(range(50)))
+    complement_range_avoid_infinitely_often(lambda x: 2*x,list(range(50)),list(range(50)))
