@@ -30,18 +30,31 @@ def here_live_traffic(key,bearertoken,boundingbox=[12.439259,79.271851,13.568572
     bs = BeautifulSoup(page.text,"lxml")
     print(bs)
 
-def tomtom_live_traffic(key,boundingbox=None,longlat=None):
+def tomtom_live_traffic(key,boundingbox=None,longlat=None,apiversion=4):
     if boundingbox is not None:
-        incidentrequest=f'https://api.tomtom.com/traffic/services/4/incidentDetails/s3/'+str(boundingbox[0])+'%2C'+str(boundingbox[1])+'%2C'+str(boundingbox[2])+'%2C'+str(boundingbox[3])+'/22/-1/json?key='+key+'&projection=EPSG4326&originalPosition=true'
-        print("Traffic Incidents for bounding box:",incidentrequest)
-        page = requests.get(incidentrequest)
-        jsonret=json.dumps(page.json(),indent=4)
+        #https://api.tomtom.com/traffic/services/5/incidentDetails?key={Your_Api_Key}&bbox=4.8854592519716675,52.36934334773164,4.897883244144765,52.37496348620152&fields={incidents{type,geometry{type,coordinates},properties{iconCategory}}}&language=en-GB&t=1111&timeValidityFilter=present
+        if apiversion == 4:
+            incidentrequest_v4=f'https://api.tomtom.com/traffic/services/4/incidentDetails/s3/'+str(boundingbox[0])+'%2C'+str(boundingbox[1])+'%2C'+str(boundingbox[2])+'%2C'+str(boundingbox[3])+'/22/-1/json?key='+key+'&projection=EPSG4326&originalPosition=true'
+            print("Traffic Incidents for bounding box-version 4:",incidentrequest_v4)
+            page = requests.get(incidentrequest_v4)
+            jsonret=json.dumps(page.json(),indent=4)
+            print(jsonret)
+            return jsonret
+        else:
+            #incidentrequest_v5=f'https://api.tomtom.com/traffic/services/5/incidentDetails?key='+key+'&bbox='+str(boundingbox[1])+','+str(boundingbox[0])+','+str(boundingbox[3])+','+str(boundingbox[2])+'&fields={incidents{type,geometry{type,coordinates},properties{iconCategory}}}&language=en-GB&t=1111&timeValidityFilter=present'
+            incidentrequest_v5=f'https://api.tomtom.com/traffic/services/5/incidentDetails?key='+key+'&bbox='+str(boundingbox[1])+','+str(boundingbox[0])+','+str(boundingbox[3])+','+str(boundingbox[2])
+            print("Traffic Incidents for bounding box-version 5:",incidentrequest_v5)
+            page = requests.get(incidentrequest_v5)
+            jsonret=json.dumps(page.json(),indent=4)
+            print(jsonret)
+            return jsonret
     if longlat is not None:
         flowrequest=f'https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key='+key+'&point='+str(longlat[0])+','+str(longlat[1])
         print("Traffic flow for longitude-latitude:",flowrequest)
         page = requests.get(flowrequest)
         jsonret=json.dumps(page.json(),indent=4)
-    return jsonret
+        print(jsonret)
+        return jsonret
 
 if __name__=="__main__":
     #here_live_traffic()
@@ -53,4 +66,6 @@ if __name__=="__main__":
     herebearertoken='eyJhbGciOiJSUzUxMiIsImN0eSI6IkpXVCIsImlzcyI6IkhFUkUiLCJhaWQiOiJ2UzVpMm9wNDVSbGFQVzJHRkt4OCIsImlhdCI6MTcwNDg4NTQ4NywiZXhwIjoxNzA0OTcxODg3LCJraWQiOiJqMSJ9.ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJRMEpETFVoVE5URXlJbjAuLm9Jejg3WU1vRmNIQlh3UXBfa21GdUEudVZUcTRaLWxxVVdUOVQtdjVPYm9WZVRqYmxESHRjcUVpRFN3TzZIY29fakdFOHNmWDRncnlzdTZ4bUdIek9BS1hNWWhVZVg2UG5yTTV3UWFRaU5CTXBmWFFqdE9JOUdkNXFSd0llSFI5My1lZ1RCc3hrY3dkZjRzdkdXV05JSTM4R3JZMS1NN0N2U1NyTklVc2FPaEk3WTJIcHZfdW9naVhPekhFdTJiaWhYOVMwTzdiSXVLZkxFVmRzdVFEaTdhOXRMbFh6M3FsM1VXekI1UHowMERvUE1QYWRKTmdzekFzbncweUU0aG9pNC5qU19ETVZDdjBqV0pQdzdLeDQxTS01MFpvaHVKdkp1UW1ZOUhxaGUyb2ZF.W7WZa_xW2araKc1vP3UpPjyVTNao-BfzdeZPl7gkx3SKbrMi_AUR3KhzcxqdmJnmgY8rJnUPo0s6W_MO6GmETwNFjMl8zPYNX6ILTNk_ncx6LeZHyxW9I2PVlBvMVrP1BncdbPe7g0rX7-D1coqs5xx4yQx9wBeu0KYVEirPLDz-lyRT9h8ro-g-q5o25-XgsY2ZAJyzKWGtMMuUQgQibWMfh3CrEmCuoXyInYXOx2qlJSZCPB5RvcTNqs9xcctFgDKQIS6dmGCpEdTv0uKcRGRT-jdHaEfUXZFeXaCJ0UYI0_0ra1Gu5LZTiMe89uGkle5TEtcNhFhjEQXtrtsJ0w'
     here_live_traffic(key=herekey,bearertoken=herebearertoken,boundingbox=[12.439259,79.271851,13.568572,80.351257])
     tomtom_live_traffic(tomtomkey,boundingbox=[12.439259,79.271851,13.568572,80.351257])
+    tomtom_live_traffic(tomtomkey,boundingbox=[10.948860,79.348497,10.991413,79.421453],apiversion=4)
+    tomtom_live_traffic(tomtomkey,boundingbox=[10.948860,79.348497,10.991413,79.421453],apiversion=5)
     tomtom_live_traffic(tomtomkey,longlat=[12.439259,79.271851])
