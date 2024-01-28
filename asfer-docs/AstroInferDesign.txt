@@ -22959,6 +22959,8 @@ root      5674  0.0  0.0      0     0 ?        S    12:13   0:00 [kworker/1:0]
 If kworkers are going crazy (using too much cpu), there are two types of possible problems: Something being scheduled in rapid succession A single work item that consumes lots of cpu cycles The first one can be tracked using tracing: 
 	$ echo workqueue:workqueue_queue_work > /sys/kernel/tracing/set_event
 	$ cat /sys/kernel/tracing/trace_pipe > out.txt  ......" - workqueue information is very much essential for Survival Index OS scheduler concept implementation in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/Programming/Python/code/SurvivalIndexScheduler.py to group the processes or threads by their deadlines (timeouts defined by SCHED_DEADLINE policy)
+1459.10 Linux kernel drgn worqueue tools - https://github.com/torvalds/linux/blob/master/tools/workqueue/wq_dump.py and https://github.com/torvalds/linux/blob/master/tools/workqueue/wq_monitor.py 
+1459.11 Meta drgn linux kernel debugger - https://github.com/osandov/drgn 
 
 -------------------------------------------------------------------------------------------------------------------------------
 1460. (THEORY and FEATURE) NeuronRainApps - Sports Analytics - Sabermetrics - Concept Implementation of Parallel Cricket (PRICKET) simulator - related to 754 and all sections on Intrinsic Performance Ratings and Sports Analytics, Streaming Histogram analytics, Partition distance measures, Random graph streams, Logic and Game theory, Generalized Geography and PSPACE-completeness, Parity games - 21 November 2023
