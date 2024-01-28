@@ -23256,3 +23256,16 @@ PolyFit Least Squares (Vandermonde) Interpolated Degree 5 Polynomial: [-1.053026
 References:
 -----------
 1474.4 Range Avoidance for Low-Depth Circuits and Connections to Pseudorandomness - [Guruswami-Lyu-Wang] - https://drops.dagstuhl.de/storage/00lipics/lipics-vol245-approx-random2022/LIPIcs.APPROX-RANDOM.2022.20/LIPIcs.APPROX-RANDOM.2022.20.pdf - Range Avoidance of Logdepth circuits is useful in rigid matrices (which are far from low rank matrix) and coding theory - "..... In the range avoidance problem, the input is a multi-output Boolean circuit with more outputs than inputs, and the goal is to find a string outside its range (which is guaranteed to exist). We show that well-known explicit construction questions such as finding binary linear codes achieving the Gilbert-Varshamov bound or list-decoding capacity, and constructing rigid matrices, reduce to the range avoidance problem of log-depth circuits, ....."
+
+------------------------------------------------------------------------------------------------------------------------------
+1475. (THEORY and FEATURE) Software Analytics - Kernel Analytics and Scheduler Analytics - workqueue script implementation - related to 561,1191,619,770,906,911,771,1192,1443,1459 and all sections on Program Analysis, AsFer-USBmd-VIRGO-KingCobra FTrace kernel callgraph analysis - Valgrind-Callgrind-KCacheGrind-Flamegraph userspace callgraph analysis, SATURN control flow analysis of VIRGO linux kernel, Software Analytics, Pandemic model of Botnet-Defense adversarial Game theoretic security, Cybercrime analytics, Anti-Malware,Anti-Ransomware,Anti-Theft and Anti-Plagiarism tools, KML, LAKE,Intrusion Prevention-Detection Systems(IDS and IPS),Anomaly Detection - 28 January 2024
+------------------------------------------------------------------------------------------------------------------------------
+1475.1 New bash script python-src/software_analytics/workqueue.sh has been added to NeuronRain AstroInfer repositories which takes a snapshot of CPU workqueues at any instant by kernel workqueue trace subsystem:
+        echo workqueue:workqueue_queue_work > /sys/kernel/tracing/set_event
+        cat /sys/kernel/tracing/trace_pipe > workqueue.log
+1475.2 Above script has to be interrupted to dump workqueue so far to python-src/software_analytics/workqueue.log from which per cpu workqueue can be grepped - e.g workqueue for cpu 2 along with thread and function info is chronologically dumped as:
+          <idle>-0       [002] DNs3.  9407.922327: workqueue_queue_work: work struct=00000000fa8fa0a3 function=cfg80211_wiphy_work [cfg80211] workqueue=events req_cpu=8192 cpu=2
+          <idle>-0       [002] d.h3.  9408.024635: workqueue_queue_work: work struct=000000009eebf005 function=rtl_lps_change_work_callback [rtlwifi] workqueue=events req_cpu=8192 cpu=2
+          <idle>-0       [002] DNs3.  9408.024735: workqueue_queue_work: work struct=00000000fa8fa0a3 function=cfg80211_wiphy_work [cfg80211] workqueue=events req_cpu=8192 cpu=2
+          <idle>-0       [002] d.s2.  9408.066159: workqueue_queue_work: work struct=00000000c9c3d1d9 function=psi_avgs_work workqueue=events req_cpu=8192 cpu=2
+          <idle>-0       [002] d.h4.  9408.092196: workqueue_queue_work: work struct=0000000087ec34eb function=console_callback workqueue=events req_cpu=8192 cpu=2
