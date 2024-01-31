@@ -9881,6 +9881,7 @@ Possibility 5 - Special - One of the complementary sets is recursively enumerabl
 One of the sets A is recursively enumerable and thus has a diophantine polynomial. But there exists a complement B=S-A such that A is not recursive => There is no algorithm for construction of diophantine(A)
 
 Proof in one line: Any set is a complementary set of some other set and thus any complementary set which is recursively enumerable but not recursive has a diophantine equation, and thus undecidable by an algorithm.
+Corollary: By MRDP theorem, every recursively enumerable(RE) set has a diophantine representation. Given an RE set, an algorithm must interpolate the points in set by either univariate or multivariate polynomial which is a diophantine but "algorithm or decision procedure" is for recursive sets only and language to interpolation algorithm is an RE set which is a contradiction implying undecidability. But recent result MIP*=RE implies multiparty interactive quantum provers-verifiers could decide interpolation of RE sets.
 
 Construction of a complement function for complementary set:
 ------------------------------------------------------------
