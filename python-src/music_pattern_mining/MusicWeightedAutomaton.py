@@ -53,12 +53,18 @@ def music_weighted_automaton(name=None,sample=None,splarray=None,rows=10,columns
     #src.render(name+"_MusicWeightedAutomaton.gv",view=True)
     return dotfilename 
 
-def audio_to_notes_samples(audio,dur=None):
-    encodedict={'A':0,'B':1,'C':2,'D':3,'E':4,'F':5,'G':6}
+def audio_to_notes_samples(audio,dur=None,encodedict=None,genre="WesternClassical",raaga=None):
+    #encodedict={'A':0,'B':1,'C':2,'D':3,'E':4,'F':5,'G':6}
     if dur is not None:
        waveform,srate=librosa.load(audio,duration=dur)
     freq=np.abs(librosa.stft(waveform))
-    notes=librosa.hz_to_note(freq)
+    if genre=="WesternClassical":
+        notes=librosa.hz_to_note(freq)
+        print("WesternClassical notes:",notes)
+    if genre=="Carnatic":
+        notes=librosa.hz_to_svara_c(freq,Sa=66,mela=raaga)
+        print("Carnatic notes:",notes)
+    print("encodedict:",encodedict)
     notestrings=[]
     notesencodedarray=[]
     notestringsdict=defaultdict(int)
@@ -66,10 +72,18 @@ def audio_to_notes_samples(audio,dur=None):
         notestring=""
         notesencoded=[]
         for c in r:
-            notestring = notestring + c[0]
-            notesencoded.append(encodedict[c[0]])
+            if genre=="WesternClassical":
+                notestring = notestring + c[0]
+                notesencoded.append(encodedict[c[0]])
+            if genre=="Carnatic":
+                notestring = notestring + c
+                try:
+                    notesencoded.append(encodedict[c])
+                except:
+                    notesencoded.append(0) 
         notestrings.append(notestring) 
         notesencodedarray.append(notesencoded)
+    print("notesencoded:",notesencodedarray)
     for n in notestrings:
         notestringsdict[n] += 1
     return (notestringsdict, notesencodedarray) 

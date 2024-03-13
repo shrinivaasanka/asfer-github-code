@@ -263,9 +263,9 @@ def percussion_synthesis(virtual_piano_notes=None,percussions=["Saxophone","Guit
     score.show("text",addEndTimes=True)
     score.write('midi',"./music21_percussion_for_piano.midi")
     os.system("fluidsynth -ni /usr/share/fluidr3mono-gm-soundfont/FluidR3Mono_GM.sf3 ./music21_percussion_for_piano.midi -F ./music21_percussion_for_piano.wav -r 44100")
-    playsound("./music21_percussion_for_piano.wav")
+    #playsound("./music21_percussion_for_piano.wav")
 
-def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False,virtual_piano_notes=None,tempo=1,amplitude=4096,musicgenre="WesternClassical",musicwfa_notes_weights=None):
+def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False,virtual_piano_notes=None,tempo=1,amplitude=4096,musicgenre="WesternClassical",musicwfa_notes_weights=None,playsynthesis=False):
     music_interpol_poly=[]
     synthesized_poly=0
     if training_music is None and virtual_piano_notes is not None:
@@ -303,10 +303,12 @@ def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interp
         #plt.figure(figsize=(14, 5))
         if musicgenre=="WesternClassical":
             write("virtual_piano_music.WesternClassical.wav", samplerate, audio.astype(np.int16))
-            playsound("virtual_piano_music.WesternClassical.wav")
+            if playsynthesis == True:
+                playsound("virtual_piano_music.WesternClassical.wav")
         if musicgenre=="Carnatic":
             write("virtual_piano_music.Carnatic.wav", samplerate, audio.astype(np.int16))
-            playsound("virtual_piano_music.Carnatic.wav")
+            if playsynthesis == True:
+                playsound("virtual_piano_music.Carnatic.wav")
         #waveform, srate = librosa.load("virtual_piano_music.wav")
         #librosa.display.waveshow(waveform)
         #plt.show()
@@ -373,12 +375,14 @@ def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interp
         npsynth = np.asarray(synth_music)
         if musicgenre=="WesternClassical":
             write("virtual_piano_music.WesternClassical.wav", samplerate, npsynth.astype(np.int16))
-            playsound("virtual_piano_music.WesternClassical.wav")
+            if playsynthesis:
+                playsound("virtual_piano_music.WesternClassical.wav")
         if musicgenre=="Carnatic":
             write("virtual_piano_music.Carnatic.wav", samplerate, npsynth.astype(np.int16))
-            playsound("virtual_piano_music.Carnatic.wav")
+            if playsynthesis:
+                playsound("virtual_piano_music.Carnatic.wav")
 
-def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=500, weightedautomatadotfile=None,state2notedict=None,genre="WesternClassical",wfaweight_threshold=0.0,instruments=["Violin","Flute"]):
+def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=500, weightedautomatadotfile=None,state2notedict=None,genre="WesternClassical",wfaweight_threshold=0.0,instruments=["Saxophone","Guitar","Trumpet","Violin","SteelDrum","Flute"],format="WAV",playsynthesis=False):
     amplitude = np.iinfo(np.int16).max
     if function != None:
         print("###################################################")
@@ -448,10 +452,19 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
             if state2notedict is None:
                 state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B'}
             synthesized_notes=[state2notedict[start_node]]
-            wfatransitionweights=[]
             node=start_node
+            prev_successors=None
             while iterations < periodicity :
+                 print("iterations:",iterations)
+                 wfatransitionweights=[]
                  successors=list(musicwfagraph.successors(node))
+                 if prev_successors is not None and set(successors)==set(prev_successors):
+                    print("successors:",successors)
+                    print("prev_successors:",prev_successors)
+                    nodenp=np.random.choice(musicwfagraph.nodes(),1)
+                    node=nodenp[0]
+                    print("node:",node)
+                    successors=list(musicwfagraph.successors(node))
                  if len(successors) == 0:
                     node=edgeslist[np.random.randint(len(edgeslist),size=1)[0]][0]
                     successors=list(musicwfagraph.successors(node))
@@ -460,8 +473,10 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
                  for s in successors:
                     wfatransitionweight=abs(float(musicwfagraph[node][s]["label"].split(":")[1][:-1]))
                     print("Music WFA successor transition weight:",wfatransitionweight)
-                    if wfatransitionweight >= wfaweight_threshold:
-                        wfatransitionweights.append(wfatransitionweight)
+                    #if wfatransitionweight >= wfaweight_threshold:
+                    #    wfatransitionweights.append(wfatransitionweight)
+                    wfatransitionweights.append(wfatransitionweight)
+                 print("wfatransitionweights:",wfatransitionweights)
                  if len(wfatransitionweights) > 1:
                     print(sum(wfatransitionweights))
                     if sum(wfatransitionweights) != 1.0:
@@ -482,31 +497,40 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
                            if wfatransitionweights[n] == 0.0:
                               wfatransitionweights_np[n]=((1.0-sum(wfatransitionweights))/zeroelements)
                     print("wfatransitionweights_np:",wfatransitionweights_np)
-                    next_random_node_np=np.random.choice(successors,1,p=wfatransitionweights_np.tolist())
+                    print("successors:",successors)
+                    next_random_node_np=np.random.choice(successors,1,p=wfatransitionweights_np[:len(successors)].tolist())
                     print("next_random_node:",next_random_node_np[0])
                     next_random_node=str(next_random_node_np[0])
                     synthesized_notes.append(state2notedict[next_random_node])
                     node=next_random_node
-                    iterations+=1
-                    wfatransitionweights=[]
+                 prev_successors=successors
+                 iterations+=1
             print("Notes synthesized by random walk on music WFA graph:",synthesized_notes)
             if len(wfatransitionweights_np) > 0:
                 pianotrack=Thread(target=music_synthesis,kwargs={'virtual_piano_notes':synthesized_notes,'tempo':0.35,'musicgenre':genre,'musicwfa_notes_weights':wfatransitionweights_np.tolist()})
             else:
                 pianotrack=Thread(target=music_synthesis,kwargs={'virtual_piano_notes':synthesized_notes,'tempo':0.35,'musicgenre':genre,'musicwfa_notes_weights':None})
             pianotrack.start()
-            percussiontrack=Thread(target=percussion_synthesis,kwargs={'virtual_piano_notes':synthesized_notes,'percussions':instruments})
-            percussiontrack.start()
+            if genre=="WesternClassical":
+                percussiontrack=Thread(target=percussion_synthesis,kwargs={'virtual_piano_notes':synthesized_notes,'percussions':instruments})
+                percussiontrack.start()
+                percussiontrack.join()
             pianotrack.join()
-            percussiontrack.join()
             if genre == "WesternClassical":
                 piano=AudioSegment.from_file("virtual_piano_music.WesternClassical.wav")
             else:
                 piano=AudioSegment.from_file("virtual_piano_music.Carnatic.wav")
-            percussion=AudioSegment.from_file("music21_percussion_for_piano.wav")
-            mixing=piano.overlay(percussion)
-            mixing.export("music21_piano_with_percussions.mp3",format="mp3")
-            play(mixing)
+            if genre=="WesternClassical":
+                percussion=AudioSegment.from_file("music21_percussion_for_piano.wav")
+                mixing=piano.overlay(percussion)
+                if format == "MPEG":
+                    mixing.export("music21_piano_with_percussions.mp3",format="mp3")
+                    if playsynthesis:
+                        play(mixing)
+                else:
+                    mixing.export("music21_piano_with_percussions.wav",format="wav")
+                    if playsynthesis:
+                        playsound("music21_piano_with_percussions.wav")
         else:
             print("###################################################")
             print("Automaton to Audio")
@@ -575,8 +599,11 @@ def audio_merit(notes):
         "".join(notes))
     print(("Merit of Audio - Minimum Descriptive Length and Entropy:", mdl_entropy_merit))
 
-def music_weighted_automaton_from_waveform(music_clip,duration=10):
-    sample, notesencoded=audio_to_notes_samples(music_clip,duration)
+def music_weighted_automaton_from_waveform(music_clip,duration=10,note2statedict=None,genre="WesternClassical",raaga=None):
+    if genre == "WesternClassical":
+        sample, notesencoded=audio_to_notes_samples(music_clip,duration,note2statedict,genre="WesternClassical")
+    if genre == "Carnatic":
+        sample, notesencoded=audio_to_notes_samples(music_clip,duration,note2statedict,genre="Carnatic",raaga=raaga)
     print("Samples:")
     print(sample)
     print("Notes encoded:")
@@ -677,14 +704,16 @@ if __name__ == "__main__":
     #music_weighted_automaton_from_waveform("./virtual_piano_music.WesternClassical.wav")
     #music_weighted_automaton_from_waveform("./virtual_piano_music.Carnatic.wav")
     #dotfile1=music_weighted_automaton_from_waveform("testlogs/JSBach_Musicological_Offering.mp4")
-    #dotfile2=music_weighted_automaton_from_waveform("testlogs/Bach_Flute_Sonata_EFlat.mp4")
-    #dotfile3=music_weighted_automaton_from_waveform("testlogs/054-SBC-Aanandhamridhakarshini.mp4")
+    dotfile2=music_weighted_automaton_from_waveform("testlogs/Bach_Flute_Sonata_EFlat.mp4",duration=12,note2statedict={'C':0,'D':1,'E':2,'F':3,'G':4,'A':5,'B':6,'A♯':7,'C♯':8,'D♯':9,'F♯':10,'G♯':11},genre="WesternClassical")
+    #dotfile3=music_weighted_automaton_from_waveform("testlogs/054-SBC-Aanandhamridhakarshini.mp3",note2statedict={'S':0, 'R₁':1, 'R₂':2, 'R₃':3,'G₁':4, 'G₂':5, 'G₃':6, 'M₁':7, 'M₂':8, 'P':9, 'D₁':10, 'D₂':11, 'D₃':12, 'N₁':13,'N₂':14, 'N₃':15, 'Ṣ':16,'G̣₃':17,'G̣₂':18,'Ṛ₁':19,'Ṃ₂':20,'Ḍ₁':21,'P̣':22,'Ṛ₂':23,'Ḍ₂':24,'Ḍ₃':25,'Ṇ₃':26},genre="Carnatic",raaga="chitrambari")
     #music_weighted_automata_analytics([dotfile1,dotfile2,dotfile3])
 
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
-    #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃'},genre="Carnatic")
-    #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/Bach_Flute_Sonata_EFlat.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical",instruments=["Guitar"])
+
+    #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp3_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃','16':'Ṣ','17':'G̣₃','18':'G̣₂','19':'Ṛ₁','20':'Ṃ₂','21':'Ḍ₁','22':'P̣','23':'Ṛ₂','24':'Ḍ₂','25':'Ḍ₃','26':'Ṇ₃'},genre="Carnatic",instruments=["Violin"])
+    notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/Bach_Flute_Sonata_EFlat.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical",instruments=["Violin"])
+
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
-    bm=audio_to_bitmatrix("virtual_piano_music.WesternClassical.wav",dur=10)
-    features1=audio_features(audiofilename="virtual_piano_music.WesternClassical.wav",signal_bitmap=bm)
-    features2=audio_features(audiofilename="virtual_piano_music.WesternClassical.wav",signal_bitmap=bm,timbreaveragefeatures=True)
+    #bm=audio_to_bitmatrix("virtual_piano_music.WesternClassical.wav",dur=10)
+    #features1=audio_features(audiofilename="virtual_piano_music.WesternClassical.wav",signal_bitmap=bm)
+    #features2=audio_features(audiofilename="virtual_piano_music.WesternClassical.wav",signal_bitmap=bm,timbreaveragefeatures=True)
