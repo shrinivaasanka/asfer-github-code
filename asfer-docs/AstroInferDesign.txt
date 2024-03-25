@@ -23339,3 +23339,29 @@ References:
 	testlogs/AudioToBitMatrix.log.MusicSynthesizer.WesternClassical.13March2024
 1478.12 Multiple new clauses specific to Carnatic genre earlier has enabled better Carnatic music WFA-Recurrent Neural Network AI synthesis. Presently only first few seconds of the music clip are analyzed while learning WFA-RNN for it (which has to be the entire clip in theory for accuracy). 
 1478.13 This update resolves JIRA issue - https://krishnairesearch.atlassian.net/browse/NEUR-36
+
+----------------------------------------------------------------------------------------------------------------------------------------
+1479. (THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 25 March 2024 - N-Body gravitational acceleration analysis of date range 25 March 2024-30 April 2024 and implementation of Barometric Pressure Formula for variable gravities - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368,1388,1404,1455,1456,1463 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change-Adaptive Fourier Neural Operator-FourCastNet, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+----------------------------------------------------------------------------------------------------------------------------------------
+1479.1 Date range 25/03/2024 to 30/04/2024 has been analyzed for N-Body gravitational force fluctuations for celestial bodies Sun-Mercury-Venus and a steep decline in Mercury gravity is conspicuous during this range implying rise in specific humidity as per 1463.6 (due to inverse relationship between gravity and specific humidity) and an associated cooling effect in atmosphere that might be conducive for low-pressure troughs,UAC,LAC and Cyclonic circulations during mid-April 2024 with high probability (and location of such circulations could be most likely Arabian sea where South West monsoon sets). As far as Indian subcontinent is concerned, April-May 2024 is peak-summer and brings pre-South West monsoon showers. 
+1479.2 Barometric Pressure Formula has been implemented as a function barometric_pressure(sealevelpressure=29.92,mass=28.95,variablegravities=[],height=100,boltzmannconstant=1.380649,temperature=35) for variable gravity L2 norms obtained from N-Body gravitational model and pressure variations are computed for time-variable gravities. Barometric pressures for date range are plotted as graph individually corresponding to each planet pair. As per barometric formula, atmospheric pressure spikes during this date range due to Mercury inversely proportional to variable gravity g. Parameter default values for Barometric formula are set based on reference links 1479.4 and 1479.5.
+1479.3 Logs,Gravity and Barometric pressure plots for earlier date window and bodies are written to:
+	testlogs/GISWeatherAnalytics.BarometricPressure.Mercury-Venus.2024-3-25#2024-4-30.jpg
+	testlogs/GISWeatherAnalytics.BarometricPressure.Sun-Mercury.2024-3-25#2024-4-30.jpg
+	testlogs/GISWeatherAnalytics.BarometricPressure.Sun-Venus.2024-3-25#2024-4-30.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Venus.2024-3-25#2024-4-30.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Sun-Mercury.2024-3-25#2024-4-30.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Sun-Venus.2024-3-25#2024-4-30.jpg
+	testlogs/GISWeatherAnalytics.log.25March2024
+
+References:
+----------
+1479.4 Barometric Pressure Formula - http://hyperphysics.phy-astr.gsu.edu/hbase/Kinetic/barfor.html - P_h= P_0 * e^{{-mgh}/{kT}} 
+P_h	=	pressure at height h 
+P_0	=	sea level pressure 
+g	=	acceleration due to gravity 
+k	=	Boltzmann's constant (ideal gas constant divided by Avogadro's number) 
+T	=	absolute temperature 
+m	=	mass of one air molecule
+1479.5 Sea level air pressure - https://www.noaa.gov/jetstream/atmosphere/air-pressure
+1479.6 Pre-monsoon showers or Mango showers in India - March-April - https://en.wikipedia.org/wiki/Mango_showers
