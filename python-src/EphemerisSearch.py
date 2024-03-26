@@ -99,9 +99,9 @@ def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds):
           skycoord1 = SkyCoord(x=obj1['x'], y=obj1['y'], z=obj1['z'], unit='au', frame="icrs", representation_type='cartesian')
           skycoord2 = SkyCoord(x=obj2['x'], y=obj2['y'], z=obj2['z'], unit='au', frame="icrs", representation_type='cartesian')
           separation = skycoord1.separation(skycoord2)
-          print("Angular separation of " + bodypair + " on " + date.iso + ":",separation)
+          print("SkyCoord separation(): Angular separation of " + bodypair + " on " + date.iso + ":",separation)
           if separation.is_within_bounds(angularsepbounds[0],angularsepbounds[1]):
-              print("Angular separation of " + bodypair + " matches bounds for date:",date.iso)
+              print("SkyCoord separation(): Angular separation of " + bodypair + " matches bounds for date:",date.iso)
           datetimetoks=date.iso.split(" ")
           datetoks=datetimetoks[0].split("-")
           timetoks=datetimetoks[1].split(":")
@@ -335,7 +335,7 @@ class EphemerisSearch(object):
             print("SkyField - sky_on_datetime(): Long-Lat position of ",observed," from ",observedfrom," on ",datetime," (Year-Month-Day-Hour-Minute-Second):",astrometric.apparent().ecliptic_latlon())
             return astrometric.apparent().ecliptic_latlon()
     
-    def extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=False,maxiterations=200):
+    def extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=True,angularsepbounds=(0,60),maxiterations=200):
         Latlons=[]
         argdatesofEWEs=datesofEWEs
         if datesofEWEs == "Earthquakes":
@@ -384,8 +384,8 @@ class EphemerisSearch(object):
         angular_separation=defaultdict(list)
         if angularsep:
             for date in datesofEWEs:
-                if date[0] >= 1899 and date[0] <= 2053:
-                    date_t=ts.utc(date[0],date[1],date[2],date[3],date[4],date[5])
+                if int(date[0]) >= 1899 and int(date[0]) <= 2053:
+                    date_t=ts.utc(int(date[0]),int(date[1]),int(date[2]),int(date[3]),int(date[4]),0)
                     earth=planets["earth"].at(date_t)
                     positions={"Sun":earth.observe(planets["sun"]),"Moon":earth.observe(planets["moon"]),"Mars":earth.observe(planets["mars"]),"Mercury":earth.observe(planets["mercury"]),"Jupiter":earth.observe(planets["jupiter barycenter"]),"Venus":earth.observe(planets["venus barycenter"]),"Saturn":earth.observe(planets["saturn barycenter"]),"Uranus":earth.observe(planets["uranus barycenter"]),"Neptune":earth.observe(planets["neptune barycenter"]),"Pluto":earth.observe(planets["pluto barycenter"])}
                     for k1,v1 in positions.items():
@@ -393,9 +393,11 @@ class EphemerisSearch(object):
                             if k1 != k2 and v1 != v2:
                                 if k1+"-"+k2 not in positions.keys() and k2+"-"+k1 not in positions.keys():
                                     #print("Angular separation between ",k1," and ",k2,":",v1.separation_from(v2))
-                                    angular_separation[k1+"-"+k2].append(v1.separation_from(v2))
+                                    angular_separation[k1+"-"+k2].append((v1.separation_from(v2),date))
             for k3,v3 in angular_separation.items():
-                    print("Angular separations for ",k3,":",v3)
+                print("SkyField separation_from(): Angular separations for ",k3,":",v3)
+                if v3[0][0].degrees > angularsepbounds[0] and v3[0][0].degrees < angularsepbounds[1]:
+                    print("SkyField separation_from(): Angular separation of " + k3 + " matches bounds for date:",v3[0][1])
         AU = 149597870700
         D = 24*60*60
         epsilon = 0.01
