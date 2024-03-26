@@ -23368,3 +23368,276 @@ T	=	absolute temperature
 m	=	mass of one air molecule
 1479.5 Sea level air pressure - https://www.noaa.gov/jetstream/atmosphere/air-pressure
 1479.6 Pre-monsoon showers or Mango showers in India - March-April - https://en.wikipedia.org/wiki/Mango_showers
+
+----------------------------------------------------------------------------------------------------------------------------------------
+1480. (JIRA,THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 26 March 2024 - N-Body gravitational acceleration analysis of date range 25 March 2024-30 April 2024 and implementation of two angular separations based on SkyField and SkyCoord - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368,1388,1404,1455,1456,1463,1479 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change-Adaptive Fourier Neural Operator-FourCastNet, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+----------------------------------------------------------------------------------------------------------------------------------------
+1480.1 python-src/EphemerisSearch.py has been updated to rectify a major problem in computing angular separation of celestial bodies. Existing angular separation bounds matching is based on SkyCoord and was showing abnormally high separations for some planet pairs in testlogs/GISWeatherAnalytics.log.25March2024 as below:
+	Angular separation of Mercury-Venus on 2024-04-14 17:30:00.000: [141d11m25.16627657s]
+	Angular separation of Mercury-Venus on 2024-04-15 17:30:00.000: [139d40m15.33897681s]
+	Angular separation of Mercury-Venus on 2024-04-16 17:30:00.000: [138d12m21.7546558s]
+	Angular separation of Mercury-Venus on 2024-04-17 17:30:00.000: [136d47m27.85621607s]
+	Angular separation of Mercury-Venus on 2024-04-18 17:30:00.000: [135d25m17.75866623s]
+	Angular separation of Mercury-Venus on 2024-04-19 17:30:00.000: [134d05m36.20828426s]
+	Angular separation of Mercury-Venus on 2024-04-20 17:30:00.000: [132d48m08.53593406s]
+	Angular separation of Mercury-Venus on 2024-04-21 17:30:00.000: [131d32m40.60685829s]
+	Angular separation of Mercury-Venus on 2024-04-22 17:30:00.000: [130d18m58.76851742s]
+1480.2 Because of above problem new JIRA issue has been raised - https://krishnairesearch.atlassian.net/browse/NEUR-37 . Debug print statements for SkyCoord separation() are explicitly prefixed with "SkyCoord separation()".
+1480.3 Function extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=True,angularsepbounds=(0,60),maxiterations=200) has been extended to include new tuple parameter angularsepbounds set to default range of 0 to 60 degrees and angularsep flag has been defaulted to True.
+1480.4 Datetime values for SkyField separation_from() are cast to int for UTC object. Dictionary angular_separation has been updated to map planet pairs and a tuple of angular separation and respective date. 
+1480.5 Degrees of separation from Angle object of SkyField separation_from() are compared for angular separation bounds and printed as matches if within bounds with prefix "SkyField separation_from()".
+1480.6 Date range 25/03/2024-30/04/2024 are analyzed again for N-Body gravitation peaks and following are the 2 kinds of angular separation bound matches for Mercury-Venus for this date range - one from SkyCoord (abnormal) and other from SkyField (correct) - entire date range from 25/03/2024 to 29/04/2024 is within 60 degrees angular separation of Mercury-Venus and date range 3/4/2024 to 29/04/2024 is within 30 degrees angular separation of Mercury-Venus(Section 1358) based on SkyField which shows acute change in humidity (and possible precipitation) during April 2024 - angular seperation is lowest on 19 April 2024:
+-----------------------------------------------------------------------
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 37deg 09' 15.7">, ('2024', '03', '25', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '25', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 36deg 45' 24.8">, ('2024', '03', '26', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '26', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 36deg 14' 23.6">, ('2024', '03', '27', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '27', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 35deg 36' 03.3">, ('2024', '03', '28', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '28', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 34deg 50' 18.0">, ('2024', '03', '29', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '29', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 33deg 57' 05.3">, ('2024', '03', '30', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '30', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 32deg 56' 26.8">, ('2024', '03', '31', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '31', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 31deg 48' 28.1">, ('2024', '04', '01', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '01', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 30deg 33' 19.2">, ('2024', '04', '02', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '02', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 29deg 11' 15.2">, ('2024', '04', '03', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '03', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 27deg 42' 36.1">, ('2024', '04', '04', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '04', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 26deg 07' 47.8">, ('2024', '04', '05', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '05', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 24deg 27' 21.3">, ('2024', '04', '06', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '06', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 22deg 41' 53.2">, ('2024', '04', '07', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '07', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 20deg 52' 05.5">, ('2024', '04', '08', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '08', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 58' 44.4">, ('2024', '04', '09', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '09', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 17deg 02' 40.6">, ('2024', '04', '10', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '10', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 15deg 04' 47.6">, ('2024', '04', '11', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '11', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 13deg 06' 01.5">, ('2024', '04', '12', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '12', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 11deg 07' 20.9">, ('2024', '04', '13', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '13', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 09deg 09' 47.6">, ('2024', '04', '14', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '14', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 07deg 14' 32.0">, ('2024', '04', '15', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '15', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 05deg 23' 09.0">, ('2024', '04', '16', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '16', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 03deg 38' 43.8">, ('2024', '04', '17', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '17', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 02deg 11' 19.1">, ('2024', '04', '18', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '18', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 01deg 41' 50.2">, ('2024', '04', '19', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '19', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 02deg 37' 02.1">, ('2024', '04', '20', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '20', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 03deg 59' 32.0">, ('2024', '04', '21', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '21', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 05deg 25' 09.3">, ('2024', '04', '22', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '22', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 06deg 48' 35.5">, ('2024', '04', '23', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '23', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 08deg 08' 15.3">, ('2024', '04', '24', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '24', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 09deg 23' 32.4">, ('2024', '04', '25', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '25', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 10deg 34' 12.4">, ('2024', '04', '26', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '26', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 11deg 40' 10.9">, ('2024', '04', '27', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '27', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 12deg 41' 28.9">, ('2024', '04', '28', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '28', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 13deg 38' 10.9">, ('2024', '04', '29', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '29', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 37deg 09' 15.7">, ('2024', '03', '25', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '25', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 36deg 45' 24.8">, ('2024', '03', '26', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '26', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 36deg 14' 23.6">, ('2024', '03', '27', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '27', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 35deg 36' 03.3">, ('2024', '03', '28', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '28', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 34deg 50' 18.0">, ('2024', '03', '29', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '29', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 33deg 57' 05.3">, ('2024', '03', '30', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '30', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 32deg 56' 26.8">, ('2024', '03', '31', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '31', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 31deg 48' 28.1">, ('2024', '04', '01', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '01', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 30deg 33' 19.2">, ('2024', '04', '02', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '02', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 29deg 11' 15.2">, ('2024', '04', '03', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '03', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 27deg 42' 36.1">, ('2024', '04', '04', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '04', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 26deg 07' 47.8">, ('2024', '04', '05', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '05', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 24deg 27' 21.3">, ('2024', '04', '06', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '06', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 22deg 41' 53.2">, ('2024', '04', '07', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '07', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 20deg 52' 05.5">, ('2024', '04', '08', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '08', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 58' 44.4">, ('2024', '04', '09', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '09', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 17deg 02' 40.6">, ('2024', '04', '10', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '10', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 15deg 04' 47.6">, ('2024', '04', '11', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '11', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 13deg 06' 01.5">, ('2024', '04', '12', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '12', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 11deg 07' 20.9">, ('2024', '04', '13', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '13', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 09deg 09' 47.6">, ('2024', '04', '14', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '14', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 07deg 14' 32.0">, ('2024', '04', '15', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '15', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 05deg 23' 09.0">, ('2024', '04', '16', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '16', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 03deg 38' 43.8">, ('2024', '04', '17', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '17', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 02deg 11' 19.1">, ('2024', '04', '18', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '18', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 01deg 41' 50.2">, ('2024', '04', '19', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '19', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 02deg 37' 02.1">, ('2024', '04', '20', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '20', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 03deg 59' 32.0">, ('2024', '04', '21', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '21', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 05deg 25' 09.3">, ('2024', '04', '22', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '22', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 06deg 48' 35.5">, ('2024', '04', '23', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '23', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 08deg 08' 15.3">, ('2024', '04', '24', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '24', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 09deg 23' 32.4">, ('2024', '04', '25', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '25', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 10deg 34' 12.4">, ('2024', '04', '26', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '26', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 11deg 40' 10.9">, ('2024', '04', '27', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '27', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 12deg 41' 28.9">, ('2024', '04', '28', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '28', '17', '30', '00.000')
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 13deg 38' 10.9">, ('2024', '04', '29', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '29', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-03-25 17:30:00.000: [166d49m10.60013211s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 37deg 09' 15.7">, ('2024', '03', '25', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '25', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-03-26 17:30:00.000: [170d29m31.29800978s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 36deg 45' 24.8">, ('2024', '03', '26', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '26', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-03-27 17:30:00.000: [173d45m01.30495019s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 36deg 14' 23.6">, ('2024', '03', '27', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '27', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-03-28 17:30:00.000: [176d00m11.48400661s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 35deg 36' 03.3">, ('2024', '03', '28', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '28', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-03-29 17:30:00.000: [175d48m18.9278717s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 34deg 50' 18.0">, ('2024', '03', '29', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '29', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-03-30 17:30:00.000: [173d37m42.71645805s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 33deg 57' 05.3">, ('2024', '03', '30', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '30', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-03-31 17:30:00.000: [170d56m57.11315056s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 32deg 56' 26.8">, ('2024', '03', '31', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '03', '31', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-01 17:30:00.000: [168d13m08.14976588s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 31deg 48' 28.1">, ('2024', '04', '01', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '01', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-02 17:30:00.000: [165d33m06.09023108s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 30deg 33' 19.2">, ('2024', '04', '02', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '02', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-03 17:30:00.000: [162d58m55.09778034s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 29deg 11' 15.2">, ('2024', '04', '03', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '03', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-04 17:30:00.000: [160d31m12.74134599s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 27deg 42' 36.1">, ('2024', '04', '04', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '04', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-05 17:30:00.000: [158d10m04.08165852s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 26deg 07' 47.8">, ('2024', '04', '05', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '05', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-06 17:30:00.000: [155d55m20.1249255s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 24deg 27' 21.3">, ('2024', '04', '06', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '06', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-07 17:30:00.000: [153d46m45.30541809s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 22deg 41' 53.2">, ('2024', '04', '07', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '07', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-08 17:30:00.000: [151d44m00.93532878s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 20deg 52' 05.5">, ('2024', '04', '08', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '08', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-09 17:30:00.000: [149d46m46.95338897s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 58' 44.4">, ('2024', '04', '09', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '09', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-10 17:30:00.000: [147d54m42.87229535s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 17deg 02' 40.6">, ('2024', '04', '10', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '10', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-11 17:30:00.000: [146d07m28.31353921s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 15deg 04' 47.6">, ('2024', '04', '11', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '11', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-12 17:30:00.000: [144d24m43.31379398s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 13deg 06' 01.5">, ('2024', '04', '12', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '12', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-13 17:30:00.000: [142d46m08.49732532s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 11deg 07' 20.9">, ('2024', '04', '13', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '13', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-14 17:30:00.000: [141d11m25.16627657s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 09deg 09' 47.6">, ('2024', '04', '14', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '14', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-15 17:30:00.000: [139d40m15.33897681s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 07deg 14' 32.0">, ('2024', '04', '15', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '15', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-16 17:30:00.000: [138d12m21.7546558s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 05deg 23' 09.0">, ('2024', '04', '16', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '16', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-17 17:30:00.000: [136d47m27.85621607s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 03deg 38' 43.8">, ('2024', '04', '17', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '17', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-18 17:30:00.000: [135d25m17.75866623s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 02deg 11' 19.1">, ('2024', '04', '18', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '18', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-19 17:30:00.000: [134d05m36.20828426s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 01deg 41' 50.2">, ('2024', '04', '19', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '19', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-20 17:30:00.000: [132d48m08.53593406s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 02deg 37' 02.1">, ('2024', '04', '20', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '20', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-21 17:30:00.000: [131d32m40.60685829s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 03deg 59' 32.0">, ('2024', '04', '21', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '21', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-22 17:30:00.000: [130d18m58.76851742s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 05deg 25' 09.3">, ('2024', '04', '22', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '22', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-23 17:30:00.000: [129d06m49.79751977s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 06deg 48' 35.5">, ('2024', '04', '23', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '23', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-24 17:30:00.000: [127d56m00.84631494s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 08deg 08' 15.3">, ('2024', '04', '24', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '24', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-25 17:30:00.000: [126d46m19.39005718s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 09deg 23' 32.4">, ('2024', '04', '25', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '25', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-26 17:30:00.000: [125d37m33.17385296s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 10deg 34' 12.4">, ('2024', '04', '26', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '26', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-27 17:30:00.000: [124d29m30.16046788s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 11deg 40' 10.9">, ('2024', '04', '27', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '27', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-28 17:30:00.000: [123d21m58.4784667s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 12deg 41' 28.9">, ('2024', '04', '28', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '28', '17', '30', '00.000')
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-29 17:30:00.000: [122d14m46.3706873s]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 13deg 38' 10.9">, ('2024', '04', '29', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '29', '17', '30', '00.000')
+----------------------------------------------------------------------------
