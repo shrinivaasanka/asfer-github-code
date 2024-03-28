@@ -18,6 +18,7 @@
 
 from collections import deque
 import random
+import math
 
 run_enum=[0,1,2,3,4,6]
 
@@ -27,14 +28,45 @@ class Player(object):
         self.teamid = teamid 
         self.state = "Playing"
         self.runs = 0
-    
+   
+    def ballbatcontact(self,ballcoord,batcoord,bound=100):
+        if ballcoord[0] <= batcoord[0] + bound and ballcoord[0] > batcoord[0] - bound and ballcoord[1] <= batcoord[1] + bound and ballcoord[1] > batcoord[1] - bound and ballcoord[2] <= batcoord[2] + bound and ballcoord[2] > batcoord[2] - bound:
+            return True
+        else:
+            return False
+       
+    def ballstumpcontact(self,ballcoord,stumpcoord,bound=100):
+        if ballcoord[0] <= stumpcoord[0] + bound and ballcoord[0] > stumpcoord[1] - bound and ballcoord[1] <= stumpcoord[1] + bound and ballcoord[1] > stumpcoord[1] - bound and ballcoord[2] <= stumpcoord[2] + bound and ballcoord[2] > stumpcoord[2] - bound:
+            return True
+        else:
+            return False
+
     def play_shot(self,ball):
-        angle_of_the_shot = random.randint(1,360) % 36 
-        run = run_enum[random.randint(0,len(run_enum)-1)] 
-        self.runs += run
-        print("Ball - ",ball," - Player:",self.id," - Team:",self.teamid," - angle of the shot (in degrees):",angle_of_the_shot)
-        print("Ball - ",ball," - Player:",self.id," - run scored:",run)
-        return (angle_of_the_shot,run)
+        ballcoord=[0,0,100]
+        batcoord=[0,0,0]
+        stumpcoord=[100,100,100]
+        run=0
+        for i in range(100):
+            ballcoord[0] = i
+            ballcoord[1] = int(abs(i*math.sin(i)))
+            print("Ball trajectory:",ballcoord)
+        batcoord[0] = random.randint(1,100)
+        batcoord[1] = random.randint(1,100)
+        batcoord[2] = random.randint(1,100)
+        print("Bat coordinates:",batcoord)
+        if self.ballbatcontact(ballcoord,batcoord):
+            angle_of_the_shot = random.randint(1,360) % 36 
+            run = run_enum[random.randint(0,len(run_enum)-1)] 
+            self.runs += run
+            print("Ball - ",ball," - Player:",self.id," - Team:",self.teamid," - angle of the shot (in degrees):",angle_of_the_shot)
+            print("Ball - ",ball," - Player:",self.id," - run scored:",run)
+            return (angle_of_the_shot,run)
+        if self.ballstumpcontact(ballcoord,stumpcoord):
+            print("Player:",self.id," has been clean-bowled and back in pavilion - score:",self.runs)
+            self.state="Out"
+            return(0,self.runs)
+        else:
+            return(0,run)
 
 def print_deque(deq):
     deqstr=[]
@@ -50,6 +82,14 @@ def pricket_sabermetrics(number_of_balls=6,team1=None,team2=None,lowerdegree=3,u
     team2_runs = 0
     while ball <= number_of_balls:
         shot = player1.play_shot(ball)
+        if shot[0] == 0:
+            print("Cleanbowled - Player:",player1.id," of team ",player1.teamid)
+            if len(team1) > 0:
+                player1 = team1.popleft()
+                print("Team1 - yet to bat:",print_deque(team1))
+            else:
+                print("Team1 allout - Number of balls bowled:",ball)
+                break 
         if shot[0] < lowerdegree or shot[0] > upperdegree:
             player1.state = "Out"
             print("Shot outside [",lowerdegree," to ",upperdegree,"] degrees range - Player ",player1.id," of team ",player1.teamid," is Out")
@@ -58,11 +98,19 @@ def pricket_sabermetrics(number_of_balls=6,team1=None,team2=None,lowerdegree=3,u
                 print("Team1 - yet to bat:",print_deque(team1))
             else:
                 print("Team1 allout - Number of balls bowled:",ball)
-                exit
+                break 
         else:
             team1_runs += shot[1] 
         ball+=1
         shot = player2.play_shot(ball)
+        if shot[0] == 0:
+            print("Cleanbowled - Player:",player2.id," of team ",player2.teamid)
+            if len(team2) > 0:
+                player2 = team2.popleft()
+                print("Team2 - yet to bat:",print_deque(team2))
+            else:
+                print("Team2 allout - Number of balls bowled:",ball)
+                break 
         if shot[0] < lowerdegree or shot[0] > upperdegree:
             player2.state = "Out"
             print("Shot outside [",lowerdegree," to ",upperdegree,"] degrees - Player ",player2.id," of team ",player2.teamid," is Out")
@@ -71,7 +119,7 @@ def pricket_sabermetrics(number_of_balls=6,team1=None,team2=None,lowerdegree=3,u
                 print("Team2 - yet to bat:",print_deque(team2))
             else:
                 print("Team2 allout - Number of balls bowled:",ball)
-                exit
+                break 
         else:
             team2_runs += shot[1] 
         ball+=1
