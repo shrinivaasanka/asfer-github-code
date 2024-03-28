@@ -23647,3 +23647,30 @@ SkyCoord separation(): Angular separation of Mercury-Venus on 2024-04-29 17:30:0
 SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 13deg 38' 10.9">, ('2024', '04', '29', '17', '30', '00.000'))]
 SkyField separation_from(): Angular separation of Mercury-Venus matches bounds for date: ('2024', '04', '29', '17', '30', '00.000')
 ----------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------
+1481. (THEORY and FEATURE) NeuronRainApps - Sports Analytics - Sabermetrics - Concept Implementation of Parallel Cricket (PRICKET) simulator - Implementation of Cleanbowling - related to 754,1460 and all sections on Intrinsic Performance Ratings and Sports Analytics, Streaming Histogram analytics, Partition distance measures, Random graph streams, Logic and Game theory, Generalized Geography and PSPACE-completeness, Parity games - 28 March 2024
+------------------------------------------------------------------------------------------------------------------------------- 
+1481.1 python-src/NeuronRainApps/ParallelCricket/Pricket.py has been updated to implement algorithm for cleanbowling described in 1460. Two new member functions ballbatcontact() and ballstumpcontact() have been added to Player class to compare (*) if ball coordinates and bat coordinates coincide and (*) if ball coordinates and stump coordinates coincide respectively - contact check allows + or - range of bat coordinates and stump coordinates as bat and stump are elongated while ball is spherical - this geometrically allows simulation of contact. Ball,Bat and Stumps are denoted by 3-dimensional (x,y,z) coordinates.
+1481.2 play_shot() function has been extended to simulate ball's sinusoidal trajectory in a for loop - X coordinate is incremented,Y coordinate is sinusoidal value of Y and Z coordinate is constant. Batting is simulated by a random (x,y,z) coordinate. If ballbatcontact() is true, shot is played and if ballstumpcontact() is true player is out by cleanbowling. Players deque for the respective team is re-adjusted accordingly.
+1481.3 Statements of exit are replaced with break. Commentary of a 300 ball PRICKET match in python-src/NeuronRainApps/ParallelCricket/testlogs/Pricket.log.28March2024 demonstrates Out by cleanbowling,catch and a tied match between 2 teams (rare random event) - excerpts below:
+	Shot outside [ 3  to  33 ] degrees - Player  player12  of team  team2  is Out
+	Shot outside [ 3  to  33 ] degrees range - Player  player1  of team  team1  is Out
+	Shot outside [ 3  to  33 ] degrees range - Player  player2  of team  team1  is Out
+	Shot outside [ 3  to  33 ] degrees range - Player  player3  of team  team1  is Out
+	Shot outside [ 3  to  33 ] degrees range - Player  player4  of team  team1  is Out
+	Shot outside [ 3  to  33 ] degrees - Player  player14  of team  team2  is Out
+	Shot outside [ 3  to  33 ] degrees range - Player  player6  of team  team1  is Out
+	Shot outside [ 3  to  33 ] degrees range - Player  player7  of team  team1  is Out
+	Shot outside [ 3  to  33 ] degrees range - Player  player9  of team  team1  is Out
+	Shot outside [ 3  to  33 ] degrees range - Player  player10  of team  team1  is Out
+	Shot outside [ 3  to  33 ] degrees - Player  player15  of team  team2  is Out
+	Shot outside [ 3  to  33 ] degrees - Player  player16  of team  team2  is Out
+	Shot outside [ 3  to  33 ] degrees range - Player  player11  of team  team1  is Out
+	Cleanbowled - Player: player13  of team  team2
+	Cleanbowled - Player: player5  of team  team1
+	Cleanbowled - Player: player8  of team  team1
+	Team1 allout - Number of balls bowled: 113
+	Team1 runs: 131
+	Team2 runs: 131
+	Team1 and Team2 tied
