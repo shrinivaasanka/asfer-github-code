@@ -23674,3 +23674,5 @@ SkyField separation_from(): Angular separation of Mercury-Venus matches bounds f
 	Team1 runs: 131
 	Team2 runs: 131
 	Team1 and Team2 tied
+1481.4 Reduction of PRICKET to Generalized Geography (GG) PSPACE-complete problem is by encoding each ball played to a vertex in GG graph that has role alternation (bowling and batting) between 2 teams every second ball and enforcing additional dependency: shot played by playerX of team2 in ball N depends on shot played by playerY of team1 in ball N-1 - this dependency is more psychological than physical where playerX (team2) is motivated by playerY's (team1) preceding shot (or) every ball is a competitive target to chase (Physical dependency could be hypothetically following rule for example - "playerX of team2 must drive the ball N in direction other than playerY of team1 in ball N-1").
+
