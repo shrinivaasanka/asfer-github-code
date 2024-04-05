@@ -570,6 +570,19 @@ def SearchTiles_and_Factorize(n, k, Parallel_for="False", StartFromSquareRoot="F
             json.dump(factordict, factorsfile)
             return factors
 
+def is_perfect_number_Euler_Sigma_Function(factors,number_to_factorize):
+    intfactors=[int(x) for x in factors] 
+    if 1 not in intfactors:
+        intfactors.append(1)
+    if number_to_factorize in intfactors:
+        intfactors.remove(number_to_factorize)
+    print("intfactors:",intfactors)
+    if sum(intfactors)==number_to_factorize:
+        print("Integer ",number_to_factorize," is Perfect") 
+        return True
+    else:
+        print("Integer ",number_to_factorize," is not Perfect") 
+        return False
 
 if __name__ == "__main__":
     number_to_factorize = toint(sys.argv[1])
@@ -589,3 +602,4 @@ if __name__ == "__main__":
     factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]), Parallel_for, StartFromSquareRoot)
     print(("factors of ", number_to_factorize, "(", math.log(
         number_to_factorize, 2), " bits integer) =", set(factors)))
+    is_perfect_number_Euler_Sigma_Function(factors,number_to_factorize)
