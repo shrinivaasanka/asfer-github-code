@@ -23681,3 +23681,29 @@ References:
 -----------
 1481.6 Generalized Geography - MIT OCW lectures - [Prof. Michael Sipser] - https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/lecture-19-games-generalized-geography/ - slides at 12:05, 34:19 minutes - Formula game between ThereExists and ForAll quantifiers - Belnap 4-state logic in action - Any Game could have 4 outcomes: Player1 wins, Player2 wins, Both win, Neither win and on similar lines Cricket and Pricket could have 4 outcomes - Team1 wins, Team2 wins, Team1-Team2 tie (both win in earlier match), Team1-Team2 draw (neither win). This implies satisfiability of Totally Quantified Boolean Formula (TQBF) for games must be 4-state and not binary. 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1482. (THEORY and FEATURE) Computational Geometric Integer Factorization - Python 3.12 + PySpark 3.5.1 Upgrade - Single node clustering benchmark and Euler Sigma Function implementation for Perfect Numbers - related to 498,601,1226,1259,1303,1319,1321,1323,1324,1325,1355,1365,1366,1369,1379,1381,1384,1385,1401,1419,1454 and all sections on Integer Factorization (DMRC MapReduce PySpark and NC HPC Rust implementations),Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization,Quantum computation and Derandomization of BQP Factorization by Condorcet Jury Theorem Majority-BQPVoterSAT boolean composition - 5 April 2024 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+1482.1 Python version has been bumped to 3.12 and Spark version to 3.5.1 by following commandlines to install a virtual environment (venv) for Spark Python 3.12:
+	1482.1.1 apt update && apt upgrade -y
+	1482.1.2 apt install software-properties-common -y
+	1482.1.3 add-apt-repository ppa:deadsnakes/ppa
+	1482.1.4 apt update
+	1482.1.5 apt install python3.12
+	1482.1.6 apt install python3.12-venv
+	1482.1.7 python3.12 -m venv $VENVDIR/venv
+	1482.1.8 $VENVDIR/venv/bin/pip3.12 install pyspark
+	1482.1.9 export PYSPARK_PYTHON=$VENVDIR/venv/bin/python3.12
+	1482.1.10 export PYSPARK_DRIVER_PYTHON=$VENVDIR/venv/bin/python3.12
+1482.2 Computational Geometric Parallel Planar Point Location factorization implementation DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been updated to define Euler sigma Function for Perfect Numbers (function is_perfect_number_Euler_Sigma_Function(factors,number_to_factorize)) which returns true if aliquot sum (sum of proper divisors or factors of integer) equals the number itself and false otherwise. In other words for perfect numbers, unique factorization product equals sum of factors. All perfect numbers found so far are even. There is no known odd perfect number so far.
+1482.3 Perfect Number 33550336 is factorized as (interrupted) and all factors are printed:
+venv/bin/python3.12 DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 33550336 3 False False all False 2>&1 > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.12Upgrade.PerfectNumbers.log.5April2024
+1482.4 Perfect Number 8128 is factorized as:
+venv/bin/python3.12 DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 8128 3 False False all False 2>&1 > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.12Upgrade.PerfectNumbers.log2.5April2024 and verified as Perfect Number.
+
+References:
+----------
+1482.5 Perfect Numbers - sum of proper divisors equal the number - https://oeis.org/A000396
+1482.6 Nicomachus conjectures,Euler sigma function, Aliquot sum and Perfect Numbers - https://en.wikipedia.org/wiki/Perfect_number 
+1482.7 Euclid-Euler Theorem - https://en.wikipedia.org/wiki/Euclid%E2%80%93Euler_theorem - Euler's proof that Euclid's form 2^(p-1)*(2^p - 1) yields all even perfect numbers 2000 years after Euclid. Implication is that Mersenne primes yield perfect numbers.
+1482.8 Brent Theorem for Parallel Prefix and List Ranking - http://courses.csail.mit.edu/6.854/16/Notes/n32-parallel.html - O(N/logN) processors and O(logN) time - Computational Geometric Factorization similarly could allocate logN rectified hyperbolic arc tiles (in arithmetic progression) for parallel factor point location to N/logN PRAMs by Brent principle and each arithmetic progression is binary or interpolation searched in logN or loglogN time thus effectively locating a factor in logN*loglogN time. N/logN is theoretically maximum number of PRAMs required for such a parallel planar factor point location. 
