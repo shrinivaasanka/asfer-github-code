@@ -23722,3 +23722,16 @@ for factorization as 3SAT problem could be through a FACT-to-SAT reduction by lo
 1482.12 Wallace Tree and Dadda multiplier circuits in NC1 - https://ui.adsabs.harvard.edu/abs/2003SPIE.5205..552T/abstract
 1482.13 A diophantine representation of perfect numbers (in Russian) - https://www.mathnet.ru/links/139a6ddbca0b8d4891ad3522243ed80c/znsl3105.pdf - ".....  A natural number ft is perfect iff system (2)–(33) of diophantine equations has a positive integer solution in the rest of variables. ....." - https://link.springer.com/article/10.1007/BF01629440 - [V. Yu. Kryauchyukas] - Journal of Soviet Mathematics Volume 20, pages 2307–2313, (1982) - "..... There is explicitly given a polynomial (of degree 17 in 48 variables), the set of whose positive values (for natural values of the variables) is precisely the set of all perfect numbers. The construction of this polynomial is based on a new test for a number to be perfect, formulated in terms of the divisibility of binomial coefficients......" 
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+1483. (THEORY and FEATURE) Social network analysis and People analytics - Support for flair NLP framework sentiment analysis - related to Section 588,1380,1406,1407,1408,1409,1410,1411,1430 and all sections on Majority Voting, Approximate Majority,Election analytics-Psephology-Opinion polls,Reservoir Sampling,Topic detection and tracking,Social network analysis and People analytics from Twitter-Facebook-LinkedIn-PIPL streams, Large Scale Visuals-Analyzing Audio-Visuals for sentiment (Movies,YouTube) by LIWC-Empath, Drone Electronic Voting Machines-Multipolar voting, KLL Sketch-Quantile and Histogram Approximations, Opinion poll sampling 
+--------------------------------------------------------------------------------------------------------------------------------------------
+1483.1 python-src/SocialNetworkAnalysis_OpinionMining.py has been updated to add support for flair NLP sentiment analysis - https://github.com/flairNLP/flair which is based on Python3.9 + PyTorch
+1483.2 Function def opinion_mining(query,fromdate,todate,fulltextortitle="title",maxpages=10,maxarticles=100,articlefraction=0.2,UseNeuronRainSentimentAnalyzer=False) has been updated to choose between fulltext or headline of a news article for sentiment analysis based on argument fulltextortitle. 
+1483.3 Flag UseNeuronRainSentimentAnalyzer is being checked in more places to avoid intensive NeuronRain textgraph graphical model sentiment analysis.
+1483.4 Flair sentiment analyzer scores in addition to VADER,TextBlob and Empath are logged to testlogs/SocialNetworkAnalysis_OpinionMining.log.10April2024 for query "GDP" which is strewn with rate limit and URL errors internal to newspaper3k on Python 3.9.
+
+References:
+-----------
+1483.5 TextBlob Vs VADER Vs Flair Vs TensorFlow sentiment analyzers - Comparison - https://neptune.ai/blog/sentiment-analysis-python-textblob-vs-vader-vs-flair
+ 
+ 
