@@ -72,20 +72,37 @@ def sentiment_analyzer(text,algorithm=None):
          print("Objectivity:",objscore)
          vote=(posscore-negscore+objscore,{"pos":posscore,"neg":negscore,"obj":objscore})
     if algorithm=="VADER":
+         print("==================================================================================")
+         print("Sentiment Analysis (VADER) of the opinion")
+         print("==================================================================================")
          senti=SentimentIntensityAnalyzer()
          sentiscores=senti.polarity_scores(text)
          votescores=0
          print("VADER sentiment:",sentiscores)
          vote=(sentiscores['pos']-sentiscores['neg']+sentiscores['neu']+sentiscores['compound'],sentiscores)
     if algorithm=="empath":
+         print("==================================================================================")
+         print("Sentiment Analysis (empath) of the opinion")
+         print("==================================================================================")
          empathsenti=Empath()
          empathdict=empathsenti.analyze(text,normalize=True)
          maxvaluecategory=max(empathdict,key=empathdict.get)
          print("Empath sentiment:",maxvaluecategory)
          vote=(empathdict[maxvaluecategory],empathdict)
+    if algorithm=="flair":
+         print("==================================================================================")
+         print("Sentiment Analysis (flair) of the opinion")
+         print("==================================================================================")
+         from flair.data import Sentence
+         from flair.nn import Classifier
+         sentence = Sentence(text)
+         tagger = Classifier.load('sentiment')
+         prediction=tagger.predict(sentence)
+         print(sentence.score)
+         vote=sentence.score
     return vote
 
-def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefraction=0.2,UseNeuronRainSentimentAnalyzer=False):
+def opinion_mining(query,fromdate,todate,fulltextortitle="title",maxpages=10,maxarticles=100,articlefraction=0.2,UseNeuronRainSentimentAnalyzer=False):
     gn=GoogleNews(start=fromdate,end=todate)
     gn.search(query)
     opinion=[]
@@ -115,14 +132,32 @@ def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=10,articlefracti
                 #print(article.text)
                 newsjson['Summary']=article.summary
                 articleslice=int(articlefraction*len(article.summary))
-                print("articleslice:",article.summary[:articleslice])
-                votesw=sentiment_analyzer(article.summary[:articleslice],algorithm="SentiWordNet")
-                votetb=sentiment_analyzer(article.summary[:articleslice],algorithm="TextBlob")
-                votergobp=sentiment_analyzer(article.summary[:articleslice],algorithm="RGO_Belief_Propagation")
-                votergobpmrf=sentiment_analyzer(article.summary[:articleslice],algorithm="RGO_Belief_Propagation_MRF")
-                votevader=sentiment_analyzer(article.summary[:articleslice],algorithm="VADER")
-                voteempath=sentiment_analyzer(article.summary[:articleslice],algorithm="empath")
-                multipolarvotes.append((votesw,votetb,votergobp,votergobpmrf,votevader,voteempath))
+                if UseNeuronRainSentimentAnalyzer:
+                    if fulltextortitle=="fulltext":
+                        print("articleslice:",article.summary[:articleslice])
+                        votesw=sentiment_analyzer(article.summary[:articleslice],algorithm="SentiWordNet")
+                        votergobp=sentiment_analyzer(article.summary[:articleslice],algorithm="RGO_Belief_Propagation")
+                        votergobpmrf=sentiment_analyzer(article.summary[:articleslice],algorithm="RGO_Belief_Propagation_MRF")
+                    else:
+                        print("headline:",article.title)
+                        votesw=sentiment_analyzer(article.title,algorithm="SentiWordNet")
+                        votergobp=sentiment_analyzer(article.title,algorithm="RGO_Belief_Propagation")
+                        votergobpmrf=sentiment_analyzer(article.title,algorithm="RGO_Belief_Propagation_MRF")
+                if fulltextortitle=="fulltext":
+                    votetb=sentiment_analyzer(article.summary[:articleslice],algorithm="TextBlob")
+                    votevader=sentiment_analyzer(article.summary[:articleslice],algorithm="VADER")
+                    voteempath=sentiment_analyzer(article.summary[:articleslice],algorithm="empath")
+                    voteflair=sentiment_analyzer(article.summary[:articleslice],algorithm="flair")
+                else:
+                    print("headline:",article.title)
+                    votetb=sentiment_analyzer(article.title,algorithm="TextBlob")
+                    votevader=sentiment_analyzer(article.title,algorithm="VADER")
+                    voteempath=sentiment_analyzer(article.title,algorithm="empath")
+                    voteflair=sentiment_analyzer(article.title,algorithm="flair")
+                if UseNeuronRainSentimentAnalyzer:
+                    multipolarvotes.append((votesw,votetb,votergobp,votergobpmrf,votevader,voteempath))
+                else:
+                    multipolarvotes.append((votetb,votevader,voteempath))
                 populationsample+=1
                 if UseNeuronRainSentimentAnalyzer:
                     voteensemble=float(votesw[0]+votetb[0]+votergobp[0]+votergobpmrf[0]+votevader[0]+voteempath[0])/6.0
@@ -174,17 +209,18 @@ def opinion_mining_from_url(url):
             tweetdict[linetoks[1]]=numberoftweets
             numberoftweets=-1
             sentiment_analyzer(linetoks[1],algorithm="VADER")
+            sentiment_analyzer(linetoks[1],algorithm="TextBlob")
+            sentiment_analyzer(linetoks[1],algorithm="empath")
+            sentiment_analyzer(linetoks[1],algorithm="flair")
         if "Trending" in linetoks and "since" in linetoks:
             print("-----------------",line)
     print("Votes for tweets - tweetdict:",tweetdict)
 
 if __name__=="__main__":
     #opinion_mining("Chennai Metropolitan Area Expansion","27/02/2023","01/03/2023")
-    #opinion_mining("Stock market volatility","01/01/2023","01/03/2023")
-    opinion_mining_from_google_trends(fromdate="01/06/2023",todate="09/06/2023")
-    opinion_mining_from_url("https://trendlistz.com/india")
+    opinion_mining("GDP","01/01/2023","10/04/2024")
+    #opinion_mining_from_google_trends(fromdate="01/06/2023",todate="09/06/2023")
+    #opinion_mining_from_url("https://trendlistz.com/india")
     #opinion_mining_from_url("https://twitter.com/i/trends")
-    #opinion_mining("Karnataka assembly elections Congress","01/01/2023","01/04/2023")
-    #opinion_mining("Karnataka assembly elections BJP","01/01/2023","01/04/2023")
 
 
