@@ -23733,5 +23733,5 @@ for factorization as 3SAT problem could be through a FACT-to-SAT reduction by lo
 References:
 -----------
 1483.5 TextBlob Vs VADER Vs Flair Vs TensorFlow sentiment analyzers - Comparison - https://neptune.ai/blog/sentiment-analysis-python-textblob-vs-vader-vs-flair
- 
+1483.6 Optimal quantile estimation: beyond the comparison model - https://eccc.weizmann.ac.il/report/2024/065/ - "..... Current quantile estimation algorithms described as optimal include the GK sketch (Greenwald and Khanna 2001) using O(−1logn) words (deterministic) and the KLL sketch (Karnin, Lang, and Liberty 2016) using O(−1loglog(1))  words (randomized, with failure probability ). However, both algorithms are only optimal in the comparison-based model, whereas most typical applications involve streams of integers that the sketch can use aside from making comparisons.  If we go beyond the comparison-based model, the deterministic q-digest sketch (Shrivastava, Buragohain, Agrawal, and Suri 2004) achieves a space complexity of O(−1logU) words, which is incomparable to the previously-mentioned sketches. It has long been asked whether there is a quantile sketch using O(−1) words of space (which is optimal as long as npoly(U)). In this work, we present a deterministic algorithm using O(−1) words, resolving this line of work. ......" 
  
