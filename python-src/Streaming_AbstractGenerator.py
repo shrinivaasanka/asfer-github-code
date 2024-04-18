@@ -242,6 +242,7 @@ class StreamAbsGen(object):
                     yield partition
         if self.data_storage == "DictionaryHistogramPartition":
             # dict_stream=ast.literal_eval(dicttext)
+            import json
             dict_stream = json.load(self.partition_stream)
             for dic in dict_stream:
                 yield dic

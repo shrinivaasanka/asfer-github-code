@@ -38,6 +38,7 @@ import cvxopt
 from cvxopt.glpk import ilp
 import cv2
 from DigitalWatermarking import watermark_image
+
 m = 0
 Tower = [1, 2, 3, 4]
 Tower[0] = []
@@ -97,7 +98,7 @@ def single_bin_sorted_LIFO_histogram_ToH(n, Neuro_Crypto_ProofOfWork=True):
         cv2.imwrite("testlogs/NeuroCryptoCurrency.jpg", imgtemplate)
         imgcurrency = cv2.imread("testlogs/NeuroCryptoCurrency.jpg")
         watermark_image("testlogs/NeuroCryptoCurrency.jpg",
-                        "testlogs/NeuroCurrencyWatermark.jpg")
+                        "testlogs/NeuroCurrencyWatermark.jpg",fileIO=True)
 
 
 def print_Towers_of_Hanoi(n, x, y, z):
@@ -126,8 +127,23 @@ def print_Towers_of_Hanoi(n, x, y, z):
         print("Pairwise ToH Earth Mover Distance Triple:", (emd12, emd13, emd23))
         print_Towers_of_Hanoi(n-1, z, y, x)
 
+def is_perfect_partition_LebesgueBorel(factors,number_to_factorize):
+    intfactors=[int(x) for x in factors]
+    if 1 not in intfactors:
+        intfactors.append(1)
+    if number_to_factorize in intfactors:
+        intfactors.remove(number_to_factorize)
+    print("intfactors:",intfactors)
+    print("sum(intfactors):",sum(intfactors))
+    print("number_to_factorize:",number_to_factorize)
+    if sum(intfactors)/int(number_to_factorize) == 1:
+        print("is_perfect_partition_LebesgueBorel():" , number_to_factorize , " is a Perfect Number - it is the Lebesgue-Borel hypervolume measure of hypercube with sides of length equal to divisors:",intfactors) 
+        return True
+    else:
+        print("is_perfect_partition_LebesgueBorel():", number_to_factorize + " is not a Perfect Number ") 
+        return False
 
-def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, solution="ILP", Neuro_Crypto_ProofOfWork=False):
+def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, solution="ILP", Neuro_Crypto_ProofOfWork=False,sparkcommandline="/home/ksrinivasan/spark-3.3.0-bin-hadoop3/bin/spark-submit"):
     squaretiles_cover = []
     from complement import toint
     from sympy.solvers.diophantine.diophantine import diop_general_sum_of_squares
@@ -141,8 +157,8 @@ def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, s
                 squaretiles_cover.append((t, t*t))
         print(("Lagrange Four Square Tiles Cover reduction of Set Partition for ", number_to_factorize, ",",
                histogram_partition, ":", squaretiles_cover))
-        subprocess.call(["/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
-                        "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False"], shell=False)
+        subprocess.call([sparkcommandline,
+            "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False","False","all","False"], shell=False)
     else:
         histogram_partition = random_integer_partition(
             int(number_to_factorize))
@@ -153,8 +169,8 @@ def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, s
             for t in list(tiles)[0]:
                 squaretiles_cover.append((t, t*t))
         print(("Neuro Cryptocurrency Proof of Work - Rectangular Area (=Value of Neuro cryptocurrency mined) Factorized and Pair of Money Changing Frobenius Diophantines solved by ILP for factors of integer :", number_to_factorize))
-        subprocess.call(["/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
-                        "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False"], shell=False)
+        subprocess.call([sparkcommandline,
+                        "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False","False","all","False"], shell=False)
     factorsfile = open(
         "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
     factors = json.load(factorsfile)
@@ -163,6 +179,7 @@ def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, s
     for k, v in list(factors.items()):
         number_to_factorize = k
         factorslist = v
+    is_perfect_partition_LebesgueBorel(factorslist,number_to_factorize)
     # c1*x1 + c2*x2 + ... + ck*xk + ... + cn*xn = p
     # d1*x1 + d2*x2 + ... + dk*xk + ... + dn*xn = q
     # solve AX=B:
@@ -190,8 +207,8 @@ def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, s
         for factor in factorslist[approxsqrt:]:
             print("number_to_factorize = ",number_to_factorize,"; factor:", factor)
             if factor != 1 and factor != int(number_to_factorize):
-                equationsB.append(factor)
-                equationsB.append(int(number_to_factorize)/factor)
+                equationsB.append(int(factor))
+                equationsB.append(int(number_to_factorize)/int(factor))
                 break
     a = np.array(equationsA).astype(float)
     b = np.array(equationsB[:2]).astype(float)
@@ -451,7 +468,7 @@ if __name__ == "__main__":
         electronic_voting_machine(Voting_Machine3_dict, idcontexts[voteridx*3 % len(idcontexts)],
                                   candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4102-ac39-93d353ea3020:100")
         voteridx += 1
-    #setpartition_to_tilecover(None, sys.argv[1], solution="ILP",Neuro_Crypto_ProofOfWork=True)
+    setpartition_to_tilecover(None, sys.argv[1], solution="ILP",Neuro_Crypto_ProofOfWork=True)
     single_bin_sorted_LIFO_histogram_ToH(
         "1024", Neuro_Crypto_ProofOfWork=True)
     electronic_voting_analytics(
