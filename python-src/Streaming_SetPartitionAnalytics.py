@@ -38,6 +38,7 @@ import cvxopt
 from cvxopt.glpk import ilp
 import cv2
 from DigitalWatermarking import watermark_image
+from ddsketch import DDSketch
 
 m = 0
 Tower = [1, 2, 3, 4]
@@ -51,6 +52,9 @@ Voting_Machine2_dict = defaultdict(list)
 Voting_Machine3_dict = defaultdict(list)
 
 Voted = []
+QuantileSketch_EVM1 = DDSketch() 
+QuantileSketch_EVM2 = DDSketch() 
+QuantileSketch_EVM3 = DDSketch() 
 evm_histograms = []
 maxvoters = 1
 
@@ -299,7 +303,7 @@ def tocluster(histogram, datasource):
     return cluster
 
 
-def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for, Streaming_Analytics_Bertrand=False, onetimepassword=None):
+def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdict, unique_id=None, voted_for="NOTA", Streaming_Analytics_Bertrand=False, onetimepassword=None):
     semaphorelock = BoundedSemaphore(value=maxvoters)
     semaphorelock.acquire()
     uniqueidf = open(unique_id, "rb")
@@ -325,6 +329,7 @@ def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for, Streami
                 publicuniqueidhex))
             Voted.append(publicuniqueid)
         print(("Voting_Machine_dict:", Voting_Machine_dict))
+        QuantileSketch.add(candidatesdict[voted_for])
     else:
         print("Voter Already Voted")
     if Streaming_Analytics_Bertrand == True:
@@ -342,14 +347,17 @@ def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for, Streami
     semaphorelock.release()
 
 
-def electronic_voting_analytics(Voting_Machine_dicts):
+def electronic_voting_analytics(QuantileSketches,Voting_Machine_dicts,quantiles=[10,20,30]):
     import Streaming_AbstractGenerator
     from scipy.stats import wasserstein_distance
     from sklearn.metrics.cluster import adjusted_rand_score
     from sklearn.metrics import adjusted_mutual_info_score
     #from cv2 import CalcEMD2
     #from cv2 import compareHist
-
+    for quantilesketch in QuantileSketches:
+        if quantilesketch is not None:
+            quants = [quantilesketch.get_quantile_value(q) for q in quantiles]
+            print("EVM Histogram Quantiles:",quants)
     evmsf = open("testlogs/Streaming_SetPartitionAnalytics.EVMs.json", "w")
     evmid = 0
     for evm in Voting_Machine_dicts:
@@ -447,7 +455,7 @@ if __name__ == "__main__":
     complementary_set_partition(randp, 5)
     histogram = list(map(len, randp))
     setpartition_to_tilecover(histogram, str(sum(histogram)))
-    candidates = ["NOTA", "CandidateA", "CandidateB"]
+    candidates = {"NOTA":1, "CandidateA":2, "CandidateB":3}
     idcontexts = ["testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt",
                   "testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg", "testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf"]
     voteridx = 0
@@ -455,21 +463,21 @@ if __name__ == "__main__":
         print("=============================")
         print("Electronic Voting Machine: 1")
         print("=============================")
-        electronic_voting_machine(Voting_Machine1_dict, idcontexts[voteridx % len(idcontexts)],
-                                  candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4002-ac39-93dd53ea302f:100")
+        electronic_voting_machine(Voting_Machine1_dict, QuantileSketch_EVM1, candidates, idcontexts[voteridx % len(idcontexts)],
+                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4002-ac39-93dd53ea302f:100")
         print("=============================")
         print("Electronic Voting Machine: 2")
         print("=============================")
-        electronic_voting_machine(Voting_Machine2_dict, idcontexts[voteridx*2 % len(idcontexts)],
-                                  candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a3c4-4002-ac39-93d153ea3020:100")
+        electronic_voting_machine(Voting_Machine2_dict, QuantileSketch_EVM2, candidates, idcontexts[voteridx*2 % len(idcontexts)],
+                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a3c4-4002-ac39-93d153ea3020:100")
         print("=============================")
         print("Electronic Voting Machine: 3")
         print("=============================")
-        electronic_voting_machine(Voting_Machine3_dict, idcontexts[voteridx*3 % len(idcontexts)],
-                                  candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4102-ac39-93d353ea3020:100")
+        electronic_voting_machine(Voting_Machine3_dict, QuantileSketch_EVM3, candidates, idcontexts[voteridx*3 % len(idcontexts)],
+                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4102-ac39-93d353ea3020:100")
         voteridx += 1
     setpartition_to_tilecover(None, sys.argv[1], solution="ILP",Neuro_Crypto_ProofOfWork=True)
     single_bin_sorted_LIFO_histogram_ToH(
         "1024", Neuro_Crypto_ProofOfWork=True)
-    electronic_voting_analytics(
-        [Voting_Machine1_dict, Voting_Machine2_dict, Voting_Machine3_dict])
+    electronic_voting_analytics([QuantileSketch_EVM1,QuantileSketch_EVM2,QuantileSketch_EVM3],
+        [Voting_Machine1_dict, Voting_Machine2_dict, Voting_Machine3_dict],quantiles=[1,2,3])
