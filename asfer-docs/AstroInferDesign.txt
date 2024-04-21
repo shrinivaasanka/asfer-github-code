@@ -13376,7 +13376,7 @@ This lifting/export of logical statements between Hilbert Spaces of 2 different 
 
 Traditional results on homomorphisms between Vector Spaces apply to Shell Turing Machines defined on any two vector spaces one of which is a subspace of the other: 
 	(*) If T is a homomorphism defined from vectorspace U to vectorspace V of kernel W, then V is isomorphic to U/W. Conversely, if U is a vectorspace and W is a subspace of U, then there is a homomorphism of U onto U/W.
-	(*) If U is a vectorspace defined over field F, and W is a subspace of V then V/W is a quotient vectorspace over F if for v1, v2 in V and v1 + W in V/W, v2 + W in V/W:
+	(*) If V is a vectorspace defined over field F, and W is a subspace of V then V/W is a quotient vectorspace over F if for v1, v2 in V and v1 + W in V/W, v2 + W in V/W:
 	(v1 + W) + (v2 + W) = (v1+v2) + W
 		(and)
 	For a in F, a(v1 + W) = av1 + W
