@@ -112,7 +112,7 @@ def toint(primestr):
     if primestr != '' and not None:
         return int(decimal.Decimal(primestr))
 
-def tilesearch_nonpersistent(y, numfactors=maxfactors, padding=1, binarysearch="iterative"):
+def tilesearch_nonpersistent(y, numfactors=maxfactors, padding=1, binarysearch="iterative",axisparallel="False"):
     global number_to_factorize
     n = number_to_factorize
     xtile_start = int(Decimal(n)/Decimal(y))-padding
@@ -121,9 +121,15 @@ def tilesearch_nonpersistent(y, numfactors=maxfactors, padding=1, binarysearch="
     xtile_end = int(Decimal(n)/Decimal(y+1))+padding
     #print("tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")")
     if binarysearch == "recursive":
-        binary_search_interval_nonpersistent( xtile_start, y, xtile_end, y, numfactors)
+        if axisparallel:
+            binary_search_interval_nonpersistent( xtile_start, y, xtile_end, y, numfactors)
+        else:
+            binary_search_interval_nonpersistent( xtile_start, y, xtile_end, y+1, numfactors)
     elif binarysearch == "iterative":
-        iterative_binary_search_interval_nonpersistent( xtile_start, y, xtile_end, y, numfactors)
+        if axisparallel:
+            iterative_binary_search_interval_nonpersistent( xtile_start, y, xtile_end, y, numfactors)
+        else:
+            iterative_binary_search_interval_nonpersistent( xtile_start, y, xtile_end, y+1, numfactors)
 
 def hyperbolic_arc_rasterization(n):
     fig = plt.figure(dpi=100)
