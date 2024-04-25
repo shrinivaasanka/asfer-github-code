@@ -3087,6 +3087,10 @@ Mars , Mercury , Venus ,
 
 Above are excerpts from the logs added to testlogs/ for Sequence mined from HURDAT2 dataset for hurricanes from 1851 to 2012. Similar to the sequence mining done for Earthquake datasets, some of the mined sequences above are strikingly similar to astronomical conjunctions already mentioned in few astrological classics (E.g Sun-Mercury-Venus - the legendary Sun flanked by Mercury and Venus, Mercury-Venus) and many others look quite new (e.g prominence of Venus-Saturn). Though these correlations can be dismissed as coincidental, these patterns are output automatically through a standard machine learning algorithm like Sequence Mining on astronomical datasets without any non-scientific assumptions whatsoever. Scientific corroboration of the above might require knowhow beyond purview of computer science - e.g Oceanography, Gravitational Effects on Tectonic Geology etc.,
 
+References:
+-----------
+172.1 Orbital resonance in solar system planets - https://en.wikipedia.org/wiki/Orbital_resonance#Coincidental_'near'_ratios_of_mean_motion - ".... In celestial mechanics, orbital resonance occurs when orbiting bodies exert regular, periodic gravitational influence on each other, usually because their orbital periods are related by a ratio of small integers ...." - Some of the top percentile planet pairs in above sequences mined from HURDAT2 NOAA hurricane dataset have high probability of orbital resonance coincidentally: For example (1) Venus-Mercury 2-body system has 9:23 ratio with 19% probability (2) Mars-Venus 2-body system has 1:3 ratio with 11% probability (3) Jupiter-Saturn 2-body system has 2:5 ratio with 13% probability
+
 =================================================================================================================
 173. (FEATURE - DONE) BigData Storage Backend Abstraction subsystem for AsFer - Commits as on 5 November 2015 :
 -----------------------------------------------------------------------------------------------------------------
