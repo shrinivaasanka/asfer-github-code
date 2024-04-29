@@ -23,40 +23,40 @@
 
 # Profile user-level stacks at 99 Hertz, for PID $1:
 bpftrace -e 'profile:hz:99 /pid == $1/ { @[ustack] = count(); }' $1
-echo "##############End#Profile#################"
+echo "##############End#Profile user-level stacks#################"
 
 # Files opened, for processes in the root $2 
 bpftrace -e 'tracepoint:syscalls:sys_enter_openat /cgroup == cgroupid(str($1))/ { printf("%s\n", str(args->filename)); }' $2
 echo "#############End#Files opened in cgroup##################"
 
 # Files opened by process
-#bpftrace -e 'tracepoint:syscalls:sys_enter_open { printf("%s %s\n", comm, str(args->filename)); }'
-echo "###############################"
+bpftrace -e 'tracepoint:syscalls:sys_enter_open { printf("%s %s\n", comm, str(args->filename)); }'
+echo "############End#Files opened by process###################"
 
 # Syscall count by program
-#bpftrace -e 'tracepoint:raw_syscalls:sys_enter { @[comm] = count(); }'
-echo "###############################"
+bpftrace -e 'tracepoint:raw_syscalls:sys_enter { @[comm] = count(); }'
+echo "#############End#Syscall count by program##################"
 
 # Read bytes by process:
-#bpftrace -e 'tracepoint:syscalls:sys_exit_read /args->ret/ { @[comm] = sum(args->ret); }'
-echo "###############################"
+bpftrace -e 'tracepoint:syscalls:sys_exit_read /args->ret/ { @[comm] = sum(args->ret); }'
+echo "#############End#Read bytes by process##################"
 
 # Read size distribution by process:
-#bpftrace -e 'tracepoint:syscalls:sys_exit_read { @[comm] = hist(args->ret); }'
-echo "###############################"
+bpftrace -e 'tracepoint:syscalls:sys_exit_read { @[comm] = hist(args->ret); }'
+echo "#############End#Read size distribution by process##################"
 
 # Show per-second syscall rates:
 bpftrace -e 'tracepoint:raw_syscalls:sys_enter { @ = count(); } interval:s:1 { print(@); clear(@); }'
 echo "###########End#per-second syscall rates####################"
 
 # Trace disk size by process
-#bpftrace -e 'tracepoint:block:block_rq_issue { printf("%d %s %d\n", pid, comm, args->bytes); }'
-echo "###############################"
+bpftrace -e 'tracepoint:block:block_rq_issue { printf("%d %s %d\n", pid, comm, args->bytes); }'
+echo "###########End#Trace disk size by process####################"
 
 # Count page faults by process
-#bpftrace -e 'software:faults:1 { @[comm] = count(); }'
-echo "###############################"
+bpftrace -e 'software:faults:1 { @[comm] = count(); }'
+echo "###########End#Count page faults by process####################"
 
 # Count LLC cache misses by process name and PID (uses PMCs):
-#bpftrace -e 'hardware:cache-misses:1000000 { @[comm, pid] = count(); }'
-echo "###############################"
+bpftrace -e 'hardware:cache-misses:1000000 { @[comm, pid] = count(); }'
+echo "###########End#Count LLC cache misses by process name and PID####################"
