@@ -23853,3 +23853,22 @@ References:
 testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.12Upgrade.AxisParallel.log.24April2024
 testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.12Upgrade.NotAxisParallel.log.24April2024
 and number of factors found with and without axisparallel enabled are same.
+
+------------------------------------------------------------------------------------------------------------------------------
+1488. (THEORY and FEATURE) Software Analytics - Kernel Analytics and Scheduler Analytics - Enhanced Berkeley Packet Filter (eBPF) - bpftrace script fully enabled - related to 561,1191,619,770,906,911,771,1192,1443,1459 and all sections on Program Analysis, AsFer-USBmd-VIRGO-KingCobra FTrace kernel callgraph analysis - Valgrind-Callgrind-KCacheGrind-Flamegraph userspace callgraph analysis, SATURN control flow analysis of VIRGO linux kernel, Software Analytics, Pandemic model of Botnet-Defense adversarial Game theoretic security, Cybercrime analytics, Anti-Malware,Anti-Ransomware,Anti-Theft and Anti-Plagiarism tools, KML, LAKE,Intrusion Prevention-Detection Systems(IDS and IPS),Anomaly Detection - 29 April 2024 
+------------------------------------------------------------------------------------------------------------------------------
+1488.1 eBPF bash script python-src/software_analytics/bpftrace.sh has been updated to fully enable all trace commandlines.
+1488.2 eBPF traces enabled are:
+ 	1488.2.1 Profile user-level stacks at 99 Hertz, for PID $1
+ 	1488.2.2 Files opened, for processes in the root $2 
+ 	1488.2.3 Files opened by process
+ 	1488.2.4 Syscall count by program
+ 	1488.2.5 Read bytes by process
+ 	1488.2.6 Read size distribution by process
+ 	1488.2.7 Show per-second syscall rates
+ 	1488.2.8 Trace disk size by process
+ 	1488.2.9 Count page faults by process
+ 	1488.2.10 Count LLC cache misses by process name and PID (uses PMCs)
+1488.3 eBPF traces for 2 processes - GNOME terminal and Firefox - have been analyzed for anomaly detection and traces are logged to:
+	python-src/software_analytics/testlogs/bpftrace.log.29April2024
+	python-src/software_analytics/testlogs/bpftrace.log2.29April2024 
