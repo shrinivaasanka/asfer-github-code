@@ -23874,3 +23874,18 @@ and number of factors found with and without axisparallel enabled are same.
 1488.3 eBPF traces for 2 processes - GNOME terminal and Firefox - have been analyzed for anomaly detection and traces are logged to:
 	python-src/software_analytics/testlogs/bpftrace.log.29April2024
 	python-src/software_analytics/testlogs/bpftrace.log2.29April2024 
+
+-------------------------------------------------------------------------------------------------------------------------------
+1489. (THEORY and FEATURE) Time series analysis - BSE Stock quote data - related to 690,691,692,1257,1315,1316,1327,1348,1367,1375,1376,1436,1437,1438 and all sections on Computational Economics-Quantitative Finance and TimeSeries Analysis, Graphical Event Models (GEM), Causal Event Models (CEM), Chain Event Graphs(CEG), Chaos and Fractals, EventNet causality, Multifractal Detrended Fluctuation Analysis (MFDFA),Fame-Merit in the context of quantitative finance - 30 April 2024
+-------------------------------------------------------------------------------------------------------------------------------
+1489.1 python-src/Streaming_TimeSeriesData.py has been updated to define new utility function bse_stockquote_and_stats() that imports and instantiates BSE object from bsedata for Bombay Stock Exchange (BSE) stock quote for a scrip code.  
+1489.2 Function bse_stockquote_and_stats(code='532174') accepts scrip code as an argument and returns the live quote for the scrip along with other statistics - top gainers,top losers and categorywise indices (corporate, sector and industry, volatilty) which are breakup(s) of BSE Sensex.
+1489.3 JSON Data is pretty printed to python-src/testlogs/Streaming_StockMarketData.BSE.log.30April2024 
+1489.4 Function bse_stockquote_and_stats() is invoked by Streaming_StockMarketData.py for intraday trading analysis (especially volatility). At present historical data is not supported and have to be gathered by daily invocation of bse_stockquote_and_stats().
+1489.5 Fame-Merit conflict is evident in valuation of stocks - Real value of a stock (Merit) is judged by Discounted Cash Flow (DCF) and Share-Price/Earnings-Per-Share ratio or P/E Ratio as opposed to market valuation (Fame).  
+
+References:
+----------
+1489.6 P/E ratio - https://en.wikipedia.org/wiki/Price%E2%80%93earnings_ratio
+1489.7 Intrinsic value of a stock - P/E ratio and DCF - https://www.forbes.com/advisor/investing/intrinsic-value/ 
+1489.8 Irrational Exuberance Second Edition - Graph of Historic S&P composite P/E ratio and interest rates (1871-2012) - https://en.wikipedia.org/wiki/Price%E2%80%93earnings_ratio#/media/File:S_and_P_500_pe_ratio_to_mid2012.png
