@@ -34,6 +34,7 @@ from pathlib import Path
 from StringSearch_BinaryEncodedTimeSeries import binary_encoded_fluctuations
 from StringSearch_LongestRepeatedSubstring import SuffixArray
 from hurst import compute_Hc
+from bsedata.bse import BSE
 
 cnt = 0
 
@@ -118,6 +119,40 @@ def ARIMA(timeseries, p, d, q):
         time_series_data, p, d) - moving_averages(time_series_data[q:], 5)
     print(("ARIMA projection: ", abs(arima)))
     return time_series_data
+
+def bse_stockquote_and_stats(code='532174'):
+    bseobj=BSE(update_codes=True)
+    quote=bseobj.getQuote(code)
+    print("------------------")
+    print("Quote:")
+    print("------------------")
+    pprint(quote)
+    topgainers=bseobj.topGainers()
+    print("------------------")
+    print("Top gainers:")
+    print("------------------")
+    pprint(topgainers)
+    toplosers=bseobj.topLosers()
+    print("------------------")
+    print("Top losers:")
+    print("------------------")
+    pprint(toplosers)
+    corporate=bseobj.getIndices(category="corporate")
+    print("------------------")
+    print("Corporate:")
+    print("------------------")
+    pprint(corporate)
+    sector_and_industry=bseobj.getIndices(category="sector_and_industry")
+    print("------------------")
+    print("Sector and Industry:")
+    print("------------------")
+    pprint(sector_and_industry)
+    volatility=bseobj.getIndices(category="volatility")
+    print("------------------")
+    print("Volatility:")
+    print("------------------")
+    pprint(volatility)
+    return (quote,topgainers,toplosers,corporate,sector_and_industry,volatility)
 
 def stockquote_Prophet_timeseries_forecast_model(ticker,period='2y',interval='1wk',algorithm="linear"):
     print("--------------Prophet Stockquote timeseries model for ",ticker," ----------------------------")
