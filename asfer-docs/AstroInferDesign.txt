@@ -23953,3 +23953,32 @@ References:
 1517.5 SINDy - Discovering governing equations from data: Sparse identification of nonlinear dynamical systems - https://arxiv.org/pdf/1509.03580 - ".... We demonstrate this new method on a number of example systems exhibiting chaos, high-dimensional data with low-rank coherence, and parameterized dynamics. As shown in the Lorenz example, the ability to predict a specific trajectory may be less important than the ability to capture the attractor dynamics. The example from fluid dynamics highlights the remarkable ability of this method to extract dynamics in a fluid system that took three decades for experts in the community to explain. There are numerous fields where this method may be applied, where there is ample data and the absence of governing equations, including neuroscience, climate science, epidemiology, and financial markets ....."
 1517.6 SINDy variants - https://pysindy.readthedocs.io/en/latest/index.html#example - "..... PySINDy is a sparse regression package with several implementations for the Sparse Identification of Nonlinear Dynamical systems (SINDy) method introduced in Brunton et al. (2016a), including the unified optimization approach of Champion et al. (2019), SINDy with control from Brunton et al. (2016b), Trapping SINDy from Kaptanoglu et al. (2021), SINDy-PI from Kaheman et al. (2020), PDE-FIND from Rudy et al. (2017), and so on. A comprehensive literature review is given in de Silva et al. (2020) and Kaptanoglu, de Silva et al. (2021)....."
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+1518. (THEORY and FEATURE) Governing Equation Discovery from Non-linear timeseries by SINDy (Sparse Identification of Non-Linear Dynamics) - IMD Rainfall timeseries (1901-2017) - 24 May 2024 - related to 690,691,692,1257,1315,1316,1327,1348,1367,1375,1376,1436,1437,1438,1515,1517 and all sections on Computational Economics-Quantitative Finance and Stockquote TimeSeries Analysis, Climate and Weather analytics, Graphical Event Models (GEM), Causal Event Models (CEM), Chain Event Graphs(CEG), Chaos and Fractals, EventNet causality, Multifractal Detrended Fluctuation Analysis (MFDFA), Linear and Logistic regression, Global Warming
+---------------------------------------------------------------------------------------------------------------------------------------------
+1518.1 Subdivisional monthly rainfall timeseries dataset (for 116 years - 1901 to 2017) from https://data.gov.in/resource/sub-divisional-monthly-rainfall-1901-2017 has been fit to SINDy model to discover governing equations for 2 subdivisions - Tamil Nadu and Coastal Andhra Pradesh. 
+1518.2 python-src/SINDy.py has been updated to print SINDy model coefficients and model equations within SINDy_fit(). New function read_rainfall_dataset(rainfalltimeseriesjson,datasource='IMD',subdivision='Tamil Nadu') has been defined to process the rainfall timeseries dataset subdivision-wise with clause for datasource (presently IMD). JSON and CSV datasets from https://data.gov.in/resource/sub-divisional-monthly-rainfall-1901-2017 have been downloaded and timeseries data for subdivision is extracted (1287 elements for 12 months per each year from 1901 to 2017 excluding Not Available - NA - columns). 
+1518.3 Following JSON and CSV datasets from Open Government Data (OGD) Platform India (https://data.gov.in/catalog/rainfall-india) have been added to NeuronRain AstroInfer repositories:
+	RainfallTimeseries_Sub_Division_IMD_2017.csv
+	RainfallTimeseries_Sub_Division_IMD_2017.json
+1518.4 Following governing equations have been discovered for 2 subdivisions over the range of 116 years (1901-2017) - excerpts from testlogs/SINDy.log.24May2024 :
+-----------------------------------
+Tamil Nadu
+-----------------------------------
+model coefficients: [[1.        0.        0.        0.        0.        0.       ]
+ [0.1019425 0.        0.        0.        0.        0.       ]]
+model equations: ['1.000 1', '0.102 1']
+(x)' = 1.000 1
+(y)' = 0.102 1
+-----------------------------------
+Coastal Andhra Pradesh
+-----------------------------------
+model coefficients: [[1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0.]]
+model equations: ['1.000 1', '0.000']
+(x)' = 1.000 1
+(y)' = 0.000
+
+References:
+----------
+1518.5 Intro to Sparse Identification of Non-Linear Dynamics - how above model equations are interpreted - https://pysindy.readthedocs.io/en/latest/examples/2_introduction_to_sindy/example.html - In earlier example governing equation for Tamil Nadu is x(t) = x0*e^(-t) and y(t) = y0*e^(-0.102*t) learnt by sparse regression from 116 year data.
