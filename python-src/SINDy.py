@@ -19,6 +19,7 @@
 import pysindy as ps
 import numpy as np
 import yfinance as yf
+import json
 
 def SINDy_fit(t,x,y):
     print("================ SINDy non-linear dynamics governing equation discovery =========")
@@ -28,6 +29,12 @@ def SINDy_fit(t,x,y):
     points=np.stack((x,y),axis=-1)
     model=ps.SINDy(feature_names=["x","y"])
     model.fit(points,t=t)
+    print("--------------------")
+    print("model predict():")
+    print("--------------------")
+    model.predict(points)
+    print("model coefficients:",model.coefficients())
+    print("model equations:",model.equations())
     model.print()
 
 def stockquote_SINDy_model(ticker,period='5y',interval='1wk'):
@@ -40,6 +47,19 @@ def stockquote_SINDy_model(ticker,period='5y',interval='1wk'):
     x=np.arange(l)
     y=timeseries
     SINDy_fit(t,x,y)
+
+def read_rainfall_dataset(rainfalltimeseriesjson,datasource='IMD',subdivision='Tamil Nadu'):
+    if datasource == 'IMD':
+        rftsjsonfile=open(rainfalltimeseriesjson)
+        rftsjson=json.load(rftsjsonfile)
+        rainfalltimeseries=[]
+        for row in rftsjson["data"]:
+            if row[0] == subdivision:
+                for i in range(2,13):
+                      if row[i] != 'NA':
+                          rainfalltimeseries.append(float(row[i]))
+        print("rainfall timeseries for state ", subdivision," :",rainfalltimeseries)
+        return rainfalltimeseries
 
 def precipitation_SINDy_model(rainfalltimeseries):
     print("================= SINDy Climate Model =====================")
@@ -58,5 +78,10 @@ if __name__=="__main__":
     stockquote_SINDy_model('MSFT')
     stockquote_SINDy_model('GOOG')
     stockquote_SINDy_model('AAPL')
-    precipitation_SINDy_model([10,15,2,2,1,12,3,5,10])
+    rftimeseries=read_rainfall_dataset("RainfallTimeseries_Sub_Division_IMD_2017.json",subdivision="Tamil Nadu")
+    print("length of timeseries:",len(rftimeseries))
+    precipitation_SINDy_model(rftimeseries)
+    rftimeseries=read_rainfall_dataset("RainfallTimeseries_Sub_Division_IMD_2017.json",subdivision="Coastal Andhra Pradesh")
+    print("length of timeseries:",len(rftimeseries))
+    precipitation_SINDy_model(rftimeseries)
 
