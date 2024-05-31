@@ -7104,6 +7104,7 @@ References:
 -----------
 385.1 Random Walks Survey - http://www.cs.elte.hu/~lovasz/erdos.pdf
 385.2 Random Walks on Weighted Directed Graphs - http://www.cs.yale.edu/homes/spielman/eigs/lect7.pdf
+385.3 Earlier sentence "flight landed on runway because of fuel shortage" has been visualized by DALL-E3 (https://openart.ai) into an image scene - https://github.com/shrinivaasanka/asfer-github-code/blob/master/python-src/testlogs/RecursiveLambdaFunctionGrowthVisualized1_DALL-E3_OpenArtAI.jpg - this visual for lambda function composition tree requiredby(fuel, has(flight, has(tyre, does(wheel, requires(landing, gear))))) could be alternatively synthesized by bottom-up overlay of images for subtrees: overlay of image of land and gear overlaid by image of tyre which is in turn overlaid by image of fuselage. Flight has been named with logo "fuel" in DALL-E3 GenAI scene synthesis.
 
 ----------------------------------------------------------------------------------------------------------
 386. (FEATURE-DONE) Java Spark Generic Streaming and Streaming Abstract Generator Integration - 27 February 2017
