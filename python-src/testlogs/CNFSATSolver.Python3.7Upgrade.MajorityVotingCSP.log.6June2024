@@ -1,0 +1,23 @@
+CNF Formula: [['!x1', 'x2', '!x4'], ['!x3', 'x4', 'x5'], ['!x2', 'x6', '!x3']]
+assignment: [0, 1, 0, 1, 1, 1]
+Number of clauses satisfied: 3.0
+Number of clauses : 3
+CNF Formula: [['x1', '!x2', '!x3'], ['!x2', 'x1', 'x2'], ['x3', 'x5', '!x1']]
+assignment: [1, 1, 1, 1, 0, 1]
+Number of clauses satisfied: 3.0
+Number of clauses : 3
+CNF Formula: [['!x5', 'x3', '!x6'], ['x1', 'x2', '!x4'], ['!x4', 'x1', 'x2']]
+assignment: [0, 1, 1, 0, 1, 1]
+Number of clauses satisfied: 3.0
+Number of clauses : 3
+CNF Formula: [['x1', 'x2', '!x6'], ['x4', 'x2', '!x5'], ['!x4', 'x1', 'x3']]
+assignment: [0, 1, 0, 0, 1, 1]
+Number of clauses satisfied: 3.0
+Number of clauses : 3
+CNF Formula: [['!x2', 'x1', '!x6'], ['x1', 'x2', '!x3'], ['!x4', 'x5', 'x2']]
+assignment: [0, 0, 1, 0, 1, 1]
+Number of clauses satisfied: 2.0
+Number of clauses : 3
+Total number of voters: 5
+Total boolean majority+VoterSAT composition votes 4
+Total MAXSAT majority+VoterSAT composition votes 4.666666666666666
