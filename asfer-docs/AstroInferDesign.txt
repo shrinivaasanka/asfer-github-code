@@ -23986,3 +23986,20 @@ model equations: ['1.000 1', '0.000']
 References:
 ----------
 1518.5 Intro to Sparse Identification of Non-Linear Dynamics - how above model equations are interpreted - https://pysindy.readthedocs.io/en/latest/examples/2_introduction_to_sindy/example.html - In earlier example governing equation for Tamil Nadu is x(t) = x0*e^(-t) and y(t) = y0*e^(-0.102*t) learnt by sparse regression from 116 year data.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+1521. (THEORY and FEATURE) Random Matrix Least Square SAT Solver - Python 3.7 Upgrade and implementation of Majority+VoterSAT boolean composition - related to 161,318,368,429,453,517,518,592,620,678,682,683,687 and all sections on Boolean Majority + VoterSAT composition, KRW Conjecture, Election analytics, Opinion Mining  - 6 June 2024 
+-----------------------------------------------------------------------------------------------------------------------------------------
+1521.1 CNFSATSolver.py has been upgraded to Python 3.x by 2to3 and autopep8 utilities.
+1521.2 New multipurpose function majorityvotingCSP(self,VoterSATs,Assignments) has been defined that simulates Majority+VoterSAT boolean composition voting on 2 candidates 0 and 1 which has been discussed in multiple places in NeuronRain theory drafts in the context of hardness amplification, KRW conjecture among others. This function accepts an array of VoterSATs (one per voter) and an array of assignments (one per voter) and verifies if the assignment to variables satisfies the CNFSAT formula of the voter by function satisfy(). 
+1521.3 Binary assignment and Fractional assignment are set to be equal while invoking satisfy(). 
+1521.4 Total number of binary votes (number of formulas satisfied by assignments - which is equal to number of votes to candidate 1) and total number of MAXSAT votes (which is the percentage of clauses satisfied - real values) are computed.
+1521.5 New boolean flag MajorityVotingCSP chooses between two clauses - (*) to compute Majority+VoterSAT boolean composition by majorityvotingCSP() or (*) Invoke SAT Solver by any of the standard least square algorithms by default set to LSMR.
+1521.6 Following logs respectively capture:
+	1521.6.1 CNFSATSolver.Python3.7Upgrade.MajorityVotingCSP.log2.6June2024 - An example set of 1000 (Randomly generated CNFs) Random Matrix Least Square SAT Solver iterations for 5 variables and 5 clauses (alpha=1). All 1000 CNFSATs have been satisified 100%.
+	1521.6.2 CNFSATSolver.Python3.7Upgrade.MajorityVotingCSP.log.6June2024 - Simulation of a majority voting with 5 voters each having their own VoterCNFSAT and associated assignments to those VoterSATs by function majorityvotingCSP() - input CNFSATs for this function have to be generated based on Voter preferences. For example, following 3 constraints by voter can be converted to 3 binary variables in a CNFSAT clause which requires a preprocessing routine: (1) Candidate should be above 60 years age (x1 set to 1 if constraint is satisfied) (2) Candidate should have atleast 30 years experience (x2 set to 1 if constraint is satisfied) (3) Candidate should have atleast 2 academic degrees (x3 set to 1 if constraint is satisfied). 
+1521.7 In real world majority voting elections, identifying VoterSATs for individual voters could be a breakthrough in psephology as satisfying assignments to them found by an efficient SAT or MAXSAT Solver could maximize the votes.
+
+References:
+-----------
+1521.8 CVXOPT L1regls - new URL - https://cvxopt.org/_downloads/d5ed902eb903c26fc18bd73731b5e67d/l1regls.py
