@@ -1,0 +1,23 @@
+ File "/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/NeuronRainApps/QuestionAnswering/QuestionAnswering.py", line 124, in <module>
+    OpenAIQuestionAnswering(question)
+  File "/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/NeuronRainApps/QuestionAnswering/QuestionAnswering.py", line 29, in OpenAIQuestionAnswering
+    chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-3.5-turbo")
+  File "/usr/local/lib/python3.9/site-packages/openai/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/openai/resources/chat/completions.py", line 663, in create
+    return self._post(
+  File "/usr/local/lib/python3.9/site-packages/openai/_base_client.py", line 1200, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/usr/local/lib/python3.9/site-packages/openai/_base_client.py", line 889, in request
+    return self._request(
+  File "/usr/local/lib/python3.9/site-packages/openai/_base_client.py", line 965, in _request
+    return self._retry_request(
+  File "/usr/local/lib/python3.9/site-packages/openai/_base_client.py", line 1013, in _retry_request
+    return self._request(
+  File "/usr/local/lib/python3.9/site-packages/openai/_base_client.py", line 965, in _request
+    return self._retry_request(
+  File "/usr/local/lib/python3.9/site-packages/openai/_base_client.py", line 1013, in _retry_request
+    return self._request(
+  File "/usr/local/lib/python3.9/site-packages/openai/_base_client.py", line 980, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}

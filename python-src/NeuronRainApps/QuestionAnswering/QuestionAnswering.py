@@ -18,16 +18,22 @@
 
 import cmd,sys
 import wikipedia
-import RecursiveGlossOverlap_Classifier
-from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
-from collections import defaultdict
 import numpy as np
 import operator
-import WordNetPath
 #from googlesearch import search 
+import os
 
+def OpenAIQuestionAnswering(question):
+    from openai import OpenAI
+    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+    chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-3.5-turbo")
+    print("chat completion:",chat_completion)
 
-def AIQuestionAnswering(question,questionfraction=5,maxanswers=1,keywordsearch=False,wsheading=False,answersliced=1,answerfraction=20):
+def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=5,maxanswers=1,keywordsearch=False,wsheading=True,answersliced=1,answerfraction=5):
+    import RecursiveGlossOverlap_Classifier
+    from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
+    from collections import defaultdict
+    import WordNetPath
     print("================================================================")
     print("Question:",question)
     questiontextgraph = RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(question)
@@ -36,11 +42,11 @@ def AIQuestionAnswering(question,questionfraction=5,maxanswers=1,keywordsearch=F
     answertextgraphs = []
     for core in questiontextgraph[1][:int(len(questiontextgraph[0])/questionfraction)]:
         searchquery += " " + core[0]
-    #print("Search query:",searchquery)
-    #for r in search(searchquery):
-    #    print("searchresults:",r)
-    #    searchresults=r
-    #    break
+    print("Search query:",searchquery)
+    for r in wikipedia.search(searchquery):
+        print("searchresults:",r)
+        searchresults=r
+        break
     if not keywordsearch:
         wikipediasearch=wikipedia.search(question)
     else:
@@ -81,9 +87,9 @@ def AIQuestionAnswering(question,questionfraction=5,maxanswers=1,keywordsearch=F
             for v1 in answertextgraph[0].nodes():
                  column=0
                  for v2 in answertextgraph[0].nodes():
-                     queryweightedges[v1 + "-" + v2]=transformerattention[0][row][column]
-                     keyweightedges[v1 + "-" + v2]=transformerattention[1][row][column]
-                     valueweightedges[v1 + "-" + v2]=transformerattention[2][row][column]
+                     queryweightedges[v1 + "-" + v2]=abs(transformerattention[0][row][column])
+                     keyweightedges[v1 + "-" + v2]=abs(transformerattention[1][row][column])
+                     valueweightedges[v1 + "-" + v2]=abs(transformerattention[2][row][column])
                      column+=1
                  row+=1
             queryweightedges=sorted(queryweightedges.items(),key=operator.itemgetter(1), reverse=True)
@@ -97,21 +103,46 @@ def AIQuestionAnswering(question,questionfraction=5,maxanswers=1,keywordsearch=F
             naturallanguageanswer=""
             for edge in queryweightedges[:int(len(queryweightedges)/answerfraction)]:
                 edgevertices=edge[0].split("-")
-                wordnetpath=WordNetPath.path_between(edgevertices[0],edgevertices[1])
+                #wordnetpath=WordNetPath.path_between(edgevertices[0],edgevertices[1])
                 #print("wordnetpath:",wordnetpath)
-                if len(wordnetpath) > 1:
-                    naturallanguageanswer += make_sentence(wordnetpath)
-            print("Bot generated answer from textgraph:",naturallanguageanswer)
+                #if len(wordnetpath) > 1:
+                    #naturallanguageanswer += make_sentence(wordnetpath)
+                naturallanguageanswer += make_sentence(edgevertices)
+            print("Sorted Query weights - Bot generated answer from textgraph:",naturallanguageanswer)
+            naturallanguageanswer=""
+            for edge in keyweightedges[:int(len(keyweightedges)/answerfraction)]:
+                edgevertices=edge[0].split("-")
+                #wordnetpath=WordNetPath.path_between(edgevertices[0],edgevertices[1])
+                #print("wordnetpath:",wordnetpath)
+                #if len(wordnetpath) > 1:
+                    #naturallanguageanswer += make_sentence(wordnetpath)
+                naturallanguageanswer += make_sentence(edgevertices)
+            print("Sorted Key weights - Bot generated answer from textgraph:",naturallanguageanswer)
+            naturallanguageanswer=""
+            for edge in valueweightedges[:int(len(valueweightedges)/answerfraction)]:
+                edgevertices=edge[0].split("-")
+                #wordnetpath=WordNetPath.path_between(edgevertices[0],edgevertices[1])
+                #print("wordnetpath:",wordnetpath)
+                #if len(wordnetpath) > 1:
+                    #naturallanguageanswer += make_sentence(wordnetpath)
+                naturallanguageanswer += make_sentence(edgevertices)
+            print("Sorted Value weights - Bot generated answer from textgraph:",naturallanguageanswer)
         return answertextgraphs
 
 def make_sentence(wordnetsynsets):
+    from nltk.corpus import wordnet as wn
     prevword=wordnetsynsets[0]
     sentence=""
-    for nextword in wordnetsynsets[1:]:
-        sentence += prevword + " is a(n) " + nextword +"."
-        prevword=nextword
+    try:
+        for nextword in wordnetsynsets[1:]:
+            wordnet_lch_relation = " " + str(wn.synset(prevword+".n.01").lowest_common_hypernyms(wn.synset(nextword+".n.01"))) + " " 
+            sentence += prevword + wordnet_lch_relation + nextword +"."
+            prevword=nextword
+    except Exception:
+        print("WordNet exception")
     return sentence
 
 if __name__ == "__main__":
     question = sys.argv[1]
-    AIQuestionAnswering(question)
+    WikipediaRLFGTransformersQuestionAnswering(question)
+    #OpenAIQuestionAnswering(question)
