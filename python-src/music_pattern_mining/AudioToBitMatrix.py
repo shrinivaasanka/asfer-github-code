@@ -57,6 +57,7 @@ from pydub import AudioSegment
 from pydub.playback import play
 from pytimbre2.audio_files.wavefile import WaveFile
 from pytimbre2.spectral.spectra import SpectrumByFFT
+from MusicSynthesizer_AddOn import pysynth_synthesize_notes
 
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
@@ -270,6 +271,7 @@ def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interp
     synthesized_poly=0
     if training_music is None and virtual_piano_notes is not None:
         print("virtual piano notes:",virtual_piano_notes)
+        pysynth_synthesize_notes(virtual_piano_notes,duration=4,filename="PySynth_music.wav")
         #freq=librosa.note_to_hz(virtual_piano_notes)
         freq=get_piano_frequencies(virtual_piano_notes,genre=musicgenre)
         print("freq:",freq)
@@ -704,7 +706,7 @@ if __name__ == "__main__":
     #music_weighted_automaton_from_waveform("./virtual_piano_music.WesternClassical.wav")
     #music_weighted_automaton_from_waveform("./virtual_piano_music.Carnatic.wav")
     #dotfile1=music_weighted_automaton_from_waveform("testlogs/JSBach_Musicological_Offering.mp4")
-    dotfile2=music_weighted_automaton_from_waveform("testlogs/Bach_Flute_Sonata_EFlat.mp4",duration=12,note2statedict={'C':0,'D':1,'E':2,'F':3,'G':4,'A':5,'B':6,'A♯':7,'C♯':8,'D♯':9,'F♯':10,'G♯':11},genre="WesternClassical")
+    #dotfile2=music_weighted_automaton_from_waveform("testlogs/Bach_Flute_Sonata_EFlat.mp4",duration=12,note2statedict={'C':0,'D':1,'E':2,'F':3,'G':4,'A':5,'B':6,'A♯':7,'C♯':8,'D♯':9,'F♯':10,'G♯':11},genre="WesternClassical")
     #dotfile3=music_weighted_automaton_from_waveform("testlogs/054-SBC-Aanandhamridhakarshini.mp3",note2statedict={'S':0, 'R₁':1, 'R₂':2, 'R₃':3,'G₁':4, 'G₂':5, 'G₃':6, 'M₁':7, 'M₂':8, 'P':9, 'D₁':10, 'D₂':11, 'D₃':12, 'N₁':13,'N₂':14, 'N₃':15, 'Ṣ':16,'G̣₃':17,'G̣₂':18,'Ṛ₁':19,'Ṃ₂':20,'Ḍ₁':21,'P̣':22,'Ṛ₂':23,'Ḍ₂':24,'Ḍ₃':25,'Ṇ₃':26},genre="Carnatic",raaga="chitrambari")
     #music_weighted_automata_analytics([dotfile1,dotfile2,dotfile3])
 
@@ -712,7 +714,6 @@ if __name__ == "__main__":
 
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp3_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃','16':'Ṣ','17':'G̣₃','18':'G̣₂','19':'Ṛ₁','20':'Ṃ₂','21':'Ḍ₁','22':'P̣','23':'Ṛ₂','24':'Ḍ₂','25':'Ḍ₃','26':'Ṇ₃'},genre="Carnatic",instruments=["Violin"])
     notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/Bach_Flute_Sonata_EFlat.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical",instruments=["Violin"])
-
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
     #bm=audio_to_bitmatrix("virtual_piano_music.WesternClassical.wav",dur=10)
     #features1=audio_features(audiofilename="virtual_piano_music.WesternClassical.wav",signal_bitmap=bm)
