@@ -86,7 +86,7 @@ def locate_proper_motion_conjunction(queryresults1,queryresults2,duration=100000
                     if angdistance < separation:
                         print("Angular separation between two bodies ",q1["source_id"]," and ",q2["source_id"]," in ",y," years:",angdistance)
 
-def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds):
+def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds,userdefinedlatlons):
     ephem=EphemerisSearch("de421.bsp")
     range_gravities={}
     solar_system_bodies={"Sun":10,"Moon":301,"Mars":499,"Mercury":199,"Jupiter":599,"Venus":299,"Saturn":699,"Uranus":799,"Neptune":899,"Pluto":999}
@@ -107,7 +107,7 @@ def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds):
           timetoks=datetimetoks[1].split(":")
           print("datetoks:",datetoks)
           print("timetoks:",timetoks)
-          gravities=ephem.extreme_weather_events_n_body_analytics([(datetoks[0],datetoks[1],datetoks[2],timetoks[0],timetoks[1],timetoks[2])],loc=loc)
+          gravities=ephem.extreme_weather_events_n_body_analytics([(datetoks[0],datetoks[1],datetoks[2],timetoks[0],timetoks[1],timetoks[2])],loc=loc,userdefinedlatlons=userdefinedlatlons)
           range_gravities[date]=gravities
           date += 1
     print("=========================================================================")
@@ -335,7 +335,7 @@ class EphemerisSearch(object):
             print("SkyField - sky_on_datetime(): Long-Lat position of ",observed," from ",observedfrom," on ",datetime," (Year-Month-Day-Hour-Minute-Second):",astrometric.apparent().ecliptic_latlon())
             return astrometric.apparent().ecliptic_latlon()
     
-    def extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=True,angularsepbounds=(0,60),maxiterations=200):
+    def extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=True,angularsepbounds=(0,60),maxiterations=200,userdefinedlatlons=[]):
         Latlons=[]
         argdatesofEWEs=datesofEWEs
         if datesofEWEs == "Earthquakes":
@@ -417,7 +417,10 @@ class EphemerisSearch(object):
                     obj = Horizons(id=i, location="@0", epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors(refplane="earth")
                     #obj = Horizons(id=i, location=Latlons[cnt], epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').ephemerides()
                 else:
-                    obj = Horizons(id=i, location=loc, epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
+                    #obj = Horizons(id=i, location=loc, epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
+                    obj = Horizons(id=i, location=userdefinedlatlons[cnt], epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id')
+                    print("obj.ephermerides():",obj.ephemerides())
+                    obj = obj.vectors()
                 print("extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body :",i,") = ",obj)
                 print("#################################################################")
                 r_obj = [obj['x'][0], obj['y'][0], obj['z'][0]]
