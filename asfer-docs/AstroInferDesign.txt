@@ -24118,3 +24118,43 @@ References:
 1525.9 Introduction to Algorithms - 4th edition - [Cormen-Leiserson-Rivest-Stein] - Chapter 31 Number-theoretic algorithms - pages 912-913 - Theorem 31.11 - Fibonacci series and Lame’s theorem
 1525.10 Integer Division is in NC1 - [Chiu-Davida-Litow] - https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=34183a7e35fbdb49d3c7521196b749472eeccecd - Lemma 5 - modulus operation is in NC1 - Euclid's GCD algorithm is therefore parallelizable and modulus operand in each of the O(logb) recursive calls is in NC1  
 1525.11 Asymptotic series for Prime Omega function - https://en.wikipedia.org/wiki/Prime_omega_function
+
+----------------------------------------------------------------------------------------------------------------------------------------
+1526. (JIRA,THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 2 July 2024 - N-Body gravitational acceleration and Barometric pressure analysis of date range 2 July 2024-10 August 2024 and location based gravity computation in NASA JPL Horizons API - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368,1388,1404,1455,1456,1463,1479,1480,1515 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change-Adaptive Fourier Neural Operator-FourCastNet, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+----------------------------------------------------------------------------------------------------------------------------------------
+1526.1 python-src/EphemerisSearch.py has been updated to include a user defined parameter userdefinedlatlons in multiple functions (predict_EWE(),extreme_weather_events_n_body_analytics()) for computing location-specific gravity of a celestial body. Argument userdefinedlatlons is either an array of longitude-latitudes or one of the 2300+ location code names on earth published in https://ssd.jpl.nasa.gov/horizons/app.html#/ NASA JPL Horizons web interface. Horizons() object is instantiated by setting location argument to elements of userdefinedlatlons. 
+1526.2 python-src/image_pattern_mining/ImageNet/GISWeatherAnalytics.py has been updated to update predict_EWE() invocation accordingly in climate_analytics() which is invoked with value of 'longlat' set to location id 568@399 or city 568 on Earth to find N-Body gravities for Sun-Mercury-Venus 3-body system for date range 2 July 2024-10 August 2024:
+    	climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2024,7,2,17,30,00),'dateto':(2024,8,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['568@399']},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+1526.3 Location-specific gravity computation makes the N-body model truly a variable-gravity computation dependent on observed location on earth. This update resolves JIRA issue - https://krishnairesearch.atlassian.net/browse/NEUR-41
+1526.4 Following are the gravity,barometric pressure plots and logs for this date range:
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.BarometricPressure.Mercury-Venus.2024-7-2#2024-8-10.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.BarometricPressure.Sun-Mercury.2024-7-2#2024-8-10.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.BarometricPressure.Sun-Venus.2024-7-2#2024-8-10.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Mercury-Venus.2024-7-2#2024-8-10.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Sun-Mercury.2024-7-2#2024-8-10.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.Gravity.Sun-Venus.2024-7-2#2024-8-10.jpg
+	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.log.2July2024
+1526.5 Following dates match < 30 degrees angular separation of Sun-Mercury and earlier plots show a dip in gravity and an increase in barometric pressure during 2 July 2024-10 August 2024 as observed from location 568 on Earth (which is Maunakea (observatory) - Hawaii):
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-03 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-04 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-05 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-06 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-07 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-08 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-09 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-10 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-11 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-12 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-13 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-14 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-15 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-16 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-17 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-18 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-19 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-20 17:30:00.000
+	SkyCoord separation(): Angular separation of Sun-Mercury matches bounds for date: 2024-07-21 17:30:00.000
+
+References:
+----------
+1526.6 NASA JPL Horizons - Coordinate Center (Observing Site) Selection - https://ssd.jpl.nasa.gov/horizons/manual.html#center
