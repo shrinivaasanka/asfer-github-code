@@ -24165,7 +24165,7 @@ References:
 1527.1 python-src/image_pattern_mining/ImageNet/GISWeatherAnalytics.py has been updated to compute N-Body gravities for 3-body system (Sun-Mercury-Venus) for same date range as 1526 (2 July 2024-10 August 2024) at a different geographic location (Location code 223 - Chennai - Coordinate Center: 80°10′58.8″E, 13°00′00.0″N):
     climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2024,7,2,17,30,00),'dateto':(2024,8,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399']},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
 1527.2 N-Body Gravity values computed for Sun-Mercury-Venus 3-body system at location 223 are different from those for Hawaii-Mauna Kea in Section 1526 (written to testlogs/GISWeatherAnalytics.log.4July2024)
-1527.3 Differences between gravity L2 norms and barometric pressure values (date range 3 July 2024-10 August 2024) computed for Hawaii (testlogs/GISWeatherAnalytics.log.2July2024) and Chennai (testlogs/GISWeatherAnalytics.log.4July2024) JPL Horizons location codes (568 and 223) are captured in GISWeatherAnalytics.logdiff.HawaiiAndChennai.2and4July2024. Small decimal variations in gravity values should have exponential impact on barometric pressure due to Barometric pressure formula (Section 1479.4) and following pressure plots are only representative (gravity plots for both locations appear identical due to small decimal variations getting rounded off):
+1527.3 Differences between gravity L2 norms and barometric pressure values (date range 2 July 2024-10 August 2024) computed for Hawaii (testlogs/GISWeatherAnalytics.log.2July2024) and Chennai (testlogs/GISWeatherAnalytics.log.4July2024) JPL Horizons location codes (568 and 223) are captured in GISWeatherAnalytics.logdiff.HawaiiAndChennai.2and4July2024. Small decimal variations in gravity values should have exponential impact on barometric pressure due to Barometric pressure formula (Section 1479.4) and following pressure plots are only representative (gravity plots for both locations appear identical due to small decimal variations getting rounded off):
 	GISWeatherAnalytics.BarometricPressure.Chennai.Mercury-Venus.2024-7-2#2024-8-10.jpg
 	GISWeatherAnalytics.BarometricPressure.Chennai.Sun-Mercury.2024-7-2#2024-8-10.jpg
 	GISWeatherAnalytics.BarometricPressure.Chennai.Sun-Venus.2024-7-2#2024-8-10.jpg
@@ -24174,4 +24174,4 @@ References:
 References:
 ----------
 1527.5 Live Surface Pressure Maps for Earth - https://zoom.earth/maps/pressure/  
- 
+1527.6 Hurricane Beryl 2024 - https://en.wikipedia.org/wiki/Hurricane_Beryl - Rapid intensification from 28 June 2024 to 1 July 2024 - 165 miles per hour (or 270 kmph 1-minute sustained wind speed) - Category 5 - 934 millibar (hPa) 
