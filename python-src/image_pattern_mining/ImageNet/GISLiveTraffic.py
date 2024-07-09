@@ -19,6 +19,74 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+from FlightRadar24 import FlightRadar24API
+from pyflightdata import FlightData
+import pprint
+import pandas as pd
+
+def flightradar24_live_air_traffic(zones=["asia"],max_no_of_flights=10):
+    fr_api = FlightRadar24API()
+    #if radius == -1:
+    #    flights = fr_api.get_flights()
+    #else:
+    #    bounds = fr_api.get_bounds_by_point(longitude, latitude, radius)
+    #    print("bounds:",bounds)
+    #    flights = fr_api.get_flights(bounds = bounds)
+    #print("flights:",flights)
+    #if airport_code is not None:
+    #    airport = fr_api.get_airport(airport_code) 
+    #    print("airport:",airport)
+
+    if zones == None:
+        zones = list(fr_api.get_zones().keys())
+    print("zones:",zones)
+    for zoneid in zones:
+        for zoneid in zones:
+            bounds = fr_api.get_bounds(fr_api.get_zones()[zoneid])
+            flights = fr_api.get_flights(
+                bounds = bounds
+            )
+            cnt=1
+            for flight in flights[:max_no_of_flights]:
+                try:
+                    if len(flight.origin_airport_iata) > 1 and len(flight.destination_airport_iata):
+                        print(str(cnt)+".live flight in zone ",zoneid,"from ",fr_api.get_airport(flight.origin_airport_iata)," to ",fr_api.get_airport(flight.destination_airport_iata)," now at altitude ",flight.get_altitude()," and longitude-latitude ",(flight.longitude,flight.latitude))
+                        cnt+=1
+                except:
+                    print("FlightRadarAPI exception")
+
+def pyflightdata_live_air_traffic(airport_code="MAA"):
+    flightdata=FlightData()
+    fr_api = FlightRadar24API()
+    pd.set_option("display.max_rows",None)
+    pd.set_option("display.max_columns",None)
+    stats=flightdata.get_airport_stats(airport_code)
+    print("====================================================")
+    print("Data for ",fr_api.get_airport(airport_code))
+    print("====================================================")
+    print("------------------------------------")
+    print("airport stats :")
+    print("------------------------------------")
+    #pprint.pprint(stats)
+    pprint.pprint(pd.json_normalize(stats))
+    onground=flightdata.get_airport_onground(airport_code)
+    print("------------------------------------")
+    print("airport onground:")
+    print("------------------------------------")
+    #pprint.pprint(onground)
+    pprint.pprint(pd.json_normalize(onground))
+    arrivals=flightdata.get_airport_arrivals(airport_code)
+    print("------------------------------------")
+    print("airport arrivals:")
+    print("------------------------------------")
+    #pprint.pprint(arrivals)
+    pprint.pprint(pd.json_normalize(arrivals))
+    departures=flightdata.get_airport_departures(airport_code)
+    print("------------------------------------")
+    print("airport departures:")
+    print("------------------------------------")
+    #pprint.pprint(departures)
+    pprint.pprint(pd.json_normalize(departures))
 
 def here_live_traffic(key,bearertoken,boundingbox=[12.439259,79.271851,13.568572,80.351257]):
     #page = requests.get('https://traffic.api.here.com/traffic/6.2/flow.xml?app_id=NeuronRain_Live_Traffic&app_code=vS5i2op45RlaPW2GFKx8&bbox='+str(boundingbox[0])+','+str(boundingbox[1])+','+str(boundingbox[2])+','+str(boundingbox[3])+'&responseattributes=sh,fc')
@@ -69,3 +137,5 @@ if __name__=="__main__":
     tomtom_live_traffic(tomtomkey,boundingbox=[10.948860,79.348497,10.991413,79.421453],apiversion=4)
     tomtom_live_traffic(tomtomkey,boundingbox=[10.948860,79.348497,10.991413,79.421453],apiversion=5)
     tomtom_live_traffic(tomtomkey,longlat=[12.439259,79.271851])
+    flightradar24_live_air_traffic()
+    pyflightdata_live_air_traffic(airport_code="MAA")
