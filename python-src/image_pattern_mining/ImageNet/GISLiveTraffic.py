@@ -23,9 +23,16 @@ from FlightRadar24 import FlightRadar24API
 from pyflightdata import FlightData
 import pprint
 import pandas as pd
+from datetime import datetime
+import time
+import dynetx as dx
+import networkx as nx
+import operator
+import dynetx.algorithms as al
 
-def flightradar24_live_air_traffic(zones=["asia"],max_no_of_flights=10):
+def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10):
     fr_api = FlightRadar24API()
+    airtrafficdyngraph = dx.DynDiGraph(edge_remove=True)
     #if radius == -1:
     #    flights = fr_api.get_flights()
     #else:
@@ -41,19 +48,29 @@ def flightradar24_live_air_traffic(zones=["asia"],max_no_of_flights=10):
         zones = list(fr_api.get_zones().keys())
     print("zones:",zones)
     for zoneid in zones:
-        for zoneid in zones:
-            bounds = fr_api.get_bounds(fr_api.get_zones()[zoneid])
-            flights = fr_api.get_flights(
-                bounds = bounds
-            )
-            cnt=1
-            for flight in flights[:max_no_of_flights]:
                 try:
-                    if len(flight.origin_airport_iata) > 1 and len(flight.destination_airport_iata):
-                        print(str(cnt)+".live flight in zone ",zoneid,"from ",fr_api.get_airport(flight.origin_airport_iata)," to ",fr_api.get_airport(flight.destination_airport_iata)," now at altitude ",flight.get_altitude()," and longitude-latitude ",(flight.longitude,flight.latitude))
-                        cnt+=1
+                     bounds = fr_api.get_bounds(fr_api.get_zones()[zoneid])
+                     flights = fr_api.get_flights(
+                     bounds = bounds
+                     )
                 except:
-                    print("FlightRadarAPI exception")
+                     print("FlightRadarAPI exception")
+                cnt=1
+                for flight in flights[:max_no_of_flights]:
+                    if len(flight.origin_airport_iata) > 1 and len(flight.destination_airport_iata):
+                        try:
+                            print(str(cnt)+".live flight in zone ",zoneid,"from ",fr_api.get_airport(flight.origin_airport_iata)," to ",fr_api.get_airport(flight.destination_airport_iata)," on ",datetime.utcnow(),"  at altitude ",flight.get_altitude()," and longitude-latitude ",(flight.longitude,flight.latitude))
+                            airtrafficdyngraph.add_interaction(u=fr_api.get_airport(flight.origin_airport_iata),v=fr_api.get_airport(flight.destination_airport_iata),t=time.time_ns())
+                            cnt+=1
+                        except:
+                           print("FlightRadarAPI exception")
+    #timerespectingpaths=al.all_time_respecting_paths(airtrafficdyngraph)
+    #print("Time respecting paths in air traffic dynamic graph:",timerespectingpaths)
+    temporal_betweenness_centrality=nx.betweenness_centrality(airtrafficdyngraph)
+    sorted_tbc = sorted(list(temporal_betweenness_centrality.items()), key=operator.itemgetter(1), reverse=True)
+    print("Temporal Betweenness Centrality of Air Traffic Dynamic Graph:",sorted_tbc)
+    for e in airtrafficdyngraph.stream_interactions():
+            print("air traffic dynamic graph edge:",e)
 
 def pyflightdata_live_air_traffic(airport_code="MAA"):
     flightdata=FlightData()
