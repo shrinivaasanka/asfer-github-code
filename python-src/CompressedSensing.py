@@ -40,7 +40,8 @@ from scipy.spatial.distance import cdist
 from sklearn.metrics.cluster import adjusted_rand_score
 from sklearn.metrics import adjusted_mutual_info_score
 import numpy as np
-from cv2 import *
+#from cv2 import *
+import cv2
 import tensorflow as tf
 
 
