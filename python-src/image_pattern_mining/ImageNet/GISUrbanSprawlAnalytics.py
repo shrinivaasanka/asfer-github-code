@@ -80,7 +80,6 @@ import seaborn
 import pandas
 import json 
 from geopy.distance import geodesic,great_circle
-from GISLiveTraffic import tomtom_live_traffic
 
 mplstyle.use('fast')
 shapely.speedups.disable()
@@ -194,6 +193,7 @@ def urbansprawl_gini_coefficient(urbansprawldata):
     return giniindex
 
 def urban_sprawl_live_traffic(tomtomkey=None,herekey=None,bbox=None,longlat=None):
+    from GISLiveTraffic import tomtom_live_traffic
     if tomtomkey is not None:
         if bbox is not None: 
              jsonret=tomtom_live_traffic(tomtomkey,boundingbox=bbox)
@@ -429,11 +429,18 @@ def compare_raster_data(raster1data,raster2data):
 
 def verhulste_ricker_population_growth_model(population_at_t1,intrinsic_growth_rate,carrying_capacity,metropolitan_agglomeration,fromyear,toyear):
     number_of_years=toyear-fromyear
-    print("===================================================================")
-    for y in range(1,number_of_years):
-        projected_population_at_t2 = population_at_t1 * math.exp(intrinsic_growth_rate*(1 - population_at_t1/carrying_capacity))
+    print("number_of_years:",number_of_years)
+    populationatt1=population_at_t1
+    print("==============Naive Estimate======================================")
+    for y in range(1,number_of_years+1):
+        projected_population_at_t2 = populationatt1 * math.pow((1+intrinsic_growth_rate),y)
         print("verhulste_ricker_population_growth_model(): projected " + metropolitan_agglomeration + " (year " + str(fromyear+y) + ") = ",projected_population_at_t2)
-        population_at_t1 = projected_population_at_t2
+    print("==============VERHULSTE-RICKER model================================================")
+    populationatt1=population_at_t1
+    for y in range(1,number_of_years+1):
+        projected_population_at_t2 = populationatt1 * math.exp(intrinsic_growth_rate*(1 - population_at_t1/carrying_capacity))
+        print("verhulste_ricker_population_growth_model(): projected " + metropolitan_agglomeration + " (year " + str(fromyear+y) + ") = ",projected_population_at_t2)
+        populationatt1 = projected_population_at_t2
     return projected_population_at_t2
 
 def three_dimensional_urban_growth_model(rasterdata_2d,rasterdata_3d,longx,latx,longy,laty):
@@ -895,6 +902,10 @@ if __name__ == "__main__":
     #Chennai Metropolitan Area - NASA WorldView NightLights - 11 November 2023 - kmeans contour segment clustering analysis
     #seg16=ImageGraph_Keras_Theano.image_segmentation("testlogs/NASANightLights_11November2023.jpeg")
     #ImageGraph_Keras_Theano.contours_kmeans_clustering("testlogs/NASANightLights_11November2023.jpeg",seg16)
-    tomtomkey='00cKrkjfS62WPuchRmUc6Q5RAJw80hO2'
-    urban_sprawl_live_traffic(tomtomkey=tomtomkey,bbox=[12.439259,79.271851,13.568572,80.351257])
-    urban_sprawl_live_traffic(tomtomkey=tomtomkey,longlat=[12.439259,79.271851])
+    #tomtomkey='00cKrkjfS62WPuchRmUc6Q5RAJw80hO2'
+    #urban_sprawl_live_traffic(tomtomkey=tomtomkey,bbox=[12.439259,79.271851,13.568572,80.351257])
+    #urban_sprawl_live_traffic(tomtomkey=tomtomkey,longlat=[12.439259,79.271851])
+    print("============================================")
+    print("Based on historical census growth rate:")
+    print("============================================")
+    verhulste_ricker_population_growth_model(12288000,2.39/100.0,80000000,"Chennai Metropolitan Area Population",fromyear=2011,toyear=2035)

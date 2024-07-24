@@ -1,0 +1,67 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+============================================
+Based on historical census growth rate:
+============================================
+number_of_years: 24
+==============Naive Estimate======================================
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2012) =  12581683.200000001
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2013) =  12882385.42848
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2014) =  13190274.440220673
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2015) =  13505521.999341948
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2016) =  13828303.97512622
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2017) =  14158800.440131737
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2018) =  14497195.770650888
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2019) =  14843678.749569442
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2020) =  15198442.671684155
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2021) =  15561685.451537406
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2022) =  15933609.73382915
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2023) =  16314423.006467668
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2024) =  16704337.716322245
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2025) =  17103571.387742344
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2026) =  17512346.74390939
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2027) =  17930891.831088826
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2028) =  18359440.14585185
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2029) =  18798230.765337706
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2030) =  19247508.48062928
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2031) =  19707523.93331632
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2032) =  20178533.755322583
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2033) =  20660800.71207479
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2034) =  21154593.84909338
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2035) =  21660188.642086715
+==============VERHULSTE-RICKER model================================================
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2012) =  12539104.691017168
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2013) =  12795340.694359435
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2014) =  13056812.868148213
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2015) =  13323628.2132756
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2016) =  13595895.917191794
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2017) =  13873727.398587303
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2018) =  14157236.352988238
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2019) =  14446538.799283331
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2020) =  14741753.127201753
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2021) =  15043000.145761108
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2022) =  15350403.132705487
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2023) =  15664087.884953776
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2024) =  15984182.770078864
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2025) =  16310818.77883884
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2026) =  16644129.578781657
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2027) =  16984251.568945203
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2028) =  17331323.93567517
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2029) =  17685488.709583547
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2030) =  18046890.823671076
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2031) =  18415678.172637425
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2032) =  18792001.673403352
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2033) =  19176015.326869663
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2034) =  19567876.28093819
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2035) =  19967744.894820604
