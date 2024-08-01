@@ -153,10 +153,10 @@ class HRAnalytics(object):
             print(codesearchtext)
             return codesearchtext
 
-    def nameparadox(self,number_of_names=1000):
-        k = 1 + math.sqrt(1+number_of_names*8*math.log(2))/2
-        print("nameparadox(): number of names = ",number_of_names)
-        print("nameparadox(): Birthday paradox variant for name - Minimum number of people required for atleast 2 people having same name (k) with atleast 50% probability =",k)
+    def attributeparadox(self,number_of_attributes=1000,name_of_attribute="names"):
+        k = 1 + math.sqrt(1+number_of_attributes*8*math.log(2))/2
+        print("attributeparadox(): number of ",name_of_attribute," = ",number_of_attributes)
+        print("attributeparadox(): Birthday paradox variant for ",name_of_attribute," - Minimum number of people required for atleast 2 people having same ",name_of_attribute," (k) with atleast 50% probability =",k)
 
     def nameparser(self, full_name, pattern, context):
         name = nameparser.HumanName(full_name)
@@ -409,8 +409,8 @@ if __name__ == "__main__":
     hranal = HRAnalytics()
     csensing = CompressedSensing()
     sloc=hranal.parse_sloc("./SocialNetworkAnalysis_PeopleAnalytics.OpenSource_SLOC")
-    codesearchstats=hranal.codesearch_statistics(opensourceid="shrinivaasanka",personalaccesstoken="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")
-    codesearchstats1=hranal.codesearch_statistics(query="shrinivaasanka+THEORY+and+FEATURE",personalaccesstoken="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")
+    codesearchstats=hranal.codesearch_statistics(opensourceid="shrinivaasanka",personalaccesstoken="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")
+    codesearchstats1=hranal.codesearch_statistics(query="shrinivaasanka+THEORY+and+FEATURE",personalaccesstoken="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")
     codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../asfer-docs/AstroInferDesign.txt")
     codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../usb-md64-github-code/USBmd_notes.txt")
     codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../virgo64-linux-github-code/virgo-docs/VirgoDesign.txt")
@@ -519,4 +519,5 @@ if __name__ == "__main__":
     searchresults1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     searchresults2=[20,1,2,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,18,19]
     hranal.search_engine_rank_correlation(searchresults1,searchresults2)
-    hranal.nameparadox(number_of_names=100000)
+    hranal.attributeparadox(number_of_attributes=100000,name_of_attribute="names")
+    hranal.attributeparadox(number_of_attributes=3,name_of_attribute="genders")
