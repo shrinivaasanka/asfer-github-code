@@ -57,7 +57,7 @@ from pydub import AudioSegment
 from pydub.playback import play
 from pytimbre2.audio_files.wavefile import WaveFile
 from pytimbre2.spectral.spectra import SpectrumByFFT
-from MusicSynthesizer_AddOn import pysynth_synthesize_notes
+from MusicSynthesizer_AddOn import pysynth_synthesize_notes,pretty_midi_synthesize_notes
 
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
@@ -266,12 +266,17 @@ def percussion_synthesis(virtual_piano_notes=None,percussions=["Saxophone","Guit
     os.system("fluidsynth -ni /usr/share/fluidr3mono-gm-soundfont/FluidR3Mono_GM.sf3 ./music21_percussion_for_piano.midi -F ./music21_percussion_for_piano.wav -r 44100")
     #playsound("./music21_percussion_for_piano.wav")
 
-def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False,virtual_piano_notes=None,tempo=1,amplitude=4096,musicgenre="WesternClassical",musicwfa_notes_weights=None,playsynthesis=False):
+def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False,virtual_piano_notes=None,tempo=1,amplitude=4096,musicgenre="WesternClassical",musicwfa_notes_weights=None,playsynthesis=False,addon_synthesizers=["Pretty-MIDI"]):
     music_interpol_poly=[]
     synthesized_poly=0
     if training_music is None and virtual_piano_notes is not None:
         print("virtual piano notes:",virtual_piano_notes)
-        pysynth_synthesize_notes(virtual_piano_notes,duration=4,filename="PySynth_music.wav")
+        for addon_synthesizer in addon_synthesizers:
+            if addon_synthesizer == "PySynth":
+                pysynth_synthesize_notes(virtual_piano_notes,duration=0.25,filename="PySynth_music.wav")
+            if addon_synthesizer == "Pretty-MIDI":
+                pretty_midi_synthesize_notes(virtual_piano_notes,instrument_name="Steel Drums",veloCT=100,filename="pretty_midi_music.midi")
+                os.system("fluidsynth -ni /usr/share/fluidr3mono-gm-soundfont/FluidR3Mono_GM.sf3 ./pretty_midi_music.midi -F ./pretty_midi_music.wav -r 44100")
         #freq=librosa.note_to_hz(virtual_piano_notes)
         freq=get_piano_frequencies(virtual_piano_notes,genre=musicgenre)
         print("freq:",freq)
