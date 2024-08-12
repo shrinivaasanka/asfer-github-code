@@ -29,18 +29,19 @@ def OpenAIQuestionAnswering(question):
     chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-3.5-turbo")
     print("chat completion:",chat_completion)
 
-def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=5,maxanswers=1,keywordsearch=False,wsheading=True,answersliced=1,answerfraction=5):
+def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1):
     import RecursiveGlossOverlap_Classifier
     from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
     from collections import defaultdict
     import WordNetPath
     print("================================================================")
     print("Question:",question)
-    questiontextgraph = RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(question)
+    questiontextgraphclassified = RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(question)
+    questiontextgraph = RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(question)
     print("Question Textgraph:",questiontextgraph)
     searchquery = ""
     answertextgraphs = []
-    for core in questiontextgraph[1][:int(len(questiontextgraph[0])/questionfraction)]:
+    for core in questiontextgraphclassified[1][:int(len(questiontextgraph[0])/questionfraction)]:
         searchquery += " " + core[0]
     print("Search query:",searchquery)
     for r in wikipedia.search(searchquery):
@@ -60,7 +61,9 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=5,maxan
         try:
             wssummary=wikipedia.summary(ws)
             wssummarysentences=wssummary.split(".")
-            print("wikipedia search result summary - sliced:",wssummarysentences[:answersliced])
+            print("wssummarysentences:",wssummarysentences)
+            wssummarysentences=wssummarysentences[:int(len(wssummarysentences)*answerslice)-1]
+            print("wikipedia search result summary - sliced:",wssummarysentences)
         except:
             print("Wikipedia Summary Exception")
         if len(ws) > 0:
@@ -68,15 +71,21 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=5,maxan
                 answertextgraphclassified=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(ws)
                 answertextgraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(ws)
             else:
-                answertextgraphclassified=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(" ".join(wssummarysentences[:answersliced]))
-                answertextgraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(" ".join(wssummarysentences[:answersliced]))
+                answertextgraphclassified=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(" ".join(wssummarysentences))
+                answertextgraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(" ".join(wssummarysentences))
             print("Answer Textgraph ",cnt,":",answertextgraphclassified)
-            dimension=(len(answertextgraph[0].nodes()),len(answertextgraph[0].nodes()))
-            queryweights=np.full(dimension,0.5).tolist()
-            keyweights=np.full(dimension,0.5).tolist()
-            valueweights=np.full(dimension,0.5).tolist()
-            variables=np.full(dimension,0.5).tolist()
-            transformerattention=rlfg.rlfg_transformers_attention_model(answertextgraph[0],queryweights,keyweights,valueweights,variables)
+            question_dimension=(len(questiontextgraph[0].nodes()),len(questiontextgraph[0].nodes()))
+            answer_dimension=(len(answertextgraph[0].nodes()),len(answertextgraph[0].nodes()))
+            queryweights_question=np.full(question_dimension,0.5).tolist()
+            keyweights_question=np.full(question_dimension,0.5).tolist()
+            valueweights_question=np.full(question_dimension,0.5).tolist()
+            queryweights_answer=np.full(answer_dimension,0.5).tolist()
+            keyweights_answer=np.full(answer_dimension,0.5).tolist()
+            valueweights_answer=np.full(answer_dimension,0.5).tolist()
+            question_variables=np.full(question_dimension,0.5).tolist()
+            answer_variables=np.full(answer_dimension,0.5).tolist()
+            transformerattention_question=rlfg.rlfg_transformers_attention_model(questiontextgraph[0],queryweights_question,keyweights_question,valueweights_question,question_variables)
+            transformerattention_answer=rlfg.rlfg_transformers_attention_model(answertextgraph[0],queryweights_answer,keyweights_answer,valueweights_answer,answer_variables)
             #answertextgraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(searchresults)
             cnt+=1
             answertextgraphs.append(answertextgraph)
@@ -84,59 +93,72 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=5,maxan
             queryweightedges=defaultdict()
             keyweightedges=defaultdict()
             valueweightedges=defaultdict()
+            for v1 in questiontextgraph[0].nodes():
+                 column=0
+                 for v2 in questiontextgraph[0].nodes():
+                     queryweightedges[v1 + "-" + v2]=abs(transformerattention_question[0][row][column])
             for v1 in answertextgraph[0].nodes():
                  column=0
                  for v2 in answertextgraph[0].nodes():
-                     queryweightedges[v1 + "-" + v2]=abs(transformerattention[0][row][column])
-                     keyweightedges[v1 + "-" + v2]=abs(transformerattention[1][row][column])
-                     valueweightedges[v1 + "-" + v2]=abs(transformerattention[2][row][column])
+                     keyweightedges[v1 + "-" + v2]=abs(transformerattention_answer[1][row][column])
+                     valueweightedges[v1 + "-" + v2]=abs(transformerattention_answer[2][row][column])
                      column+=1
                  row+=1
-            queryweightedges=sorted(queryweightedges.items(),key=operator.itemgetter(1), reverse=True)
-            keyweightedges=sorted(keyweightedges.items(),key=operator.itemgetter(1), reverse=True)
-            valueweightedges=sorted(valueweightedges.items(),key=operator.itemgetter(1), reverse=True)
-            print("queryweightedges:",queryweightedges)
-            print("keyweightedges:",keyweightedges)
-            print("valueweightedges:",valueweightedges)
+            queryweightedgeslist=sorted(queryweightedges.items(),key=operator.itemgetter(1), reverse=True)
+            keyweightedgeslist=sorted(keyweightedges.items(),key=operator.itemgetter(1), reverse=True)
+            valueweightedgeslist=sorted(valueweightedges.items(),key=operator.itemgetter(1), reverse=True)
+            print("queryweightedges:",queryweightedgeslist)
+            print("keyweightedges:",keyweightedgeslist)
+            print("valueweightedges:",valueweightedgeslist)
+            keyweightedgeskeys=keyweightedges.keys()
+            print("keyweightedgeskeys:",keyweightedgeskeys)
             if cnt == maxanswers:
                 break
             naturallanguageanswer=""
-            for edge in queryweightedges[:int(len(queryweightedges)/answerfraction)]:
+            for edge in queryweightedgeslist[:int(len(queryweightedges)/answerfraction)]:
                 edgevertices=edge[0].split("-")
+                if edge[0] in keyweightedgeskeys and edgevertices[0] != edgevertices[1]:
+                    print("edge relevant to question in answer textgraph:",edge[0])
                 #wordnetpath=WordNetPath.path_between(edgevertices[0],edgevertices[1])
                 #print("wordnetpath:",wordnetpath)
                 #if len(wordnetpath) > 1:
                     #naturallanguageanswer += make_sentence(wordnetpath)
-                naturallanguageanswer += make_sentence(edgevertices)
-            print("Sorted Query weights - Bot generated answer from textgraph:",naturallanguageanswer)
-            naturallanguageanswer=""
-            for edge in keyweightedges[:int(len(keyweightedges)/answerfraction)]:
-                edgevertices=edge[0].split("-")
+                    naturallanguageanswer += make_sentence(edgevertices)
+            print("Bot generated XTAG grammar answer from textgraph:",naturallanguageanswer)
+            #naturallanguageanswer=""
+            #for edge in keyweightedges[:int(len(keyweightedges)/answerfraction)]:
+            #    edgevertices=edge[0].split("-")
                 #wordnetpath=WordNetPath.path_between(edgevertices[0],edgevertices[1])
                 #print("wordnetpath:",wordnetpath)
                 #if len(wordnetpath) > 1:
                     #naturallanguageanswer += make_sentence(wordnetpath)
-                naturallanguageanswer += make_sentence(edgevertices)
-            print("Sorted Key weights - Bot generated answer from textgraph:",naturallanguageanswer)
-            naturallanguageanswer=""
-            for edge in valueweightedges[:int(len(valueweightedges)/answerfraction)]:
-                edgevertices=edge[0].split("-")
+            #    naturallanguageanswer += make_sentence(edgevertices)
+            #print("Sorted Key weights - Bot generated answer from textgraph:",naturallanguageanswer)
+            #naturallanguageanswer=""
+            #for edge in valueweightedges[:int(len(valueweightedges)/answerfraction)]:
+            #    edgevertices=edge[0].split("-")
                 #wordnetpath=WordNetPath.path_between(edgevertices[0],edgevertices[1])
                 #print("wordnetpath:",wordnetpath)
                 #if len(wordnetpath) > 1:
                     #naturallanguageanswer += make_sentence(wordnetpath)
-                naturallanguageanswer += make_sentence(edgevertices)
-            print("Sorted Value weights - Bot generated answer from textgraph:",naturallanguageanswer)
-        return answertextgraphs
+            #    naturallanguageanswer += make_sentence(edgevertices)
+            #print("Sorted Value weights - Bot generated answer from textgraph:",naturallanguageanswer)
+        return naturallanguageanswer
 
 def make_sentence(wordnetsynsets):
     from nltk.corpus import wordnet as wn
     prevword=wordnetsynsets[0]
     sentence=""
+    print("make_sentence():wordsynsets = ",wordnetsynsets)
     try:
         for nextword in wordnetsynsets[1:]:
-            wordnet_lch_relation = " " + str(wn.synset(prevword+".n.01").lowest_common_hypernyms(wn.synset(nextword+".n.01"))) + " " 
-            sentence += prevword + wordnet_lch_relation + nextword +"."
+            lch=wn.synset(prevword+".n.01").lowest_common_hypernyms(wn.synset(nextword+".n.01"))
+            print("lch:",lch)
+            for lch_synset in lch:
+                lch_lemma_names=lch_synset.lemma_names()
+                for lch_lemma in lch_lemma_names:
+                    wordnet_lch_relation = " " + lch_lemma + " " 
+                    sentence += prevword + " is " + wordnet_lch_relation + " of " + nextword +"."
             prevword=nextword
     except Exception:
         print("WordNet exception")
