@@ -126,7 +126,7 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                          if edge[0] in keyweightedgeskeys and edgevertices[0] != edgevertices[1]:
                             print("edge relevant to question in answer textgraph:",edge[0])
                             naturallanguageanswer += make_sentence(edgevertices,sentence_type="xtag_node34_triplets")
-                         else:
+                    else:
                              if edgevertices[0] in answertextgraph[0].nodes() or edgevertices[1] in answertextgraph[0].nodes():
                                 if edgevertices[0] != edgevertices[1]:
                                     print("edge relevant to question in answer textgraph:",edge[0])
