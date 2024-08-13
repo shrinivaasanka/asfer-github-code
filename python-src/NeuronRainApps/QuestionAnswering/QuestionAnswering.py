@@ -22,6 +22,8 @@ import numpy as np
 import operator
 #from googlesearch import search 
 import os
+import networkx as nx
+import spacy
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -29,7 +31,7 @@ def OpenAIQuestionAnswering(question):
     chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-3.5-turbo")
     print("chat completion:",chat_completion)
 
-def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1):
+def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_words_per_sentence=5):
     import RecursiveGlossOverlap_Classifier
     from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
     from collections import defaultdict
@@ -111,60 +113,71 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
             print("keyweightedges:",keyweightedgeslist)
             print("valueweightedges:",valueweightedgeslist)
             keyweightedgeskeys=keyweightedges.keys()
+            valueweightedgeskeys=valueweightedges.keys()
             print("keyweightedgeskeys:",keyweightedgeskeys)
+            print("valueweightedgeskeys:",valueweightedgeskeys)
             if cnt == maxanswers:
                 break
             naturallanguageanswer=""
-            for edge in queryweightedgeslist[:int(len(queryweightedges)/answerfraction)]:
-                edgevertices=edge[0].split("-")
-                if edge[0] in keyweightedgeskeys and edgevertices[0] != edgevertices[1]:
-                    print("edge relevant to question in answer textgraph:",edge[0])
-                #wordnetpath=WordNetPath.path_between(edgevertices[0],edgevertices[1])
-                #print("wordnetpath:",wordnetpath)
-                #if len(wordnetpath) > 1:
-                    #naturallanguageanswer += make_sentence(wordnetpath)
-                    naturallanguageanswer += make_sentence(edgevertices)
-            print("Bot generated XTAG grammar answer from textgraph:",naturallanguageanswer)
-            #naturallanguageanswer=""
-            #for edge in keyweightedges[:int(len(keyweightedges)/answerfraction)]:
-            #    edgevertices=edge[0].split("-")
-                #wordnetpath=WordNetPath.path_between(edgevertices[0],edgevertices[1])
-                #print("wordnetpath:",wordnetpath)
-                #if len(wordnetpath) > 1:
-                    #naturallanguageanswer += make_sentence(wordnetpath)
-            #    naturallanguageanswer += make_sentence(edgevertices)
-            #print("Sorted Key weights - Bot generated answer from textgraph:",naturallanguageanswer)
-            #naturallanguageanswer=""
-            #for edge in valueweightedges[:int(len(valueweightedges)/answerfraction)]:
-            #    edgevertices=edge[0].split("-")
-                #wordnetpath=WordNetPath.path_between(edgevertices[0],edgevertices[1])
-                #print("wordnetpath:",wordnetpath)
-                #if len(wordnetpath) > 1:
-                    #naturallanguageanswer += make_sentence(wordnetpath)
-            #    naturallanguageanswer += make_sentence(edgevertices)
-            #print("Sorted Value weights - Bot generated answer from textgraph:",naturallanguageanswer)
+            if sentence_type=="xtag_node34_triplets":
+                for edge in queryweightedgeslist[:int(len(queryweightedges)/answerfraction)]:
+                    edgevertices=edge[0].split("-")
+                    if bothvertices_intersection==True:
+                         if edge[0] in keyweightedgeskeys and edgevertices[0] != edgevertices[1]:
+                            print("edge relevant to question in answer textgraph:",edge[0])
+                            naturallanguageanswer += make_sentence(edgevertices,sentence_type="xtag_node34_triplets")
+                         else:
+                             if edgevertices[0] in answertextgraph[0].nodes() or edgevertices[1] in answertextgraph[0].nodes():
+                                if edgevertices[0] != edgevertices[1]:
+                                    print("edge relevant to question in answer textgraph:",edge[0])
+                                    naturallanguageanswer += make_sentence(edgevertices,sentence_type="xtag_node34_triplets")
+                print("Bot generated XTAG grammar answer from textgraph:",naturallanguageanswer)
+            if sentence_type=="textgraph_random_walk":
+                random_walk = list(nx.generate_random_paths(answertextgraph[0].to_undirected(),1,path_length=number_of_words_per_sentence))
+                if number_of_words_per_sentence==2:
+                    naturallanguageanswer = make_sentence(random_walk,sentence_type="xtag_node34_triplets")
+                else:
+                    naturallanguageanswer = make_sentence(random_walk,sentence_type="textgraph_random_walk")
+                print("Bot generated random walk answer from textgraph:",naturallanguageanswer)
         return naturallanguageanswer
 
-def make_sentence(wordnetsynsets):
+def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets"):
     from nltk.corpus import wordnet as wn
-    prevword=wordnetsynsets[0]
-    sentence=""
     print("make_sentence():wordsynsets = ",wordnetsynsets)
-    try:
-        for nextword in wordnetsynsets[1:]:
-            lch=wn.synset(prevword+".n.01").lowest_common_hypernyms(wn.synset(nextword+".n.01"))
-            print("lch:",lch)
-            for lch_synset in lch:
-                lch_lemma_names=lch_synset.lemma_names()
-                for lch_lemma in lch_lemma_names:
-                    wordnet_lch_relation = " " + lch_lemma + " " 
-                    sentence += prevword + " is " + wordnet_lch_relation + " of " + nextword +"."
-            prevword=nextword
-    except Exception:
-        print("WordNet exception")
-    return sentence
+    if sentence_type == "xtag_node34_triplets":
+        prevword=wordnetsynsets[0]
+        sentence=""
+        try:
+             for nextword in wordnetsynsets[1:]:
+                 lch=wn.synset(prevword+".n.01").lowest_common_hypernyms(wn.synset(nextword+".n.01"))
+                 print("lch:",lch)
+                 for lch_synset in lch:
+                     lch_lemma_names=lch_synset.lemma_names()
+                     for lch_lemma in lch_lemma_names:
+                        if lch_lemma != prevword and lch_lemma != nextword:
+                            wordnet_lch_relation = " " + lch_lemma + " " 
+                            sentence += prevword + " is " + wordnet_lch_relation + " of " + nextword +"."
+                 prevword=nextword
+        except Exception:
+             print("WordNet exception")
+        return sentence
+    if sentence_type == "textgraph_random_walk":
+        spasee=spacy.load("en_core_web_sm")
+        rwtext=""
+        for rw in wordnetsynsets:
+            rwstring=" ".join(rw)
+            rwtext += rwstring
+            spaseePOS=spasee(rwstring)
+            print("=============================================================================================")
+            print("Part of speech tagging of words in random walk which can be plugged into an XTAG grammar rule:")
+            print("=============================================================================================")
+            for tokenPOS in spaseePOS:
+                print("tokenPOS:",tokenPOS.text, tokenPOS.lemma_, tokenPOS.pos_, tokenPOS.tag_, tokenPOS.dep_, tokenPOS.shape_, tokenPOS.is_alpha, tokenPOS.is_stop)
+        return rwtext 
 
 if __name__ == "__main__":
     question = sys.argv[1]
-    WikipediaRLFGTransformersQuestionAnswering(question)
+    WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=True,sentence_type="xtag_node34_triplets")
+    WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="xtag_node34_triplets")
+    WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="textgraph_random_walk")
     #OpenAIQuestionAnswering(question)
