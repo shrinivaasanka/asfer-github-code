@@ -24391,3 +24391,44 @@ Bot generated XTAG grammar answer from textgraph: area is  entity  of magnitude.
 1536.8 At present wsheading is set to True which limits the answer text to headlines. More detailed answer text can be obtained by wsheading=False which would generate a better answer text but the size of textgraph and number of transformer question and answer attention iterations exponentially blow-up.
 1536.9 This update resolves JIRA issue - https://krishnairesearch.atlassian.net/browse/NEUR-45
 1536.10 Earlier implemementation is just a proof-of-concept prototype for XTAG LLM and generalizing above for all grammar rules of XTAG could be computationally daunting task (Recursive Sentence Merger and XTAG matching Algorithm described in 1523.8 could be exponential) 
+
+-------------------------------------------------------------------------------------------------------------------------------
+1537. (JIRA,THEORY and FEATURE) NeuronRainApps - Textgraph Transformers Question-Answering Bot - Changes to Wikipedia Question-Answering algorithm for better accuracy 2 - spaCy PoS tagging integration - related to 249,707,829,1133,1134,1204,1263,1269,1284,1285,1469,1523,1536 and all sections on Intrinsic Merit of Texts, Question-Answering, Embedding in vectorspace, Machine Translation, Transformers Attention Model,Named Entity Recognition and Meaning Representation, Complexity models of Question-Answering (multiple choice,open-ended,adaptive and static) - LTF,PTF,Switching Circuits,TQBF,Markov Chains - 13 August 2024
+-------------------------------------------------------------------------------------------------------------------------------
+1537.1 In continuation of algorithmic changes to Question-Answering bot in 1536 endgoal of which is to map a textgraph or knowledge graph of a text to a formal language tree adjoining grammar for natural language (e.g mildly sensitive CFG, XTAG, LTAG) thus enabling natural language sentence formation that adheres to orthodox notion of language theory without necessity of pre-trained corpus, python-src/NeuronRainApps/QuestionAnswering/QuestionAnswering.py has been updated to import networkx and spacy (for Part-of-speech tagger) packages.
+1537.2 Function def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_words_per_sentence=5) has been changed to add parameters bothvertices_intersection,sentence_type and number_of_words_per_sentence.
+1537.3 if-else clause based on parameter sentence_type has been introduced to choose the kind of sentence generation which presently takes 2 values - 1) "xtag_node34_triplets" for simplest XTAG node 34 grammar rule for xRy relation triplets 2) and "textgraph_random_walk" for sentence synthesis from random walk over textgraph or knowledge graph.
+1537.4 Within clause for "xtag_node34_triplets" nested if-else clause based on flag bothvertices_intersection has been introduced to differentiate the two cases of how question textgraph and answer textgraph are related to get triplets: 1) are both endpoints of textgraph edges matched (stringent) 2) or is only one endpoint per textgraph edge is matched (which is more flexible) - make_sentence() is invoked accordingly for each scenario.
+1537.5 if-else clause for sentence_type "textgraph_random_walk" gets random walks from answer textgraph of path_length limited by number_of_words_per_sentence argument. If number_of_words in sentence is 2, behaviour defaults to make_sentence() invoked with sentence type "xtag_node34_triplets". For larger random walks make_sentence() is invoked with sentence_type="textgraph_random_walk"
+1537.6 Function def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets") has been enhanced for sentence types: 1) For sentence_type="xtag_node34_triplets" behaviour is same as section 1536. 2) For sentence_type="textgraph_random_walk", spaCy model "en_core_web_sm" is loaded and word tokens in textgraph random walk are Part-of-Speech tagged. This facilitates in finding the matching XTAG rule corresponding to a random walk - PoS tagged words in random walk can be substituted in a maximum matching XTAG tree rule (maximum matching XTAG tree rule is defined as rule that has maximum number of parts-of-speech vertex matches for spaCy PoS tagged words from random walk) which is essential to get a sentence by traversing the XTAG rule (there may be some vertices in TAG tree which are left unsubstituted in maximum match, which have to be efficiently guessed and rewritten to get a sentence) - searching a matching XTAG rule is presently not implemented in prototype.
+1537.7 Following three invocations demonstrate earlier 3 cases of sentence_type and bothvertices_intersection values:
+        WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=True,sentence_type="xtag_node34_triplets")
+        WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="xtag_node34_triplets")
+        WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="textgraph_random_walk")
+and following logs capture the sentences generated for 3 queries to bot - 1) which is the largest country in the world 2) define a complete graph 3) medals tally in paris 2024 olympics:
+            QuestionAnswering/testlogs/QuestionAnswering.log.13August2024
+            QuestionAnswering/testlogs/QuestionAnswering.log2.13August2024
+            QuestionAnswering/testlogs/QuestionAnswering.log3.13August2024
+1537.8 For example Question: "which is the largest country in the world" answered by textgraph random walk sentence synthesis in QuestionAnswering/testlogs/QuestionAnswering.log.13August2024 is PoS tagged by spaCy as:
+            tokenPOS: distant distant ADJ JJ amod xxxx True False
+            tokenPOS: colony colony NOUN NN compound xxxx True False
+            tokenPOS: politically politically ADV RB advmod xxxx True False
+from which a phrase could be formed as "politically (ADV) distant (ADJ) colony (NOUN)" implying colonisation of the country in the past.
+1537.9 Similarly Question: "define a complete graph" is answered by textgraph random walk in QuestionAnswering/testlogs/QuestionAnswering.log2.13August2024 and spaCy PoS tagged as:
+            tokenPOS: divided divide VERB VBN amod xxxx True False
+            tokenPOS: bipartite bipartite ADJ JJ amod xxxx True False
+            tokenPOS: base base NOUN NN compound xxxx True False
+from which a sentence complement "bipartite (ADJ) base (NOUN) divided(VERB)" is found probably implying some aspect of bipartite graphs.
+1537.10 Third Question: "medals tally in paris 2024 olympics" answered by and random walk PoS tagged by spaCy as:
+            tokenPOS: northern northern ADJ JJ amod xxxx True False
+            tokenPOS: summer summer NOUN NN npadvmod xxxx True False
+            tokenPOS: warmest warm ADJ JJS compound xxxx True False
+from which a phrase "northern warmest summer" is synthesized implying summer olympics.
+1537.11 Earlier algorithmic prototype results are not exhaustive because of time and space limitations (only small fragment of answer text is processed) but have hinted at feasibility of mapping knowledge graph random walks to XTAG tree rules on a massive scale - especially PoS tagging random walks in knowledge graphs is essential to map them to matching XTAG rules.
+1537.12 This update resolves JIRA issue - https://krishnairesearch.atlassian.net/browse/NEUR-46
+    
+References:
+----------
+1537.13 Explosion AI - spaCy - https://explosion.ai/ - https://spacy.io/
+1537.14 On Chomsky and the Two Cultures of Statistical Learning - Chomsky sentences - https://norvig.com/chomsky.html - "..... (*) I never, ever, ever, ever, ... fiddle around in any way with electrical equipment. (*)  She never, ever, ever, ever, ... fiddles around in any way with electrical equipment. (*) I never, ever, ever, ever, ... fiddles around in any way with electrical equipment. (*) She never, ever, ever, ever, ... fiddle around in any way with electrical equipment.  No matter how many repetitions of "ever" you insert, sentences 1 and 2 are grammatical and 3 and 4 are ungrammatical. A probabilistic Markov-chain model with n states can never make the necessary distinction (between 1 or 2 versus 3 or 4) when there are more than n copies of "ever." Therefore, a probabilistic Markov-chain model cannot handle all of English.  This criticism is correct, but it is a criticism only of Markov-chain models, not of probabilistic models (or trained models) in general....."
+1537.15 LTAG-Spinal - TAG variant - https://www.cis.upenn.edu/~xtag/spinal/index.html
