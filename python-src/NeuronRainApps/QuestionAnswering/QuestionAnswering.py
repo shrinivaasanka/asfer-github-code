@@ -64,15 +64,16 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
             wssummary=wikipedia.summary(ws)
             wssummarysentences=wssummary.split(".")
             print("wssummarysentences:",wssummarysentences)
-            wssummarysentences=wssummarysentences[:int(len(wssummarysentences)*answerslice)-1]
-            print("wikipedia search result summary - sliced:",wssummarysentences)
+            wssummarysentences=wssummarysentences[:int(len(wssummarysentences)*answerslice+2)-1]
         except:
             print("Wikipedia Summary Exception")
         if len(ws) > 0:
             if wssummary is None or wsheading is True:
+                print("ws:",ws)
                 answertextgraphclassified=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(ws)
                 answertextgraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(ws)
             else:
+                print("wikipedia search result summary - sliced:",wssummarysentences)
                 answertextgraphclassified=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(" ".join(wssummarysentences))
                 answertextgraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(" ".join(wssummarysentences))
             print("Answer Textgraph ",cnt,":",answertextgraphclassified)
@@ -133,7 +134,16 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                                     naturallanguageanswer += make_sentence(edgevertices,sentence_type="xtag_node34_triplets")
                 print("Bot generated XTAG grammar answer from textgraph:",naturallanguageanswer)
             if sentence_type=="textgraph_random_walk":
-                random_walk = list(nx.generate_random_paths(answertextgraph[0].to_undirected(),1,path_length=number_of_words_per_sentence))
+                core_random_walk_found=False
+                while core_random_walk_found is not True:
+                    random_walk = list(nx.generate_random_paths(answertextgraph[0].to_undirected(),1,path_length=number_of_words_per_sentence))
+                    corevertices = [x for x,y in answertextgraphclassified[0]] 
+                    for rw in random_walk:
+                        if len(set(rw).intersection(set(corevertices))) > 0: 
+                            print("core_random_walk_found - rw:",rw)
+                            print("core_random_walk_found - corevertices:",corevertices)
+                            core_random_walk_found=True
+                            break
                 if number_of_words_per_sentence==2:
                     naturallanguageanswer = make_sentence(random_walk,sentence_type="xtag_node34_triplets")
                 else:
@@ -179,5 +189,5 @@ if __name__ == "__main__":
     question = sys.argv[1]
     WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=True,sentence_type="xtag_node34_triplets")
     WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="xtag_node34_triplets")
-    WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="textgraph_random_walk")
+    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=30)
     #OpenAIQuestionAnswering(question)
