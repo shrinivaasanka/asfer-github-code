@@ -24434,3 +24434,83 @@ References:
 1537.14 On Chomsky and the Two Cultures of Statistical Learning - Chomsky sentences - https://norvig.com/chomsky.html - "..... (*) I never, ever, ever, ever, ... fiddle around in any way with electrical equipment. (*)  She never, ever, ever, ever, ... fiddles around in any way with electrical equipment. (*) I never, ever, ever, ever, ... fiddles around in any way with electrical equipment. (*) She never, ever, ever, ever, ... fiddle around in any way with electrical equipment.  No matter how many repetitions of "ever" you insert, sentences 1 and 2 are grammatical and 3 and 4 are ungrammatical. A probabilistic Markov-chain model with n states can never make the necessary distinction (between 1 or 2 versus 3 or 4) when there are more than n copies of "ever." Therefore, a probabilistic Markov-chain model cannot handle all of English.  This criticism is correct, but it is a criticism only of Markov-chain models, not of probabilistic models (or trained models) in general....."
 1537.15 LTAG-Spinal - TAG variant - https://www.cis.upenn.edu/~xtag/spinal/index.html
 1537.16 Minor revision of QuestionAnswering.py and Additional Logs for query involving computational inference - https://github.com/shrinivaasanka/asfer-github-code/commit/83089e15e5df6964bae11cd8338199aad41ecfcd
+
+-------------------------------------------------------------------------------------------------------------------------------
+1538. (JIRA,THEORY and FEATURE) NeuronRainApps - Textgraph Transformers Question-Answering Bot - Changes to Wikipedia Question-Answering algorithm for better accuracy 3 - choice of random walks passing through core vertices - related to 2,195,249,707,829,1133,1134,1204,1263,1269,1284,1285,1469,1523,1536,1537 and all sections on Intrinsic Merit of Texts, Question-Answering, Embedding in vectorspace, Machine Translation, Transformers Attention Model,Named Entity Recognition and Meaning Representation, Complexity models of Question-Answering (multiple choice,open-ended,adaptive and static),Text Restoration,Vowelless text (de)compression  - LTF,PTF,Switching Circuits,TQBF,Markov Chains - 14 August 2024
+-------------------------------------------------------------------------------------------------------------------------------
+1538.1 python-src/NeuronRainApps/QuestionAnswering/QuestionAnswering.py has been updated to curtail the answer by answerslice with correction of +2 for handling error condition of answerslice=0 in which case only one element of answer text array is chosen.
+1538.2 While generating a sentence from random walks over a textgraph or knowledge graph vertices, only those walks which pass through high core numbered word vertices are chosen which increases the meaningfulness and relevance of synthesized sentence - set intersection of random walk vertices and core vertices is checked in a loop till a random walk passing through atleast one core vertex is found.
+1538.3 QuestionAnswering function is invoked with wsheading set to False and for small answer fragment (1% of total answer) to synthesize sentences from random walks of 30 words:
+    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=30)
+1538.4 Two queries are answered by QuestionAnswering.py bot as below through random walk PoS tagging which can be substituted in a matching XTAG tree rule - from testlogs/QuestionAnswering.log.14August2024:
+------------------------------------------------------------------------------------------------------------
+Query 1: python3.9 QuestionAnswering.py "define gross domestic product"
+------------------------------------------------------------------------------------------------------------
+=============================================================================================
+Part of speech tagging of words in random walk which can be plugged into an XTAG grammar rule:
+=============================================================================================
+tokenPOS: gross_domestic_product gross_domestic_product PROPN NNP nmod xxxx_xxxx_xxxx False False
+tokenPOS: capital capital NOUN NN compound xxxx True False
+tokenPOS: gross_domestic_product gross_domestic_product NOUN NN dep xxxx_xxxx_xxxx False False
+tokenPOS: market market NOUN NN nmod xxxx True False
+tokenPOS: commercial commercial ADJ JJ amod xxxx True False
+tokenPOS: market market NOUN NN compound xxxx True False
+tokenPOS: services service NOUN NNS compound xxxx True False
+tokenPOS: provision provision NOUN NN compound xxxx True False
+tokenPOS: services service NOUN NNS dep xxxx True False
+tokenPOS: helpful helpful ADJ JJ amod xxxx True False
+tokenPOS: workers worker NOUN NNS nsubj xxxx True False
+tokenPOS: total total ADJ JJ amod xxxx True False
+tokenPOS: goods good NOUN NNS compound xxxx True False
+tokenPOS: bought buy VERB VBD ROOT xxxx True False
+tokenPOS: sold sell VERB VBD advcl xxxx True False
+tokenPOS: value value NOUN NN nmod xxxx True False
+tokenPOS: equivalent equivalent ADJ JJ amod xxxx True False
+tokenPOS: space space NOUN NN npadvmod xxxx True False
+Bot generated random walk answer from textgraph: gross_domestic_product capital gross_domestic_product market commercial market gross_domestic_product services provision services helpful services gross_domestic_product workers gross_domestic_product total gross_domestic_product goods market bought market sold market goods value equivalent value services provision services space
+------------------------------------------------------------------------------------------------------------
+Query 2:  python3.9 QuestionAnswering.py "which is the largest country in the world"
+------------------------------------------------------------------------------------------------------------
+=============================================================================================
+Part of speech tagging of words in random walk which can be plugged into an XTAG grammar rule:
+=============================================================================================
+tokenPOS: particular particular ADJ JJ amod xxxx True False
+tokenPOS: region region NOUN NN compound xxxx True False
+tokenPOS: boundary boundary PROPN NNP compound xxxx True False
+tokenPOS: colony colony NOUN NN compound xxxx True False
+tokenPOS: distant distant ADJ JJ amod xxxx True False
+tokenPOS: country country NOUN NN compound xxxx True False
+tokenPOS: area area NOUN NN nsubj xxxx True False
+tokenPOS: usually usually ADV RB advmod xxxx True False
+tokenPOS: area area VERB VBP nmod xxxx True False
+tokenPOS: distinguished distinguished ADJ JJ amod xxxx True False
+tokenPOS: serving serve VERB VBG amod xxxx True False
+tokenPOS: usually usually ADV RB advmod xxxx True False
+tokenPOS: indefinite indefinite ADJ JJ amod xxxx True False
+tokenPOS: geography geography NOUN NN compound xxxx True False
+tokenPOS: indefinite indefinite ADJ JJ amod xxxx True False
+Bot generated random walk answer from textgraph: particular area region area boundary area colony distant colony country area usually area distinguished area serving area distinguished area region area usually area indefinite area geography area usually area indefinite area
+1538.5 Example manual substitution of above PoS tagged tokens for 2 queries in an incomplete XTAG parse tree sentence with gaps in XTAG tree marked by "---":  
+	1538.5.1 Incomplete Answer for Query 1: gross domestic product --- equivalent --- goods --- services bought --- sold --- commercial capital market --- value equivalent ---
+	1538.5.2 Incomplete Answer for Query 2: particular area --- distinguished region --- distant colony -- serving indefinite geography 
+1538.6 After substitution of blanks in earlier incomplete XTAG parse tree with usual stop word connectives of English, meaningful complete sentence can be synthesized as:
+	1538.6.1 Complete Answer for Query 1: gross domestic product (is) equivalent (of) goods (and) services bought (and) sold (in) commercial capital market (or) value equivalent
+	1538.6.2 Complete Answer for Query 2: particular area (or) distinguished region (of) distant colony (for) serving indefinite geography
+1538.7 Earlier manual XTAG rule match, substitution and stopword connective process has to be automated which is computationally intensive code block - especially guessing the correct connectives between spaCy PoS tagged random walk words substituted in XTAG rule tree is a text restoration problem similar to vowelless (de)compression and requires knowledge of markov k-order conditional probabilities and bruteforce - try all possible stopwords in the blanks and choose the best based on text restoration algorithms. Vowelless (de)compression implementation in python-src/TextCompression.py and python-src/WordSubstringProbabilities.py computes substring probability priors from English dictionary for text restoration. Assignment example in https://www.cs.princeton.edu/courses/archive/spring11/cos126/assignments/markov.html restores blanks in incomplete sentence by k-order Markov model and chooses the best sentence as (refer sections 2.14, 1285.17, 1285.18, 1285.19 and 1288.6) :
+	% java FixCorruptedNbest 4 5 "it was the best of ti~e~, it was t~~ worst of times." < wiki_100k.txt 
+	Noisy    : it was the best of ti~e~, it was t~~ worst of times.
+	Nbest 0  : it was the best of times, it was the worst of times.
+	Nbest 1  : it was the best of tibet, it was the worst of times.
+	Nbest 2  : it was the best of times, it was two worst of times.
+	Nbest 3  : it was the best of tiger, it was the worst of times.
+	Nbest 4  : it was the best of tiles, it was the worst of times.
+	Hint: You might want to use recursion to implement your search. If your algorithm is smart about pruning during its search, you should be able to decode some amazingly corrupted messages in a short amount of time (< 5 minutes):
+	% java FixCorruptedNbest 5 5 "it wa~~t~~~b~~t~o~~t~m~s~ ~t~~as~t~~~~ors~~~~ ti~~~." < wiki_100k.txt 
+	Noisy   : it wa~~t~~~b~~t~o~~t~m~s~ ~t~~as~t~~~~ors~~~~ ti~~~.
+	Nbest 0 : it was the best of times, it was the worst of times.
+	Nbest 1 : it was the best of times, it was the worships title.
+	Nbest 2 : it was the best of times, it was the worsenic times.
+	Nbest 3 : it was the best of times, it was the horse of times.
+	Nbest 4 : it was the best of times, it was the worsenic title. 
+1538.8 Necessity for Markov k-order model for text restoration in a Formal Large Language Model based on XTAG might seem out of place. It needs to be pointed out that earlier mapping of textgraph to XTAG tree (or XTAG parse tree) just creates grammatically correct sentence but not necessarily meaningful sentence - Markov priors increase the meaningfulness of the sentence synthesized based on training data. As an example Chomsky sentence in http://kuja27.blogspot.com/2018/04/grafit-course-material-chomsky.html is grammatically correct but not meaningful and human-readable: "Gostak distims the doshes" (because Markov priors for all the keywords in this sentence are zero as words "Gostak","distim" and "doshes" are not in English vocabulary). Neural network model of WordNet has been described in Section 195 for Evocative WordNet example of how word x evokes word y which can be written as a single variable neuron with weight w: w(x) + b = y by assigning numeric values to words x and y making the WordNet a huge threshold circuit - NeuronRain Formal LLM unifies the theoretical side of the language (filling textgraph random walk PoS tagged words in XTAG grammar) and statistical priors (meaning) minimizing dependence on neural network statistical models alone. 
+1538.9 This update resolves JIRA issue - https://krishnairesearch.atlassian.net/browse/NEUR-47 
