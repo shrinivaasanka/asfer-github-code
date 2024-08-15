@@ -24,6 +24,7 @@ import operator
 import os
 import networkx as nx
 import spacy
+import itertools
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -31,7 +32,7 @@ def OpenAIQuestionAnswering(question):
     chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-3.5-turbo")
     print("chat completion:",chat_completion)
 
-def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_words_per_sentence=5):
+def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_words_per_sentence=5,standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]}):
     import RecursiveGlossOverlap_Classifier
     from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
     from collections import defaultdict
@@ -151,7 +152,7 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                 print("Bot generated random walk answer from textgraph:",naturallanguageanswer)
         return naturallanguageanswer
 
-def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets"):
+def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]}):
     from nltk.corpus import wordnet as wn
     print("make_sentence():wordsynsets = ",wordnetsynsets)
     if sentence_type == "xtag_node34_triplets":
@@ -173,21 +174,30 @@ def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets"):
         return sentence
     if sentence_type == "textgraph_random_walk":
         spasee=spacy.load("en_core_web_sm")
-        rwtext=""
+        rwtexts=[]
         for rw in wordnetsynsets:
-            rwstring=" ".join(rw)
-            rwtext += rwstring
+            rwstring=" ".join(list(set(rw)))
             spaseePOS=spasee(rwstring)
             print("=============================================================================================")
             print("Part of speech tagging of words in random walk which can be plugged into an XTAG grammar rule:")
             print("=============================================================================================")
             for tokenPOS in spaseePOS:
                 print("tokenPOS:",tokenPOS.text, tokenPOS.lemma_, tokenPOS.pos_, tokenPOS.tag_, tokenPOS.dep_, tokenPOS.shape_, tokenPOS.is_alpha, tokenPOS.is_stop)
-        return rwtext 
+                standard_sentence_PoS_dict[tokenPOS.pos_].append(tokenPOS.text)
+        allpossiblewords=[]
+        print("standard_sentence_PoS_dict:",standard_sentence_PoS_dict)
+        for pos,words in standard_sentence_PoS_dict.items():
+            if len(words) > 0:
+                allpossiblewords.append(words)
+        print("allpossiblewords:",allpossiblewords)
+        for product in itertools.product(*allpossiblewords):
+            print("product:",product)
+            rwtexts.append(" ".join(product))
+        return rwtexts 
 
 if __name__ == "__main__":
     question = sys.argv[1]
     WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=True,sentence_type="xtag_node34_triplets")
     WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="xtag_node34_triplets")
-    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=30)
+    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]})
     #OpenAIQuestionAnswering(question)
