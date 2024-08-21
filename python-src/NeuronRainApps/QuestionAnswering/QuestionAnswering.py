@@ -26,6 +26,8 @@ import networkx as nx
 import spacy
 import itertools
 import pprint
+from pyplexity import PerplexityModel
+import collections
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -157,10 +159,19 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                     numrw+=1
                 print("Bot generated random walk answer from textgraph:")
                 pprint.pprint(sentences_synthesized)
+                perplexity = PerplexityModel.from_str("bigrams-cord19")
+                rankedsentences=defaultdict(int)
                 for rw,sentences in sentences_synthesized.items():
                     for s in sentences:
+                        meaningfulness=perplexity.compute_sentence(s)
                         answersfile.write(s)
+                        rankedsentences[meaningfulness]=s
+                        answersfile.write(" --- ")
+                        answersfile.write(str(meaningfulness))
                         answersfile.write("\n")
+                sortedrankedsentences=collections.OrderedDict(sorted(rankedsentences.items()))
+                print("Bot generated answers ranked by perplexity:")
+                pprint.pprint(sortedrankedsentences)
         return sentences_synthesized
 
 def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False):
@@ -213,5 +224,6 @@ if __name__ == "__main__":
     question = sys.argv[1]
     #WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=True,sentence_type="xtag_node34_triplets")
     #WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="xtag_node34_triplets")
-    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[],"PUNCT":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=True)
+    #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[],"PUNCT":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
+    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
     #OpenAIQuestionAnswering(question)
