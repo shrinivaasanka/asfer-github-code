@@ -1,0 +1,10 @@
+$python3.9 KnowledgeGraph.py 
+spacy-rebel loaded.....
+spacy-rebel add_pipe().....
+doc: A large language model (LLM) is a computational model capable of language generation or other natural language processing tasks. As language models, LLMs acquire these abilities by learning statistical relationships from vast amounts of text during a self-supervised and semi-supervised training process.
+text: A large language model (LLM) is a computational model capable of language generation or other natural language processing tasks. As language models, LLMs acquire these abilities by learning statistical relationships from vast amounts of text during a self-supervised and semi-supervised training process.
+doc_list: <generator object Language.pipe at 0x7fed32c71f20>
+(17, 13): {'relation': 'studies', 'head_span': natural language processing, 'tail_span': language generation}
+(41, 31): {'relation': 'subclass of', 'head_span': self-supervised, 'tail_span': learning}
+(45, 31): {'relation': 'subclass of', 'head_span': semi-supervised, 'tail_span': learning}
+---------------------------------------

@@ -1,5 +1,10 @@
 strict digraph  {
-"Chennai metropolitan area";
-India;
-"Chennai metropolitan area" -> India  [label=country];
+"natural language processing";
+"language generation";
+"self-supervised";
+learning;
+"semi-supervised";
+"natural language processing" -> "language generation"  [label=studies];
+"self-supervised" -> learning  [label="subclass of"];
+"semi-supervised" -> learning  [label="subclass of"];
 }

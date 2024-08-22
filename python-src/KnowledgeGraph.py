@@ -22,6 +22,8 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import matplotlib.pyplot as plt 
 import networkx as nx
 from networkx.drawing.nx_pydot import write_dot
+import spacy
+import spacy_component 
 
 def extract_triplets(text):
     triplets = []
@@ -53,6 +55,31 @@ def extract_triplets(text):
     if subject != '' and relation != '' and object_ != '':
         triplets.append({'head': subject.strip(), 'type': relation.strip(),'tail': object_.strip()})
     return triplets
+
+def create_SpaCy_knowledge_graph(text):
+    spacyrebel = spacy.load("en_core_web_sm")
+    print("spacy-rebel loaded.....")
+    spacyrebel.add_pipe("rebel", after="senter", config={
+        'device':-1, 
+        'model_name':'Babelscape/rebel-large'}
+    )
+    print("spacy-rebel add_pipe().....")
+    doc = spacyrebel(text)
+    print("doc:",doc)
+    doc_list = spacyrebel.pipe([text])
+    print("text:",text)
+    print("doc_list:",doc_list)
+    knowledgegraph=nx.DiGraph()
+    edgelabels={}
+    for value, rel_dict in doc._.rel.items():
+         print(f"{value}: {rel_dict}")
+         knowledgegraph.add_edge(rel_dict["head_span"],rel_dict["tail_span"],label=rel_dict["relation"]) 
+         edgelabels[(str(rel_dict["head_span"]),str(rel_dict["tail_span"]))]=str(rel_dict["relation"])
+    write_dot(knowledgegraph, "KnowledgeGraph.dot")
+    lambda_functions_from_knowledge_graph(edgelabels)
+    #nx.draw_networkx_edge_labels(knowledgegraph,pos=nx.spring_layout(knowledgegraph),edge_labels=edgelabels)
+    #plt.show()
+    return (knowledgegraph,edgelabels)
 
 def create_REBEL_knowledge_graph(text):
     # Load model and tokenizer
@@ -106,4 +133,5 @@ def lambda_functions_from_knowledge_graph(edgelabels):
     return lambdafunctions
 
 if __name__=="__main__":
-    create_REBEL_knowledge_graph("This is an example sentence for knowledge graph extraction")
+    #create_REBEL_knowledge_graph("This is an example sentence for knowledge graph extraction")
+    create_SpaCy_knowledge_graph("A large language model (LLM) is a computational model capable of language generation or other natural language processing tasks. As language models, LLMs acquire these abilities by learning statistical relationships from vast amounts of text during a self-supervised and semi-supervised training process.")
