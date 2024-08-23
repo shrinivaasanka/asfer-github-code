@@ -24614,3 +24614,45 @@ References:
 1542.8 UniRel: Unified Representation and Interaction for Joint Relational Triple Extraction - https://arxiv.org/abs/2211.09039 - recent advance in relation extraction - EMNLP 2022
 1542.9 UniRel implementation - https://github.com/wtangdev/UniRel
 1542.10 Yaska's Nirukta versus Panini's Ashtadhyayi and Sakatayana - https://en.wikipedia.org/wiki/Y%C4%81ska#Words_as_carriers_of_meaning:_atomism_vs._holism_debate - https://en.wikipedia.org/wiki/%C5%9A%C4%81ka%E1%B9%AD%C4%81yana - Atomism (Nirukta) school argues words give isolated meaning while Holism (Vyakarana) school argues sentences as a whole form meaning not just words.  
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1543. (THEORY and FEATURE) Nachiketas Formal LLM - SpaCy-REBEL Knowledge Graph integration - Changes to Wikipedia Question-Answering algorithm for better accuracy 8 - related to 2,249,707,829,1133,1134,1204,1263,1269,1284,1285,1405,1413,1455,1468,1469,1536,1537,1538,1539,1540,1541,1542 and all sections on Intrinsic Merit of Texts, Recursive Lambda Function Growth and Recursive Gloss Overlap textgraph algorithms, Question-Answering, Embedding in vectorspace, Machine Translation, Transformers Attention Model,Named Entity Recognition and Meaning Representation, Complexity models of Question-Answering (multiple choice,open-ended,adaptive and static) - LTF,PTF,Switching Circuits,TQBF,Markov Chains, Large Language Models, Mildly Context Sensitive Grammars-Tree Adjoining Grammars for Natural Languages,Text restoration-Vowelless text (de)compression  - 23 August 2024
+--------------------------------------------------------------------------------------------------------------------------------------------
+1543.1 python-src/NeuronRainApps/QuestionAnswering/QuestionAnswering.py has been updated to import create_SpaCy_knowledge_graph() from python-src/KnowledgeGraph.py 
+1543.2 Clause for new sentence type "knowledgegraph_random_walk" has been introduced to provide Spacy-REBEL KnowledgeGraph as alternative to WordNet TextGraphs. Function create_SpaCy_knowledge_graph() implemented in 1542 is invoked for an answer text from wikipedia for a user query and Knowledge Graph instantiated by REBEL-SpaCy pipeline is processed to get random walks limited by number_of_random_walks and length of the walk limited by number_of_words_per_sentence. 
+1543.3 Function make_sentence() is invoked with sentence_type set to knowledgegraph_random_walk and sentences are synthesized ranked by their perplexity scores.
+1543.4 Function make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False,edgelabels=None) has been updated to add clause for sentence_type="knowledgegraph_random_walk" and contents of the random walks are iterated and grouped into sentences of the form headspan-relation-tailspan which is quite similar to clause for XTAG Node 34 implemented in 1536.
+1543.5 QuestionAnswering function is invoked twice for same query "explain four color theorem" - first for textgraph_random_walk and second for knowledgegraph_random_walk :
+    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
+    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
+1543.6 Excerpts from python-src/NeuronRainApps/QuestionAnswering/testlogs/QuestionAnswering.KnowledgeGraph.log.23August2024 depict how perplexity scores differ for WordNet TextGraph and SpaCy-REBEL KnowledgeGraph random walk sentences for same query:
+	.....
+	WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by perplexity:
+OrderedDict([(10558.7453086644, 'three basic number'),
+             (12128.34759402403, 'four basic number'),
+             (16240.16711019476, 'one basic number'),
+             (35102.589080855985, 'three basic sum'),
+             (40320.73786962726, 'four basic sum'),
+             (53990.49754574568, 'one basic sum'),
+             (154353.06457684588, 'one theorem sum'),
+             (159129.83691289535, 'three cardinal sum'),
+             (160817.73329479567, 'one cardinal sum'),
+             (177028.9963537061, 'three theorem sum'),
+             (177662.80860632687, 'one deducible sum'),
+             (196300.67975645757, 'basic proposition'),
+             (203763.163259387, 'three deducible sum'),
+             (216504.23348702042, 'four theorem sum'),
+             (225571.93907073708, 'four cardinal sum'),
+             (249199.7829904695, 'four deducible sum'),
+             (757465.2313828768, 'theorem proposition'),
+             (935372.5125619057, 'deducible proposition')])
+	.....
+	SpaCy REBEL KnowledgeGraph Random Walk - Bot generated answers ranked by perplexity:
+	OrderedDict([(1793.6644504710268, 'computer-assisted proof subclass of proved using a computer'),
+             (3138.944300371735, 'adjacent subclass of boundary')])
+1543.7 Theoretically, working of the chatbot could be summarized as : 
+	1543.7.1 query a datasource (wikipedia) for answer text which is similar to search engine results
+	1543.7.2 Get a knowledge graph or text graph for the answer text which goes deeper into the purport of the answer
+	1543.7.3 Synthesize new answer text from the textgraph or knowledge graph random walks by filling a sentence template derived from inorder traversal of a formal language grammar rule tree (XTAG for example) that results in a detailed rephrasal of wikipedia search engine result answers. 
+	1543.7.4 Earlier algorithm converts a mildly context sensitive grammar (MCSG) natural language to a textgraph or knowledge graph, fits the random walks in the textgraphs to a matching formal grammar XTAG tree rule which is also an MCSG (which is manual at present as sentence PoS template is assumed to have been derived from XTAG,CFG,PCFG,CCG tree inorder traversal) - DisplaCy PoS dependency visualizer provides a visual left-right ordering for parts of speeches that could be useful for creating sentence templates if ordering based on grammar rules are unavailable. 
+	1543.7.5 It is also worth mentioning that lambda function tree meaning representation of texts lifts an MCSG to a Turing Machine which is more expressive than MCSG - in other words reversing the lambda function tree structure learnt from natural text by Recursive Lambda Function Growth algorithm might involve a more expressive and meaningful natural language output than what was originally input.
