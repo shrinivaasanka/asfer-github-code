@@ -28,6 +28,7 @@ import itertools
 import pprint
 from pyplexity import PerplexityModel
 import collections
+from KnowledgeGraph import create_SpaCy_knowledge_graph
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -73,6 +74,35 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
         except:
             print("Wikipedia Summary Exception")
         if len(ws) > 0:
+            if sentence_type=="knowledgegraph_random_walk":
+                if wssummary is None or wsheading is True:
+                     print("ws:",ws)
+                     knowledgegraph=create_SpaCy_knowledge_graph(ws)
+                else:
+                     print("wssummarysentences:",wssummarysentences)
+                     knowledgegraph=create_SpaCy_knowledge_graph(" ".join(wssummarysentences))
+                random_walks = list(nx.generate_random_paths(knowledgegraph[0].to_undirected(),number_of_random_walks,path_length=number_of_words_per_sentence))
+                numrw=0
+                sentences_synthesized=defaultdict(int)
+                for random_walk in random_walks:
+                    naturallanguageanswer = make_sentence(random_walk,edgelabels=knowledgegraph[1],sentence_type="knowledgegraph_random_walk")
+                    sentences_synthesized[numrw] = naturallanguageanswer
+                    numrw += 1
+                pprint.pprint(sentences_synthesized)
+                perplexity = PerplexityModel.from_str("bigrams-cord19")
+                rankedsentences=defaultdict(int)
+                for rw,sentences in sentences_synthesized.items():
+                    for s in sentences:
+                        meaningfulness=perplexity.compute_sentence(s)
+                        answersfile.write(s)
+                        rankedsentences[meaningfulness]=s
+                        answersfile.write(" --- ")
+                        answersfile.write(str(meaningfulness))
+                        answersfile.write("\n")
+                sortedrankedsentences=collections.OrderedDict(sorted(rankedsentences.items()))
+                print("SpaCy REBEL KnowledgeGraph Random Walk - Bot generated answers ranked by perplexity:")
+                pprint.pprint(sortedrankedsentences)
+                break
             if wssummary is None or wsheading is True:
                 print("ws:",ws)
                 answertextgraphclassified=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(ws)
@@ -170,11 +200,11 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                         answersfile.write(str(meaningfulness))
                         answersfile.write("\n")
                 sortedrankedsentences=collections.OrderedDict(sorted(rankedsentences.items()))
-                print("Bot generated answers ranked by perplexity:")
+                print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by perplexity:")
                 pprint.pprint(sortedrankedsentences)
         return sentences_synthesized
 
-def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False):
+def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False,edgelabels=None):
     from nltk.corpus import wordnet as wn
     print("make_sentence():wordsynsets = ",wordnetsynsets)
     if sentence_type == "xtag_node34_triplets":
@@ -219,6 +249,26 @@ def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_s
             print("product:",product)
             rwtexts.append(" ".join(product))
         return rwtexts 
+    if sentence_type == "knowledgegraph_random_walk":
+        n=0
+        rwtexts=[]
+        print("Knowledge graph edges with relation labelled:",edgelabels)
+        for n in range(len(wordnetsynsets)-2):
+            try:
+                headspan=str(wordnetsynsets[n])
+                tailspan=str(wordnetsynsets[n+1])
+                relation=edgelabels[(headspan,tailspan)]
+                rwtext = headspan + " " + relation + " " + tailspan
+                print("headspan:",headspan)
+                print("tailspan:",tailspan)
+                print("relation:",relation)
+                print("rwtext:",rwtext)
+                rwtexts.append(rwtext)
+                n += 2
+            except:
+                print("Exception: Key Error")
+                continue
+        return rwtexts
 
 if __name__ == "__main__":
     question = sys.argv[1]
@@ -226,4 +276,5 @@ if __name__ == "__main__":
     #WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="xtag_node34_triplets")
     #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[],"PUNCT":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
     WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
+    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
     #OpenAIQuestionAnswering(question)

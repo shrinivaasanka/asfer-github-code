@@ -1,0 +1,15 @@
+strict digraph  {
+mathematics;
+map;
+adjacent;
+boundary;
+"computer-assisted proof";
+"proved using a computer";
+"significantly simpler argument";
+"five color theorem";
+mathematics -> map  [label="has part"];
+map -> mathematics  [label="part of"];
+adjacent -> boundary  [label="subclass of"];
+"computer-assisted proof" -> "proved using a computer"  [label="subclass of"];
+"significantly simpler argument" -> "five color theorem"  [label="facet of"];
+}
