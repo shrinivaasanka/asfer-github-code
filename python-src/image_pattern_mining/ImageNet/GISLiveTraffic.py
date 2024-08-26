@@ -82,10 +82,22 @@ def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10):
     print("Temporal Betweenness Centrality of Air Traffic Dynamic Graph:",sorted_tbc)
     try:
         current_flow_betweenness_centrality=nx.current_flow_betweenness_centrality(airtrafficdyngraph.to_undirected())
-        softed_cfbc = sorted(list(current_flow_betweenness_centrality.items()), key=operator.itemgetter(1), reverse=True)
+        sorted_cfbc = sorted(list(current_flow_betweenness_centrality.items()), key=operator.itemgetter(1), reverse=True)
         print("Current Flow Betweenness Centrality of Air Traffic Dynamic Graph:",sorted_cfbc)
     except Exception as e:
         print("Current flow betweenness centrality exception:",e)
+    try:
+        approx_current_flow_betweenness_centrality=nx.approximate_current_flow_betweenness_centrality(airtrafficdyngraph.to_undirected())
+        sorted_acfbc = sorted(list(approx_current_flow_betweenness_centrality.items()), key=operator.itemgetter(1), reverse=True)
+        print("Approximate Current Flow Betweenness Centrality of Air Traffic Dynamic Graph:",sorted_acfbc)
+    except Exception as e:
+        print("Approximate Current flow betweenness centrality exception:",e)
+    try:
+        edge_current_flow_betweenness_centrality=nx.edge_current_flow_betweenness_centrality(airtrafficdyngraph.to_undirected())
+        sorted_ecfbc = sorted(list(edge_current_flow_betweenness_centrality.items()), key=operator.itemgetter(1), reverse=True)
+        print("Edge Current Flow Betweenness Centrality of Air Traffic Dynamic Graph:",sorted_ecfbc)
+    except Exception as e:
+        print("Edge Current flow betweenness centrality exception:",e)
     for e in airtrafficdyngraph.stream_interactions():
             print("air traffic dynamic graph edge:",e)
     write_dot(airtrafficdyngraph,"DynamicAirTrafficGraph.dot")
@@ -177,5 +189,5 @@ if __name__=="__main__":
     tomtom_live_traffic(tomtomkey,boundingbox=[10.948860,79.348497,10.991413,79.421453],apiversion=4)
     tomtom_live_traffic(tomtomkey,boundingbox=[10.948860,79.348497,10.991413,79.421453],apiversion=5)
     tomtom_live_traffic(tomtomkey,longlat=[12.439259,79.271851])
-    flightradar24_live_air_traffic()
+    flightradar24_live_air_traffic(max_no_of_flights=20)
     pyflightdata_live_air_traffic(airport_code="MAA")
