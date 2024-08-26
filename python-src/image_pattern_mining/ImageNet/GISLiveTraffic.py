@@ -33,6 +33,9 @@ import matplotlib.pyplot as plt
 from networkx.drawing.nx_pydot import write_dot
 
 def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10):
+    print("======================================================================")
+    print("FlightRadar24 Live Air Traffic for zones ",zones," - and centrality measures")
+    print("======================================================================")
     fr_api = FlightRadar24API()
     airtrafficdyngraph = dx.DynDiGraph(edge_remove=True)
     #if radius == -1:
@@ -70,13 +73,19 @@ def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10):
                             cnt+=1
                         except:
                             print("FlightRadarAPI exception")
-    #timerespectingpaths=al.all_time_respecting_paths(airtrafficdyngraph)
-    #print("Time respecting paths in air traffic dynamic graph:",timerespectingpaths)
+    timerespectingpaths=al.all_time_respecting_paths(airtrafficdyngraph)
+    print("Time respecting paths in air traffic dynamic graph:",timerespectingpaths)
     apsp=nx.all_pairs_shortest_path(airtrafficdyngraph)
     print("All shortest paths in air traffic dynamic graph:",dict(apsp))
     temporal_betweenness_centrality=nx.betweenness_centrality(airtrafficdyngraph)
     sorted_tbc = sorted(list(temporal_betweenness_centrality.items()), key=operator.itemgetter(1), reverse=True)
     print("Temporal Betweenness Centrality of Air Traffic Dynamic Graph:",sorted_tbc)
+    try:
+        current_flow_betweenness_centrality=nx.current_flow_betweenness_centrality(airtrafficdyngraph.to_undirected())
+        softed_cfbc = sorted(list(current_flow_betweenness_centrality.items()), key=operator.itemgetter(1), reverse=True)
+        print("Current Flow Betweenness Centrality of Air Traffic Dynamic Graph:",sorted_cfbc)
+    except Exception as e:
+        print("Current flow betweenness centrality exception:",e)
     for e in airtrafficdyngraph.stream_interactions():
             print("air traffic dynamic graph edge:",e)
     write_dot(airtrafficdyngraph,"DynamicAirTrafficGraph.dot")
@@ -84,6 +93,9 @@ def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10):
     #plt.show()
 
 def pyflightdata_live_air_traffic(airport_code="MAA"):
+    print("======================================================")
+    print("PyFlightData Live Air Traffic for airport code ",airport_code)
+    print("======================================================")
     flightdata=FlightData()
     fr_api = FlightRadar24API()
     pd.set_option("display.max_rows",None)
