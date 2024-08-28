@@ -24657,6 +24657,36 @@ OrderedDict([(10558.7453086644, 'three basic number'),
 	1543.7.4 Earlier algorithm converts a mildly context sensitive grammar (MCSG) natural language to a textgraph or knowledge graph, fits the random walks in the textgraphs to a matching formal grammar XTAG tree rule which is also an MCSG (which is manual at present as sentence PoS template is assumed to have been derived from XTAG,CFG,PCFG,CCG tree inorder traversal) - DisplaCy PoS dependency visualizer provides a visual left-right ordering for parts of speeches that could be useful for creating sentence templates if ordering based on grammar rules are unavailable. 
 	1543.7.5 It is also worth mentioning that lambda function tree meaning representation of texts lifts an MCSG to a Turing Machine which is more expressive than MCSG - in other words reversing the lambda function tree structure learnt from natural text by Recursive Lambda Function Growth algorithm might involve a more expressive and meaningful natural language output than what was originally input.
 
+References:
+-----------
+1543.8 Combinatory Categorical Grammar(CCG) - [Ades and Mark Steedman 1982] - Lambda function beta reduction in Combinatory Categorical Grammar (CCG) - Expressive power of CCG and TAG - https://library.oapen.org/bitstream/id/8d5e84fe-c4d3-4714-9eeb-f4084619de95/10.1515_9783110540253-014.pdf - Derivations 16,17,18 for 3 example sentences through lambda function reductions by considering each part-of-speech as a lambda function - "....
+(16) Harry sees himself.
+	NP↑
+	3sm (S\NP3s)/NP (S\NP3sm)\\((𝑆\𝑁𝑃𝑎𝑔𝑟)/𝑁𝑃)
+	: λp.p harry : λxλy.sees x y : λpλy.p (self y) y <LEX
+	S\NP3sm : λy.sees (self y) y >
+	S : sees (self harry) harry
+	For reflexive ditransitives of the kind we saw in (1), we have the following:
+(17) Mary introduced herself to the audience.
+	NP↑
+	3sf ((S\NPagr )/PPto)/NP ((S\NP3sf )/PP)\\(((𝑆\𝑁𝑃3𝑠𝑓)/𝑃𝑃)/𝑁𝑃) PP↑
+	: λp.p mary : λxλwλy.introduced w x y : λpλwλy.p w (self y) y : λp.p audience
+	<LEX
+	(S\NP3sf )/NP : λwλy.introduced w (self y) y
+	<
+	S\NP3sf : λy.introduced audience (self y) y
+	>
+	S : introduced audience (self mary) mary
+	It seems reasonable to assume that Harry talks to himself is also a true se-type
+	reflexive arising from lexicalization of “talks to”, as in the following derivation:
+(18) Harry talks to himself.
+	NP↑
+	3sm (S\NP3s)/NP ((S\NP3sm))\\((𝑆\𝑁𝑃𝑎𝑔𝑟)/𝑁𝑃)
+	: λp.p harry : λxλy.talks (to x) y : λpλy.p (self y) y <LEX
+	S\NP3sm : λy.talks (to (self y)) y >
+	S : talks (to (self harry)) harry 
+.....CCG and TAG are provably weakly equivalent to Linear Indexed Grammar (LIG) (Vijay- Shanker and Weir, 1994, Kuhlmann et al., 2015).15 Both are therefore “Mildly Context Sensitive” under the definition of Joshi (1988) and Joshi et al. (1991), which (among other properties), in the latter case calls for non-permutation-completeness.  In particular, of the n! possible permutations on n functional heads, CCG only allow a proportion defined by the nth Large Schröder Number S(n). For example, for a “cartographic” right-branching spine of only 8 functional heads, nearly 80 % of the 8!  permutations are excluded......" - It is worth observing that each lambda function for a part-of-speech in above sentences is a relation which may have more than two operands (or) Triplet Relation extraction of the form x-R-y might have to be extended to a multidimensional relation R having arbitrary number of arguments e.g R(x1,x2,...,xn) - relation "introduced" is 3 dimensional lambda function for "x introduced y to z". Sentence synthesis through random walks on textgraphs-knowledge_graphs might be approximately same as earlier reduction which maps each word vertex in the random walk to a multidimensional relation, translates the relation to a lambda function and recursively beta-reduces - this functionality is already part of CCG parser implementation of NLTK.    
+ 
 --------------------------------------------------------------------------------------------------------------------------------
 1545. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Time Respecting Paths and Current Flow Betweenness Centrality of Live Air Traffic Dynamic Graph - 26 August 2024 - related to 823,1163,1164,1174,1175,1177,1179,1194,1211,1226,1234,1290,1291,1292,1295,1296,1297,1301,1302,1304,1312,1313,1320,1323,1326,1328,1342,1343,1349,1350,1351,1362,1363,1377,1386,1387,1395,1397,1398,1412,1414,1423,1448,1449,1462,1471,1472,1476,1529,1531 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, Verlhulste-R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, Preferential Attachment, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models,Expander Graphs,Timeseries analysis,Graph Edit Distance and Earth mover distance, Face recognition,Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching,TomTom and HERE live road traffic API,Autonomous Online Shopping Delivery by Cargo drones,EventNet GEM
 --------------------------------------------------------------------------------------------------------------------------------
