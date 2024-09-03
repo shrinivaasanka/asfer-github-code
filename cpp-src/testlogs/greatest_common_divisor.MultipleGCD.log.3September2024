@@ -1,0 +1,111 @@
+--------------------------------------------
+Multiple Integer Greatest Common Divisor
+--------------------------------------------
+integer pair:99 and 18
+euclid_greatest_common_divisor():p=99;q=18
+euclid_greatest_common_divisor():p=18;q=9
+euclid_greatest_common_divisor():p=9;q=0
+pairwise GCD:9
+count:0
+integer pair:18 and 63
+euclid_greatest_common_divisor():p=18;q=63
+euclid_greatest_common_divisor():p=63;q=18
+euclid_greatest_common_divisor():p=18;q=9
+euclid_greatest_common_divisor():p=9;q=0
+pairwise GCD:9
+count:1
+integer pair:63 and 27
+euclid_greatest_common_divisor():p=63;q=27
+euclid_greatest_common_divisor():p=27;q=9
+euclid_greatest_common_divisor():p=9;q=0
+pairwise GCD:9
+count:1
+integer pair:27 and 36
+euclid_greatest_common_divisor():p=27;q=36
+euclid_greatest_common_divisor():p=36;q=27
+euclid_greatest_common_divisor():p=27;q=9
+euclid_greatest_common_divisor():p=9;q=0
+pairwise GCD:9
+count:1
+integer pair:36 and 45
+euclid_greatest_common_divisor():p=36;q=45
+euclid_greatest_common_divisor():p=45;q=36
+euclid_greatest_common_divisor():p=36;q=9
+euclid_greatest_common_divisor():p=9;q=0
+pairwise GCD:9
+count:1
+integer pair:45 and 72
+euclid_greatest_common_divisor():p=45;q=72
+euclid_greatest_common_divisor():p=72;q=45
+euclid_greatest_common_divisor():p=45;q=27
+euclid_greatest_common_divisor():p=27;q=18
+euclid_greatest_common_divisor():p=18;q=9
+euclid_greatest_common_divisor():p=9;q=0
+pairwise GCD:9
+count:1
+integer pair:72 and 54
+euclid_greatest_common_divisor():p=72;q=54
+euclid_greatest_common_divisor():p=54;q=18
+euclid_greatest_common_divisor():p=18;q=0
+pairwise GCD:18
+count:0
+integer pair:54 and 90
+euclid_greatest_common_divisor():p=54;q=90
+euclid_greatest_common_divisor():p=90;q=54
+euclid_greatest_common_divisor():p=54;q=36
+euclid_greatest_common_divisor():p=36;q=18
+euclid_greatest_common_divisor():p=18;q=0
+pairwise GCD:18
+count:1
+integer pair:90 and 117
+euclid_greatest_common_divisor():p=90;q=117
+euclid_greatest_common_divisor():p=117;q=90
+euclid_greatest_common_divisor():p=90;q=27
+euclid_greatest_common_divisor():p=27;q=9
+euclid_greatest_common_divisor():p=9;q=0
+pairwise GCD:9
+count:1
+integer pair:117 and 108
+euclid_greatest_common_divisor():p=117;q=108
+euclid_greatest_common_divisor():p=108;q=9
+euclid_greatest_common_divisor():p=9;q=0
+pairwise GCD:9
+count:1
+integer pair:108 and 81
+euclid_greatest_common_divisor():p=108;q=81
+euclid_greatest_common_divisor():p=81;q=27
+euclid_greatest_common_divisor():p=27;q=0
+pairwise GCD:27
+count:0
+gcd:9
+gcd:18
+gcd:27
+Multiple Greatest Common Divisor for list of factors:9
+List of factors:
+[99 18 63 27 36 45 72 54 90 117 108 81 ]
+new_factors:9
+new_factors:18
+new_factors:27
+----------------- Recursive call ----------------------------
+gcds.size():3
+integer pair:9 and 18
+euclid_greatest_common_divisor():p=9;q=18
+euclid_greatest_common_divisor():p=18;q=9
+euclid_greatest_common_divisor():p=9;q=0
+pairwise GCD:9
+count:0
+integer pair:18 and 27
+euclid_greatest_common_divisor():p=18;q=27
+euclid_greatest_common_divisor():p=27;q=18
+euclid_greatest_common_divisor():p=18;q=9
+euclid_greatest_common_divisor():p=9;q=0
+pairwise GCD:9
+count:1
+gcd:9
+Multiple Greatest Common Divisor for list of factors:9
+List of factors:
+[9 18 27 ]
+new_factors:9
+----------------- Recursive call ----------------------------
+gcds.size():1
+number_of_factors:1
