@@ -24757,3 +24757,33 @@ Gravity L2 Norm of  Mercury  on  2024-09-10 17:30:00.000 : 0.06272387238148128
 Gravity L2 Norm of  Mercury  on  2024-10-24 17:30:00.000 : 0.027233292625174887
 .......
 Gravity L2 Norm of  Mercury  on  2024-10-30 17:30:00.000 : 0.027899906185489574
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+1549. (THEORY and FEATURE) Sequential Optimization to Computational Geoemetric Factorization - Finding all factors - Primitive Multiple Integer Greatest Common Divisor (GCD) implementation - Multiple Integer GCD finding by Computational Geometric Factorization - related to 498,601,1226,1259,1303,1319,1321,1323,1324,1325,1355,1365,1366,1369,1379,1381,1384,1385,1401,1419,1454,1487,1525 and all sections on Integer Factorization (DMRC MapReduce PySpark and NC HPC Rust implementations),Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization,Quantum computation and Derandomization of BQP Factorization by Condorcet Jury Theorem Majority-BQPVoterSAT boolean composition,Integer partitions,Diophantine representation - 3 September 2024 
+----------------------------------------------------------------------------------------------------------------------------------------------
+1549.1 cpp-src/greatest_common_divisor.cpp C++ Greatest Common Divisor implementation has been updated to define a new function long long euclid_greatest_common_divisor_multiple(long long *factors,int number_of_factors) that generalizes 2 integer Euclid GCD algorithm to arbitrary list of integers quite similar to NumPy.gcd.reduce() function https://numpy.org/doc/stable/reference/generated/numpy.gcd.html python multiple GCD implementation.
+1549.2 Earlier function reduces a list of integers {x1,x2,x3,...,xn} to a set of unique pairwise GCDs list {GCD(x1,x2),GCD(x2,x3),GCD(x3,x4),...,GCD(x(n-1),xn)} and then recursively calls euclid_greatest_common_divisor_multiple() and euclid_greatest_common() on the list bottom-up till single element is left which is the multiple integer GCD. In other words N integers are reduced to a GCD tree of depth logN with the root element containing the multiple GCD. This implementation is at present primitive and might cover almost all the possible scenarios and sometimes mere flat pairwise juxtaposed comparison (leaf level of tree) works without neccessity for bottom-up GCD tree computation. List of numbers and length of the list have been hardcoded for now:
+	long long factors[]={99,18,63,27,36,45,72,54,90,117,108,81};
+	euclid_greatest_common_divisor_multiple(factors,12);
+1549.3 Earlier less efficient tree GCD computation could be replaced by multiple integer computational geometric factorization: Instead of rasterizing just one hyperbolic arc for single integer, multiple hyperbolas could be rasterized on x-y plane by rectification which discretizes all hyperbolic arc bows.
+1549.4 Pictorial illustration for simultaneous hyperbolic rasterization of 3 integers n1,n2,n3 embedded on x-y plane provides intuition for Parallel Multiple Integer GCD:
+	---------
+n1:		|-------*			
+			|
+			-------
+			      |--------
+	---------
+		|-------*
+n2:			|
+			-------
+			      |--------
+	---------
+		|-------*
+n3:			|
+			-------
+			      |--------
+1549.5 Parallel RAM (or Multicore) Planar Factor Point Location algorithm loop (which is Brent theorem compliant) described in Sections 481,1454.5,1482.9,1486.3,1486.8,1525.5 could theoretically sweep the x-y plane from left-to-right and locate the factor points one after the other for all 3 integers simultaneously - First factor point that is closest to 45 degree line (y=x) common to all 3 integers is the GCD of n1,n2 and n3 (Marked by asterisks in 3 rasterized hyperbolic arcs). 
+1549.6 Complexity of multiple integer Greatest Common Divisor computational geometric algorithm described earlier could be O((logN1)^k) + O((logN2)^k) + O((logN3)^k) for 3 integers and if more parallelism is added (depending on number of integers in the list) by extra PRAMs-multicores runtime could be brought down to single polylogarithmic term.
+1549.7 Logs testlogs/greatest_common_divisor.MultipleGCD.log.3September2024 show the GCD tree computation for list of factors [99,18,63,27,36,45,72,54,90,117,108,81] for a hypothetical integer in the last Recursive invocation:
+	Multiple Greatest Common Divisor for list of factors:9
+thereby finding another factor 9 common to all 12 integers.
