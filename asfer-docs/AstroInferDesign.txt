@@ -24725,3 +24725,35 @@ References:
 	attributeparadox(): number of  photos  =  8000000000
 	attributeparadox(): Birthday paradox variant for  photos  - Minimum number of people required for atleast 2 people having same  photos  (k) with atleast 50% probability = 105311.75391055334
 1547.5 This update resolves JIRA issue https://krishnairesearch.atlassian.net/browse/NEUR-50
+
+----------------------------------------------------------------------------------------------------------------------------------------
+1548. (THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 3 September 2024 - N-Body gravitational acceleration and Barometric pressure analysis of date range 1 September 2024-31 October 2024 for Chennai location in NASA JPL Horizons API - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368,1388,1404,1455,1456,1463,1479,1480,1515,1526,1527,1528 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change-Adaptive Fourier Neural Operator-FourCastNet, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+----------------------------------------------------------------------------------------------------------------------------------------
+(Disclaimer: N-Body Gravitational Climate Model is based on variable gravity caused by solar system bodies which could affect equations of fluid dynamics and is still in experimental stages - Predictions made by this model are probabilistic) 
+1548.1 python-src/image_pattern_mining/ImageNet/GISWeatherAnalytics.py has been updated to analyze date range 1/9/2024 - 31/10/2024 for fluctuations in N-Body gravity with respect to 3-body system - Sun-Mercury-Venus - for angular separation of <= 30 degrees:
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2024,9,1,17,30,00),'dateto':(2024,10,31,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399']},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+1548.2 Following are the pairwise Barometric pressure and gravity plots for this date range spanning 61 days:
+	testlogs/GISWeatherAnalytics.BarometricPressure.Chennai.Mercury-Venus.2024-9-1#2024-8-31.jpg
+	testlogs/GISWeatherAnalytics.BarometricPressure.Chennai.Sun-Mercury.2024-9-1#2024-10-31.jpg
+	testlogs/GISWeatherAnalytics.BarometricPressure.Chennai.Sun-Venus.2024-9-1#2024-10-31.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Venus.2024-9-1#2024-10-31.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Sun-Mercury.2024-9-1#2024-10-31.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Sun-Venus.2024-9-1#2024-10-31.jpg
+1548.3 Logs testlogs/GISWeatherAnalytics.log.2September2024 and earlier graphical plots show steep increase in Mercury's gravitational pull during first 10 days of September 2024 (and corresponding decline in Barometric pressure) which gradually weakens till end of October 2024 (and corresponding increase in Barometric pressure). This sinusoidal change in gravity could accordingly initiate a domino effect on all equations that exponentially depend on gravitational constant including meteorological and seismic which might lead to gravity induced cooling and low pressure systems corresponding to above date ranges with high probability (and a lag in dates possibly, as the gravity variation might require few days to exert its influence on climate).  
+1548.4 Mercury-Venus < 30 degrees angular separation date range grepped from logs shows 3/10/2024-30/10/2024 to be an active rainfall period as per Brihat Samhita Verse referred to in 1358.4 and NOAA HURDAT2 Sequence Mined Class Association Rule 13 - Mercury+Venus in Section 172. Mercury-Venus angular separation gradually narrows in October 2024 and Gravity L2 norm of Mercury rises from 1/9/2024 upto 10/9/2024 and tapering off thereafter till 24/10/2024 implying climate changes in both September 2024 and October 2024:
+-------------------------------------------------------------------------------------------------------------------------------------
+grep "Angular separations for  Mercury-Venus" testlogs/GISWeatherAnalytics.log.2September2024 
+-------------------------------------------------------------------------------------------------------------------------------------
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 29deg 46' 11.5">, ('2024', '10', '03', '17', '30', '00.000'))]
+.....
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 19deg 54' 23.5">, ('2024', '10', '30', '17', '30', '00.000'))]
+--------------------------------------------------------------------------------------------------------
+grep "Gravity L2 Norm of  Mercury" testlogs/GISWeatherAnalytics.log.2September2024
+--------------------------------------------------------------------------------------------------------
+Gravity L2 Norm of  Mercury  on  2024-09-01 17:30:00.000 : 0.05471567332523496
+.......
+Gravity L2 Norm of  Mercury  on  2024-09-10 17:30:00.000 : 0.06272387238148128
+.......
+Gravity L2 Norm of  Mercury  on  2024-10-24 17:30:00.000 : 0.027233292625174887
+.......
+Gravity L2 Norm of  Mercury  on  2024-10-30 17:30:00.000 : 0.027899906185489574
