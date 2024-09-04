@@ -29,6 +29,7 @@ import pprint
 from pyplexity import PerplexityModel
 import collections
 from KnowledgeGraph import create_SpaCy_knowledge_graph
+from nltk.corpus import wordnet as wn
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -190,19 +191,37 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                 print("Bot generated random walk answer from textgraph:")
                 pprint.pprint(sentences_synthesized)
                 perplexity = PerplexityModel.from_str("bigrams-cord19")
-                rankedsentences=defaultdict(int)
+                pyplexityrankedsentences=defaultdict(int)
+                wordnetperplexityrankedsentences=defaultdict(int)
                 for rw,sentences in sentences_synthesized.items():
                     for s in sentences:
                         meaningfulness=perplexity.compute_sentence(s)
+                        wordnetperplexity=wordnet_perplexity(s)
+                        print("WordNet perplexity of sentence - ",s,":",wordnetperplexity)
                         answersfile.write(s)
-                        rankedsentences[meaningfulness]=s
+                        pyplexityrankedsentences[meaningfulness]=s
+                        wordnetperplexityrankedsentences[wordnetperplexity]=s
                         answersfile.write(" --- ")
                         answersfile.write(str(meaningfulness))
                         answersfile.write("\n")
-                sortedrankedsentences=collections.OrderedDict(sorted(rankedsentences.items()))
-                print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by perplexity:")
-                pprint.pprint(sortedrankedsentences)
+                sortedpyplexityrankedsentences=collections.OrderedDict(sorted(pyplexityrankedsentences.items()))
+                sortedwnperplexityrankedsentences=collections.OrderedDict(sorted(wordnetperplexityrankedsentences.items()))
+                print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by pyplexity perplexity:")
+                pprint.pprint(sortedpyplexityrankedsentences)
+                print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by wordnet perplexity:")
+                pprint.pprint(sortedwnperplexityrankedsentences)
         return sentences_synthesized
+
+def wordnet_perplexity(sentence):
+    words = sentence.split(" ")
+    wordnetperplexity=1
+    for w in range(len(words)-1):
+        w1_synsets = wn.synsets(words[w])
+        w2_synsets = wn.synsets(words[w+1])
+        if len(w1_synsets) > 0 and len(w2_synsets) > 0:
+            bigram_wordnet_similarity = w1_synsets[0].wup_similarity(w2_synsets[0])
+            wordnetperplexity = wordnetperplexity * bigram_wordnet_similarity
+    return wordnetperplexity
 
 def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False,edgelabels=None):
     from nltk.corpus import wordnet as wn
@@ -276,5 +295,5 @@ if __name__ == "__main__":
     #WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="xtag_node34_triplets")
     #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[],"PUNCT":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
     WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
-    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
+    #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
     #OpenAIQuestionAnswering(question)
