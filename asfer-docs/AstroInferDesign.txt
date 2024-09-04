@@ -24822,3 +24822,8 @@ thereby finding another factor 9 common to all 12 integers.
              		(0.004629629629629629, '2nd west line - north lying'),
              		(0.005128205128205128, '2nd America ocean - north lying'),
 		.....
+
+References:
+----------
+1550.6 Phrase Structure Grammar (PSG) or Constituency Grammar - https://en.wikipedia.org/wiki/Phrase_structure_grammar - "..... The fundamental trait that these frameworks all share is that they view sentence structure in terms of the constituency relation. The constituency relation derives from the subject-predicate division of Latin and Greek grammars[citation needed] that is based on term logic and reaches back to Aristotle[3] in antiquity. Basic clause structure is understood in terms of a binary division of the clause into subject (noun phrase NP) and predicate (verb phrase VP)....." - Sentences in PSG are composed mostly of Noun Phrase(NP) and Verb Phrase(VP) as illustrated in https://en.wikipedia.org/wiki/Phrase_structure_grammar#/media/File:Thistreeisillustratingtherelation(PSG).png. Phrases synthesized by Formal LLM in examples earlier could be combined by a PSG parse tree to form a sentence.
+1550.7 Context for LLM answer to Query 2 earlier - NATO Atlantic Command - https://www.act.nato.int/activities/community-relations/ - "..... In 1953, NATO established its first and only command in North America, Supreme Allied Command, Atlantic, in Norfolk, Virginia. Aligning the city’s Azalea Festival with the newly formed NATO command helped it to stand out from the multitude of other azalea festivals in nearly every state south of Mason-Dixon line...."
