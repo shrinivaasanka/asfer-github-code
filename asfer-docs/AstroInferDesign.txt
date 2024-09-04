@@ -24787,3 +24787,38 @@ n3:			|
 1549.7 Logs testlogs/greatest_common_divisor.MultipleGCD.log.3September2024 show the GCD tree computation for list of factors [99,18,63,27,36,45,72,54,90,117,108,81] for a hypothetical integer in the last Recursive invocation:
 	Multiple Greatest Common Divisor for list of factors:9
 thereby finding another factor 9 common to all 12 integers.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1550. (THEORY and FEATURE) Nachiketas Formal LLM - WordNet Perplexity measure implementation - Changes to Wikipedia Question-Answering algorithm for better accuracy 9 - related to 2,249,707,829,1133,1134,1204,1263,1269,1284,1285,1405,1413,1455,1468,1469,1536,1537,1538,1539,1540,1541,1542,1543 and all sections on Intrinsic Merit of Texts, Recursive Lambda Function Growth and Recursive Gloss Overlap textgraph algorithms, Question-Answering, Embedding in vectorspace, Machine Translation, Transformers Attention Model,Named Entity Recognition and Meaning Representation, Complexity models of Question-Answering (multiple choice,open-ended,adaptive and static) - LTF,PTF,Switching Circuits,TQBF,Markov Chains, Large Language Models, Mildly Context Sensitive Grammars-Tree Adjoining Grammars for Natural Languages,Text restoration-Vowelless text (de)compression  - 4 September 2024
+--------------------------------------------------------------------------------------------------------------------------------------------
+1550.1 python-src/NeuronRainApps/QuestionAnswering/QuestionAnswering.py has been updated to import NLTK wordnet module.
+1550.2 New measure of sentence meaningfulness has been implemented by function wordnet_perplexity() which provides an unsupervised meaning quantification alternative based on WordNet similarity, to pyplexity perplexity scoring that depends on training data. Sentences synthesized are ranked by both pyplexity perplexity and WordNet perplexity measures.
+1550.3 Function wordnet_perplexity(sentence) iterates through bigrams of words in a sentence left-to-right and computes Wu-Palmer WordNet Synset similarity for each bigram. WordNet Perplexity is computed by product of WordNet similarity of all bigrams in a sentence.
+1550.4 WordNetPerplexity(w1,w2,w3,....,wn) = WNSimilarity(w1,w2) * WNSimilarity(w2,w3) * WNSimilarity(w3,w4) * .... * WNSimilarity(w(n-1),w(n)) for a sentence s = w1-w2-w3-....-wn containing words w1 to wn. Perplexity is defined in terms of product of wordnet similarity than sum of similarities to keep the perplexity fraction within or equal to 1. 
+1550.5 Question-Answering chatbot function WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False) is invoked for 2 queries:
+	1550.5.1 Query 1 - "explain artificial intelligence" - excerpts from testlogs/QuestionAnswering.WordNetPerplexity.4September2024 - two phrases synthesized are ranked by pyplexity and wordnet perplexity and both approximately convey the meaning of artifical intelligence as "contrived nature": 
+		WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by pyplexity perplexity:
+		OrderedDict([(32977.04490851676, 'artificial nature rather contrived'), 
+			(164800.35499356923, 'artificial art rather contrived')])
+		WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by wordnet perplexity:
+		OrderedDict([(0.013333333333333336, 'artificial art rather contrived'), 
+			(0.020833333333333332, 'artificial nature rather contrived')])
+	1550.5.2 Query 2 - "what is article 5 of NATO" - excerpts from testlogs/QuestionAnswering.WordNetPerplexity2.4September2024 - two phrases synthesized are ranked by pyplexity and wordnet perplexity - phrases synthesized are centered around Mason-Dixon demarcation line of Northern US states along atlantic coast: 
+		WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by pyplexity perplexity:
+		OrderedDict([(17424.830700788632, '2nd Atlantic region - north lying'),
+       		        (18522.477466941862, '2nd ocean region - north lying'),
+             		(19514.394729733514, '2nd north region - north lying'),
+             		(20068.28805326535, '2nd Atlantic region - east lying'),
+             		(20954.768851987643, '2nd Africa region - north lying'),
+             		(21332.454796813778, '2nd ocean region - east lying'),
+             		(21970.849801940458, '2nd west region - north lying'),
+		.....
+		WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by wordnet perplexity:
+		OrderedDict([(0.002403846153846154, '2nd America line - north lying'),
+       		        (0.002976190476190476, '2nd Mason line - north lying'),
+            		(0.0032467532467532465, '2nd States line - north lying'),
+             		(0.0038461538461538464, '2nd Europe line - north lying'),
+             		(0.004524886877828055, '2nd America line - east lying'),
+             		(0.004629629629629629, '2nd west line - north lying'),
+             		(0.005128205128205128, '2nd America ocean - north lying'),
+		.....
