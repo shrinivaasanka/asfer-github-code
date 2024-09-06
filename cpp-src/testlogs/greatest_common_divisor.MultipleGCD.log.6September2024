@@ -1,0 +1,317 @@
+GitHub/asfer-github-code/cpp-src# ./greatest_common_divisor 
+--------------------------------------------
+Multiple Integer Greatest Common Divisor
+--------------------------------------------
+Number of integers for Multiple GCD:
+30
+Integers for GCD:
+30
+15
+5
+20
+25
+45
+35
+65
+55
+115
+1015
+915
+815
+715
+555
+445
+135
+315
+225
+220
+120
+110
+100
+90
+85
+500
+600
+700
+800
+900
+Parsed factors list:0x7ffd961b0ee0
+integer pair:30 and 15
+euclid_greatest_common_divisor():p=30;q=15
+euclid_greatest_common_divisor():p=15;q=0
+pairwise GCD:15
+count:0
+integer pair:15 and 5
+euclid_greatest_common_divisor():p=15;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:0
+integer pair:5 and 20
+euclid_greatest_common_divisor():p=5;q=20
+euclid_greatest_common_divisor():p=20;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:20 and 25
+euclid_greatest_common_divisor():p=20;q=25
+euclid_greatest_common_divisor():p=25;q=20
+euclid_greatest_common_divisor():p=20;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:25 and 45
+euclid_greatest_common_divisor():p=25;q=45
+euclid_greatest_common_divisor():p=45;q=25
+euclid_greatest_common_divisor():p=25;q=20
+euclid_greatest_common_divisor():p=20;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:45 and 35
+euclid_greatest_common_divisor():p=45;q=35
+euclid_greatest_common_divisor():p=35;q=10
+euclid_greatest_common_divisor():p=10;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:35 and 65
+euclid_greatest_common_divisor():p=35;q=65
+euclid_greatest_common_divisor():p=65;q=35
+euclid_greatest_common_divisor():p=35;q=30
+euclid_greatest_common_divisor():p=30;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:65 and 55
+euclid_greatest_common_divisor():p=65;q=55
+euclid_greatest_common_divisor():p=55;q=10
+euclid_greatest_common_divisor():p=10;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:55 and 115
+euclid_greatest_common_divisor():p=55;q=115
+euclid_greatest_common_divisor():p=115;q=55
+euclid_greatest_common_divisor():p=55;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:115 and 1015
+euclid_greatest_common_divisor():p=115;q=1015
+euclid_greatest_common_divisor():p=1015;q=115
+euclid_greatest_common_divisor():p=115;q=95
+euclid_greatest_common_divisor():p=95;q=20
+euclid_greatest_common_divisor():p=20;q=15
+euclid_greatest_common_divisor():p=15;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:1015 and 915
+euclid_greatest_common_divisor():p=1015;q=915
+euclid_greatest_common_divisor():p=915;q=100
+euclid_greatest_common_divisor():p=100;q=15
+euclid_greatest_common_divisor():p=15;q=10
+euclid_greatest_common_divisor():p=10;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:915 and 815
+euclid_greatest_common_divisor():p=915;q=815
+euclid_greatest_common_divisor():p=815;q=100
+euclid_greatest_common_divisor():p=100;q=15
+euclid_greatest_common_divisor():p=15;q=10
+euclid_greatest_common_divisor():p=10;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:815 and 715
+euclid_greatest_common_divisor():p=815;q=715
+euclid_greatest_common_divisor():p=715;q=100
+euclid_greatest_common_divisor():p=100;q=15
+euclid_greatest_common_divisor():p=15;q=10
+euclid_greatest_common_divisor():p=10;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:715 and 555
+euclid_greatest_common_divisor():p=715;q=555
+euclid_greatest_common_divisor():p=555;q=160
+euclid_greatest_common_divisor():p=160;q=75
+euclid_greatest_common_divisor():p=75;q=10
+euclid_greatest_common_divisor():p=10;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:555 and 445
+euclid_greatest_common_divisor():p=555;q=445
+euclid_greatest_common_divisor():p=445;q=110
+euclid_greatest_common_divisor():p=110;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:445 and 135
+euclid_greatest_common_divisor():p=445;q=135
+euclid_greatest_common_divisor():p=135;q=40
+euclid_greatest_common_divisor():p=40;q=15
+euclid_greatest_common_divisor():p=15;q=10
+euclid_greatest_common_divisor():p=10;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:135 and 315
+euclid_greatest_common_divisor():p=135;q=315
+euclid_greatest_common_divisor():p=315;q=135
+euclid_greatest_common_divisor():p=135;q=45
+euclid_greatest_common_divisor():p=45;q=0
+pairwise GCD:45
+count:0
+integer pair:315 and 225
+euclid_greatest_common_divisor():p=315;q=225
+euclid_greatest_common_divisor():p=225;q=90
+euclid_greatest_common_divisor():p=90;q=45
+euclid_greatest_common_divisor():p=45;q=0
+pairwise GCD:45
+count:1
+integer pair:225 and 220
+euclid_greatest_common_divisor():p=225;q=220
+euclid_greatest_common_divisor():p=220;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:220 and 120
+euclid_greatest_common_divisor():p=220;q=120
+euclid_greatest_common_divisor():p=120;q=100
+euclid_greatest_common_divisor():p=100;q=20
+euclid_greatest_common_divisor():p=20;q=0
+pairwise GCD:20
+count:0
+integer pair:120 and 110
+euclid_greatest_common_divisor():p=120;q=110
+euclid_greatest_common_divisor():p=110;q=10
+euclid_greatest_common_divisor():p=10;q=0
+pairwise GCD:10
+count:0
+integer pair:110 and 100
+euclid_greatest_common_divisor():p=110;q=100
+euclid_greatest_common_divisor():p=100;q=10
+euclid_greatest_common_divisor():p=10;q=0
+pairwise GCD:10
+count:1
+integer pair:100 and 90
+euclid_greatest_common_divisor():p=100;q=90
+euclid_greatest_common_divisor():p=90;q=10
+euclid_greatest_common_divisor():p=10;q=0
+pairwise GCD:10
+count:1
+integer pair:90 and 85
+euclid_greatest_common_divisor():p=90;q=85
+euclid_greatest_common_divisor():p=85;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:85 and 500
+euclid_greatest_common_divisor():p=85;q=500
+euclid_greatest_common_divisor():p=500;q=85
+euclid_greatest_common_divisor():p=85;q=75
+euclid_greatest_common_divisor():p=75;q=10
+euclid_greatest_common_divisor():p=10;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:500 and 600
+euclid_greatest_common_divisor():p=500;q=600
+euclid_greatest_common_divisor():p=600;q=500
+euclid_greatest_common_divisor():p=500;q=100
+euclid_greatest_common_divisor():p=100;q=0
+pairwise GCD:100
+count:0
+integer pair:600 and 700
+euclid_greatest_common_divisor():p=600;q=700
+euclid_greatest_common_divisor():p=700;q=600
+euclid_greatest_common_divisor():p=600;q=100
+euclid_greatest_common_divisor():p=100;q=0
+pairwise GCD:100
+count:1
+integer pair:700 and 800
+euclid_greatest_common_divisor():p=700;q=800
+euclid_greatest_common_divisor():p=800;q=700
+euclid_greatest_common_divisor():p=700;q=100
+euclid_greatest_common_divisor():p=100;q=0
+pairwise GCD:100
+count:1
+integer pair:800 and 900
+euclid_greatest_common_divisor():p=800;q=900
+euclid_greatest_common_divisor():p=900;q=800
+euclid_greatest_common_divisor():p=800;q=100
+euclid_greatest_common_divisor():p=100;q=0
+pairwise GCD:100
+count:1
+gcd:15
+gcd:5
+gcd:45
+gcd:20
+gcd:10
+gcd:100
+Multiple Greatest Common Divisor for list of factors:5
+List of factors:
+[30 15 5 20 25 45 35 65 55 115 1015 915 815 715 555 445 135 315 225 220 120 110 100 90 85 500 600 700 800 900 ]
+new_factors:15
+new_factors:5
+new_factors:45
+new_factors:20
+new_factors:10
+new_factors:100
+----------------- Recursive call ----------------------------
+gcds.size():6
+integer pair:15 and 5
+euclid_greatest_common_divisor():p=15;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:0
+integer pair:5 and 45
+euclid_greatest_common_divisor():p=5;q=45
+euclid_greatest_common_divisor():p=45;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:45 and 20
+euclid_greatest_common_divisor():p=45;q=20
+euclid_greatest_common_divisor():p=20;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:1
+integer pair:20 and 10
+euclid_greatest_common_divisor():p=20;q=10
+euclid_greatest_common_divisor():p=10;q=0
+pairwise GCD:10
+count:0
+integer pair:10 and 100
+euclid_greatest_common_divisor():p=10;q=100
+euclid_greatest_common_divisor():p=100;q=10
+euclid_greatest_common_divisor():p=10;q=0
+pairwise GCD:10
+count:1
+gcd:5
+gcd:10
+Multiple Greatest Common Divisor for list of factors:5
+List of factors:
+[15 5 45 20 10 100 ]
+new_factors:5
+new_factors:10
+----------------- Recursive call ----------------------------
+gcds.size():2
+integer pair:5 and 10
+euclid_greatest_common_divisor():p=5;q=10
+euclid_greatest_common_divisor():p=10;q=5
+euclid_greatest_common_divisor():p=5;q=0
+pairwise GCD:5
+count:0
+gcd:5
+Multiple Greatest Common Divisor for list of factors:5
+List of factors:
+[5 10 ]
+new_factors:5
+----------------- Recursive call ----------------------------
+gcds.size():1
+number_of_factors:1
+

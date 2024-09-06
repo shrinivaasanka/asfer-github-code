@@ -23,6 +23,8 @@ using namespace std;
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <fstream>
+
 
 long long euclid_greatest_common_divisor(long long p,long long q);
 long long euclid_greatest_common_divisor_multiple(long long *factors,int number_of_factors);
@@ -80,8 +82,18 @@ int main(int argc, char* argv[])
 	cout<<"--------------------------------------------"<<endl;
 	cout<<"Multiple Integer Greatest Common Divisor"<<endl;
 	cout<<"--------------------------------------------"<<endl;
-	long long factors[]={99,18,63,27,36,45,72,54,90,117,108,81};
-	euclid_greatest_common_divisor_multiple(factors,12);
+	//long long factors[]={99,18,63,27,36,45,72,54,90,117,108,81};
+	int no_of_integers=2;
+	cout<<"Number of integers for Multiple GCD:"<<endl;
+	cin>>no_of_integers;
+	cout<<"Integers for GCD:"<<endl;
+	long long factors[no_of_integers];
+	for(int i=0; i < no_of_integers; i++)
+	{
+		cin>>factors[i];
+	}
+	cout<<"Parsed factors list:"<<factors<<endl;
+	euclid_greatest_common_divisor_multiple(factors,no_of_integers);
 	cout<<"--------------------------------------------"<<endl;
 	cout<<"Euclid Greatest Common Divisor"<<endl;
 	cout<<"--------------------------------------------"<<endl;

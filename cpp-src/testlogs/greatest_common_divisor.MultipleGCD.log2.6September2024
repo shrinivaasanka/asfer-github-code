@@ -1,0 +1,144 @@
+GitHub/asfer-github-code/cpp-src# ./greatest_common_divisor 
+--------------------------------------------
+Multiple Integer Greatest Common Divisor
+--------------------------------------------
+Number of integers for Multiple GCD:
+10
+Integers for GCD:
+2151
+4649
+9
+1111111
+3
+13947
+3333333
+239
+717
+41841
+Parsed factors list:0x7ffc2b259460
+integer pair:2151 and 4649
+euclid_greatest_common_divisor():p=2151;q=4649
+euclid_greatest_common_divisor():p=4649;q=2151
+euclid_greatest_common_divisor():p=2151;q=347
+euclid_greatest_common_divisor():p=347;q=69
+euclid_greatest_common_divisor():p=69;q=2
+euclid_greatest_common_divisor():p=2;q=1
+euclid_greatest_common_divisor():p=1;q=0
+pairwise GCD:1
+count:0
+integer pair:4649 and 9
+euclid_greatest_common_divisor():p=4649;q=9
+euclid_greatest_common_divisor():p=9;q=5
+euclid_greatest_common_divisor():p=5;q=4
+euclid_greatest_common_divisor():p=4;q=1
+euclid_greatest_common_divisor():p=1;q=0
+pairwise GCD:1
+count:1
+integer pair:9 and 1111111
+euclid_greatest_common_divisor():p=9;q=1111111
+euclid_greatest_common_divisor():p=1111111;q=9
+euclid_greatest_common_divisor():p=9;q=7
+euclid_greatest_common_divisor():p=7;q=2
+euclid_greatest_common_divisor():p=2;q=1
+euclid_greatest_common_divisor():p=1;q=0
+pairwise GCD:1
+count:1
+integer pair:1111111 and 3
+euclid_greatest_common_divisor():p=1111111;q=3
+euclid_greatest_common_divisor():p=3;q=1
+euclid_greatest_common_divisor():p=1;q=0
+pairwise GCD:1
+count:1
+integer pair:3 and 13947
+euclid_greatest_common_divisor():p=3;q=13947
+euclid_greatest_common_divisor():p=13947;q=3
+euclid_greatest_common_divisor():p=3;q=0
+pairwise GCD:3
+count:0
+integer pair:13947 and 3333333
+euclid_greatest_common_divisor():p=13947;q=3333333
+euclid_greatest_common_divisor():p=3333333;q=13947
+euclid_greatest_common_divisor():p=13947;q=0
+pairwise GCD:13947
+count:0
+integer pair:3333333 and 239
+euclid_greatest_common_divisor():p=3333333;q=239
+euclid_greatest_common_divisor():p=239;q=0
+pairwise GCD:239
+count:0
+integer pair:239 and 717
+euclid_greatest_common_divisor():p=239;q=717
+euclid_greatest_common_divisor():p=717;q=239
+euclid_greatest_common_divisor():p=239;q=0
+pairwise GCD:239
+count:1
+integer pair:717 and 41841
+euclid_greatest_common_divisor():p=717;q=41841
+euclid_greatest_common_divisor():p=41841;q=717
+euclid_greatest_common_divisor():p=717;q=255
+euclid_greatest_common_divisor():p=255;q=207
+euclid_greatest_common_divisor():p=207;q=48
+euclid_greatest_common_divisor():p=48;q=15
+euclid_greatest_common_divisor():p=15;q=3
+euclid_greatest_common_divisor():p=3;q=0
+pairwise GCD:3
+count:1
+gcd:1
+gcd:3
+gcd:13947
+gcd:239
+Multiple Greatest Common Divisor for list of factors:1
+List of factors:
+[2151 4649 9 1111111 3 13947 3333333 239 717 41841 ]
+new_factors:1
+new_factors:3
+new_factors:13947
+new_factors:239
+----------------- Recursive call ----------------------------
+gcds.size():4
+integer pair:1 and 3
+euclid_greatest_common_divisor():p=1;q=3
+euclid_greatest_common_divisor():p=3;q=1
+euclid_greatest_common_divisor():p=1;q=0
+pairwise GCD:1
+count:0
+integer pair:3 and 13947
+euclid_greatest_common_divisor():p=3;q=13947
+euclid_greatest_common_divisor():p=13947;q=3
+euclid_greatest_common_divisor():p=3;q=0
+pairwise GCD:3
+count:0
+integer pair:13947 and 239
+euclid_greatest_common_divisor():p=13947;q=239
+euclid_greatest_common_divisor():p=239;q=85
+euclid_greatest_common_divisor():p=85;q=69
+euclid_greatest_common_divisor():p=69;q=16
+euclid_greatest_common_divisor():p=16;q=5
+euclid_greatest_common_divisor():p=5;q=1
+euclid_greatest_common_divisor():p=1;q=0
+pairwise GCD:1
+count:1
+gcd:1
+gcd:3
+Multiple Greatest Common Divisor for list of factors:1
+List of factors:
+[1 3 13947 239 ]
+new_factors:1
+new_factors:3
+----------------- Recursive call ----------------------------
+gcds.size():2
+integer pair:1 and 3
+euclid_greatest_common_divisor():p=1;q=3
+euclid_greatest_common_divisor():p=3;q=1
+euclid_greatest_common_divisor():p=1;q=0
+pairwise GCD:1
+count:0
+gcd:1
+Multiple Greatest Common Divisor for list of factors:1
+List of factors:
+[1 3 ]
+new_factors:1
+----------------- Recursive call ----------------------------
+gcds.size():1
+number_of_factors:1
+
