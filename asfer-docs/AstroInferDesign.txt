@@ -24903,4 +24903,9 @@ References:
 1553.3 Termination of while loop implies Riemann Hypothesis is False - Line g = gcd(n,q) has been changed to g = gcd(n,int(q)) due to python interpreter datatype cast error.
 1553.4 An example execution of above program terminates after 52 iterations and growth of the while loop inequality LHS-RHS are captured in testlogs/MatiyasevichRH.LHS.30September2024.jpg ,  testlogs/MatiyasevichRH.log.30September2024 , testlogs/MatiyasevichRH.RHS.30September2024.jpg
 1553.5 Termination of the loop after 50 iterations could be due to floating point precision errors - but the plots and logs show how fast the LHS and RHS of while loop grow (exponential - possibly in geometric progression) and there is a sharp threshold spike in both LHS and RHS after 50 iterations. 
-1553.6 Due to extraordinary growth of the while loop inequality in both sides, high precision Big decimal datatypes are mandatory further investigations are necessary to statically and dynamically analyze above program through available WCET tools including Heptane (1552.20) and aiT.
+1553.6 Due to extraordinary growth of the while loop inequality in both sides, high precision Big decimal datatypes are mandatory - further investigations are necessary to statically and dynamically analyze above program through available WCET tools including Heptane (1552.20) and aiT.
+
+References:
+-----------
+1553.7 Absint aiT WCET estimation - https://www.absint.com/ait/index.htm
+1553.8 Absint aiT WCET estimation in avionics - Airbus chips case study - https://www.absint.com/aiT_airbus.pdf
