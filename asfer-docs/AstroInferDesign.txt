@@ -24912,3 +24912,18 @@ References:
 -----------
 1553.7 Absint aiT WCET estimation - https://www.absint.com/ait/index.htm
 1553.8 Absint aiT WCET estimation in avionics - Airbus chips case study - https://www.absint.com/aiT_airbus.pdf
+
+-------------------------------------------------------------------------------------------------------------------------------
+1554. (THEORY and FEATURE) Analysis of Matiyasevich Python programs for Riemann Hypothesis 2 - integer division clause - related to 629,751,1191,1217,1354,1357,1443,1459,1477,1552,1553 to all sections on Riemann Zeta Function, Set partitions, Computational geometry, Program analysis/Software analytics/Scheduler Analytics,Master Theorem,Busy Beaver Function - 3 October 2024
+-------------------------------------------------------------------------------------------------------------------------------
+1554.1 python-src/MatiyasevichRH.py has been updated to import sys. New variables lhsrhsratio,maxiterations and integerdivision have been introduced. Number of maximum digits printed for a large integer has been set to 100000.
+1554.2 While loop has been made to exit after maxiterations irrespective of truth of Riemann hypothesis and ratio of LHS to RHS of while loop for all iterations is plotted as a curve. This ratio is quite crucial as its fluctuation pattern might hold the secret to Riemann Hypothesis - in other words, truth of centuries old Riemann hypothesis has been reduced to one line of while loop inequality condition.
+1554.3 New if-else clause based on boolean value of integerdivision variable has been introduced to choose between integer division operator // and normal division operator / while computing the quantity n*g/q. Integer cast in gcd() has been removed.
+1554.4 Two executions of MatiyasevichRH.py has been performed based on integerdivision=True and integerdivision=False. For integerdivision=False while loop exits after 50 iterations and following are the logs and while loop LHS-RHS graph plots for normal division operator: 
+	python-src/testlogs/MatiyasevichRH.LHS.3October2024.jpg
+	python-src/testlogs/MatiyasevichRH.RHS.3October2024.jpg
+	python-src/testlogs/MatiyasevichRH.log.normaldivision.3October2024
+For integerdivision=True, while loop does not terminate and grows phenomenally and the LHS-RHS ratio of while loop has a curious fractal pattern as shown by logs and LHS-RHS ratio graph plots (while loop exits after maxiterations): 
+	python-src/testlogs/MatiyasevichRH.LHSRHSRatio.3October2024.jpg
+	python-src/testlogs/MatiyasevichRH.log.integerdivision.3October2024
+1554.5 Integer division operator // probably has rectified the termination problem in 1552.
