@@ -23,22 +23,39 @@
 
 from math import gcd
 import matplotlib.pyplot as plt
+import sys
 
 h=m=p=0
 d=f0=f3=n=q=1
 lhs=[]
 rhs=[]
+lhsrhsratio=[]
+sys.set_int_max_str_digits(100000)
+maxiterations=3000
+integerdivision=False
 while p**2*(m-f0) < f3:
+    print("--------------------------")
+    print("iteration:",n)
+    print("--------------------------")
+    if n > maxiterations:
+        plt.plot(lhsrhsratio)
+        plt.show()
+        print("Stopping after ",maxiterations," iterations") 
+        exit(1)
     print("LHS:",p**2*(m-f0))
     lhs.append(p**2*(m-f0))
     print("RHS:",f3)
     rhs.append(f3)
     print("LHS/RHS:",p**2*(m-f0)/f3)
+    lhsrhsratio.append(p**2*(m-f0)/f3)
     d = 2*n*d-4*(-1)**n*h
     n = n+1
-    g = gcd(n,int(q))
+    g = gcd(n,q)
     print("g:",g)
-    q = n*q/g
+    if integerdivision:
+        q = n*(q // g)
+    else:
+        q = int(n*q/g)
     print("q:",q)
     if g==1: p=p+1
     m=0; g=q
