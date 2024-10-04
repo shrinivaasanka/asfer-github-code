@@ -24926,4 +24926,24 @@ References:
 For integerdivision=True, while loop does not terminate and grows phenomenally and the LHS-RHS ratio of while loop has a curious fractal pattern as shown by logs and LHS-RHS ratio graph plots (while loop exits after maxiterations): 
 	python-src/testlogs/MatiyasevichRH.LHSRHSRatio.3October2024.jpg
 	python-src/testlogs/MatiyasevichRH.log.integerdivision.3October2024
-1554.5 Integer division operator // probably has rectified the termination problem in 1552.
+1554.5 Integer division operator // probably has rectified the termination problem (atleast programmatically) in 1552 and 1553 - but still it does not rule out loop termination after huge number of iterations (not part of original paper - [Yu.Matiyasevich] - Theoretical Computer Science 2019 - https://nscpolteksby.ac.id/ebook/files/Ebook/Journal%20International/Computer%20Engineering/Theoretical%20Computer%20Science%20%28Volume%20807%2C%206%20February%202020%2C%20Pages%20257-265%29%20-%20The%20Riemann%20Hypothesis%20in%20computer%20science.pdf - Figure 2 - Program 1 ). The sequence of while loop condition  LHS-RHS ratios must tend to and exceed 1 for Riemann Hypothesis to be false and if this sequence of LHS-RHS ratio is a fractal Mandelbrot set then convergence of while loop LHS/RHS ratio sequence to 1 could be undecidable implying Riemann Hypothesis is True because the while loop as a whole would depend on an undecidable ratio sequence set. 
+1554.6 After 3000 iterations while loop LHS/RHS ratio fluctuations grepped from python-src/testlogs/MatiyasevichRH.log.integerdivision.3October2024 attenuate and taper to smaller values as below perhaps indicating convergence by d'Alembert's ratio convergence test - https://en.wikipedia.org/wiki/Convergence_tests:
+LHS/RHS: 0.0
+LHS/RHS: -0.2857142857142857
+LHS/RHS: -1.0158730158730158
+LHS/RHS: -0.4155844155844156
+LHS/RHS: -0.7992007992007992
+LHS/RHS: -0.5328005328005329
+LHS/RHS: -0.6632635338517692
+.... (intermediate iterations)
+LHS/RHS: 0.004666052158362596
+LHS/RHS: 0.0016086048467782658
+LHS/RHS: 0.002161082190959522
+LHS/RHS: -0.0008879698745415501
+LHS/RHS: -0.0003355344247587475
+LHS/RHS: -0.003376218536183567
+LHS/RHS: -0.0028238269362898293
+LHS/RHS: -0.005856170280693456
+LHS/RHS: -0.005303824474158084
+LHS/RHS: 0.0011374450426119393
+LHS/RHS: 0.001688974113023785
