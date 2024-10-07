@@ -34,6 +34,9 @@ import pandas as pd
 import os
 import re
 import sys
+import networkx as nx
+from networkx.drawing.nx_pydot import write_dot
+import operator
 
 
 class HRAnalytics(object):
@@ -54,6 +57,7 @@ class HRAnalytics(object):
         self.n_prev_tenures = 0
         self.tenure_len = 0
         self.n_followers = 0
+        self.neuronrainconceptualgraph=nx.DiGraph()
 
     def parse_profile(self, datasource, filetype, social_profile, domainspecificdict=None):
         profile_text = ""
@@ -151,6 +155,21 @@ class HRAnalytics(object):
             print("Regular expression search of ",filepath," for query ",query,":")
             print("==================================")
             print(codesearchtext)
+            featureheadlinetoks=codesearchtext.split("\n")
+            for fhltok in featureheadlinetoks:
+                print("fhltok:",fhltok)
+                relatedindex=fhltok.find("related to ")
+                if relatedindex != -1:
+                    relatedsections=fhltok[relatedindex+11:].split(" ")
+                    print("relatedsections:",relatedsections)
+                    fhltoks=fhltok.split(" ")
+                    relatedsectionstoks=relatedsections[0].split(",")
+                    originsection=fhltoks[0].split(".")
+                    print("originsection:",originsection)
+                    for relatedsection in relatedsectionstoks:
+                        if originsection[0].isdigit() and relatedsection.isdigit():
+                            print("Edge added:",originsection[0],"---->",relatedsection)
+                            self.neuronrainconceptualgraph.add_edge(originsection[0],relatedsection)
             return codesearchtext
 
     def attributeparadox(self,attribute_dict={"names":1000}):
@@ -413,11 +432,11 @@ if __name__ == "__main__":
     print("================")
     print("Query 1:")
     print("================")
-    codesearchstats=hranal.codesearch_statistics(query="THEORY+and+FEATURE",opensourceid="shrinivaasanka",personalaccesstoken="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")
+    codesearchstats=hranal.codesearch_statistics(query="THEORY+and+FEATURE",opensourceid="shrinivaasanka",personalaccesstoken="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")
     print("================")
     print("Query 2:")
     print("================")
-    codesearchstats1=hranal.codesearch_statistics(query="shrinivaasanka+THEORY+and+FEATURE",personalaccesstoken="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")
+    codesearchstats1=hranal.codesearch_statistics(query="shrinivaasanka+THEORY+and+FEATURE",personalaccesstoken="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")
     print("================")
     print("Query 3 - NeuronRain Features:")
     print("================")
@@ -440,6 +459,10 @@ if __name__ == "__main__":
     codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt")
     codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/LinuxKernelAndCloud/code/AdvertisementAnalytics_RecommenderSystemsCF.txt")
     codesearchstats2=hranal.codesearch_statistics(query="FEATURE",filepath="../../Grafit/course_material/NeuronRain/LinuxKernelAndCloud/LinuxKernelAndCloud.txt")
+    write_dot(hranal.neuronrainconceptualgraph,"GitHubCodeSearch_NeuronRainConceptualGraph.dot")
+    betweenness=nx.betweenness_centrality(hranal.neuronrainconceptualgraph)
+    sorted_bc = sorted(list(betweenness.items()), key=operator.itemgetter(1), reverse=True)
+    print("Betweenness centrality of NeuronRain conceptual graph:",sorted_bc)
     # profile_text = hranal.parse_profile("linkedin", "pdf", "testlogs/CV.pdf")
     # print profile_text
     profile_text1 = hranal.parse_profile("linkedin", "text", "testlogs/ProfileLinkedIn_KSrinivasan.txt", {
