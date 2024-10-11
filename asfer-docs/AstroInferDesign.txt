@@ -24969,3 +24969,37 @@ References:
 1555.5 Following are the some of the prominent sections of NeuronRain design ranked by betweenness centralities - from testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.7October2024:  
 .....
 Betweenness centrality of NeuronRain conceptual graph: [('752', 0.009119131221607664), ('1223', 0.008445783188341348), ('1380', 0.0056344596076106125), ('1383', 0.004786742883966264), ('1144', 0.00441364715837325), ('1214', 0.004329107102599974), ('1302', 0.0039606437088301515), ('1253', 0.003915478473554018), ('1254', 0.0037112698456815874), ('1259', 0.0036348363705989003), ('831', 0.0032379999444120183), ('1158', 0.0026134072035848086), ('1237', 0.0025859992402975807), ('1257', 0.0024291562053172996), ('1142', 0.0023076733032540604), ('1351', 0.0021227660579782653), ('740', 0.0021158175602434756), ('828', 0.0020845493204369216), ('1203', 0.0019195224992356653), ('1455', 0.0016582203816423778),.... 
+
+-------------------------------------------------------------------------------------------------------------------------------
+1556. (THEORY and FEATURE) Analysis of Matiyasevich Python programs for Riemann Hypothesis 3 - Higuchi Fractal Dimension of while loop LHS-RHS ratio timeseries - related to 629,751,1191,1217,1354,1357,1443,1459,1477,1552,1553,1554 to all sections on Riemann Zeta Function, Set partitions, Computational geometry, Program analysis/Software analytics/Scheduler Analytics,Master Theorem,Busy Beaver Function, Fractal Hausdorff Dimension-Box counting dimension, Timeseries analysis ,Complement diophantines  - 11 October 2024
+-------------------------------------------------------------------------------------------------------------------------------
+1556.1 python-src/MatiyasevichRH.py has been updated to import Higuchi Fractal Dimension C++-Python implementation from https://github.com/inuritdino/HiguchiFractalDimension . Higuchi Fractal Dimension is an algorithmic approximation of Hausdorff-Box counting dimension for timeseries data.
+1556.2 Flag integerdivision has been set to True for maximum iterations of while loop set to 3000. The LHS/RHS ratio of the while loop is treated as an one dimensional evolving timeseries and its Higuchi Fractal Dimension (HFD) is computed after every iteration.
+1556.3 Following are the excerpts of testlogs/MatiyasevichRH.log.11October2024 that show how Fractal dimension of while loop LHS/RHS ratio changes for first and last few iterations (of total 3000) - from 1.43 (iteration 1) to 1.86 (iteration 3000). Dimension greater than 1 - from section 1554.7 - implies this ratio set cannot be accepted by a BSS machine for semialgebraic sets with Hausdorff dimension 1 (unless the trend changes for higher iterations):  
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.437565898074131
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.5039262593966656
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.5253834724634125
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.5264950476444004
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.5715166483141845
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.6197836010225781
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.6546898583810052
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.6478550461203558
+.....
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.8637742596549
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.8635089400569613
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.8635202285132875
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.863230884019129
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.8634088566394034
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.8635377739923928
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.8638247504442451
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.8634922101238023
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.8634850336594446
+Higuchi Fractal Dimension of the 1-dimensional timeseries: 1.8634508938926084
+
+References:
+----------
+1556.4 List of Fractals by Hausdorff dimension - https://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension
+1556.5 Higuchi Fractal Dimension - https://en.wikipedia.org/wiki/Higuchi_dimension#Application_to_functions
+1556.6 Approach to an irregular time series on the basis of the fractal theory - [Higuchi] - https://www.sciencedirect.com/science/article/abs/pii/0167278988900814?via%3Dihub  
+1556.7 On the mathematical validity of the Higuchi method - https://www.sciencedirect.com/science/article/abs/pii/S0167278919303859 - "..... In this paper, we discuss the Higuchi algorithm which serves as a widely used estimator for the box-counting dimension of the graph of a bounded function . We formulate the method in a mathematically precise way and show that it yields the correct dimension for a class of non-fractal functions. Furthermore, it will be shown that the algorithm follows a geometrical approach and therefore gives a reasonable estimate of the fractal dimension of a fractal function. ....."
+1556.8 Complement of Mandelbrot set is decidable - Definition 14.24 - https://theory.cs.princeton.edu/complexity/book.pdf - ".... t PC (Z) = Z^2 + C. Then, the Mandelbrot set is defined as M = {C | the sequence PC (0), PC (PC (0)), PC (PC (PC (0))) . . . is bounded }. Note that the complement of M is recognizable if we allow inequality constraints. This is because the sequence is unbounded iff some number PkC (0) has complex magnitude greater than 2 for some k (exercise!) and this can be detected in finite time ...." - this explains why Mandelbrot sets are visualizable despite being undecidable: Checking if a point is not part of Mandelbrot set is of finite time and all those points are masked leaving behind the undecidable set unmasked. Section 471 discusses this complementation problem for set of integers in the context of MRDP theorem (Possibility 2 - one of the sets A is Recursively Enumerable and its complement B is Recursive) 
