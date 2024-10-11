@@ -24,6 +24,7 @@
 from math import gcd
 import matplotlib.pyplot as plt
 import sys
+import hfd 
 
 h=m=p=0
 d=f0=f3=n=q=1
@@ -32,7 +33,7 @@ rhs=[]
 lhsrhsratio=[]
 sys.set_int_max_str_digits(100000)
 maxiterations=3000
-integerdivision=False
+integerdivision=True
 while p**2*(m-f0) < f3:
     print("--------------------------")
     print("iteration:",n)
@@ -64,6 +65,9 @@ while p**2*(m-f0) < f3:
     h=f0
     f0=2*n*h
     f3=(2*n+3)*f3
+    if len(lhsrhsratio) > 10:
+        fractaldimension=hfd.hfd(lhsrhsratio)
+        print("Higuchi Fractal Dimension of the 1-dimensional timeseries:",fractaldimension)
 print("Loop exits after ",n," iterations - Riemann Hypothesis is False")
 print("after loop - LHS:",p**2*(m-f0))
 print("after loop - RHS:",f3)
