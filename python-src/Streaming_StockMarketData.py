@@ -34,11 +34,11 @@ from MultiFractals import granger_causality_GraphicalEventModel
 cnt = 0
 
 if __name__ == "__main__":
-    #stockquote_Prophet_timeseries_forecast_model("AMZN")
-    #stockquote_Prophet_timeseries_forecast_model("MSFT")
-    #stockquote_Prophet_timeseries_forecast_model("GOOG")
-    #stockquote_Prophet_timeseries_forecast_model("TSLA")
-    bse_stockquote_and_stats()
+    stockquote_Prophet_timeseries_forecast_model("AMZN")
+    stockquote_Prophet_timeseries_forecast_model("MSFT")
+    stockquote_Prophet_timeseries_forecast_model("GOOG")
+    stockquote_Prophet_timeseries_forecast_model("TSLA")
+    #bse_stockquote_and_stats()
     #cnt = 0
     #time_series_data = []
     #historic_data = [{'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}, {'Adj Close': 100}, {'Adj Close': 102}, {'Adj Close': 132}, {'Adj Close': 123}, {'Adj Close': 114}]

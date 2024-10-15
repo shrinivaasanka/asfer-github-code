@@ -35,6 +35,7 @@ from StringSearch_BinaryEncodedTimeSeries import binary_encoded_fluctuations
 from StringSearch_LongestRepeatedSubstring import SuffixArray
 from hurst import compute_Hc
 from bsedata.bse import BSE
+import hfd
 
 cnt = 0
 
@@ -177,3 +178,6 @@ def stockquote_Prophet_timeseries_forecast_model(ticker,period='2y',interval='1w
     H, c, data = compute_Hc(fbprophtimeseriesdf["y"], kind='price', simplified=True) 
     print("Hurst exponent H:",H)
     print("Hurst constant c:",c)
+    fractaldimension=hfd.hfd(fbprophtimeseriesdf["y"])
+    print("Higuchi Fractal Dimension of stock quote timeseries:",fractaldimension)
+
