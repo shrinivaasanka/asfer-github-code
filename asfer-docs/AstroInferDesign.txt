@@ -22097,7 +22097,9 @@ References:
 1423.7 Visualization of GHSL R2023A SMOD raster from https://ghsl.jrc.ec.europa.eu/visualisation.php#lnlt=@13.26133,79.84039,9z&v=301&ln=1&gr=ds&lv=10000000000000000000000000000000000000011111&lo=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&pg=V has been committed at python-src/image_pattern_mining/ImageNet/testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2023A_GHS_SMOD_DegreeOfUrbanisation.jpg 
 1423.8 Metropolitan areas in the world - Delineation and population trends - [OECD-GHSL-JRC] - Model for delineation of FUA(functional urban areas) from GHSL datasets - https://www.sciencedirect.com/science/article/pii/S0094119020300139 - "...... Translating these arguments into an econometric specification leads to the following general model to delineate FUA boundaries at the cell level based on cell, urban centre and country characteristics: 𝐹𝑈𝐴𝑖𝑗𝐶 = 𝛽0 + ∑𝑝 𝑘=1 𝛽𝑘𝑑𝑖𝑠𝑡𝑘 𝑖𝑗𝐶 + ∑𝑝 𝑘=1 𝛾𝑘𝑠𝑖𝑧𝑒𝑘 𝑖𝑗𝐶 + ∑𝑝 𝑘=1 𝜑𝑘𝑠𝑖𝑧𝑒𝑘 𝑗𝐶 + ∑𝑝 𝑘=1 𝜔𝑘𝐺𝐷𝑃 𝑘 𝐶 + ∑𝑝 𝑘=1 𝜋𝑘𝑐𝑎𝑟𝑠𝑘 𝐶 + ∈𝑖𝑗𝐶 (1) where FUAijC is a dummy variable that takes the value of one if cell i located in country C and linked to urban centre j falls within FUA boundaries and zero otherwise; distijC is the travel time between cell i and urban centre j; sizeijC is the size of the cell (measured by population); sizejC is the size of urban centre j (measured by population, area or nightlight); GDPC is GDP per capita; carsC is the number of vehicles per 1,000 inhabitants; and ∈ ijC is an error term; k is the degree of each predictor in the summation (from 1 to p) with its own coefficient ......."
 1423.9 GHSL - GHS-COUNTRY-STATS R2024A - GHSL Country Statistics by Degree of Urbanization, multitemporal (1975-2030)- https://data.jrc.ec.europa.eu/dataset/341c0608-5ca5-4ddb-b068-a412e35a3326 - [11 October 2024]
-
+1423.10 GHSL - R2024A - Stats in the City – the GHS Urban Centre Database UCDB R2024A (GHS-UCDB R2024A) - https://human-settlement.emergency.copernicus.eu/ghs_ucdb_2024.php [5 November 2024]
+1423.11 GHSL - R2024 - Urban Center Database - Visualization: https://human-settlement.emergency.copernicus.eu/ucdb2024visual.php - Dataset: https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_GLOBE_R2024/V1-0/GHS_UCDB_GLOBE_R2024_V1_0.zip [5 November 2024]
+ 
 -------------------------------------------------------------------------------------------------------------------------------------------
 1424. (THEORY and FEATURE) GIS Urban Sprawl Analytics -  Global Human Settlement Layer 3D Urban Growth Model from R2023A GHS-BUILT-V and GHS-BUILT-S datasets - Expanded Chennai Metropolitan Area Bounding Box - 11 May 2023 - related to 823,1163,1164,1174,1175,1177,1179,1194,1211,1226,1234,1290,1291,1292,1295,1296,1297,1301,1302,1304,1312,1313,1320,1323,1326,1328,1342,1343,1349,1350,1351,1362,1363,1377,1386,1395,1397,1398,1412,1414,1423 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, Verlhulste-R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, Preferential Attachment, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models,Expander Graphs,Timeseries analysis,Graph Edit Distance and Earth mover distance, Face recognition,Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching 
 -------------------------------------------------------------------------------------------------------------------------------------------
@@ -25037,3 +25039,85 @@ References:
 1557.7 Is the brain cortex a fractal? - https://pubmed.ncbi.nlm.nih.gov/14642486/ - Fractal dimension of brain cortex is 2.8 +/- 0.05
 1557.8 Interpretation of Stockmarket timeseries fractal dimensions - Fractal Dimension Index(FDI) - https://www.centralcharts.com/en/gm/1-learn/7-technical-analysis/26-technical-indicator/438-fractal-dimension-index - FDI is always between 1 and 2 and at 1.5 FDI has a sharp threshold transition from being predictable to random - "..... The goal of the fractal dimension index is to determine whether the market is trending or in a trading range. It does not measure the direction of the trend. A value less than 1.5 indicates that the price series is persistent or that the market is trending. Lower values of the FDI indicate a stronger trend. A value greater than 1.5 indicates that the market is in a trading range and is acting in a more random fashion. ......" 
 1557.9 Fractal Brownian Motion (FBM) model of stock prices based on Hurst exponent - Estimating the Fractal Dimension of the S&P 500 Index using Wavelet Analysis - https://sircar.princeton.edu/sites/g/files/toruqf5981/files/documents/bps.pdf 
+
+----------------------------------------------------------------------------------------------------------------------------------------
+1558. (THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 6 November 2024 - N-Body gravitational acceleration and Barometric pressure analysis of date range 1 November 2024-31 December 2024 for Chennai location in NASA JPL Horizons API - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368,1388,1404,1455,1456,1463,1479,1480,1515,1526,1527,1528,1548 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change-Adaptive Fourier Neural Operator-FourCastNet, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+----------------------------------------------------------------------------------------------------------------------------------------
+(Disclaimer: Same as Disclaimer in Section 1548)
+1558.1 GISWeatherAnalytics.py has been updated to compute gravitational accelerations of 3-body system Sun-Mercury-Venus for the date range 1 November 2024-31 December 2024:
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2024,11,1,17,30,00),'dateto':(2024,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399']},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+1558.2 Logs and Images for Variable gravity exerted by each body and Barometric Pressure for above date range are captured in:
+	testlogs/GISWeatherAnalytics.BarometricPressure.Chennai.Mercury-Venus.2024-11-1#2024-12-31.jpg
+	testlogs/GISWeatherAnalytics.BarometricPressure.Chennai.Sun-Mercury.2024-11-1#2024-12-31.jpg
+	testlogs/GISWeatherAnalytics.BarometricPressure.Chennai.Sun-Venus.2024-11-1#2024-12-31.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Mercury-Venus.2024-11-1#2024-12-31.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Sun-Mercury.2024-11-1#2024-12-31.jpg
+	testlogs/GISWeatherAnalytics.Gravity.Sun-Venus.2024-11-1#2024-12-31.jpg
+	testlogs/GISWeatherAnalytics.log.6November2024
+1558.3 Logs and Variable gravity plots earlier show a peak in Mercury's gravitational pull during 6/12/2024-16/12/2024 that could in turn affect all climate models (especially those exponentially depending on gravity) for this date range.
+1558.4 Following are the angular separations for Mercury-Venus for above date range (Two different separations data from SkyCoord and SkyField) that could determine distances in N-Body gravitational acceleration equations (SkyCoord: 27 degrees on 5/11/2024-at closest 3 degrees on 18/11/2024-and again diverging to 27 degrees on 27/11/2024 - SkyField: 19 degrees on 2/11/2024-at closest 18 degrees on 11/11/2024-and again diverging to 59 degrees on 12/12/2024) :  
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-05 17:30:00.000: [27d14m39.76342239s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-06 17:30:00.000: [25d46m46.84350477s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-07 17:30:00.000: [24d15m41.43258822s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-08 17:30:00.000: [22d41m06.82735694s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-09 17:30:00.000: [21d02m46.03173708s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-10 17:30:00.000: [19d20m22.05690177s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-11 17:30:00.000: [17d33m38.49601506s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-12 17:30:00.000: [15d42m20.64205924s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-13 17:30:00.000: [13d46m17.7653233s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-14 17:30:00.000: [11d45m28.12126211s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-15 17:30:00.000: [9d40m11.24414554s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-16 17:30:00.000: [7d31m43.13946945s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-17 17:30:00.000: [5d24m20.65303336s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-18 17:30:00.000: [3d34m40.1299015s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-19 17:30:00.000: [3d03m17.82588158s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-20 17:30:00.000: [4d34m56.25099287s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-21 17:30:00.000: [7d05m20.22437296s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-22 17:30:00.000: [9d59m32.33748587s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-23 17:30:00.000: [13d08m44.48668662s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-24 17:30:00.000: [16d30m21.1775406s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-25 17:30:00.000: [20d03m25.68011674s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-26 17:30:00.000: [23d47m30.84917091s]
+SkyCoord separation(): Angular separation of Mercury-Venus on 2024-11-27 17:30:00.000: [27d42m16.24456762s]
+--------------------------------------------------------------
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 19deg 16' 29.9">, ('2024', '11', '02', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 19deg 05' 21.2">, ('2024', '11', '03', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 55' 02.4">, ('2024', '11', '04', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 45' 37.7">, ('2024', '11', '05', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 37' 12.0">, ('2024', '11', '06', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 29' 50.9">, ('2024', '11', '07', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 23' 41.2">, ('2024', '11', '08', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 18' 50.8">, ('2024', '11', '09', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 15' 28.6">, ('2024', '11', '10', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 13' 45.3">, ('2024', '11', '11', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 13' 53.0">, ('2024', '11', '12', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 16' 05.8">, ('2024', '11', '13', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 20' 40.0">, ('2024', '11', '14', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 27' 54.2">, ('2024', '11', '15', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 38' 09.8">, ('2024', '11', '16', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 18deg 51' 51.1">, ('2024', '11', '17', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 19deg 09' 25.9">, ('2024', '11', '18', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 19deg 31' 25.4">, ('2024', '11', '19', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 19deg 58' 24.6">, ('2024', '11', '20', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 20deg 31' 02.2">, ('2024', '11', '21', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 21deg 10' 00.5">, ('2024', '11', '22', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 21deg 56' 05.0">, ('2024', '11', '23', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 22deg 50' 03.3">, ('2024', '11', '24', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 23deg 52' 43.5">, ('2024', '11', '25', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 25deg 04' 52.4">, ('2024', '11', '26', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 26deg 27' 11.6">, ('2024', '11', '27', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 28deg 00' 13.6">, ('2024', '11', '28', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 29deg 44' 16.8">, ('2024', '11', '29', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 31deg 39' 19.4">, ('2024', '11', '30', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 33deg 44' 53.7">, ('2024', '12', '01', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 36deg 00' 01.6">, ('2024', '12', '02', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 38deg 23' 11.8">, ('2024', '12', '03', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 40deg 52' 21.0">, ('2024', '12', '04', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 43deg 24' 59.4">, ('2024', '12', '05', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 45deg 58' 19.8">, ('2024', '12', '06', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 48deg 29' 30.8">, ('2024', '12', '07', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 50deg 55' 49.7">, ('2024', '12', '08', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 53deg 14' 54.6">, ('2024', '12', '09', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 55deg 24' 52.6">, ('2024', '12', '10', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 57deg 24' 23.9">, ('2024', '12', '11', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 59deg 12' 41.7">, ('2024', '12', '12', '17', '30', '00.000'))]
