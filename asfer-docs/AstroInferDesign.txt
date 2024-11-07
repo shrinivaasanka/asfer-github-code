@@ -25143,3 +25143,44 @@ SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 59
 	1558.6.2 SequenceMined Rule Match - Mercury-Venus: SkyField closest Mercury-Venus separation - around 11/11/2024 
 	1558.6.3 N-Body gravity peak for Mercury:  6/12/2024 to 16/12/2024
  
+--------------------------------------------------------------------------------------------------------------------------------------------
+1559. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Global Human Settlement Layer Urban Center Database R2024A - Excel file parser - 7 November 2024 - related to 823,1163,1164,1174,1175,1177,1179,1194,1211,1226,1234,1290,1291,1292,1295,1296,1297,1301,1302,1304,1312,1313,1320,1323,1326,1328,1342,1343,1349,1350,1351,1362,1363,1377,1386,1387,1395,1397,1398,1412,1414,1423,1448,1449,1462,1471,1472,1533 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, Verlhulste-R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, Preferential Attachment, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models,Expander Graphs,Timeseries analysis,Graph Edit Distance and Earth mover distance, Face recognition,Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching 
+--------------------------------------------------------------------------------------------------------------------------------------------
+1559.1 python-src/image_pattern_mining/ImageNet/GISUrbanSprawlAnalytics.py has been updated to import openpyxl for parsing GHSL UCDB R2024A Excel dataset GHS_UCDB_REGION_CENTRAL_AND_SOUTHERN_ASIA_R2024A.xlsx (downloaded from https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_REGION_GLOBE_R2024A/GHS_UCDB_REGION_CENTRAL_AND_SOUTHERN_ASIA_R2024A/V1-0/GHS_UCDB_REGION_CENTRAL_AND_SOUTHERN_ASIA_R2024A_V1_0.zip)
+1559.2 New python function def urban_sprawl_from_ucdb_excel(ghsl_ucdb_excel,urban_center="All",sheetname="GENERAL_CHARACTERISTICS",fromrow=2185,torow=2200) loads GHSL UCDB excel dataset by openpyxl load_workbook(), sets active worksheet to sheetname and iterates through every row and column between fromrow to torow arguments in active worksheet. (*) If argument urban_center is set to an urban center name, cell data are searched for urban_center and matching cells are printed (*) If argument urban_center is set to "All" entire data in excel sheet is printed. 
+1559.3 Data parsed from R2024A UCDB excel dataset for few urban center rows is captured in following logs : 
+	python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log.7November2024
+	python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log2.7November2024
+	python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log3.7November2024 
+1559.4 Following are Column labels for UCDB R2024A dataset - from python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log2.7November2024) - Columns 6 and 7 contain area and population of urban center in Column 2:
+------------------Column  1  -----------
+urban_sprawl_from_ucdb_excel(): cell  A1  : ID_UC_G0
+------------------Column  2  -----------
+urban_sprawl_from_ucdb_excel(): cell  B1  : GC_UCN_MAI_2025
+------------------Column  3  -----------
+urban_sprawl_from_ucdb_excel(): cell  C1  : GC_UCN_LIS_2025
+------------------Column  4  -----------
+urban_sprawl_from_ucdb_excel(): cell  D1  : GC_CNT_GAD_2025
+------------------Column  5  -----------
+urban_sprawl_from_ucdb_excel(): cell  E1  : GC_CNT_UNN_2025
+------------------Column  6  -----------
+urban_sprawl_from_ucdb_excel(): cell  F1  : GC_UCA_KM2_2025
+------------------Column  7  -----------
+urban_sprawl_from_ucdb_excel(): cell  G1  : GC_POP_TOT_2025
+------------------Column  8  -----------
+urban_sprawl_from_ucdb_excel(): cell  H1  : GC_DEV_WIG_2025
+------------------Column  9  -----------
+urban_sprawl_from_ucdb_excel(): cell  I1  : GC_DEV_USR_2025
+------------------Column  10  -----------
+urban_sprawl_from_ucdb_excel(): cell  J1  : GC_PLS_SCR_2025
+------------------Column  11  -----------
+urban_sprawl_from_ucdb_excel(): cell  K1  : GC_UCB_YOB_2025
+------------------Column  12  -----------
+urban_sprawl_from_ucdb_excel(): cell  L1  : GC_UCB_YOD_2025
+------------------Column  13  -----------
+urban_sprawl_from_ucdb_excel(): cell  M1  : GC_UCM_CAP
+
+References:
+----------
+1559.5 GHSL Urban Data Platform Plus - https://urban.jrc.ec.europa.eu/map-view?lng=en&ctx=udp&ts=EU&pil=indicator-level&is=Default
+1559.6 GHSL R2024A UCDB - https://human-settlement.emergency.copernicus.eu/ghs_ucdb_2024.php 
