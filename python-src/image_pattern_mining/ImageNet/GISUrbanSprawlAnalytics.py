@@ -80,6 +80,7 @@ import seaborn
 import pandas
 import json 
 from geopy.distance import geodesic,great_circle
+from openpyxl import load_workbook
 
 mplstyle.use('fast')
 shapely.speedups.disable()
@@ -746,6 +747,32 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,s
     print(facegraphhits)
     return (UrbanSprawlAreas)
 
+def urban_sprawl_from_ucdb_excel(ghsl_ucdb_excel,urban_center="All",sheetname="GENERAL_CHARACTERISTICS",fromrow=2185,torow=2200):
+    workbook=load_workbook(ghsl_ucdb_excel)
+    worksheets=workbook.sheetnames
+    workbook.active=workbook[sheetname]
+    worksheet=workbook.active
+    row_number=fromrow
+    column_number=1
+    if urban_center != "All":
+        for row in list(worksheet.rows)[fromrow:torow]:
+             for cell in row:
+                 if cell.value==urban_center:
+                     matchingcells=ws.cells(row=cell.row_number,column=cell.column_number)
+                     print("urban_sprawl_from_ucdb_excel(): matching cell:",matchingcells)
+                 column_number+=1
+             column_number=1
+             row_number+=1
+    else:
+        for row in list(worksheet.rows)[fromrow:torow]:
+             print("------------------Row ",row_number," -----------")
+             for cell in row:
+                 print("------------------Column ",column_number," -----------")
+                 cell=worksheet.cell(row=row_number,column=column_number)
+                 print("urban_sprawl_from_ucdb_excel(): cell ",cell.coordinate," :",cell.value)
+                 column_number+=1
+             column_number=1
+             row_number+=1
 
 if __name__ == "__main__":
     #seg1=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
@@ -905,7 +932,8 @@ if __name__ == "__main__":
     #tomtomkey='00cKrkjfS62WPuchRmUc6Q5RAJw80hO2'
     #urban_sprawl_live_traffic(tomtomkey=tomtomkey,bbox=[12.439259,79.271851,13.568572,80.351257])
     #urban_sprawl_live_traffic(tomtomkey=tomtomkey,longlat=[12.439259,79.271851])
-    print("============================================")
-    print("Based on historical census growth rate:")
-    print("============================================")
-    verhulste_ricker_population_growth_model(12288000,2.39/100.0,80000000,"Chennai Metropolitan Area Population",fromyear=2011,toyear=2035)
+    #print("============================================")
+    #print("Based on historical census growth rate:")
+    #print("============================================")
+    #verhulste_ricker_population_growth_model(12288000,2.39/100.0,80000000,"Chennai Metropolitan Area Population",fromyear=2011,toyear=2035)
+    urban_sprawl_from_ucdb_excel(ghsl_ucdb_excel="./GHS_UCDB_REGION_CENTRAL_AND_SOUTHERN_ASIA_R2024A.xlsx")
