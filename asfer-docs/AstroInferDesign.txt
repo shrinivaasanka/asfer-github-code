@@ -25122,3 +25122,24 @@ SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 53
 SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 55deg 24' 52.6">, ('2024', '12', '10', '17', '30', '00.000'))]
 SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 57deg 24' 23.9">, ('2024', '12', '11', '17', '30', '00.000'))]
 SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 59deg 12' 41.7">, ('2024', '12', '12', '17', '30', '00.000'))]
+1558.5 Following N-Body gravitational acceleration model function implementation code - n_body_gravitational_acceleration() - in python-src/EphemerisSearch.py depends on gravitational constant (which might have to be replaced by variable gravity) and pairwise body separation data (r - pairwise distance could be obtained from pairwise angular separation) from which 1/r^3 value is computed for N-Body model:  
+ def n_body_gravitational_acceleration(self,r,m,epsilon):
+        G = cs.gravitational_constant
+        print("n_body_gravitational_acceleration():r=",r)
+        print("n_body_gravitational_acceleration():m=",m)
+        # positions r = [x,y,z] for all bodies in the N-Body System
+        x = r[:,0:1]
+        y = r[:,1:2]
+        z = r[:,2:3]
+        # matrices that store each pairwise body separation for each [x,y,z] direction: r_j - r_i
+        dx = x.T - x
+        dy = y.T - y
+        dz = z.T - z
+        #matrix 1/r^3 for the absolute value of all pairwise body separations together and
+        #resulting acceleration components in each [x,y,z] direction
+        inv_r3 = (dx**2 + dy**2 + dz**2 + epsilon**2)**(-1.5)
+1558.6 In summary earlier pairwise separation and variable gravity analysis for Sun-Mercury-Venus 3-body system points to following date ranges when climate models might be affected causing low pressure areas and associated precipitation with high probability:
+	1558.6.1 SequenceMined Rule Match - Mercury-Venus: SkyCoord closest Mercury-Venus separation - around 18/11/2024
+	1558.6.2 SequenceMined Rule Match - Mercury-Venus: SkyField closest Mercury-Venus separation - around 11/11/2024 
+	1558.6.3 N-Body gravity peak for Mercury:  6/12/2024 to 16/12/2024
+ 
