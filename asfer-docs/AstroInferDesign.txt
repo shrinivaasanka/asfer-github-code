@@ -25122,7 +25122,7 @@ SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 53
 SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 55deg 24' 52.6">, ('2024', '12', '10', '17', '30', '00.000'))]
 SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 57deg 24' 23.9">, ('2024', '12', '11', '17', '30', '00.000'))]
 SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 59deg 12' 41.7">, ('2024', '12', '12', '17', '30', '00.000'))]
-1558.5 Following N-Body gravitational acceleration model function implementation code - n_body_gravitational_acceleration() - in python-src/EphemerisSearch.py depends on gravitational constant (which might have to be replaced by variable gravity) and pairwise body separation data (r - pairwise distance could be obtained from pairwise angular separation) from which 1/r^3 value is computed for N-Body model:  
+1558.5 Following N-Body gravitational acceleration model function implementation code - n_body_gravitational_acceleration() - in python-src/EphemerisSearch.py depends on gravitational constant G (which might have to be replaced by a value found by equating g=GM/r^2 where M is mass of earth which is variable based on GRACE-FO and r the radius of earth) and pairwise body separation data (r - pairwise distance could be obtained from pairwise angular separation) from which 1/r^3 value is computed for N-Body model:  
  def n_body_gravitational_acceleration(self,r,m,epsilon):
         G = cs.gravitational_constant
         print("n_body_gravitational_acceleration():r=",r)
