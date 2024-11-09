@@ -461,7 +461,7 @@ def contours_kmeans_clustering(imagefile,segment,number_of_clusters=3,maxiterati
     imagetok1=imagefile.split(".")
     imagetok2=imagetok1[0].split("/")
     cv2.imwrite("./testlogs/"+imagetok2[1]+"-contourkmeansclustered.jpg",segment[1])
-    cv2.waitKey()
+    #cv2.waitKey()
     gc.collect()
     print("contour polynomial clusters:",clusters)
 
@@ -509,7 +509,7 @@ def image_segmentation_contours(imagefile1,plot="savefig"):
              plt.show()
     else:
         cv2.imwrite("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contoursegmented.jpg",img1)
-        cv2.waitKey()
+        #cv2.waitKey()
     #print(("contour1polys:", contour1polys))
     return (contours1,contour1polys)
 
@@ -590,7 +590,7 @@ def image_segmentation(imagefile,voronoi_delaunay=False):
         GISUrbanSprawlAnalytics.draw_voronoi_tessellation(img,contourcentroids)
         GISUrbanSprawlAnalytics.draw_delaunay_triangulation(img,triangles)
     cv2.imwrite("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contourlabelled.jpg",img)
-    cv2.waitKey()
+    #cv2.waitKey()
     write_dot(facegraph, "./testlogs/RemoteSensingGIS/" + imagefiletoks2[len(imagefiletoks2)-1] + "_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
     return (ret, img, markers, labels, stats, contourcentroids, facets, triangles, contours, facegraph, edges)
 

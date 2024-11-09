@@ -582,9 +582,11 @@ def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=100
 
 def draw_delaunay_triangulation(img,triangles):
     for triangle in triangles:
-        point1 = (triangle[0], triangle[1])
-        point2 = (triangle[2], triangle[3])
-        point3 = (triangle[4], triangle[5])
+        print("triangle:",triangle)
+        print(type(triangle[0]))
+        point1 = (int(triangle[0]), int(triangle[1]))
+        point2 = (int(triangle[2]), int(triangle[3]))
+        point3 = (int(triangle[4]), int(triangle[5]))
         cv2.line(img, point1, point2, (0,255,0), 1, cv2.LINE_8,0)
         cv2.line(img, point2, point3, (0,255,0), 1, cv2.LINE_8,0)
         cv2.line(img, point3, point1, (0,255,0), 1, cv2.LINE_8,0)
@@ -622,7 +624,7 @@ def urban_sprawl_dispersion(image):
     print("img2Dmatrix:",img2Dmatrix)
     MoransI = Moran(img2Dmatrix,w)
     print("Moran's I of the Urban Sprawl dispersion:",MoransI.I)
-    print("Moran's p-norm of the Urab Sprawl dispersion:",MoransI.p_norm) 
+    print("Moran's p-norm of the Urban Sprawl dispersion:",MoransI.p_norm) 
 
 def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False,number_of_clusters=2,maxiterations=2,populationfromraster="None",scaleup=50):
     print(("Image:",image))
@@ -729,7 +731,7 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,s
     imagetok1=image.split(".")
     imagetok2=imagetok1[0].split("/")
     cv2.imwrite("testlogs/"+imagetok2[len(imagetok2)-1]+"-contourlabelled.jpg",img)
-    cv2.waitKey()
+    #cv2.waitKey()
     facegraph=segment[9] 
     print("Number of Vororoi Facets:",len(voronoifacetareas))
     print("Number of Contours:",len(contourareas))
@@ -936,4 +938,11 @@ if __name__ == "__main__":
     #print("Based on historical census growth rate:")
     #print("============================================")
     #verhulste_ricker_population_growth_model(12288000,2.39/100.0,80000000,"Chennai Metropolitan Area Population",fromyear=2011,toyear=2035)
-    urban_sprawl_from_ucdb_excel(ghsl_ucdb_excel="./GHS_UCDB_REGION_CENTRAL_AND_SOUTHERN_ASIA_R2024A.xlsx")
+    #urban_sprawl_from_ucdb_excel(ghsl_ucdb_excel="./GHS_UCDB_REGION_CENTRAL_AND_SOUTHERN_ASIA_R2024A.xlsx")
+    
+    #GHSL R2024A UCDB imagery segmentation analysis
+    ncoloredsegments_2024=defaultdict(list)
+    seg16=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_R2024A_UCDB_ChennaiMetropolitanArea2.jpeg")
+    ncoloredsegments_2024=polya_urn_urban_growth_model("testlogs/GHSL_R2024A_UCDB_ChennaiMetropolitanArea2.jpeg",ncoloredsegments_2024,seg16)
+    urban_sprawl_from_segments("testlogs/GHSL_R2024A_UCDB_ChennaiMetropolitanArea2.jpeg",seg16,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3)
+    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2024.keys())," colored urban sprawl segmentation (Projection based on R2024A):",ncoloredsegments_2024)
