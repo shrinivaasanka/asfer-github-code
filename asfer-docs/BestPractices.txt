@@ -42,3 +42,12 @@ and logs are captured suffixing timestamps in separate testlogs/ folder within C
 	24.4 KingCobra64 - https://kingcobra64-github-code.readthedocs.io/en/latest/ 
 25.19 Lessons in Opensource Software Development - http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/index.html - most importantly 1,2,3,4,9,11,12,13,14,18
 26.YouTube Channel (academic audio-visuals including those related to and used as datasets within NeuronRain FOSS) - https://www.youtube.com/@srinivasankannan5204
+27.Text Design Documents in NeuronRain repositories are divided into sections and each section is in following regex format:
+-------------------------------------------------------------------------------------------------------------------------------
+(<TYPE of Section - one or combination of THEORY, FEATURE, JIRA>) <Section number>. <Section headline> - <Date> - <comma separated list of related section numbers>
+-------------------------------------------------------------------------------------------------------------------------------
+<Text of the section>
+
+References:
+----------
+<List of references with a quoted excerpt from the reference relevant to the section - often accompanied by a comment which could be an extension of the section text> 
