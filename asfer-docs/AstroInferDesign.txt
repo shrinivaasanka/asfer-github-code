@@ -25173,8 +25173,9 @@ SkyField separation_from(): Angular separations for  Mercury-Venus : [(<Angle 59
 		.......
 		Gravity L2 Norm of  Mercury  on  2024-12-30 17:30:00.000 : 0.0352217934617786
 
-References:
-----------
+-----------------------------------------------------------------------------------------------------------------------------
+References and Derivation of Pressure Gradient (product of variable density and N-Body variable gravity) from Navier-Stokes equation:
+------------------------------------------------------------------------------------------------------------------------------
 1558.7 Newton's law of gravitation and 2-body problem - https://openstax.org/books/physics/pages/7-2-newtons-law-of-universal-gravitation-and-einsteins-theory-of-general-relativity
 1558.8 High-resolution temporal gravity field data products: Monthly mass grids and spherical harmonics from 1994 to 2021 - GRACE and GRACE-FO - https://www.nature.com/articles/s41597-023-02887-5.pdf - "..... 02). The primary objective was to achieve a better understanding and characterization of various climate-induced geophysical phe- nomena, including the terrestrial water cycle, ice sheet and glacier mass balance, sea level changes, and variations in ocean bottom pressure by providing longer time series of global water storage changes both over continents and oceans. The research demonstrated that the use of a combination of ERA5 and SLR datasets, along with time channel information, provided better, if not the best, solution for simulations. This study contributes to the monitoring and comprehension of long-term global gravity field changes, offering valuable insights into climate change and other significant geophysical events. Such research is advancing our understanding of climate changes and their impacts on Earth’s water cycle. With the new data sets as well as advanced satellite gravity missions and developments in deep learning era and algorithms, improved simulations of the water mass change with enhanced resolutions will be possible in the future ....." 
 1558.9 N-Body gravitational equations - https://math.arizona.edu/~dwang/485home-10/N-body.pdf 
