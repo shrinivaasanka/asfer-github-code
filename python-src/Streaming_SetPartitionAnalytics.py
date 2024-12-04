@@ -39,6 +39,7 @@ from cvxopt.glpk import ilp
 import cv2
 from DigitalWatermarking import watermark_image
 from ddsketch import DDSketch
+import qrcode
 
 m = 0
 Tower = [1, 2, 3, 4]
@@ -52,6 +53,7 @@ Voting_Machine2_dict = defaultdict(list)
 Voting_Machine3_dict = defaultdict(list)
 
 Voted = []
+VotedQR = []
 QuantileSketch_EVM1 = DDSketch() 
 QuantileSketch_EVM2 = DDSketch() 
 QuantileSketch_EVM3 = DDSketch() 
@@ -303,7 +305,7 @@ def tocluster(histogram, datasource):
     return cluster
 
 
-def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdict, unique_id=None, voted_for="NOTA", Streaming_Analytics_Bertrand=False, onetimepassword=None):
+def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdict, unique_id=None, voted_for="NOTA", Streaming_Analytics_Bertrand=False, onetimepassword=None,logQRcodeReceipts=True):
     semaphorelock = BoundedSemaphore(value=maxvoters)
     semaphorelock.acquire()
     uniqueidf = open(unique_id, "rb")
@@ -317,13 +319,18 @@ def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdic
             publicuniqueidhex += ":"
             publicuniqueidhex += onetimepassword
         print(("publicuniqueidhex:", publicuniqueidhex))
+        VoteQRcode = qrcode.make(voted_for)
+        print("VoteQRcode:",VoteQRcode)
+        if logQRcodeReceipts:
+            VoteQRcode.save("testlogs/Streaming_SetPartitionAnalytics_EVM/"+publicuniqueidhex+".png")
+        VotedQR.append(VoteQRcode)
         if len(Voted) > 1 and len(Voting_Machine_dict[voted_for]) > 1:
             try:
                 Voting_Machine_dict[voted_for].insert(sha256_crypt.hash(
-                    publicuniqueidhex), random.randint(0, len(Voting_Machine_dict[voted_for])))
+                         publicuniqueidhex), random.randint(0, len(Voting_Machine_dict[voted_for])))
                 Voted.insert(publicuniqueid, random.randint(0, len(Voted)))
-            except:
-                print("Encoding exception")
+            except Exception as e:
+                print("Encoding exception:",e)
         else:
             Voting_Machine_dict[voted_for].append(sha256_crypt.hash(
                 publicuniqueidhex))
