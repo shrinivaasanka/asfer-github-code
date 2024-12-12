@@ -36,10 +36,11 @@ import subprocess
 import operator
 import cvxopt
 from cvxopt.glpk import ilp
-import cv2
 from DigitalWatermarking import watermark_image
+import cv2
 from ddsketch import DDSketch
 import qrcode
+import os
 
 m = 0
 Tower = [1, 2, 3, 4]
@@ -304,8 +305,15 @@ def tocluster(histogram, datasource):
     print(("cluster:", cluster))
     return cluster
 
-
-def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdict, unique_id=None, voted_for="NOTA", Streaming_Analytics_Bertrand=False, onetimepassword=None,logQRcodeReceipts=True):
+def decrypt_VREPAT_QRReceipt(qrimage,password):
+    voteqrimage = cv2.imread(qrimage)
+    VREPATpasswordarray = np.zeros(voteqrimage.shape)
+    VREPATpasswordarray.fill(password)
+    for x,y,z in np.ndindex(voteqrimage.shape):
+        voteqrimage[x,y,z] = (voteqrimage[x,y,z] - VREPATpasswordarray[x,y,z]) % 256
+    cv2.imwrite(qrimage+"_decrypted.png",voteqrimage)
+    
+def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdict, unique_id=None, voted_for="NOTA", Streaming_Analytics_Bertrand=False, onetimepassword=None,logQRcodeReceipts=True, VREPATQRreceiptpassword=121):
     semaphorelock = BoundedSemaphore(value=maxvoters)
     semaphorelock.acquire()
     uniqueidf = open(unique_id, "rb")
@@ -323,6 +331,19 @@ def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdic
         print("VoteQRcode:",VoteQRcode)
         if logQRcodeReceipts:
             VoteQRcode.save("testlogs/Streaming_SetPartitionAnalytics_EVM/"+publicuniqueidhex+".png")
+            voteqrimage = cv2.imread("testlogs/Streaming_SetPartitionAnalytics_EVM/"+publicuniqueidhex+".png")
+            VREPATpasswordarray = np.zeros(voteqrimage.shape)
+            print(type(voteqrimage))
+            print(voteqrimage.shape)
+            VREPATpasswordarray.fill(VREPATQRreceiptpassword)
+            print(type(VREPATpasswordarray))
+            print(VREPATpasswordarray.shape)
+            #VREPATbitwisexor=np.bitwise_xor(voteqrimage,VREPATpasswordarray)
+            for x,y,z in np.ndindex(voteqrimage.shape):
+                voteqrimage[x,y,z] = (voteqrimage[x,y,z] + VREPATpasswordarray[x,y,z]) % 256
+            cv2.imwrite("testlogs/Streaming_SetPartitionAnalytics_EVM/"+publicuniqueidhex+"_encrypted.png",voteqrimage)
+        decrypt_VREPAT_QRReceipt(qrimage="testlogs/Streaming_SetPartitionAnalytics_EVM/"+publicuniqueidhex+"_encrypted.png",password=VREPATQRreceiptpassword)
+        os.system("zxing testlogs/Streaming_SetPartitionAnalytics_EVM/*.png")
         VotedQR.append(VoteQRcode)
         if len(Voted) > 1 and len(Voting_Machine_dict[voted_for]) > 1:
             try:
@@ -471,17 +492,17 @@ if __name__ == "__main__":
         print("Electronic Voting Machine: 1")
         print("=============================")
         electronic_voting_machine(Voting_Machine1_dict, QuantileSketch_EVM1, candidates, idcontexts[voteridx % len(idcontexts)],
-                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4002-ac39-93dd53ea302f:100")
+                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4002-ac39-93dd53ea302f:100", VREPATQRreceiptpassword="23")
         print("=============================")
         print("Electronic Voting Machine: 2")
         print("=============================")
         electronic_voting_machine(Voting_Machine2_dict, QuantileSketch_EVM2, candidates, idcontexts[voteridx*2 % len(idcontexts)],
-                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a3c4-4002-ac39-93d153ea3020:100")
+                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a3c4-4002-ac39-93d153ea3020:100", VREPATQRreceiptpassword="33")
         print("=============================")
         print("Electronic Voting Machine: 3")
         print("=============================")
         electronic_voting_machine(Voting_Machine3_dict, QuantileSketch_EVM3, candidates, idcontexts[voteridx*3 % len(idcontexts)],
-                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4102-ac39-93d353ea3020:100")
+                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4102-ac39-93d353ea3020:100", VREPATQRreceiptpassword="14")
         voteridx += 1
     setpartition_to_tilecover(None, sys.argv[1], solution="ILP",Neuro_Crypto_ProofOfWork=True)
     single_bin_sorted_LIFO_histogram_ToH(
