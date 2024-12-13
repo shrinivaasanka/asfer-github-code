@@ -25335,3 +25335,4 @@ References:
 References:
 ----------
 1564.8 ZebraCrossing - zxing QR code reader - https://github.com/zxing/zxing
+1564.9 Fernet symmetric encryption - https://cryptography.io/en/latest/fernet/ - could be used to encrypt QR image data as raw bytes instead of pixelwise obfuscation.
