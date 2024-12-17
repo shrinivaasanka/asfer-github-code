@@ -25337,3 +25337,21 @@ References:
 1564.8 ZebraCrossing - zxing QR code reader - https://github.com/zxing/zxing
 1564.9 Fernet symmetric encryption - https://cryptography.io/en/latest/fernet/ - could be used to encrypt QR image data as raw bytes instead of pixelwise obfuscation.
 1564.10 3 phases of End-To-End Verifiable Voting - https://www.eac.gov/voting-equipment/end-end-e2e-protocol-evaluation-process  and https://uk-engage.org/wp-content/uploads/2024/07/End-to-End-Verifiable-Election-Systems.pdf - Cast vote as intended, Vote recorded as cast, Vote counted as recorded
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1565. (THEORY and FEATURE) Merit of Large Scale Visuals - Fernet Image Encryption - 17 December 2024 - related to 651,1213,1215,1217,1221,1226,1227,1484,1485,1563,1564 and all sections on Set Partitions and Histogram Analytics, Merit of Large Scale Visuals, GIS Urban Sprawl Analytics ,Image encryption, DRONA Voter Received Encrypted Paper Audit Trail Drone Electronic Voting Machines - QR code voter receipt encryption
+--------------------------------------------------------------------------------------------------------------------------------------------
+1565.1 python-src/image_pattern_mining/ImageToBitMatrix.py has been updated import io and Fernet cryptography classes.
+1565.2 New function image_to_bytes(image) has been defined to open an image file by PIL and convert it into bytes array raw format.
+1565.3 New function fernet_encrypt_image(imagename,imagebytes) has been defined to generate a secret key by fernet,instantiate a Fernet key object from it and invoke Fernet.encrypt() on raw bytes array of an image obtained from image_to_bytes(image). This function returns the secret key and encrypted image byte array as tuple.
+1565.4 New function fernet_decrypt_image(imagename,fertoken) invokes Fernet.decrypt() on Fernet key object with encrypted image byte array as argument. Decrypted byte array is converted back to normal image by BytesIO() and PIL Image.open(). Encrypted bytearray is saved to flat file with name suffix "FernetEncryptedImage.fernet" and decrypted bytearray is saved to flat file with name suffix "FernetDecrypted".<format>
+1565.5 Two example image files ImageNet/testlogs/CMIProfile_Screenshotfrom2013-04-08-190144.png and ImageNet/testlogs/CMIProfile_Screenshotfrom2013-04-08-190231.png are encrypted and decrypted by Fernet cryptography - following are the affected image files and logs:
+	CMIProfile_Screenshotfrom2013-04-08-190144.pngFernetDecrypted.PNG
+	CMIProfile_Screenshotfrom2013-04-08-190144.pngFernetEncryptedImage.fernet
+	CMIProfile_Screenshotfrom2013-04-08-190231.pngFernetDecrypted.PNG
+	CMIProfile_Screenshotfrom2013-04-08-190231.pngFernetEncryptedImage.fernet
+	ImageNet/testlogs/CMIProfile_Screenshotfrom2013-04-08-190144.png
+	ImageNet/testlogs/CMIProfile_Screenshotfrom2013-04-08-190231.png
+	testlogs/ImageToBitMatrix.log.17December2024
+1565.6 Earlier functions could be used to create a strongly encrypted QR code image receipt for DRONA VREPAT Drone Electronic Voting Machine concept implementation. 
+
