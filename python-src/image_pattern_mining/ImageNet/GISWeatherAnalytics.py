@@ -163,7 +163,7 @@ def gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams=None,days=5,for
         iterations += 1
     print("gaussian_ensemble_forecast_rainfall_timeseries(): Maximum probability rainfall timeseries = ",maxgravitypartition)
 
-def climate_analytics(datasource,date="",time="",predict_EWE_params=None,precipitation_timeseries=None):
+def climate_analytics(datasource,date="",time="",predict_EWE_params=None,precipitation_timeseries=None,computepressuregradient=False):
     if datasource == "precipitation_GaussianMixture":
         if precipitation_timeseries is not None:
             precipitation_timeseries_2D=list(zip(list(range(len(precipitation_timeseries["timeseries"]))),precipitation_timeseries["timeseries"]))
@@ -178,13 +178,14 @@ def climate_analytics(datasource,date="",time="",predict_EWE_params=None,precipi
                 gravityl2norms=predict_EWE(datefrom=predict_EWE_params['datefrom'],dateto=predict_EWE_params['dateto'],loc=predict_EWE_params['loc'],bodypair="-".join(bp),angularsepbounds=predict_EWE_params['angularsepbounds'],userdefinedlatlons=predict_EWE_params['longlat'])
                 pressures0=barometric_pressure(variablegravities=gravityl2norms[0])
                 pressures1=barometric_pressure(variablegravities=gravityl2norms[1])
-                pressuregradient0=pressure_gradient(variablegravities=gravityl2norms[0],seasurfacelonglat=predict_EWE_params['seasurfacelonglat'],datefrom=predict_EWE_params["datefrom"],dateto=predict_EWE_params["dateto"])
-                pressuregradient1=pressure_gradient(variablegravities=gravityl2norms[1],seasurfacelonglat=predict_EWE_params['seasurfacelonglat'],datefrom=predict_EWE_params["datefrom"],dateto=predict_EWE_params["dateto"])
                 print("Barometric pressures for bodypair ",bp," in the daterange :",(pressures0,pressures1))
                 plt.plot(pressures0,label="Barometric pressure - " + bp[0])
                 plt.plot(pressures1,label="Barometric pressure - " + bp[1])
                 plt.legend()
                 plt.show()
+                if computepressuregradient:
+                    pressuregradient0=pressure_gradient(variablegravities=gravityl2norms[0],seasurfacelonglat=predict_EWE_params['seasurfacelonglat'],datefrom=predict_EWE_params["datefrom"],dateto=predict_EWE_params["dateto"])
+                    pressuregradient1=pressure_gradient(variablegravities=gravityl2norms[1],seasurfacelonglat=predict_EWE_params['seasurfacelonglat'],datefrom=predict_EWE_params["datefrom"],dateto=predict_EWE_params["dateto"])
                 #fig.savefig("testlogs/GISWeatherAnalytics.BarometricPressure."+str(predict_EWE_params['datefrom'][0])+"-"+str(predict_EWE_params['datefrom'][1]) + "-" + str(predict_EWE_params['datefrom'][2]) + "#"+str(predict_EWE_params['dateto'][0])+ "-" + str(predict_EWE_params['dateto'][1]) + "-" + str(predict_EWE_params['dateto'][2])+".jpg")
                 modes_body1=find_peaks(gravityl2norms[0])
                 modes_body2=find_peaks(gravityl2norms[1])
@@ -372,7 +373,8 @@ if __name__ == "__main__":
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2024,7,2,17,30,00),'dateto':(2024,8,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['568@399']},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2024,9,1,17,30,00),'dateto':(2024,10,31,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399']},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2024,11,1,17,30,00),'dateto':(2024,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399']},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
-    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2016,12,5,17,30,00),'dateto':(2016,12,7,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2016,12,5,17,30,00),'dateto':(2016,12,7,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2011,12,24,17,30,00),'dateto':(2011,12,26,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]},computepressuregradient=True)
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','60d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,9,1,17,30,00),'dateto':(2023,12,1,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
     #gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,12,2,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Mercury-Sun-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=35,historic_training_timeseries=nem_rainfall_timeseries)
