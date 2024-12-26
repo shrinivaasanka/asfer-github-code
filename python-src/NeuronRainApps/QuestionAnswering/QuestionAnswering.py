@@ -204,13 +204,39 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                         answersfile.write(" --- ")
                         answersfile.write(str(meaningfulness))
                         answersfile.write("\n")
-                sortedpyplexityrankedsentences=collections.OrderedDict(sorted(pyplexityrankedsentences.items()))
-                sortedwnperplexityrankedsentences=collections.OrderedDict(sorted(wordnetperplexityrankedsentences.items()))
+                sortedpyplexityrankedsentences=dict(collections.OrderedDict(sorted(pyplexityrankedsentences.items())))
+                sortedwnperplexityrankedsentences=dict(collections.OrderedDict(sorted(wordnetperplexityrankedsentences.items())))
                 print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by pyplexity perplexity:")
                 pprint.pprint(sortedpyplexityrankedsentences)
                 print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by wordnet perplexity:")
                 pprint.pprint(sortedwnperplexityrankedsentences)
-        return sentences_synthesized
+                NounPhrases=[]
+                VerbPhrases=[]
+                spasee=spacy.load("en_core_web_sm")
+                for perplexity,sentence in sortedpyplexityrankedsentences.items():
+                    sentenceclassified=False
+                    print("sentence:",sentence)
+                    spaseePOS=spasee(sentence)
+                    for tokenPOS in spaseePOS:
+                        print("tokenPOS:",tokenPOS.text, tokenPOS.lemma_, tokenPOS.pos_, tokenPOS.tag_, tokenPOS.dep_, tokenPOS.shape_, tokenPOS.is_alpha, tokenPOS.is_stop)
+                        if not sentenceclassified:
+                            if tokenPOS.pos_ == "VERB":
+                                VerbPhrases.append(sentence)
+                                sentenceclassified=True
+                    if not sentenceclassified: 
+                        NounPhrases.append(sentence)
+                        sentenceclassified=True
+                print("Phrase Structure Grammar (PSG) sentences from Noun Phrase-Verb Phrase combinations:")
+                print("Noun Phrases:",NounPhrases)
+                print("Verb Phrases:",VerbPhrases)
+                psg_sentences=[]
+                if len(NounPhrases) > 0  and len(VerbPhrases) > 0:
+                    for nounphrase in list(set(NounPhrases)):
+                        for verbphrase in list(set(VerbPhrases)):
+                            print("PSG NP-VP Sentence:" + nounphrase + " " + verbphrase) 
+                            psg_sentences.append(nounphrase + " " + verbphrase)
+                print("PSG NP-VP sentences synthesized:",psg_sentences)
+        return (sentences_synthesized,psg_sentences)
 
 def wordnet_perplexity(sentence):
     words = sentence.split(" ")
