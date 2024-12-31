@@ -70,6 +70,12 @@ class HRAnalytics(object):
                 page_contents = page_object.extractText()
                 profile_text += page_contents
             return profile_text
+        if datasource == "linkedin" and filetype == "json":
+            print("---------------------LinkedIn JSON------------------")
+            linkedinjsonf = open(social_profile)
+            jsonloads = json.loads(linkedinjsonf.read())
+            print(json.dumps(jsonloads, indent=5, sort_keys=True))
+            print("---------------------LinkedIn JSON------------------")
         if datasource == "linkedin" and filetype == "text":
             self.file = open(social_profile, "r")
             profile_text = self.file.read()
@@ -471,6 +477,8 @@ if __name__ == "__main__":
     # hranal.experiential_intrinsic_merit()
     profile_text2 = hranal.parse_profile(
             "none", "tex", "testlogs/CV.tex", {"domain": "InformationTechnology", "opensource_sloc": sloc, "opensource_codesearch_stats": codesearchstats1})
+    profile_text3 = hranal.parse_profile(
+            "linkedin", "json", "testlogs/ProfileLinkedIn_KSrinivasan.json", {"domain": "InformationTechnology", "opensource_sloc": sloc, "opensource_codesearch_stats": codesearchstats1})
     avedistance1 = csensing.alphabet_vectorspace_embedding_distance(
         ['p', 'q', 'r', 's', 't'], ['p', 'q', 'r', 's', 'z'])
     avedistance2 = csensing.alphabet_vectorspace_embedding_distance(
