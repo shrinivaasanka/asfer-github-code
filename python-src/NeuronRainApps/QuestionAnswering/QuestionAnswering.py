@@ -30,6 +30,9 @@ from pyplexity import PerplexityModel
 import collections
 from KnowledgeGraph import create_SpaCy_knowledge_graph
 from nltk.corpus import wordnet as wn
+from nltk.parse.dependencygraph import conll_data2, DependencyGraph
+from nltk.parse.projectivedependencyparser import ProjectiveDependencyParser, ProbabilisticProjectiveDependencyParser
+from nltk.corpus import dependency_treebank
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -249,7 +252,7 @@ def wordnet_perplexity(sentence):
             wordnetperplexity = wordnetperplexity * bigram_wordnet_similarity
     return wordnetperplexity
 
-def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False,edgelabels=None):
+def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False,edgelabels=None,enable_frege_projective_dependency_grammar=True):
     from nltk.corpus import wordnet as wn
     print("make_sentence():wordsynsets = ",wordnetsynsets)
     if sentence_type == "xtag_node34_triplets":
@@ -270,6 +273,30 @@ def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_s
              print("WordNet exception")
         return sentence
     if sentence_type == "textgraph_random_walk":
+        if enable_frege_projective_dependency_grammar is True:
+            conll_data=dependency_treebank.parsed_sents()
+            conll_sentences=[]
+            lexicon=[]
+            for conll_sent in conll_data:
+                conll_sentences.append(conll_sent.to_conll(3))
+                #print("Penn Treebank conll sentence:",conll_sent.to_conll(3))
+            graphs = [DependencyGraph(entry) for entry in conll_sentences if entry]
+            print("Penn TreeBank - Number of dependency graphs trained:",len(graphs))
+            for g in graphs:
+                print("Penn Treebank Frege dependency graph as tree:",g.tree())
+                lexicon += g.tree().leaves() 
+            pdp = ProbabilisticProjectiveDependencyParser()
+            #pdp = ProjectiveDependencyParser(g)
+            print("Training the Probabilistic Projective Dependency Parser with Penn TreeBank dependency graphs....")
+            pdp.train(graphs)
+            dependencysentwords=[]
+            print("dependency lexicon (gathered from leaves of Penn TreeBank):",lexicon)
+            for w in wordnetsynsets:
+                if w in lexicon:
+                    dependencysentwords.append(w)
+            print("dependencysentwords:",list(set(dependencysentwords)))
+            pdpsentence=list(pdp.parse(list(set(dependencysentwords))))
+            print("Most Probable Frege Projective Dependency Grammar sentence (might return nothing) :",pdpsentence)
         spasee=spacy.load("en_core_web_sm")
         rwtexts=[]
         rwstring=" ".join(list(set(wordnetsynsets)))
