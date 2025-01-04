@@ -33,6 +33,8 @@ from nltk.corpus import wordnet as wn
 from nltk.parse.dependencygraph import conll_data2, DependencyGraph
 from nltk.parse.projectivedependencyparser import ProjectiveDependencyParser, ProbabilisticProjectiveDependencyParser
 from nltk.corpus import dependency_treebank
+from nltk.corpus import treebank
+from collections import defaultdict
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -40,7 +42,7 @@ def OpenAIQuestionAnswering(question):
     chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-3.5-turbo")
     print("chat completion:",chat_completion)
 
-def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False):
+def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False,perplexity_algorithm="WordNet",treenode_type="PoS"):
     import RecursiveGlossOverlap_Classifier
     from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
     from collections import defaultdict
@@ -186,59 +188,71 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                            core_random_walk_found=True
                     if core_random_walk_found is True:
                         if number_of_words_per_sentence==2:
-                             naturallanguageanswer = make_sentence(random_walk,sentence_type="xtag_node34_triplets")
+                             naturallanguageanswer = make_sentence(random_walk,sentence_type="xtag_node34_triplets",treenode_type=treenode_type)
                         else:
-                             naturallanguageanswer = make_sentence(random_walk,sentence_type="textgraph_random_walk",standard_sentence_PoS_dict=std_sentence_PoS_dict,markblanks=blanks)
+                             naturallanguageanswer = make_sentence(random_walk,sentence_type="textgraph_random_walk",standard_sentence_PoS_dict=std_sentence_PoS_dict,markblanks=blanks,treenode_type=treenode_type)
                         sentences_synthesized[numrw]=naturallanguageanswer
                     numrw+=1
                 print("Bot generated random walk answer from textgraph:")
                 pprint.pprint(sentences_synthesized)
-                perplexity = PerplexityModel.from_str("bigrams-cord19")
-                pyplexityrankedsentences=defaultdict(int)
-                wordnetperplexityrankedsentences=defaultdict(int)
+                if perplexity_algorithm=="pyplexity":
+                    perplexity = PerplexityModel.from_str("bigrams-cord19")
+                    pyplexityrankedsentences=defaultdict(int)
+                if perplexity_algorithm=="WordNet":
+                    wordnetperplexityrankedsentences=defaultdict(int)
                 for rw,sentences in sentences_synthesized.items():
                     for s in sentences:
-                        meaningfulness=perplexity.compute_sentence(s)
-                        wordnetperplexity=wordnet_perplexity(s)
-                        print("WordNet perplexity of sentence - ",s,":",wordnetperplexity)
+                        if perplexity_algorithm=="pyplexity":
+                             meaningfulness=perplexity.compute_sentence(s)
+                        if perplexity_algorithm=="WordNet":
+                             wordnetperplexity=wordnet_perplexity(s)
+                             print("WordNet perplexity of sentence - ",s,":",wordnetperplexity)
                         answersfile.write(s)
-                        pyplexityrankedsentences[meaningfulness]=s
-                        wordnetperplexityrankedsentences[wordnetperplexity]=s
+                        if perplexity_algorithm=="pyplexity":
+                            pyplexityrankedsentences[meaningfulness]=s
+                        if perplexity_algorithm=="WordNet":
+                            wordnetperplexityrankedsentences[wordnetperplexity]=s
                         answersfile.write(" --- ")
-                        answersfile.write(str(meaningfulness))
+                        if perplexity_algorithm=="pyplexity":
+                            answersfile.write(str(meaningfulness))
+                        if perplexity_algorithm=="WordNet":
+                            answersfile.write(str(wordnetperplexity))
                         answersfile.write("\n")
-                sortedpyplexityrankedsentences=dict(collections.OrderedDict(sorted(pyplexityrankedsentences.items())))
-                sortedwnperplexityrankedsentences=dict(collections.OrderedDict(sorted(wordnetperplexityrankedsentences.items())))
-                print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by pyplexity perplexity:")
-                pprint.pprint(sortedpyplexityrankedsentences)
-                print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by wordnet perplexity:")
-                pprint.pprint(sortedwnperplexityrankedsentences)
+                if perplexity_algorithm=="pyplexity":
+                    sortedpyplexityrankedsentences=dict(collections.OrderedDict(sorted(pyplexityrankedsentences.items())))
+                    print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by pyplexity perplexity:")
+                    pprint.pprint(sortedpyplexityrankedsentences)
+                if perplexity_algorithm=="WordNet":
+                    sortedwnperplexityrankedsentences=dict(collections.OrderedDict(sorted(wordnetperplexityrankedsentences.items())))
+                    print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by wordnet perplexity:")
+                    pprint.pprint(sortedwnperplexityrankedsentences)
                 NounPhrases=[]
                 VerbPhrases=[]
-                spasee=spacy.load("en_core_web_sm")
-                for perplexity,sentence in sortedpyplexityrankedsentences.items():
-                    sentenceclassified=False
-                    print("sentence:",sentence)
-                    spaseePOS=spasee(sentence)
-                    for tokenPOS in spaseePOS:
-                        print("tokenPOS:",tokenPOS.text, tokenPOS.lemma_, tokenPOS.pos_, tokenPOS.tag_, tokenPOS.dep_, tokenPOS.shape_, tokenPOS.is_alpha, tokenPOS.is_stop)
-                        if not sentenceclassified:
-                            if tokenPOS.pos_ == "VERB":
-                                VerbPhrases.append(sentence)
-                                sentenceclassified=True
-                    if not sentenceclassified: 
-                        NounPhrases.append(sentence)
-                        sentenceclassified=True
-                print("Phrase Structure Grammar (PSG) sentences from Noun Phrase-Verb Phrase combinations:")
-                print("Noun Phrases:",NounPhrases)
-                print("Verb Phrases:",VerbPhrases)
                 psg_sentences=[]
-                if len(NounPhrases) > 0  and len(VerbPhrases) > 0:
-                    for nounphrase in list(set(NounPhrases)):
-                        for verbphrase in list(set(VerbPhrases)):
-                            print("PSG NP-VP Sentence:" + nounphrase + " " + verbphrase) 
-                            psg_sentences.append(nounphrase + " " + verbphrase)
-                print("PSG NP-VP sentences synthesized:",psg_sentences)
+                spasee=spacy.load("en_core_web_sm")
+                if perplexity_algorithm=="pyplexity":
+                    for perplexity,sentence in sortedpyplexityrankedsentences.items():
+                         sentenceclassified=False
+                         print("sentence:",sentence)
+                         spaseePOS=spasee(sentence)
+                         for tokenPOS in spaseePOS:
+                            print("tokenPOS:",tokenPOS.text, tokenPOS.lemma_, tokenPOS.pos_, tokenPOS.tag_, tokenPOS.dep_, tokenPOS.shape_, tokenPOS.is_alpha, tokenPOS.is_stop)
+                            if not sentenceclassified:
+                                 if tokenPOS.pos_ == "VERB":
+                                     VerbPhrases.append(sentence)
+                                     sentenceclassified=True
+                         if not sentenceclassified: 
+                            NounPhrases.append(sentence)
+                            sentenceclassified=True
+                    print("Phrase Structure Grammar (PSG) sentences from Noun Phrase-Verb Phrase combinations:")
+                    print("Noun Phrases:",NounPhrases)
+                    print("Verb Phrases:",VerbPhrases)
+                    if len(NounPhrases) > 0  and len(VerbPhrases) > 0:
+                         for nounphrase in list(set(NounPhrases)):
+                             for verbphrase in list(set(VerbPhrases)):
+                                print("PSG NP-VP Sentence:" + nounphrase + " " + verbphrase) 
+                                psg_sentences.append(nounphrase + " " + verbphrase)
+                    print("PSG NP-VP sentences synthesized:",psg_sentences)
         return (sentences_synthesized,psg_sentences)
 
 def wordnet_perplexity(sentence):
@@ -252,7 +266,7 @@ def wordnet_perplexity(sentence):
             wordnetperplexity = wordnetperplexity * bigram_wordnet_similarity
     return wordnetperplexity
 
-def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False,edgelabels=None,enable_frege_projective_dependency_grammar=True):
+def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False,edgelabels=None,enable_frege_projective_dependency_grammar=True,treenode_type="PoS"):
     from nltk.corpus import wordnet as wn
     print("make_sentence():wordsynsets = ",wordnetsynsets)
     if sentence_type == "xtag_node34_triplets":
@@ -307,7 +321,10 @@ def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_s
         print("=============================================================================================")
         for tokenPOS in spaseePOS:
             print("tokenPOS:",tokenPOS.text, tokenPOS.lemma_, tokenPOS.pos_, tokenPOS.tag_, tokenPOS.dep_, tokenPOS.shape_, tokenPOS.is_alpha, tokenPOS.is_stop)
-            standard_sentence_PoS_dict[tokenPOS.pos_].append(tokenPOS.text)
+            if treenode_type=="PoS":
+                standard_sentence_PoS_dict[tokenPOS.pos_].append(tokenPOS.text)
+            if treenode_type=="tag":
+                standard_sentence_PoS_dict[tokenPOS.tag_].append(tokenPOS.text)
         allpossiblewords=[]
         print("standard_sentence_PoS_dict:",standard_sentence_PoS_dict)
         for pos,words in standard_sentence_PoS_dict.items():
@@ -342,11 +359,37 @@ def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_s
                 continue
         return rwtexts
 
+def create_sentence_PoS_dict_from_treebank(dataset="wsj_0001.mrg"):
+    tbsents=treebank.parsed_sents(dataset)
+    list_of_sentence_PoS_dicts=[]
+    for t in tbsents:
+        sentence_PoS_tuples=[]
+        tpos=t.pos()
+        print("tpos:",tpos)
+        for pos in tpos:
+            if pos[1] not in ['.', ',']:
+                sentence_PoS_tuples.append((pos[1],[]))
+        sentence_PoS_dict=defaultdict(list)
+        for k,v in sentence_PoS_tuples:
+            sentence_PoS_dict[k]=v
+        print("sentence_PoS_dict:",sentence_PoS_dict)
+        print("-----------------")
+        list_of_sentence_PoS_dicts.append(sentence_PoS_dict)
+    print("List of sentence_PoS_dicts:",list_of_sentence_PoS_dicts)
+    return list_of_sentence_PoS_dicts
+
 if __name__ == "__main__":
     question = sys.argv[1]
     #WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=True,sentence_type="xtag_node34_triplets")
     #WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="xtag_node34_triplets")
     #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[],"PUNCT":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
-    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
+    print("----------------------- sentence synthesis (manual sentence_PoS_dict) --------------------")
+    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="PoS")
+    print("----------------------- sentence synthesis (sentence_PoS_dict retrieved from treebank) --------------------")
+    list_of_sentence_PoS_dicts=create_sentence_PoS_dict_from_treebank("wsj_0001.mrg")
+    for sentencePoSdict in list_of_sentence_PoS_dicts:
+        print("sentencePoSdict:",sentencePoSdict)
+        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag")
+        print("---------------------------------------------")
     #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
     #OpenAIQuestionAnswering(question)
