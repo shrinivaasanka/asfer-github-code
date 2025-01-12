@@ -35,6 +35,7 @@ from nltk.parse.projectivedependencyparser import ProjectiveDependencyParser, Pr
 from nltk.corpus import dependency_treebank
 from nltk.corpus import treebank
 from collections import defaultdict
+from nltk import ConditionalFreqDist
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -270,7 +271,7 @@ def wordnet_perplexity(sentence):
             wordnetperplexity = wordnetperplexity * bigram_wordnet_similarity
     return wordnetperplexity
 
-def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type="tag"):
+def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type="tag",max_synth_sentences=1000):
     spasee=spacy.load("en_core_web_sm")
     rwtexts=[]
     rwstring=" ".join(list(set(randomwalkvertices)))
@@ -320,8 +321,64 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
     for product in itertools.product(*allpossiblesentences):
         print("product:",product)
         rwtexts.append(" ".join(product))
-    print("make_sentence2():",rwtexts)
-    return rwtexts 
+    wsj = treebank.tagged_words()
+    cfd2 = ConditionalFreqDist((tag, word) for (word, tag) in wsj)
+    filledrwtexts=[]
+    PennTreebankPoS={"CC":"Coordinating conjunction",
+            "CD":"Cardinal number",
+            "DT":"Determiner",
+            "EX":"Existential there",
+            "FW":"Foreign word",
+            "IN":"Preposition or subordinating conjunction",
+            "JJ":"Adjective",
+            "JJR":"Adjective, comparative",
+            "JJS":"Adjective, superlative",
+            "LS":"List item marker",
+            "MD":"Modal",
+            "NN":"Noun, singular or mass",
+            "NNS":"Noun, plural",
+            "NNP":"Proper noun, singular",
+            "NNPS":"Proper noun, plural",
+            "PDT":"Predeterminer",
+            "POS":"Possessive ending",
+            "PRP":"Personal pronoun",
+            "PRP$":"Possessive pronoun",
+            "RB":"Adverb",
+            "RBR":"Adverb, comparative",
+            "RBS":"Adverb, superlative",
+            "RP":"Particle",
+            "SYM":"Symbol",
+            "TO":"to",
+            "UH":"Interjection",
+            "VB":"Verb, base form",
+            "VBD":"Verb, past tense",
+            "VBG":"Verb, gerund or present participle",
+            "VBN":"Verb, past participle",
+            "VBP":"Verb, non-3rd person singular present",
+            "VBZ":"Verb, 3rd person singular present",
+            "WDT":"Wh-determiner",
+            "WP":"Wh-pronoun",
+            "WP$":"Possessive wh-pronoun",
+            "WRB":"Wh-adverb"}
+    number_of_sentences_synthesized=0
+    for rwtext in rwtexts:
+        if number_of_sentences_synthesized > max_synth_sentences:
+            break
+        filledrwtext=[]
+        for rwtexttok in rwtext.split(" "):
+            if rwtexttok in PennTreebankPoS.keys():
+                filledrwtext.append(list(cfd2[rwtexttok]))
+            else:
+                filledrwtext.append([rwtexttok])
+        print("make_sentence2(): filledrwtext = ",filledrwtext)
+        for product in itertools.product(*filledrwtext):
+            print("make_sentence2(): filled sentence template = "," ".join(product))
+            filledrwtexts.append(" ".join(product))
+            number_of_sentences_synthesized+=1
+            if number_of_sentences_synthesized > max_synth_sentences:
+                 break
+    print("make_sentence2():filledrwtexts:",filledrwtexts)
+    return filledrwtexts 
 
 def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False,edgelabels=None,enable_frege_projective_dependency_grammar=True,treenode_type="PoS"):
     from nltk.corpus import wordnet as wn
@@ -459,10 +516,11 @@ if __name__ == "__main__":
     #    print("---------------------------------------------")
 
     print("----------------------- sentence synthesis (sentence_PoS_array retrieved from treebank) --------------------")
-    list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0002.mrg","wsj_0003.mrg","wsj_0004.mrg"],returnasarray=True)
+    #list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0002.mrg","wsj_0003.mrg","wsj_0004.mrg"],returnasarray=True)
+    list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0005.mrg"],returnasarray=True)
     for sentencePoSarray in list_of_sentence_PoS_arrays:
         print("sentencePoSarray:",sentencePoSarray)
-        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=1)
+        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3)
         print("---------------------------------------------")
 
     #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
