@@ -32,23 +32,22 @@ import dynetx.algorithms as al
 import matplotlib.pyplot as plt
 from networkx.drawing.nx_pydot import write_dot
 
-def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10):
+def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10,radius=1000,latitude=12.439259,longitude=79.271851,airport_code="MAA"):
     print("======================================================================")
     print("FlightRadar24 Live Air Traffic for zones ",zones," - and centrality measures")
     print("======================================================================")
     fr_api = FlightRadar24API()
     airtrafficdyngraph = dx.DynDiGraph(edge_remove=True)
-    #if radius == -1:
-    #    flights = fr_api.get_flights()
-    #else:
-    #    bounds = fr_api.get_bounds_by_point(longitude, latitude, radius)
-    #    print("bounds:",bounds)
-    #    flights = fr_api.get_flights(bounds = bounds)
-    #print("flights:",flights)
-    #if airport_code is not None:
-    #    airport = fr_api.get_airport(airport_code) 
-    #    print("airport:",airport)
-
+    if radius == -1:
+        flights = fr_api.get_flights()
+    else:
+        bounds = fr_api.get_bounds_by_point(longitude, latitude, radius)
+        print("bounds:",bounds)
+        flights = fr_api.get_flights(bounds = bounds)
+    print("flights:",flights)
+    if airport_code is not None:
+        airport = fr_api.get_airport(airport_code) 
+        print("airport:",airport)
     if zones == None:
         zones = list(fr_api.get_zones().keys())
     print("zones:",zones)
@@ -139,6 +138,17 @@ def pyflightdata_live_air_traffic(airport_code="MAA"):
     print("------------------------------------")
     #pprint.pprint(departures)
     pprint.pprint(pd.json_normalize(departures))
+    print("-------------------------------------")
+    print("airport METAR:")
+    print("-------------------------------------")
+    get_metar_weather_data(airport_code)
+
+def get_metar_weather_data(airport_code="MAA"):
+    flightdata=FlightData()
+    metar=flightdata.get_airport_metars(airport_code)
+    decoded_metar=flightdata.decode_metar(metar)
+    pprint.pprint(decoded_metar)
+    return decoded_metar
 
 def here_live_traffic(key,bearertoken,boundingbox=[12.439259,79.271851,13.568572,80.351257]):
     #page = requests.get('https://traffic.api.here.com/traffic/6.2/flow.xml?app_id=NeuronRain_Live_Traffic&app_code=vS5i2op45RlaPW2GFKx8&bbox='+str(boundingbox[0])+','+str(boundingbox[1])+','+str(boundingbox[2])+','+str(boundingbox[3])+'&responseattributes=sh,fc')
