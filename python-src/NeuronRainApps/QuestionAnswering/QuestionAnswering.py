@@ -33,7 +33,7 @@ from nltk.corpus import wordnet as wn
 from nltk.parse.dependencygraph import conll_data2, DependencyGraph
 from nltk.parse.projectivedependencyparser import ProjectiveDependencyParser, ProbabilisticProjectiveDependencyParser
 from nltk.corpus import dependency_treebank
-from nltk.corpus import treebank
+from nltk.corpus import treebank,brown,conll2000
 from collections import defaultdict
 from nltk import ConditionalFreqDist
 
@@ -43,7 +43,7 @@ def OpenAIQuestionAnswering(question):
     chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-3.5-turbo")
     print("chat completion:",chat_completion)
 
-def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False,perplexity_algorithm="WordNet",treenode_type="PoS",sentence_tuple_array=False,sentence_PoS_array=None,randomwalk_to_sentence_template_ratio=10):
+def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False,perplexity_algorithm="WordNet",treenode_type="PoS",sentence_tuple_array=False,sentence_PoS_array=None,randomwalk_to_sentence_template_ratio=10,user_defined_PoS2Vocabulary_dict=None):
     import RecursiveGlossOverlap_Classifier
     from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
     from collections import defaultdict
@@ -193,7 +193,7 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                         else:
                              if sentence_tuple_array:
                                 if float(len(random_walk))/float(len(sentence_PoS_array)) < randomwalk_to_sentence_template_ratio: 
-                                    naturallanguageanswer = make_sentence2(random_walk,sentence_PoS_tuple_array=sentence_PoS_array,treenode_type="tag")
+                                    naturallanguageanswer = make_sentence2(random_walk,sentence_PoS_tuple_array=sentence_PoS_array,treenode_type="tag",user_defined_PoS2Vocabulary_dict=user_defined_PoS2Vocabulary_dict)
                              else:
                                 naturallanguageanswer = make_sentence(random_walk,sentence_type="textgraph_random_walk",standard_sentence_PoS_dict=std_sentence_PoS_dict,markblanks=blanks,treenode_type=treenode_type)
                         sentences_synthesized[numrw]=naturallanguageanswer
@@ -271,7 +271,7 @@ def wordnet_perplexity(sentence):
             wordnetperplexity = wordnetperplexity * bigram_wordnet_similarity
     return wordnetperplexity
 
-def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type="tag",max_synth_sentences=1000):
+def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type="tag",max_synth_sentences=1000,user_defined_PoS2Vocabulary_dict=None):
     spasee=spacy.load("en_core_web_sm")
     rwtexts=[]
     rwstring=" ".join(list(set(randomwalkvertices)))
@@ -366,11 +366,18 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
             break
         filledrwtext=[]
         for rwtexttok in rwtext.split(" "):
-            if rwtexttok in PennTreebankPoS.keys():
-                filledrwtext.append(list(cfd2[rwtexttok]))
+            if user_defined_PoS2Vocabulary_dict is not None:
+                print("rwtexttok:",rwtexttok)
+                if rwtexttok in user_defined_PoS2Vocabulary_dict.keys():
+                    filledrwtext.append(user_defined_PoS2Vocabulary_dict[rwtexttok])
+                else:
+                    filledrwtext.append(["---"])
             else:
-                #filledrwtext.append([rwtexttok])
-                filledrwtext.append(["---"])
+                if rwtexttok in PennTreebankPoS.keys():
+                    filledrwtext.append(list(cfd2[rwtexttok]))
+                else:
+                    #filledrwtext.append([rwtexttok])
+                    filledrwtext.append(["---"])
         print("make_sentence2(): filledrwtext (without cartesian product) = ",filledrwtext)
         for product in itertools.product(*filledrwtext):
             #print("make_sentence2(): filled sentence template = "," ".join(product))
@@ -509,18 +516,21 @@ if __name__ == "__main__":
     #print("----------------------- sentence synthesis (manual sentence_PoS_dict) --------------------")
     #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="PoS")
 
+    conll2000_tagged_words=conll2000.tagged_words()
+    print("conll2000_tagged_words:",conll2000_tagged_words)
+    conll2000_corpus_PoS2Vocabulary_dict = ConditionalFreqDist((tag, word) for (word, tag) in conll2000_tagged_words)
     print("----------------------- sentence synthesis (sentence_PoS_dict retrieved from treebank) --------------------")
     list_of_sentence_PoS_dicts=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0002.mrg"])
     for sentencePoSdict in list_of_sentence_PoS_dicts:
         print("sentencePoSdict:",sentencePoSdict)
-        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag")
+        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
         print("---------------------------------------------")
 
     print("----------------------- sentence synthesis (sentence_PoS_array retrieved from treebank) --------------------")
     list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0004.mrg"],returnasarray=True)
     for sentencePoSarray in list_of_sentence_PoS_arrays:
         print("sentencePoSarray:",sentencePoSarray)
-        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=10,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3)
+        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=10,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
         print("---------------------------------------------")
 
     #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
