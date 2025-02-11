@@ -93,6 +93,7 @@ def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds,userdefinedlatlons
     date=Time(str(datefrom[0])+"-"+str(datefrom[1])+"-"+str(datefrom[2]) + " " + str(datefrom[3]) + ":" + str(datefrom[4]) + ":" + str(datefrom[5]))
     todate=Time(str(dateto[0])+"-"+str(dateto[1])+"-"+str(dateto[2]) + " " + str(datefrom[3]) + ":" + str(datefrom[4]) + ":" + str(datefrom[5]))
     bodies=bodypair.split("-")
+    Horizons.clear_cache()
     while date != todate: 
           obj1 = Horizons(id=solar_system_bodies[bodies[0]], location=loc, epochs=date.jd, id_type='id').vectors()
           obj2 = Horizons(id=solar_system_bodies[bodies[1]], location=loc, epochs=date.jd, id_type='id').vectors()
