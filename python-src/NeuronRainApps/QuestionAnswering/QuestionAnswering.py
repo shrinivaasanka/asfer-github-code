@@ -370,7 +370,7 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
             if user_defined_PoS2Vocabulary_dict is not None:
                 print("rwtexttok:",rwtexttok)
                 if rwtexttok in user_defined_PoS2Vocabulary_dict.keys():
-                    filledrwtext.append([user_defined_PoS2Vocabulary_dict[rwtexttok]])
+                    filledrwtext.append(user_defined_PoS2Vocabulary_dict[rwtexttok])
                 else:
                     filledrwtext.append(["---"])
             else:
@@ -521,25 +521,25 @@ if __name__ == "__main__":
     print("conll2000_tagged_words:",conll2000_tagged_words)
     conll2000_corpus_PoS2Vocabulary_dict = ConditionalFreqDist((tag, word) for (word, tag) in conll2000_tagged_words)
 
-    kaggle_corpus_PoS2Vocabulary_dict=defaultdict()
+    kaggle_corpus_PoS2Vocabulary_dict=defaultdict(list)
     with open('words_pos.csv', newline='') as wordsposcsv:
         wordsposreader = csv.reader(wordsposcsv, delimiter=',')
         for row in wordsposreader:
             print("row:",row)
-            kaggle_corpus_PoS2Vocabulary_dict[row[2]]=row[1]
+            kaggle_corpus_PoS2Vocabulary_dict[row[2]].append(row[1])
     print("kaggle PoS corpus:",kaggle_corpus_PoS2Vocabulary_dict)
 
     print("----------------------- sentence synthesis (sentence_PoS_dict retrieved from treebank) --------------------")
-    list_of_sentence_PoS_dicts=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0032.mrg"])
-    for sentencePoSdict in list_of_sentence_PoS_dicts:
+    list_of_sentence_PoS_dicts=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0082.mrg"])
+    for sentencePoSdict in list_of_sentence_PoS_dicts[:5]:
         print("sentencePoSdict:",sentencePoSdict)
         #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
         WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",user_defined_PoS2Vocabulary_dict=kaggle_corpus_PoS2Vocabulary_dict)
         print("---------------------------------------------")
 
     print("----------------------- sentence synthesis (sentence_PoS_array retrieved from treebank) --------------------")
-    list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0054.mrg"],returnasarray=True)
-    for sentencePoSarray in list_of_sentence_PoS_arrays:
+    list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0074.mrg"],returnasarray=True)
+    for sentencePoSarray in list_of_sentence_PoS_arrays[:5]:
         print("sentencePoSarray:",sentencePoSarray)
         #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=10,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
         WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=10,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=kaggle_corpus_PoS2Vocabulary_dict)
