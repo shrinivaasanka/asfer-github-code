@@ -18,12 +18,11 @@
 
 #Code derived from REBEL relation extraction boiler plate code documentation at https://huggingface.co/Babelscape/rebel-large
 
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import matplotlib.pyplot as plt 
 import networkx as nx
 from networkx.drawing.nx_pydot import write_dot
-import spacy
-import spacy_component 
+import pandas as pd
+#import pykeen.datasets
 
 def extract_triplets(text):
     triplets = []
@@ -57,6 +56,8 @@ def extract_triplets(text):
     return triplets
 
 def create_SpaCy_knowledge_graph(text):
+    import spacy
+    import spacy_component 
     spacyrebel = spacy.load("en_core_web_sm")
     print("spacy-rebel loaded.....")
     spacyrebel.add_pipe("rebel", after="senter", config={
@@ -82,6 +83,7 @@ def create_SpaCy_knowledge_graph(text):
     return (knowledgegraph,edgelabels)
 
 def create_REBEL_knowledge_graph(text):
+    from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
     # Load model and tokenizer
     tokenizer = AutoTokenizer.from_pretrained("Babelscape/rebel-large")
     model = AutoModelForSeq2SeqLM.from_pretrained("Babelscape/rebel-large")
@@ -121,6 +123,40 @@ def create_REBEL_knowledge_graph(text):
     #plt.show()
     return (knowledgegraph,edgelabels)
 
+def create_PrimeKG_knowledge_graph(mode="CSV",query='y_type=="drug"|x_type=="drug"|relation=="indication"',chunksz=1000,numberofrows=100,maximumedges=100000):
+    if mode=="CSV":
+        primekgnx=nx.Graph()
+        primekg = pd.read_table('./kg.csv', delimiter=",",low_memory=False, chunksize=chunksz)
+        print("primekg:",primekg)
+        primekgdf = primekg.read(numberofrows)
+        numberofedges=0
+        while primekgdf is not None:
+            if numberofedges > maximumedges:
+               break
+            #print("primekgdf:",primekgdf)
+            #print("primekgdf columns:",primekgdf.columns)
+            ret=primekgdf.query(query)
+            #print("query results:",ret)
+            for index,row in ret.iterrows():
+                if numberofedges > maximumedges:
+                    break
+                print("PrimeKG edge triples:",(row['x_name'],row['relation'],row['y_name']))
+                primekgnx.add_edge(row['x_name'],row['y_name'],weight=row['relation'])
+                numberofedges+=1
+            primekgdf = primekg.read(numberofrows)
+        #write_dot(primekgnx, "KnowledgeGraph.dot")
+        return primekgnx
+    if mode=="Graph":
+        from tdc.resource import PrimeKG
+        data = PrimeKG()
+        print("data:",data)
+        drug_feature = data.get_features(feature_type = 'drug')
+        print("drug_feature:",drug_feature)
+        kg=data.to_nx()
+        print("kg:",kg)
+        nodes=data.get_node_list(type = 'disease')
+        print("nodes:",nodes)
+
 def lambda_functions_from_knowledge_graph(edgelabels):
     lambdafunctions = []
     for edge,relation in edgelabels.items():
@@ -134,4 +170,5 @@ def lambda_functions_from_knowledge_graph(edgelabels):
 
 if __name__=="__main__":
     #create_REBEL_knowledge_graph("This is an example sentence for knowledge graph extraction")
-    create_SpaCy_knowledge_graph("A large language model (LLM) is a computational model capable of language generation or other natural language processing tasks. As language models, LLMs acquire these abilities by learning statistical relationships from vast amounts of text during a self-supervised and semi-supervised training process.")
+    #create_SpaCy_knowledge_graph("A large language model (LLM) is a computational model capable of language generation or other natural language processing tasks. As language models, LLMs acquire these abilities by learning statistical relationships from vast amounts of text during a self-supervised and semi-supervised training process.")
+    create_PrimeKG_knowledge_graph()
