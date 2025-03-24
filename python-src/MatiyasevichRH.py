@@ -32,13 +32,16 @@ lhs=[]
 rhs=[]
 lhsrhsratio=[]
 sys.set_int_max_str_digits(100000)
-maxiterations=3000
+maxiterations=20000
 integerdivision=True
+convergenceratio=0
 while p**2*(m-f0) < f3:
     print("--------------------------")
     print("iteration:",n)
     print("--------------------------")
     if n > maxiterations:
+        #plt.plot(lhs)
+        #plt.plot(rhs)
         plt.plot(lhsrhsratio)
         plt.show()
         print("Stopping after ",maxiterations," iterations") 
@@ -66,6 +69,8 @@ while p**2*(m-f0) < f3:
     f0=2*n*h
     f3=(2*n+3)*f3
     if len(lhsrhsratio) > 10:
+        convergenceratio=lhsrhsratio[len(lhsrhsratio)-1]/lhsrhsratio[len(lhsrhsratio)-2]
+        print("D'Alembert series convergence test:",convergenceratio)
         fractaldimension=hfd.hfd(lhsrhsratio)
         print("Higuchi Fractal Dimension of the 1-dimensional timeseries:",fractaldimension)
 print("Loop exits after ",n," iterations - Riemann Hypothesis is False")
