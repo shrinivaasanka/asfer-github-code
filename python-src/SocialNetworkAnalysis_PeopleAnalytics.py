@@ -37,6 +37,7 @@ import sys
 import networkx as nx
 from networkx.drawing.nx_pydot import write_dot
 import operator
+import subprocess
 
 
 class HRAnalytics(object):
@@ -136,10 +137,22 @@ class HRAnalytics(object):
         codesearchjson=""
         codesearchtext=""
         if opensourceid is not None:
+            codesearchjson+="################RESTAPI###################\n"
             codesearchjson=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/users?q="+query+"+user:" + opensourceid + "\" ").read()
+            codesearchjson+="################RESTAPI###################\n"
             codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/code?q="+query+"+user:" + opensourceid + "\" ").read()
+            codesearchjson+="################RESTAPI###################\n"
             codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken +"\"   -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/repositories?q="+query+"+user:" + opensourceid + "\" ").read()
+            codesearchjson+="#################RESTAPI##################\n"
             codesearchjson+=os.popen(" curl -L   -H \"Accept: application/vnd.github+json\"   -H \"Authorization: Bearer " + personalaccesstoken + "\"  -H \"X-GitHub-Api-Version: 2022-11-28\"   \"https://api.github.com/search/commits?q="+query+"+user:" + opensourceid + "\" ").read()
+            codesearchjson+="################GraphQL###################\n"
+            graphqlqueryf=open("GitHubCodeSearch_GraphQL.txt")
+            graphqlquery=graphqlqueryf.read()
+            graphqlquery=graphqlquery.replace("TOKEN",personalaccesstoken)
+            print("graphqlquery:"+graphqlquery)
+            #codesearchjson+=os.popen(graphqlquery)
+            os.system(graphqlquery)
+            codesearchjson+="###################################"
             print("==================================")
             print("GitHub Code Search for query ",opensourceid," - JSON:")
             print("==================================")
@@ -438,11 +451,11 @@ if __name__ == "__main__":
     print("================")
     print("Query 1:")
     print("================")
-    codesearchstats=hranal.codesearch_statistics(query="THEORY+and+FEATURE",opensourceid="shrinivaasanka",personalaccesstoken="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")
+    codesearchstats=hranal.codesearch_statistics(query="THEORY+and+FEATURE",opensourceid="shrinivaasanka",personalaccesstoken="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")
     print("================")
     print("Query 2:")
     print("================")
-    codesearchstats1=hranal.codesearch_statistics(query="shrinivaasanka+THEORY+and+FEATURE",personalaccesstoken="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")
+    codesearchstats1=hranal.codesearch_statistics(query="shrinivaasanka+THEORY+and+FEATURE",personalaccesstoken="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")
     print("================")
     print("Query 3 - NeuronRain Features:")
     print("================")
