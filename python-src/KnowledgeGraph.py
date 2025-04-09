@@ -22,6 +22,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 from networkx.drawing.nx_pydot import write_dot
 import pandas as pd
+import operator
 #import pykeen.datasets
 
 def extract_triplets(text):
@@ -140,10 +141,19 @@ def create_PrimeKG_knowledge_graph(mode="CSV",query='y_type=="drug"|x_type=="dru
             for index,row in ret.iterrows():
                 if numberofedges > maximumedges:
                     break
+                print("Prime KG query results - row:",row)
                 print("PrimeKG edge triples:",(row['x_name'],row['relation'],row['y_name']))
                 primekgnx.add_edge(row['x_name'],row['y_name'],weight=row['relation'])
                 numberofedges+=1
             primekgdf = primekg.read(numberofrows)
+        apsp=dict(nx.all_pairs_all_shortest_paths(primekgnx))
+        print("----------------------------------------------------")
+        for k,v in apsp.items():
+            for k2,v2 in v.items():
+                print("Prime KG - all pairs all shortest paths: [source = ",k,":destination=",k2,"]-paths:",v2)
+            print("----------------------------------------------------")
+        sorted_degree_centrality=sorted(nx.degree_centrality(primekgnx).items(),key=operator.itemgetter(1), reverse=True)
+        print("Prime KG - Degree centrality (most important vertices):",sorted_degree_centrality)
         #write_dot(primekgnx, "KnowledgeGraph.dot")
         return primekgnx
     if mode=="Graph":
@@ -171,4 +181,5 @@ def lambda_functions_from_knowledge_graph(edgelabels):
 if __name__=="__main__":
     #create_REBEL_knowledge_graph("This is an example sentence for knowledge graph extraction")
     #create_SpaCy_knowledge_graph("A large language model (LLM) is a computational model capable of language generation or other natural language processing tasks. As language models, LLMs acquire these abilities by learning statistical relationships from vast amounts of text during a self-supervised and semi-supervised training process.")
-    create_PrimeKG_knowledge_graph()
+    create_PrimeKG_knowledge_graph(mode="CSV",query='x_type=="drug" & y_type=="disease" & relation=="indication"',chunksz=1000,numberofrows=1000,maximumedges=100)
+    #create_PrimeKG_knowledge_graph(mode="CSV",query='x_type=="disease" & y_type=="drug" & relation=="indication"',chunksz=100,numberofrows=1000,maximumedges=10)
