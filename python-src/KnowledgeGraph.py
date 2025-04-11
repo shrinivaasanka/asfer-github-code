@@ -155,6 +155,7 @@ def create_PrimeKG_knowledge_graph(mode="CSV",query='y_type=="drug"|x_type=="dru
         sorted_degree_centrality=sorted(nx.degree_centrality(primekgnx).items(),key=operator.itemgetter(1), reverse=True)
         print("Prime KG - Degree centrality (most important vertices):",sorted_degree_centrality)
         #write_dot(primekgnx, "KnowledgeGraph.dot")
+        link_prediction(primekgnx)
         return primekgnx
     if mode=="Graph":
         from tdc.resource import PrimeKG
@@ -166,6 +167,30 @@ def create_PrimeKG_knowledge_graph(mode="CSV",query='y_type=="drug"|x_type=="dru
         print("kg:",kg)
         nodes=data.get_node_list(type = 'disease')
         print("nodes:",nodes)
+
+def link_prediction(nxgraph):
+    rai=nx.resource_allocation_index(nxgraph)
+    for u,v,p in rai:
+        print("Link prediction - Resource allocation index : "+ u + " -- " + v + ":",p)
+    jcoeff=nx.jaccard_coefficient(nxgraph)
+    for u,v,p in jcoeff:
+        print("Link prediction - Jaccard coefficient :" + u + " -- " + v + ":",p)
+    adamicadar=nx.adamic_adar_index(nxgraph)
+    for u,v,p in adamicadar:
+        print("Link prediction - Adamic-Adar index :" + u + " -- " + v + ":",p)
+    prefattach=nx.preferential_attachment(nxgraph)
+    for u,v,p in prefattach:
+        print("Link prediction - Preferential attachment :" + u + " -- " + v + ":",p)
+    print(nxgraph.nodes)
+    for n in nxgraph.nodes:
+        nxgraph.nodes[n]["community"]=0
+    soundhopcroft=nx.cn_soundarajan_hopcroft(nxgraph)
+    for u,v,p in soundhopcroft:
+        print("Link prediction - Soundarrajan - Hopcroft  :" + u + " -- " + v + ":",p)
+    ccpa=nx.common_neighbor_centrality(nxgraph)
+    for u,v,p in ccpa:
+        print("Link prediction - CCPA score :" + u + " -- " + v + ":",p) 
+    return (rai,jcoeff,adamicadar,prefattach,soundhopcroft,ccpa)
 
 def lambda_functions_from_knowledge_graph(edgelabels):
     lambdafunctions = []
