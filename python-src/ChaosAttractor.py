@@ -16,7 +16,6 @@
 # Personal website(research): https://sites.google.com/site/kuja27/
 # ---------------------------------------------------------------------------------------------------------
 
-import rpy2.robjects as robj
 import random
 
 # non-linearity starts from k >= 3 and below 3 there are periods
@@ -93,6 +92,7 @@ def ChaosPRG(algorithm="Logistic", seqlen=100, radix=10, initialcondition=0.7, p
 
 
 if __name__ == "__main__":
+    import rpy2.robjects as robj
     # Read input sequence
     # f=open("ChaosAttractorInputSequence.txt")
     f = open("ChaosAttractorInputSequence_DJIA.txt")

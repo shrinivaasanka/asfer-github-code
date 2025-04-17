@@ -25,15 +25,18 @@ from math import gcd
 import matplotlib.pyplot as plt
 import sys
 import hfd 
+import ChaosAttractor
+import numpy
 
 h=m=p=0
 d=f0=f3=n=q=1
 lhs=[]
 rhs=[]
 lhsrhsratio=[]
-sys.set_int_max_str_digits(100000)
-maxiterations=20000
+sys.set_int_max_str_digits(150000)
+maxiterations=10000
 integerdivision=True
+testconvergence=False
 convergenceratio=0
 while p**2*(m-f0) < f3:
     print("--------------------------")
@@ -43,24 +46,29 @@ while p**2*(m-f0) < f3:
         #plt.plot(lhs)
         #plt.plot(rhs)
         plt.plot(lhsrhsratio)
-        plt.show()
         print("Stopping after ",maxiterations," iterations") 
+        logisticseq=numpy.array(ChaosAttractor.ChaosPRG(algorithm="Logistic", seqlen=maxiterations, radix=3.5699340, initialcondition=0.000001, prime=104729, seed=complex(1+0j)))
+        logisticseq=(logisticseq/100000)
+        plt.plot(logisticseq.tolist())
+        plt.show()
+        correlationcoeff=numpy.corrcoef(lhsrhsratio,logisticseq)
+        print("Correlation coefficient between while loop LHS-RHS ratio and Logistic map:",correlationcoeff)
         exit(1)
-    print("LHS:",p**2*(m-f0))
+    #print("LHS:",p**2*(m-f0))
     lhs.append(p**2*(m-f0))
-    print("RHS:",f3)
+    #print("RHS:",f3)
     rhs.append(f3)
     print("LHS/RHS:",p**2*(m-f0)/f3)
     lhsrhsratio.append(p**2*(m-f0)/f3)
     d = 2*n*d-4*(-1)**n*h
     n = n+1
     g = gcd(n,q)
-    print("g:",g)
+    #print("g:",g)
     if integerdivision:
         q = n*(q // g)
     else:
         q = int(n*q/g)
-    print("q:",q)
+    #print("q:",q)
     if g==1: p=p+1
     m=0; g=q
     while g>1:
@@ -69,8 +77,9 @@ while p**2*(m-f0) < f3:
     f0=2*n*h
     f3=(2*n+3)*f3
     if len(lhsrhsratio) > 10:
-        convergenceratio=lhsrhsratio[len(lhsrhsratio)-1]/lhsrhsratio[len(lhsrhsratio)-2]
-        print("D'Alembert series convergence test:",convergenceratio)
+        if testconvergence:
+            convergenceratio=lhsrhsratio[len(lhsrhsratio)-1]/lhsrhsratio[len(lhsrhsratio)-2]
+            print("D'Alembert series convergence test:",convergenceratio)
         fractaldimension=hfd.hfd(lhsrhsratio)
         print("Higuchi Fractal Dimension of the 1-dimensional timeseries:",fractaldimension)
 print("Loop exits after ",n," iterations - Riemann Hypothesis is False")
@@ -81,3 +90,4 @@ plt.plot(lhs)
 plt.show()
 plt.plot(rhs)
 plt.show()
+
