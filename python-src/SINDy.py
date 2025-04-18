@@ -21,21 +21,24 @@ import numpy as np
 import yfinance as yf
 import json
 
-def SINDy_fit(t,x,y):
+def SINDy_fit(t,x,y,order=2,degree=3,threshold=0.0001):
     print("================ SINDy non-linear dynamics governing equation discovery =========")
-    print("t:",t)
-    print("x:",x)
-    print("y:",y)
+    #print("t:",t)
+    #print("x:",x)
+    #print("y:",y)
+    differentiation_method = ps.FiniteDifference(order=order)
+    feature_library = ps.PolynomialLibrary(degree=degree)
+    optimizer = ps.STLSQ(threshold=threshold)
     points=np.stack((x,y),axis=-1)
-    model=ps.SINDy(feature_names=["x","y"])
+    model=ps.SINDy(differentiation_method=differentiation_method, feature_library=feature_library, optimizer=optimizer,feature_names=["x","y"])
     model.fit(points,t=t)
+    model.print()
+    print("model coefficients:",model.coefficients())
+    print("model equations:",model.equations())
     print("--------------------")
     print("model predict():")
     print("--------------------")
     model.predict(points)
-    print("model coefficients:",model.coefficients())
-    print("model equations:",model.equations())
-    model.print()
 
 def stockquote_SINDy_model(ticker,period='5y',interval='1wk'):
     print("================= SINDy Stockquote Model =====================")

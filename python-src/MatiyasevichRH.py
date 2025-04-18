@@ -27,6 +27,7 @@ import sys
 import hfd 
 import ChaosAttractor
 import numpy
+import SINDy
 
 h=m=p=0
 d=f0=f3=n=q=1
@@ -82,6 +83,12 @@ while p**2*(m-f0) < f3:
             print("D'Alembert series convergence test:",convergenceratio)
         fractaldimension=hfd.hfd(lhsrhsratio)
         print("Higuchi Fractal Dimension of the 1-dimensional timeseries:",fractaldimension)
+        print("SINDy non-linear dynamics fit of LHS-RHS ratio series so far:")
+        l=len(lhsrhsratio)
+        t=numpy.arange(l)
+        x=numpy.arange(l)
+        y=lhsrhsratio
+        SINDy.SINDy_fit(t,x,y)
 print("Loop exits after ",n," iterations - Riemann Hypothesis is False")
 print("after loop - LHS:",p**2*(m-f0))
 print("after loop - RHS:",f3)
