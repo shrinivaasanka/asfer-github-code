@@ -20,12 +20,41 @@ import pysindy as ps
 import numpy as np
 import yfinance as yf
 import json
+from scipy.integrate import solve_ivp
+from pysindy.utils import lorenz
 
-def SINDy_fit(t,x,y,order=2,degree=3,threshold=0.0001):
+def SINDy_fit_lorenz(t,x,y,order=2,degree=5,threshold=0.0001):
+    print("================ SINDy non-linear dynamics governing equation discovery (Lorenz) =========")
+    print("t:",t)
+    print("x:",x)
+    print("y:",y)
+    integrator_keywords = {}
+    integrator_keywords['rtol'] = 1e-12
+    integrator_keywords['method'] = 'LSODA'
+    integrator_keywords['atol'] = 1e-12
+    t_span = (min(t), max(t))
+    x0 = [-8, 8, 27]
+    lorenzx = solve_ivp(lorenz, t_span, x0, t_eval=t, **integrator_keywords).y.T
+    print("x:",x)
+    differentiation_method = ps.FiniteDifference(order=order)
+    feature_library = ps.PolynomialLibrary(degree=degree)
+    optimizer = ps.STLSQ(threshold=threshold)
+    #model=ps.SINDy(differentiation_method=differentiation_method, feature_library=feature_library, optimizer=optimizer,feature_names=["x","y"])
+    model=ps.SINDy()
+    #model.fit(lorenzx,t=t[1]-t[0])
+    if len(t) > len(y):
+        y = np.append(np.zeros(len(t)-len(y)))
+    else:
+        y = y[:len(t)]
+    model.fit(y,t=t[1]-t[0])
+    print("model:",model)
+    model.print()
+    print("model coefficients:",model.coefficients())
+    print("model equations:",model.equations())
+    print("model score:", model.score(y,t=t[1]-t[0]))
+
+def SINDy_fit(t,x,y,order=2,degree=5,threshold=0.0001):
     print("================ SINDy non-linear dynamics governing equation discovery =========")
-    #print("t:",t)
-    #print("x:",x)
-    #print("y:",y)
     differentiation_method = ps.FiniteDifference(order=order)
     feature_library = ps.PolynomialLibrary(degree=degree)
     optimizer = ps.STLSQ(threshold=threshold)
@@ -40,7 +69,7 @@ def SINDy_fit(t,x,y,order=2,degree=3,threshold=0.0001):
     print("--------------------")
     model.predict(points)
 
-def stockquote_SINDy_model(ticker,period='5y',interval='1wk'):
+def stockquote_SINDy_model(ticker,period='5y',interval='1wk',model='Plain'):
     print("================= SINDy Stockquote Model =====================")
     print("Governing equation discovered for ticker:",ticker)
     pricehistory = yf.Ticker(ticker).history(period=period,interval=interval,actions=False)
@@ -49,7 +78,11 @@ def stockquote_SINDy_model(ticker,period='5y',interval='1wk'):
     t=np.arange(l)
     x=np.arange(l)
     y=timeseries
-    SINDy_fit(t,x,y)
+    if model=="LorenzLogisticMap":
+        t=np.arange(0,2,0.02)
+        SINDy_fit_lorenz(t,x,y)
+    if model=="Plain":
+        SINDy_fit(t,x,y)
 
 def read_rainfall_dataset(rainfalltimeseriesjson,datasource='IMD',subdivision='Tamil Nadu'):
     if datasource == 'IMD':
@@ -78,9 +111,15 @@ if __name__=="__main__":
     x1=np.exp(-2 * t)
     y1=np.exp(t)
     SINDy_fit(t,x1,y1)
-    stockquote_SINDy_model('MSFT')
+    t=np.arange(0,2,0.02)
+    SINDy_fit_lorenz(t,x1,y1)
+    stockquote_SINDy_model('MSFT',model='LorenzLogisticMap')
     stockquote_SINDy_model('GOOG')
-    stockquote_SINDy_model('AAPL')
+    stockquote_SINDy_model('AAPL',model='LorenzLogisticMap')
+    stockquote_SINDy_model('AMZN')
+    stockquote_SINDy_model('META',model='LorenzLogisticMap')
+    stockquote_SINDy_model('NVDA')
+    stockquote_SINDy_model('TSLA',model='LorenzLogisticMap')
     rftimeseries=read_rainfall_dataset("RainfallTimeseries_Sub_Division_IMD_2017.json",subdivision="Tamil Nadu")
     print("length of timeseries:",len(rftimeseries))
     precipitation_SINDy_model(rftimeseries)
