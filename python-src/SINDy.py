@@ -22,6 +22,8 @@ import yfinance as yf
 import json
 from scipy.integrate import solve_ivp
 from pysindy.utils import lorenz
+import matplotlib.pylab as plt
+import math
 
 def SINDy_fit_lorenz(t,x,y,order=2,degree=5,threshold=0.0001):
     print("================ SINDy non-linear dynamics governing equation discovery (Lorenz) =========")
@@ -35,15 +37,20 @@ def SINDy_fit_lorenz(t,x,y,order=2,degree=5,threshold=0.0001):
     t_span = (min(t), max(t))
     x0 = [-8, 8, 27]
     lorenzx = solve_ivp(lorenz, t_span, x0, t_eval=t, **integrator_keywords).y.T
-    print("x:",x)
+    #print("lorenzx:",lorenzx)
     differentiation_method = ps.FiniteDifference(order=order)
     feature_library = ps.PolynomialLibrary(degree=degree)
     optimizer = ps.STLSQ(threshold=threshold)
     #model=ps.SINDy(differentiation_method=differentiation_method, feature_library=feature_library, optimizer=optimizer,feature_names=["x","y"])
     model=ps.SINDy()
-    #model.fit(lorenzx,t=t[1]-t[0])
+    lorenzx_1=[math.sqrt(x*x+y*y+z*z) for x,y,z in lorenzx]
+    print("lorenzx_1:",lorenzx_1)
+    if len(t) > len(lorenzx_1):
+        lorenzx_1 = np.append(lorenzx_1,np.zeros(len(lorenzx_1)-len(y)))
+    else:
+        lorenzx_1 = lorenzx_1[:len(lorenzx_1)]
     if len(t) > len(y):
-        y = np.append(np.zeros(len(t)-len(y)))
+        y = np.append(y,np.zeros(len(t)-len(y)))
     else:
         y = y[:len(t)]
     model.fit(y,t=t[1]-t[0])
@@ -52,6 +59,14 @@ def SINDy_fit_lorenz(t,x,y,order=2,degree=5,threshold=0.0001):
     print("model coefficients:",model.coefficients())
     print("model equations:",model.equations())
     print("model score:", model.score(y,t=t[1]-t[0]))
+    #print("model score:", model.score(lorenzx,t=t[1]-t[0]))
+    #print("len(lorenzx):",len(lorenzx))
+    #print("len(y):",len(y))
+    #y3d=[[yelem,telem,0] for yelem,telem in zip(y,t)]
+    #print("y3d:",y3d)
+    predictions=model.predict(y)
+    print("model predictions:", predictions)
+    return predictions
 
 def SINDy_fit(t,x,y,order=2,degree=5,threshold=0.0001):
     print("================ SINDy non-linear dynamics governing equation discovery =========")
@@ -64,10 +79,9 @@ def SINDy_fit(t,x,y,order=2,degree=5,threshold=0.0001):
     model.print()
     print("model coefficients:",model.coefficients())
     print("model equations:",model.equations())
-    print("--------------------")
-    print("model predict():")
-    print("--------------------")
-    model.predict(points)
+    predictions=model.predict(points)
+    print("model predictions:", predictions)
+    return predictions
 
 def stockquote_SINDy_model(ticker,period='5y',interval='1wk',model='Plain'):
     print("================= SINDy Stockquote Model =====================")
@@ -79,10 +93,11 @@ def stockquote_SINDy_model(ticker,period='5y',interval='1wk',model='Plain'):
     x=np.arange(l)
     y=timeseries
     if model=="LorenzLogisticMap":
-        t=np.arange(0,2,0.02)
-        SINDy_fit_lorenz(t,x,y)
+        t=np.arange(0,1.0,1.0/float(len(y)))
+        predictions=SINDy_fit_lorenz(t,x,y)
     if model=="Plain":
-        SINDy_fit(t,x,y)
+        predictions=SINDy_fit(t,x,y)
+    plt.plot(predictions)
 
 def read_rainfall_dataset(rainfalltimeseriesjson,datasource='IMD',subdivision='Tamil Nadu'):
     if datasource == 'IMD':
@@ -114,12 +129,13 @@ if __name__=="__main__":
     t=np.arange(0,2,0.02)
     SINDy_fit_lorenz(t,x1,y1)
     stockquote_SINDy_model('MSFT',model='LorenzLogisticMap')
-    stockquote_SINDy_model('GOOG')
+    stockquote_SINDy_model('GOOG',model='LorenzLogisticMap')
     stockquote_SINDy_model('AAPL',model='LorenzLogisticMap')
-    stockquote_SINDy_model('AMZN')
+    stockquote_SINDy_model('AMZN',model='LorenzLogisticMap')
     stockquote_SINDy_model('META',model='LorenzLogisticMap')
-    stockquote_SINDy_model('NVDA')
+    stockquote_SINDy_model('NVDA',model='LorenzLogisticMap')
     stockquote_SINDy_model('TSLA',model='LorenzLogisticMap')
+    plt.show()
     rftimeseries=read_rainfall_dataset("RainfallTimeseries_Sub_Division_IMD_2017.json",subdivision="Tamil Nadu")
     print("length of timeseries:",len(rftimeseries))
     precipitation_SINDy_model(rftimeseries)
