@@ -53,19 +53,19 @@ def SINDy_fit_lorenz(t,x,y,order=2,degree=5,threshold=0.0001):
         y = np.append(y,np.zeros(len(t)-len(y)))
     else:
         y = y[:len(t)]
-    model.fit(y,t=t[1]-t[0])
-    print("model:",model)
+    model.fit(np.asarray(lorenzx_1),t=t[1]-t[0])
+    print("Lorenz model:",model)
     model.print()
-    print("model coefficients:",model.coefficients())
-    print("model equations:",model.equations())
-    print("model score:", model.score(y,t=t[1]-t[0]))
+    print("Lorenz model coefficients:",model.coefficients())
+    print("Lorenz model equations:",model.equations())
+    print("Lorenz model score:", model.score(y,t=t[1]-t[0]))
     #print("model score:", model.score(lorenzx,t=t[1]-t[0]))
     #print("len(lorenzx):",len(lorenzx))
     #print("len(y):",len(y))
     #y3d=[[yelem,telem,0] for yelem,telem in zip(y,t)]
     #print("y3d:",y3d)
     predictions=model.predict(y)
-    print("model predictions:", predictions)
+    print("Lorenz model predictions:", predictions)
     return predictions
 
 def SINDy_fit(t,x,y,order=2,degree=5,threshold=0.0001):
@@ -86,8 +86,12 @@ def SINDy_fit(t,x,y,order=2,degree=5,threshold=0.0001):
 def stockquote_SINDy_model(ticker,period='5y',interval='1wk',model='Plain'):
     print("================= SINDy Stockquote Model =====================")
     print("Governing equation discovered for ticker:",ticker)
-    pricehistory = yf.Ticker(ticker).history(period=period,interval=interval,actions=False)
-    timeseries = np.asarray(list(pricehistory["Open"]))
+    try:
+        pricehistory = yf.Ticker(ticker).history(period=period,interval=interval,actions=False)
+        timeseries = np.asarray(list(pricehistory["Open"]))
+    except:
+        print("Rate limit exception....")
+        timeseries = np.random.rand(100) 
     l=len(timeseries)
     t=np.arange(l)
     x=np.arange(l)
