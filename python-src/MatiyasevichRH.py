@@ -35,10 +35,11 @@ lhs=[]
 rhs=[]
 lhsrhsratio=[]
 sys.set_int_max_str_digits(150000)
-maxiterations=10000
+maxiterations=3000
 integerdivision=True
 testconvergence=False
 convergenceratio=0
+sindylorenzpredictions=[]
 while p**2*(m-f0) < f3:
     print("--------------------------")
     print("iteration:",n)
@@ -46,11 +47,13 @@ while p**2*(m-f0) < f3:
     if n > maxiterations:
         #plt.plot(lhs)
         #plt.plot(rhs)
-        plt.plot(lhsrhsratio)
+        plt.plot(lhsrhsratio, label="LHS-RHS ratio")
         print("Stopping after ",maxiterations," iterations") 
         logisticseq=numpy.array(ChaosAttractor.ChaosPRG(algorithm="Logistic", seqlen=maxiterations, radix=3.5699340, initialcondition=0.000001, prime=104729, seed=complex(1+0j)))
         logisticseq=(logisticseq/100000)
-        plt.plot(logisticseq.tolist())
+        plt.plot(logisticseq.tolist(), label="ChaosPRG Logistic")
+        plt.plot(sindylorenzpredictions/100, label="SINDy Lorenz Logistic predictions")
+        plt.legend()
         plt.show()
         correlationcoeff=numpy.corrcoef(lhsrhsratio,logisticseq)
         print("Correlation coefficient between while loop LHS-RHS ratio and Logistic map:",correlationcoeff)
@@ -85,10 +88,11 @@ while p**2*(m-f0) < f3:
         print("Higuchi Fractal Dimension of the 1-dimensional timeseries:",fractaldimension)
         print("SINDy non-linear dynamics fit of LHS-RHS ratio series so far:")
         l=len(lhsrhsratio)
-        t=numpy.arange(l)
+        #t=numpy.arange(l)
         x=numpy.arange(l)
         y=lhsrhsratio
-        SINDy.SINDy_fit(t,x,y)
+        t=numpy.arange(0,1.0,1.0/float(len(y)))
+        sindylorenzpredictions=SINDy.SINDy_fit_lorenz(t,x,numpy.asarray(y)/100)
 print("Loop exits after ",n," iterations - Riemann Hypothesis is False")
 print("after loop - LHS:",p**2*(m-f0))
 print("after loop - RHS:",f3)
