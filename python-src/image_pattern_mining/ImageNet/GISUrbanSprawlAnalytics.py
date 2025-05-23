@@ -346,6 +346,7 @@ def urban_sprawl_from_GEE(imagecollection,featurecollection,nightlightsparameter
 
 def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt,granularity=0.01,delineationparams=None,bboxcentroid=True):
     urbansprawlstatistics=[]
+    urbansprawlstatisticsaggregate=0
     longlatstat={}
     rows=0
     if bboxcentroid:
@@ -356,6 +357,7 @@ def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt,granularity=0.01,de
         cols=0
         for lat in np.arange(latx,laty,granularity):
             values=data_from_raster_georeferencing(raster,longitude=lon,latitude=lat,sample=True,datatype=dt)
+            urbansprawlstatisticsaggregate += values[0]
             urbansprawlstatistics.append(values[0])
             longlatstat[(lon,lat)]=values[0]
             if delineationparams is not None:
@@ -370,9 +372,10 @@ def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt,granularity=0.01,de
         rows+=1
     print("urban_sprawl_from_raster(): bounding box shape = ",(rows,cols))
     print("urban_sprawl_from_raster(): urbansprawlstatisitcs = ",urbansprawlstatistics)
+    print("urban_sprawl_from_raster(): urbansprawlstatisitcsaggregate = ",urbansprawlstatisticsaggregate)
     print("urban_sprawl_from_raster(): longlatstat = ",longlatstat)
     urbansprawl_gini_coefficient(urbansprawlstatistics)
-    return (urbansprawlstatistics,(rows,cols),longlatstat)
+    return (urbansprawlstatistics,(rows,cols),longlatstat,urbansprawlstatisticsaggregate)
 
 def four_colored_morphological_settelement_zones(heightrasterdata,longx,latx,longy,laty,clearingheight=10.9727999833):
     heightrasterhist=defaultdict(int)
@@ -941,8 +944,11 @@ if __name__ == "__main__":
     #urban_sprawl_from_ucdb_excel(ghsl_ucdb_excel="./GHS_UCDB_REGION_CENTRAL_AND_SOUTHERN_ASIA_R2024A.xlsx")
     
     #GHSL R2024A UCDB imagery segmentation analysis
-    ncoloredsegments_2024=defaultdict(list)
-    seg16=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_R2024A_UCDB_ChennaiMetropolitanArea2.jpeg")
-    ncoloredsegments_2024=polya_urn_urban_growth_model("testlogs/GHSL_R2024A_UCDB_ChennaiMetropolitanArea2.jpeg",ncoloredsegments_2024,seg16)
-    urban_sprawl_from_segments("testlogs/GHSL_R2024A_UCDB_ChennaiMetropolitanArea2.jpeg",seg16,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3)
-    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2024.keys())," colored urban sprawl segmentation (Projection based on R2024A):",ncoloredsegments_2024)
+    #ncoloredsegments_2024=defaultdict(list)
+    #seg16=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_R2024A_UCDB_ChennaiMetropolitanArea2.jpeg")
+    #ncoloredsegments_2024=polya_urn_urban_growth_model("testlogs/GHSL_R2024A_UCDB_ChennaiMetropolitanArea2.jpeg",ncoloredsegments_2024,seg16)
+    #urban_sprawl_from_segments("testlogs/GHSL_R2024A_UCDB_ChennaiMetropolitanArea2.jpeg",seg16,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3)
+    #print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2024.keys())," colored urban sprawl segmentation (Projection based on R2024A):",ncoloredsegments_2024)
+    
+    #Chennai Metropolitan Area Sprawl Bounding Box 4 - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257 - R2022A and R2023A comparison
+    r1data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/GHS_POP_E2025_GLOBE_R2023A_54009_1000_V1_0_20240828143933_band1.tif",dt="Residential Population Estimates R2025A")
