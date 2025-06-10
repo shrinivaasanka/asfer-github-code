@@ -23,12 +23,12 @@ import operator
 #from googlesearch import search 
 import os
 import networkx as nx
-import spacy
+#import spacy
 import itertools
 import pprint
-from pyplexity import PerplexityModel
+#from pyplexity import PerplexityModel
 import collections
-from KnowledgeGraph import create_SpaCy_knowledge_graph
+#from KnowledgeGraph import create_SpaCy_knowledge_graph
 from nltk.corpus import wordnet as wn
 from nltk.parse.dependencygraph import conll_data2, DependencyGraph
 from nltk.parse.projectivedependencyparser import ProjectiveDependencyParser, ProbabilisticProjectiveDependencyParser
@@ -47,8 +47,11 @@ def OpenAIQuestionAnswering(question):
 
 def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False,perplexity_algorithm="WordNet",treenode_type="PoS",sentence_tuple_array=False,sentence_PoS_array=None,randomwalk_to_sentence_template_ratio=10,user_defined_PoS2Vocabulary_dict=None):
     import RecursiveGlossOverlap_Classifier
+    import spacy
+    from pyplexity import PerplexityModel
     from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
     from collections import defaultdict
+    from KnowledgeGraph import create_SpaCy_knowledge_graph
     import WordNetPath
     answersfile=open("QuestionAnswering.FormalLLM.txt","w")
     print("================================================================")
@@ -274,6 +277,7 @@ def wordnet_perplexity(sentence):
     return wordnetperplexity
 
 def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type="tag",max_synth_sentences=1000,user_defined_PoS2Vocabulary_dict=None,max_words_per_PoS=1000):
+    import spacy
     spasee=spacy.load("en_core_web_sm")
     rwtexts=[]
     rwstring=" ".join(list(set(randomwalkvertices)))
