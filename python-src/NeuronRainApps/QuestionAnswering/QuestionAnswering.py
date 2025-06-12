@@ -45,7 +45,7 @@ def OpenAIQuestionAnswering(question):
     chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-3.5-turbo")
     print("chat completion:",chat_completion)
 
-def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False,perplexity_algorithm="WordNet",treenode_type="PoS",sentence_tuple_array=False,sentence_PoS_array=None,randomwalk_to_sentence_template_ratio=10,user_defined_PoS2Vocabulary_dict=None):
+def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False,perplexity_algorithm="WordNet",treenode_type="PoS",sentence_tuple_array=False,sentence_PoS_array=None,randomwalk_to_sentence_template_ratio=10,user_defined_PoS2Vocabulary_dict=None,transformers_enabled=False):
     import RecursiveGlossOverlap_Classifier
     import spacy
     from pyplexity import PerplexityModel
@@ -124,48 +124,49 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                 answertextgraphclassified=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(" ".join(wssummarysentences))
                 answertextgraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(" ".join(wssummarysentences))
             print("Answer Textgraph ",cnt,":",answertextgraphclassified)
-            question_dimension=(len(questiontextgraph[0].nodes()),len(questiontextgraph[0].nodes()))
-            answer_dimension=(len(answertextgraph[0].nodes()),len(answertextgraph[0].nodes()))
-            queryweights_question=np.full(question_dimension,0.5).tolist()
-            keyweights_question=np.full(question_dimension,0.5).tolist()
-            valueweights_question=np.full(question_dimension,0.5).tolist()
-            queryweights_answer=np.full(answer_dimension,0.5).tolist()
-            keyweights_answer=np.full(answer_dimension,0.5).tolist()
-            valueweights_answer=np.full(answer_dimension,0.5).tolist()
-            question_variables=np.full(question_dimension,0.5).tolist()
-            answer_variables=np.full(answer_dimension,0.5).tolist()
-            transformerattention_question=rlfg.rlfg_transformers_attention_model(questiontextgraph[0],queryweights_question,keyweights_question,valueweights_question,question_variables)
-            transformerattention_answer=rlfg.rlfg_transformers_attention_model(answertextgraph[0],queryweights_answer,keyweights_answer,valueweights_answer,answer_variables)
-            #answertextgraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(searchresults)
-            cnt+=1
-            answertextgraphs.append(answertextgraph)
-            row=0
-            queryweightedges=defaultdict()
-            keyweightedges=defaultdict()
-            valueweightedges=defaultdict()
-            for v1 in questiontextgraph[0].nodes():
-                 column=0
-                 for v2 in questiontextgraph[0].nodes():
-                     queryweightedges[v1 + "-" + v2]=abs(transformerattention_question[0][row][column])
-            for v1 in answertextgraph[0].nodes():
-                 column=0
-                 for v2 in answertextgraph[0].nodes():
-                     keyweightedges[v1 + "-" + v2]=abs(transformerattention_answer[1][row][column])
-                     valueweightedges[v1 + "-" + v2]=abs(transformerattention_answer[2][row][column])
-                     column+=1
-                 row+=1
-            queryweightedgeslist=sorted(queryweightedges.items(),key=operator.itemgetter(1), reverse=True)
-            keyweightedgeslist=sorted(keyweightedges.items(),key=operator.itemgetter(1), reverse=True)
-            valueweightedgeslist=sorted(valueweightedges.items(),key=operator.itemgetter(1), reverse=True)
-            print("queryweightedges:",queryweightedgeslist)
-            print("keyweightedges:",keyweightedgeslist)
-            print("valueweightedges:",valueweightedgeslist)
-            keyweightedgeskeys=keyweightedges.keys()
-            valueweightedgeskeys=valueweightedges.keys()
-            print("keyweightedgeskeys:",keyweightedgeskeys)
-            print("valueweightedgeskeys:",valueweightedgeskeys)
-            if cnt == maxanswers:
-                break
+            if transformers_enabled==True:
+                question_dimension=(len(questiontextgraph[0].nodes()),len(questiontextgraph[0].nodes()))
+                answer_dimension=(len(answertextgraph[0].nodes()),len(answertextgraph[0].nodes()))
+                queryweights_question=np.full(question_dimension,0.5).tolist()
+                keyweights_question=np.full(question_dimension,0.5).tolist()
+                valueweights_question=np.full(question_dimension,0.5).tolist()
+                queryweights_answer=np.full(answer_dimension,0.5).tolist()
+                keyweights_answer=np.full(answer_dimension,0.5).tolist()
+                valueweights_answer=np.full(answer_dimension,0.5).tolist()
+                question_variables=np.full(question_dimension,0.5).tolist()
+                answer_variables=np.full(answer_dimension,0.5).tolist()
+                transformerattention_question=rlfg.rlfg_transformers_attention_model(questiontextgraph[0],queryweights_question,keyweights_question,valueweights_question,question_variables)
+                transformerattention_answer=rlfg.rlfg_transformers_attention_model(answertextgraph[0],queryweights_answer,keyweights_answer,valueweights_answer,answer_variables)
+                #answertextgraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(searchresults)
+                cnt+=1
+                answertextgraphs.append(answertextgraph)
+                row=0
+                queryweightedges=defaultdict()
+                keyweightedges=defaultdict()
+                valueweightedges=defaultdict()
+                for v1 in questiontextgraph[0].nodes():
+                   column=0
+                   for v2 in questiontextgraph[0].nodes():
+                       queryweightedges[v1 + "-" + v2]=abs(transformerattention_question[0][row][column])
+                for v1 in answertextgraph[0].nodes():
+                   column=0
+                   for v2 in answertextgraph[0].nodes():
+                       keyweightedges[v1 + "-" + v2]=abs(transformerattention_answer[1][row][column])
+                       valueweightedges[v1 + "-" + v2]=abs(transformerattention_answer[2][row][column])
+                       column+=1
+                   row+=1
+                queryweightedgeslist=sorted(queryweightedges.items(),key=operator.itemgetter(1), reverse=True)
+                keyweightedgeslist=sorted(keyweightedges.items(),key=operator.itemgetter(1), reverse=True)
+                valueweightedgeslist=sorted(valueweightedges.items(),key=operator.itemgetter(1), reverse=True)
+                print("queryweightedges:",queryweightedgeslist)
+                print("keyweightedges:",keyweightedgeslist)
+                print("valueweightedges:",valueweightedgeslist)
+                keyweightedgeskeys=keyweightedges.keys()
+                valueweightedgeskeys=valueweightedges.keys()
+                print("keyweightedgeskeys:",keyweightedgeskeys)
+                print("valueweightedgeskeys:",valueweightedgeskeys)
+                if cnt == maxanswers:
+                    break
             naturallanguageanswer=""
             if sentence_type=="xtag_node34_triplets":
                 for edge in queryweightedgeslist[:int(len(queryweightedges)/answerfraction)]:
@@ -416,6 +417,7 @@ def get_closest_possible_tokens(rwtexttoks, vocabulary, max_words_per_PoS=1000,m
 
 def make_sentence(wordnetsynsets,sentence_type="xtag_node34_triplets",standard_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},markblanks=False,edgelabels=None,enable_frege_projective_dependency_grammar=True,treenode_type="PoS"):
     from nltk.corpus import wordnet as wn
+    import spacy
     print("make_sentence():wordsynsets = ",wordnetsynsets)
     if sentence_type == "xtag_node34_triplets":
         prevword=wordnetsynsets[0]
@@ -559,7 +561,7 @@ if __name__ == "__main__":
     for sentencePoSdict in list_of_sentence_PoS_dicts[:1]:
         print("sentencePoSdict:",sentencePoSdict)
         #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
-        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=5,number_of_random_walks=3,blanks=False,treenode_type="tag",user_defined_PoS2Vocabulary_dict=kaggle_corpus_PoS2Vocabulary_dict)
+        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=5,number_of_random_walks=3,blanks=False,treenode_type="tag",user_defined_PoS2Vocabulary_dict=kaggle_corpus_PoS2Vocabulary_dict)
         print("---------------------------------------------")
 
     print("----------------------- sentence synthesis (sentence_PoS_array retrieved from treebank) --------------------")
@@ -567,7 +569,7 @@ if __name__ == "__main__":
     for sentencePoSarray in list_of_sentence_PoS_arrays[:1]:
         print("sentencePoSarray:",sentencePoSarray)
         #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=10,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
-        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=kaggle_corpus_PoS2Vocabulary_dict)
+        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=kaggle_corpus_PoS2Vocabulary_dict)
         print("---------------------------------------------")
 
     #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
