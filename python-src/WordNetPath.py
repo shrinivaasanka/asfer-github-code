@@ -54,7 +54,7 @@ def path_between(w1,w2):
 		for p in path:
 			plemmanames = p.lemma_names()
 			path_lemmas.append(plemmanames[0])
-		#print(path_lemmas)
+		print(path_lemmas)
 	except:	
 		pass
 	return path_lemmas

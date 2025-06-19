@@ -42,6 +42,7 @@ from nltk.corpus import sentiwordnet as swn
 from nltk.book import *
 from nltk.corpus import stopwords
 from PyDictionary import PyDictionary
+from WordNetPath import path_between
 
 definitiongraphedges = defaultdict(list)
 definitiongraphedgelabels = defaultdict(list)
@@ -63,6 +64,17 @@ use_pywsd_lesk = False
 use_nltk_lesk = False
 #function - compute_idf()
 
+def wordnet_path_meaningfulness(sentence):
+    words = sentence.split(" ")
+    wordnetpathmeaningfulness=[]
+    for w in range(len(words)-1):
+        w1 = words[w]
+        w2 = words[w+1]
+        if len(w1) > 0 and len(w2) > 0:
+            wordnet_distance = path_between(w1,w2) 
+            print("wordnet_path between ",w1," and ",w2,":",wordnet_distance)
+            wordnetpathmeaningfulness = wordnetpathmeaningfulness + wordnet_distance
+    return len(wordnetpathmeaningfulness)
 
 def compute_idf(corpus, keyword):
     import math
@@ -288,7 +300,8 @@ def RecursiveGlossOverlapGraph(text, level=3):
     return ret
 
 
-def RecursiveGlossOverlap_Classify(text):
+def RecursiveGlossOverlap_Classify(text,maxfractionclasses=1):
+    print("Text to RecursiveGlossOverlap_Classify:",text)
     definitiongraphedges = defaultdict(list)
     definitiongraphedgelabels = defaultdict(list)
 
@@ -431,17 +444,27 @@ def RecursiveGlossOverlap_Classify(text):
     top_percentile = 0
     max_core_number = 0
     max_core_number_class = ""
+    core_meaningfulness = 1
     for n in sorted_core_nxg:
         print(("This document belongs to class:", n[0], ",core number=", n[1]))
-        if top_percentile < no_of_classes*0.50:
+        if top_percentile <= no_of_classes*maxfractionclasses:
             top_percentile += 1
         else:
             break
         if n[1] > max_core_number:
             max_core_number = n[1]
             max_core_number_class = n[0]
+        core_meaningfulness = core_meaningfulness * n[1]
+    print("=============================================================================================================")
+    print("Core Meaningfulness of the text:")
+    print("=============================================================================================================")
+    print("Core meaningfulness of the text:",core_meaningfulness)
     print(("	max_core_number", max_core_number))
-
+    print("=============================================================================================================")
+    print("WordNet Path Meaningfulness of the text:")
+    print("=============================================================================================================")
+    wordnetpathmeaningfulness=wordnet_path_meaningfulness(text)
+    print("wordnet path meaningfulness:",wordnetpathmeaningfulness)
     print("===================================================================")
     print("Betweenness Centrality of Recursive Gloss Overlap graph vertices")
     print("===================================================================")

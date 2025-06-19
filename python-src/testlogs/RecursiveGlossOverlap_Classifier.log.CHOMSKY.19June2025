@@ -1,0 +1,78 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+Text to RecursiveGlossOverlap_Classify: colorless green ideas sleep furiously
+
+2
+defaultdict(<class 'list'>, {'pigment': ['green'], 'cognition': ['idea'], 'growing': ['green'], 'wild': ['furiously'], 'manner': ['furiously'], 'color': ['green'], 'deep': ['sleep'], 'thing': ['idea'], 'sleep': ['sleep'], 'elements': ['furiously'], 'torpid': ['sleep'], 'resembling': ['green', 'sleep'], 'thinking': ['idea'], 'interest': ['colorless'], 'main': ['idea'], 'grass': ['green'], 'stormy': ['furiously'], 'lacking': ['colorless'], 'content': ['idea'], 'state': ['sleep'], 'variety': ['colorless'], 'green': ['green']})
+('definitiongraph networkx edges:', OutEdgeView([('pigment', 'green'), ('green', 'pigment'), ('green', 'growing'), ('green', 'color'), ('green', 'resembling'), ('green', 'grass'), ('green', 'green'), ('cognition', 'idea'), ('idea', 'cognition'), ('idea', 'thing'), ('idea', 'thinking'), ('idea', 'main'), ('idea', 'content'), ('growing', 'green'), ('wild', 'furiously'), ('furiously', 'wild'), ('furiously', 'manner'), ('furiously', 'elements'), ('furiously', 'stormy'), ('manner', 'furiously'), ('color', 'green'), ('deep', 'sleep'), ('sleep', 'deep'), ('sleep', 'sleep'), ('sleep', 'torpid'), ('sleep', 'resembling'), ('sleep', 'state'), ('thing', 'idea'), ('elements', 'furiously'), ('torpid', 'sleep'), ('resembling', 'green'), ('resembling', 'sleep'), ('thinking', 'idea'), ('interest', 'colorless'), ('colorless', 'interest'), ('colorless', 'lacking'), ('colorless', 'variety'), ('main', 'idea'), ('grass', 'green'), ('stormy', 'furiously'), ('lacking', 'colorless'), ('content', 'idea'), ('state', 'sleep'), ('variety', 'colorless')]))
+('Core number (sorted) :', [('pigment', 2), ('green', 2), ('cognition', 2), ('idea', 2), ('growing', 2), ('wild', 2), ('furiously', 2), ('manner', 2), ('color', 2), ('deep', 2), ('sleep', 2), ('thing', 2), ('elements', 2), ('torpid', 2), ('resembling', 2), ('thinking', 2), ('interest', 2), ('colorless', 2), ('main', 2), ('grass', 2), ('stormy', 2), ('lacking', 2), ('content', 2), ('state', 2), ('variety', 2)])
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'pigment', ',core number=', 2)
+('This document belongs to class:', 'green', ',core number=', 2)
+('This document belongs to class:', 'cognition', ',core number=', 2)
+('This document belongs to class:', 'idea', ',core number=', 2)
+('This document belongs to class:', 'growing', ',core number=', 2)
+('This document belongs to class:', 'wild', ',core number=', 2)
+('This document belongs to class:', 'furiously', ',core number=', 2)
+('This document belongs to class:', 'manner', ',core number=', 2)
+('This document belongs to class:', 'color', ',core number=', 2)
+('This document belongs to class:', 'deep', ',core number=', 2)
+('This document belongs to class:', 'sleep', ',core number=', 2)
+('This document belongs to class:', 'thing', ',core number=', 2)
+('This document belongs to class:', 'elements', ',core number=', 2)
+('This document belongs to class:', 'torpid', ',core number=', 2)
+('This document belongs to class:', 'resembling', ',core number=', 2)
+('This document belongs to class:', 'thinking', ',core number=', 2)
+('This document belongs to class:', 'interest', ',core number=', 2)
+('This document belongs to class:', 'colorless', ',core number=', 2)
+('This document belongs to class:', 'main', ',core number=', 2)
+('This document belongs to class:', 'grass', ',core number=', 2)
+('This document belongs to class:', 'stormy', ',core number=', 2)
+('This document belongs to class:', 'lacking', ',core number=', 2)
+('This document belongs to class:', 'content', ',core number=', 2)
+('This document belongs to class:', 'state', ',core number=', 2)
+('This document belongs to class:', 'variety', ',core number=', 2)
+=============================================================================================================
+Core Meaningfulness of the text:
+=============================================================================================================
+Core meaningfulness of the text: 33554432
+('\tmax_core_number', 2)
+=============================================================================================================
+WordNet Path Meaningfulness of the text:
+=============================================================================================================
+wordnet_path between  colorless  and  green : []
+wordnet_path between  green  and  ideas : []
+wordnet_path between  ideas  and  sleep : []
+wordnet_path between  sleep  and  furiously
+ : []
+wordnet path meaningfulness: 0
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('green', 0.09420289855072464), ('sleep', 0.07608695652173914), ('resembling', 0.07246376811594203), ('idea', 0.036231884057971016), ('furiously', 0.021739130434782608), ('colorless', 0.010869565217391304), ('pigment', 0.0), ('cognition', 0.0), ('growing', 0.0), ('wild', 0.0), ('manner', 0.0), ('color', 0.0), ('deep', 0.0), ('thing', 0.0), ('elements', 0.0), ('torpid', 0.0), ('thinking', 0.0), ('interest', 0.0), ('main', 0.0), ('grass', 0.0), ('stormy', 0.0), ('lacking', 0.0), ('content', 0.0), ('state', 0.0), ('variety', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('green', 0.2109375), ('resembling', 0.2109375), ('idea', 0.20833333333333334), ('sleep', 0.1875), ('furiously', 0.16666666666666666), ('pigment', 0.140625), ('growing', 0.140625), ('color', 0.140625), ('grass', 0.140625), ('deep', 0.1298076923076923), ('torpid', 0.1298076923076923), ('state', 0.1298076923076923), ('colorless', 0.125), ('cognition', 0.11574074074074076), ('thing', 0.11574074074074076), ('thinking', 0.11574074074074076), ('main', 0.11574074074074076), ('content', 0.11574074074074076), ('wild', 0.09523809523809523), ('manner', 0.09523809523809523), ('elements', 0.09523809523809523), ('stormy', 0.09523809523809523), ('interest', 0.075), ('lacking', 0.075), ('variety', 0.075)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('green', 0.41666666666666663), ('idea', 0.41666666666666663), ('furiously', 0.3333333333333333), ('sleep', 0.3333333333333333), ('colorless', 0.25), ('resembling', 0.16666666666666666), ('pigment', 0.08333333333333333), ('cognition', 0.08333333333333333), ('growing', 0.08333333333333333), ('wild', 0.08333333333333333), ('manner', 0.08333333333333333), ('color', 0.08333333333333333), ('deep', 0.08333333333333333), ('thing', 0.08333333333333333), ('elements', 0.08333333333333333), ('torpid', 0.08333333333333333), ('thinking', 0.08333333333333333), ('interest', 0.08333333333333333), ('main', 0.08333333333333333), ('grass', 0.08333333333333333), ('stormy', 0.08333333333333333), ('lacking', 0.08333333333333333), ('content', 0.08333333333333333), ('state', 0.08333333333333333), ('variety', 0.08333333333333333)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('idea', 0.11351488576971729), ('green', 0.10483576087569567), ('furiously', 0.09513616432728797), ('sleep', 0.08543656777888026), ('colorless', 0.07675744288485865), ('resembling', 0.04197650377839712), ('interest', 0.027747519038380467), ('lacking', 0.027747519038380467), ('variety', 0.027747519038380467), ('wild', 0.02621595891817802), ('manner', 0.02621595891817802), ('elements', 0.02621595891817802), ('stormy', 0.02621595891817802), ('cognition', 0.02529702284605656), ('thing', 0.02529702284605656), ('thinking', 0.02529702284605656), ('main', 0.02529702284605656), ('content', 0.02529702284605656), ('deep', 0.024154847546561418), ('torpid', 0.024154847546561418), ('state', 0.024154847546561418), ('pigment', 0.02382165623183571), ('growing', 0.02382165623183571), ('color', 0.02382165623183571), ('grass', 0.02382165623183571)]
+('__main__(): This text belongs to classes:', ([('pigment', 2), ('green', 2), ('cognition', 2), ('idea', 2), ('growing', 2), ('wild', 2), ('furiously', 2), ('manner', 2), ('color', 2), ('deep', 2), ('sleep', 2), ('thing', 2), ('elements', 2), ('torpid', 2), ('resembling', 2), ('thinking', 2), ('interest', 2), ('colorless', 2), ('main', 2), ('grass', 2), ('stormy', 2), ('lacking', 2), ('content', 2), ('state', 2), ('variety', 2)], [('idea', 0.11351488576971729), ('green', 0.10483576087569567), ('furiously', 0.09513616432728797), ('sleep', 0.08543656777888026), ('colorless', 0.07675744288485865), ('resembling', 0.04197650377839712), ('interest', 0.027747519038380467), ('lacking', 0.027747519038380467), ('variety', 0.027747519038380467), ('wild', 0.02621595891817802), ('manner', 0.02621595891817802), ('elements', 0.02621595891817802), ('stormy', 0.02621595891817802), ('cognition', 0.02529702284605656), ('thing', 0.02529702284605656), ('thinking', 0.02529702284605656), ('main', 0.02529702284605656), ('content', 0.02529702284605656), ('deep', 0.024154847546561418), ('torpid', 0.024154847546561418), ('state', 0.024154847546561418), ('pigment', 0.02382165623183571), ('growing', 0.02382165623183571), ('color', 0.02382165623183571), ('grass', 0.02382165623183571)]))

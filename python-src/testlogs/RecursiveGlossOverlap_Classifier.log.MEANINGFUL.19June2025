@@ -1,0 +1,87 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+Text to RecursiveGlossOverlap_Classify: unattractive raw ideas are kept in abeyance for long
+
+2
+defaultdict(<class 'list'>, {'informal': ['raw'], 'duration': ['long'], 'sounds': ['long'], 'cognition': ['idea'], 'state': ['keep'], 'thinking': ['idea'], 'temporary': ['abeyance'], 'syllables': ['long'], 'e.g.': ['keep'], 'lacking': ['unattractive'], 'position': ['keep'], 'content': ['idea'], 'suspension': ['abeyance'], 'nakedness': ['raw'], 'thing': ['idea'], 'charm': ['unattractive'], 'relatively': ['long'], 'long': ['long'], 'activity': ['keep'], 'terms': ['raw'], 'beauty': ['unattractive'], 'certain': ['keep'], 'main': ['idea'], 'cessation': ['abeyance'], 'speech': ['long'], 'keep': ['keep']})
+('definitiongraph networkx edges:', OutEdgeView([('informal', 'raw'), ('raw', 'informal'), ('raw', 'nakedness'), ('raw', 'terms'), ('duration', 'long'), ('long', 'duration'), ('long', 'sounds'), ('long', 'syllables'), ('long', 'relatively'), ('long', 'long'), ('long', 'speech'), ('sounds', 'long'), ('cognition', 'idea'), ('idea', 'cognition'), ('idea', 'thinking'), ('idea', 'content'), ('idea', 'thing'), ('idea', 'main'), ('state', 'keep'), ('keep', 'state'), ('keep', 'e.g.'), ('keep', 'position'), ('keep', 'activity'), ('keep', 'certain'), ('keep', 'keep'), ('thinking', 'idea'), ('temporary', 'abeyance'), ('abeyance', 'temporary'), ('abeyance', 'suspension'), ('abeyance', 'cessation'), ('syllables', 'long'), ('e.g.', 'keep'), ('lacking', 'unattractive'), ('unattractive', 'lacking'), ('unattractive', 'charm'), ('unattractive', 'beauty'), ('position', 'keep'), ('content', 'idea'), ('suspension', 'abeyance'), ('nakedness', 'raw'), ('thing', 'idea'), ('charm', 'unattractive'), ('relatively', 'long'), ('activity', 'keep'), ('terms', 'raw'), ('beauty', 'unattractive'), ('certain', 'keep'), ('main', 'idea'), ('cessation', 'abeyance'), ('speech', 'long')]))
+('Core number (sorted) :', [('informal', 2), ('raw', 2), ('duration', 2), ('long', 2), ('sounds', 2), ('cognition', 2), ('idea', 2), ('state', 2), ('keep', 2), ('thinking', 2), ('temporary', 2), ('abeyance', 2), ('syllables', 2), ('e.g.', 2), ('lacking', 2), ('unattractive', 2), ('position', 2), ('content', 2), ('suspension', 2), ('nakedness', 2), ('thing', 2), ('charm', 2), ('relatively', 2), ('activity', 2), ('terms', 2), ('beauty', 2), ('certain', 2), ('main', 2), ('cessation', 2), ('speech', 2)])
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'informal', ',core number=', 2)
+('This document belongs to class:', 'raw', ',core number=', 2)
+('This document belongs to class:', 'duration', ',core number=', 2)
+('This document belongs to class:', 'long', ',core number=', 2)
+('This document belongs to class:', 'sounds', ',core number=', 2)
+('This document belongs to class:', 'cognition', ',core number=', 2)
+('This document belongs to class:', 'idea', ',core number=', 2)
+('This document belongs to class:', 'state', ',core number=', 2)
+('This document belongs to class:', 'keep', ',core number=', 2)
+('This document belongs to class:', 'thinking', ',core number=', 2)
+('This document belongs to class:', 'temporary', ',core number=', 2)
+('This document belongs to class:', 'abeyance', ',core number=', 2)
+('This document belongs to class:', 'syllables', ',core number=', 2)
+('This document belongs to class:', 'e.g.', ',core number=', 2)
+('This document belongs to class:', 'lacking', ',core number=', 2)
+('This document belongs to class:', 'unattractive', ',core number=', 2)
+('This document belongs to class:', 'position', ',core number=', 2)
+('This document belongs to class:', 'content', ',core number=', 2)
+('This document belongs to class:', 'suspension', ',core number=', 2)
+('This document belongs to class:', 'nakedness', ',core number=', 2)
+('This document belongs to class:', 'thing', ',core number=', 2)
+('This document belongs to class:', 'charm', ',core number=', 2)
+('This document belongs to class:', 'relatively', ',core number=', 2)
+('This document belongs to class:', 'activity', ',core number=', 2)
+('This document belongs to class:', 'terms', ',core number=', 2)
+('This document belongs to class:', 'beauty', ',core number=', 2)
+('This document belongs to class:', 'certain', ',core number=', 2)
+('This document belongs to class:', 'main', ',core number=', 2)
+('This document belongs to class:', 'cessation', ',core number=', 2)
+('This document belongs to class:', 'speech', ',core number=', 2)
+=============================================================================================================
+Core Meaningfulness of the text:
+=============================================================================================================
+Core meaningfulness of the text: 1073741824
+('\tmax_core_number', 2)
+=============================================================================================================
+WordNet Path Meaningfulness of the text:
+=============================================================================================================
+wordnet_path between  unattractive  and  raw : []
+wordnet_path between  raw  and  ideas : []
+wordnet_path between  ideas  and  are : []
+wordnet_path between  are  and  kept : []
+wordnet_path between  kept  and  in : []
+wordnet_path between  in  and  abeyance : ['inch', 'linear_unit', 'unit_of_measurement', 'definite_quantity', 'measure', 'abstraction', 'abeyance', 'inaction', 'state', 'attribute', 'abstraction']
+wordnet_path between  abeyance  and  for : []
+wordnet_path between  for  and  long
+ : []
+wordnet path meaningfulness: 11
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('long', 0.024630541871921183), ('idea', 0.024630541871921183), ('keep', 0.024630541871921183), ('raw', 0.007389162561576354), ('abeyance', 0.007389162561576354), ('unattractive', 0.007389162561576354), ('informal', 0.0), ('duration', 0.0), ('sounds', 0.0), ('cognition', 0.0), ('state', 0.0), ('thinking', 0.0), ('temporary', 0.0), ('syllables', 0.0), ('e.g.', 0.0), ('lacking', 0.0), ('position', 0.0), ('content', 0.0), ('suspension', 0.0), ('nakedness', 0.0), ('thing', 0.0), ('charm', 0.0), ('relatively', 0.0), ('activity', 0.0), ('terms', 0.0), ('beauty', 0.0), ('certain', 0.0), ('main', 0.0), ('cessation', 0.0), ('speech', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('long', 0.1724137931034483), ('idea', 0.1724137931034483), ('keep', 0.1724137931034483), ('raw', 0.10344827586206896), ('abeyance', 0.10344827586206896), ('unattractive', 0.10344827586206896), ('duration', 0.09578544061302684), ('sounds', 0.09578544061302684), ('cognition', 0.09578544061302684), ('state', 0.09578544061302684), ('thinking', 0.09578544061302684), ('syllables', 0.09578544061302684), ('e.g.', 0.09578544061302684), ('position', 0.09578544061302684), ('content', 0.09578544061302684), ('thing', 0.09578544061302684), ('relatively', 0.09578544061302684), ('activity', 0.09578544061302684), ('certain', 0.09578544061302684), ('main', 0.09578544061302684), ('speech', 0.09578544061302684), ('informal', 0.06206896551724138), ('temporary', 0.06206896551724138), ('lacking', 0.06206896551724138), ('suspension', 0.06206896551724138), ('nakedness', 0.06206896551724138), ('charm', 0.06206896551724138), ('terms', 0.06206896551724138), ('beauty', 0.06206896551724138), ('cessation', 0.06206896551724138)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('long', 0.3448275862068966), ('idea', 0.3448275862068966), ('keep', 0.3448275862068966), ('raw', 0.20689655172413793), ('abeyance', 0.20689655172413793), ('unattractive', 0.20689655172413793), ('informal', 0.06896551724137931), ('duration', 0.06896551724137931), ('sounds', 0.06896551724137931), ('cognition', 0.06896551724137931), ('state', 0.06896551724137931), ('thinking', 0.06896551724137931), ('temporary', 0.06896551724137931), ('syllables', 0.06896551724137931), ('e.g.', 0.06896551724137931), ('lacking', 0.06896551724137931), ('position', 0.06896551724137931), ('content', 0.06896551724137931), ('suspension', 0.06896551724137931), ('nakedness', 0.06896551724137931), ('thing', 0.06896551724137931), ('charm', 0.06896551724137931), ('relatively', 0.06896551724137931), ('activity', 0.06896551724137931), ('terms', 0.06896551724137931), ('beauty', 0.06896551724137931), ('certain', 0.06896551724137931), ('main', 0.06896551724137931), ('cessation', 0.06896551724137931), ('speech', 0.06896551724137931)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('long', 0.0945932492453753), ('idea', 0.0945932492453753), ('keep', 0.0945932492453753), ('raw', 0.06396329128935427), ('abeyance', 0.06396329128935427), ('unattractive', 0.06396329128935427), ('informal', 0.023123347347993012), ('temporary', 0.023123347347993012), ('lacking', 0.023123347347993012), ('suspension', 0.023123347347993012), ('nakedness', 0.023123347347993012), ('charm', 0.023123347347993012), ('terms', 0.023123347347993012), ('beauty', 0.023123347347993012), ('cessation', 0.023123347347993012), ('duration', 0.02108135015092496), ('sounds', 0.02108135015092496), ('cognition', 0.02108135015092496), ('state', 0.02108135015092496), ('thinking', 0.02108135015092496), ('syllables', 0.02108135015092496), ('e.g.', 0.02108135015092496), ('position', 0.02108135015092496), ('content', 0.02108135015092496), ('thing', 0.02108135015092496), ('relatively', 0.02108135015092496), ('activity', 0.02108135015092496), ('certain', 0.02108135015092496), ('main', 0.02108135015092496), ('speech', 0.02108135015092496)]
+('__main__(): This text belongs to classes:', ([('informal', 2), ('raw', 2), ('duration', 2), ('long', 2), ('sounds', 2), ('cognition', 2), ('idea', 2), ('state', 2), ('keep', 2), ('thinking', 2), ('temporary', 2), ('abeyance', 2), ('syllables', 2), ('e.g.', 2), ('lacking', 2), ('unattractive', 2), ('position', 2), ('content', 2), ('suspension', 2), ('nakedness', 2), ('thing', 2), ('charm', 2), ('relatively', 2), ('activity', 2), ('terms', 2), ('beauty', 2), ('certain', 2), ('main', 2), ('cessation', 2), ('speech', 2)], [('long', 0.0945932492453753), ('idea', 0.0945932492453753), ('keep', 0.0945932492453753), ('raw', 0.06396329128935427), ('abeyance', 0.06396329128935427), ('unattractive', 0.06396329128935427), ('informal', 0.023123347347993012), ('temporary', 0.023123347347993012), ('lacking', 0.023123347347993012), ('suspension', 0.023123347347993012), ('nakedness', 0.023123347347993012), ('charm', 0.023123347347993012), ('terms', 0.023123347347993012), ('beauty', 0.023123347347993012), ('cessation', 0.023123347347993012), ('duration', 0.02108135015092496), ('sounds', 0.02108135015092496), ('cognition', 0.02108135015092496), ('state', 0.02108135015092496), ('thinking', 0.02108135015092496), ('syllables', 0.02108135015092496), ('e.g.', 0.02108135015092496), ('position', 0.02108135015092496), ('content', 0.02108135015092496), ('thing', 0.02108135015092496), ('relatively', 0.02108135015092496), ('activity', 0.02108135015092496), ('certain', 0.02108135015092496), ('main', 0.02108135015092496), ('speech', 0.02108135015092496)]))
