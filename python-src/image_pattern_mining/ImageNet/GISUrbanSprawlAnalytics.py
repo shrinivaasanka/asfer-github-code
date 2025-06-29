@@ -357,7 +357,8 @@ def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt,granularity=0.01,de
         cols=0
         for lat in np.arange(latx,laty,granularity):
             values=data_from_raster_georeferencing(raster,longitude=lon,latitude=lat,sample=True,datatype=dt)
-            urbansprawlstatisticsaggregate += values[0]
+            if values[0] >= 0:
+                urbansprawlstatisticsaggregate += values[0]
             urbansprawlstatistics.append(values[0])
             longlatstat[(lon,lat)]=values[0]
             if delineationparams is not None:
@@ -950,5 +951,9 @@ if __name__ == "__main__":
     #urban_sprawl_from_segments("testlogs/GHSL_R2024A_UCDB_ChennaiMetropolitanArea2.jpeg",seg16,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3)
     #print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2024.keys())," colored urban sprawl segmentation (Projection based on R2024A):",ncoloredsegments_2024)
     
-    #Chennai Metropolitan Area Sprawl Bounding Box 4 - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257 - R2022A and R2023A comparison
-    r1data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/GHS_POP_E2025_GLOBE_R2023A_54009_1000_V1_0_20240828143933_band1.tif",dt="Residential Population Estimates R2025A")
+    #Chennai Metropolitan Area Sprawl Bounding Box 4 - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257 - R2025A
+    #r1data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/GHS_POP_E2025_GLOBE_R2023A_54009_1000_V1_0_20240828143933_band1.tif",dt="Residential Population Estimates R2025A")
+    #Chennai Metropolitan Area Sprawl Bounding Box 4 - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257 - WorldPop 
+    r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/ind_ppp_2020_1km_Aggregated.tif",dt="WorldPop population estimates")
+    #KMU Urban sprawl Bounding Box 5 - http://bboxfinder.com/#10.945574,79.343262,11.095198,79.475098 - WorldPop
+    #r3data=urban_sprawl_from_raster(79.343262,10.945574,79.475098,11.095198,"testlogs/ind_ppp_2020_1km_Aggregated.tif",dt="WorldPop population estimates")
