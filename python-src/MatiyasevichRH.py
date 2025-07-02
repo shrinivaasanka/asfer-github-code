@@ -28,18 +28,26 @@ import hfd
 import ChaosAttractor
 import numpy
 import SINDy
+import StringSearch_LongestRepeatedSubstring
 
 h=m=p=0
 d=f0=f3=n=q=1
 lhs=[]
 rhs=[]
 lhsrhsratio=[]
+matiyasevichlooprandomwalk=[]
 sys.set_int_max_str_digits(150000)
 maxiterations=3000
 integerdivision=True
 testconvergence=False
 convergenceratio=0
 sindylorenzpredictions=[]
+prevlhsbyrhs=0
+lhsbyrhs=0
+prevrandomwalk=0
+randomwalk=0
+randomwalkbinarystring=""
+step=0.1
 while p**2*(m-f0) < f3:
     print("--------------------------")
     print("iteration:",n)
@@ -53,17 +61,34 @@ while p**2*(m-f0) < f3:
         logisticseq=(logisticseq/100000)
         plt.plot(logisticseq.tolist(), label="ChaosPRG Logistic")
         plt.plot(sindylorenzpredictions/100, label="SINDy Lorenz Logistic predictions")
+        plt.plot(matiyasevichlooprandomwalk,label="LHS-RHS ratio Jacob ladder random walk")
         plt.legend()
         plt.show()
         correlationcoeff=numpy.corrcoef(lhsrhsratio,logisticseq)
         print("Correlation coefficient between while loop LHS-RHS ratio and Logistic map:",correlationcoeff)
+        print("Longest Common Substring - Suffix Array based - in LHSRHS ratio randomwalk string:",randomwalkbinarystring)
+        lcsfile=open("StringSearch_Pattern.txt","w") 
+        lcsfile.write(randomwalkbinarystring)
+        lcsfile.close()
+        suff_array = StringSearch_LongestRepeatedSubstring.SuffixArray()
+        suff_array.construct_suffix_array()
+        suff_array.longest_repeated_substring(suff_array.pattern)
         exit(1)
     #print("LHS:",p**2*(m-f0))
     lhs.append(p**2*(m-f0))
     #print("RHS:",f3)
     rhs.append(f3)
-    print("LHS/RHS:",p**2*(m-f0)/f3)
-    lhsrhsratio.append(p**2*(m-f0)/f3)
+    lhsbyrhs=p**2*(m-f0)/f3
+    print("LHS/RHS:",lhsbyrhs)
+    lhsrhsratio.append(lhsbyrhs)
+    if lhsbyrhs > prevlhsbyrhs:
+        randomwalk=prevrandomwalk+step
+        randomwalkbinarystring+="1"
+    else:
+        randomwalk=prevrandomwalk-step
+        randomwalkbinarystring+="0"
+    matiyasevichlooprandomwalk.append(randomwalk)
+    prevlhsbyrhs=lhsbyrhs
     d = 2*n*d-4*(-1)**n*h
     n = n+1
     g = gcd(n,q)
