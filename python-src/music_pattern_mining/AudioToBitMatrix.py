@@ -233,7 +233,7 @@ def get_piano_frequencies(virtual_piano_notes,genre="WesternClassical"):
         print("Hurst constant of notes timeseries:",c)
     return piano_freq
 
-def percussion_synthesis(virtual_piano_notes=None,percussions=["Saxophone","Guitar","Trumpet","Violin","SteelDrum","Flute"],tempo=2000):
+def percussion_synthesis(virtual_piano_notes=None,percussions=["Saxophone","Guitar","Trumpet","Violin","SteelDrum","Flute","BassDrum","TenorDrum"],tempo=2000):
     environment.set("midiPath","/usr/bin/musescore")
     score=stream.Score()
     for percussion in percussions:
@@ -263,6 +263,7 @@ def percussion_synthesis(virtual_piano_notes=None,percussions=["Saxophone","Guit
         score.insert(0,percussionpart)
     score.show("text",addEndTimes=True)
     score.write('midi',"./music21_percussion_for_piano.midi")
+    os.system("cat /dev/null > ./music21_percussion_for_piano.wav")
     os.system("fluidsynth -ni /usr/share/fluidr3mono-gm-soundfont/FluidR3Mono_GM.sf3 ./music21_percussion_for_piano.midi -F ./music21_percussion_for_piano.wav -r 44100")
     #playsound("./music21_percussion_for_piano.wav")
 
@@ -275,7 +276,7 @@ def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interp
             if addon_synthesizer == "PySynth":
                 pysynth_synthesize_notes(virtual_piano_notes,duration=0.25,filename="PySynth_music.wav")
             if addon_synthesizer == "Pretty-MIDI":
-                pretty_midi_synthesize_notes(virtual_piano_notes,instrument_name="Steel Drums",veloCT=100,filename="pretty_midi_music.midi")
+                pretty_midi_synthesize_notes(virtual_piano_notes,instrument_name="Steel Drums",veloCT=100,filename="pretty_midi_music.midi",filetype="MIDI")
                 os.system("fluidsynth -ni /usr/share/fluidr3mono-gm-soundfont/FluidR3Mono_GM.sf3 ./pretty_midi_music.midi -F ./pretty_midi_music.wav -r 44100")
         #freq=librosa.note_to_hz(virtual_piano_notes)
         freq=get_piano_frequencies(virtual_piano_notes,genre=musicgenre)
@@ -389,7 +390,7 @@ def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interp
             if playsynthesis:
                 playsound("virtual_piano_music.Carnatic.wav")
 
-def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=500, weightedautomatadotfile=None,state2notedict=None,genre="WesternClassical",wfaweight_threshold=0.0,instruments=["Saxophone","Guitar","Trumpet","Violin","SteelDrum","Flute"],format="WAV",playsynthesis=False):
+def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=500, weightedautomatadotfile=None,state2notedict=None,genre="WesternClassical",wfaweight_threshold=0.0,instruments=["Saxophone","Guitar","Trumpet","Violin","SteelDrum","Flute","BassDrum","TenorDrum"],format="WAV",playsynthesis=False,tempo=1):
     amplitude = np.iinfo(np.int16).max
     if function != None:
         print("###################################################")
@@ -417,7 +418,7 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
                 print("points:",points)
                 for point in points:
                     print("frequency:",abs(point))
-                    signal = librosa.tone(abs(point),duration=0.25)
+                    signal = librosa.tone(abs(point),duration=tempo)
                     print("signal:",signal)
                     print("length of signal:",len(signal))
                     for s in signal:
@@ -717,8 +718,8 @@ if __name__ == "__main__":
 
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
 
-    #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp3_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃','16':'Ṣ','17':'G̣₃','18':'G̣₂','19':'Ṛ₁','20':'Ṃ₂','21':'Ḍ₁','22':'P̣','23':'Ṛ₂','24':'Ḍ₂','25':'Ḍ₃','26':'Ṇ₃'},genre="Carnatic",instruments=["Violin"])
-    notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/Bach_Flute_Sonata_EFlat.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical",instruments=["Violin"])
+    #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp3_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃','16':'Ṣ','17':'G̣₃','18':'G̣₂','19':'Ṛ₁','20':'Ṃ₂','21':'Ḍ₁','22':'P̣','23':'Ṛ₂','24':'Ḍ₂','25':'Ḍ₃','26':'Ṇ₃'},genre="Carnatic",playsynthesis=True)
+    notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp3_MusicWeightedAutomaton.dot",state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical",playsynthesis=True)
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
     #bm=audio_to_bitmatrix("virtual_piano_music.WesternClassical.wav",dur=10)
     #features1=audio_features(audiofilename="virtual_piano_music.WesternClassical.wav",signal_bitmap=bm)
