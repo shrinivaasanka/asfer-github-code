@@ -39,6 +39,7 @@ from nltk import ConditionalFreqDist
 import csv
 from WordNetPath import path_between
 from SentenceSynthesizer_Ngrams import get_ngrams_and_synthesize_sentence
+from pathlib import Path
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -46,7 +47,7 @@ def OpenAIQuestionAnswering(question):
     chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-3.5-turbo")
     print("chat completion:",chat_completion)
 
-def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False,perplexity_algorithm="WordNet",treenode_type="PoS",sentence_tuple_array=False,sentence_PoS_array=None,randomwalk_to_sentence_template_ratio=10,user_defined_PoS2Vocabulary_dict=None,transformers_enabled=False,ngrams_sentence_synthesis=False,pairwise_ngram=False):
+def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False,perplexity_algorithm="WordNet",treenode_type="PoS",sentence_tuple_array=False,sentence_PoS_array=None,randomwalk_to_sentence_template_ratio=10,user_defined_PoS2Vocabulary_dict=None,transformers_enabled=False,ngrams_sentence_synthesis_randomwalks=True,ngrams_sentence_synthesis_fillintheblanks=False,pairwise_ngram=False,ngramshop=2):
     import RecursiveGlossOverlap_Classifier
     import spacy
     from pyplexity import PerplexityModel
@@ -200,7 +201,7 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                         else:
                              if sentence_tuple_array:
                                 if float(len(random_walk))/float(len(sentence_PoS_array)) < randomwalk_to_sentence_template_ratio: 
-                                    naturallanguageanswer = make_sentence2(random_walk,sentence_PoS_tuple_array=sentence_PoS_array,treenode_type="tag",user_defined_PoS2Vocabulary_dict=user_defined_PoS2Vocabulary_dict,ngrams_sentence_synthesis=ngrams_sentence_synthesis,pairwise_ngram=pairwise_ngram,number_of_words_per_sentence=number_of_words_per_sentence)
+                                    naturallanguageanswer = make_sentence2(random_walk,sentence_PoS_tuple_array=sentence_PoS_array,treenode_type="tag",user_defined_PoS2Vocabulary_dict=user_defined_PoS2Vocabulary_dict,ngrams_sentence_synthesis_randomwalks=ngrams_sentence_synthesis_randomwalks,ngrams_sentence_synthesis_fillintheblanks=ngrams_sentence_synthesis_fillintheblanks,pairwise_ngram=pairwise_ngram,number_of_words_per_sentence=number_of_words_per_sentence,ngramshop=ngramshop)
                              else:
                                 naturallanguageanswer = make_sentence(random_walk,sentence_type="textgraph_random_walk",standard_sentence_PoS_dict=std_sentence_PoS_dict,markblanks=blanks,treenode_type=treenode_type)
                         sentences_synthesized[numrw]=naturallanguageanswer
@@ -278,8 +279,9 @@ def wordnet_perplexity(sentence):
             wordnetperplexity = wordnetperplexity * bigram_wordnet_similarity
     return wordnetperplexity
 
-def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type="tag",max_synth_sentences=10,user_defined_PoS2Vocabulary_dict=None,max_words_per_PoS=1000,ngrams_sentence_synthesis=False,pairwise_ngram=False,number_of_words_per_sentence=3):
+def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type="tag",max_synth_sentences=10,user_defined_PoS2Vocabulary_dict=None,max_words_per_PoS=1000,ngrams_sentence_synthesis_randomwalks=True,ngrams_sentence_synthesis_fillintheblanks=False,pairwise_ngram=False,number_of_words_per_sentence=3,ngramshop=1):
     import spacy
+    from spacy import displacy
     spasee=spacy.load("en_core_web_sm")
     rwtexts=[]
     randomwalkvertices=list(set(randomwalkvertices))
@@ -401,7 +403,8 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
             if number_of_sentences_synthesized > max_synth_sentences:
                  break
     print("make_sentence2():filledrwtexts:",filledrwtexts)
-    if ngrams_sentence_synthesis:
+    if ngrams_sentence_synthesis_randomwalks:
+        ngramproductsentences=[]
         print("--------------------------------------")
         print("Ngrams.dev dataset V3 sentence synthesis - randomwalks")
         print("--------------------------------------")
@@ -418,10 +421,22 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
                     for ngram in ngrams:
                         phrase=ngram[1]
                         synthesized_phrases.append(phrase)
-                    firstvertex+=2
+                    firstvertex+=ngramshop
                     ngram_synthesized_sentences.append(synthesized_phrases)
             for product in itertools.product(*ngram_synthesized_sentences):
-                 print("ngram synthesized sentence:"," ".join(product))
+                 ngramproductsentence = " ".join(product)
+                 print("ngram synthesized sentence:",ngramproductsentence)
+                 displaysent=spasee(ngramproductsentence)
+                 deps=displacy.parse_deps(displaysent)
+                 depshtml=displacy.render(deps,style="dep",manual=True)
+                 print("ngram synthesized sentence - dependencies:",deps)
+                 #for token in displaysent:
+                 #   print("displaysent PoS-token:",(token.pos_,token.lemma_))
+                 #svg=displacy.render(displaysent,style="dep",jupyter=False)
+                 #output_path = Path("testlogs/ngramproductsentence.svg")
+                 #output_path.open("w", encoding="utf-8").write(svg)
+                 ngramproductsentences.append(ngramproductsentence)
+            return ngramproductsentences
         else:
             ngramquery=""
             for vertex in randomwalkvertices[:number_of_words_per_sentence][:-1]:
@@ -431,6 +446,8 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
             ngrams=get_ngrams_and_synthesize_sentence(query=ngramquery)
             if ngrams is not None:
                 print("ngram synthesized sentence:",ngrams)
+            return ngrams
+    if ngrams_sentence_synthesis_fillintheblanks:
         print("--------------------------------------")
         print("Ngrams.dev dataset V3 sentence synthesis - wildcard fill-in-the-blanks")
         print("--------------------------------------")
@@ -450,7 +467,7 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
                      consecutive=True
              print("newsentence:",newsentence)
              get_ngrams_and_synthesize_sentence(query=newsentence)
-    return filledrwtexts 
+        return filledrwtexts 
 
 def get_closest_possible_tokens(rwtexttoks, vocabulary, max_words_per_PoS=1000,maximum_radius=10):
     closest_words_dict=defaultdict()
@@ -620,8 +637,9 @@ if __name__ == "__main__":
     for sentencePoSarray in list_of_sentence_PoS_arrays[:1]:
         print("sentencePoSarray:",sentencePoSarray)
         #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=10,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
-        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis=True,pairwise_ngram=False)
-        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis=True,pairwise_ngram=True)
+        #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis=True,pairwise_ngram=False)
+        #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis_randomwalks=False,ngrams_sentence_synthesis_fillintheblanks=True,pairwise_ngram=True,ngramshop=2)
+        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis_randomwalks=True,ngrams_sentence_synthesis_fillintheblanks=False,pairwise_ngram=True,ngramshop=2)
         print("---------------------------------------------")
 
     #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
