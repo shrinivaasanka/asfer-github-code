@@ -40,6 +40,7 @@ import csv
 from WordNetPath import path_between
 from SentenceSynthesizer_Ngrams import get_ngrams_and_synthesize_sentence
 from pathlib import Path
+import networkx as nx
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -423,13 +424,14 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
                         synthesized_phrases.append(phrase)
                     firstvertex+=ngramshop
                     ngram_synthesized_sentences.append(synthesized_phrases)
+            numberofsentences=0
             for product in itertools.product(*ngram_synthesized_sentences):
+                 if numberofsentences > max_synth_sentences:
+                     break
+                 numberofsentences+=1
                  ngramproductsentence = " ".join(product)
                  print("ngram synthesized sentence:",ngramproductsentence)
-                 displaysent=spasee(ngramproductsentence)
-                 deps=displacy.parse_deps(displaysent)
-                 depshtml=displacy.render(deps,style="dep",manual=True)
-                 print("ngram synthesized sentence - dependencies:",deps)
+                 verify_part_of_speech(ngramproductsentence,algorithm="topological sort")
                  #for token in displaysent:
                  #   print("displaysent PoS-token:",(token.pos_,token.lemma_))
                  #svg=displacy.render(displaysent,style="dep",jupyter=False)
@@ -468,6 +470,37 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
              print("newsentence:",newsentence)
              get_ngrams_and_synthesize_sentence(query=newsentence)
         return filledrwtexts 
+
+def verify_part_of_speech(ngramproductsentence,algorithm="toplogicalsort",arraytemplates=None):
+    import spacy
+    from spacy import displacy
+    spasee=spacy.load("en_core_web_sm")
+    displaysent=spasee(ngramproductsentence)
+    possequence=[pos.tag_ for pos in displaysent]
+    print("SpaCy PoS Sequence for ngram synthesized sentence:",possequence)
+    deps=displacy.parse_deps(displaysent)
+    depshtml=displacy.render(deps,style="dep",manual=True)
+    print("ngram synthesized sentence - dependencies:",deps)
+    dependencygraph=nx.DiGraph()
+    for arc in deps["arcs"]: 
+        dependencygraph.add_edge(arc["start"],arc["end"])
+    print("Dependency graph for ngram synthesized sentence - [",ngramproductsentence,"]:",dependencygraph.edges())
+    if algorithm=="toplogicalsort":
+        toposort=list(nx.topological_sort(dependencygraph))
+        print("Topological sort of dependency graph:",toposort)
+        for v in toposort:
+            print(deps["words"][v]["text"]," ")
+    if algorithm=="exhaustivesearch" and arraytemplates is not None:
+        templatepossequence=[]
+        for template in arraytemplates:
+            templatepossequence=[]
+            for pos in template:
+                templatepossequence.append(pos[0])
+            print("templatepossequence:",templatepossequence)
+            if possequence in templatepossequence:
+                print("[",ngramproductsentence,"] has Valid PoS")
+                return
+        print("[",ngramproductsentence,"] has Invalid PoS")
 
 def get_closest_possible_tokens(rwtexttoks, vocabulary, max_words_per_PoS=1000,maximum_radius=10):
     closest_words_dict=defaultdict()
@@ -634,6 +667,10 @@ if __name__ == "__main__":
 
     print("----------------------- sentence synthesis (sentence_PoS_array retrieved from treebank) --------------------")
     list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0090.mrg"],returnasarray=True)
+    verify_part_of_speech("All you need is attention",algorithm="toplogicalsort")
+    verify_part_of_speech("All you need is attention",algorithm="exhaustivesearch",arraytemplates=list_of_sentence_PoS_arrays)
+    verify_part_of_speech("Attention is all you need",algorithm="toplogicalsort")
+    verify_part_of_speech("is attention all you need",algorithm="exhaustivesearch",arraytemplates=list_of_sentence_PoS_arrays)
     for sentencePoSarray in list_of_sentence_PoS_arrays[:1]:
         print("sentencePoSarray:",sentencePoSarray)
         #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=10,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
