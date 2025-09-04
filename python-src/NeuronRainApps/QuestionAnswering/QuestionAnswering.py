@@ -437,6 +437,7 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
                  #svg=displacy.render(displaysent,style="dep",jupyter=False)
                  #output_path = Path("testlogs/ngramproductsentence.svg")
                  #output_path.open("w", encoding="utf-8").write(svg)
+                 ngramproductsentence=remove_duplication(ngramproductsentence)
                  ngramproductsentences.append(ngramproductsentence)
             return ngramproductsentences
         else:
@@ -471,7 +472,32 @@ def make_sentence2(randomwalkvertices,sentence_PoS_tuple_array=[],treenode_type=
              get_ngrams_and_synthesize_sentence(query=newsentence)
         return filledrwtexts 
 
-def verify_part_of_speech(ngramproductsentence,algorithm="toplogicalsort",arraytemplates=None):
+def remove_duplication(sentence):
+    sentencetoks=sentence.split(" ")
+    print("remove_duplication(): sentencetoks:",sentencetoks)
+    newsentencetoks=[]
+    for tok in sentencetoks:
+        if tok != "":
+            newsentencetoks.append(tok)
+    sentencetoks=newsentencetoks
+    newsentencetoks=[]
+    for tok in sentencetoks:
+        print("remove_duplication(): tok:",tok)
+        print("newsentencetoks:",newsentencetoks)
+        if len(newsentencetoks) >= 1:
+            print("remove_duplication(): newsentencetoks[-1]:",newsentencetoks[-1])
+            if tok != newsentencetoks[-1]:
+                if tok == "":
+                    newsentencetoks.append("-")
+                else:
+                    newsentencetoks.append(tok)
+        else:
+            newsentencetoks.append(tok)
+    newsentence=" ".join(newsentencetoks)
+    print("remove_duplication(): newsentence = ",newsentence)
+    return newsentence
+
+def verify_part_of_speech(ngramproductsentence,algorithm="topologicalsort",arraytemplates=None):
     import spacy
     from spacy import displacy
     spasee=spacy.load("en_core_web_sm")
@@ -485,11 +511,14 @@ def verify_part_of_speech(ngramproductsentence,algorithm="toplogicalsort",arrayt
     for arc in deps["arcs"]: 
         dependencygraph.add_edge(arc["start"],arc["end"])
     print("Dependency graph for ngram synthesized sentence - [",ngramproductsentence,"]:",dependencygraph.edges())
-    if algorithm=="toplogicalsort":
+    if algorithm=="topologicalsort":
         toposort=list(nx.topological_sort(dependencygraph))
         print("Topological sort of dependency graph:",toposort)
+        toposortsent=""
         for v in toposort:
-            print(deps["words"][v]["text"]," ")
+            toposortsent+=deps["words"][v]["text"]
+            toposortsent+=" "
+        print("toposortsent:",toposortsent)
     if algorithm=="exhaustivesearch" and arraytemplates is not None:
         templatepossequence=[]
         for template in arraytemplates:
@@ -666,17 +695,17 @@ if __name__ == "__main__":
     #    print("---------------------------------------------")
 
     print("----------------------- sentence synthesis (sentence_PoS_array retrieved from treebank) --------------------")
-    list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0090.mrg"],returnasarray=True)
-    verify_part_of_speech("All you need is attention",algorithm="toplogicalsort")
+    list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(returnasarray=True)
+    verify_part_of_speech("All you need is attention",algorithm="topologicalsort")
     verify_part_of_speech("All you need is attention",algorithm="exhaustivesearch",arraytemplates=list_of_sentence_PoS_arrays)
-    verify_part_of_speech("Attention is all you need",algorithm="toplogicalsort")
+    verify_part_of_speech("Attention is all you need",algorithm="topologicalsort")
     verify_part_of_speech("is attention all you need",algorithm="exhaustivesearch",arraytemplates=list_of_sentence_PoS_arrays)
     for sentencePoSarray in list_of_sentence_PoS_arrays[:1]:
         print("sentencePoSarray:",sentencePoSarray)
         #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=10,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
         #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis=True,pairwise_ngram=False)
         #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis_randomwalks=False,ngrams_sentence_synthesis_fillintheblanks=True,pairwise_ngram=True,ngramshop=2)
-        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis_randomwalks=True,ngrams_sentence_synthesis_fillintheblanks=False,pairwise_ngram=True,ngramshop=2)
+        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=1,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis_randomwalks=True,ngrams_sentence_synthesis_fillintheblanks=False,pairwise_ngram=True,ngramshop=1)
         print("---------------------------------------------")
 
     #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
