@@ -41,6 +41,7 @@ from WordNetPath import path_between
 from SentenceSynthesizer_Ngrams import get_ngrams_and_synthesize_sentence
 from pathlib import Path
 import networkx as nx
+from difflib import SequenceMatcher
 
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
@@ -232,14 +233,21 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                         if perplexity_algorithm=="WordNet":
                             answersfile.write(str(wordnetperplexity))
                         answersfile.write("\n")
+                allsynthesizedsentences=[]
                 if perplexity_algorithm=="pyplexity":
                     sortedpyplexityrankedsentences=dict(collections.OrderedDict(sorted(pyplexityrankedsentences.items())))
                     print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by pyplexity perplexity:")
                     pprint.pprint(sortedpyplexityrankedsentences)
+                    for perplexity,sentences in sortedpyperplexityrankedsentences.items():
+                        allsynthesizedsentences+=sentences
                 if perplexity_algorithm=="WordNet":
                     sortedwnperplexityrankedsentences=dict(collections.OrderedDict(sorted(wordnetperplexityrankedsentences.items())))
                     print("WordNet-ConceptNet TextGraph Random Walk - Bot generated answers ranked by wordnet perplexity:")
                     pprint.pprint(sortedwnperplexityrankedsentences)
+                    for perplexity,sentences in sortedwnperplexityrankedsentences.items():
+                        allsynthesizedsentences+=sentences
+                answertoquery=most_relevant_sentences(wssummarysentences,allsynthesizedsentences,algorithm="distance")
+                print("Formal LLM - Answer to query:",answertoquery)
                 NounPhrases=[]
                 VerbPhrases=[]
                 psg_sentences=[]
@@ -268,6 +276,17 @@ def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxan
                                 psg_sentences.append(nounphrase + " " + verbphrase)
                     print("PSG NP-VP sentences synthesized:",psg_sentences)
         return (sentences_synthesized,psg_sentences)
+
+def most_relevant_sentences(wikipediaanswer,synthesizedanswer,algorithm="distance",threshold=0.5):
+    mostrelevantsentences=[]
+    if algorithm=="distance":
+        for sa in synthesizedanswer:
+             for wa in wikipediaanswer:
+                 matchratio=SequenceMatcher(None,wa,sa).ratio()
+                 if matchratio < threshold:
+                      mostrelevantsentences.append(sa)
+    print("mostrelevantsentences:",list(set(mostrelevantsentences)))
+    return list(set(mostrelevantsentences))
 
 def wordnet_perplexity(sentence):
     words = sentence.split(" ")
