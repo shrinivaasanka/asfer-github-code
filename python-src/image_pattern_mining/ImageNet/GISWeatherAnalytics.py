@@ -78,7 +78,7 @@ import xarray as xr
 import matplotlib.pyplot as plt
 from astropy.time import Time
 
-def pressure_gradient(variablegravities=[],seasurfacelonglat=None,datefrom=None,dateto=None,userdefinedsst=None):
+def pressure_gradient(variablegravities=[],seasurfacelonglat=None,datefrom=None,dateto=None,userdefinedsst=None,friction=None,doeVelocityBydt=None,Velocity=None,VelocityGradient=None,Omega=None):
     date=Time(str(datefrom[0])+"-"+str(datefrom[1])+"-"+str(datefrom[2]) + " " + str(datefrom[3]) + ":" + str(datefrom[4]) + ":" + str(datefrom[5]))
     todate=Time(str(dateto[0])+"-"+str(dateto[1])+"-"+str(dateto[2]) + " " + str(datefrom[3]) + ":" + str(datefrom[4]) + ":" + str(datefrom[5]))
     pressuregradients=[]
@@ -103,7 +103,8 @@ def pressure_gradient(variablegravities=[],seasurfacelonglat=None,datefrom=None,
                 print("pressure gradient on date " + str(date) + ":",pressuregradient)
                 pressuregradients.append(pressuregradient)
         else:
-            pressuregradient = userdefinedsst[cnt] * variablegravities[cnt]
+            # Navier-Stokes Pressure Gradient ∇p = (F + g - ∂V/∂t - V · ∇V - 2Ω × V)*ρ from https://maths.ucd.ie/~plynch/Publications/pcam0159_proof_2.pdf 
+            pressuregradient = userdefinedsst[cnt] * (friction[cnt] + variablegravities[cnt] - doeVelocityBydt[cnt] - Velocity[cnt] * VelocityGradient[cnt] - 2*Omega[cnt]*Velocity[cnt])
             print("pressure gradient on date " + str(date) + ":",pressuregradient)
             pressuregradients.append(pressuregradient)
         cnt += 1
@@ -195,8 +196,13 @@ def climate_analytics(datasource,date="",time="",predict_EWE_params=None,precipi
                     print("sstarray:",sstarray)
                     sstarray.fill(seasonaltemperature)
                     print("userdefsst:",sstarray)
-                    pressuregradient0=pressure_gradient(variablegravities=gravityl2norms[0],seasurfacelonglat=predict_EWE_params['seasurfacelonglat'],datefrom=predict_EWE_params["datefrom"],dateto=predict_EWE_params["dateto"],userdefinedsst=sstarray)
-                    pressuregradient1=pressure_gradient(variablegravities=gravityl2norms[1],seasurfacelonglat=predict_EWE_params['seasurfacelonglat'],datefrom=predict_EWE_params["datefrom"],dateto=predict_EWE_params["dateto"],userdefinedsst=sstarray)
+                    frictionArray=np.zeros(len(sstarray))
+                    doeVelocityBydtArray=np.zeros(len(sstarray))
+                    VelocityArray=np.zeros(len(sstarray))
+                    VelocityGradientArray=np.zeros(len(sstarray))
+                    OmegaArray=np.zeros(len(sstarray))
+                    pressuregradient0=pressure_gradient(variablegravities=gravityl2norms[0],seasurfacelonglat=predict_EWE_params['seasurfacelonglat'],datefrom=predict_EWE_params["datefrom"],dateto=predict_EWE_params["dateto"],userdefinedsst=sstarray,friction=frictionArray,doeVelocityBydt=doeVelocityBydtArray,Velocity=VelocityArray,VelocityGradient=VelocityGradientArray,Omega=OmegaArray)
+                    pressuregradient1=pressure_gradient(variablegravities=gravityl2norms[1],seasurfacelonglat=predict_EWE_params['seasurfacelonglat'],datefrom=predict_EWE_params["datefrom"],dateto=predict_EWE_params["dateto"],userdefinedsst=sstarray,friction=frictionArray,doeVelocityBydt=doeVelocityBydtArray,Velocity=VelocityArray,VelocityGradient=VelocityGradientArray,Omega=OmegaArray)
                     plt.plot(pressuregradient0,label="Navier-Stokes Pressure Gradient " + bp[0])
                     plt.plot(pressuregradient1,label="Navier-Stokes Pressure Gradient " + bp[1])
                     plt.legend()
@@ -391,7 +397,11 @@ if __name__ == "__main__":
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2016,12,5,17,30,00),'dateto':(2016,12,7,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2011,12,24,17,30,00),'dateto':(2011,12,26,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]},computepressuregradient=True)
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2025,10,15,17,30,00),'dateto':(2025,12,1,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]},computepressuregradient=True,seasonaltemperature=25)
-    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2025,10,1,17,30,00),'dateto':(2025,10,14,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]},computepressuregradient=True,seasonaltemperature=25)
+    #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2025,10,1,17,30,00),'dateto':(2025,10,14,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]},computepressuregradient=True,seasonaltemperature=25)
+
+    #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2025,12,1,17,30,00),'dateto':(2025,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]},computepressuregradient=True,seasonaltemperature=25)
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2025,12,1,17,30,00),'dateto':(2025,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]},computepressuregradient=True,seasonaltemperature=25)
+
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2023,11,21,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','60d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,9,1,17,30,00),'dateto':(2023,12,1,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
     #gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,12,2,17,30,00),'dateto':(2024,1,8,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Mercury-Sun-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=35,historic_training_timeseries=nem_rainfall_timeseries)
