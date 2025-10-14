@@ -955,6 +955,7 @@ if __name__ == "__main__":
     #r1data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/GHS_POP_E2025_GLOBE_R2023A_54009_1000_V1_0_20240828143933_band1.tif",dt="Residential Population Estimates R2025A")
     #Chennai Metropolitan Area Sprawl Bounding Box 4 - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257 - WorldPop 
     #r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/ind_ppp_2020_1km_Aggregated.tif",dt="WorldPop population estimates")
-    r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/ind_pop_2025_CN_1km_R2024B_UA_v1.tif",dt="WorldPop population estimates 2025")
+    #r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/ind_pop_2025_CN_1km_R2024B_UA_v1.tif",dt="WorldPop population estimates 2025")
+    r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/ind_pop_2025_CN_1km_R2025A_UA_v1.tif",dt="WorldPop population estimates 2025")
     #KMU Urban sprawl Bounding Box 5 - http://bboxfinder.com/#10.945574,79.343262,11.095198,79.475098 - WorldPop
     #r3data=urban_sprawl_from_raster(79.343262,10.945574,79.475098,11.095198,"testlogs/ind_ppp_2020_1km_Aggregated.tif",dt="WorldPop population estimates")
