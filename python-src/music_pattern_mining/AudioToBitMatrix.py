@@ -58,6 +58,7 @@ from pydub.playback import play
 from pytimbre2.audio_files.wavefile import WaveFile
 from pytimbre2.spectral.spectra import SpectrumByFFT
 from MusicSynthesizer_AddOn import pysynth_synthesize_notes,pretty_midi_synthesize_notes
+from StringSearch_LongestRepeatedSubstring import SuffixArray
 
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
@@ -666,6 +667,19 @@ def generate_virtual_piano_notes(function="",randomnotesstringfrom=None,length=1
         print("synth_notes:",synth_notes)
     return synth_notes
 
+def longest_repeated_notes_sequence(clip,clipslice=1000):
+    notes=audio_to_notes(clip,music="WesternClassical",dur=1)
+    notestr=""
+    for n in notes:
+        notestr+=" ".join(n)
+    lcsfile=open("/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/StringSearch_Pattern.txt","w") 
+    print("notestr:",notestr)
+    lcsfile.write(notestr[:clipslice])
+    lcsfile.close()
+    suff_array = SuffixArray(patternfile="/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/StringSearch_Pattern.txt")
+    suff_array.construct_suffix_array()
+    suff_array.longest_repeated_substring(suff_array.pattern)
+
 if __name__ == "__main__":
     # bm=mel_frequency_cepstral_coefficients("./testlogs/JSBach_Musicological_Offering.mp4",dur=20)
     # speechrecognition_audiograph("testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav")
@@ -719,8 +733,9 @@ if __name__ == "__main__":
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
 
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp3_MusicWeightedAutomaton.dot",state2notedict={'0':'S', '1':'R₁', '2':'R₂', '3':'R₃','4':'G₁', '5':'G₂', '6':'G₃', '7':'M₁', '8':'M₂', '9':'P', '10':'D₁', '11':'D₂', '12':'D₃', '13':'N₁','14':'N₂', '15':'N₃','16':'Ṣ','17':'G̣₃','18':'G̣₂','19':'Ṛ₁','20':'Ṃ₂','21':'Ḍ₁','22':'P̣','23':'Ṛ₂','24':'Ḍ₂','25':'Ḍ₃','26':'Ṇ₃'},genre="Carnatic",playsynthesis=True)
-    notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp3_MusicWeightedAutomaton.dot",state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical",playsynthesis=True)
+    #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/054-SBC-Aanandhamridhakarshini.mp3_MusicWeightedAutomaton.dot",state2notedict={'0':'C','1':'D','2':'E','3':'F','4':'G','5':'A','6':'B','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical",playsynthesis=True)
     #notes_to_audio(automaton=True,weightedautomatadotfile="testlogs/JSBach_Musicological_Offering.mp4_MusicWeightedAutomaton.dot",state2notedict={'0':'A','1':'B','2':'C','3':'D','4':'E','5':'F','6':'G','7':'A♯','8':'C♯','9':'D♯','10':'F♯','11':'G♯'},genre="WesternClassical")
     #bm=audio_to_bitmatrix("virtual_piano_music.WesternClassical.wav",dur=10)
     #features1=audio_features(audiofilename="virtual_piano_music.WesternClassical.wav",signal_bitmap=bm)
     #features2=audio_features(audiofilename="virtual_piano_music.WesternClassical.wav",signal_bitmap=bm,timbreaveragefeatures=True)
+    longest_repeated_notes_sequence("testlogs/JSBach_Musicological_Offering.mp4")

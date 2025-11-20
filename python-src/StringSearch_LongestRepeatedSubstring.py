@@ -26,8 +26,8 @@ import re
 
 
 class SuffixArray(object):
-    def __init__(self):
-        self.pattern_file = open("StringSearch_Pattern.txt", "r")
+    def __init__(self,patternfile="StringSearch_Pattern.txt"):
+        self.pattern_file = open(patternfile, "r")
         self.pattern = self.pattern_file.read()
         print("String Pattern: ", self.pattern)
         self.suffix_dict = {}
