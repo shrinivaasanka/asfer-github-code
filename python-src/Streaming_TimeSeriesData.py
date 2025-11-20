@@ -35,7 +35,9 @@ from StringSearch_BinaryEncodedTimeSeries import binary_encoded_fluctuations
 from StringSearch_LongestRepeatedSubstring import SuffixArray
 from hurst import compute_Hc
 from bsedata.bse import BSE
-import hfd
+from scipy.optimize import curve_fit
+import matplotlib.pyplot as plt
+
 
 cnt = 0
 
@@ -156,6 +158,7 @@ def bse_stockquote_and_stats(code='532174'):
     return (quote,topgainers,toplosers,corporate,sector_and_industry,volatility)
 
 def stockquote_Prophet_timeseries_forecast_model(ticker,period='2y',interval='1wk',algorithm="linear"):
+    import hfd
     print("--------------Prophet Stockquote timeseries model for ",ticker," ----------------------------")
     pricehistory = yf.Ticker(ticker).history(period=period,interval=interval,actions=False)
     csvfile = Path("Streaming_TimeSeriesData.csv")
@@ -181,3 +184,26 @@ def stockquote_Prophet_timeseries_forecast_model(ticker,period='2y',interval='1w
     fractaldimension=hfd.hfd(fbprophtimeseriesdf["y"])
     print("Higuchi Fractal Dimension of stock quote timeseries:",fractaldimension)
 
+def least_squares_func(x,a,b,c):
+    print("a:",a)
+    print("b:",b)
+    print("x:",x)
+    print("c:",c)
+    return a*np.exp(-b*x) + c
+
+def timeseries_least_squares_model(timeseries):
+    print("timeseries:",timeseries)
+    xdata=list(range(len(timeseries)))
+    ydata=timeseries
+    fitydata=[]
+    popt,pcov = curve_fit(least_squares_func, xdata, ydata)
+    print("popt:",popt)
+    print("pcov:",pcov)
+    for x in xdata:
+        fitydata.append(least_squares_func(x,popt[0],popt[1],popt[2]))
+    plt.plot(xdata,fitydata,'r-', label='fit: a=%5.3f, b=%5.3f, c=%5.3f' % tuple(popt))
+    plt.plot(xdata,ydata)
+    plt.show()
+
+if __name__=="__main__":
+    timeseries_least_squares_model(np.random.randint(30,size=30))
