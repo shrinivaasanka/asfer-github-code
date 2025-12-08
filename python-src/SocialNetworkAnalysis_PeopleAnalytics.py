@@ -38,6 +38,7 @@ import networkx as nx
 from networkx.drawing.nx_pydot import write_dot
 import operator
 import subprocess
+from deepdiff.diff import DeepDiff 
 
 
 class HRAnalytics(object):
@@ -59,6 +60,11 @@ class HRAnalytics(object):
         self.tenure_len = 0
         self.n_followers = 0
         self.neuronrainconceptualgraph=nx.DiGraph()
+
+    def profile_JSON_similarity(self,json1,json2):
+        profilediff = DeepDiff(json1, json2, get_deep_distance=True)
+        print("Profile similarity:",profilediff)
+        return profilediff
 
     def parse_profile(self, datasource, filetype, social_profile, domainspecificdict=None):
         profile_text = ""
@@ -580,3 +586,7 @@ if __name__ == "__main__":
     searchresults2=[20,1,2,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,18,19]
     hranal.search_engine_rank_correlation(searchresults1,searchresults2)
     hranal.attributeparadox(attribute_dict={"names":100000,"genders":3,"qualitifications":3,"photos":8000000000})
+    hranal.profile_JSON_similarity(codesearchstats1,codesearchstats2)
+    matri_bride={"Personal Data": { "Age": "41", "Occupation":"Banking sector", "Income":"30 LPA", "Star":"Ashwini"}, "Preferences":{"Drinks":"Yes","Smoking":"Yes"}} 
+    matri_groom={"Personal Data": { "Age": "45", "Occupation":"IT", "Income":"50 LPA", "Star":"Rohini"},"Preferences":{"Drinks":"No","Smoking":"Yes"}} 
+    hranal.profile_JSON_similarity(matri_bride,matri_groom)
