@@ -29,6 +29,8 @@ import ChaosAttractor
 import numpy
 import SINDy
 import StringSearch_LongestRepeatedSubstring
+from GaussianMultiplicativeChaos import gaussian_multiplicative_chaos
+from scipy import stats
 
 h=m=p=0
 d=f0=f3=n=q=1
@@ -48,6 +50,11 @@ prevrandomwalk=0
 randomwalk=0
 randomwalkbinarystring=""
 step=0.1
+sindyfit=False
+jacobladder=False
+chaosprg=True
+gmcfit=True
+
 while p**2*(m-f0) < f3:
     print("--------------------------")
     print("iteration:",n)
@@ -57,15 +64,27 @@ while p**2*(m-f0) < f3:
         #plt.plot(rhs)
         plt.plot(lhsrhsratio, label="LHS-RHS ratio")
         print("Stopping after ",maxiterations," iterations") 
-        logisticseq=numpy.array(ChaosAttractor.ChaosPRG(algorithm="Logistic", seqlen=maxiterations, radix=3.5699340, initialcondition=0.000001, prime=104729, seed=complex(1+0j)))
+        gmcseq=gaussian_multiplicative_chaos(N=maxiterations,L=maxiterations)
+        logisticseq=numpy.array(ChaosAttractor.ChaosPRG(algorithm="Logistic", seqlen=maxiterations, radix=3.0, initialcondition=0.0001, prime=104729, seed=complex(1+0j)))
         logisticseq=(logisticseq/100000)
-        plt.plot(logisticseq.tolist(), label="ChaosPRG Logistic")
-        plt.plot(sindylorenzpredictions/100, label="SINDy Lorenz Logistic predictions")
-        plt.plot(matiyasevichlooprandomwalk,label="LHS-RHS ratio Jacob ladder random walk")
+        if chaosprg:
+        	plt.plot(logisticseq.tolist(), label="ChaosPRG Logistic")
+        if gmcfit:
+        	plt.plot(gmcseq[1], label="Gaussian Mutiplicative Chaos")
+        if sindyfit:
+        	plt.plot(sindylorenzpredictions/100, label="SINDy Lorenz Logistic predictions")
+        if jacobladder:
+        	plt.plot(matiyasevichlooprandomwalk,label="LHS-RHS ratio Jacob ladder random walk")
         plt.legend()
         plt.show()
-        correlationcoeff=numpy.corrcoef(lhsrhsratio,logisticseq)
-        print("Correlation coefficient between while loop LHS-RHS ratio and Logistic map:",correlationcoeff)
+        if chaosprg:
+        	#correlationcoeff=numpy.corrcoef(lhsrhsratio,logisticseq)
+        	correlationcoeff=stats.pearsonr(lhsrhsratio,logisticseq)
+        	print("Correlation coefficient between while loop LHS-RHS ratio and Logistic map:",correlationcoeff)
+        if gmcfit:
+        	#correlationcoeff=numpy.corrcoef(lhsrhsratio,gmcseq)
+        	correlationcoeff=stats.pearsonr(lhsrhsratio,gmcseq[1])
+        	print("Correlation coefficient between while loop LHS-RHS ratio and Gaussian Multiplicative Chaos:",correlationcoeff)
         print("Longest Common Substring - Suffix Array based - in LHSRHS ratio randomwalk string:",randomwalkbinarystring)
         lcsfile=open("StringSearch_Pattern.txt","w") 
         lcsfile.write(randomwalkbinarystring)
@@ -82,8 +101,8 @@ while p**2*(m-f0) < f3:
     print("LHS/RHS:",lhsbyrhs)
     lhsrhsratio.append(lhsbyrhs)
     if lhsbyrhs > prevlhsbyrhs:
-        randomwalk=prevrandomwalk+step
-        randomwalkbinarystring+="1"
+       	randomwalk=prevrandomwalk+step
+       	randomwalkbinarystring+="1"
     else:
         randomwalk=prevrandomwalk-step
         randomwalkbinarystring+="0"
@@ -111,13 +130,14 @@ while p**2*(m-f0) < f3:
             print("D'Alembert series convergence test:",convergenceratio)
         fractaldimension=hfd.hfd(lhsrhsratio)
         print("Higuchi Fractal Dimension of the 1-dimensional timeseries:",fractaldimension)
-        print("SINDy non-linear dynamics fit of LHS-RHS ratio series so far:")
-        l=len(lhsrhsratio)
-        #t=numpy.arange(l)
-        x=numpy.arange(l)
-        y=lhsrhsratio
-        t=numpy.arange(0,1.0,1.0/float(len(y)))
-        sindylorenzpredictions=SINDy.SINDy_fit_lorenz(t,x,numpy.asarray(y)/100)
+        if sindyfit:
+        	print("SINDy non-linear dynamics fit of LHS-RHS ratio series so far:")
+        	l=len(lhsrhsratio)
+        	#t=numpy.arange(l)
+        	x=numpy.arange(l)
+        	y=lhsrhsratio
+        	t=numpy.arange(0,1.0,1.0/float(len(y)))
+        	sindylorenzpredictions=SINDy.SINDy_fit_lorenz(t,x,numpy.asarray(y)/100)
 print("Loop exits after ",n," iterations - Riemann Hypothesis is False")
 print("after loop - LHS:",p**2*(m-f0))
 print("after loop - RHS:",f3)
