@@ -43,10 +43,12 @@ from pathlib import Path
 import networkx as nx
 from difflib import SequenceMatcher
 
+model="OpenAI"
+
 def OpenAIQuestionAnswering(question):
     from openai import OpenAI
     client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-    chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-3.5-turbo")
+    chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-5.2")
     print("chat completion:",chat_completion)
 
 def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False,perplexity_algorithm="WordNet",treenode_type="PoS",sentence_tuple_array=False,sentence_PoS_array=None,randomwalk_to_sentence_template_ratio=10,user_defined_PoS2Vocabulary_dict=None,transformers_enabled=False,ngrams_sentence_synthesis_randomwalks=True,ngrams_sentence_synthesis_fillintheblanks=False,pairwise_ngram=False,ngramshop=2):
@@ -686,46 +688,48 @@ def create_sentence_PoS_dict_from_treebank(datasets=["wsj_0001.mrg","wsj_0002.mr
 
 if __name__ == "__main__":
     question = sys.argv[1]
-    #WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=True,sentence_type="xtag_node34_triplets")
-    #WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="xtag_node34_triplets")
-    #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[],"PUNCT":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
+    if model=="Nachiketas":
+        #WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=True,sentence_type="xtag_node34_triplets")
+        #WikipediaRLFGTransformersQuestionAnswering(question,bothvertices_intersection=False,sentence_type="xtag_node34_triplets")
+        #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[],"PUNCT":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
     
-    #print("----------------------- sentence synthesis (manual sentence_PoS_dict) --------------------")
-    #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="PoS")
+        #print("----------------------- sentence synthesis (manual sentence_PoS_dict) --------------------")
+        #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="PoS")
 
-    #conll2000_tagged_words=conll2000.tagged_words()
-    #print("conll2000_tagged_words:",conll2000_tagged_words)
-    #conll2000_corpus_PoS2Vocabulary_dict = ConditionalFreqDist((tag, word) for (word, tag) in conll2000_tagged_words)
+        #conll2000_tagged_words=conll2000.tagged_words()
+        #print("conll2000_tagged_words:",conll2000_tagged_words)
+        #conll2000_corpus_PoS2Vocabulary_dict = ConditionalFreqDist((tag, word) for (word, tag) in conll2000_tagged_words)
 
-    #kaggle_corpus_PoS2Vocabulary_dict=defaultdict(list)
-    #with open('words_pos.csv', newline='') as wordsposcsv:
-    #    wordsposreader = csv.reader(wordsposcsv, delimiter=',')
-    #    for row in wordsposreader:
-    #        print("row:",row)
-    #        kaggle_corpus_PoS2Vocabulary_dict[row[2]].append(row[1])
-    #print("kaggle PoS corpus:",kaggle_corpus_PoS2Vocabulary_dict)
+        #kaggle_corpus_PoS2Vocabulary_dict=defaultdict(list)
+        #with open('words_pos.csv', newline='') as wordsposcsv:
+        #    wordsposreader = csv.reader(wordsposcsv, delimiter=',')
+        #    for row in wordsposreader:
+        #        print("row:",row)
+        #        kaggle_corpus_PoS2Vocabulary_dict[row[2]].append(row[1])
+        #print("kaggle PoS corpus:",kaggle_corpus_PoS2Vocabulary_dict)
 
-    #print("----------------------- sentence synthesis (sentence_PoS_dict retrieved from treebank) --------------------")
-    #list_of_sentence_PoS_dicts=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0092.mrg"])
-    #for sentencePoSdict in list_of_sentence_PoS_dicts[:1]:
-    #    print("sentencePoSdict:",sentencePoSdict)
-    #    #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
-    #    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=5,number_of_random_walks=3,blanks=False,treenode_type="tag",user_defined_PoS2Vocabulary_dict=kaggle_corpus_PoS2Vocabulary_dict)
-    #    print("---------------------------------------------")
+        #print("----------------------- sentence synthesis (sentence_PoS_dict retrieved from treebank) --------------------")
+        #list_of_sentence_PoS_dicts=create_sentence_PoS_dict_from_treebank(datasets=["wsj_0092.mrg"])
+        #for sentencePoSdict in list_of_sentence_PoS_dicts[:1]:
+        #    print("sentencePoSdict:",sentencePoSdict)
+        #    #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
+        #    WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict=sentencePoSdict,number_of_cores_per_random_walk=5,number_of_random_walks=3,blanks=False,treenode_type="tag",user_defined_PoS2Vocabulary_dict=kaggle_corpus_PoS2Vocabulary_dict)
+        #    print("---------------------------------------------")
 
-    print("----------------------- sentence synthesis (sentence_PoS_array retrieved from treebank) --------------------")
-    list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(returnasarray=True)
-    verify_part_of_speech("All you need is attention",algorithm="topologicalsort")
-    verify_part_of_speech("All you need is attention",algorithm="exhaustivesearch",arraytemplates=list_of_sentence_PoS_arrays)
-    verify_part_of_speech("Attention is all you need",algorithm="topologicalsort")
-    verify_part_of_speech("is attention all you need",algorithm="exhaustivesearch",arraytemplates=list_of_sentence_PoS_arrays)
-    for sentencePoSarray in list_of_sentence_PoS_arrays[:1]:
-        print("sentencePoSarray:",sentencePoSarray)
-        #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=10,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
-        #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis=True,pairwise_ngram=False)
-        #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis_randomwalks=False,ngrams_sentence_synthesis_fillintheblanks=True,pairwise_ngram=True,ngramshop=2)
-        WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=1,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis_randomwalks=True,ngrams_sentence_synthesis_fillintheblanks=False,pairwise_ngram=True,ngramshop=1)
-        print("---------------------------------------------")
+        print("----------------------- sentence synthesis (sentence_PoS_array retrieved from treebank) --------------------")
+        list_of_sentence_PoS_arrays=create_sentence_PoS_dict_from_treebank(returnasarray=True)
+        verify_part_of_speech("All you need is attention",algorithm="topologicalsort")
+        verify_part_of_speech("All you need is attention",algorithm="exhaustivesearch",arraytemplates=list_of_sentence_PoS_arrays)
+        verify_part_of_speech("Attention is all you need",algorithm="topologicalsort")
+        verify_part_of_speech("is attention all you need",algorithm="exhaustivesearch",arraytemplates=list_of_sentence_PoS_arrays)
+        for sentencePoSarray in list_of_sentence_PoS_arrays[:1]:
+            print("sentencePoSarray:",sentencePoSarray)
+            #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=True,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=10,std_sentence_PoS_dict={},number_of_cores_per_random_walk=5,number_of_random_walks=5,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=conll2000_corpus_PoS2Vocabulary_dict)
+            #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis=True,pairwise_ngram=False)
+            #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis_randomwalks=False,ngrams_sentence_synthesis_fillintheblanks=True,pairwise_ngram=True,ngramshop=2)
+            WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.01,bothvertices_intersection=False,sentence_type="textgraph_random_walk",number_of_words_per_sentence=5,std_sentence_PoS_dict={},number_of_cores_per_random_walk=1,number_of_random_walks=3,blanks=False,treenode_type="tag",sentence_tuple_array=True, sentence_PoS_array=sentencePoSarray, randomwalk_to_sentence_template_ratio=3,user_defined_PoS2Vocabulary_dict=None,ngrams_sentence_synthesis_randomwalks=True,ngrams_sentence_synthesis_fillintheblanks=False,pairwise_ngram=True,ngramshop=1)
+            print("---------------------------------------------")
 
-    #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
-    #OpenAIQuestionAnswering(question)
+        #WikipediaRLFGTransformersQuestionAnswering(question,wsheading=False,answerslice=0.5,bothvertices_intersection=False,sentence_type="knowledgegraph_random_walk",number_of_words_per_sentence=50,std_sentence_PoS_dict={"NUM":[],"ADJ":[],"PROPN":[],"NOUN":[],"PUNCT":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"SYM":[],"X":[]},number_of_cores_per_random_walk=3,number_of_random_walks=3,blanks=False)
+    if model=="OpenAI":
+        OpenAIQuestionAnswering(question)
