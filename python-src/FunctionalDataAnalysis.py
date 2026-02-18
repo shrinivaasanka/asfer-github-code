@@ -22,6 +22,8 @@ from matplotlib.axes import Axes as ax
 from skfda.misc.metrics import l2_distance
 from skfda.ml.clustering import KMeans
 from skfda.datasets import fetch_gait,fetch_aemet,fetch_handwriting
+from skfda.exploratory.visualization.clustering import ClusterPlot
+from skfda.representation.grid import FDataGrid
 
 def cluster_functions(Xaxis=None,Yaxis=None,data=None,n_clust=2,n_ini=10):
     print("Data:",data)
@@ -35,11 +37,13 @@ def cluster_functions(Xaxis=None,Yaxis=None,data=None,n_clust=2,n_ini=10):
     )
     fda_clusters = fda_kmeans.fit_predict(data)
     print("FDA clusters:",fda_clusters)
-    for cluster in range(n_clust):
-        selection = (fda_clusters == cluster)
-        print("selection:",selection)
-        #ax.scatter(data[selection,0],data[selection,1])
-        plt.plot(len(data[0]),len(data[0][0]),selection,'o')
+    #for cluster in range(n_clust):
+    #    selection = (fda_clusters == cluster)
+    #    print("selection:",selection)
+    #    #ax.scatter(data[selection,0],data[selection,1])
+    #    plt.plot(len(data[0]),len(data[0][0]),selection,'o')
+    #fd = data.iloc[:, 0].array
+    ClusterPlot(fda_kmeans, data).plot()
     plt.show()
 
 if __name__=="__main__":
@@ -52,3 +56,7 @@ if __name__=="__main__":
     print("-----------Handwriting Dataset FDA Clusters--------------")
     X,_= fetch_handwriting(return_X_y=True)
     cluster_functions(data=X)
+    randomfunction = [[1,2,3],[2,4,8],[5,6,7],[8,9,10]]
+    gridpoints = [3,4,5]
+    randomfunctiondata = FDataGrid(randomfunction,gridpoints)
+    cluster_functions(data=randomfunctiondata)
