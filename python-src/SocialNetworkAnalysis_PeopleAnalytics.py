@@ -39,6 +39,7 @@ from networkx.drawing.nx_pydot import write_dot
 import operator
 import subprocess
 from deepdiff.diff import DeepDiff 
+from QuestionAnswering import OpenAIQuestionAnswering
 
 
 class HRAnalytics(object):
@@ -450,6 +451,11 @@ class HRAnalytics(object):
         print("SLOC for COCOMO Effort Estimation(Effort = ai(KiloLinesOfCode)^bi(EffortAdjustmentFactor)):",(sloc,cloctxt))
         return (sloc,cloctxt)
 
+    def AI_people_analytics(self,query,aimodel="OpenAI"):
+        print("Analytics for query - " + query + " - by " + aimodel)
+        if aimodel=="OpenAI":
+            OpenAIQuestionAnswering(query)
+
 if __name__ == "__main__":
     hranal = HRAnalytics()
     csensing = CompressedSensing()
@@ -590,3 +596,6 @@ if __name__ == "__main__":
     matri_bride={"Personal Data": { "Age": "41", "Occupation":"Banking sector", "Income":"30 LPA", "Star":"Ashwini"}, "Preferences":{"Drinks":"Yes","Smoking":"Yes"}} 
     matri_groom={"Personal Data": { "Age": "45", "Occupation":"IT", "Income":"50 LPA", "Star":"Rohini"},"Preferences":{"Drinks":"No","Smoking":"Yes"}} 
     hranal.profile_JSON_similarity(matri_bride,matri_groom)
+    hranal.AI_people_analytics("analyze CV " + profile_text1)
+    hranal.AI_people_analytics("analyze CV " + profile_text2)
+    hranal.AI_people_analytics("analyze CV " + profile_text3)
