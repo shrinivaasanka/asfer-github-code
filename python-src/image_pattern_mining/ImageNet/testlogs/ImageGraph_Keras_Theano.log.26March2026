@@ -1,0 +1,113 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+deepfake_detection_ELA(): diff =  [[[100 252 244]
+  [100 144 100]
+  [200 100  32]
+  ...
+  [100 200   0]
+  [100 200   0]
+  [100 200   0]]
+
+ [[ 96   0   8]
+  [188  76 244]
+  [232  32 164]
+  ...
+  [ 44 200 144]
+  [ 44 200 144]
+  [ 44 200 144]]
+
+ [[240  88 152]
+  [100  64 144]
+  [188 244  76]
+  ...
+  [ 44 100  44]
+  [ 44 100  44]
+  [ 44 100  44]]
+
+ ...
+
+ [[244  44  44]
+  [ 44 100 100]
+  [244 144 100]
+  ...
+  [ 32 144 100]
+  [244 144   0]
+  [ 44 100 100]]
+
+ [[ 44 100 100]
+  [100 100 100]
+  [ 88 244 200]
+  ...
+  [100  88 244]
+  [144 188  88]
+  [ 44  88 244]]
+
+ [[ 44 100 100]
+  [100 100 100]
+  [244 144 100]
+  ...
+  [ 88 100 200]
+  [144 100  44]
+  [244 200 144]]]
+deepfake_detection_ELA(): sum diff =  41344160
+deepfake_detection_ELA(): diff =  [[[  0 100  20]
+  [200 200 120]
+  [ 44 100 120]
+  ...
+  [  0 100 100]
+  [ 88 188 244]
+  [ 76 176 232]]
+
+ [[ 88 244 244]
+  [188 188 244]
+  [244  88 144]
+  ...
+  [  0 100 100]
+  [ 44 144 200]
+  [188  32  88]]
+
+ [[ 88 144 144]
+  [132  32 200]
+  [ 32  32   0]
+  ...
+  [200 100  44]
+  [  0 100 100]
+  [100 200   0]]
+
+ ...
+
+ [[132  32 244]
+  [244 144 100]
+  [200 100 144]
+  ...
+  [  0 200 100]
+  [ 44 244 144]
+  [ 44 244 144]]
+
+ [[200 100 200]
+  [200 100 200]
+  [100 200 100]
+  ...
+  [200 144  44]
+  [100  44 200]
+  [200 144  44]]
+
+ [[ 88 188 232]
+  [100 200 244]
+  [200  44   0]
+  ...
+  [200 144  44]
+  [  0 200 100]
+  [  0 200 100]]]
+deepfake_detection_ELA(): sum diff =  328787672

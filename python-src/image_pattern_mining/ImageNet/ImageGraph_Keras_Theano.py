@@ -660,6 +660,14 @@ def core_topological_sort(vg_en_tn_prdct, threshold=1):
     print(("Topological Sorted Core Summary of the Video - Edges:", topsorted_video_core))
     return topsorted_video_core
 
+def deepfake_detection_ELA(imagefile,scale=10,quality=95):
+    img1 = cv2.imread(imagefile)
+    cv2.imwrite(imagefile+"_ela.jpeg",img1,[cv2.IMWRITE_JPEG_QUALITY,quality])
+    img2 = cv2.imread(imagefile+"_ela.jpeg")
+    diff = scale*cv2.absdiff(img1,img2)
+    print("deepfake_detection_ELA(): diff = ",diff)
+    print("deepfake_detection_ELA(): sum diff = ",np.sum(diff))
+    return diff
 
 if __name__ == "__main__":
     # imagenet_imagegraph("../testlogs/PictureOf8_1.jpg")
@@ -740,4 +748,6 @@ if __name__ == "__main__":
     #seg2=image_segmentation("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
     #seg3=image_segmentation("testlogs/Mayan_Canaa_Pyramid_Caracol_LIDAR.jpg",voronoi_delaunay=True)
     #seg4=image_segmentation("testlogs/yogic-seal_0.jpg",voronoi_delaunay=True)
-    seg5=image_segmentation("testlogs/Tamil_brahmi.jpg",voronoi_delaunay=True)
+    #seg5=image_segmentation("testlogs/Tamil_brahmi.jpg",voronoi_delaunay=True)
+    deepfake_detection_ELA("testlogs/ExampleImage_1.jpg",scale=100,quality=50)
+    deepfake_detection_ELA("testlogs/ThisPersonDoesNotExist.jpeg",scale=100,quality=50)
