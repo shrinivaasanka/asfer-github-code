@@ -55,6 +55,7 @@ Voting_Machine3_dict = defaultdict(list)
 
 Voted = []
 VotedQR = []
+DigitalIndelibleInkMarked = []
 QuantileSketch_EVM1 = DDSketch() 
 QuantileSketch_EVM2 = DDSketch() 
 QuantileSketch_EVM3 = DDSketch() 
@@ -322,7 +323,7 @@ def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdic
     h = hashlib.new("ripemd160")
     h.update(publicuniqueid)
     publicuniqueidhex = h.hexdigest()
-    if publicuniqueid not in Voted:
+    if publicuniqueid not in Voted and (publicuniqueid,onetimepassword,VREPATQRreceiptpassword) not in DigitalIndelibleInkMarked:
         if onetimepassword is not None:
             publicuniqueidhex += ":"
             publicuniqueidhex += onetimepassword
@@ -350,6 +351,7 @@ def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdic
                 Voting_Machine_dict[voted_for].insert(sha256_crypt.hash(
                          publicuniqueidhex), random.randint(0, len(Voting_Machine_dict[voted_for])))
                 Voted.insert(publicuniqueid, random.randint(0, len(Voted)))
+                DigitalIndelibleInkMarked.append((unique_id,onetimepassword,VREPATQRreceiptpassword))
             except Exception as e:
                 print("Encoding exception:",e)
         else:
@@ -359,7 +361,7 @@ def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdic
         print(("Voting_Machine_dict:", Voting_Machine_dict))
         QuantileSketch.add(candidatesdict[voted_for])
     else:
-        print("Voter Already Voted")
+        print("Voter Already Voted - Is marked with digital indelible ink")
     if Streaming_Analytics_Bertrand == True:
         sortedEVM = sorted(list(Voting_Machine_dict.items()),
                            key=operator.itemgetter(1), reverse=True)
@@ -374,6 +376,15 @@ def electronic_voting_machine(Voting_Machine_dict, QuantileSketch, candidatesdic
                 float(p-q)/float(p+q))))
     semaphorelock.release()
 
+def count_votes(Voting_Machine_dicts):
+    index=0
+    for evm in Voting_Machine_dicts:
+        print("====================================================")
+        print("Candidatewise Votes polled in Voting Machine :",index)
+        print("====================================================")
+        for candidate, votes in evm.items():
+            print("Number of votes for Candidate ",candidate,":",len(votes))
+        index+=1
 
 def electronic_voting_analytics(QuantileSketches,Voting_Machine_dicts,quantiles=[10,20,30]):
     import Streaming_AbstractGenerator
@@ -476,6 +487,12 @@ def adjusted_rand_index():
 if __name__ == "__main__":
     # ari=adjusted_rand_index()
     set1 = set(range(random.randint(1, int(sys.argv[1]))))
+    VREPATQRreceiptpassword1="15"
+    VREPATQRreceiptpassword2="25"
+    VREPATQRreceiptpassword3="35"
+    onetimepassword1="ff20a894-a2c4-4102-ac39-93d353ea3020:100"
+    onetimepassword2="ff20b894-a2c4-4102-ac39-93d353ea3020:100"
+    onetimepassword3="ff20c894-a2c4-4102-ac39-93d353ea3020:100"
     number_of_partitions = nT(len(set1))
     processes_partitions = Partition(set1)
     randp = processes_partitions + random.randint(1, number_of_partitions)
@@ -492,18 +509,19 @@ if __name__ == "__main__":
         print("Electronic Voting Machine: 1")
         print("=============================")
         electronic_voting_machine(Voting_Machine1_dict, QuantileSketch_EVM1, candidates, idcontexts[voteridx % len(idcontexts)],
-                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4002-ac39-93dd53ea302f:100", VREPATQRreceiptpassword="23")
+                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword=onetimepassword1, VREPATQRreceiptpassword=VREPATQRreceiptpassword1)
         print("=============================")
         print("Electronic Voting Machine: 2")
         print("=============================")
         electronic_voting_machine(Voting_Machine2_dict, QuantileSketch_EVM2, candidates, idcontexts[voteridx*2 % len(idcontexts)],
-                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a3c4-4002-ac39-93d153ea3020:100", VREPATQRreceiptpassword="33")
+                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword=onetimepassword2, VREPATQRreceiptpassword=VREPATQRreceiptpassword2)
         print("=============================")
         print("Electronic Voting Machine: 3")
         print("=============================")
         electronic_voting_machine(Voting_Machine3_dict, QuantileSketch_EVM3, candidates, idcontexts[voteridx*3 % len(idcontexts)],
-                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4102-ac39-93d353ea3020:100", VREPATQRreceiptpassword="14")
+                                  list(candidates.keys())[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword=onetimepassword3, VREPATQRreceiptpassword=VREPATQRreceiptpassword3)
         voteridx += 1
+    count_votes([Voting_Machine1_dict, Voting_Machine2_dict, Voting_Machine3_dict])
     setpartition_to_tilecover(None, sys.argv[1], solution="ILP",Neuro_Crypto_ProofOfWork=True)
     single_bin_sorted_LIFO_histogram_ToH(
         "1024", Neuro_Crypto_ProofOfWork=True)
