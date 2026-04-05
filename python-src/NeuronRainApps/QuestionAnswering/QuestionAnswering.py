@@ -10,11 +10,12 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-# --------------------------------------------------------------------------------------------------------
-# Copyleft (Copyright+):
+# ------------------------------------------------------------------------------------------------
+# K.Srinivasan
+# Krishna iResearch - https://www.krishna-iresearch.org/
 # NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 # Personal website(research): https://acadpdrafts.readthedocs.io/en/latest/
-# ------------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------
 
 import cmd,sys
 import wikipedia
@@ -42,14 +43,17 @@ from SentenceSynthesizer_Ngrams import get_ngrams_and_synthesize_sentence
 from pathlib import Path
 import networkx as nx
 from difflib import SequenceMatcher
+from pprint import pprint
 
 model="OpenAI"
 
-def OpenAIQuestionAnswering(question):
+def OpenAIQuestionAnswering(question,model="gpt-5.4"):
     from openai import OpenAI
     client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-    chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model="gpt-5.2")
-    print("chat completion:",chat_completion)
+    chat_completion = client.chat.completions.create(messages=[{ "role": "user", "content": question, } ], model=model)
+    print("chat completion:")
+    pprint(chat_completion.choices[0].message.content)
+    return chat_completion
 
 def WikipediaRLFGTransformersQuestionAnswering(question,questionfraction=1,maxanswers=1,keywordsearch=False,wsheading=True,answerslice=1,answerfraction=1,bothvertices_intersection=True,sentence_type="xtag_node34_triplets",number_of_random_walks=10,number_of_words_per_sentence=5,number_of_cores_per_random_walk=5,std_sentence_PoS_dict={"ADJ":[],"PROPN":[],"NOUN":[],"AUX":[],"ADP":[],"ADV":[],"VERB":[],"DET":[],"PRON":[],"CCONJ":[],"NUM":[],"SYM":[],"X":[]},blanks=False,perplexity_algorithm="WordNet",treenode_type="PoS",sentence_tuple_array=False,sentence_PoS_array=None,randomwalk_to_sentence_template_ratio=10,user_defined_PoS2Vocabulary_dict=None,transformers_enabled=False,ngrams_sentence_synthesis_randomwalks=True,ngrams_sentence_synthesis_fillintheblanks=False,pairwise_ngram=False,ngramshop=2):
     import RecursiveGlossOverlap_Classifier
