@@ -27,6 +27,7 @@ from pytrends.request import TrendReq
 from bs4 import BeautifulSoup 
 import requests
 from collections import defaultdict
+from QuestionAnswering import OpenAIQuestionAnswering
 
 def sentiment_analyzer(text,algorithm=None):
     vote=0.0
@@ -216,11 +217,19 @@ def opinion_mining_from_url(url):
             print("-----------------",line)
     print("Votes for tweets - tweetdict:",tweetdict)
 
+def opinion_mining_from_AI_models(query="",fromdate="01/01/2025",todate="07/04/2026",aimodel="OpenAI"):
+    if aimodel=="OpenAI":
+        sentimentanalysis=OpenAIQuestionAnswering("List and Perform sentiment analysis of news articles from " + fromdate + " to " + todate + " on: "+ query +". Assume \"all of the above\" as answer for your followup questions")
+        print("News sentiment for query:",sentimentanalysis)
+
 if __name__=="__main__":
     #opinion_mining("Chennai Metropolitan Area Expansion","27/02/2023","01/03/2023")
-    opinion_mining("GDP","01/01/2023","10/04/2024")
+    #opinion_mining("GDP","01/01/2023","10/04/2024")
     #opinion_mining_from_google_trends(fromdate="01/06/2023",todate="09/06/2023")
     #opinion_mining_from_url("https://trendlistz.com/india")
     #opinion_mining_from_url("https://twitter.com/i/trends")
+    opinion_mining_from_AI_models(query="India",fromdate="01 January 2026",todate="07 April 2026",aimodel="OpenAI")
+    opinion_mining_from_AI_models(query="Tamilnadu",fromdate="01 January 2026",todate="07 April 2026",aimodel="OpenAI")
+    opinion_mining_from_AI_models(query="Chennai metropolitan area",fromdate="01 January 2026",todate="07 April 2026",aimodel="OpenAI")
 
 
