@@ -81,6 +81,7 @@ import pandas
 import json 
 from geopy.distance import geodesic,great_circle
 from openpyxl import load_workbook
+from QuestionAnswering import OpenAIQuestionAnswering
 
 mplstyle.use('fast')
 shapely.speedups.disable()
@@ -344,7 +345,7 @@ def urban_sprawl_from_GEE(imagecollection,featurecollection,nightlightsparameter
         plt.show()
         return radiance
 
-def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt,granularity=0.01,delineationparams=None,bboxcentroid=True):
+def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt,granularity=0.005,delineationparams=None,bboxcentroid=True):
     urbansprawlstatistics=[]
     urbansprawlstatisticsaggregate=0
     longlatstat={}
@@ -780,6 +781,10 @@ def urban_sprawl_from_ucdb_excel(ghsl_ucdb_excel,urban_center="All",sheetname="G
              column_number=1
              row_number+=1
 
+def urban_sprawl_from_ai_models(model="OpenAI",query=""):
+    if model=="OpenAI":
+        OpenAIQuestionAnswering(question=query,model="gpt-5.5")
+
 if __name__ == "__main__":
     #seg1=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
     #seg2=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
@@ -956,6 +961,9 @@ if __name__ == "__main__":
     #Chennai Metropolitan Area Sprawl Bounding Box 4 - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257 - WorldPop 
     #r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/ind_ppp_2020_1km_Aggregated.tif",dt="WorldPop population estimates")
     #r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/ind_pop_2025_CN_1km_R2024B_UA_v1.tif",dt="WorldPop population estimates 2025")
-    r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/ind_pop_2025_CN_1km_R2025A_UA_v1.tif",dt="WorldPop population estimates 2025")
+    #r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/ind_pop_2025_CN_1km_R2025A_UA_v1.tif",dt="WorldPop population estimates 2025")
     #KMU Urban sprawl Bounding Box 5 - http://bboxfinder.com/#10.945574,79.343262,11.095198,79.475098 - WorldPop
     #r3data=urban_sprawl_from_raster(79.343262,10.945574,79.475098,11.095198,"testlogs/ind_ppp_2020_1km_Aggregated.tif",dt="WorldPop population estimates")
+    #r4data=urban_sprawl_from_raster(79.343262,10.945574,79.475098,11.095198,"testlogs/landscan-global-2024.tif",dt="ORNL LandScan 2024")
+    urban_sprawl_from_ai_models(query="Analyze 2026 population estimates and area of all urban areas in Tamilnadu")
+    r5data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/landscan-global-2024.tif",dt="ORNL LandScan 2024")
