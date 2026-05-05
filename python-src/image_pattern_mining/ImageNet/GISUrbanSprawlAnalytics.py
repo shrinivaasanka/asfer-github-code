@@ -345,7 +345,7 @@ def urban_sprawl_from_GEE(imagecollection,featurecollection,nightlightsparameter
         plt.show()
         return radiance
 
-def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt,granularity=0.005,delineationparams=None,bboxcentroid=True):
+def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt,granularity=0.01,delineationparams=None,bboxcentroid=True):
     urbansprawlstatistics=[]
     urbansprawlstatisticsaggregate=0
     longlatstat={}
@@ -373,11 +373,22 @@ def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt,granularity=0.005,d
             cols+=1
         rows+=1
     print("urban_sprawl_from_raster(): bounding box shape = ",(rows,cols))
-    print("urban_sprawl_from_raster(): urbansprawlstatisitcs = ",urbansprawlstatistics)
-    print("urban_sprawl_from_raster(): urbansprawlstatisitcsaggregate = ",urbansprawlstatisticsaggregate)
+    print("urban_sprawl_from_raster(): urbansprawlstatistics = ",urbansprawlstatistics)
+    print("urban_sprawl_from_raster(): urbansprawlstatisticsaggregate = ",urbansprawlstatisticsaggregate)
     print("urban_sprawl_from_raster(): longlatstat = ",longlatstat)
-    urbansprawl_gini_coefficient(urbansprawlstatistics)
+    GIS_decision_making(urbansprawlstatistics,urbansprawlstatisticsaggregate,longlatstat,variable="gini_coefficient")
+    GIS_decision_making(urbansprawlstatistics,urbansprawlstatisticsaggregate,longlatstat,variable="residential_longlats")
     return (urbansprawlstatistics,(rows,cols),longlatstat,urbansprawlstatisticsaggregate)
+
+def GIS_decision_making(urbansprawlstatistics,urbansprawlstatisticsaggregate,longlatstat,variable="gini_coefficient",populationthreshold=1000):
+    residentiallonglats=[]
+    if variable=="gini_coefficient":
+        urbansprawl_gini_coefficient(urbansprawlstatistics)
+    if variable=="residential_longlats":
+        for k,v in longlatstat.items():
+            if v > populationthreshold:
+                residentiallonglats.append(k)
+        print("Dense residential areas (long-lat):",residentiallonglats)
 
 def four_colored_morphological_settelement_zones(heightrasterdata,longx,latx,longy,laty,clearingheight=10.9727999833):
     heightrasterhist=defaultdict(int)
@@ -965,5 +976,5 @@ if __name__ == "__main__":
     #KMU Urban sprawl Bounding Box 5 - http://bboxfinder.com/#10.945574,79.343262,11.095198,79.475098 - WorldPop
     #r3data=urban_sprawl_from_raster(79.343262,10.945574,79.475098,11.095198,"testlogs/ind_ppp_2020_1km_Aggregated.tif",dt="WorldPop population estimates")
     #r4data=urban_sprawl_from_raster(79.343262,10.945574,79.475098,11.095198,"testlogs/landscan-global-2024.tif",dt="ORNL LandScan 2024")
-    urban_sprawl_from_ai_models(query="Analyze 2026 population estimates and area of all urban areas in Tamilnadu")
+    #urban_sprawl_from_ai_models(query="Analyze 2026 population estimates and area of all urban areas in Tamilnadu")
     r5data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/landscan-global-2024.tif",dt="ORNL LandScan 2024")
