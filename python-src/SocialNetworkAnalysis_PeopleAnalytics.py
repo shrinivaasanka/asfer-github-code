@@ -225,9 +225,10 @@ class HRAnalytics(object):
                             "NeuronRain Human Name Parsing by Context - nameparser():", k, ":", v)
                     return regexgroupdict
 
-    def pipldotcom_analytics(self, first_name=None, last_name=None, email=None, loadfromjson=True):
+    def pipldotcom_analytics(self, first_name=None, last_name=None, email=None, loadfromjson=True, minprob=0.1,sources=True,sourceids=True,pretty=True, inference=True, minmatch=None, hidesponsored=None,livefeeds=True, topmatch=False):
         if not loadfromjson:
             from piplapis.search import SearchAPIRequest
+            SearchAPIRequest.set_default_settings(api_key=u'20307is19nx0tu0mar4zt987', minimum_probability=minprob,show_sources=sources, show_sourceids=sourceids, pretty=pretty, infer_persons=inference, minimum_match=minmatch, hide_sponsored=hidesponsored, live_feeds=livefeeds, top_match=topmatch)
             request = SearchAPIRequest(email=email, first_name=first_name,
                                    last_name=last_name, api_key='20307is19nx0tu0mar4zt987')
             response = request.send()
@@ -596,6 +597,7 @@ if __name__ == "__main__":
     matri_bride={"Personal Data": { "Age": "41", "Occupation":"Banking sector", "Income":"30 LPA", "Star":"Ashwini"}, "Preferences":{"Drinks":"Yes","Smoking":"Yes"}} 
     matri_groom={"Personal Data": { "Age": "45", "Occupation":"IT", "Income":"50 LPA", "Star":"Rohini"},"Preferences":{"Drinks":"No","Smoking":"Yes"}} 
     hranal.profile_JSON_similarity(matri_bride,matri_groom)
-    hranal.AI_people_analytics("analyze CV " + profile_text1)
-    hranal.AI_people_analytics("analyze CV " + profile_text2)
-    hranal.AI_people_analytics("analyze CV " + profile_text3)
+    #hranal.AI_people_analytics("analyze CV " + profile_text1)
+    #hranal.AI_people_analytics("analyze CV " + profile_text2)
+    #hranal.AI_people_analytics("analyze CV " + profile_text3)
+    hranal.AI_people_analytics("Perform a deep analysis of social, academic and professional references to Srinivasan Kannan - PSG Tech 1995-1999, CMI 2008-2011, Krishna iResearch FOSS based on CV text:" + profile_text1 + "," + profile_text2 + "," + profile_text3 + ". Assume yes for all follow-up questions")
