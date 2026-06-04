@@ -21,6 +21,12 @@
 #statistics and observables for the system as a whole, for a process id $1 and for cgroupid $2 - individual stats oneliners
 #can be commented or uncommented as deemed necessary
 
+export BPFTRACE_DEBUG_OUTPUT=1 
+
+#Runqueue latency and Runqueue length
+runqlat-bpfcc 1 1
+runqlen-bpfcc 1 1
+
 # Profile user-level stacks at 99 Hertz, for PID $1:
 bpftrace -e 'profile:hz:99 /pid == $1/ { @[ustack] = count(); }' $1
 echo "##############End#Profile user-level stacks#################"
