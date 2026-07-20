@@ -19,8 +19,6 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-from FlightRadar24 import FlightRadar24API
-from pyflightdata import FlightData
 import pprint
 import pandas as pd
 from datetime import datetime
@@ -32,7 +30,8 @@ import dynetx.algorithms as al
 import matplotlib.pyplot as plt
 from networkx.drawing.nx_pydot import write_dot
 
-def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10,radius=1000,latitude=12.439259,longitude=79.271851,airport_code="MAA"):
+def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10,radius=-1,latitude=12.439259,longitude=79.271851,airport_code="MAA"):
+    from FlightRadar24 import FlightRadar24API
     print("======================================================================")
     print("FlightRadar24 Live Air Traffic for zones ",zones," - and centrality measures")
     print("======================================================================")
@@ -72,6 +71,8 @@ def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10,radius=1000,l
                             cnt+=1
                         except:
                             print("FlightRadarAPI exception")
+    degrees=dx.degree(airtrafficdyngraph)
+    print("Instantaneous Node degrees of air traffic dynamic graph:",degrees)
     timerespectingpaths=al.all_time_respecting_paths(airtrafficdyngraph)
     print("Time respecting paths in air traffic dynamic graph:",timerespectingpaths)
     apsp=nx.all_pairs_shortest_path(airtrafficdyngraph)
@@ -104,6 +105,8 @@ def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10,radius=1000,l
     #plt.show()
 
 def pyflightdata_live_air_traffic(airport_code="MAA"):
+    from FlightRadar24 import FlightRadar24API
+    from pyflightdata import FlightData
     print("======================================================")
     print("PyFlightData Live Air Traffic for airport code ",airport_code)
     print("======================================================")
@@ -144,11 +147,45 @@ def pyflightdata_live_air_traffic(airport_code="MAA"):
     get_metar_weather_data(airport_code)
 
 def get_metar_weather_data(airport_code="MAA"):
+    from pyflightdata import FlightData
     flightdata=FlightData()
-    metar=flightdata.get_airport_metars(airport_code)
-    decoded_metar=flightdata.decode_metar(metar)
-    pprint.pprint(decoded_metar)
-    return decoded_metar
+    try:
+    	metar=flightdata.get_airport_metars(airport_code)
+    	pprint.pprint("METAR for ",airport_code,":",metar)
+    	if metar is not None:
+    		decoded_metar=flightdata.decode_metar(metar)
+    		pprint.pprint("Decoded METAR:",decoded_metar)
+    		return decoded_metar
+    	else:
+                return metar
+    except Exception as ex:
+        print("METAR exception:",ex)
+
+def opensky_live_air_traffic(airport_code=None,fromtime=None,totime=None,boundingbox=[]):
+    print("======================================================")
+    print("OpenSky Live Air Traffic for airport code ",airport_code)
+    print("======================================================")
+    #opensky_rest_url=f"https://opensky-network.org/flights/arrival?airport={airport_code}&begin={fromtime}&end={totime}"
+    #response=requests.get(opensky_rest_url)
+    #if response.status_code==200:
+    #    arrvals=pd.DataFrame(response.json())
+    #    print("Arrivals at ",airport_code,":")
+    #    print(arrdep)
+    from opensky_api import OpenSkyApi
+    api=OpenSkyApi()
+    states=api.get_states(bbox=boundingbox)
+    print("State vectors for bounding box:",states)
+    print("--------------------------")
+    flights=api.get_flights_from_interval(fromtime,totime)
+    print("Flights from ",fromtime," to ",totime,":")
+    print("--------------------------")
+    pprint.pprint(flights)
+    if airport_code is not None:
+    	arrivals=api.get_arrivals_by_airport(airport_code,fromtime,totime)
+    	departures=api.get_departures_by_airport(airport_code,fromtime,totime)
+    	print("Arrivals in ",airport_code," from ",fromtime," to ",totime," :",arrivals)
+    	print("--------------------------")
+    	print("Departures in ",airport_code, " from ",fromtime," to ",totime," :",departures)
 
 def here_live_traffic(key,bearertoken,boundingbox=[12.439259,79.271851,13.568572,80.351257]):
     #page = requests.get('https://traffic.api.here.com/traffic/6.2/flow.xml?app_id=NeuronRain_Live_Traffic&app_code=vS5i2op45RlaPW2GFKx8&bbox='+str(boundingbox[0])+','+str(boundingbox[1])+','+str(boundingbox[2])+','+str(boundingbox[3])+'&responseattributes=sh,fc')
@@ -191,13 +228,16 @@ if __name__=="__main__":
     tomtomkey='00cKrkjfS62WPuchRmUc6Q5RAJw80hO2'
     #herekey='dLxfz-ex3bXiDfypspYxJnlhVUIsKrve_TL-tRlk86c'
     #herekey='d3KvxwZzD66NN9TmEfCPNSjeo3othXi4yy-SYqcytFk'
-    herekey='OVA-84BS3bge_Nhem9h7Mw'
+    #herekey='OVA-84BS3bge_Nhem9h7Mw'
     #herebearertoken='eyJhbGciOiJSUzUxMiIsImN0eSI6IkpXVCIsImlzcyI6IkhFUkUiLCJhaWQiOiJ2UzVpMm9wNDVSbGFQVzJHRkt4OCIsImlhdCI6MTcwNDg4MDYwNywiZXhwIjoxNzA0OTY3MDA3LCJraWQiOiJqMSJ9.ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJRMEpETFVoVE5URXlJbjAuLnpmd1BIOUhsMldzRGRwWDZZSERFMWcuQVlSOElLNUVfMy02eGVXeVdCVENsamhzc3NBaGZ0Mk5ac2RJdjd6bUlqVmFDOGhCc2pNNUhRdlVZUGJmSXI0ZXczQmxObGNfaEtiN0dzMzAzNFR3YUVHNGhIalBhNXU0eUZQM0F1ODAxeGpMeURERXdsLXFPQ2FpX1NUODVoQ1NCMUJpRUhNc0Y0N192V3hzUTUtb2ZlaHJUcmZtTnlZM1lMR08wYTBMZkZQeVlfZ2pOd2tGSHBiNHR4Nl82LVNaRWh0ZEFDUmR3ZXY0NUROX3E1TzRLMUljcGVMNG9aOERqT2phMDcxT2g5US4wNm9EWmhBV0c3V1F4R09MdEU4cTZNRE8tRFlCRXU5QmdHbXpyRGRTT0Jr.pe0ReOI69iv5zGvCsvBpiIAKW1JhUh7KpH2qAbh2VfN6QW5x7vuEbY9v6R4v92I4w_h6aeTY0a46V9I2psvfwj1wo-dvKlP6TfOksoYKqcUUrtjpzQUIeR2-eOTblMyeGbNQx9lRTfAznDQOFHf1S2vRXUznKszTcGkYzmyrrX8cXoXYsZmQJcsUE9E4MZ8O76H0vm5W0wJHyJuRvgoWsQf2U8nL_xeI6tHv1eLRjtOBzDrX9LC8moauhV-7UWuv22nFU2PgjbP-AvmE66XFHbf2jThtbEBSXv7TvMhCCaJgt3knePTZ371S-rYzbPRS5AI5ijjbW-JRABvlj9i2Hg'
-    herebearertoken='eyJhbGciOiJSUzUxMiIsImN0eSI6IkpXVCIsImlzcyI6IkhFUkUiLCJhaWQiOiJ2UzVpMm9wNDVSbGFQVzJHRkt4OCIsImlhdCI6MTcwNDg4NTQ4NywiZXhwIjoxNzA0OTcxODg3LCJraWQiOiJqMSJ9.ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJRMEpETFVoVE5URXlJbjAuLm9Jejg3WU1vRmNIQlh3UXBfa21GdUEudVZUcTRaLWxxVVdUOVQtdjVPYm9WZVRqYmxESHRjcUVpRFN3TzZIY29fakdFOHNmWDRncnlzdTZ4bUdIek9BS1hNWWhVZVg2UG5yTTV3UWFRaU5CTXBmWFFqdE9JOUdkNXFSd0llSFI5My1lZ1RCc3hrY3dkZjRzdkdXV05JSTM4R3JZMS1NN0N2U1NyTklVc2FPaEk3WTJIcHZfdW9naVhPekhFdTJiaWhYOVMwTzdiSXVLZkxFVmRzdVFEaTdhOXRMbFh6M3FsM1VXekI1UHowMERvUE1QYWRKTmdzekFzbncweUU0aG9pNC5qU19ETVZDdjBqV0pQdzdLeDQxTS01MFpvaHVKdkp1UW1ZOUhxaGUyb2ZF.W7WZa_xW2araKc1vP3UpPjyVTNao-BfzdeZPl7gkx3SKbrMi_AUR3KhzcxqdmJnmgY8rJnUPo0s6W_MO6GmETwNFjMl8zPYNX6ILTNk_ncx6LeZHyxW9I2PVlBvMVrP1BncdbPe7g0rX7-D1coqs5xx4yQx9wBeu0KYVEirPLDz-lyRT9h8ro-g-q5o25-XgsY2ZAJyzKWGtMMuUQgQibWMfh3CrEmCuoXyInYXOx2qlJSZCPB5RvcTNqs9xcctFgDKQIS6dmGCpEdTv0uKcRGRT-jdHaEfUXZFeXaCJ0UYI0_0ra1Gu5LZTiMe89uGkle5TEtcNhFhjEQXtrtsJ0w'
-    here_live_traffic(key=herekey,bearertoken=herebearertoken,boundingbox=[12.439259,79.271851,13.568572,80.351257])
+    #herebearertoken='eyJhbGciOiJSUzUxMiIsImN0eSI6IkpXVCIsImlzcyI6IkhFUkUiLCJhaWQiOiJ2UzVpMm9wNDVSbGFQVzJHRkt4OCIsImlhdCI6MTcwNDg4NTQ4NywiZXhwIjoxNzA0OTcxODg3LCJraWQiOiJqMSJ9.ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJRMEpETFVoVE5URXlJbjAuLm9Jejg3WU1vRmNIQlh3UXBfa21GdUEudVZUcTRaLWxxVVdUOVQtdjVPYm9WZVRqYmxESHRjcUVpRFN3TzZIY29fakdFOHNmWDRncnlzdTZ4bUdIek9BS1hNWWhVZVg2UG5yTTV3UWFRaU5CTXBmWFFqdE9JOUdkNXFSd0llSFI5My1lZ1RCc3hrY3dkZjRzdkdXV05JSTM4R3JZMS1NN0N2U1NyTklVc2FPaEk3WTJIcHZfdW9naVhPekhFdTJiaWhYOVMwTzdiSXVLZkxFVmRzdVFEaTdhOXRMbFh6M3FsM1VXekI1UHowMERvUE1QYWRKTmdzekFzbncweUU0aG9pNC5qU19ETVZDdjBqV0pQdzdLeDQxTS01MFpvaHVKdkp1UW1ZOUhxaGUyb2ZF.W7WZa_xW2araKc1vP3UpPjyVTNao-BfzdeZPl7gkx3SKbrMi_AUR3KhzcxqdmJnmgY8rJnUPo0s6W_MO6GmETwNFjMl8zPYNX6ILTNk_ncx6LeZHyxW9I2PVlBvMVrP1BncdbPe7g0rX7-D1coqs5xx4yQx9wBeu0KYVEirPLDz-lyRT9h8ro-g-q5o25-XgsY2ZAJyzKWGtMMuUQgQibWMfh3CrEmCuoXyInYXOx2qlJSZCPB5RvcTNqs9xcctFgDKQIS6dmGCpEdTv0uKcRGRT-jdHaEfUXZFeXaCJ0UYI0_0ra1Gu5LZTiMe89uGkle5TEtcNhFhjEQXtrtsJ0w'
+    #here_live_traffic(key=herekey,bearertoken=herebearertoken,boundingbox=[12.439259,79.271851,13.568572,80.351257])
     tomtom_live_traffic(tomtomkey,boundingbox=[12.439259,79.271851,13.568572,80.351257])
     tomtom_live_traffic(tomtomkey,boundingbox=[10.948860,79.348497,10.991413,79.421453],apiversion=4)
     tomtom_live_traffic(tomtomkey,boundingbox=[10.948860,79.348497,10.991413,79.421453],apiversion=5)
     tomtom_live_traffic(tomtomkey,longlat=[12.439259,79.271851])
     flightradar24_live_air_traffic(max_no_of_flights=20)
+    totime=int(time.time())
+    fromtime=totime-(6000)
+    opensky_live_air_traffic(airport_code="MAA",fromtime=fromtime,totime=totime,boundingbox=[10.948860,79.348497,10.991413,79.421453])
     pyflightdata_live_air_traffic(airport_code="MAA")
