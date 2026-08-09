@@ -457,8 +457,24 @@ class HRAnalytics(object):
         if aimodel=="OpenAI":
             OpenAIQuestionAnswering(query)
 
+    def web_search(self,url,timeout=5,pagenum=1):
+        import requests
+        from bs4 import BeautifulSoup
+        from urllib.parse import quote
+        #from googleapi import google
+        headers={ "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" }
+        response=requests.get(url,headers=headers,timeout=timeout)
+        print("response.text:",response.text)
+        print("status code:",response.status_code)
+        #results=google.search(query,pagenum)
+        soup=BeautifulSoup(response.text, "html.parser")
+        for tag in soup.find_all(True):
+            text=tag.get_text(" ",strip=True)
+            print(text)
+            
 if __name__ == "__main__":
     hranal = HRAnalytics()
+    hranal.web_search("https://www.krishna-iresearch.org")
     csensing = CompressedSensing()
     patenv=os.environ['GITHUB_PAT']
     sloc=hranal.parse_sloc("./SocialNetworkAnalysis_PeopleAnalytics.OpenSource_SLOC")
@@ -600,4 +616,4 @@ if __name__ == "__main__":
     #hranal.AI_people_analytics("analyze CV " + profile_text1)
     #hranal.AI_people_analytics("analyze CV " + profile_text2)
     #hranal.AI_people_analytics("analyze CV " + profile_text3)
-    hranal.AI_people_analytics("Perform a deep analysis of social, academic and professional references to Srinivasan Kannan - PSG Tech 1995-1999, CMI 2008-2011, Krishna iResearch FOSS based on CV text:" + profile_text1 + "," + profile_text2 + "," + profile_text3 + ". Assume yes for all follow-up questions")
+    #hranal.AI_people_analytics("Perform a deep analysis of social, academic and professional references to Srinivasan Kannan - PSG Tech 1995-1999, CMI 2008-2011, Krishna iResearch FOSS based on CV text:" + profile_text1 + "," + profile_text2 + "," + profile_text3 + ". Assume yes for all follow-up questions")
