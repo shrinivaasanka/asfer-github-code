@@ -27503,3 +27503,78 @@ References:
 ----------
 1683.5 SpiderFoot documentation - https://github.com/smicallef/spiderfoot 
 1683.6 OSINT python tools - https://github.com/tegridydev/python-OSINT-notebook
+
+--------------------------------------------------------------------------------------------------
+1685. (THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 2 September 2026 - VARUNA N-Body Climate Model - N-Body gravity analysis of date range 1/10/2026-30/11/2026 for Mercury-Venus - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368,1388,1404,1455,1456,1463,1479,1480,1515,1526,1527,1528,1548,1558,1561,1562,1567,1581,1590,1631,1638,1639 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change-Adaptive Fourier Neural Operator-FourCastNet, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules, Global warming,Clausius-Clapeyron equation,Navier-Stokes equation
+--------------------------------------------------------------------------------------------------
+(Disclaimer: Same as Disclaimer in Section 1548 - VARUNA N-Body model is a non-conventional meteorology model still in experimental stages)
+1685.1 python-src/image_pattern_mining/ImageNet/GISWeatherAnalytics.py has been updated to compute N-Body gravitational forces of semisextile Mercury-Venus angular separation on Earth for the date range 1/10/2026-30/11/2026: 
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2026,10,1,17,30,00),'dateto':(2026,11,30,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Venus",'angularsepbounds':('0d','30d'),'longlat':['223@399'],'seasurfacelonglat':(95,12)},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]},computepressuregradient=True,seasonaltemperature=25)
+1685.2 Following are the datewise angular separations from GISWeatherAnalytics.log.2September2026 obtained from - grep "separation" GISWeatherAnalytics.log.2September2026 |grep "Venus-Mercury" :
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 08deg 35' 57.3">, ('2026', '10', '01', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 07deg 37' 31.3">, ('2026', '10', '02', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 06deg 43' 54.4">, ('2026', '10', '03', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 05deg 57' 53.4">, ('2026', '10', '04', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 05deg 23' 23.2">, ('2026', '10', '05', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 05deg 04' 58.3">, ('2026', '10', '06', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 05deg 06' 07.5">, ('2026', '10', '07', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 05deg 27' 03.5">, ('2026', '10', '08', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 06deg 04' 38.0">, ('2026', '10', '09', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 06deg 54' 25.8">, ('2026', '10', '10', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 07deg 52' 31.3">, ('2026', '10', '11', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 08deg 55' 59.1">, ('2026', '10', '12', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 10deg 02' 44.5">, ('2026', '10', '13', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 11deg 11' 16.9">, ('2026', '10', '14', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 12deg 20' 26.3">, ('2026', '10', '15', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 13deg 29' 14.6">, ('2026', '10', '16', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 14deg 36' 49.7">, ('2026', '10', '17', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 15deg 42' 22.7">, ('2026', '10', '18', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 16deg 45' 05.1">, ('2026', '10', '19', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 17deg 44' 08.1">, ('2026', '10', '20', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 18deg 38' 41.9">, ('2026', '10', '21', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 19deg 27' 55.6">, ('2026', '10', '22', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 20deg 10' 57.5">, ('2026', '10', '23', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 20deg 46' 56.6">, ('2026', '10', '24', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 21deg 15' 03.5">, ('2026', '10', '25', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 21deg 34' 33.1">, ('2026', '10', '26', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 21deg 44' 47.2">, ('2026', '10', '27', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 21deg 45' 18.4">, ('2026', '10', '28', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 21deg 35' 53.8">, ('2026', '10', '29', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 21deg 16' 39.7">, ('2026', '10', '30', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 20deg 48' 05.3">, ('2026', '10', '31', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 20deg 11' 05.6">, ('2026', '11', '01', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 19deg 27' 02.2">, ('2026', '11', '02', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 18deg 37' 41.5">, ('2026', '11', '03', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 17deg 45' 09.0">, ('2026', '11', '04', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 16deg 51' 41.7">, ('2026', '11', '05', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 15deg 59' 36.9">, ('2026', '11', '06', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 15deg 11' 02.0">, ('2026', '11', '07', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 14deg 27' 45.4">, ('2026', '11', '08', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 13deg 51' 10.2">, ('2026', '11', '09', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 13deg 22' 12.6">, ('2026', '11', '10', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 13deg 01' 23.3">, ('2026', '11', '11', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 12deg 48' 52.0">, ('2026', '11', '12', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 12deg 44' 31.9">, ('2026', '11', '13', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 12deg 48' 04.8">, ('2026', '11', '14', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 12deg 59' 03.9">, ('2026', '11', '15', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 13deg 16' 56.6">, ('2026', '11', '16', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 13deg 41' 06.1">, ('2026', '11', '17', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 14deg 10' 52.8">, ('2026', '11', '18', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 14deg 45' 36.1">, ('2026', '11', '19', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 15deg 24' 35.2">, ('2026', '11', '20', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 16deg 07' 10.6">, ('2026', '11', '21', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 16deg 52' 45.0">, ('2026', '11', '22', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 17deg 40' 44.2">, ('2026', '11', '23', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 18deg 30' 37.1">, ('2026', '11', '24', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 19deg 21' 56.1">, ('2026', '11', '25', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 20deg 14' 17.3">, ('2026', '11', '26', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 21deg 07' 19.8">, ('2026', '11', '27', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 22deg 00' 46.0">, ('2026', '11', '28', '17', '30', '00.000'))]
+SkyField separation_from(): Angular separations for  Venus-Mercury : [(<Angle 22deg 54' 20.9">, ('2026', '11', '29', '17', '30', '00.000'))]
+1685.3 Corresponding N-Body Gravity L2 norm graphics plot for above 61 days range is at testlogs/GISWeatherAnalytics.Gravity.Mercury-Venus.2026-10-1#2026-11-30.jpg which shows a sharp spike in first week of November 2026. Navier-Stokes pressure gradients data in GISWeatherAnalytics.log.2September2026 for above date range shows corresponding spike during first week of November 2026 which is a prerequisite for creation of low pressure troughs. 
+1685.4 Following are the 61-day Navier-Stokes pressure gradients obtained from Mercury gravity L2 norms for above date range from GISWeatherAnalytics.log.2September2026, peaking in November 2026:
+pressure gradients: [0.6863541064898564, 0.6897621514219108, 0.6940231186151363, 0.6991551555156232, 0.705180085289406, 0.7121234659237101, 0.720014646481695, 0.7288868132354327, 0.7387770161336888, 0.7497261631889113, 0.7617789667483558, 0.7749838210827141, 0.7893925850986953, 0.8050602370666512, 0.8220443598629482, 0.8404044052081419, 0.8602006736705456, 0.8814929338992583, 0.904338590035417, 0.9287902913686537, 0.9548928646042913, 0.9826794391551036, 1.012166633651374, 1.0433486831867531, 1.0761904196700751, 1.1106190822503983, 1.1465150429928148, 1.18370169659284, 1.2219349901544734, 1.2608933589983855, 1.3001691698484827, 1.3392631133995776, 1.37758326927921, 1.4144507045512094, 1.449113372549162, 1.4807696612364256, 1.5086020998127898, 1.5318203726895283, 1.5497109190549723, 1.5616883082756439, 1.567341933846075, 1.566471142743836, 1.5591031551593022, 1.5454908310744628, 1.5260907543732933, 1.5015252903690524, 1.4725344567701317, 1.4399242443524798, 1.4045174773861377, 1.3671117963044772, 1.3284474098186334, 1.2891853976078766, 1.2498958828392548, 1.2110544735368418, 1.173044968759795, 1.1361663209227548, 1.1006420915079922, 1.0666310010387847, 1.034237558285558, 1.003522099438464]
+
+References:
+-----------
+1685.5 Precipitable Water Vapor Retrieval Based on GNSS Data and Its Application in Extreme Rainfall - https://www.mdpi.com/2072-4292/17/13/2301 - ".... The method for calculating PWV is based on the ideal gas law and the equation of state. The total water vapor content is obtained by calculating the water vapor density of each layer in the atmosphere and integrating it. The specific calculation formula is [37] PWV = 1/ρ(w)*Integral(q/g*dP) where g is the gravitational acceleration, measured in m/s^2 ; P is the pressure, measured in hPa; ρw is the density of liquid water, measured in kg/m 3 ; and q is the specific humidity, measured in kg/kg....." - Precipitable Water Vapor is an important determinant of rainfall (and crucial for agriculture forecasts) as opposed to pressure gradient which influences wind velocity. In earlier equation, precipitable water vapor is inversely proportional to gravity though in Navier-Stokes equation, pressure gradient is directly proportional to gravity (which implies increased gravity is conducive for vigorous monsoon winds and storms and not much for rainfall per se). 
