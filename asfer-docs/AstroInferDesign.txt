@@ -27596,3 +27596,19 @@ References:
 ----------
 1686.4 Google Finance - https://www.google.com/finance/
 1686.5 SerpAPI Google Finance REST API - https://serpapi.com/google-finance-api
+
+--------------------------------------------------------------------------------------------------
+1687. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Enterprise and Governance Decision Making from GIS - ORNL LandScan 2026 - Chennai metropolitan area population and growth estimate - 23 September 2026 - related to 823,1163,1164,1174,1175,1177,1179,1194,1211,1226,1234,1290,1291,1292,1295,1296,1297,1301,1302,1304,1312,1313,1320,1323,1326,1328,1342,1343,1349,1350,1351,1362,1363,1377,1386,1387,1395,1397,1398,1412,1414,1423,1448,1449,1462,1471,1472,1533,1559,1560,1608,1623,1630,1640,1665 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, Verlhulste-R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, Preferential Attachment, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models,Expander Graphs,Timeseries analysis,Graph Edit Distance and Earth mover distance, Face recognition,Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching 
+--------------------------------------------------------------------------------------------------
+1687.1 python-src/image_pattern_mining/ImageNet/GISUrbanSprawlAnalytics.py has been updated to invoke urban_sprawl_from_raster() over Chennai metropolitan area bounding box for latest LandScan Global and Mosaic 2026 dataset testlogs/landscan-global-2026.tif downloaded from https://landscan.ornl.gov/ (new tabs added for Global 2026 and Mosaic datasets): 
+    r6data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/landscan-global-2026.tif",dt="ORNL LandScan 2026")
+1687.2 Logs testlogs/GISUrbanSprawlAnalytics.log.23September2026 show 2026 population estimate for above rectangle as:
+	urban_sprawl_from_raster(): urbansprawlstatisticsaggregate =  [12355365]
+1697.3 Earlier estimate in testlogs/GISUrbanSprawlAnalytics.log.5May2026 (dt.5 May 2026) for LandScan 2024 dataset landscan-global-2024.tif showed 2024 population estimate for same bounding box as:
+	 urban_sprawl_from_raster(): urbansprawlstatisticsaggregate =  [11672212]
+which is a growth of 5.85% in 2 years between 2024-2026 or CAGR of 2.926% population addition per annum. 
+1697.4 Gini coefficient of landscan-global 2024.tif for same box was (from testlogs/GISUrbanSprawlAnalytics.log.5May2026):
+	urbansprawl_gini_coefficient(): Gini Index of the dataset =  -0.9285586767730634
+1687.5 Gini coefficient of landscan-global-2026.tif for same box after 2 years is (from testlogs/GISUrbanSprawlAnalytics.log.23September2026) showing a slight increase:
+	urbansprawl_gini_coefficient(): Gini Index of the dataset =  -0.928559275827474
+NOTE: Using bounding box to estimate population is less accurate compared to GeoJSON shape file clipping of raster and summing the datapoints within clipped region.
