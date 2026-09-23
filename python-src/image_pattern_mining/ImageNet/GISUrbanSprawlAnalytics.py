@@ -977,4 +977,5 @@ if __name__ == "__main__":
     #r3data=urban_sprawl_from_raster(79.343262,10.945574,79.475098,11.095198,"testlogs/ind_ppp_2020_1km_Aggregated.tif",dt="WorldPop population estimates")
     #r4data=urban_sprawl_from_raster(79.343262,10.945574,79.475098,11.095198,"testlogs/landscan-global-2024.tif",dt="ORNL LandScan 2024")
     #urban_sprawl_from_ai_models(query="Analyze 2026 population estimates and area of all urban areas in Tamilnadu")
-    r5data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/landscan-global-2024.tif",dt="ORNL LandScan 2024")
+    #r5data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/landscan-global-2024.tif",dt="ORNL LandScan 2024")
+    r6data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/landscan-global-2026.tif",dt="ORNL LandScan 2026")
