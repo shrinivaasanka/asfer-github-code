@@ -27622,3 +27622,7 @@ which is a growth of 5.85% in 2 years between 2024-2026 or CAGR of 2.926% popula
 1687.5 Gini coefficient of landscan-global-2026.tif for same box after 2 years is (from testlogs/GISUrbanSprawlAnalytics.log.23September2026) showing a slight increase:
 	urbansprawl_gini_coefficient(): Gini Index of the dataset =  -0.928559275827474
 NOTE: Using bounding box to estimate population is less accurate compared to GeoJSON shape file clipping of raster and summing the datapoints within clipped region.
+
+References:
+------------
+1687.6 Reclaim Chennai - Chennai metropolitan area - Statistics Dashboards and Maps - LandSat 9 Thermal - https://maps.reclaimchennai.city/chn/?src=landsat&mode=thermal&d=2026-09-26&at=13.0500%2C80.2400%2C9
