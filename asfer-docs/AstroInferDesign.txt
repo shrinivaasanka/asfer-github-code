@@ -27643,3 +27643,26 @@ References:
 ------------
 1687.6 Reclaim Chennai - Chennai metropolitan area - Statistics Dashboards and Maps - LandSat 9 Thermal - https://maps.reclaimchennai.city/chn/?src=landsat&mode=thermal&d=2026-09-26&at=13.0500%2C80.2400%2C9
 1687.7 ClaudeAI Global Metropolitan Area Rankings - https://github.com/shrinivaasanka/asfer-github-code/blob/4cfe1b78b4fca02b92a22bdc4f98c14289e8b3b3/python-src/image_pattern_mining/ImageNet/testlogs/ClaudeAI_GlobalMetropolitanAreaRankings.pdf
+
+------------------------------------------------------------------------------------------
+1696. (THEORY) Counterexamples in Democracy - An analysis of Gerrymandering by theory of partitions - 6 November 2026 - related to 651,1213,1215,1217,1221,1226,1227,1484,1485,1563,1564,1659 and all sections on DRONA Drone Electronic Voting Machines, Integer-Set Partitions and Histogram Analytics, Merit of Large Scale Visuals, GIS Urban Sprawl Analytics - minimum rectangular bounding box of an urban sprawl, Computational Geometric Integer Factorization,Neuro Cryptocurrency Proof-Of-Work Hardness,Economic Merit,Poverty Alleviation,Money Changing Problem,Integer Linear Programming,Pell Diophantine for Factorization,Perfect Numbers,N-dimensional ball,Lebesgue-Borel measure,Chinese remaindering theorem,Kernel lifting,Shell Turing Machines, Survival Index OS Scheduler timeout algorithm,Axiom of Choice(AoC)
+------------------------------------------------------------------------------------------
+1696.1 Section 1659.17 refers to an algorithm for optimal redistricting or delineating boundaries of constituencies in depth-2 majority voting. Gerrymandering creates constituency boundaries that result in a biased election mandate giving unfair advantage to one of the contestants.
+1696.2 For example following are voter partitions in two constituencies C1 and C2 for two parties P1 and P2 :
+		-----------------------------------------------------
+			P1        |	P2        |
+		-----------------------------------------------------
+		C1  |   10 votes  |    5 votes    | total: 15 voters (P1 wins)
+		-----------------------------------------------------
+		C2  |   7  votes  |    9 votes    | total: 16 voters (P2 wins) 
+		-----------------------------------------------------
+1696.3 Earlier election can be rigged by re-delineating constituency areas of C1 and C2 such that  4 voters of P1 in C1 are allocated to C2 which changes election outcome as in new votes partition below in which P1 sweeps both constituencies: 
+		-----------------------------------------------------
+			P1       |	P2        |
+		-----------------------------------------------------
+		C1  |   6 votes  |    5 votes    | total: 11 voters (P1 wins)
+		-----------------------------------------------------
+		C2  |   11  votes  |    9 votes    | total: 20 voters (P1 wins) 
+		-----------------------------------------------------
+1696.4 Earlier is one more addition to repertoire of counterexamples in democracy (when popular opinion is subverted) discussed in NeuronRain documentation page: https://shrinivaasanka.github.io/Krishna_iResearch_DoxygenDocs/. Section 1411.7 discusses error in depth-2 electoral college majority voting and 1/sqrt(sqrt(n)) error bound by Sheppard's theorem for n voters. Above counterexample adds one more error scenario topologically. In terms of Axiom of Choice(AoC), gerrymandering technically changes the "Choice function" in depth-2 majority because cardinality of each set s in collection of sets A is altered. 
+1696.5 Above scenario sets a prerequisite for ideal redistricting: relimitation of constituencies must not alter election outcome. Re-allocation of 4 voters to C2 from C1 in 1696.3 places an additional geographic constraint - 4 voters must be residents along the boundary separating C1 and C2 (a variant of Jordan Curve Theorem in which curves of 2 constituencies have shared boundaries). 
