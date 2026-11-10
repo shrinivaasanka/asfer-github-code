@@ -27680,3 +27680,9 @@ References:
     tomtom_maps(tomtomkey,fromplace="Chennai",fromlonglat='13.067439,80.237617',toplace="Kumbakonam",tolonglat='10.9567889,79.375285',task="calculateRoute")
 1697.4 Earlier function could be invoked from within (*) python-src/NeuronRainApps/Drones/OnlineShoppingDelivery.py (section 1165) or (*) DRONA Electronic Voting Machine conceptual implementation in python-src/Streaming_SetPartitionAnalytics.py (which might require a Drone code quite similar to python-src/NeuronRainApps/Drones/OnlineShoppingDelivery.py) both of which require set of longitude-latitude mission plan waypoints for navigating to a destination customer or voter address (only payload varies between shopping delivery and voting - Shopping delivery drone couriers parcels while DRONA EVM drone carries a lightweight digital voting machine). 
 1697.5 Earlier code has been QAed by python3.14 commandline: python3.14 GISLiveTraffic.py 2>&1 > testlogs/GISLiveTraffic.log.10November2026. Logs in testlogs/GISLiveTraffic.log.10November2026 demonstrate the route map between 2 geocoded addresses in Chennai and Kumbakonam translated from longitude-latitude(s).
+
+References:
+----------
+1697.6 Amazon Prime Air Drone Delivery - https://www.aboutamazon.com/news/transportation/amazon-drone-deliver-package
+1697.7 Amazon Prime Air - Arizona - FAA approved MK30 Drone - https://www.aboutamazon.com/news/transportation/amazon-drone-delivery-arizona 
+1697.8 MK30 Drone Delivery Pause due to Crane collision and Resumption - https://www.theverge.com/news/790636/amazon-prime-mk30-drone-delivery-crash-arizona-pause
