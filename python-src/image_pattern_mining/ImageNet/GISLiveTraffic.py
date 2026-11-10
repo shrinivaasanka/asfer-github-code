@@ -23,15 +23,15 @@ import pprint
 import pandas as pd
 from datetime import datetime
 import time
-import dynetx as dx
 import networkx as nx
 import operator
-import dynetx.algorithms as al
 import matplotlib.pyplot as plt
 from networkx.drawing.nx_pydot import write_dot
 
 def flightradar24_live_air_traffic(zones=None,max_no_of_flights=10,radius=-1,latitude=12.439259,longitude=79.271851,airport_code="MAA"):
     from FlightRadar24 import FlightRadar24API
+    import dynetx as dx
+    import dynetx.algorithms as al
     print("======================================================================")
     print("FlightRadar24 Live Air Traffic for zones ",zones," - and centrality measures")
     print("======================================================================")
@@ -197,6 +197,30 @@ def here_live_traffic(key,bearertoken,boundingbox=[12.439259,79.271851,13.568572
     bs = BeautifulSoup(page.text,"lxml")
     print(bs)
 
+def tomtom_maps(apikey,fromplace="Chennai",fromlonglat=None,toplace="Kumbakonam",tolonglat=None,country="IN",task="calculateRoute",apiVersion=2):
+    if task=="calculateRoute":
+        fromlonglattoks=fromlonglat.split(",")
+        tolonglattoks=tolonglat.split(",")
+        print("---------------------------------------------------------")
+        fromaddress=f'https://api.tomtom.com/maps/orbis/places/geocode/'+fromplace+'.json?apiVersion=1&lat='+fromlonglattoks[0]+'&lon='+fromlonglattoks[1]+'&radius=10000&limit=3&countrySet='+country+'&language=en-US&key='+apikey
+        print("From Address:",fromaddress)
+        page = requests.get(fromaddress)
+        fromjsonret=json.dumps(page.json(),indent=4)
+        print(fromjsonret)
+        print("---------------------------------------------------------")
+        toaddress=f'https://api.tomtom.com/maps/orbis/places/geocode/'+toplace+'.json?apiVersion=1&lat='+tolonglattoks[0]+'&lon='+tolonglattoks[1]+'&radius=10000&limit=3&countrySet='+country+'&language=en-US&key='+apikey
+        print("To Address:",toaddress)
+        page = requests.get(toaddress)
+        tojsonret=json.dumps(page.json(),indent=4)
+        print(tojsonret)
+        print("---------------------------------------------------------")
+        routerequest=f'https://api.tomtom.com/maps/orbis/routing/calculateRoute/'+fromlonglat+':'+tolonglat+'/json?apiVersion='+str(apiVersion)+'&key='+apikey
+        print("Route:",routerequest)
+        page = requests.get(routerequest)
+        routejsonret=json.dumps(page.json(),indent=4)
+        print(routejsonret)
+        return (fromjsonret,tojsonret,routejsonret)
+
 def tomtom_live_traffic(key,boundingbox=None,longlat=None,apiversion=4):
     if boundingbox is not None:
         #https://api.tomtom.com/traffic/services/5/incidentDetails?key={Your_Api_Key}&bbox=4.8854592519716675,52.36934334773164,4.897883244144765,52.37496348620152&fields={incidents{type,geometry{type,coordinates},properties{iconCategory}}}&language=en-GB&t=1111&timeValidityFilter=present
@@ -232,12 +256,13 @@ if __name__=="__main__":
     #herebearertoken='eyJhbGciOiJSUzUxMiIsImN0eSI6IkpXVCIsImlzcyI6IkhFUkUiLCJhaWQiOiJ2UzVpMm9wNDVSbGFQVzJHRkt4OCIsImlhdCI6MTcwNDg4MDYwNywiZXhwIjoxNzA0OTY3MDA3LCJraWQiOiJqMSJ9.ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJRMEpETFVoVE5URXlJbjAuLnpmd1BIOUhsMldzRGRwWDZZSERFMWcuQVlSOElLNUVfMy02eGVXeVdCVENsamhzc3NBaGZ0Mk5ac2RJdjd6bUlqVmFDOGhCc2pNNUhRdlVZUGJmSXI0ZXczQmxObGNfaEtiN0dzMzAzNFR3YUVHNGhIalBhNXU0eUZQM0F1ODAxeGpMeURERXdsLXFPQ2FpX1NUODVoQ1NCMUJpRUhNc0Y0N192V3hzUTUtb2ZlaHJUcmZtTnlZM1lMR08wYTBMZkZQeVlfZ2pOd2tGSHBiNHR4Nl82LVNaRWh0ZEFDUmR3ZXY0NUROX3E1TzRLMUljcGVMNG9aOERqT2phMDcxT2g5US4wNm9EWmhBV0c3V1F4R09MdEU4cTZNRE8tRFlCRXU5QmdHbXpyRGRTT0Jr.pe0ReOI69iv5zGvCsvBpiIAKW1JhUh7KpH2qAbh2VfN6QW5x7vuEbY9v6R4v92I4w_h6aeTY0a46V9I2psvfwj1wo-dvKlP6TfOksoYKqcUUrtjpzQUIeR2-eOTblMyeGbNQx9lRTfAznDQOFHf1S2vRXUznKszTcGkYzmyrrX8cXoXYsZmQJcsUE9E4MZ8O76H0vm5W0wJHyJuRvgoWsQf2U8nL_xeI6tHv1eLRjtOBzDrX9LC8moauhV-7UWuv22nFU2PgjbP-AvmE66XFHbf2jThtbEBSXv7TvMhCCaJgt3knePTZ371S-rYzbPRS5AI5ijjbW-JRABvlj9i2Hg'
     #herebearertoken='eyJhbGciOiJSUzUxMiIsImN0eSI6IkpXVCIsImlzcyI6IkhFUkUiLCJhaWQiOiJ2UzVpMm9wNDVSbGFQVzJHRkt4OCIsImlhdCI6MTcwNDg4NTQ4NywiZXhwIjoxNzA0OTcxODg3LCJraWQiOiJqMSJ9.ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJRMEpETFVoVE5URXlJbjAuLm9Jejg3WU1vRmNIQlh3UXBfa21GdUEudVZUcTRaLWxxVVdUOVQtdjVPYm9WZVRqYmxESHRjcUVpRFN3TzZIY29fakdFOHNmWDRncnlzdTZ4bUdIek9BS1hNWWhVZVg2UG5yTTV3UWFRaU5CTXBmWFFqdE9JOUdkNXFSd0llSFI5My1lZ1RCc3hrY3dkZjRzdkdXV05JSTM4R3JZMS1NN0N2U1NyTklVc2FPaEk3WTJIcHZfdW9naVhPekhFdTJiaWhYOVMwTzdiSXVLZkxFVmRzdVFEaTdhOXRMbFh6M3FsM1VXekI1UHowMERvUE1QYWRKTmdzekFzbncweUU0aG9pNC5qU19ETVZDdjBqV0pQdzdLeDQxTS01MFpvaHVKdkp1UW1ZOUhxaGUyb2ZF.W7WZa_xW2araKc1vP3UpPjyVTNao-BfzdeZPl7gkx3SKbrMi_AUR3KhzcxqdmJnmgY8rJnUPo0s6W_MO6GmETwNFjMl8zPYNX6ILTNk_ncx6LeZHyxW9I2PVlBvMVrP1BncdbPe7g0rX7-D1coqs5xx4yQx9wBeu0KYVEirPLDz-lyRT9h8ro-g-q5o25-XgsY2ZAJyzKWGtMMuUQgQibWMfh3CrEmCuoXyInYXOx2qlJSZCPB5RvcTNqs9xcctFgDKQIS6dmGCpEdTv0uKcRGRT-jdHaEfUXZFeXaCJ0UYI0_0ra1Gu5LZTiMe89uGkle5TEtcNhFhjEQXtrtsJ0w'
     #here_live_traffic(key=herekey,bearertoken=herebearertoken,boundingbox=[12.439259,79.271851,13.568572,80.351257])
+    tomtom_maps(tomtomkey,fromplace="Chennai",fromlonglat='13.067439,80.237617',toplace="Kumbakonam",tolonglat='10.9567889,79.375285',task="calculateRoute")
     tomtom_live_traffic(tomtomkey,boundingbox=[12.439259,79.271851,13.568572,80.351257])
     tomtom_live_traffic(tomtomkey,boundingbox=[10.948860,79.348497,10.991413,79.421453],apiversion=4)
     tomtom_live_traffic(tomtomkey,boundingbox=[10.948860,79.348497,10.991413,79.421453],apiversion=5)
     tomtom_live_traffic(tomtomkey,longlat=[12.439259,79.271851])
-    flightradar24_live_air_traffic(max_no_of_flights=20)
-    totime=int(time.time())
-    fromtime=totime-(6000)
-    opensky_live_air_traffic(airport_code="MAA",fromtime=fromtime,totime=totime,boundingbox=[10.948860,79.348497,10.991413,79.421453])
-    pyflightdata_live_air_traffic(airport_code="MAA")
+    #flightradar24_live_air_traffic(max_no_of_flights=20)
+    #totime=int(time.time())
+    #fromtime=totime-(6000)
+    #opensky_live_air_traffic(airport_code="MAA",fromtime=fromtime,totime=totime,boundingbox=[10.948860,79.348497,10.991413,79.421453])
+    #pyflightdata_live_air_traffic(airport_code="MAA")
