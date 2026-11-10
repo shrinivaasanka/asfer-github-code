@@ -27668,7 +27668,12 @@ References:
 		C2  |   11  votes  |    9 votes    | total: 20 voters (P1 wins) 
 		-----------------------------------------------------
 1696.4 Earlier is one more addition to repertoire of counterexamples in democracy (when popular opinion is subverted) discussed in NeuronRain documentation page: https://shrinivaasanka.github.io/Krishna_iResearch_DoxygenDocs/. Section 1411.7 discusses error in depth-2 electoral college majority voting and 1/sqrt(sqrt(n)) error bound by Sheppard's theorem for n voters. Above counterexample adds one more error scenario topologically. In terms of Axiom of Choice(AoC), gerrymandering technically changes the "Choice function" in depth-2 majority because cardinality of each set s in collection of sets A is altered. 
-1696.5 Above scenario sets a prerequisite for ideal redistricting: relimitation of constituencies must not alter election outcome. Re-allocation of 4 voters to C2 from C1 in 1696.3 places an additional geographic constraint - 4 voters must be residents along the boundary separating C1 and C2 (a variant of Jordan Curve Theorem in which curves of 2 constituencies have shared boundaries). 
+1696.5 Above scenario sets a prerequisite for ideal redistricting: relimitation of constituencies must not alter election outcome. Re-allocation of 4 voters to C2 from C1 in 1696.3 places an additional geographic constraint - 4 voters must be residents along the boundary separating C1 and C2 (a variant of Jordan Curve Theorem in which curves of 2 constituencies have shared boundaries). If earlier example partitions are represented as 2D matrices below before and after relimitation:
+            P1  P2                       P1  P2
+        C1 |10  5|   is morphed to   C1 |6   5|   
+        C2 |7   9|                   C2 |11  9|
+with constraint that sum of all entries in 2 matrices remain unchanged before and after re-delineation (31 in above partitions).
+1696.6 Re-delineating shared boundary curves of two adjacent constituencies C1 and C2 which encompass 2 voter partitions for bipartisan democracy as in example earlier is also a path homotopy problem in conjunction with how partitions contained within curves for C1 and C2  dynamically change as C1 and C2 are morphed by homotopy (Path Homotopy - https://en.wikipedia.org/wiki/Path_(topology)#Homotopy_of_paths - which deforms a path between 2 fixed endpoints). Relimitation Path homotopy revises the two matrices in 1696.5 re-distributing partitions columnwise. Outcome of election changes whenever maximum element in any row is altered after relimitation path homotopy probability of which depends on quantity: (C2,P1) - (C2,P2) + 1 (i.e 9-7+1 = reallocation of 3 voters of P1 from C1 to C2 is enough to change the result).
 
 References:
 ----------
