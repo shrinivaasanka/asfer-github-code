@@ -27674,10 +27674,18 @@ References:
         C2 |7   9|                   C2 |11  9|
 with constraint that sum of all entries in 2 matrices remain unchanged before and after re-delineation (31 in above partitions).
 1696.6 Re-delineating shared boundary curves of two adjacent constituencies C1 and C2 which encompass 2 voter partitions for bipartisan democracy as in example earlier is also a path homotopy problem in conjunction with how partitions contained within curves for C1 and C2  dynamically change as C1 and C2 are morphed by homotopy (Path Homotopy - https://en.wikipedia.org/wiki/Path_(topology)#Homotopy_of_paths - which deforms a path between 2 fixed endpoints). Relimitation Path homotopy revises the two matrices in 1696.5 re-distributing partitions columnwise. Outcome of election changes whenever maximum element in any row is altered after relimitation path homotopy probability of which depends on quantity: |(C2,P1) - (C2,P2)| + 1 (i.e |9-7|+1 = reallocation of 3 voters of P1 from C1 to C2 is enough to change the result).
+1696.7 For a generic bipartisan democracy with 2 parties P1 and P2 and 2 constituencies C1 and C2 with voter partitions V11+V12 and V21+V22 earlier relimitation matrices (that change outcome of election) could be written as (just one of the scenarios - there could be many):
+            P1    P2                          P1          P2
+        C1 |V11  V12| (winner:P1)  is morphed to   C1 |V11-delta   V12|  (winner:P1) 
+        C2 |V21  V22| (winner:P2)                  C2 |V21+delta   V22|  (winner:P1)
+in which delta voters of P1 in C1 are moved to C2 with the constraint delta > |V21-V22| so that winning candidate for election in C2 is changed from P2 to P1. Probability of change in election outcome could then be derived in terms of partition function as:
+	Number of partitions satisfying delta > |V21-V22|
+	-------------------------------------------------
+		Total number of partitions
 
 References:
 ----------
-1696.7 Gerrymandering - https://en.wikipedia.org/wiki/Gerrymandering
+1696.8 Gerrymandering - https://en.wikipedia.org/wiki/Gerrymandering
 
 -------------------------------------------------------------------------------------------
 1697. (THEORY and FEATURE) GIS Live Traffic - TomTom Orbis Maps API - Route calculation between 2 geocoded addresses - 10 November 2026 - related to 823,1163,1164,1165,1174,1175,1177,1179,1194,1211,1226,1234,1290,1291,1292,1295,1296,1297,1301,1302,1304,1312,1313,1320,1323,1326,1328,1342,1343,1349,1350,1351,1362,1363,1377,1386,1387,1395,1397,1398,1412,1414,1423,1448,1449,1462,1471,1472,1476,1529,1531,1545,1546,1577,1676 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, Verlhulste-R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, Preferential Attachment, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models,Expander Graphs,Timeseries analysis,Graph Edit Distance and Earth mover distance, Face recognition,Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching,TomTom and HERE live road traffic API,Autonomous Online Shopping Delivery by Cargo drones,Conceptual DRONA Electronic Voting Machine,EventNet GEM
