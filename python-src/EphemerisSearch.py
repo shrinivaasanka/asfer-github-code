@@ -56,6 +56,7 @@ from scipy.linalg import norm
 import matplotlib.pyplot as plt
 from astroquery.gaia import Gaia
 from astropy.coordinates import angular_separation
+import pymap3d as pm3d
 
 
 planetradecdict={}
@@ -86,7 +87,7 @@ def locate_proper_motion_conjunction(queryresults1,queryresults2,duration=100000
                     if angdistance < separation:
                         print("Angular separation between two bodies ",q1["source_id"]," and ",q2["source_id"]," in ",y," years:",angdistance)
 
-def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds,userdefinedlatlons):
+def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds,userdefinedlatlons,tidalforcing=True):
     ephem=EphemerisSearch("de421.bsp")
     range_gravities={}
     solar_system_bodies={"Sun":10,"Moon":301,"Mars":499,"Mercury":199,"Jupiter":599,"Venus":299,"Saturn":699,"Uranus":799,"Neptune":899,"Pluto":999}
@@ -108,7 +109,7 @@ def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds,userdefinedlatlons
           timetoks=datetimetoks[1].split(":")
           print("datetoks:",datetoks)
           print("timetoks:",timetoks)
-          gravities=ephem.extreme_weather_events_n_body_analytics([(datetoks[0],datetoks[1],datetoks[2],timetoks[0],timetoks[1],timetoks[2])],loc=loc,userdefinedlatlons=userdefinedlatlons)
+          gravities=ephem.extreme_weather_events_n_body_analytics([(datetoks[0],datetoks[1],datetoks[2],timetoks[0],timetoks[1],timetoks[2])],loc=loc,userdefinedlatlons=userdefinedlatlons,tidalforcing=tidalforcing)
           range_gravities[date]=gravities
           date += 1
     print("=========================================================================")
@@ -336,7 +337,7 @@ class EphemerisSearch(object):
             print("SkyField - sky_on_datetime(): Long-Lat position of ",observed," from ",observedfrom," on ",datetime," (Year-Month-Day-Hour-Minute-Second):",astrometric.apparent().ecliptic_latlon())
             return astrometric.apparent().ecliptic_latlon()
     
-    def extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=True,angularsepbounds=(0,60),maxiterations=200,userdefinedlatlons=[]):
+    def extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=True,angularsepbounds=(0,60),maxiterations=200,userdefinedlatlons=[],tidalforcing=True):
         Latlons=[]
         argdatesofEWEs=datesofEWEs
         if datesofEWEs == "Earthquakes":
@@ -431,7 +432,7 @@ class EphemerisSearch(object):
             r_i = np.array(r_list)*AU
             v_i = np.array(v_list)*AU/D
             m_i = np.array(m_list)
-            gravity=self.n_body_gravitational_acceleration(r_i,m_i,epsilon)
+            gravity=self.n_body_gravitational_acceleration(r_i,m_i,epsilon,userdefinedlatlons[cnt],tidalforcing=tidalforcing)
             gravitydict={}
             for g in range(len(gravity)):
                 if len(Latlons) > 0:
@@ -451,7 +452,7 @@ class EphemerisSearch(object):
         return gravities
            
 
-    def n_body_gravitational_acceleration(self,r,m,epsilon):
+    def n_body_gravitational_acceleration(self,r,m,epsilon,userdefinedlatlons,tidalforcing=True):
         G = cs.gravitational_constant
         print("n_body_gravitational_acceleration():r=",r)
         print("n_body_gravitational_acceleration():m=",m)
@@ -475,9 +476,29 @@ class EphemerisSearch(object):
             new_m = np.append(new_m,[0.0000])
         print("n_body_gravitational_acceleration():inv_r3=",inv_r3)
         print("n_body_gravitational_acceleration(): m.shape after extension = ",len(new_m))
-        ax = G * (dx * inv_r3) @ new_m
-        ay = G * (dy * inv_r3) @ new_m
-        az = G * (dz * inv_r3) @ new_m
+        if tidalforcing is False:
+            ax = G * (dx * inv_r3) @ new_m
+            ay = G * (dy * inv_r3) @ new_m
+            az = G * (dz * inv_r3) @ new_m
+        else:
+            #ChatGPT AI suggested tidal acceleration at location i 
+            rx2,ry2,rz2 = pm3d.geodetic2ecef(lat=userdefinedlatlons['lat'],lon=userdefinedlatlons['lon'],alt=0)
+            print("LongitudeLatitude " + str(userdefinedlatlons) +" - Translated to XYZ:",(rx2,ry2,rz2))
+            Rx = r[:,0:1]
+            Ry = r[:,1:2]
+            Rz = r[:,2:3]
+            print("(Rx,Ry,Rz) - ",(Rx,Ry,Rz))
+            dRx = Rx.T - Rx
+            dRy = Ry.T - Ry
+            dRz = Rz.T - Rz
+            Rdotr=Rx*rx2+Ry*ry2+Rz*rz2
+            dx2 = 3*Rdotr*Rx - rx2 
+            dy2 = 3*Rdotr*Ry - ry2 
+            dz2 = 3*Rdotr*Rz - rz2 
+            inv2_r3 = (dRx**2 + dRy**2 + dRz**2 + epsilon**2)**(-1.5)
+            ax = G * (dx2 * inv2_r3) @ new_m
+            ay = G * (dy2 * inv2_r3) @ new_m
+            az = G * (dz2 * inv2_r3) @ new_m
         # pack together the three acceleration components
         a = np.hstack((ax,ay,az))
         return a
